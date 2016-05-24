@@ -1,0 +1,28 @@
+/* 2. Toolbar */
+
+.header-title {
+    float: left;
+    font-weight: 700;
+    background-color: blue;
+    width: 33%;
+}
+
+.header-title:hover {
+    color: rgb(204, 224, 237);
+}
+
+.header-left {
+    float: left;
+    display: block;
+    background-color: red;
+    width: 33%;
+}
+
+.header-toolbar {
+    float: right;
+    text-align: right;
+    color: #fff;
+    background-color: rgb(127, 178, 209);
+    border-radius: 3px;
+    width: 33%;
+}

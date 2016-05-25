@@ -22,29 +22,6 @@ section {
     margin-right: 40px;
 }
 
-footer {
-    color: #999;
-    margin: 4em 1em;
-    font-size: 16px;
-}
-
-footer a {
-    color: #999;
-}
-
-footer a:hover {
-    color: #000;
-}
-
-footer ul {
-    padding: 0;
-}
-
-footer li {
-    display: inline-block;
-    margin: 0 0.4em;
-}
-
 .background-dark-blue {
     color: #fff;
     background-color: #0079bf;

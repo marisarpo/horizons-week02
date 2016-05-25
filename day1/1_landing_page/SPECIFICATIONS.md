@@ -12,6 +12,7 @@
 - Button (hover): linear gradient start #5aac44 end #519839
 - Button (box shadow): #3f6f21
 - Button (font color): #fff
+- Footer (font color): #999
 
 ## Type
 
@@ -22,7 +23,8 @@
 
 ## Layout
 
-- Section padding: vertical 4em, horizontal 1em
+- Section padding: vertical 80px, horizontal 20px
+- Layout padding: same
 - Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
 - Image margin: bottom 2em
 - Button
@@ -30,3 +32,4 @@
  - Padding horizontal: 1.3em
  - Border radius: 0.3em
  - Margin bottom: 0.8em
+- Footer link spacing: 7px

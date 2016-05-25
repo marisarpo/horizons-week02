@@ -47,6 +47,12 @@ and open the html document in your web browser. You should see a screen
 that looks like [this][ss-01-a], containing HTML which is completely
 unstyled. Open up the [specs] as well.
 
+Take a close look at the skeleton HTML. There are some fundamental HTML
+tags such as `html`, `head`, `body`, and `meta`. Two stylesheets have
+been included using the `link` tag. Finally, we've defined one `section`
+with some content. (Note that `section` is an HTML5 [semantic tag], and
+that you could have used the non-semantic `div` tag instead here.)
+
 Take a look at the goal [screenshot][ss-01-b] for this phase and take
 careful note of the differences. See them?
 
@@ -86,7 +92,7 @@ adjust the spacing.
 In order to center the text, add the `text-align: center` property to
 the `text-center` CSS class selector. Because this is a class selector,
 rather than an HTML element selector, it can be applied anywhere in the
-page.
+page (and it's been applied to the paragraph text).
 
 Finally, let's fix the spacing. Start by adding some padding inside of
 each `section` tag: add a `padding` tag to the `section` CSS element
@@ -111,6 +117,7 @@ Reload again to see your changes. Congrats on finishing Phase 1!
 [reset-1]: http://meyerweb.com/eric/tools/css/reset/
 [reset-2]: https://necolas.github.io/normalize.css/
 [cssunits]: http://www.w3schools.com/cssref/css_units.asp
+[semantic tag]: http://www.w3schools.com/html/html5_semantic_elements.asp
 
 ## Phase 2: Image and button
 
@@ -181,7 +188,47 @@ partner!
 
 ## Phase 3: Footer
 
-## Phase 4: Begin adding content
+- [Screenshot][ss-02-a]
+- [Live][live-02]
+
+As a next step, let's add a straightforward footer to our landing page
+with some catch-all links such as Pricing, Jobs, and Blog, and a
+copyright notice. See the samples for the complete list, and notice the
+formatting: the footer links are evenly spaced, they're underlined,
+they have a different color and font size from the rest of the document,
+and the color is different when you move your mouse over them (hover).
+
+Take a look at the skeleton [html] and [css] files. The footer links
+have been added as links inside an unordered list (`ul`), which is
+currently appearing as a bulleted list. The css file contains a bunch
+of empty "footer" selectors, such as "footer a". This compound selector
+matches all `a` tags _inside a `footer` tag_, so these styles will only
+apply to the contents of the `footer`.
+
+Let's start by fixing the spacing. We need
+to apply the same `padding` property (that's currently applied to the
+`section` tag) to the `footer` as well. The `section` selector has been
+copied to the top of this phase's CSS file. You can apply a set of
+properties to multiple selectors by specifying the list selectors
+separated by commas. Replace "`section`" (line 1) with
+"`section, footer`" here
+to apply the `padding` property to the `footer` tag selector.
+
+To fix the font size and color, grab the smallest font size, and the
+appropriate color, from the [specs] and add them to the `footer`
+selector. Do the same to set the `footer a` and `footer a:hover` styles.
+
+Finally, we need to format the list properly. By default, `ul` list
+elements get left padding. To override this, set `padding` to zero on
+the `footer ul` selector. To display the list elements side by side,
+set `display: inline-block` on `footer li`. To space them out, grab the
+spacing value from the specs and add it as a horizontal margin on the
+same selector. Refresh to see your changes and do a backflip! Well done!
+
+[html]: ./skeleton/03-footer.html
+[css]: ./skeleton/css/03-footer.css
+
+## Phase 4: Content
 
 ## Phase 5: Clear text
 

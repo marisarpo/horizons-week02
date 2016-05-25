@@ -44,7 +44,7 @@ img {
 
 .img-float-left {
     float: left;
-    margin-right: 20px;
+    margin-right: 40px;
 }
 
 footer {
@@ -71,11 +71,9 @@ footer li {
 }
 
 .background-white {
-    /*padding: 4em 1em;*/
 }
 
 .background-dark-blue {
-    /*padding: 4em 1em;*/
     color: #fff;
     background-color: #0079bf;
 }
@@ -135,6 +133,7 @@ footer li {
 
 .button:hover {
     background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+    color: #fff;
 }
 
 .app-store-link {

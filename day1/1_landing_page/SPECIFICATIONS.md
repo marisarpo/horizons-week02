@@ -8,14 +8,25 @@
 - Light blue: #e4f0f6
 - Link: #5e98ba
 - Link (hover): #265773
+- Button (normal): linear gradient start #61bd4f end #5aac44
+- Button (hover): linear gradient start #5aac44 end #519839
+- Button (box shadow): #3f6f21
+- Button (font color): #fff
 
 ## Type
 
 - Font family: Helvetica Neue, Arial, sans-serif
 - Font weight: 400
 - Font size: 16px, 20px, 36px
+- Button font weight: bold
 
 ## Layout
 
 - Section padding: vertical 4em, horizontal 1em
 - Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
+- Image margin: bottom 2em
+- Button
+ - Padding vertical: 0.6em
+ - Padding horizontal: 1.3em
+ - Border radius: 0.3em
+ - Margin bottom: 0.8em

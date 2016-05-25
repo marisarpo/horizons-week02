@@ -1,6 +1,4 @@
-/* PHASE 0: Reset */
-
-html, head, body {
+html, head, body, h2 {
     margin: 0;
     padding: 0;
     border: 0;

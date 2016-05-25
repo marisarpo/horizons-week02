@@ -1,0 +1,8 @@
+/* PHASE 0: Reset */
+
+html, head, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}

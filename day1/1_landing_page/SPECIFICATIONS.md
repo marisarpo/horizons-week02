@@ -11,7 +11,7 @@
 
 ## Type
 
-- Font family: "Helvetica Neue", Arial, sans-serif
+- Font family: Helvetica Neue, Arial, sans-serif
 - Font weight: 400
 - Font size: 16px, 20px, 36px
 

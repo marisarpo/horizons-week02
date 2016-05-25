@@ -33,7 +33,7 @@ changes to the HTML and CSS and then reload in the browser to see the
 changes.
 - Keep the [specs][specifications] handy.
 
-[specs][./SPECIFICATIONS.md]
+[specs]: ./SPECIFICATIONS.md
 
 ## Phase 1: Title
 
@@ -95,6 +95,12 @@ additional spacing in the form of a margin around the paragraph text.
 Add a `margin` property to the `center-paragraph` CSS class selector
 based on the specs.
 
+Note that spacing can be specified in a variety of ways in CSS. You can
+specify a number followed by "px", which refers to an absolute number of
+pixels. You can also use "em" instead of "px", where "1em" is equal to
+the font size (in pixels) applied to the element. See [cssdocs][the full
+list of CSS units] if you're curious.
+
 Reload again to see your changes. Congrats on finishing Phase 1!
 
 [live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
@@ -104,8 +110,16 @@ Reload again to see your changes. Congrats on finishing Phase 1!
 [skel-01-css]: ./skeleton/css/01-title.css
 [reset-1]: http://meyerweb.com/eric/tools/css/reset/
 [reset-2]: https://necolas.github.io/normalize.css/
+[cssunits]: http://www.w3schools.com/cssref/css_units.asp
 
 ## Phase 2: Image and button
+
+Let's finish the first section of the landing page by adding an image
+and a button. Open the phase 2 files (you can close the phase 1 files:
+all of your CSS work will be applied in all future phases!) in your
+text editor and web browser.
+
+
 
 ## Phase 3: Footer
 

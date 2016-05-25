@@ -27,6 +27,7 @@ h2 {
 
 body > div {
     padding: 4em 1em;
+    clear: left;
 }
 
 .layout-fill-img {
@@ -39,6 +40,11 @@ body > div {
 img {
     margin-bottom: 2em;
     vertical-align: middle;
+}
+
+.img-float-left {
+    float: left;
+    margin-right: 20px;
 }
 
 footer {

@@ -13,11 +13,11 @@ who will give you a set of asset files (images), specifications, and
 mockups (a.k.a. "mocks", "wireframes") to show you the expected final
 product.
 
-For this project, we've provided you with a basic HTML outline and some
-empty CSS files. You'll begin by applying some of the CSS styles you
-learned in class this morning. Later you'll add more HTML and try some
-more sophisticated HTML and CSS techniques to add images and interactive
-elements to the page.
+For this project, we've provided you with a basic HTML outline, some
+empty CSS files, and [specifications][specs]. You'll begin by applying
+some of the CSS styles you learned in class this morning. Later you'll
+add more HTML and try some more sophisticated HTML and CSS techniques to
+add images and interactive elements to the page.
 
 ## A few important details
 
@@ -25,13 +25,15 @@ elements to the page.
 project is contained in HTML and CSS files prefixed with the phase
 number, e.g., `1_top.html`.
 - Study the mockup screenshots closely. Use an app like Preview in OS X
-so that you can easily pan and zoom.
-- Get very comfortable using Chrome's developer tools (⌥⌘I, or View >
+so that you can easily pan, zoom, and measure things.
+- Get very comfortable using Chrome's Developer Tools (⌥⌘I, or View >
 Developer > Developer Tools).
 - The best way to do web development is to make small, incremental
 changes to the HTML and CSS and then reload in the browser to see the
-changes.
-- Keep the [specifications][specs] handy.
+changes. When you get comfortable using the power Developer Tools,
+you'll see how to test individual changes in real time without
+changing your code.
+- Keep the [specs] handy as you'll need them throughout this project.
 
 [specs]: ./SPECIFICATIONS.md
 

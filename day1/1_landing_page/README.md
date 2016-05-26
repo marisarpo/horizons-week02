@@ -111,6 +111,12 @@ list of CSS units][cssdocs] if you're curious.
 
 Reload again to see your changes. Congrats on finishing Phase 1!
 
+Supplemental reading (optional):
+- [CSS Units][cssunits]
+- [HTML5 semantic tags][semantic tag]
+- [CSS Reset][reset-1]
+- [normalize.css][reset-2]
+
 [live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
 [ss-01-a]: ./screenshots/01-start.png
 [ss-01-b]: ./screenshots/01-full.png
@@ -129,8 +135,9 @@ Reload again to see your changes. Congrats on finishing Phase 1!
 CSS is a very powerful tool, and it can do a lot more than just spacing
 and typography. In fact, it can be used to create some very complex,
 dynamic elements such as [2d shapes], [3d transforms], and some very
-nifty [effects]. In this phase, you'll begin to see some of the power
-of CSS to create interactive elements.
+nifty [effects]. CSS has even been used to create an FPS-style [3d
+game]. In this phase, you'll begin to see some of the power of CSS to
+create interactive elements.
 
 Let's finish the first section of the landing page by adding an image
 and a button. Open the phase 2 files (you can close the phase 1 files:
@@ -185,9 +192,16 @@ the colors from the specs and the same `linear-gradient` command as
 above. You may need to adjust the `color` property here too. Reload,
 check out your awesome new button, and high five your partner!
 
+Supplemental reading (optional):
+- [Shapes of CSS][2d shapes]
+- [Intro to CSS 3D transforms][3d transforms]
+- [Example CSS effect][effects]
+- [CSS FPS][3d game]
+
 [2d shapes]: https://css-tricks.com/examples/ShapesOfCSS/
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
+[3d game]: http://keithclark.co.uk/labs/css-fps/
 [live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/02-button.html
 [ss-02-a]: ./screenshots/02-full.png
 
@@ -234,7 +248,7 @@ same selector. Refresh to see your changes and do a backflip! Well done!
 
 [html-03]: ./skeleton/03-footer.html
 [css-03]: ./skeleton/css/03-footer.css
-[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/02-button.html
+[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/03-footer.html
 [ss-03-a]: ./screenshots/03-full.png
 [ss-03-b]: ./screenshots/03-footer.png
 
@@ -287,8 +301,12 @@ this. (You can read more on [box sizing] here if you're so inclined.)
 Reload one more time to see your lovely, perfectly-sized and spaced
 image with text around it. Booyah! The end is in sight.
 
+Supplemental reading (optional):
+- [CSS Box Model][box model]
+- [Box Sizing][box sizing]
+
 [live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/04-content.html
-[html-04]: ./skeleton/04-footer.html
+[html-04]: ./skeleton/04-content.html
 [css-04]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
 [box sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
@@ -346,7 +364,6 @@ Refresh once more and do a cartwheel because you just finished phase
 five, just one more to go! 🎉
 
 Supplemental reading (optional):
-
 - [All About Floats]
 
 [live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/05-clear.html
@@ -355,7 +372,7 @@ Supplemental reading (optional):
 [All About Floats]: https://css-tricks.com/all-about-floats/
 [sidebar]: https://css-tricks.com/wp-content/csstricks-uploads/web-layout.png
 [ss-05-a]: ./screenshots/05-full.png
-[ss-05-a]: ./screenshots/05-zoom.png
+[ss-05-b]: ./screenshots/05-zoom.png
 
 ## Phase 6: More advanced layout and images
 
@@ -500,10 +517,13 @@ Reload one last time, and... drumroll please... you did it!
 Congratulations! You've just finished building your first landing
 page. You're that much closer to world domination.
 
+Supplemental reading (optional):
+- [CSS positioning]
+
 [html-06]: ./skeleton/06-advanced.html
 [css-06]: ./skeleton/css/06-advanced.css
-[live-06]: http://horizons-school-of-technology.github .io/week02/day1/1_landing_page/solution/06-advanced.html
+[live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/06-advanced.html
 [ss-06-a]: ./screenshots/06-full.png
 [ss-06-b]: ./screenshots/06-zoom.png
 [ss-06-c]: ./screenshots/06-buttons.png
-[css positioning]: http://www.w3schools.com/css/css_positioning.asp
+[CSS positioning]: http://www.w3schools.com/css/css_positioning.asp

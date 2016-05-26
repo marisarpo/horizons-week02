@@ -483,8 +483,6 @@ buttons appear correctly. The last step is to style the image.
 
 ### Step 3: Image
 
-* [Live][live-6]
-
 The first important thing to notice about the image layout is that the
 image needs to be positioned to the right and slightly above the text.
 We could float the image to the right, as we did in the previous

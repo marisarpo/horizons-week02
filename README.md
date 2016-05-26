@@ -5,8 +5,8 @@
 - [Horello]: Build a landing page for the Horello app (guided).
 - [Horistarter]: Build a clone of the Kickstarter webpage (unguided).
 
-[Horello]: ./1_horello
-[Horistarter]: ./2_horistarter
+[Horello]: ./day1/1_horello
+[Horistarter]: ./day1/2_horistarter
 
 ## Day 2
 

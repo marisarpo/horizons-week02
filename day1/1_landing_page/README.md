@@ -343,8 +343,136 @@ right?), a new button, and one more image. We'll use a different set of
 properties to style these buttons and image, and we'll show you how to
 control horizontal spacing of text and images.
 
+Open up the [html][html-6] and [css][css-6] skeleton files and take a
+look. One final section has been added to the HTML, with several
+images and some more paragraph text. Take a look at the [target
+screenshot][ss-06-a] as well. Our goal is to place the image to the
+right of and slightly above the text, with the app store buttons, and
+an additional text button, perfectly aligned below the text. The text
+should occupy two-thirds of the width.
 
+### Step 1: Text
+
+Let's dive in and make it happen. We'll start with the general
+layout, then style the text, then add the app store buttons, and
+finally we'll correctly position the large image.
+
+Play around with the [live][live-06] version of the page to get a
+sense not just for how this section looks, but for how it behaves when
+you change the width of the browser window. This is one of the great
+challenges of web development: you are by definition developing for a
+wide range of devices and possible screen sizes. Take a moment now to
+resize the section and note the behavior. (This would be a good time
+to learn how to zoom in and out using the Developer Tools's "device
+mode": ⌘⇧M.)
+
+You should have noticed a few important things:
+
+- the text is left-aligned
+- at a "normal" window width (on a laptop or small monitor), the text
+occupies two-thirds of the width
+- the image appears to the right of the text, starting about
+two-thirds of the way across the screen, with a margin between text
+and image
+- as you shrink the width, the text first moves to the left, then
+hits a left margin and spreads vertically instead; the image gets
+smaller and the right part is always cut off
+- as you increase the width, the image on the right first comes fully
+into view, then as you continue to increase the width the text
+section remains centered
+
+Now that you've got a solid grasp of the desired behavior, let's
+begin styling!
+
+First, set the `background-color` property of the
+`background-light-blue` class per the specs. Next, set `max-width` on
+`layout-grid-frame`. Fixing the max width like this allows us to center
+the text section as the width grows. Set `max-width` on the
+`layout-twothirds-left` class selector as well.
+
+Reload in the browser. We now have a content container of the right
+width with text filling the left two-thirds. You won't be able to see
+the container box in the browser since elements are transparent by
+default. This is a good time to make sure you know how to make
+individual HTML elements visible in the browser. Without being able to
+see the precise effects of each of your changes in the browser, you're
+flying blind! You can temporarily set a `background-color` and/or a
+`border` property on the container to make it visible. You can also use
+the powerful Chrome Developer Tools to add temporary styles (these
+aren't saved when the page is reloaded), or to highlight individual
+elements. Make sure you can see the container we're styling clearly.
+
+The container box is still too far to the left. To center it, add
+`margin: 0 auto`. The "0" value sets no vertical margin; the "auto"
+value applies the same horizontal margin to left and right, effectively
+centering the element.
+
+### Step 2: Buttons
+
+With the text properly styled, let's style the buttons on the line
+below. Our goal is to make them the exact same height and align them,
+and obviously to turn the text link into a button. Let's start with
+the text button.
+
+Try to style the button on your own, as we did before. Here's a hint:
+you'll need to use three properties on `outline-link`:
+
+- border
+- border-radius
+- padding
+
+You can go ahead and set color properties, per the specs, on the `a`
+and `a:hover` selectors to set the colors for this button. (Bonus
+question: how would you add styles to only this one button rather
+than applying them to all `a` links throughout the page?)
+
+Next, fix the height of the app store badges using the
+`.app-store-link img` compound selector. Note that you may need to
+play around with the `outline-link` styles to get the text button to
+be the exact same height.
+
+You'll notice that the buttons aren't vertically aligned. To fix
+this, set `display: inline-block` and `vertical-align: top` on all of
+the buttons. Finally, use `margin` to space the buttons out
+horizontally per the spec. Reload and you should see the text and
+buttons appear correctly. The last step is to style the image.
+
+### Step 3: Image
+
+The first important thing to notice about the image layout is that the
+image needs to be positioned to the right and slightly above the text.
+We could float the image to the right, as we did in the previous
+section, but we need to place the image past the right margin of the
+page, and above the section padding. The easiest way to do this is using
+absolute positioning, which allows us to reposition an element _relative
+to a containing block_ (the property value is misleading, as the
+positioning is relative not absolute; `position: relative` instead sets
+the position _relative to the default position for the element itself_).
+
+In order to anchor the absolutely positioned element, we first need
+to mark the containing block using `position: relative`. The
+containing block has the class `layout-grid-frame`, and the block to
+be absolutely positioned has the class `layout-callout-right`. Set
+the `position` properties for these classes, then use the `top` and
+`left` properties on `layout-callout-right` per the [specs] to
+position the image.
+
+Reload the page and take a look. Everything may seem to be laid out
+correctly, but there's still one big issue. Can you find it? Hint:
+try zooming out.
+
+If it's not immediately obvious: your page now has a horizontal
+scrollbar, since the image that we absolutely positioned to the right
+flows off the right edge of the page. There's an easy way to fix
+that, using `overflow: hidden`. See if you can figure out the right
+place to add this property, and why it belongs there.
+
+Reload one last time, and... drumroll please... you did it!
+Congratulations! You've just finished building your first landing
+page. You're that much closer to world domination.
 
 [html-6]: ./skeleton/06-advanced.html
 [css-6]: ./skeleton/css/06-advanced.css
 [live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/01-top.html
+[ss-06-a]: ./screenshots/06-image-a.png
+[css positioning]: http://www.w3schools.com/css/css_positioning.asp

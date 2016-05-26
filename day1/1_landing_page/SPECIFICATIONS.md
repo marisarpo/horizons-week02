@@ -36,3 +36,10 @@
  - Margin bottom: 0.8em
 - Footer link spacing: 7px
 - Margin between left image and text: 40px
+- Max width: 890px
+- Left text max width: 585px
+- Right image
+  - Shift top: 60px up
+  - From left: 640px
+- App store badge height: 54px
+- App store button margin: top 0.4em, right 1em

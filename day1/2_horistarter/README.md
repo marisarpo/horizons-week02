@@ -13,15 +13,16 @@ instructions or skeleton files. The only resources you have to work
 from are the [live Kickstarter webpage][kickstarter] and a set of
 [screenshots].
 
-You'll have to set up the files and directories for this project
-yourselves, and decide in what order to build the site. Get as close
-as you can to the live site.
+Open up the [skeleton] HTML file to get started. Feel free to create
+any other files or directories you need for this project. Try to get
+as close as you can to the live site.
 
 You've already learned a lot more about web design than you realize,
 and you've got all the fundamentals you need to get started. You'll
 be surprised how easy and how much fun this is. See how far you can
 get today!
 
+[skeleton]: ./skeleton/index.html
 [kickstarter]: http://www.kickstarter.com/
 [screenshots]: ./screenshots
 
@@ -36,7 +37,7 @@ browser on your laptop. We'll discuss this very soon (If you don't know
 what this means, don't worry about it, we don't expect you to!)
 - You may choose to include the CSS in your HTML file, using the
 `<style>` tag, or you may choose to place it in one or more separate
-`.css` files.
+`.css` files. See the [skeleton] HTML file.
 - You can save images locally by right-clicking them and choosing
 "Save Image As..." in your browser.
 - Study the mockup screenshots closely. Use an app like Preview in OS X

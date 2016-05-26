@@ -6,15 +6,6 @@ a:hover {
     color: #265773;
 }
 
-section {
-    clear: left;
-}
-
-.img-float-left {
-    float: left;
-    margin-right: 40px;
-}
-
 .background-light-blue {
     background-color: #e4f0f6;
     overflow: hidden;

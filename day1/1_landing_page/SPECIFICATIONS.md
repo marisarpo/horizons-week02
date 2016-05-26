@@ -35,3 +35,4 @@
  - Border radius: 0.3em
  - Margin bottom: 0.8em
 - Footer link spacing: 7px
+- Margin between left image and text: 40px

@@ -180,8 +180,8 @@ with the hex code from the specs):
 Almost there! The final step is to add the "hover" color gradient to the
 "hover" pseudo class for the `.button` class. Go ahead and add it, using
 the colors from the specs and the same `linear-gradient` command as
-above. Reload, check out your awesome new button, and high five your
-partner!
+above. You may need to adjust the `color` property here too. Reload,
+check out your awesome new button, and high five your partner!
 
 [2d shapes]: https://css-tricks.com/examples/ShapesOfCSS/
 [3d transforms]: https://desandro.github.io/3dtransforms/
@@ -224,8 +224,8 @@ selector. Do the same to set the `footer a` and `footer a:hover` styles.
 
 Finally, we need to format the list properly. By default, `ul` list
 elements get left padding. To override this, set `padding` to zero on
-the `footer ul` selector. To display the list elements side by side,
-set `display: inline-block` on `footer li`. To space them out, grab the
+the `footer ul` selector. To display the list elements side by side, set
+`display: inline-block` on `footer li`. To space them out, grab the
 spacing value from the specs and add it as a horizontal margin on the
 same selector. Refresh to see your changes and do a backflip! Well done!
 
@@ -246,30 +246,32 @@ and `layout-fill-img` CSS class selectors.
 Grab the font and background colors for this section from the [specs]
 and place these inside the `background-dark-blue` selector.
 
-Styling the image will be a little harder. You'll need to use three
-CSS properties here in `layout-fill-img`. Let's walk through them in order.
+Styling the image will be a little harder. You'll need to use three CSS
+properties here in `layout-fill-img`. Let's walk through them in order.
 
 1. `padding` - this is used to add extra space _inside_ the element (and
 the border, if there is one). It's often interchangeable with `margin`,
-but unlike using a margin, padding is never collapsed into the margin
-of vertically adjacent elements. Grab the "Content full-width image
+but unlike using a margin, padding is never collapsed into the margin of
+vertically adjacent elements. Grab the "Content full-width image
 padding" sizes from [specs] and add them as `padding`.
 1. `max-width` - the hardest part of styling images is to get the size
 right. The thing to keep in mind is that, if the size of the browser
-window changes (or if someone views your page on a smaller screen on e.g.
-a mobile device), your image may be shrunk down a great deal. In this
-case, do you want the image to stay the same size? Do you want to replace
-it with a smaller image, or make it disappear entirely? We'll cover this
-topic in more depth tomorrow when we discuss responsive web pages. For
-now, add the property `max-width: 100%`. This has the counterintuitive
-effect of shrinking the image down to fit the browser window (100% here
-refers to the size of the window, not the native image size).
+window changes (or if someone views your page on a smaller screen on
+e.g. a mobile device), your image may be shrunk down a great deal. In
+this case, do you want the image to stay the same size? Do you want to
+replace it with a smaller image, or make it disappear entirely? We'll
+cover this topic in more depth tomorrow when we discuss responsive web
+pages. For now, add the property `max-width: 100%`. This has the
+counterintuitive effect of shrinking the image down to fit the browser
+window (100% here refers to the size of the window, not the native image
+size).
 1. `box-sizing` - we have another challenge with the image size. We set
 its width to 100%, but the CSS [box model] _excludes_ margin and padding
 from its width calculation by default. This would be fine if we had no
 margin or padding, but since we have a lot of padding, and we want the
 image to fill 100% of the space _inside the padding_, we need to change
-the box sizing behavior. Add `box-sizing: border-box` to accomplish this.
+the box sizing behavior. Add `box-sizing: border-box` to accomplish
+this. (You can read more on [box sizing] here if you're so inclined.)
 
 Reload one more time to see your lovely, perfectly-sized and spaced
 image with text around it. Booyah! The end is in sight.
@@ -277,10 +279,72 @@ image with text around it. Booyah! The end is in sight.
 [html-4]: ./skeleton/04-footer.html
 [css-4]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
-[box-sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+[box sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 
-## Phase 5: Clear text
+## Phase 5: Float and Clear
 
-## Phase 6: More advanced images
+In this phase we're going to add another content section, and show you
+one way to combine text and images using the `clear` property. In the
+skeleton [html][html-5] file we've added one short new section with an
+image and some more paragraph text, which currently appears below the
+image. There'a a single new CSS class selector in the corresponding
+[css][css-5] file called `img-float-left`.
 
+The `float` property allows text (and other inline elements) to flow
+around an image. The image can be "floated" to the left or to the right
+of the text, which causes it to shifted to the left or the right side of
+its container (or alongside another floated element). Float is often
+used to create an entire web page layout with a sidebar, e.g.:
+
+![web page layout with sidebar][sidebar]
+
+(Image © CSS TRICKS)
+
+The corresponding `clear` property is used when you have content that
+should appear below the floated element, rather than alongside it, which
+is the default behavior. Read [All About Floats] for a full explanation.
+For our purposes, we're going to float an image to the left of the
+paragraph text, then clear the element that comes after.
+
+You've probably figured out by now from the name of the `img-float-left`
+class what property needs to be added. Add the property to float the
+image to the left, refresh and take a look.
+
+The text has moved up next to the image, but there's currently no
+margin between the two. You could fix this by adding a `margin` or
+`padding` to the image or the text. To keep things simple, go ahead
+and add a margin to the right of the image per the [specs].
+
+The final step is to clear the float to fix the layout of the following
+elements. There are lots of ways you could do this, but in case we
+decide to float additional elements on our page, let's add a generic
+clear property in such a way that it resets the style for every page
+section, so that any float applied to a section is self-contained within
+that section. The easiest way to do that is to add a `clear: both`
+property to the `section` element selector.
+
+Refresh once more and do a cartwheel because you just finished phase
+five, just one more to go! 🎉
+
+Supplemental reading (optional):
+
+- [All About Floats]
+
+[html-5]: ./skeleton/05-clear.html
+[css-5]: ./skeleton/css/05-clear.css
+[All About Floats]: https://css-tricks.com/all-about-floats/
+[sidebar]: https://css-tricks.com/wp-content/csstricks-uploads/web-layout.png
+
+## Phase 6: More advanced layout and images
+
+In this (final!) phase we're going to add a last content section with
+text, some app store badges (because all real startups have apps,
+right?), a new button, and one more image. We'll use a different set of
+properties to style these buttons and image, and we'll show you how to
+control horizontal spacing of text and images.
+
+
+
+[html-6]: ./skeleton/06-advanced.html
+[css-6]: ./skeleton/css/06-advanced.css
 [live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/01-top.html

@@ -39,7 +39,7 @@ changing your code.
 
 ## Phase 1: Title
 
-- [Screenshot][ss-01-b]
+- [Screenshot][ss-01-a]
 - [Live][live-01]
 
 Let's begin by applying some basic styles to text. Make sure you've
@@ -112,8 +112,8 @@ list of CSS units][cssdocs] if you're curious.
 Reload again to see your changes. Congrats on finishing Phase 1!
 
 [live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
-[ss-01-a]: ./screenshots/01-title-a.png
-[ss-01-b]: ./screenshots/01-title-b.png
+[ss-01-a]: ./screenshots/01-start.png
+[ss-01-b]: ./screenshots/01-full.png
 [skel-01-html]: ./skeleton/01-title.html
 [skel-01-css]: ./skeleton/css/01-title.css
 [reset-1]: http://meyerweb.com/eric/tools/css/reset/
@@ -188,13 +188,14 @@ check out your awesome new button, and high five your partner!
 [2d shapes]: https://css-tricks.com/examples/ShapesOfCSS/
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
-[live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
-[ss-02-a]: ./screenshots/02-image-a.png
+[live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/02-button.html
+[ss-02-a]: ./screenshots/02-full.png
 
 ## Phase 3: Footer
 
-- [Screenshot][ss-02-a]
-- [Live][live-02]
+- [Screenshot (full)][ss-03-a]
+- [Screenshot (zoom)][ss-03-b]
+- [Live][live-03]
 
 As a next step, let's add a straightforward footer to our landing page
 with some catch-all links such as Pricing, Jobs, and Blog, and a
@@ -203,7 +204,7 @@ formatting: the footer links are evenly spaced, they're underlined,
 they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
 
-Take a look at the skeleton [html][html-3] and [css][css-3] files. The
+Take a look at the skeleton [html][html-03] and [css][css-03] files. The
 footer links
 have been added as links inside an unordered list (`ul`), which is
 currently appearing as a bulleted list. The css file contains a bunch
@@ -231,16 +232,24 @@ the `footer ul` selector. To display the list elements side by side, set
 spacing value from the specs and add it as a horizontal margin on the
 same selector. Refresh to see your changes and do a backflip! Well done!
 
-[html-3]: ./skeleton/03-footer.html
-[css-3]: ./skeleton/css/03-footer.css
+[html-03]: ./skeleton/03-footer.html
+[css-03]: ./skeleton/css/03-footer.css
+[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/02-button.html
+[ss-03-a]: ./screenshots/03-full.png
+[ss-03-b]: ./screenshots/03-footer.png
 
 ## Phase 4: Content
+
+- [Live][live-04]
+- [Screenshot (top)][ss-04-a]
+- [Screenshot (bottom)][ss-04-b]
+- [Screenshot (full)][ss-04-c]
 
 With those basics in place, let's add another section in between the
 title and the footer with some text and an image. With the scaffolding
 we already have in place, this is going to be easier than you think.
 
-Take a look at the [html][html-4] for this phase, and you'll see that
+Take a look at the [html][html-04] for this phase, and you'll see that
 we've added another `section` tag in the middle, with some paragraph
 text and an image. You need to fill in the new `background-dark-blue`
 and `layout-fill-img` CSS class selectors.
@@ -278,19 +287,27 @@ this. (You can read more on [box sizing] here if you're so inclined.)
 Reload one more time to see your lovely, perfectly-sized and spaced
 image with text around it. Booyah! The end is in sight.
 
-[html-4]: ./skeleton/04-footer.html
-[css-4]: ./skeleton/css/04-footer.css
+[live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/04-content.html
+[html-04]: ./skeleton/04-footer.html
+[css-04]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
 [box sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+[ss-04-a]: ./screenshots/04-top.png
+[ss-04-b]: ./screenshots/04-bottom.png
+[ss-04-c]: ./screenshots/04-full.png
 
 ## Phase 5: Float and Clear
 
+- [Live][live-05]
+- [Screenshot (full)][ss-05-a]
+- [Screenshot (zoom)][ss-05-b]
+
 In this phase we're going to add another content section, and show you
 one way to combine text and images using the `clear` property. In the
-skeleton [html][html-5] file we've added one short new section with an
+skeleton [html][html-05] file we've added one short new section with an
 image and some more paragraph text, which currently appears below the
 image. There'a a single new CSS class selector in the corresponding
-[css][css-5] file called `img-float-left`.
+[css][css-05] file called `img-float-left`.
 
 The `float` property allows text (and other inline elements) to flow
 around an image. The image can be "floated" to the left or to the right
@@ -332,12 +349,20 @@ Supplemental reading (optional):
 
 - [All About Floats]
 
-[html-5]: ./skeleton/05-clear.html
-[css-5]: ./skeleton/css/05-clear.css
+[live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/05-clear.html
+[html-05]: ./skeleton/05-clear.html
+[css-05]: ./skeleton/css/05-clear.css
 [All About Floats]: https://css-tricks.com/all-about-floats/
 [sidebar]: https://css-tricks.com/wp-content/csstricks-uploads/web-layout.png
+[ss-05-a]: ./screenshots/05-full.png
+[ss-05-a]: ./screenshots/05-zoom.png
 
 ## Phase 6: More advanced layout and images
+
+- [Screenshot (full)][ss-06-a]
+- [Screenshot (zoom)][ss-06-b]
+- [Screenshot (buttons zoom)][ss-06-c]
+- [Live][live-06]
 
 In this (final!) phase we're going to add a last content section with
 text, some app store badges (because all real startups have apps,
@@ -345,7 +370,7 @@ right?), a new button, and one more image. We'll use a different set of
 properties to style these buttons and image, and we'll show you how to
 control horizontal spacing of text and images.
 
-Open up the [html][html-6] and [css][css-6] skeleton files and take a
+Open up the [html][html-06] and [css][css-06] skeleton files and take a
 look. One final section has been added to the HTML, with several
 images and some more paragraph text. Take a look at the [target
 screenshot][ss-06-a] as well. Our goal is to place the image to the
@@ -441,6 +466,8 @@ buttons appear correctly. The last step is to style the image.
 
 ### Step 3: Image
 
+* [Live][live-6]
+
 The first important thing to notice about the image layout is that the
 image needs to be positioned to the right and slightly above the text.
 We could float the image to the right, as we did in the previous
@@ -473,8 +500,10 @@ Reload one last time, and... drumroll please... you did it!
 Congratulations! You've just finished building your first landing
 page. You're that much closer to world domination.
 
-[html-6]: ./skeleton/06-advanced.html
-[css-6]: ./skeleton/css/06-advanced.css
-[live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/01-top.html
-[ss-06-a]: ./screenshots/06-image-a.png
+[html-06]: ./skeleton/06-advanced.html
+[css-06]: ./skeleton/css/06-advanced.css
+[live-06]: http://horizons-school-of-technology.github .io/week02/day1/1_landing_page/solution/06-advanced.html
+[ss-06-a]: ./screenshots/06-full.png
+[ss-06-b]: ./screenshots/06-zoom.png
+[ss-06-c]: ./screenshots/06-buttons.png
 [css positioning]: http://www.w3schools.com/css/css_positioning.asp

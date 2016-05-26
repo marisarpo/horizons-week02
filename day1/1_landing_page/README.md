@@ -137,7 +137,10 @@ text editor and web browser.
 
 We only need to apply one style to the image: adding a bottom margin,
 per the [specs]. Go ahead and apply the appropriate `margin` property
-to the `img` element selector.
+to the `img-title` class selector. We use a class selector here because,
+while we want to add a margin to this particular image, we don't
+necessarily want that style to apply to all images throughout the page
+(as you'll see later).
 
 Next we need to add a button. Zoom in on the [screenshot][ss-02-a] and
 pay close attention to a few aspects of
@@ -198,7 +201,8 @@ formatting: the footer links are evenly spaced, they're underlined,
 they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
 
-Take a look at the skeleton [html] and [css] files. The footer links
+Take a look at the skeleton [html][html-3] and [css][css-3] files. The
+footer links
 have been added as links inside an unordered list (`ul`), which is
 currently appearing as a bulleted list. The css file contains a bunch
 of empty "footer" selectors, such as "footer a". This compound selector
@@ -225,10 +229,55 @@ set `display: inline-block` on `footer li`. To space them out, grab the
 spacing value from the specs and add it as a horizontal margin on the
 same selector. Refresh to see your changes and do a backflip! Well done!
 
-[html]: ./skeleton/03-footer.html
-[css]: ./skeleton/css/03-footer.css
+[html-3]: ./skeleton/03-footer.html
+[css-3]: ./skeleton/css/03-footer.css
 
 ## Phase 4: Content
+
+With those basics in place, let's add another section in between the
+title and the footer with some text and an image. With the scaffolding
+we already have in place, this is going to be easier than you think.
+
+Take a look at the [html][html-4] for this phase, and you'll see that
+we've added another `section` tag in the middle, with some paragraph
+text and an image. You need to fill in the new `background-dark-blue`
+and `layout-fill-img` CSS class selectors.
+
+Grab the font and background colors for this section from the [specs]
+and place these inside the `background-dark-blue` selector.
+
+Styling the image will be a little harder. You'll need to use three
+CSS properties here in `layout-fill-img`. Let's walk through them in order.
+
+1. `padding` - this is used to add extra space _inside_ the element (and
+the border, if there is one). It's often interchangeable with `margin`,
+but unlike using a margin, padding is never collapsed into the margin
+of vertically adjacent elements. Grab the "Content full-width image
+padding" sizes from [specs] and add them as `padding`.
+1. `max-width` - the hardest part of styling images is to get the size
+right. The thing to keep in mind is that, if the size of the browser
+window changes (or if someone views your page on a smaller screen on e.g.
+a mobile device), your image may be shrunk down a great deal. In this
+case, do you want the image to stay the same size? Do you want to replace
+it with a smaller image, or make it disappear entirely? We'll cover this
+topic in more depth tomorrow when we discuss responsive web pages. For
+now, add the property `max-width: 100%`. This has the counterintuitive
+effect of shrinking the image down to fit the browser window (100% here
+refers to the size of the window, not the native image size).
+1. `box-sizing` - we have another challenge with the image size. We set
+its width to 100%, but the CSS [box model] _excludes_ margin and padding
+from its width calculation by default. This would be fine if we had no
+margin or padding, but since we have a lot of padding, and we want the
+image to fill 100% of the space _inside the padding_, we need to change
+the box sizing behavior. Add `box-sizing: border-box` to accomplish this.
+
+Reload one more time to see your lovely, perfectly-sized and spaced
+image with text around it. Booyah! The end is in sight.
+
+[html-4]: ./skeleton/04-footer.html
+[css-4]: ./skeleton/css/04-footer.css
+[box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
+[box-sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 
 ## Phase 5: Clear text
 

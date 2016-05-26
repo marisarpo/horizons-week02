@@ -10,21 +10,9 @@ section {
     clear: left;
 }
 
-.layout-fill-img {
-    margin: 1em auto;
-    max-width: 100%;
-    padding: 2em 3em 2em;
-    box-sizing: border-box;
-}
-
 .img-float-left {
     float: left;
     margin-right: 40px;
-}
-
-.background-dark-blue {
-    color: #fff;
-    background-color: #0079bf;
 }
 
 .background-light-blue {
@@ -51,11 +39,6 @@ section {
 
 .layout-twothirds-left {
     max-width: 585px;
-}
-
-.section-wrapper {
-    margin: 0 auto;
-    padding: 0;
 }
 
 .app-store-link {

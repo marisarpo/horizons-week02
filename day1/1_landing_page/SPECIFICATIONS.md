@@ -5,6 +5,7 @@
 - Default background: #fff
 - Default font: #4d4d4d
 - Dark blue: #0079bf
+- Font on dark blue: #fff
 - Light blue: #e4f0f6
 - Link: #5e98ba
 - Link (hover): #265773
@@ -24,8 +25,9 @@
 ## Layout
 
 - Section padding: vertical 80px, horizontal 20px
-- Layout padding: same
+- Footer padding: same
 - Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
+- Content full-width image padding: vertical 40px, horizontal 60px
 - Image margin: bottom 2em
 - Button
  - Padding vertical: 0.6em

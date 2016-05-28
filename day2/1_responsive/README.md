@@ -41,9 +41,8 @@ changing your code.
 
 ## Phase 1: Installing Bootstrap
 ## Phase 2: Media query
-## Phase 3: Image
-## Phase 4: Horizontal elements
-## Phase 5: Menu bar
+## Phase 3: Horizontal elements
+## Phase 4: Menu bar
 
 - [Screenshot][ss-01-a]
 - [Live][live-01]

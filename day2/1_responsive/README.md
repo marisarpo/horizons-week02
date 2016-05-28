@@ -129,6 +129,11 @@ we won't be using it). We also need to add jQuery as Bootstrap
 depends upon it. Find the "jQuery" code in [Bootstrap template] and
 copy that over too.
 
+(CDN stands for [Content delivery network], and it's a mechanism that
+copies and stores copies of frequently-accessed, static content, such
+as images and code, across a global network of servers, reducing load
+times and making pages load faster.)
+
 Note that location matters! It's important that we load the Bootstrap
 library _before_ loading our own CSS file. Remember from yesterday
 that CSS selectors are applied first in order of specificity, more
@@ -139,13 +144,78 @@ _after_ Bootstrap.
 
 [Getting Started]: http://getbootstrap.com/getting-started/#download
 [Bootstrap CDN]: http://getbootstrap.com/getting-started/#download-cdn
+[Content delivery network]: https://en.wikipedia.org/wiki/Content_delivery_network
+[Getting started]: http://getbootstrap.com/getting-started/
 [Bootstrap template]: http://getbootstrap.com/getting-started/#template
 [live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
 [ss-01-a]: ./screenshots/01-start.png
 [ss-01-b]: ./screenshots/01-full.png
 
+Supplemental reading (optional):
+- Bootstrap's [Getting started]
+
 ## Phase 3: Horizontal elements
+
+With Bootstrap in place, let's use it to add a responsive element.
+Bootstrap uses a _grid system_ to achieve responsiveness: all content
+must be put inside columns, and these columns automatically stack
+when the screen size changes (using media queries!). It's fully
+documented at [Grid system], but unfortunately, Bootstrap's docs are
+obtuse. Here's what you need to know:
+
+- Content goes in columns (actually `div` elements with `.col-*`
+classes)
+- Columns live inside rows (the `.row` class)
+- Rows live inside a container (the `.container` or `
+.container-fluid` classes)
+- Columns can have a width of one or more; there are twelve total
+columns on the page, so you can split these up as you like (e.g.,
+6+6, or 4+4+4, or...)
+- Use `.col-sm-*` to stack a row of columns only on extra small devices
+(phones); use `col-md-*` to stack on extra small and small devices
+(phones and tablets)
+- Putting this all together, use the class `col-sm-4` for a column of
+width four (i.e., 1/3 of the page width) which stacks on extra small
+devices; use the class `col-md-6` for a column of width six (i.e., 50%
+page width) which stacks on small and extra small devices, etc.
+
+Here's what the grid system looks like visually:
+
+![grid]
+
+<sub>(Image Copyright HappyFunCorp)</sub>
+
+We're going to use the grid system to lay out the app buttons in the
+second-to-last section of the page. We want these to be spaced out,
+side by side, on larger devices, and to neatly stack vertically on
+smaller devices.
+
+You won't actually need to write any CSS to accomplish this. That's
+the magic of Bootstrap! By properly arranging the elements and
+applying Bootstrap responsive grid classes, the content will
+magically line up.
+
+Find the "PHASE 3" comment in the [skeleton HTML]. Follow these steps
+to make the buttons responsive:
+
+1. Add a `container-fluid` class at the top level
+1. Add a `row` class inside of it
+1. Choose the right `col-*` class and wrap the three buttons in it
+
+Reload and check if the buttons are properly aligned! They should
+stack nicely as the page width shrinks.
+
+Supplemental reading (optional):
+- Bootstrap's [Grid system]
+- [Bootstrap layout]
+
+[Grid system]: http://getbootstrap.com/css/#grid
+[Bootstrap layout]: http://bootstrap-sass.happyfuncorp.com/bootstrap-sass/layout/README.html
+[grid]: ./img/grid.jpg
+
 ## Phase 4: Menu bar
+
+In this final phase, 
 
 - [Screenshot][ss-01-a]
 - [Live][live-01]

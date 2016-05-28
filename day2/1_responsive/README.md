@@ -215,8 +215,40 @@ Supplemental reading (optional):
 
 ## Phase 4: Menu bar
 
-In this final phase, 
+In this final phase, you're going to get a taste of the power of
+Bootstrap to help build interactive, responsive user
+interfaces--something we will rely heavily upon over the next few days
+to build a real web app. Take a look at the Bootstrap [Components] to
+get an idea for the sort of components you get out of the box with
+Bootstrap. Your task is to add a nav bar with a drop-down menu to the
+top of the landing page.
+
+Again, you won't need to write any CSS for this phase, since Bootstrap's
+prebuilt classes take care of all the styling you'll need. Look for
+the "PHASE 4" comment in the skeleton HTML file. Based on the sample
+code in [Navbar], try adding a static navbar with the following
+structure:
+
+- Title: Horello
+- Home
+- About
+- Contact
+- Dropdown
+  - Action
+  - Another action
+  - Something else here
+  - (Nav header)
+  - Separated link
+  - One more separated link
+
+Your site is really beginning to look and feel like a modern
+application, isn't it? Just wait until you see what comes next!
+Notice, in particular, how your responsive menu neatly collapses and
+expands as the screen width changes, and works well on small devices
+including phones.
 
 - [Screenshot][ss-01-a]
 - [Live][live-01]
 
+[Components]: http://getbootstrap.com/components/
+[Navbar]: http://getbootstrap.com/components/#navbar

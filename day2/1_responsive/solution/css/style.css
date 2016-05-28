@@ -119,12 +119,13 @@ footer li {
 
 .layout-twothirds-left {
     max-width: 585px;
+    margin: 1em 0;
 }
 
 .app-store-link {
     display: inline-block;
     vertical-align: top;
-    margin: .4em 1em 0 0;
+    margin: .4em 0;
     padding: 0;
 }
 
@@ -136,10 +137,10 @@ footer li {
 .outline-link {
     border: 1px solid;
     border-radius: 0.3em;
-    padding: .7em 1em;
+    padding: .57em 1.415em;
     margin: .4em 0 0;
     display: inline-block;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 a {

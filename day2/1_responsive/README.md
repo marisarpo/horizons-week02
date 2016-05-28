@@ -39,7 +39,11 @@ changing your code.
 
 [specs]: ./SPECIFICATIONS.md
 
-## Phase 1: Title
+## Phase 1: Installing Bootstrap
+## Phase 2: Media query
+## Phase 3: Image
+## Phase 4: Horizontal elements
+## Phase 5: Menu bar
 
 - [Screenshot][ss-01-a]
 - [Live][live-01]

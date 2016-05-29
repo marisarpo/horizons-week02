@@ -93,8 +93,8 @@ vertical, 20px horizontal padding
 vertical, 20px horizontal padding
 
 Take a look at these screenshots to see what this should look like in
-the Chrome Developer Tools--you should be able to see the exact same
-thing on the live site!
+the Chrome Developer Tools. By now you should be very comfortable doing
+this sort of in-line analysis using the Developer Tools.
 
 - [small (mobile) view][small]
 - [medium (tablet) view][med]

@@ -34,7 +34,53 @@ updated automatically on your webpage.
 
 ## A review of jQuery
 
-TODO - introduce jQuery library
+To make DOM manipulation and certain tasks easier over these next few
+days, we're going to make use of a library called [jQuery](http://jquery.com).
+
+Everything that we accomplish in jQuery can be done without jQuery at all,
+and we will show you examples along the way of how to handle events,
+make asynchronous network requests, and more with and without jQuery.
+
+For the purposes of our projects, we will be using jQuery for simplicity
+and readability.
+
+jQuery begins with a global variable referenced by the dollar sign: `$`.
+One example where jQuery comes in handy is in referring to an element or
+group of elements in our HTML quickly. Compare the following:
+
+<sub>HTML</sub>
+```html
+<p class="detail" id="dog">Click for a dog</p>
+<p class="detail" id="cat">Click for a cat</p>
+<p class="detail" id="moose">Click for a moose</p>
+```
+
+<sub>JavaScript (no jQuery)</sub>
+```javascript
+document.getElementsByClass("detail").forEach(function(el) {
+    el.addEventListener("click", function(e) {
+    // The function passed to handle a click event (the event handler)
+    // can optionally take a parameter that represents information
+    // related to the event (key pressed, position of mouse, time, etc.)
+        alert("You clicked me! Here is your " + e.currentTarget.id);
+    }); 
+});
+
+```
+
+<sub>JavaScript (with jQuery)</sub>
+```javascript
+$(".detail").on("click", function(e) {
+    alert("You clicked me! Here is your " + e.currentTarget.id);
+});
+```
+
+As you can see, jQuery allows us to refer to all elements with the "detail"
+class as simply as `$(/* selector */)` - where **selector** refers to
+CSS ID's, classes, element types, or existing variables with element objects.
+
+See more about jQuery selectors here: 
+ [https://api.jquery.com/category/selectors/](https://api.jquery.com/category/selectors/)
 
 ## Individual exercises: Handling events
 
@@ -70,3 +116,5 @@ creating events of your own!
 TODO - introduce flow for CRUD operations on Horello
 
 ## Pair programming: Handling events in Horello
+
+So you've learned about 

@@ -65,6 +65,6 @@ handlers.attachAlerts = function(className) {
   // YOUR CODE HERE
 };
 
-handlers.attachAlerts("btn");
+handlers.attachAlerts("cutbutton");
 
 // ----------------------------------------------------------------------------

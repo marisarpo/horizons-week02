@@ -75,8 +75,8 @@ handlers.attachAlerts = function(className) {
   return els;
 };
 
-handlers.attachAlerts("btn");
+handlers.attachAlerts("cutbutton");
 
 // ----------------------------------------------------------------------------
 
-// Exercise 3. Now we're going to be
+// Exercise 3. Now we're going to be 

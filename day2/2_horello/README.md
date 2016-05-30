@@ -19,6 +19,6 @@ and feel of the application.
 
 -
 
-## Phase 1
-## Phase 2
-## Phase 3
+## Phase 1: Lists
+## Phase 2: Cards
+## Phase 3: Modal

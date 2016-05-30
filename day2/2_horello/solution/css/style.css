@@ -63,12 +63,16 @@ a {
 
 /* LISTS */
 
+.list-container {
+    /*width: 270px !important;*/
+}
+
 .list {
     box-sizing: border-box;
-    height: 100%;
-    width: 400px;
+    width: 270px;
     padding:  1em;
-    margin: 1em auto;
+    margin: 5px 5px;
+    border-radius: 3px;
     background: #e2e4e6;
 }
 
@@ -157,7 +161,7 @@ a {
 
 .card-body {
     display: block;
-    padding: 1em 2em 2em;
+    padding: 1em 1em 2em;
     font-family: Cabin;
     font-size: 16px;
     line-height: 1.5em;
@@ -260,12 +264,6 @@ a {
     /*   visibility: hidden; */
 }
 
-#♥::before {
-    content: "♥";
-    font-style: normal;
-    color: #cc0033;
-}
-
 .icon-util:before {
     content: "...";
 }
@@ -274,6 +272,18 @@ a {
     content: "E";
 }
 
-.icon-more:before {
-    content: "(more)";
+/*.row, .container-fluid {*/
+    /*overflow-x: scroll;*/
+/*}*/
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    overflow-x: scroll;
+    height: 100%;
+}
+
+.container-fluid {
+    width: 100% !important;
+    overflow-x: scroll;
 }

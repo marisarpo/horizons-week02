@@ -71,7 +71,7 @@ a {
 .list {
     box-sizing: border-box;
     width: 270px;
-    padding:  1em;
+    padding: 0.5em;
     margin: 5px 5px;
     border-radius: 3px;
     background: #e2e4e6;
@@ -83,7 +83,7 @@ a {
 .list-header {
     display: block;
     position: relative;
-    margin-bottom: 1.5em;
+    margin-bottom: .5em;
     color: black;
     font-weight: 700;
 }
@@ -122,6 +122,7 @@ a {
     text-align: left;
     background: rgba(16, 16, 16, 0.15);
     color: #333;
+    margin: 3px 0;
 }
 
 .add-card:hover {
@@ -133,9 +134,10 @@ a {
  */
 
 .card {
-    margin: 0 0 1em;
+    margin: 0 0 .5em;
     background: white;
     position: relative;
+    border-radius: 3px;
 }
 
 .card-shadow {
@@ -167,7 +169,7 @@ a {
 
 .card-body {
     display: block;
-    padding: 1em 1em 2em;
+    padding: .5em .5em 2em;
     font-family: Cabin;
     font-size: 16px;
     line-height: 1.5em;
@@ -277,4 +279,5 @@ a {
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
+    padding-bottom: 1em;
 }

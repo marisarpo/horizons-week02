@@ -6,8 +6,8 @@ Now that you've mastered your skills in HTML and CSS from
 media queries to responsive web design, it's time to put it
 all together with JavaScript. Using the elements of JavaScript
 you learned last week, you will be now be adding _behavior_ to
-your webpages with a handy tool called the **Document Object Model** (DOM) 
-- we talked about this during the lesson.
+your webpages with a handy tool called the **Document Object Model** (DOM) - 
+we talked about this during the lesson.
 
 As a review, the DOM is a JavaScript object accessible in a web
 browser to dynamically update its contents. For example:

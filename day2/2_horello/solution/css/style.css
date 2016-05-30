@@ -3,7 +3,6 @@
 
 body {
     background-color: rgb(0,121,191);
-    font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
     line-height: 18px;
     height: 100vh;
 }
@@ -48,13 +47,26 @@ a {
     background-color: transparent;
 }
 
-.example-card {
-    position: relative;
-    margin: 0 auto;
-    top: 15vh;
-    width: 350px;
+
+.board {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: calc(100% - 40px);
+    padding-bottom: 1em;
 }
 
+.add-list {
+    background: rgba(0,0,0,.12);
+    cursor: pointer;
+    color: #fff;
+    height: auto;
+    min-height: 30px;
+    border-radius: 3px;
+    margin: 5px 5px;
+    width: 280px;
+    padding: 7px;
+}
 
 /* LISTS */
 
@@ -92,24 +104,16 @@ a {
     font-weight: 500;
 }
 
-.list-button {
+.list-title {
+    left: 0;
+}
+
+.add-card {
     width: 100%;
     border: none;
     outline: none;
     height: 40px;
     border-radius: 4px;
-}
-
-.list-title {
-    left: 0;
-}
-
-.list-util {
-    position: absolute;
-    right: 0;
-}
-
-.add-card {
     text-align: left;
     background: rgba(16, 16, 16, 0.15);
     color: #333;
@@ -135,29 +139,6 @@ a {
     box-shadow: 0 10px 25px -15px #333;
 }
 
-.card-header {
-    display: block;
-    position: relative;
-    padding: 1em;
-    border-bottom: 1px solid #eee;
-    color: black;
-    width: calc(100% - 2em);
-    font-size: 13.333px;
-}
-
-.card-header .title {
-    position: relative;
-    text-transform: uppercase;
-    font-weight: 700;
-    color: black;
-}
-
-.card-header .note {
-    position: absolute;
-    right: 1em;
-    color: #777;
-}
-
 .card-body {
     display: block;
     padding: .5em .5em 2em;
@@ -176,102 +157,4 @@ a {
 
 .card-body * {
     margin-bottom: 1em;
-}
-
-.card-body-input {
-    outline: 0;
-    -webkit-appearance: none;
-    background: transparent;
-    whitespace: pre-wrap;
-}
-
-.card-body-input-ta {
-    border: 0;
-    outline: 0;
-    display: block;
-    width: calc(100% - 4em);
-    -webkit-appearance: none;
-    background: transparent;
-    whitespace: pre-wrap;
-    resize: vertical;
-    font-family: Cabin;
-    font-size: initial;
-    line-height: initial;
-}
-
-/* CARD FOOTER */
-
-.card-footer {
-    display: block;
-    border-top: 1px solid #eee;
-    width: 100%;
-    overflow: hidden;
-}
-
-/* CARD BUTTONS */
-
-.card-footer .card-button {
-    padding: 0 1em;
-    height: 50px;
-    border: 0;
-    outline: 0;
-    background: transparent;
-
-    line-height: 50px;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 600;
-    font-family: Open Sans;
-
-    transition: 0.2s color, 0.2s background-color;
-}
-
-.card-footer .button-group {
-
-}
-
-.float-right {
-    float: right;
-}
-
-.float-left {
-    float: left;
-}
-
-.card-footer .card-button:hover {
-    color: #ff0040;
-}
-
-.card-footer .card-button:active {
-    color: #b3002d;
-}
-
-.card-operation {
-    background-color: #edeff0;
-    opacity: .8;
-    padding: 4px;
-    position: absolute;
-    right: 3px;
-    top: 3px;
-}
-
-.content {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    height: calc(100% - 40px);
-    padding-bottom: 1em;
-}
-
-.add-list {
-    background: rgba(0,0,0,.12);
-    cursor: pointer;
-    color: #fff;
-    height: auto;
-    min-height: 30px;
-    padding: 4px;
-    border-radius: 3px;
-    margin: 5px 5px;
-    width: 280px;
-    padding: 7px;
 }

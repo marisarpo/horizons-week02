@@ -50,4 +50,5 @@ Let's get started.
 
 ## Phase 2: Lists
 ## Phase 3: Cards
-## Phase 4: Modal
+## Phase 4: Collapse
+## Phase 5: Modal

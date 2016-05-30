@@ -13,35 +13,63 @@ handlers.attachClick = function(e, fn) {
   e.addEventListener('click', fn);
 };
 
+// Here's the same thing, with jQuery instead:
+handlers.attachClick = function(e, fn) {
+  $(e).on("click", fn);
+}
+
 // ----------------------------------------------------------------------------
 
-// Exercise 1A. Assigning event handlers with callback functions.
+// Exercise 1B. Assigning event handlers with callback functions.
 // Write a function that takes an HTML element object e and a function
-// fn and assigns the "hover" event to fire function fn when element e
+// fn and assigns the "mouseenter" event to fire function fn when element e
 // is hovered over. This time, try doing it jQuery-style. Remember
 // that jQuery is used with the $ global variable and we need a selector
 // to call jQuery's .on for. 
+
+// jQuery Documentation on .on() - https://api.jquery.com/on/
 
 // Hint: you can pass in an existing element object to the $() selector 
 // to select it.
 
 handlers.attachHover = function(e, fn) {
-  // YOUR CODE HERE
-  $(e).on("hover", fn);
+  $(e).on("mouseenter", fn);
 };
 
-// Exercise 1B. Do the same for the "keypress" event, and make sure to
-// take a parameter key with the "keycode" of the key to match along with
-// the event (e) and function (fn) to call when the event is triggered.
-// Listen for the keypress event on the 'document' object rather than a
-// specific element e like before.
+// ----------------------------------------------------------------------------
+
+// Exercise 1C. Same thing as 1B - except this time, assign the passed-in
+// handler 'fn' to the "mouseleave" event instead.
+
+handlers.attachUnhover = function(e, fn) {
+  $(e).on("mouseleave", fn);
+};
+
+// ----------------------------------------------------------------------------
+
+// Exercise 1D. Do the same for the "keypress" event, and take a parameter 
+// 'key' with the intended keycode of the key to listen for and a parameter
+// 'fn' with a function to call if the key to listen for matches the 
+// key pressed.
+
+// Note: To determine what key was called, add a parameter "event" to get the
+// "event object" returned by the event listener. The event object is full
+// of properties related to the event that was just fired.
+
+// The property of the event object we are looking for in this case is called
+// event.keyCode - determine if this matches the "key" parameter passed into
+// handlers.attachKeypress. Remember to only call "fn" if this is the case!
+
+// See a full list of properties of the event object here: 
+// http://www.w3schools.com/jsref/dom_obj_event.asp#table5
 
 // Hint: To find keycodes, see: http://keycode.info - each keypress event
 // has a keycode attached to it (some common ones include: space is 32,
 // return is 13, tab is 9).
+// Another Hint (!): Listen for the keypress event on the 'document' object 
+// rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
-  // YOUR CODE HERE
   $(document).on("keypress", function(event) {
     if (event.keyCode === key) {
       fn();
@@ -49,10 +77,31 @@ handlers.attachKeypress = function(key, fn) {
   });
 };
 
+// ----------------------------------------------------------------------------
+
+// Exercise 2. Write a function that simulates storing data on user actions
+// when a button on the defuse panel is clicked. Take a parameter className
+// and 
+handlers.attachUserActionRec = function(className) {
+  var userActions = {"red": 0, "blue": 0, "nope": 0};
+  console.log($("." + className));
+  // YOUR CODE HERE
+  handlers.attachClick($("." + className), function(event) {
+    userActions[event.currentTarget.id]++;
+    console.log(userActions);
+  });
+};
+
+handlers.attachUserActionRec("cutbutton");
 
 // ----------------------------------------------------------------------------
 
-// Exercise 2. Write a function that finds all elements with the class "button" 
+// Exercise 3. Write a function that attaches an event listener for "hover"
+// that checks whether 
+
+// ----------------------------------------------------------------------------
+
+// Exercise 4. Write a function that finds all elements with the class "button" 
 // and attaches a click event that fires each time any of the buttons are clicked.
 // Take parameters className and alertMessage and return an array of the elements 
 // you found and attached to.
@@ -99,7 +148,7 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // deals with the order in which events are triggered on the document.
 // Try this:
 
-// Exercise 3. Write a function that takes a jQuery-selected element/group
+// Exercise 5. Write a function that takes a jQuery-selected element/group
 // of elements and attaches event listeners for clicks to the buttons with class
 // ".innerbutton" and their parents - the event handler function for the click
 // event should look lke the following:
@@ -162,9 +211,6 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // both were clicked. 
 
 // You might have also noticed that if you tried to click on the first buttons
-
-
-
 
 
 

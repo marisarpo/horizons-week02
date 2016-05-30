@@ -42,9 +42,15 @@
         </div>
       </div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" id="jasmine-target">
     </div>
   </div>
   <script src="event_handlers.js"></script>
+  <script>
+    function injectJasmine(targetId) {
+      $("#" + targetId).append($(".jasmine_html-reporter"));
+    }
+    setTimeout(function() { injectJasmine("jasmine-target")}, 0);
+  </script>
 </body>
 </html>

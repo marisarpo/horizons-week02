@@ -27,9 +27,8 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("hover", fn);
 };
-
-// ----------------------------------------------------------------------------
 
 // Exercise 1B. Do the same for the "keypress" event, and make sure to
 // take a parameter key with the "keycode" of the key to match along with
@@ -43,6 +42,11 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  $(document).on("keypress", function(event) {
+    if (event.keyCode === key) {
+      fn();
+    }
+  });
 };
 
 
@@ -62,9 +66,17 @@ handlers.attachKeypress = function(key, fn) {
 //          <button class="btn" id="2">Button 3</button> ]
 
 handlers.attachAlerts = function(className) {
-  // YOUR CODE HERE
+  var els = $("." + className).toArray();
+  els.forEach(function(button) {
+    handlers.attachClick(button, function(e) {
+      alert(e.currentTarget.id);
+    });
+  });
+  return els;
 };
 
 handlers.attachAlerts("btn");
 
 // ----------------------------------------------------------------------------
+
+// Exercise 3. Now we're going to be

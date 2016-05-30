@@ -65,6 +65,7 @@ a {
 
 .list-container {
     /*width: 270px !important;*/
+    height: 100%;
 }
 
 .list {
@@ -74,16 +75,25 @@ a {
     margin: 5px 5px;
     border-radius: 3px;
     background: #e2e4e6;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
 }
 
 .list-header {
     display: block;
     position: relative;
     margin-bottom: 1.5em;
-    /*   box-shadow: 0 1px 10px -5px #333; */
     color: black;
     font-weight: 700;
-    /*   width: calc(100% - 2em); */
+}
+
+.list-cards {
+    overflow-y: overlay;
+    overflow-x: hidden;
+    /*flex: 1 1 auto;*/
+    min-height: 0;
+    /*-webkit-box-flex: 1;*/
 }
 
 .list-footer {
@@ -100,7 +110,6 @@ a {
 }
 
 .list-title {
-    /*   position: absolute; */
     left: 0;
 }
 
@@ -124,8 +133,7 @@ a {
  */
 
 .card {
-    margin: 0 auto;
-    margin-bottom: 1em;
+    margin: 0 0 1em;
     background: white;
     position: relative;
 }
@@ -139,9 +147,7 @@ a {
     position: relative;
     padding: 1em;
     border-bottom: 1px solid #eee;
-    /*   box-shadow: 0 1px 10px -5px #333; */
     color: black;
-
     width: calc(100% - 2em);
     font-size: 13.333px;
 }
@@ -194,7 +200,6 @@ a {
     -webkit-appearance: none;
     background: transparent;
     whitespace: pre-wrap;
-
     resize: vertical;
     font-family: Cabin;
     font-size: initial;
@@ -243,25 +248,19 @@ a {
 
 .card-footer .card-button:hover {
     color: #ff0040;
-    /*   background: #ff0040; */
 }
 
 .card-footer .card-button:active {
     color: #b3002d;
-    /*   background: #b3002d; */
 }
 
 .card-operation {
     background-color: #edeff0;
-    /*   background-clip: padding-box; */
-    /*   background-origin: padding-box; */
-    /*   border-radius: 3px; */
     opacity: .8;
     padding: 4px;
     position: absolute;
     right: 3px;
     top: 3px;
-    /*   visibility: hidden; */
 }
 
 .icon-util:before {
@@ -272,18 +271,10 @@ a {
     content: "E";
 }
 
-/*.row, .container-fluid {*/
-    /*overflow-x: scroll;*/
-/*}*/
-
 .content {
     flex-grow: 1;
     display: flex;
-    overflow-x: scroll;
-    height: 100%;
-}
-
-.container-fluid {
-    width: 100% !important;
-    overflow-x: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: calc(100% - 40px);
 }

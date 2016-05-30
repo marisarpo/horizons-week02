@@ -97,7 +97,6 @@ a {
 }
 
 .list-footer {
-    font: initial;
     font-weight: 500;
 }
 
@@ -265,13 +264,13 @@ a {
     top: 3px;
 }
 
-.icon-util:before {
-    content: "...";
-}
+/*.icon-util:before {*/
+    /*content: "...";*/
+/*}*/
 
-.icon-edit:before {
-    content: "E";
-}
+/*.icon-edit:before {*/
+    /*content: "E";*/
+/*}*/
 
 .content {
     flex-grow: 1;
@@ -280,4 +279,17 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+}
+
+.add-list {
+    background: rgba(0,0,0,.12);
+    cursor: pointer;
+    color: #fff;
+    height: auto;
+    min-height: 30px;
+    padding: 4px;
+    border-radius: 3px;
+    margin: 5px 5px;
+    width: 280px;
+    padding: 7px;
 }

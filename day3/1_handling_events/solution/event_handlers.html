@@ -4,27 +4,27 @@
   <meta charset="utf-8">
   <title>Horizons - Week 2, Day 3 - Event Handlers</title>
   <link rel="stylesheet" href="../../../lib/bootstrap.min.css">
+  <link rel="stylesheet" href="../../../lib/jasmine/jasmine.css">
+
+  <script src="../../../lib/jasmine/jasmine.js"></script>
+  <script src="../../../lib/jasmine/jasmine-html.js"></script>
+  <script src="../../../lib/jasmine/boot.js"></script>
 
   <!-- Our files -->
   <script src="../../../lib/jquery.js"></script>
   <script src="../../../lib/bootstrap.min.js"></script>
+  <script src="../event_handlers_tests.js"></script>
 </head>
-
-<style>
-
-</style>
-
 <body description="the body">
   <div class="container" description="the outermost container div">
-    <div class="row">
+    <div class="col-md-6" description="the left col-md-6">
       <h2>Exercises: <code>event_handlers</code></h2>
       <hr>
       <h3>Defuse a bomb</h3>
       <a class="btn btn-danger cutbutton" id="red">Cut the red wire</a>
       <a class="btn btn-primary cutbutton" id="blue">Cut the blue wire</a>
       <a class="btn btn-success cutbutton" id="nope">Run</a>
-    </div>
-    <div class="row" description="the row container div">
+      <hr>
       <h3>Grocery list</h3>
       <div class="panel panel-default" description="the panel container div">
         <div class="panel-body" description="the panel body div">
@@ -41,6 +41,8 @@
           Bread <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
         </div>
       </div>
+    </div>
+    <div class="col-md-6">
     </div>
   </div>
   <script src="event_handlers.js"></script>

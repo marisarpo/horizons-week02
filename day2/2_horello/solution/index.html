@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Horello</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <header>
+        <a class="header-logo"
+           href="#"><span class="header-logo-default"/></a>
+    </header>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="cardEdit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="list">
+        <div class="list-header">
+            <span class="list-title">Some List</span>
+    <span class="list-util dropdown">
+      <a id="dLabel" data-target="#" data-toggle="dropdown" role="button" class="icon-util"></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Action2</a></li>
+      </ul>
+    </span>
+        </div>
+        <div class="card" data-toggle="modal" data-target="#cardEdit">
+    <span class="card-more icon-more">
+    </span>
+            <div class="card-body">He gon' give it to ya <i id="♥"></i></div>
+        </div>
+        <div class="list-footer">
+            <button class="list-button add-card" data-toggle="collapse" href="#addCard">Add a card...</button>
+            <div class="collapse" id="addCard">
+                <div class="well">
+                    <input type="text" class="form-control" placeholder="Card title">
+                    <button type="button" class="btn btn-default">Save</button>
+                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

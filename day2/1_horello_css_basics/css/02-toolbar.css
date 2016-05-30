@@ -1,13 +1,13 @@
 /* 2. Toolbar */
 
-.header-title {
+.header-logo {
     float: left;
     font-weight: 700;
     background-color: blue;
     width: 33%;
 }
 
-.header-title:hover {
+.header-logo:hover {
     color: rgb(204, 224, 237);
 }
 

@@ -48,23 +48,62 @@ handlers.attachKeypress = function(key, fn) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 2. Using attachClick(), write a function that finds all
-// elements with the class "button" and attaches a click event thert each time 
-// any of the buttons are clicked. Return an array of the elements you 
-// attached to.
+// Exercise 2. Write a function that finds all elements with the class "button" 
+// and attaches a click event that fires each time any of the buttons are clicked.
+// Take parameters className and alertMessage and return an array of the elements 
+// you found and attached to.
 
 // Hint: Trigger JavaScript alerts with the built-in function 
 // alert("your message")!
 
+// You can convert a jQuery selector referring to multiple elements to an
+// array with .toArray() and use handlers.attachClick() to attach your events
+// as needed, or you can directly use jQuery's .on(). Your pick!
+
 // ex. handlers.attachAlerts('btn') 
 //     -> [ <button class="btn" id="1">Button 1</button>,
 //          <button class="btn" id="2">Button 2</button>,
-//          <button class="btn" id="2">Button 3</button> ]
-
-handlers.attachAlerts = function(className) {
+//       
+handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
 };
 
-handlers.attachAlerts("cutbutton");
+handlers.attachAlerts("cutbutton", "Bad choice!");
 
 // ----------------------------------------------------------------------------
+
+// Next, we'll be jumping into a concept called "event bubbling." Event bubbling
+// deals with the order in which events are triggered on the document.
+// Try this:
+
+// Exercise 3. Write a function that takes a jQuery-selected element/group
+// of elements and attaches event listeners for clicks to the buttons with class
+// ".innerbutton" and their parents - the event handler function for the click
+// event should look lke the following:
+
+// $(e.currentTarget).css("backgroundColor", "green");
+// alert("You've reached " + $(e.currentTarget).attr("description"));
+// $(e.currentTarget).css("backgroundColor", "");
+
+// This will highlight the element you're on in green, display the alert,
+// and remove the background.
+
+// Note: $(selector).attr(XX) is a way of getting the value of a certain
+// HTML element's attribute - for example, you may get the class name of an
+// element through $(selector).attr("class"). We've added description attributes
+// to .innerbutton's and its parents.
+
+// Hint: You can use check if the current element is the outermost one
+// (the document object) by using `$(element).get(0) == document`.
+// If you're iterating through the parents of an element beginning
+// with .innerbutton, use this and $(selector).parent() to access
+// the next outermost element in the DOM hierarchy.
+
+// Bonus: You may write also this recursively by continually calling 
+// attachAlertsWithParents() with .parent() after attaching the
+// click handler.
+handlers.attachAlertsWithParents = function(elements) {
+  // YOUR CODE HERE
+};
+
+handlers.attachAlertsWithParents($(".innerbutton"));

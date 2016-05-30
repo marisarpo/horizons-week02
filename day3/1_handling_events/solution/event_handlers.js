@@ -52,31 +52,47 @@ handlers.attachKeypress = function(key, fn) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 2. Using attachClick(), write a function that finds all
-// elements with the class "button" and attaches a click event thert each time 
-// any of the buttons are clicked. Return an array of the elements you 
-// attached to.
+// Exercise 2. Write a function that finds all elements with the class "button" 
+// and attaches a click event that fires each time any of the buttons are clicked.
+// Take parameters className and alertMessage and return an array of the elements 
+// you found and attached to.
 
 // Hint: Trigger JavaScript alerts with the built-in function 
 // alert("your message")!
+
+// You can convert a jQuery selector referring to multiple elements to an
+// array with .toArray() and use handlers.attachClick() to attach your events
+// as needed, or you can directly use jQuery's .on(). Your pick!
 
 // ex. handlers.attachAlerts('btn') 
 //     -> [ <button class="btn" id="1">Button 1</button>,
 //          <button class="btn" id="2">Button 2</button>,
 //          <button class="btn" id="2">Button 3</button> ]
 
-handlers.attachAlerts = function(className) {
+handlers.attachAlerts = function(className, alertMessage) {
   var els = $("." + className).toArray();
   els.forEach(function(button) {
-    handlers.attachClick(button, function(e) {
-      alert(e.currentTarget.id);
+    handlers.attachClick(button, function() {
+      alert(alertMessage);
     });
   });
   return els;
+
+  /* jQuery .on Alternate Solution */
+  $("." + className).on("click", function() {
+    alert(alertMessage);
+  });
+  return $("." + className).toArray();
 };
 
 handlers.attachAlerts("cutbutton");
 
 // ----------------------------------------------------------------------------
 
-// Exercise 3. Now we're going to be 
+// Next, we'll be jumping into a concept called "event bubbling." Event bubbling
+// deals with the order in which events are triggered on the document.
+// Try this:
+
+// Exercise 3A. Using attachAlerts(), write a function that alerts the message
+// "You've "
+

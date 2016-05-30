@@ -22,7 +22,7 @@ handlers.attachClick = function(e, fn) {
 // that jQuery is used with the $ global variable and we need a selector
 // to call jQuery's .on for. 
 
-// Hint: you can pass in an exiting element object to the $() selector 
+// Hint: you can pass in an existing element object to the $() selector 
 // to select it.
 
 handlers.attachHover = function(e, fn) {

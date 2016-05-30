@@ -2,10 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
 body {
-    background-color: rgb(0,121,191);
-    font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
-    line-height: 18px;
-    height: 100vh;
+    /** Your CSS here */
 }
 
 header {

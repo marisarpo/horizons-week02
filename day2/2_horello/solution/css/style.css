@@ -8,9 +8,6 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    /*background: #1F3A93;*/
-    /*background: linear-gradient(to bottom, #1F3A93 0%, #2b4fc4 100%);*/
-    /*font-family: Open Sans;*/
 }
 
 header {
@@ -91,9 +88,7 @@ a {
 .list-cards {
     overflow-y: overlay;
     overflow-x: hidden;
-    /*flex: 1 1 auto;*/
     min-height: 0;
-    /*-webkit-box-flex: 1;*/
 }
 
 .list-footer {
@@ -222,7 +217,6 @@ a {
     padding: 0 1em;
     height: 50px;
     border: 0;
-    /*   border-left: 2px solid #bbb; */
     outline: 0;
     background: transparent;
 
@@ -263,14 +257,6 @@ a {
     right: 3px;
     top: 3px;
 }
-
-/*.icon-util:before {*/
-    /*content: "...";*/
-/*}*/
-
-/*.icon-edit:before {*/
-    /*content: "E";*/
-/*}*/
 
 .content {
     flex-grow: 1;

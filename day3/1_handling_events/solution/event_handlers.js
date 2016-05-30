@@ -72,15 +72,21 @@ handlers.attachKeypress = function(key, fn) {
 handlers.attachAlertsToClass = function(className, alertMessage) {
   var els = $("." + className).toArray();
   els.forEach(function(button) {
-    handlers.attachClick(button, function() {
+    handlers.attachClick(button, function(e) {
       alert(alertMessage);
+
+      // Exercise 4 Solution!
+      e.stopPropagation();
     });
   });
   return els;
 
   /* jQuery .on Alternate Solution */
-  $("." + className).on("click", function() {
+  $("." + className).on("click", function(e) {
     alert(alertMessage);
+
+    // Exercise 4 Solution!
+    e.stopPropagation();
   });
   return $("." + className).toArray();
 };
@@ -145,3 +151,20 @@ handlers.attachAlertsWithParents = function(elements) {
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
+
+// ----------------------------------------------------------------------------
+
+// Did you notice how the order of the click events "bubbled" outward from
+// innermost element all the way out to the document object? That's because
+// JavaScript events applicable to multiple elements are fired in order of
+// how deeply nested they are - the event handler for ".innerbutton" will be
+// called before the event handler for its parent ".panel-body", even though
+// both were clicked. 
+
+// You might have also noticed that if you tried to click on the first buttons
+
+
+
+
+
+

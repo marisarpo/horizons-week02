@@ -18,12 +18,19 @@ out the look and feel of the application.
 ## A few important details
 
 - You'll be working in the `skeleton/` directory. HTML goes in the
-`index.html` file and CSS goes in `css/style.css`.
+`index.html` file and CSS goes in `css/style.css`. We've provided a
+basic HTML and CSS skeleton, and you'll be filling in all of the
+details. Where possible, we've indicated where you need to make changes
+or add code with comment tags.
 - We'll be adding interactive elements such as buttons and form
 fields, but we're not going to wire those elements up until tomorrow,
 so for now, most of these elements won't actually do anything.
 - You'll continue working with Bootstrap. This time, the required CSS
 and Javascript libraries have already been included.
+- Keep the [specifications][specs] in front of you since you'll need
+it throughout the project.
+
+[specs]: ./SPECIFICATIONS.md
 
 ## Phase 1: Board and flexbox
 
@@ -46,9 +53,29 @@ tasks and applications into a managable, hierarchical set of simple
 components. You should approach every engineering task with this
 mindset.
 
-Let's get started.
+Let's get started. Load up the skeleton HTML file in your web browser.
+It's pretty sparse: a lovely white canvas for your boundless
+creativity! In this phase, we're going to complete the basic page
+styling: body, header, and board, and we're going to add the first
+page element.
+
+Read the [specs] and add the appropriate CSS properties to the skeleton
+CSS file (look for the PHASE 1 comments). Then look for the PHASE 1
+tag in the skeleton HTML file and add the "Add a list..." button. See
+if you can figure out which combination of HTML tags and CSS classes
+you need for this element. Here's a hint: when in doubt, use a `div`.
+
+Reload the page to see your changes. You should see a lovely blue
+canvas with a header and a button right in the middle (the button
+doesn't do anything yet--as a reminder, we'll be wiring it up
+tomorrow). Pat your partner on the back for your first win and lace
+up your coding shoes because things are about to get a little cray-cray.
 
 ## Phase 2: Lists
+
+
+
+
 ## Phase 3: Cards
 ## Phase 4: Collapse
 ## Phase 5: Modal

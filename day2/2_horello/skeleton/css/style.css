@@ -1,11 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
 body {
-    /** Your CSS here */
+    line-height: 18px;
+    height: 100vh;
+
+    /** PHASE 1 CSS here */
 }
 
 header {
-    /** Your CSS here */
+    position: relative;
+    overflow: hidden;
+
+    /** PHASE 1 CSS here */
 }
 
 .header-logo {
@@ -39,6 +45,9 @@ a {
     background-color: transparent;
 }
 
+
+/* BOARD */
+
 .board {
     display: flex;
     overflow-x: auto;
@@ -48,7 +57,9 @@ a {
 }
 
 .add-list {
+    /** PHASE 1 CSS here */
 }
+
 
 /* LISTS */
 
@@ -90,9 +101,8 @@ a {
     /* Your CSS here */
 }
 
-/*
- * CARDS
- */
+
+/* CARDS */
 
 .card {
     /* Your CSS here */

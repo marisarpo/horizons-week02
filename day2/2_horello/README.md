@@ -260,9 +260,7 @@ need it when you see what comes tomorrow.
 
 Oh, and watch this video because you're awesome and you deserve it:
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=XQ7z57qrZU8
-" target="_blank"><img src="http://img.youtube.com/vi/XQ7z57qrZU8/0.jpg"
-alt="watch me" width="240" height="180" border="10" /></a>
+<iframe width="420" height="315" src="https://www.youtube.com/embed/XQ7z57qrZU8" frameborder="0" allowfullscreen></iframe>
 
 Supplemental reading (optional):
 - [Modal window]

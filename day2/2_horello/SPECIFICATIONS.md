@@ -1,7 +1,8 @@
 # Horello Web App Specifications
 
 ## Defaults
-- Background: rgb(0,121,191)
+- background color: rgb(0,121,191)
+- font: Bootstrap default sans-serif
 ## Header
 - padding: 5px
 - height: 40px
@@ -41,6 +42,6 @@
 - border radius: 3px
 - body:
   - padding: .5em top, left, right; 2em bottom
-  - font family: Cabin,Arial,sans-serif
+  - font (preference order): Cabin, Arial, default sans-serif
   - font size: 16px
   - line height: 1.5em

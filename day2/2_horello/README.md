@@ -68,8 +68,8 @@ you need for this element. Here's a hint: when in doubt, use a `div`.
 Reload the page to see your changes. You should see a lovely blue
 canvas with a header and a button right in the middle (the button
 doesn't do anything yet--as a reminder, we'll be wiring it up
-tomorrow). Pat your partner on the back for your first win and lace
-up your coding shoes because things are about to get a little cray-cray.
+tomorrow). Pat your partner on the back for your first win and dance
+an Irish jig to let everyone else know how awesome you are.
 
 ## Phase 2: Lists
 
@@ -78,7 +78,9 @@ more lists, each of which contains one or more cards. Let's begin
 styling the first core element: the list. For this project phase,
 you'll be filling in the list-related styles in the skeleton CSS file.
 Find the relevant CSS selectors and fill in the missing styles, based
-on the [specs].
+on the [specs]. Note that not every required CSS property is listed
+in the specs. Do your best to figure out what's missing and create a
+pixel perfect clone of the live version.
 
 Then look for the PHASE 2 comment in the skeleton HTML file and add
 the "Add card" button. Try creating this one using the `button` tag
@@ -88,7 +90,59 @@ Reload to see your changes. Things are starting to take shape aren't
 they? Grab a strong cup of coffee to celebrate because you're going
 to need the caffeine when you see what comes next.
 
-
 ## Phase 3: Cards
+
+In this phase we're going to style the last core element, the card.
+Continue filling in the missing styles based on the [specs]. Reload
+and you should see your first card, properly styled, sitting on top
+of your first list.
+
+Next, we're going to add an icon to the card to indicate that the card
+contains more text--check out how this looks on the live version. All
+cards have a title, and some cards have a description as well. For the
+cards that contain a description, we need a visual indication since the
+description isn't visible before tapping on the card to open it up.
+
+Bootstrap ships with a handy set of icons, called [glyphicons], that
+we can use throughout our app. Take a look at the list of icons and
+you should see lots that looks familiar: icons for sending mail,
+lists and grids of content, volume, etc. For now we'll stick with
+the icons built in to Bootstrap, but there are many other fantastic
+resources for icons--see a few of our favorites, below.
+
+Find the `glyphicon-align-left` icon and add it at the bottom left
+corner of the card, like in the live version. Use the `.card-more` class
+to style the element. Since you made it this far--by now you're a
+veritable HTML rockstar--you'll have to figure out where to put the HTML
+for the icon on your own.
+
+Take a moment to reload and behold your work thus far. Your first card
+and list are fully styled. Up to this point--and for the rest of
+today--everything you're adding is static, meaning that it's not tied to
+any real data (that will change tomorrow when things will really come to
+life). But we can add more static elements to get a better sense for
+what our app will look like once we've entered more data. Using the
+list and card elements that you've already created, try adding
+multiple lists and multiple cards with varying amounts of data, like
+you see in the live version.
+
+Think your web app looks awesome? You ain't seen nuthin' yet! Lace up
+your coding shoes because things are about to get a little cray-cray.
+
+- Icon resources (optional):
+  - [Glyphicons][glyphicons-orig]
+  - [fontawesome]
+  - Google's [material] icon set
+  - [the noun project]
+
+[glyphicons]: http://getbootstrap.com/components/#glyphicons
+[fontawesome]: http://fontawesome.io/
+[material]: http://materializecss.com/icons.html
+[glyphicons-orig]: http://glyphicons.com/
+[the noun project]: https://thenounproject.com/
+
 ## Phase 4: Collapse
+
+
+
 ## Phase 5: Modal

@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
 body {
@@ -96,32 +95,13 @@ a {
  */
 
 .card {
-    margin: 0 0 .5em;
-    background: white;
-    position: relative;
-    border-radius: 3px;
-}
-
-.card-shadow {
-    box-shadow: 0 10px 25px -15px #333;
+    /* Your CSS here */
 }
 
 .card-body {
-    display: block;
-    padding: .5em .5em 2em;
-    font-family: Cabin;
-    font-size: 16px;
-    line-height: 1.5em;
-    position: relative;
-    transition: 0.5s all;
+    /* Your CSS here */
 }
 
 .card-more {
-    position: absolute;
-    left: 6px;
-    bottom: 6px;
-}
-
-.card-body * {
-    margin-bottom: 1em;
+    /* Your CSS here */
 }

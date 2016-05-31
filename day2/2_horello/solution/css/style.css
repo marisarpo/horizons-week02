@@ -135,10 +135,6 @@ a {
     border-radius: 3px;
 }
 
-.card-shadow {
-    box-shadow: 0 10px 25px -15px #333;
-}
-
 .card-body {
     display: block;
     padding: .5em .5em 2em;
@@ -153,8 +149,4 @@ a {
     position: absolute;
     left: 6px;
     bottom: 6px;
-}
-
-.card-body * {
-    margin-bottom: 1em;
 }

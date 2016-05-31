@@ -35,3 +35,12 @@
     - font-weight: 700
  - Footer
     - font-weight: 500
+## Card
+- margin: 0 top, left, right; .5em bottom
+- background: white
+- border-radius: 3px
+- body:
+  - padding: .5em top, left, right; 2em bottom
+  - font-family: Cabin,Arial,sans-serif
+  - font-size: 16px
+  - line-height: 1.5em

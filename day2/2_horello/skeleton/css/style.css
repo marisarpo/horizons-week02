@@ -48,16 +48,17 @@ a {
 
 /* BOARD */
 
+.add-list {
+    /** PHASE 1 CSS here */
+}
+
 .board {
-    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
-}
 
-.add-list {
-    /** PHASE 1 CSS here */
+    /** PHASE 2 CSS here */
 }
 
 

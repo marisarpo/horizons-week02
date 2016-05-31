@@ -20,8 +20,8 @@ out the look and feel of the application.
 - You'll be working in the `skeleton/` directory. HTML goes in the
 `index.html` file and CSS goes in `css/style.css`. We've provided a
 basic HTML and CSS skeleton, and you'll be filling in all of the
-details. Where possible, we've indicated where you need to make changes
-or add code with comment tags.
+details. For many of the places you need to add code, you'll find
+comments indicating this, but _not all of these locations are marked._
 - We'll be adding interactive elements such as buttons and form fields,
 but we're not going to wire up those elements (i.e., make them
 interactive) until tomorrow, so for now, most of these elements won't
@@ -33,7 +33,7 @@ it throughout the project.
 
 [specs]: ./SPECIFICATIONS.md
 
-## Phase 1: Board and flexbox
+## Phase 1: Board
 
 Screenshots:
 - [start][ss-01a]
@@ -82,7 +82,7 @@ an Irish jig to let everyone else know how awesome you are.
 [skeleton CSS]: ./skeleton/css/style.css
 [live]: http://horizons-school-of-technology.github.io/week02/day2/2_horello/solution/index.html
 
-## Phase 2: Lists
+## Phase 2: Lists and flexbox
 
 Screenshots:
 - [goal][ss-02a]
@@ -100,11 +100,33 @@ Then look for the PHASE 2 comment in the [skeleton HTML] file and add
 the "Add card" button. Try creating this one using the `button` tag
 (rather than a plain `div` or `span`).
 
+Just one more step for this phase. Recall what we learned in lecture
+this morning about flexbox (refresh your memory by reading
+[this][flexbox]). By default, elements on a web page flow from top to
+bottom. There are a few ways to place things side by side,
+horizontally. You saw two of them yesterday: `float` and `position:
+absolute`. Those work well for one-off, static elements such as
+images and buttons, but they don't lend themselves to large amounts
+of dynamic content such as text or, in our case, lists and cards (by
+"dynamic" we mean that you'll be creating, editing, and deleting
+cards and lists, and moving them around--and you can't absolutely
+position something that moves around!). This is where responsive
+layout tools such as Flexbox come in handy.
+
+Turning on flexbox is as easy as adding the `display: flex` property
+to an element. Turn on flexbox for the top-level board (so the lists
+are displayed next to one another), and for list (so the cards are
+displayed vertically). Make sure that `flex-direction` is set correctly!
+
 Reload to see your changes. Things are starting to take shape aren't
 they? Grab a strong cup of coffee to celebrate because you're going
 to need the caffeine when you see what comes next.
 
+Supplemental reading (optional):
+- [A Complete Guide to Flexbox][flexbox]
+
 [ss-02a]: ./img/ss-02a.png
+[flexbox]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 ## Phase 3: Cards
 

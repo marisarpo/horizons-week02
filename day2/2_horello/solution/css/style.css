@@ -151,3 +151,12 @@ a {
     left: 6px;
     bottom: 6px;
 }
+
+.add-card-form {
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+.add-card-form input {
+    margin-bottom: 5px;
+}

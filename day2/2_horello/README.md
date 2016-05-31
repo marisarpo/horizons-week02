@@ -118,13 +118,12 @@ for the icon on your own.
 
 Take a moment to reload and behold your work thus far. Your first card
 and list are fully styled. Up to this point--and for the rest of
-today--everything you're adding is static, meaning that it's not tied to
-any real data (that will change tomorrow when things will really come to
-life). But we can add more static elements to get a better sense for
-what our app will look like once we've entered more data. Using the
-list and card elements that you've already created, try adding
-multiple lists and multiple cards with varying amounts of data, like
-you see in the live version.
+today--the elements you've added aren't tied to any real data (that will
+change tomorrow when things will really come to life). But we can add
+more hardcoded elements to get a better sense for what our app will look
+like once we've entered more data. Using the list and card elements that
+you've already created, try adding multiple lists and multiple cards
+with varying amounts of data, like you see in the live version.
 
 Think your web app looks awesome? You ain't seen nuthin' yet! Lace up
 your coding shoes because things are about to get a little cray-cray.
@@ -143,6 +142,94 @@ your coding shoes because things are about to get a little cray-cray.
 
 ## Phase 4: Collapse
 
+So far, you've been adding static HTML and CSS elements to a web page.
+That's about to change, and things will never be the same. You can build
+web _pages_ using static elements, but by definition an application is
+_interactive._ Once you go interactive, you never go back. Let's go
+ahead and add our first dynamic, interactive element to this baby so
+that it really starts to feel like an app.
 
+Take a moment to check out how the "Add a card..." button works on
+the live version. When you tap it, a form slides out that lets you
+enter the title of the new card. For now, we're just going to style
+this form and add the "collapse" action that shows and hides the form.
+
+Javascript was originally designed to add interactive elements such
+as these to web pages, and we're going to use it for that original
+purpose. Bootstrap ships with a number of custom jQuery plugins:
+small, useful pieces of Javascript that allow us to quickly add
+interactive elements to our app. Today, we're going to add a couple
+of the elements without touching the Javascript ourselves (this is
+part of what makes Bootstrap so popular and so powerful). Starting
+tomorrow, you'll see how to add these interactions yourself.
+
+We're going to use a Bootstrap plugin called [Collapse]. Take a
+moment to read the description and the sample code, and to play with
+the examples. In the [Usage] section, you'll see that the plugin can
+be used either via Javascript or using simple "data attributes".
+Let's stick with the data attributes approach for now. You can add
+these attributes to an HTML element such as `div` to get the desired
+behavior.
+
+Go ahead and recreate the "add card" form from the live page. You're on
+your own creating the HTML and styles to add this form, but here are a
+few tips:
+
+- Put the form inside a Bootstrap [Well] component to set it off from
+the rest of the list.
+- Use Bootstrap's [Forms] CSS for the text input.
+- Use Bootstrap's button classes and glyphicons for the buttons. See
+[Glyphicon Examples].
+- Tie the button that triggers the collapse to the hidden content
+using the `data-target` or `href` attributes on the button and the `id`
+attribute on the target.
+
+With everything in place, reload and tap the "Add a card..." button
+to see the expand/collapse in action. One step closer to building
+your first killer app.
+
+[Collapse]: http://getbootstrap.com/javascript/#collapse
+[Usage]: http://getbootstrap.com/javascript/#collapse-usage
+[Well]: http://getbootstrap.com/components/#wells
+[Forms]: http://getbootstrap.com/css/#forms
+[Glyphicon Examples]: http://getbootstrap.com/components/#glyphicons-examples
 
 ## Phase 5: Modal
+
+Now that you've had a taste of interactive elements, we're going to
+enter the major leagues with an even bigger, even more interactive-er
+element, a modal. A modal is a way to temporarily present information,
+or an interactive form, on top of existing content without navigating
+away from that content (this is part of a larger topic called routing
+that you'll explore more in the coming weeks). From an information
+architecture standpoint, the content in the modal is _subordinate to_
+the main content. (Read more about the concept at [Modal window].)
+
+We're going to use the modal component from (you guessed it!) Bootstrap.
+Take a look at Bootstrap's [Modals] component, in particular the sample
+code and live demo. Then look at the behavior on the live Horello page:
+try tapping on a card, and you'll see a modal appear. This modal lets
+you edit the card title and description (the body of the card). Note
+that, again, the static elements on the page aren't yet tied to a real
+data model, so the data on the modal may not match the data on the card
+you tap on.
+
+Your turn! Use Bootstrap's [sample modal code] to add a modal to the
+app with a text input for the card header and another for the card
+description. You can use stick with the default modal styles for now,
+no need to do custom styling.
+
+Reload your page to see the working modal. Cool, right? Now you have
+another arrow in your kickass web quiver that you can use to crush
+the next few projects.
+
+Go for a run, have a beer, watch some Game of Thrones, do whatever it
+takes to unwind, then get some sleep because, trust me, you're going to
+need it when you see what comes tomorrow.
+
+Supplemental reading (optional):
+- [Modal window]
+
+[Modal window]: https://en.wikipedia.org/wiki/Modal_window
+[Modals]: http://getbootstrap.com/javascript/#modals
+[sample modal code]: http://getbootstrap.com/javascript/#modals-examples

@@ -30,7 +30,7 @@ header {
 }
 
 .header-logo-default {
-    background-image: url(../img/title.png);
+    background-image: url(../../img/title.png);
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 5pc 30px;

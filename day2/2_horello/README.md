@@ -73,7 +73,20 @@ up your coding shoes because things are about to get a little cray-cray.
 
 ## Phase 2: Lists
 
+As you can see on the live version, a Horello board consists of one or
+more lists, each of which contains one or more cards. Let's begin
+styling the first core element: the list. For this project phase,
+you'll be filling in the list-related styles in the skeleton CSS file.
+Find the relevant CSS selectors and fill in the missing styles, based
+on the [specs].
 
+Then look for the PHASE 2 comment in the skeleton HTML file and add
+the "Add card" button. Try creating this one using the `button` tag
+(rather than a plain `div` or `span`).
+
+Reload to see your changes. Things are starting to take shape aren't
+they? Grab a strong cup of coffee to celebrate because you're going
+to need the caffeine when you see what comes next.
 
 
 ## Phase 3: Cards

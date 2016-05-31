@@ -71,38 +71,40 @@ a {
     box-sizing: border-box;
     max-height: 100%;
 
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
 
-    /* Your CSS here */
-}
-
-.list-cards {
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 .list-footer {
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 .list-title {
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 .add-card {
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 .add-card:hover {
-    /* Your CSS here */
+    /** PHASE 2 CSS here */
 }
 
 
 /* CARDS */
+
+.list-cards {
+    min-height: 0;
+
+    /** PHASE 3 CSS here */
+}
 
 .card {
     /* Your CSS here */

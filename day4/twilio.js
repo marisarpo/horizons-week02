@@ -13,9 +13,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-var accountId = "YOUR ACCOUNT SID HERE";
-var authToken = "YOUR AUTHENTICATION TOKEN HERE";
-var fromNumber = "YOUR TWILION NUMBER HERE";
+twilio.accountId = "YOUR ACCOUNT SID HERE";
+twilo.authToken = "YOUR AUTHENTICATION TOKEN HERE";
+twilio.fromNumber = "YOUR TWILION NUMBER HERE";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -175,3 +175,7 @@ Message.prototype = {
     return listElem;
   }
 };
+
+// Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
+// var app = new twilio.TwilioMessenger(twilio.accountId, twilio.authToken, twilio.fromNumber)
+// Just instantiating the app will set up the event handlers and make the give UI interactive (as you should know, you built it haha)

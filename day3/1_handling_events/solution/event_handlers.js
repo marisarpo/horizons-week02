@@ -20,7 +20,7 @@ handlers.attachClick = function(e, fn) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 1B. Assigning event handlers with callback functions.
+// Exercise 1A. Assigning event handlers with callback functions.
 // Write a function that takes an HTML element object e and a function
 // fn and assigns the "mouseenter" event to fire function fn when element e
 // is hovered over. This time, try doing it jQuery-style. Remember
@@ -38,7 +38,7 @@ handlers.attachHover = function(e, fn) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 1C. Same thing as 1B - except this time, assign the passed-in
+// Exercise 1B. Same thing as 1A - except this time, assign the passed-in
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
@@ -47,7 +47,7 @@ handlers.attachUnhover = function(e, fn) {
 
 // ----------------------------------------------------------------------------
 
-// Exercise 1D. Do the same for the "keypress" event, and take a parameter 
+// Exercise 1C. Do the same for the "keypress" event, and take a parameter 
 // 'key' with the intended keycode of the key to listen for and a parameter
 // 'fn' with a function to call if the key to listen for matches the 
 // key pressed.
@@ -80,24 +80,85 @@ handlers.attachKeypress = function(key, fn) {
 // ----------------------------------------------------------------------------
 
 // Exercise 2. Write a function that simulates storing data on user actions
-// when a button on the defuse panel is clicked. Take a parameter className
-// and 
-handlers.attachUserActionRec = function(className) {
-  var userActions = {"red": 0, "blue": 0, "nope": 0};
-  console.log($("." + className));
+// when a button on the defuse panel is clicked. Take a parameter id and using
+// attachClick(), connect an event handler that updates the userAction variable
+// on click events to increment the count for number of clicks by the ID of the
+// button ("red", "blue", or "nope").
+
+handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
+handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
-  handlers.attachClick($("." + className), function(event) {
-    userActions[event.currentTarget.id]++;
-    console.log(userActions);
+  handlers.attachClick($("#" + id), function() {
+    handlers.userActions[id]++;
+    console.log(handlers.userActions);
   });
 };
 
-handlers.attachUserActionRec("cutbutton");
+handlers.attachUserActionRecord("red"); // The red wire button
+handlers.attachUserActionRecord("blue"); // The blue wire button
+handlers.attachUserActionRecord("nope"); // The "run" button
 
 // ----------------------------------------------------------------------------
 
-// Exercise 3. Write a function that attaches an event listener for "hover"
-// that checks whether 
+// Exercise 3. Write a function that triggers the click event when hovering
+// over an element for more than 2 seconds.
+
+
+// TRIGGERING EVENTS
+// Here's how we trigger an event on an element programmatically with jQuery:
+// $(element).trigger("eventtype") 
+// - where eventtype is "click", "mouseenter", etc.
+
+// SETTING & CLEARING TIMEOUTS
+// To set a timeout period for hovering over a button before we trigger the
+// click event programmatically, we will use the built-in setTimeout function
+// in JavaScript. Here's the format for calling setTimeout:
+
+// setTimeout(function() {
+//    doSomething();
+// }, 3000);
+
+// the function() { doSomething() } represents the action we take when
+// the time 3000 (timeout duration in milliseconds) is reached.
+
+// To track timeouts, we're going to use the return value of setTimeout().
+// setTimeout returns a number ID that is used to track the timeout and can
+// be used to cancel the timeout with the function clearTimeout(id).
+
+// For example:
+
+// var timeout = setTimeout(function() {
+//    console.log("hello");
+// }, 5000);
+// clearTimeout(timeout);
+
+// The above code will not call console.log("hello"), because the timeout
+// is cleared immediately after. Note that the variable 'timeout' is a 
+// number, and it is used to identify the timeout to clear for clearTimeout().
+
+// With timeouts and programmatic event triggers, use attachHover() to 
+// create a timeout with time of 2 seconds for manually triggering a click
+// and store the ID of the timeout in a property of handlers.hoverTimeoutNums 
+// by the ID of the button element ("red", "blue", or "nope").
+// Use attachUnhover() to clear the timeout by accessing the corresponding
+// property of handlers.hoverTimeoutNums and passing it into clearTimeout().
+
+handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
+handlers.attachHoverClick = function(id) {
+  var el = $("#" + id);
+  handlers.attachHover(el, function() {
+    handlers.hoverTimeoutNums[id] = setTimeout(function() {
+      el.trigger("click");
+    }, 2000);
+  });
+  handlers.attachUnhover($("#" + id), function() {
+    clearTimeout(handlers.hoverTimeoutNums[id]);
+  }); 
+}
+
+handlers.attachHoverClick("red");
+handlers.attachHoverClick("blue");
+handlers.attachHoverClick("nope");
 
 // ----------------------------------------------------------------------------
 
@@ -153,6 +214,7 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // ".innerbutton" and their parents - the event handler function for the click
 // event should look lke the following:
 
+// PUT THIS CODE IN YOUR EVENT HANDLER
 // $(e.currentTarget).css("backgroundColor", "green");
 // alert("You've reached " + $(e.currentTarget).attr("description"));
 // $(e.currentTarget).css("backgroundColor", "");
@@ -180,7 +242,7 @@ handlers.attachAlertsWithParents = function(elements) {
     currentElement.on("click", function(e) {
       $(e.currentTarget).css("backgroundColor", "green");
       alert("You've reached " + $(e.currentTarget).attr("description"));
-      $(e.currentTarget).css("backgroundColor", "");
+      $(e.currentTarget).css("backgroundColor", "");      
     });
     currentElement = currentElement.parent();
   }

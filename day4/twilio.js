@@ -13,9 +13,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT SID HERE";
-twilo.authToken = "YOUR AUTHENTICATION TOKEN HERE";
-twilio.fromNumber = "YOUR TWILION NUMBER HERE";
+twilio.accountId = "YOUR ACCOUNT ID HERE";
+twilio.authToken = "YOUR AUTH TOKEN HERE";
+twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -92,12 +92,11 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
-	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. 
+	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
 	// 
 	// note. here's where `validatePhoneField` and `validateMessageField` come in handy!
 	// note. also `clear`
 	// note. also `sendMessage`
-	// hint. you can fire an alert using `alert(message)`, where message is a string describing wha tyou want the browser pop-up to display.
   handleMessageSend: function(evt) {
 		evt.preventDefault();
 		
@@ -177,5 +176,5 @@ Message.prototype = {
 };
 
 // Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
-// var app = new twilio.TwilioMessenger(twilio.accountId, twilio.authToken, twilio.fromNumber)
+// var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
 // Just instantiating the app will set up the event handlers and make the give UI interactive (as you should know, you built it haha)

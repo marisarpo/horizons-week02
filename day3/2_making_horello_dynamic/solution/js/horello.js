@@ -91,9 +91,10 @@ horello.Note.prototype = {
 
 		// Build wrappers
 		var wrapper = $('<div></div>');
-		var cardWrapper = $('<div class="card" data-toggle="modal" data-target="#cardEdit"></div>');
+		var cardWrapper = $('<div class="card" data-toggle="modal"' +
+			' data-target="#cardEdit" id="'+this.id+'"></div>');
 		var cardMore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
-		var cardBody = $('<div class="cardBody">'+this.title+'</div>');
+		var cardBody = $('<div class="card-body">'+this.title+'</div>');
 
 		wrapper.append(cardWrapper);
 		cardWrapper.append(cardMore);
@@ -202,7 +203,7 @@ horello.List.prototype = {
 		var wrapper = $('<div></div>');
 		
 		var listContainer = $('<div class="list-container"></div>');
-		var listWrapper = $('<div class="list"></div>');
+		var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
 		var listHeader = $('<div class="list-header"></div>');
 		var listBody = $('<div class="list-cards"></div>');
 		
@@ -235,12 +236,36 @@ horello.Board.prototype = {
 		return list.getId();
 	},
 
+	getList: function(listId) {
+		return this.lists.find(function(c) {
+			return (c.getId() == listId);
+		});
+	},
+
+	rmvList: function(listId) {
+		var c = this.getList(listId);
+		if (c === null) {
+			return null;
+		}
+		var ind = this.lists.indexOf(c);
+		this.lists.splice(ind, 1);
+		return c;
+	},
+	
 	render: function() {
 		console.log("Rendering board...");
-		var wrapper = $('<div></div>');
+		var wrapper = $('<div id="board"></div>');
 		wrapper.html(this.lists.reduce(function(prev, cur) {
 			return prev + cur.render();
 		}, ""));
-		return wrapper.html();
+		return wrapper;		
+	},
+
+	renderToHTML: function() {
+		return this.render().html();
 	}
+};
+
+horello.render = function (board) {
+	$('#boardAnchor').append(board.render());
 };

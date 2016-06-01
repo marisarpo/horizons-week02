@@ -13,9 +13,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-var accountId = "ACb17a6fa7a1323f8d2818ffc7af2e3543";
-var authToken = "77b9c7bf69723e131f16bbd471b840b6";
-var fromNumber = "12014904984";
+twilio.accountId = "ACb17a6fa7a1323f8d2818ffc7af2e3543";
+twilio.authToken = "77b9c7bf69723e131f16bbd471b840b6";
+twilio.fromNumber = "12014904984";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -62,7 +62,7 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
     // set up event listeners to DOM
     this.messageSendButton.on("click", this.handleMessageSend.bind(this));
-  },
+  },``
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
   //
@@ -96,35 +96,31 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
 		var modStr = $.trim(phoneStr);
 		var whiteList = '1234567890';
-		var c;
-		for (var i = 0; i < modStr.length; i++) {
-			c = modStr.charAt(0);
-			if (whiteList.indexOf(c) === -1) return false;
+		for (var i = 0; i < modStr.length - 1; i++) {
+			if (whiteList.indexOf(modStr[i]) === -1) return false;
 		}
 		
     return (modStr.length !== 0);
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
-	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. 
+	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
 	// 
 	// note. here's where `validatePhoneField` and `validateMessageField` come in handy!
 	// note. also `clear`
 	// note. also `sendMessage`
-	// hint. you can fire an alert using `alert(message)`, where message is a string describing wha tyou want the browser pop-up to display.
   handleMessageSend: function(evt) {
 		evt.preventDefault();
 		
     // only send if both fields are valid
-    if (this.validatePhoneField(this.phoneInputField.val()) && this.validateMessageField(this.messageInputField.val())) {
-      console.log("Sending message...");
+    var toPhone = this.phoneInputField.val();
+    var thisMessage = this.messageInputField.val();
+    if (this.validatePhoneField(toPhone) && this.validateMessageField(thisMessage)) {
       // send the message
-      var toPhone = this.phoneInputField.val();
-      var thisMessage = this.messageInputField.val();
       this.sendMessage(toPhone, thisMessage);
       // clear the message field
       this.clearField(this.messageInputField);
     } else {
-      alert("One of both of your fields are not valid.");
+      throw "Invalid fields";
     }
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
@@ -199,3 +195,7 @@ Message.prototype = {
     return listElem;
   }
 };
+
+// Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
+// var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
+// Just instantiating the app will set up the event handlers and make the give UI interactive (as you should know, you built it haha)

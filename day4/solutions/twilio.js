@@ -62,7 +62,7 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
     // set up event listeners to DOM
     this.messageSendButton.on("click", this.handleMessageSend.bind(this));
-  },``
+  },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
   //

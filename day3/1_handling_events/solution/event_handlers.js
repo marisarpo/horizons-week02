@@ -184,7 +184,6 @@ handlers.attachAlertsToClass = function(className, alertMessage) {
   els.forEach(function(button) {
     handlers.attachClick(button, function(e) {
       alert(alertMessage);
-
       // Exercise 4 Solution!
       e.stopPropagation();
     });
@@ -194,7 +193,6 @@ handlers.attachAlertsToClass = function(className, alertMessage) {
   /* jQuery .on Alternate Solution */
   $("." + className).on("click", function(e) {
     alert(alertMessage);
-
     // Exercise 4 Solution!
     e.stopPropagation();
   });
@@ -273,6 +271,45 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // both were clicked. 
 
 // You might have also noticed that if you tried to click on the first buttons
+// again, they will cause the same set of events to pop through. Why is this?
 
+// When we attached alerts to the ".innerbutton" class elements and its parents,
+// we assigned an event listener and handler for every one of its parents, 
+// the div under those first "cutbuttons" was also given the click event - this
+// is why the alert is still shown for "bad choice!" (event is called for
+// the innermost element first), but then we also get the events fired for 
+// the parent elements. 
 
+// ----------------------------------------------------------------------------
+
+// Exercise 4A. Ceasefire!
+// We want to prevent this behavior of the event selectors bubbling up to 
+// the parent divs when we click the 'cutbutton'(s). One way to do this is by
+// calling the stopPropagation() method on the event object in the parameter
+// of the click handler. Scroll back up to your handlers.attachAlertsToClass()
+// function, and you should have created something that calls attachClick()
+// as follows (your variable names may differ):
+
+    // handlers.attachClick(button, function(e) {
+    //   alert(alertMessage);
+    //   EXERCISE 4 CODE HERE
+    // });
+
+// Note: If you don't yet have an 'e' variable inside the callback function
+// (the function passed in as the second argument of attachClick), go ahead
+// and add it.
+
+// The 'e' variable represents our event object we described earlier, with
+// properties like ".keycode" - remember from the first attachKeypress()
+// function?
+
+// This time, we want to call the .stopPropagation() method on the event
+// object 'e' - add that where your Exercise 4 code goes (inside of the 
+// attachAlertsToClass() function, not here!)
+
+// CODE SHOULD GO IN attachAlertsToClass() ABOVE
+
+// ----------------------------------------------------------------------------
+
+// Exercise 4B. Ceasefire, Part Two
 

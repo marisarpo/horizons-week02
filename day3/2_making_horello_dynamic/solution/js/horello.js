@@ -2,7 +2,10 @@
 
 window.horello = {};
 
-// In this exercise, you're going to be building the majority of the interactive parts of Horello. In the past few days, you've been building the front-end of it. You've been building the UI of your application and are now ready to bring it to life.
+// In this exercise, you're going to be building the majority of the
+// interactive parts of Horello. In the past few days, you've been
+// building the front-end of it. You've been building the UI of your
+// application and are now ready to bring it to life.
 
 // [Helper] `generateId`
 // This function generates a random, unique string for you use for whatever.
@@ -14,13 +17,15 @@ horello.generateId = function() {
     return Math.floor((1 + Math.random()) * 0x10000)
       .toString(16)
       .substring(1);
-  }
+  };
   return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
     chunk() + '-' + chunk() + chunk() + chunk();
 };
 
 // Exercise 1. `Note` Class
-// Write a note class that follows the spec described in `classSpec.png`. The note class will be made up of different properties and methods.
+// Write a note class that follows the spec described in
+// `classSpec.png`. The note class will be made up of different
+// properties and methods.
 // 
 
 horello.Note = function(title, desc) {
@@ -46,11 +51,13 @@ horello.Note.prototype = {
 	getId: function() {
 		return this.id;
 	},
+
 	// Exercise 1.B `getTitle`
 	// Write a getter function for the `title` property
 	getTitle: function() {
 		return this.title;
 	},
+
 	// Exercise 1.C `setTitle(titleStr<String>)`
 	// Write a setter funtion for the `titleStr` property
 	// 
@@ -60,11 +67,13 @@ horello.Note.prototype = {
 	setTitle: function(titleStr) {
 		this.title = titleStr;
 	},
+
 	// Exercise 1.D `getDescription`
 	// Write a getter function for the `desc` property
 	getDescription: function() {
 		return this.desc;
 	},
+
 	// Exercise 1.E `setDescription(desc<String>)`
 	// Write a setter funtion for the `desc` property
 	//
@@ -74,46 +83,54 @@ horello.Note.prototype = {
 	setDescription: function(desc) {
 		this.desc = desc;
 	},
+
 	// [Helper] Example 1.F `render()`
 	// This function returns a string with HTML representing the internal object.
 	render: function() {
-		// TODO: need spec for components
-		// console.log("Rendering note...");
+		console.log("Rendering note...");
+
 		// Build wrappers
 		var wrapper = $('<div></div>');
-		
-		var noteWrapper = $('<div></div>');
-		var noteHeader = $('<div></div>');
-		var noteBody = $('<div></div>');
-		
-		wrapper.append(noteWrapper);
-		noteWrapper.append(noteHeader);
-		noteWrapper.append(noteBody);
-		// 
-		noteHeader.append($("<h2></h2>").text(this.title));
-		noteBody.append($("<p></p>").text(this.desc));
-		
+		var cardWrapper = $('<div class="card" data-toggle="modal" data-target="#cardEdit"></div>');
+		var cardMore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
+		var cardBody = $('<div class="cardBody">'+this.title+'</div>');
+
+		wrapper.append(cardWrapper);
+		cardWrapper.append(cardMore);
+		cardWrapper.append(cardBody);
+		cardBody.append($("<p></p>")).text(this.title);
+
 		return wrapper.html();
 	}
 };
-	
+
 // Exercise 2. `List` Class
-// Write a List class according to the spec in `classSpec.png`. The list class will be used to hold all instances of the Notes class, and it will also be responsible for  
+// Write a List class according to the spec in `classSpec.png`. The list
+// class will be used to hold all instances of the Notes class, and it
+// will also be responsible for
 
 horello.List = function(name) {
 	// YOUR CODE HERE
+	this.id = horello.generateId();
 	this.name = name;
 	this.cards = [];
 };
 
 horello.List.prototype = {
+	// Exercise 2.A `getId`
+	// Write a getter function for the `id` property
+	getId: function() {
+		return this.id;
+	},
+
 	// YOUR CODE HERE
-	// Exercise 2.A `getName`
+	// Exercise 2.B `getName`
 	// Write a getter function for the `name` property
 	getName: function() {
 		return this.name;
 	},
-	// Exercise 2.B `setName(name<String>)`
+
+	// Exercise 2.C `setName(name<String>)`
 	// Write a setter funtion for the `name` property
 	// 
 	// ex. var l = horello.List("Pokemon");
@@ -122,10 +139,13 @@ horello.List.prototype = {
 	setName: function(name) {
 		this.name = name;
 	},
-	// Exercise 2.C `addCard(title<String>, desc<String>)`
-	// Write a function that takes two arguments, `title` and `desc`, which are both strings.
-	// It should instantiate a new Note object with those give arguments, and add the newly created object to its array of cards.
-	// Finally, it should return the id of the newly created note.
+
+	// Exercise 2.D `addCard(title<String>, desc<String>)`
+	// Write a function that takes two arguments, `title` and `desc`,
+	// which are both strings. It should instantiate a new Note object
+	// with those give arguments, and add the newly created object to its
+	// array of cards. Finally, it should return the id of the newly
+	// created note.
 	// 
 	// hint. You can create a card using new horello.Note(...)
 	addCard: function(name, desc) {
@@ -133,9 +153,12 @@ horello.List.prototype = {
 		this.cards.push(card);
 		return card.getId();
 	},
-	// Exercise 2.D `getCard(cardId<String>)`
-	// Write a function that takes one argument, `cardId`, which is a string.
-	// It should search its card array for the Note object with the given id, and return it. If the card cannot be found, it should return null.
+	
+	// Exercise 2.E `getCard(cardId<String>)`
+	// Write a function that takes one argument, `cardId`, which is a
+	// string. It should search its card array for the Note object with
+	// the given id, and return it. If the card cannot be found, it should
+	// return null.
 	// 
 	// ex. var l = horello.List("Superheroes");
 	// 	var cId = l.addCard("Miss Marvel", "Carol Danvers");
@@ -153,11 +176,12 @@ horello.List.prototype = {
 		return null;
 	},
 	
-	// Exercise 2.E `rmvCard(cardId<String>)`
-	// Write a function that takes one argument, `cardId`, which is a string.
-	// It should retrieve the cardObject which corresponds to that cardId (if it exists), remove it from the card array, and return it.
-	// If it does not exist, then it should return null.
-	// Finally, it should return the id of the newly created note.
+	// Exercise 2.F `rmvCard(cardId<String>)`
+	// Write a function that takes one argument, `cardId`, which is a
+	// string. It should retrieve the cardObject which corresponds to that
+	// cardId (if it exists), remove it from the card array, and return
+	// it. If it does not exist, then it should return null. Finally, it
+	// should return the id of the newly created note.
 	rmvCard: function(cardId) {
 		var c = this.getCard(cardId);
 		if (c === null) {
@@ -168,38 +192,55 @@ horello.List.prototype = {
 		return c;
 	},
 	
-	// [Helper] Example 2.F `render()`
-	// This function returns a string with HTML representing the internal object.
+	// [Helper] Example 2.G `render()`
+	// This function returns a string with HTML representing the internal
+	// object.
 	render: function() {
-		// TODO: Need full component spec
-		// console.log("Rendering list...");
+		console.log("Rendering list...");
 
 		// Build wrappers
 		var wrapper = $('<div></div>');
 		
-		var listWrapper = $('<div></div>');
-		var listHeader = $('<div></div>');
-		var listBody = $('<div></div>');
+		var listContainer = $('<div class="list-container"></div>');
+		var listWrapper = $('<div class="list"></div>');
+		var listHeader = $('<div class="list-header"></div>');
+		var listBody = $('<div class="list-cards"></div>');
 		
-		wrapper.append(listWrapper);
+		wrapper.append(listContainer);
+		listContainer.append(listWrapper);
 		listWrapper.append(listHeader);
 		listWrapper.append(listBody);
-		// 
-		listHeader.append($("<h2></h2>").text(this.name));
-		
-		// TODO: Style header
-		
+		listHeader.append($('<span class="list-title"></span>').text(this.name));
+
 		// Build notes in the body
 		listBody.html(this.cards.reduce(function(prev, cur) {
 			return prev + cur.render();
 		}, ""));
-		
-		// TODO: Style footer
-		
+
 		return wrapper.html();
 	}
 	
 };
 
-// Exercise 3. Event Handling (Linking to UI)
-// Handle the events
+// Exercise 3: board
+
+horello.Board = function () {
+	this.lists = [];
+};
+
+horello.Board.prototype = {
+	addList: function(name) {
+		var list = new horello.List(name);
+		this.lists.push(list);
+		return list.getId();
+	},
+
+	render: function() {
+		console.log("Rendering board...");
+		var wrapper = $('<div></div>');
+		wrapper.html(this.lists.reduce(function(prev, cur) {
+			return prev + cur.render();
+		}, ""));
+		return wrapper.html();
+	}
+};

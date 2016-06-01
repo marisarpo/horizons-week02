@@ -219,3 +219,54 @@ describe("<List> Class", function() {
   });
 
 });
+
+describe("<Board> Class", function() {
+  var board;
+  beforeAll(function() {
+    board = new horello.Board();
+  });
+
+  describe("the lists property", function() {
+    it("should exist", function() {
+      expect(board.lists).toBeDefined();
+    });
+
+    it("should be an array", function() {
+      expect(board.lists).toEqual(jasmine.any(Array));
+    });
+
+    it("should be empty upon instantiation", function() {
+      expect((new horello.Board()).lists.length).toBe(0);
+    });
+  });
+
+  describe("the addList method", function() {
+
+    it("should exist", function() {
+      expect(board.addList).toBeDefined();
+    });
+
+    it("should add a list", function() {
+      expect(board.lists.length).toBe(0);
+      var listId = board.addList("Thing");
+      expect(board.lists.length).toBe(1);
+      expect(board.lists[0]).toEqual(jasmine.any(horello.List));
+    });
+
+  });
+
+  describe("the render method", function() {
+    it("should exist", function() {
+      expect(board.render).toBeDefined();
+    });
+
+    it("should return a string", function() {
+      expect(board.render()).toEqual(jasmine.any(String));
+    });
+
+    it("should return valid HTML", function() {
+      expect(board.render().search(htmlRX)).not.toEqual(-1);
+    });
+  });
+
+});

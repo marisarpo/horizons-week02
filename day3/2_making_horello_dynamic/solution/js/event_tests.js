@@ -34,7 +34,11 @@ describe("Render to DOM", function() {
       expect(list.children[2].className).toEqual("list-footer");
       expect(list.children[1].children.length).toEqual(1);
       expect(list.children[1].children[0].className).toEqual("card");
-      expect(list.children[1].children[0].id).toEqual(board.lists[0].cards[0].id);
+    });
+
+    it("should contain the correct card and list data", function() {
+      expect($(list.children[1].children[0]).data('card-id')).toEqual(board.lists[0].cards[0].id);
+      expect($(list.children[1].children[0]).data('list-id')).toEqual(board.lists[0].id);
     });
   });
 });

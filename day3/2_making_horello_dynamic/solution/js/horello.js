@@ -273,7 +273,7 @@ horello.Board.prototype = {
 	
 	render: function() {
 		console.log("Rendering board...");
-		var wrapper = $('<div id="board"></div>');
+		var wrapper = $('<div id="board" class="board"></div>');
 		wrapper.html(this.lists.reduce(function(prev, cur) {
 			return prev + cur.render();
 		}, ""));
@@ -288,8 +288,14 @@ horello.Board.prototype = {
 // Dynamic stuff, unbind and rebind every time the board is rendered.
 
 horello.render = function (board) {
-  // Remove all existing event handlers
-  $('.add-card').off();
+  /*
+    Note: we are NOT unbinding event listeners from elements that are
+    going away. It looks like this isn't necessary with jquery per
+    http://stackoverflow.com/questions/10957709/do-i-need-to-unbind-jquery-event-before-remove-element.
+    However, we do remove listeners on elements that stick around so
+    that we don't duplicate listeners (not 100% sure whether this is
+    necessary but let's do it to be safe).
+   */
 
   // Unrender and re-render the board.
 	$('#boardAnchor').empty();
@@ -297,6 +303,8 @@ horello.render = function (board) {
 
   // Re-bind add card forms.
   $('.add-card').each(function (idx) {
+    $(this).off();
+
     var id = $(this).attr('addCardId');
 
     // Open add card form
@@ -304,7 +312,13 @@ horello.render = function (board) {
       $('#addCardForm'+id).collapse('toggle');
     });
 
+    $('#addCardForm'+id).off();
+    $('#addCardForm'+id).on('shown.bs.collapse', function(e) {
+      $('#addCardTitle'+id).focus();
+    });
+
     // Save new card
+    $('#addCardBtn'+id).off();
     $('#addCardBtn'+id).click(function (e) {
       var val = $('#addCardTitle'+id).val();
       if (!val) {
@@ -319,6 +333,7 @@ horello.render = function (board) {
     });
 
     // Cancel
+    $('#addCardCancelBtn'+id).off();
     $('#addCardCancelBtn'+id).click(function (e) {
       $('#addCardForm'+id).collapse('hide');
     });
@@ -326,6 +341,7 @@ horello.render = function (board) {
 
   // Re-bind card detail modals.
   $('.card').each(function (idx) {
+    $(this).off();
     $(this).click(function (e) {
       $('#cardEdit').modal('toggle', $(this));
     });

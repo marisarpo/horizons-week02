@@ -16,7 +16,12 @@ $(function () {
   // Bind the static events. (add card form added dynamically inside render)
 
   // Add list form
-  $('.add-list').click(function(e) { $('#addList').collapse('toggle') });
+  $('.add-list').click(function(e) {
+    $('#addList').collapse('toggle');
+  });
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $('#addListText').focus();
+  });
   $('#addListSave').click(function(e) {
     var listName = $('#addListText').val();
     // validate input

@@ -214,10 +214,9 @@ horello.List.prototype = {
 		listWrapper.append(listBody);
 		listWrapper.append(listFooter);
 		listHeader.append($('<span class="list-title"></span>').text(this.name));
-		listFooter.append($('<button class="add-card"' +
-			' data-toggle="collapse" href="#addCard'+this.id+'">Add a card...</button>'));
+		listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
 		listFooter.append($('\
-			<div class="collapse" id="addCard'+this.id+'">\
+			<div class="collapse" id="addCardForm'+this.id+'">\
 			<div class="well add-card-form">\
 			<input type="text" class="form-control"\
 		placeholder="Card title">\
@@ -286,5 +285,18 @@ horello.Board.prototype = {
 };
 
 horello.render = function (board) {
+  // Remove all existing event handlers
+  $('.add-card').off();
+
+  // Unrender and re-render the board.
+	$('#boardAnchor').empty();
 	$('#boardAnchor').append(board.render());
+
+  // Re-bind.
+  $('.add-card').each(function (idx) {
+    var id = $(this).attr('addCardId');
+    $(this).click(function (e) {
+      $('#addCardForm'+id).collapse('toggle');
+    });
+  });
 };

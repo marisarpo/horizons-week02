@@ -13,15 +13,7 @@
   <script src="../../../lib/underscore.js"></script>
   <script src="../../../lib/jquery.js"></script>
 
-  <script>
-    function injectJasmine(targetId) {
-      $("#" + targetId).append($(".jasmine_html-reporter"));
-    }
 
-    setTimeout(function() {
-      injectJasmine('jasmineAnchor');
-    }, 0);
-  </script>
 
   <!-- Bootstrap stuff -->
   <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
@@ -30,6 +22,7 @@
   <!-- Our files -->
   <link rel="stylesheet" href="../css/style.css">
   <script src="js/horello.js"></script>
+  <script src="js/2_events.js"></script>
   <script src="js/event_tests.js"></script>
 </head>
 
@@ -83,20 +76,20 @@ Card body goes here</textarea>
 
   <div class="list-container">
     <div class="add-list-container">
-      <button class="add-list"
-              data-toggle="collapse"
-              href="#addList">Add a list...
-      </button>
+      <button class="add-list">Add a list...</button>
       <div class="collapse" id="addList">
         <div class="well add-card-form">
           <input type="text" class="form-control"
-                 placeholder="List name">
+                 placeholder="List name" id="addListText">
           <button type="button"
-                  class="btn btn-default">Save
+                  class="btn btn-default"
+                  id="addListSave">
+            Save
           </button>
           <button type="button"
-                  class="btn btn-default"><span
-                  class="glyphicon glyphicon-remove"></span>
+                  class="btn btn-default"
+                  id="addListCancel">
+            <span class="glyphicon glyphicon-remove"></span>
           </button>
         </div>
       </div>
@@ -104,6 +97,13 @@ Card body goes here</textarea>
   </div>
 
 </div>
-
+<script>
+  $(function() {
+    function injectJasmine(targetId) {
+      $("#" + targetId).append($(".jasmine_html-reporter"));
+    }
+    injectJasmine('jasmineAnchor');
+  });
+</script>
 </body>
 </html>

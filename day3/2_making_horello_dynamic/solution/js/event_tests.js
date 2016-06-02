@@ -1,15 +1,7 @@
 "use strict";
 
 describe("Render to DOM", function() {
-  // Do we want selenium tests?
-  var board;
-
-  beforeAll(function() {
-    board = new horello.Board();
-    board.addList("Awesomeness");
-    board.lists[0].addCard("Hello", "Hello, world");
-    horello.render(board);
-  });
+  // TODO: Do we want selenium tests?
 
   describe("the board", function() {
     it("should exist in the DOM", function() {
@@ -36,9 +28,10 @@ describe("Render to DOM", function() {
     });
 
     it("should contain a header and cards", function() {
-      expect(list.children.length).toEqual(2);
+      expect(list.children.length).toEqual(3);
       expect(list.children[0].className).toEqual("list-header");
       expect(list.children[1].className).toEqual("list-cards");
+      expect(list.children[2].className).toEqual("list-footer");
       expect(list.children[1].children.length).toEqual(1);
       expect(list.children[1].children[0].className).toEqual("card");
       expect(list.children[1].children[0].id).toEqual(board.lists[0].cards[0].id);

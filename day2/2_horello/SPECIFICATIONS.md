@@ -3,10 +3,12 @@
 ## Defaults
 - background color: rgb(0,121,191)
 - font: Bootstrap default sans-serif
+
 ## Header
 - padding: 5px
 - height: 40px
 - alpha (opacity) 0.15
+
 ## Board
 - Add list button
   - background alpha: .12
@@ -16,6 +18,7 @@
   - margin: 5px vertical, 5px horizontal
   - width: 280px
   - padding: 7px
+
 ## List
 - padding: 0.5em
 - margin: 5px vertical, 5px horizontal
@@ -36,6 +39,7 @@
     - font weight: 700
  - Footer
     - font weight: 500
+
 ## Card
 - margin: 0 top, left, right; .5em bottom
 - background: white

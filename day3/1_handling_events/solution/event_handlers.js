@@ -282,7 +282,7 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 // ----------------------------------------------------------------------------
 
-// Exercise 4A. Ceasefire!
+// Exercise 6A. Ceasefire!
 // We want to prevent this behavior of the event selectors bubbling up to 
 // the parent divs when we click the 'cutbutton'(s). One way to do this is by
 // calling the stopPropagation() method on the event object in the parameter
@@ -311,7 +311,7 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 // ----------------------------------------------------------------------------
 
-// Exercise 4B. Ceasefire, Part Two
+// Exercise 6B. Ceasefire, Part Two
 // After you see event bubbling once, it might start to get annoying to
 // see an alert for every element and its parent. Before we continue to
 // add more event-driven behavior to our buttons, let's undo the work of
@@ -340,4 +340,4 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 
 // ----------------------------------------------------------------------------
 
-// Exercise 5 - Event Delegation
+// Exercise 7 - Event Delegation

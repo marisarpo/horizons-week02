@@ -8,12 +8,13 @@
 
   <script src="../../../lib/jasmine/jasmine.js"></script>
   <script src="../../../lib/jasmine/jasmine-html.js"></script>
+  <script src="../../../lib/jasmine/jasmine-jquery.js"></script>
   <script src="../../../lib/jasmine/boot.js"></script>
 
   <!-- Our files -->
   <script src="../../../lib/jquery.js"></script>
   <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../event_handlers_tests.js"></script>
+
   <style type="text/css">
     .selected {
       background-color: green;
@@ -51,6 +52,7 @@
     </div>
   </div>
   <script src="event_handlers.js"></script>
+  <script src="../event_handlers_tests.js"></script>
   <script>
     function injectJasmine(targetId) {
       $("#" + targetId).append($(".jasmine_html-reporter"));

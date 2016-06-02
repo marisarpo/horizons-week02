@@ -216,16 +216,14 @@ horello.List.prototype = {
 		listHeader.append($('<span class="list-title"></span>').text(this.name));
 		listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
 		listFooter.append($('\
-			<div class="collapse" id="addCardForm'+this.id+'">\
+      <div class="collapse" id="addCardForm'+this.id+'">\
 			<div class="well add-card-form">\
-			<input type="text" class="form-control"\
-		placeholder="Card title">\
-			<button type="button" class="btn btn-default">\
+			<input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
+			<button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
 			Save\
 			</button>\
-			<button type="button"\
-		class="btn btn-default"><span\
-		class="glyphicon glyphicon-remove"></span>\
+			<button type="button" class="btn btn-default">\
+			<span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
 			</button>\
 			</div>\
 			</div>\
@@ -295,8 +293,29 @@ horello.render = function (board) {
   // Re-bind.
   $('.add-card').each(function (idx) {
     var id = $(this).attr('addCardId');
+
+    // Open add card form
     $(this).click(function (e) {
       $('#addCardForm'+id).collapse('toggle');
+    });
+
+    // Save new card
+    $('#addCardBtn'+id).click(function (e) {
+      var val = $('#addCardTitle'+id).val();
+      if (!val) {
+        alert('Please enter a card title');
+        return;
+      }
+
+      // Get the list object
+      var list = board.getList(id);
+      list.addCard(val);
+      horello.render(board);
+    });
+
+    // Cancel
+    $('#addCardCancelBtn'+id).click(function (e) {
+      $('#addCardForm'+id).collapse('hide');
     });
   });
 };

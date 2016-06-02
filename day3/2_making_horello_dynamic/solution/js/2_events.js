@@ -19,7 +19,7 @@ $(function () {
     var listName = $('#addListText').val();
     // validate input
     if (!listName) {
-      alert("Please enter a list name!");
+      alert("Please enter a list name");
       return;
     }
     board.addList(listName);

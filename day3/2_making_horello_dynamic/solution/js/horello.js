@@ -206,12 +206,31 @@ horello.List.prototype = {
 		var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
 		var listHeader = $('<div class="list-header"></div>');
 		var listBody = $('<div class="list-cards"></div>');
+		var listFooter = $('<div class="list-footer"></div>');
 		
 		wrapper.append(listContainer);
 		listContainer.append(listWrapper);
 		listWrapper.append(listHeader);
 		listWrapper.append(listBody);
+		listWrapper.append(listFooter);
 		listHeader.append($('<span class="list-title"></span>').text(this.name));
+		listFooter.append($('<button class="add-card"' +
+			' data-toggle="collapse" href="#addCard'+this.id+'">Add a card...</button>'));
+		listFooter.append($('\
+			<div class="collapse" id="addCard'+this.id+'">\
+			<div class="well add-card-form">\
+			<input type="text" class="form-control"\
+		placeholder="Card title">\
+			<button type="button" class="btn btn-default">\
+			Save\
+			</button>\
+			<button type="button"\
+		class="btn btn-default"><span\
+		class="glyphicon glyphicon-remove"></span>\
+			</button>\
+			</div>\
+			</div>\
+			'));
 
 		// Build notes in the body
 		listBody.html(this.cards.reduce(function(prev, cur) {

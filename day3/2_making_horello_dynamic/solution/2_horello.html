@@ -82,8 +82,24 @@ Card body goes here</textarea>
   <div id="boardAnchor"></div>
 
   <div class="list-container">
-    <div class="add-list">
-      Add a list...
+    <div class="add-list-container">
+      <button class="add-list"
+              data-toggle="collapse"
+              href="#addList">Add a list...
+      </button>
+      <div class="collapse" id="addList">
+        <div class="well add-card-form">
+          <input type="text" class="form-control"
+                 placeholder="List name">
+          <button type="button"
+                  class="btn btn-default">Save
+          </button>
+          <button type="button"
+                  class="btn btn-default"><span
+                  class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 

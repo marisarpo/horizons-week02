@@ -312,4 +312,32 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // ----------------------------------------------------------------------------
 
 // Exercise 4B. Ceasefire, Part Two
+// After you see event bubbling once, it might start to get annoying to
+// see an alert for every element and its parent. Before we continue to
+// add more event-driven behavior to our buttons, let's undo the work of
+// attachAlertsWithParents() with detachAlertsWithParents(). The approach
+// is largely going to be the same, but this time, you want to use jQuery's
+// built-in .off() function to detach the event handlers we've set on 
+// .innerbutton and its parents. 
 
+// Example of .off()
+// $('red').on('click', function() { alert("Bad choice!"); });
+// $('red').off('click');
+
+// In the example above, $('red') will no longer do anything when clicked because
+// we have detached its event handler from it.
+
+handlers.detachAlertsWithParents = function(elements) {
+  var currentElement = elements;
+  while (currentElement.get(0) !== document) {
+    currentElement.off("click");
+    currentElement = currentElement.parent();
+  }
+  return;
+};
+
+handlers.detachAlertsWithParents($(".innerbutton"));
+
+// ----------------------------------------------------------------------------
+
+// Exercise 5 - Event Delegation

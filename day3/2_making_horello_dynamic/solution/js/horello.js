@@ -28,9 +28,10 @@ horello.generateId = function() {
 // properties and methods.
 // 
 
-horello.Note = function(title, desc) {
+horello.Card = function(title, desc, listId) {
 	// YOUR CODE HERE
 	this.id = horello.generateId();
+  this.listId = listId;
 	this.title = title;
 	this.desc = desc;
 	this.createdAt = new Date().toUTCString();
@@ -45,7 +46,7 @@ horello.Note = function(title, desc) {
 // 		remark:	function() { return "dat boi"; }
 // };
 
-horello.Note.prototype = {
+horello.Card.prototype = {
 	// Exercise 1.A `getId`
 	// Write a getter function for the `id` property
 	getId: function() {
@@ -91,9 +92,11 @@ horello.Note.prototype = {
 
 		// Build wrappers
 		var wrapper = $('<div></div>');
-		var cardWrapper = $('<div class="card" data-toggle="modal"' +
-			' data-target="#cardEdit" id="'+this.id+'"></div>');
-		var cardMore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
+		var cardWrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+    var cardMore = $('<span class="card-more"></span>');
+    if (this.getDescription()) {
+      cardMore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+    }
 		var cardBody = $('<div class="card-body">'+this.title+'</div>');
 
 		wrapper.append(cardWrapper);
@@ -150,7 +153,7 @@ horello.List.prototype = {
 	// 
 	// hint. You can create a card using new horello.Note(...)
 	addCard: function(name, desc) {
-		var card = new horello.Note(name, desc);
+		var card = new horello.Card(name, desc, this.getId());
 		this.cards.push(card);
 		return card.getId();
 	},
@@ -282,6 +285,8 @@ horello.Board.prototype = {
 	}
 };
 
+// Dynamic stuff, unbind and rebind every time the board is rendered.
+
 horello.render = function (board) {
   // Remove all existing event handlers
   $('.add-card').off();
@@ -290,7 +295,7 @@ horello.render = function (board) {
 	$('#boardAnchor').empty();
 	$('#boardAnchor').append(board.render());
 
-  // Re-bind.
+  // Re-bind add card forms.
   $('.add-card').each(function (idx) {
     var id = $(this).attr('addCardId');
 
@@ -316,6 +321,13 @@ horello.render = function (board) {
     // Cancel
     $('#addCardCancelBtn'+id).click(function (e) {
       $('#addCardForm'+id).collapse('hide');
+    });
+  });
+
+  // Re-bind card detail modals.
+  $('.card').each(function (idx) {
+    $(this).click(function (e) {
+      $('#cardEdit').modal('toggle', $(this));
     });
   });
 };

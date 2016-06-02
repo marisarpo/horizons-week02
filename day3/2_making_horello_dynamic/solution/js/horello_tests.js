@@ -2,10 +2,10 @@
 
 var htmlRX = /<(\w+)/g;
 
-describe("<Note> Class", function() {
+describe("<Card> Class", function() {
   var note;
   beforeAll(function() {
-    note = new horello.Note("Lean Startup", "Eric Ries, Agile Dev, Venture Capital");
+    note = new horello.Card("Lean Startup", "Eric Ries, Agile Dev, Venture Capital");
   });
   
   describe("the id property", function() {
@@ -26,7 +26,7 @@ describe("<Note> Class", function() {
     it("should be a unique property", function() {
       var n = 100;
       while (n != 0) {
-        expect((new horello.Note("", "")).getId()).not.toBe((new horello.Note("", "")).getId());
+        expect((new horello.Card("", "")).getId()).not.toBe((new horello.Card("", "")).getId());
         n -= 1;
       }
     });
@@ -172,7 +172,7 @@ describe("<List> Class", function() {
       expect(list.cards.length).toBe(0);
       var cardId = list.addCard("Thing", "Other");
       expect(list.cards.length).toBe(1);
-      expect(list.cards[0]).toEqual(jasmine.any(horello.Note));
+      expect(list.cards[0]).toEqual(jasmine.any(horello.Card));
     });
     
   });
@@ -185,7 +185,7 @@ describe("<List> Class", function() {
     it("should get a card", function() {
       var cardId = list.addCard("Thing", "Other");
       expect(list.cards.length).toBe(2);
-      expect(list.getCard(cardId)).toEqual(jasmine.any(horello.Note));
+      expect(list.getCard(cardId)).toEqual(jasmine.any(horello.Card));
       expect(list.getCard(cardId).getTitle()).toBe("Thing");
       expect(list.cards.length).toBe(2);
     });
@@ -199,7 +199,7 @@ describe("<List> Class", function() {
     it("should remove and return a card", function() {
       var cardId = list.addCard("Thing", "Other");
       expect(list.cards.length).toBe(3);
-      expect(list.rmvCard(cardId)).toEqual(jasmine.any(horello.Note));
+      expect(list.rmvCard(cardId)).toEqual(jasmine.any(horello.Card));
       expect(list.cards.length).toBe(2);
     });
   });

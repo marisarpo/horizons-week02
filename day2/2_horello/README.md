@@ -197,31 +197,31 @@ _interactive._ Once you go interactive, you never go back. Let's go
 ahead and add our first dynamic, interactive element to this baby so
 that it really starts to feel like an app.
 
-Take a moment to check out how the "Add a card..." button works on the
-[live version][live]. When you tap it, a form slides out that lets you
-enter the title of the new card. For now, we're just going to style this
-form and add the "collapse" action that shows and hides the form.
+Take a moment to check out how the "Add a list..." and Add a card..."
+buttons work on the [live version][live]. When you tap the button, a
+form slides out that lets you enter the title of the new list or card.
+For now, we're just going to style these forms and add the "collapse"
+action that shows and hides the form.
 
-Javascript was originally designed to add interactive elements such
-as these to web pages, and we're going to use it for that original
-purpose. Bootstrap ships with a number of custom jQuery plugins:
-small, useful pieces of Javascript that allow us to quickly add
-interactive elements to our app. Today, we're going to add a couple
-of the elements without touching the Javascript ourselves (this is
-part of what makes Bootstrap so popular and so powerful). Starting
-tomorrow, you'll see how to add these interactions yourself.
+Javascript was originally designed to add interactive elements such as
+these to web pages, and we're going to use it for that original purpose.
+Bootstrap ships with a number of custom jQuery plugins: small, useful
+pieces of Javascript that allow us to quickly add interactive elements
+to our app. Today, we're going to add a couple of the elements without
+touching the Javascript ourselves (this is part of what makes Bootstrap
+so popular and so powerful). Starting tomorrow, you'll see how to add
+these interactions yourself.
 
-We're going to use a Bootstrap plugin called [Collapse]. Take a
-moment to read the description and the sample code, and to play with
-the examples. In the [Usage] section, you'll see that the plugin can
-be used either via Javascript or using simple "data attributes".
-Let's stick with the data attributes approach for now. You can add
-these attributes to an HTML element such as `div` to get the desired
-behavior.
+We're going to use a Bootstrap plugin called [Collapse]. Take a moment
+to read the description and the sample code, and to play with the
+examples. In the [Usage] section, you'll see that the plugin can be used
+either via Javascript or using simple "data attributes". Let's stick
+with the data attributes approach for now. You can add these attributes
+to an HTML element such as `div` to get the desired behavior.
 
-Go ahead and recreate the "add card" form from the live page. You're on
-your own creating the HTML and styles to add this form, but here are a
-few tips:
+Go ahead and recreate these two buttons and forms: "add list" and "add
+card". You're on your own creating the HTML and styles to add these
+forms, but here are a few tips:
 
 - Put the form inside a Bootstrap [Well] component to set it off from
 the rest of the list.
@@ -232,9 +232,9 @@ the rest of the list.
 using the `data-target` or `href` attributes on the button and the `id`
 attribute on the target.
 
-With everything in place, reload and tap the "Add a card..." button
-to see the expand/collapse in action. One step closer to building
-your first killer app.
+With everything in place, reload and tap the buttons to see the
+expand/collapse in action. One step closer to building your first killer
+app and world domination!
 
 [Collapse]: http://getbootstrap.com/javascript/#collapse
 [Usage]: http://getbootstrap.com/javascript/#collapse-usage

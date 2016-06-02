@@ -48,8 +48,20 @@ a {
 
 /* BOARD */
 
+.add-list-container {
+    padding: 5px;
+}
+
 .add-list {
     /** PHASE 1 CSS here */
+}
+
+.add-list:hover {
+    /** PHASE 1 CSS here */
+}
+
+.add-list-form {
+    /** PHASE 4 CSS here */
 }
 
 .board {

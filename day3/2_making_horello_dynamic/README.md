@@ -91,10 +91,12 @@ the property and set method to modify it. In other words,
 
 (Why do we need getters and setters? Private data members etc.)
 
-Open up [horello.js] and follow the instructions in the comments to
-create the necessary classes and helper methods.
+Open up [1_horello_objects.html] and [horello.js] and follow the
+instructions in the comments to create the necessary classes and helper
+methods.
 
-[horello.js]:./js/horello.js
+[horello.js]:./solution/js/horello.js
+[1_horello_objects.html]:./1_solution/1_horello_objects.html
 
 This part has three phases:
 
@@ -104,14 +106,64 @@ This part has three phases:
 
 ## PART 2. Render
 
-This part has four phases:
+You crushed that data model didn't you? We know. We knew you'd find that
+a piece of cake. That's why we've cooked up something extra special for
+you in this next part. Extra special as in "extra friggin' crazy hard."
+Crazy hard like Chuck Norris's abs of steel.
+
+Now that the data model is in place, we need to tie it to the view. In
+other words, we need to take the data in the model and turn it into
+visual components on the screen that the user can view and interact
+with. This process is known as _rendering._
+
+Take a look at the HTML from the [solution to yesterday's
+project][previous]. Find the `card` class and look at the HTML that's
+used to render a card. It looks like this:
+
+    <div class="card" data-toggle="modal"
+         data-target="#cardEdit">
+            <span class="card-more">
+                <span class="glyphicon glyphicon-align-left"></span>
+            </span>
+        <div class="card-body">
+           (card title here) 
+        </div>
+    </div>
+
+Our goal in this part of the project is to turn a `Card` object, which
+you defined in the previous part, into HTML like this. Note that you'll
+have to replace `(card title here)` with the actual title of the
+card--that's the dynamic part!
+
+You'll accomplish this using jQuery, which allows you to quickly and
+easily create HTML elements and tie them together on the fly. You'll be
+using the [`jQuery(html)`][jquery] syntax (which can also be written
+`$(...)`) and the [append] function.
+
+Take a look at `horello.Card.prototype.render` in [horello.js], which
+has been partly filled in for you as an example. Go ahead and complete
+this function, then fill in all of the other `render()` functions based
+on this example. Here are a few tips:
+
+- Cards have dynamic titles and descriptions. The description isn't
+  displayed before you tap on a card, but the `card-more` icon should
+  only be displayed if the card has a description.
+- Lists have a dynamic title, and a dynamic list of Cards.
+- The Board has a dynamic list of Lists.
+
+This part has three phases:
 
 - PHASE 1. Card
 - PHASE 2. List
 - PHASE 3. Board
-- PHASE 4. Mount
+
+[previous]: http://horizons-school-of-technology.github.io/week02/day2/2_horello/solution/index.html
+[jquery]: http://api.jquery.com/jQuery/#jQuery2
+[append]: http://api.jquery.com/append/
 
 ## PART 3. Plumbing
+
+
 
 ### PHASE 1. Adding IDs
 

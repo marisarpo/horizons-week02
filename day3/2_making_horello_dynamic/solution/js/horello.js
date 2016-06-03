@@ -18,17 +18,6 @@ horello.generateId = function() {
 };
 
 // PART 1. Data model
-//
-// Recall from last week how we define classes with properties and
-// methods, e.g.:
-//
-//  var Person = function(name) {
-//    this.name = name;
-//  };
-//  
-//  Person.prototype.getName = function() {
-//    return this.name;
-//  };
 
 // Phase 1. `Card` Class
 // Cards contain a unique ID, a title, and a description.  Write a Card class
@@ -219,18 +208,16 @@ horello.Board.prototype = {
 
 
 // PART 2. Render
-//
-// Phase 1. Card
-//
-// this function returns a string with html representing the internal object.
-horello.card.prototype.render = function() {
-  console.log("rendering card...");
 
+// Phase 1. Card [EXAMPLE]
+// This function renders a card to HTML, representing the internal data.
+// It returns an HTML string representing the internal object.
+horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card" data-list-id="'+this.listid+'" data-card-id="'+this.id+'"></div>');
+  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
   var cardmore = $('<span class="card-more"></span>');
-  if (this.getdescription()) {
+  if (this.getDescription()) {
     cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
   }
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
@@ -244,13 +231,10 @@ horello.card.prototype.render = function() {
 };
 
 // Phase 2. List
-
-  // [Helper] Example 2.G `render()`
-  // This function returns a string with HTML representing the internal
-  // object.
+// This function renders a list to HTML, representing the internal data
+// and all of the cards it contains. It returns an HTML string
+// representing the internal object.
 horello.List.prototype.render = function() {
-  console.log("Rendering list...");
-
   // Build wrappers
   var wrapper = $('<div></div>');
 
@@ -290,9 +274,10 @@ horello.List.prototype.render = function() {
 }
 
 // Phase 3. Board
+// This function renders a Board, and all of the lists it contains, to
+// HTML. It returns an HTML string representing the internal object.
 
 horello.Board.prototype.render = function() {
-  console.log("Rendering board...");
   var wrapper = $('<div id="board" class="board"></div>');
   wrapper.html(this.lists.reduce(function(prev, cur) {
     return prev + cur.render();
@@ -304,7 +289,62 @@ horello.Board.prototype.renderToHTML = function() {
   return this.render().html();
 }
 
-// Phase 4. Mount
+// PART 3. Plumbing
+//
+horello.mountStatic = function() {
+  // Add list form
+  $('.add-list').click(function(e) {
+    $('#addList').collapse('toggle');
+  });
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $('#addListText').focus();
+  });
+  $('#addListSave').click(function(e) {
+    var listName = $('#addListText').val();
+    // validate input
+    if (!listName) {
+      alert("Please enter a list name");
+      return;
+    }
+    board.addList(listName);
+    $('#addListText').val('');
+    $('#addList').collapse('toggle');
+    horello.mount(board);
+  });
+  $('#addListCancel').click(function(e) {
+    $('#addList').collapse('hide');
+  });
+
+  // Modal
+  $('#cardEdit').on('show.bs.modal', function (e) {
+    var button = $(e.relatedTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+    $('#modalBody').val(card.getDescription());
+    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('card-id', cardId);
+  });
+  $('#modalSave').click(function (e) {
+    var title = $('#modalText').val();
+    var desc = $('#modalBody').val();
+    if (!title) {
+      alert('Please enter a title');
+      return;
+    }
+
+    var listId = $(e.currentTarget).data('list-id');
+    var cardId = $(e.currentTarget).data('card-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    card.setTitle(title);
+    card.setDescription(desc);
+    $('#cardEdit').modal('hide');
+    horello.mount(board);
+  });
+}
 
 // Dynamic stuff, unbind and rebind every time the board is rendered.
 

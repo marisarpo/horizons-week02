@@ -10,6 +10,7 @@
 - alpha (opacity) 0.15
 
 ## Board
+display: flex;
 - Add list button
   - background alpha: .12
   - font color: #fff

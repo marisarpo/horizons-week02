@@ -2,11 +2,6 @@
 
 window.horello = {};
 
-// In this exercise, you're going to be building the majority of the
-// interactive parts of Horello. In the past few days, you've been
-// building the front-end of it. You've been building the UI of your
-// application and are now ready to bring it to life.
-
 // [Helper] `generateId`
 // This function generates a random, unique string for you use for whatever.
 // 
@@ -22,11 +17,23 @@ horello.generateId = function() {
     chunk() + '-' + chunk() + chunk() + chunk();
 };
 
-// Exercise 1. `Note` Class
-// Write a note class that follows the spec described in
-// `classSpec.png`. The note class will be made up of different
-// properties and methods.
-// 
+// PART 1. Data model
+//
+// Recall from last week how we define classes with properties and
+// methods, e.g.:
+//
+//  var Person = function(name) {
+//    this.name = name;
+//  };
+//  
+//  Person.prototype.getName = function() {
+//    return this.name;
+//  };
+
+// Phase 1. `Card` Class
+// Cards contain a unique ID, a title, and a description.  Write a Card class
+// that follows the spec described in `classSpec.png`. This class will contain
+// several properties and methods.
 
 horello.Card = function(title, desc, listId) {
   // YOUR CODE HERE
@@ -34,17 +41,7 @@ horello.Card = function(title, desc, listId) {
   this.listId = listId;
   this.title = title;
   this.desc = desc;
-  this.createdAt = new Date().toUTCString();
-  this.updatedAt = this.createdAt;
 };
-
-// note. A way to define methods in a class altogether is like this:
-// var Fruit = function() {};
-// 
-// Fruit.prototype = {
-//     scream: function() { return "YEEEEEEEET"; }
-//     remark:  function() { return "dat boi"; }
-// };
 
 horello.Card.prototype = {
   // Exercise 1.A `getId`
@@ -62,9 +59,9 @@ horello.Card.prototype = {
   // Exercise 1.C `setTitle(titleStr<String>)`
   // Write a setter funtion for the `titleStr` property
   // 
-  // ex. var note = horello.Note("Thing I had to do", "What was it?");
-  //   note.setTitle("Buy Milk");
-  //   note.getTitle() -> "Buy Milk";
+  // ex. var card = horello.Card("Thing I had to do", "What was it?");
+  //   card.setTitle("Buy Milk");
+  //   card.getTitle() -> "Buy Milk";
   setTitle: function(titleStr) {
     this.title = titleStr;
   },
@@ -78,41 +75,17 @@ horello.Card.prototype = {
   // Exercise 1.E `setDescription(desc<String>)`
   // Write a setter funtion for the `desc` property
   //
-  // ex. var note = horello.Note("Thing I had to do", "What was it?");
-  //   note.setDescription("Maybe check Whole Foods?");
-  //   note.getDescription() -> "BMaybe check Whole Foods?;
+  // ex. var card = horello.Card("Thing I had to do", "What was it?");
+  //   card.setDescription("Maybe check Whole Foods?");
+  //   card.getDescription() -> "BMaybe check Whole Foods?;
   setDescription: function(desc) {
     this.desc = desc;
-  },
-
-  // [Helper] Example 1.F `render()`
-  // This function returns a string with HTML representing the internal object.
-  render: function() {
-    console.log("Rendering note...");
-
-    // Build wrappers
-    var wrapper = $('<div></div>');
-    var cardWrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-    var cardMore = $('<span class="card-more"></span>');
-    if (this.getDescription()) {
-      cardMore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
-    }
-    var cardBody = $('<div class="card-body">'+this.title+'</div>');
-
-    wrapper.append(cardWrapper);
-    cardWrapper.append(cardMore);
-    cardWrapper.append(cardBody);
-    cardBody.append($("<p></p>")).text(this.title);
-
-    return wrapper.html();
   }
 };
 
-// Exercise 2. `List` Class
-// Write a List class according to the spec in `classSpec.png`. The list
-// class will be used to hold all instances of the Notes class, and it
-// will also be responsible for
-
+// Phase 2. `List` Class
+// Lists contain a unique ID, a title, and a list of cards.  Write a List class
+// according to the spec in `classSpec.png`.
 horello.List = function(name) {
   // YOUR CODE HERE
   this.id = horello.generateId();
@@ -146,12 +119,12 @@ horello.List.prototype = {
 
   // Exercise 2.D `addCard(title<String>, desc<String>)`
   // Write a function that takes two arguments, `title` and `desc`,
-  // which are both strings. It should instantiate a new Note object
+  // which are both strings. It should instantiate a new Card object
   // with those give arguments, and add the newly created object to its
   // array of cards. Finally, it should return the id of the newly
-  // created note.
+  // created card.
   // 
-  // hint. You can create a card using new horello.Note(...)
+  // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
@@ -160,7 +133,7 @@ horello.List.prototype = {
   
   // Exercise 2.E `getCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
-  // string. It should search its card array for the Note object with
+  // string. It should search its card array for the Card object with
   // the given id, and return it. If the card cannot be found, it should
   // return null.
   // 
@@ -185,7 +158,7 @@ horello.List.prototype = {
   // string. It should retrieve the cardObject which corresponds to that
   // cardId (if it exists), remove it from the card array, and return
   // it. If it does not exist, then it should return null. Finally, it
-  // should return the id of the newly created note.
+  // should return the id of the newly created card.
   rmvCard: function(cardId) {
     var c = this.getCard(cardId);
     if (c === null) {
@@ -194,31 +167,107 @@ horello.List.prototype = {
     var ind = this.cards.indexOf(c);
     this.cards.splice(ind, 1);
     return c;
+  }
+};
+
+// Phase 3. `Board` Class
+// A board contains a list of lists.  Write a Board class according to the spec
+// in `classSpec.png`.
+horello.Board = function () {
+  this.lists = [];
+};
+
+horello.Board.prototype = {
+  // Exercise 3.A `addList(listName<String>)`
+  // Write a function that takes one argument, `listName`, which is a
+  // string. It should create a new list with this name, and add it to
+  // the list of this Board's lists. Finally, it should return the ID
+  // of the new list.
+  addList: function(listName) {
+    var list = new horello.List(listName);
+    this.lists.push(list);
+    return list.getId();
   },
-  
+
+  // Exercise 3.B `getList(listId<String>)`
+  // Write a function that takes one argument, `listId`, which is a
+  // string. It should look for a list with this ID among the Board's
+  // lists, and return the matching list if one is found, or undef
+  // otherwise.
+  getList: function(listId) {
+    return this.lists.find(function(c) {
+      return (c.getId() == listId);
+    });
+  },
+
+  // Exercise 3.C `rmvList(listId<String>)`
+  // Write a function that takes one argument, `listId`, which is a
+  // string. It should look for a list with this ID among the Board's
+  // lists, and if one is found, it should delete this list from the
+  // Board's lists, then return the list object. If no matching list is
+  // found, it should return null.
+  rmvList: function(listId) {
+    var c = this.getList(listId);
+    if (c === null) {
+      return null;
+    }
+    var ind = this.lists.indexOf(c);
+    this.lists.splice(ind, 1);
+    return c;
+  }
+};
+
+
+// PART 2. Render
+//
+// Phase 1. Card
+//
+// this function returns a string with html representing the internal object.
+horello.card.prototype.render = function() {
+  console.log("rendering card...");
+
+  // build wrappers
+  var wrapper = $('<div></div>');
+  var cardwrapper = $('<div class="card" data-list-id="'+this.listid+'" data-card-id="'+this.id+'"></div>');
+  var cardmore = $('<span class="card-more"></span>');
+  if (this.getdescription()) {
+    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+  }
+  var cardbody = $('<div class="card-body">'+this.title+'</div>');
+
+  wrapper.append(cardwrapper);
+  cardwrapper.append(cardmore);
+  cardwrapper.append(cardbody);
+  cardbody.append($("<p></p>")).text(this.title);
+
+  return wrapper.html();
+};
+
+// Phase 2. List
+
   // [Helper] Example 2.G `render()`
   // This function returns a string with HTML representing the internal
   // object.
-  render: function() {
-    console.log("Rendering list...");
+horello.List.prototype.render = function() {
+  console.log("Rendering list...");
 
-    // Build wrappers
-    var wrapper = $('<div></div>');
-    
-    var listContainer = $('<div class="list-container"></div>');
-    var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
-    var listHeader = $('<div class="list-header"></div>');
-    var listBody = $('<div class="list-cards"></div>');
-    var listFooter = $('<div class="list-footer"></div>');
-    
-    wrapper.append(listContainer);
-    listContainer.append(listWrapper);
-    listWrapper.append(listHeader);
-    listWrapper.append(listBody);
-    listWrapper.append(listFooter);
-    listHeader.append($('<span class="list-title"></span>').text(this.name));
-    listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
-    listFooter.append($('\
+  // Build wrappers
+  var wrapper = $('<div></div>');
+
+  var listContainer = $('<div class="list-container"></div>');
+  var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
+  var listHeader = $('<div class="list-header"></div>');
+  var listBody = $('<div class="list-cards"></div>');
+  var listFooter = $('<div class="list-footer"></div>');
+
+  wrapper.append(listContainer);
+  listContainer.append(listWrapper);
+  listWrapper.append(listHeader);
+  listWrapper.append(listBody);
+  listWrapper.append(listFooter);
+  listHeader.append($('<span class="list-title"></span>').text(this.name));
+  listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
+  listFooter.append($('\
       <div class="collapse" id="addCardForm'+this.id+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
@@ -230,64 +279,36 @@ horello.List.prototype = {
       </button>\
       </div>\
       </div>\
-      '));
+    '));
 
-    // Build notes in the body
-    listBody.html(this.cards.reduce(function(prev, cur) {
-      return prev + cur.render();
-    }, ""));
+  // Build cards in the body
+  listBody.html(this.cards.reduce(function(prev, cur) {
+    return prev + cur.render();
+  }, ""));
 
-    return wrapper.html();
-  }
-  
-};
+  return wrapper.html();
+}
 
-// Exercise 3: board
+// Phase 3. Board
 
-horello.Board = function () {
-  this.lists = [];
-};
+horello.Board.prototype.render = function() {
+  console.log("Rendering board...");
+  var wrapper = $('<div id="board" class="board"></div>');
+  wrapper.html(this.lists.reduce(function(prev, cur) {
+    return prev + cur.render();
+  }, ""));
+  return wrapper;    
+},
 
-horello.Board.prototype = {
-  addList: function(name) {
-    var list = new horello.List(name);
-    this.lists.push(list);
-    return list.getId();
-  },
+horello.Board.prototype.renderToHTML = function() {
+  return this.render().html();
+}
 
-  getList: function(listId) {
-    return this.lists.find(function(c) {
-      return (c.getId() == listId);
-    });
-  },
-
-  rmvList: function(listId) {
-    var c = this.getList(listId);
-    if (c === null) {
-      return null;
-    }
-    var ind = this.lists.indexOf(c);
-    this.lists.splice(ind, 1);
-    return c;
-  },
-  
-  render: function() {
-    console.log("Rendering board...");
-    var wrapper = $('<div id="board" class="board"></div>');
-    wrapper.html(this.lists.reduce(function(prev, cur) {
-      return prev + cur.render();
-    }, ""));
-    return wrapper;    
-  },
-
-  renderToHTML: function() {
-    return this.render().html();
-  }
-};
+// Phase 4. Mount
 
 // Dynamic stuff, unbind and rebind every time the board is rendered.
 
-horello.render = function (board) {
+horello.mount = function (board) {
   /*
     Note: we are NOT unbinding event listeners from elements that are
     going away. It looks like this isn't necessary with jquery per
@@ -329,7 +350,7 @@ horello.render = function (board) {
       // Get the list object
       var list = board.getList(id);
       list.addCard(val);
-      horello.render(board);
+      horello.mount(board);
     });
 
     // Cancel

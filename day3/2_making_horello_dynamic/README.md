@@ -1,4 +1,4 @@
-# Horello data model
+# Making Horello dynamic
 
 Most of the applications you worked on last week were pretty simple.
 They just involved things like manipulating data, or printing
@@ -48,7 +48,7 @@ our buttons and form fields actually do something useful: in our case,
 creating and modifying cards and lists.
 
 Finally, networking allows our application, running on a web browser on
-our computer, talk to another computer which stores, aggregates, and
+our computer, to talk to another computer which stores, aggregates, and
 manipulates data from lots of different users. This computer is called
 a server, and it contains a database where our data will be persisted.
 The server and the database are often referred to in the abstract as
@@ -66,19 +66,50 @@ information to and read it from the server). In this part, you'll set up
 classes, and a few helper methods, to represent the application's
 components: the board, lists, and cards.
 
-### PHASE 1. Card
+Recall from last week how we define classes with properties and methods,
+e.g.:
 
-### PHASE 2. List
+    var Person = function(name) {
+      this.name = name;
+    };
+  
+    Person.prototype.getName = function() {
+      return this.name;
+    };
 
-### PHASE 3. Board
+In order to make the data model dynamic, so that it's easy to create new
+elements and edit existing ones, we need to introduce a pair of methods
+called "getters" and "setters." It's pretty self-explanatory: `get` is
+used to read a property, and `set` is used to set, modify, or unset a
+property.
+
+In the case of Horello cards, for instance, for each of the card's
+properties--its title and its description--we need a get method to read
+the property and set method to modify it. In other words,
+`Card.prototype` should contain `getTitle`, `setTitle`,
+`getDescription`, and `setDescription`.
+
+(Why do we need getters and setters? Private data members etc.)
+
+Open up [horello.js] and follow the instructions in the comments to
+create the necessary classes and helper methods.
+
+[horello.js]:./js/horello.js
+
+This part has three phases:
+
+- PHASE 1. Card
+- PHASE 2. List
+- PHASE 3. Board
 
 ## PART 2. Render
 
-### PHASE 1. Card
+This part has four phases:
 
-### PHASE 2. List
-
-### PHASE 3. Board
+- PHASE 1. Card
+- PHASE 2. List
+- PHASE 3. Board
+- PHASE 4. Mount
 
 ## PART 3. Plumbing
 

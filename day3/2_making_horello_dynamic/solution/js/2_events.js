@@ -8,7 +8,7 @@ $(function () {
   var board = new horello.Board();
   board.addList("Awesomeness");
   board.lists[0].addCard("Hello", "Hello, world");
-  horello.render(board);
+  horello.mount(board);
 
   // Used for tests
   window.board = board;
@@ -32,7 +32,7 @@ $(function () {
     board.addList(listName);
     $('#addListText').val('');
     $('#addList').collapse('toggle');
-    horello.render(board);
+    horello.mount(board);
   });
   $('#addListCancel').click(function(e) {
     $('#addList').collapse('hide');
@@ -65,7 +65,7 @@ $(function () {
     card.setTitle(title);
     card.setDescription(desc);
     $('#cardEdit').modal('hide');
-    horello.render(board);
+    horello.mount(board);
   });
 
 });

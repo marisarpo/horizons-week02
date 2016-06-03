@@ -23,6 +23,7 @@
 - padding: 0.5em
 - margin: 5px vertical, 5px horizontal
 - border radius: 3px
+- width: 270px;
 - background color: #e2e4e6
 - Add Card button
   - height: 40px

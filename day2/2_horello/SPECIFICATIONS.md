@@ -24,7 +24,7 @@
 - margin: 5px vertical, 5px horizontal
 - border radius: 3px
 - background color: #e2e4e6
-- Add Card button
+- Add List button
   - height: 40px
   - border radius: 4px
   - text align: left

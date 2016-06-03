@@ -163,6 +163,14 @@ This part has three phases:
 
 ## PART 3. Plumbing
 
+At this point you're probably thinking, come on guys, I agreed to spend
+all summer with you, and all I've got so far is a headache from lack of
+sleep, a nifty T-shirt, and a half-baked app that looks pretty but
+doesn't even do anything yet. Oh, wait, you don't have a T-shirt yet, do
+you? I guess that leaves you with just a half-baked app. But wait,
+there's more! Your half-baked app is about to become three-quarters
+baked!
+
 
 
 ### PHASE 1. Adding IDs

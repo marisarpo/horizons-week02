@@ -289,16 +289,29 @@ horello.Board.prototype.renderToHTML = function() {
   return this.render().html();
 }
 
-// PART 3. Plumbing
-//
+// PART 3. Events
+
+// Phase 1. Static events
+// This function is called once, when the page loads, to set up all of
+// the static events, i.e., events that do not need to change as we
+// change the contents of the board. For instance, the "Add list" button
+// always does the same thing. The button doesn't appear or disappear
+// and its behavior never changes.
 horello.mountStatic = function() {
-  // Add list form
+  // Add list form: these events control the "Add a list" form that
+  // appears on the top-level board.
+
+  // 1a. Add list form: toggle collapse
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
   });
+
+  // 1b. Add list form: focus the title text input
   $('#addList').on('shown.bs.collapse', function (e) {
     $('#addListText').focus();
   });
+
+  // 1c. Add list form: save button
   $('#addListSave').click(function(e) {
     var listName = $('#addListText').val();
     // validate input
@@ -311,11 +324,16 @@ horello.mountStatic = function() {
     $('#addList').collapse('toggle');
     horello.mount(board);
   });
+
+  // 1d. Add list form: cancel button
   $('#addListCancel').click(function(e) {
     $('#addList').collapse('hide');
   });
 
-  // Modal
+  // Modal: these events control the modal that appears when you click
+  // on a card.
+
+  // 1e. Open modal
   $('#cardEdit').on('show.bs.modal', function (e) {
     var button = $(e.relatedTarget);
     var cardId = button.data('card-id');
@@ -327,6 +345,8 @@ horello.mountStatic = function() {
     $('#modalSave').data('list-id', listId);
     $('#modalSave').data('card-id', cardId);
   });
+
+  // 1f. Modal save
   $('#modalSave').click(function (e) {
     var title = $('#modalText').val();
     var desc = $('#modalBody').val();

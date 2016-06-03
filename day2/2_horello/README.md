@@ -33,7 +33,7 @@ it throughout the project.
 
 [specs]: ./SPECIFICATIONS.md
 
-## Phase 1: Board
+## Phase 1: Board and Flexbox
 
 Screenshots:
 - [start][ss-01a]
@@ -70,6 +70,23 @@ tag in the [skeleton HTML] file and add the "Add a list..." button. See
 if you can figure out which combination of HTML tags and CSS classes
 you need for this element. Here's a hint: when in doubt, use a `div`.
 
+Recall what we learned in lecture this morning about flexbox (refresh your memory by reading
+[this][flexbox]). By default, elements on a web page flow from top to
+bottom. There are a few ways to place things side by side,
+horizontally. You saw two of them yesterday: `float` and `position:
+absolute`. Those work well for one-off, static elements such as
+images and buttons, but they don't lend themselves to large amounts
+of dynamic content such as text or, in our case, lists and cards (by
+"dynamic" we mean that you'll be creating, editing, and deleting
+cards and lists, and moving them around--and you can't absolutely
+position something that moves around!). This is where responsive
+layout tools such as Flexbox come in handy.
+
+Turning on flexbox is as easy as adding the `display: flex` property
+to an element. Turn on flexbox for the top-level board (so the lists
+are displayed next to one another), and for list (so the cards are
+displayed vertically). Make sure that `flex-direction` is set correctly!
+
 Reload the page to see your changes. You should see a lovely blue
 canvas with a header and a button right in the middle (the button
 doesn't do anything yet--as a reminder, we'll be wiring it up
@@ -82,7 +99,7 @@ an Irish jig to let everyone else know how awesome you are.
 [skeleton CSS]: ./skeleton/css/style.css
 [live]: http://horizons-school-of-technology.github.io/week02/day2/2_horello/solution/index.html
 
-## Phase 2: Lists and flexbox
+## Phase 2: Lists
 
 Screenshots:
 - [goal][ss-02a]
@@ -99,24 +116,6 @@ pixel perfect clone of the [live version][live].
 Then look for the PHASE 2 comment in the [skeleton HTML] file and add
 the "Add card" button. Try creating this one using the `button` tag
 (rather than a plain `div` or `span`).
-
-Just one more step for this phase. Recall what we learned in lecture
-this morning about flexbox (refresh your memory by reading
-[this][flexbox]). By default, elements on a web page flow from top to
-bottom. There are a few ways to place things side by side,
-horizontally. You saw two of them yesterday: `float` and `position:
-absolute`. Those work well for one-off, static elements such as
-images and buttons, but they don't lend themselves to large amounts
-of dynamic content such as text or, in our case, lists and cards (by
-"dynamic" we mean that you'll be creating, editing, and deleting
-cards and lists, and moving them around--and you can't absolutely
-position something that moves around!). This is where responsive
-layout tools such as Flexbox come in handy.
-
-Turning on flexbox is as easy as adding the `display: flex` property
-to an element. Turn on flexbox for the top-level board (so the lists
-are displayed next to one another), and for list (so the cards are
-displayed vertically). Make sure that `flex-direction` is set correctly!
 
 Reload to see your changes. Things are starting to take shape aren't
 they? Grab a strong cup of coffee to celebrate because you're going

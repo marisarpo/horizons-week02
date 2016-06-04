@@ -55,7 +55,7 @@ The server and the database are often referred to in the abstract as
 "the cloud."
 
 We're going to tackle the model and the events today, and we'll work on
-the networking tomorrow.
+the networking tomorrow. Our goal for today is to recreate this [live] version of the web app.
 
 ## PART 1. Data model
 
@@ -63,7 +63,7 @@ Before we can make our application dynamic--allowing the user to create
 and edit cards and lists--we need a way to represent those objects in the
 computer's memory (and, later, we'll also need a way to pass that
 information to and read it from the server). In this part, you'll set up
-classes, and a few helper methods, to represent the application's
+classes and a few helper methods to represent the application's
 components: the board, lists, and cards.
 
 Recall from last week how we define classes with properties and methods,
@@ -72,7 +72,7 @@ e.g.:
     var Person = function(name) {
       this.name = name;
     };
-  
+
     Person.prototype.getName = function() {
       return this.name;
     };
@@ -89,14 +89,15 @@ the property and set method to modify it. In other words,
 `Card.prototype` should contain `getTitle`, `setTitle`,
 `getDescription`, and `setDescription`.
 
-(Why do we need getters and setters? Private data members etc.)
+(TODO: Why do we need getters and setters? Private data members etc.)
 
-Open up [1_horello_objects.html] and [horello.js] and follow the
+Open up [1_horello_data_model.html] and [1_data_model.js] and follow the
 instructions in the comments to create the necessary classes and helper
-methods.
+methods to satisfy the tests.
 
-[horello.js]:./solution/js/horello.js
-[1_horello_objects.html]:./1_solution/1_horello_objects.html
+[1_data_model.js]:./solution/js/1_data_model.js
+[1_horello_data_model.html]:./solution/1_horello_data_model.html
+[live]: http://horizons-school-of-technology.github.io/week02/day3/2_making_horello_dynamic/solution/3_horello_events.html
 
 This part has three phases:
 
@@ -126,7 +127,7 @@ used to render a card. It looks like this:
                 <span class="glyphicon glyphicon-align-left"></span>
             </span>
         <div class="card-body">
-           (card title here) 
+           (card title here)
         </div>
     </div>
 
@@ -140,7 +141,10 @@ easily create HTML elements and tie them together on the fly. You'll be
 using the [`jQuery(html)`][jquery] syntax (which can also be written
 `$(...)`) and the [append] function.
 
-Take a look at `horello.Card.prototype.render` in [horello.js], which
+To get started, open up [2_horello_render.html] in your browser and
+[2_render.js] in your text editor.
+
+Take a look at `horello.Card.prototype.render` in [2_render.js], which
 has been partly filled in for you as an example. Go ahead and complete
 this function, then fill in all of the other `render()` functions based
 on this example. Here are a few tips:
@@ -151,12 +155,14 @@ on this example. Here are a few tips:
 - Lists have a dynamic title, and a dynamic list of Cards.
 - The Board has a dynamic list of Lists.
 
-This part has three phases:
+This part has three phases, which you can follow in [2_render.js].
 
 - PHASE 1. Card
 - PHASE 2. List
 - PHASE 3. Board
 
+[2_render.js]:./solution/js/2_render.js
+[2_horello_render.html]:./solution/2_horello_render.html
 [previous]: http://horizons-school-of-technology.github.io/week02/day2/2_horello/solution/index.html
 [jquery]: http://api.jquery.com/jQuery/#jQuery2
 [append]: http://api.jquery.com/append/
@@ -185,6 +191,9 @@ from the last exercise how events work: we attach them to an _element,_
 for a particular _event_ (e.g., "click"), and when they're triggered
 they execute a _function._
 
+To get started, open up [3_horello_events.html] in your browser and
+[3_events.js] in your text editor.
+
 ### PHASE 1. Static events: add list button
 
 Our app has two types of events: static events and dynamic events.
@@ -202,7 +211,7 @@ corresponding event. We refer to this type of event as a dynamic event.
 
 In this phase of the project we're going to start by wiring up the
 static events. The events are configured in a function called
-`horello.mountStatic` in [horello.js]. ("Mount" refers to the action of
+`horello.mountStatic` in [3_events.js]. ("Mount" refers to the action of
 attaching, or mounting, the dynamic view data that you generated in the
 last section into the DOM so that you can see and interact with it.)
 
@@ -318,3 +327,5 @@ But we don't rest on our laurels for long. That's not how we roll here.
 Because tomorrow we're on to bigger and better things: adding networking
 to your app.
 
+[3_events.js]:./solution/js/3_events.js
+[3_horello_events.html]:./solution/3_horello_events.html

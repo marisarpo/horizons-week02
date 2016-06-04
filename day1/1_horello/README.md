@@ -1,10 +1,10 @@
 # HTML and CSS Intro: Building a landing page
 
-Congratulations on being hired and welcome to the Horello team! As our
-latest web development hire, we're relying on you to build the landing
-page for our flagship product, Horello, a shared task manager. The rest
-of our web team is currently on a retreat in Tahiti, but we've left
-these instructions so you should have everything you need to get
+Congratulations on being hired and welcome to the Horello, Inc. team! As
+our latest web development hire, we're relying on you to build the
+landing page for our flagship product, Horello, a shared task manager.
+The rest of our web team is currently on a retreat in Tahiti, but we've
+left these instructions so you should have everything you need to get
 started building your first web page using HTML and CSS. Your task is to
 create a pixel perfect clone of [this page][live-06].
 
@@ -361,7 +361,7 @@ that section. The easiest way to do that is to add a `clear: both`
 property to the `section` element selector.
 
 Refresh once more and do a cartwheel because you just finished phase
-five, just one more to go! 🎉
+five, just one more to go!  🎉
 
 Supplemental reading (optional):
 - [All About Floats]

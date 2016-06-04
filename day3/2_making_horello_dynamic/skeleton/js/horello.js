@@ -25,7 +25,6 @@ horello.generateId = function() {
 // several properties and methods.
 
 horello.Card = function(title, desc, listId) {
-  // YOUR CODE HERE
   this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
@@ -36,13 +35,13 @@ horello.Card.prototype = {
   // Exercise 1.A `getId`
   // Write a getter function for the `id` property
   getId: function() {
-    return this.id;
+    // YOUR CODE HERE
   },
 
   // Exercise 1.B `getTitle`
   // Write a getter function for the `title` property
   getTitle: function() {
-    return this.title;
+    // YOUR CODE HERE
   },
 
   // Exercise 1.C `setTitle(titleStr<String>)`
@@ -52,13 +51,13 @@ horello.Card.prototype = {
   //   card.setTitle("Buy Milk");
   //   card.getTitle() -> "Buy Milk";
   setTitle: function(titleStr) {
-    this.title = titleStr;
+    // YOUR CODE HERE
   },
 
   // Exercise 1.D `getDescription`
   // Write a getter function for the `desc` property
   getDescription: function() {
-    return this.desc;
+    // YOUR CODE HERE
   },
 
   // Exercise 1.E `setDescription(desc<String>)`
@@ -68,7 +67,7 @@ horello.Card.prototype = {
   //   card.setDescription("Maybe check Whole Foods?");
   //   card.getDescription() -> "BMaybe check Whole Foods?;
   setDescription: function(desc) {
-    this.desc = desc;
+    // YOUR CODE HERE
   }
 };
 
@@ -77,23 +76,20 @@ horello.Card.prototype = {
 // according to the spec in `classSpec.png`.
 horello.List = function(name) {
   // YOUR CODE HERE
-  this.id = horello.generateId();
-  this.name = name;
-  this.cards = [];
 };
 
 horello.List.prototype = {
   // Exercise 2.A `getId`
   // Write a getter function for the `id` property
   getId: function() {
-    return this.id;
+    // YOUR CODE HERE
   },
 
   // YOUR CODE HERE
   // Exercise 2.B `getName`
   // Write a getter function for the `name` property
   getName: function() {
-    return this.name;
+    // YOUR CODE HERE
   },
 
   // Exercise 2.C `setName(name<String>)`
@@ -103,7 +99,7 @@ horello.List.prototype = {
   //   l.setTitle("Digimon");
   //   l.getTitle() -> "Digimon";
   setName: function(name) {
-    this.name = name;
+    // YOUR CODE HERE
   },
 
   // Exercise 2.D `addCard(title<String>, desc<String>)`
@@ -115,9 +111,7 @@ horello.List.prototype = {
   // 
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+    // YOUR CODE HERE
   },
   
   // Exercise 2.E `getCard(cardId<String>)`
@@ -133,13 +127,7 @@ horello.List.prototype = {
   // 
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
-    var card = this.cards.filter(function(c) {
-      return (c.getId() == cardId);
-    });
-    if (card.length > 0) {
-      return card[0];
-    }
-    return null;
+    // YOUR CODE HERE
   },
   
   // Exercise 2.F `rmvCard(cardId<String>)`
@@ -149,13 +137,7 @@ horello.List.prototype = {
   // it. If it does not exist, then it should return null. Finally, it
   // should return the id of the newly created card.
   rmvCard: function(cardId) {
-    var c = this.getCard(cardId);
-    if (c === null) {
-      return null;
-    }
-    var ind = this.cards.indexOf(c);
-    this.cards.splice(ind, 1);
-    return c;
+    // YOUR CODE HERE
   }
 };
 
@@ -163,7 +145,7 @@ horello.List.prototype = {
 // A board contains a list of lists.  Write a Board class according to the spec
 // in `classSpec.png`.
 horello.Board = function () {
-  this.lists = [];
+  // YOUR CODE HERE
 };
 
 horello.Board.prototype = {
@@ -173,9 +155,7 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    // YOUR CODE HERE
   },
 
   // Exercise 3.B `getList(listId<String>)`
@@ -184,9 +164,7 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    return this.lists.find(function(c) {
-      return (c.getId() == listId);
-    });
+    // YOUR CODE HERE
   },
 
   // Exercise 3.C `rmvList(listId<String>)`
@@ -196,13 +174,7 @@ horello.Board.prototype = {
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
   rmvList: function(listId) {
-    var c = this.getList(listId);
-    if (c === null) {
-      return null;
-    }
-    var ind = this.lists.indexOf(c);
-    this.lists.splice(ind, 1);
-    return c;
+    // YOUR CODE HERE
   }
 };
 
@@ -215,11 +187,8 @@ horello.Board.prototype = {
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-  var cardmore = $('<span class="card-more"></span>');
-  if (this.getDescription()) {
-    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
-  }
+  var cardwrapper = $('<div class="card"></div>');
+  var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
 
   wrapper.append(cardwrapper);
@@ -235,53 +204,14 @@ horello.Card.prototype.render = function() {
 // and all of the cards it contains. It returns an HTML string
 // representing the internal object.
 horello.List.prototype.render = function() {
-  // Build wrappers
-  var wrapper = $('<div></div>');
-
-  var listContainer = $('<div class="list-container"></div>');
-  var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
-  var listHeader = $('<div class="list-header"></div>');
-  var listBody = $('<div class="list-cards"></div>');
-  var listFooter = $('<div class="list-footer"></div>');
-
-  wrapper.append(listContainer);
-  listContainer.append(listWrapper);
-  listWrapper.append(listHeader);
-  listWrapper.append(listBody);
-  listWrapper.append(listFooter);
-  listHeader.append($('<span class="list-title"></span>').text(this.name));
-  listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
-  listFooter.append($('\
-      <div class="collapse" id="addCardForm'+this.id+'">\
-      <div class="well add-card-form">\
-      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
-      Save\
-      </button>\
-      <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
-      </button>\
-      </div>\
-      </div>\
-    '));
-
-  // Build cards in the body
-  listBody.html(this.cards.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-
-  return wrapper.html();
+  // YOUR CODE HERE
 }
 
 // Phase 3. Board
 // This function renders a Board, and all of the lists it contains, to
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
-  var wrapper = $('<div id="board" class="board"></div>');
-  wrapper.html(this.lists.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-  return wrapper;    
+  // YOUR CODE HERE
 },
 
 // PART 3. Events
@@ -310,84 +240,26 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
-  $('#addList').on('shown.bs.collapse', function (e) {
-    $('#addListText').focus();
-  });
+ 
+  // YOUR CODE HERE
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
   // form is clicked, should 1. validate the input (i.e., make sure that
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
-  $('#addListSave').click(function(e) {
-    var listName = $('#addListText').val();
-    // validate input
-    if (!listName) {
-      alert("Please enter a list name");
-      return;
-    }
-    board.addList(listName);
-    $('#addListText').val('');
-    $('#addList').collapse('toggle');
-    horello.mount(board);
-  });
+
+  // YOUR CODE HERE
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-  $('#addListCancel').click(function(e) {
-    $('#addList').collapse('hide');
-  });
 
-  // Modal: these events control the modal that appears when you click
-  // on a card.
-
-  // 1b. This event, triggered when the user clicks on a card, should
-  // reveal the "Edit card" modal, populated with that card's data. It
-  // should store the necessary 
-  $('#cardEdit').on('show.bs.modal', function (e) {
-    var button = $(e.relatedTarget);
-    var cardId = button.data('card-id');
-    var listId = button.data('list-id');
-    var list = board.getList(listId);
-    var card = list.getCard(cardId);
-    $('#modalText').val(card.getTitle());
-    $('#modalBody').val(card.getDescription());
-    $('#modalSave').data('list-id', listId);
-    $('#modalSave').data('card-id', cardId);
-  });
-
-  // 1f. Modal save
-  $('#modalSave').click(function (e) {
-    var title = $('#modalText').val();
-    var desc = $('#modalBody').val();
-    if (!title) {
-      alert('Please enter a title');
-      return;
-    }
-
-    var listId = $(e.currentTarget).data('list-id');
-    var cardId = $(e.currentTarget).data('card-id');
-    var list = board.getList(listId);
-    var card = list.getCard(cardId);
-    card.setTitle(title);
-    card.setDescription(desc);
-    $('#cardEdit').modal('hide');
-    horello.mount(board);
-  });
+  // YOUR CODE HERE
 }
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
-  /*
-    Note: we are NOT unbinding event listeners from elements that are
-    going away. It looks like this isn't necessary with jquery per
-    http://stackoverflow.com/questions/10957709/do-i-need-to-unbind-jquery-event-before-remove-element.
-    However, we do remove listeners on elements that stick around so
-    that we don't duplicate listeners (not 100% sure whether this is
-    necessary but let's do it to be safe).
-   */
-
   // Phase 3. Create card
 
   // Unrender and re-render the board.
@@ -401,50 +273,10 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
-  $('.add-card').each(function (idx) {
-    $(this).off();
 
-    var id = $(this).attr('addCardId');
-
-    // Open add card form
-    $(this).click(function (e) {
-      $('#addCardForm'+id).collapse('toggle');
-    });
-
-    $('#addCardForm'+id).off();
-    $('#addCardForm'+id).on('shown.bs.collapse', function(e) {
-      $('#addCardTitle'+id).focus();
-    });
-
-    // Save new card
-    $('#addCardBtn'+id).off();
-    $('#addCardBtn'+id).click(function (e) {
-      var val = $('#addCardTitle'+id).val();
-      if (!val) {
-        alert('Please enter a card title');
-        return;
-      }
-
-      // Get the list object
-      var list = board.getList(id);
-      list.addCard(val);
-      horello.mount(board);
-    });
-
-    // Cancel
-    $('#addCardCancelBtn'+id).off();
-    $('#addCardCancelBtn'+id).click(function (e) {
-      $('#addCardForm'+id).collapse('hide');
-    });
-  });
+  // YOUR CODE HERE
 
   // Phase 4(a). Edit card
- 
-  // 4a. Re-bind card detail modals.
-  $('.card').each(function (idx) {
-    $(this).off();
-    $(this).click(function (e) {
-      $('#cardEdit').modal('toggle', $(this));
-    });
-  });
+
+  // YOUR CODE HERE
 };

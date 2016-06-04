@@ -185,7 +185,7 @@ from the last exercise how events work: we attach them to an _element,_
 for a particular _event_ (e.g., "click"), and when they're triggered
 they execute a _function._
 
-### PHASE 1. Static events
+### PHASE 1. Static events: add list button
 
 Our app has two types of events: static events and dynamic events.
 Static events are connected once, when the page is loaded, and they
@@ -228,16 +228,93 @@ the [jQuery on][on] method. Here are some tips:
 [on]: http://api.jquery.com/on/
 [collapse]: http://getbootstrap.com/javascript/#collapse-usage
 [val]: http://api.jquery.com/val/
-[data]: https://api.jquery.com/jquery.data/
 [focus]: https://api.jquery.com/focus/
 
 ### PHASE 2. Adding IDs
 
-### PHASE 2. Collapse
+One of the problems we face as we begin to add events to our application
+is how to reuse one app element to display, or modify, different data
+elements. This is a very common pattern: in the phone book app in your
+smartphone, if you tap on someone's name, a screen appears that lets you
+view that contact. If you tap "edit", a form appears that lets you edit
+the contact. These views--the "view contact" screen and the "edit
+contact" form--are always the same, i.e., they are each a single
+component of the application, but they can be used to view and edit data
+for any data item.
 
-### PHASE 3. Create list
+In Horello we face this challenge with the modal. We use the same modal
+to view, and edit, every card, meaning that the content of the
+modal--the card title and description--has to also be dynamic, depending
+which card the user clicked! jQuery solves this problem using data
+elements.
 
-### PHASE 4. Create card
+A [jQuery data element][data] allows us to attach arbitrary data to any
+HTML element. There are a few ways to do this, including:
 
-### PHASE 5. Edit card
+- Adding a `data-something="value"` tag to the element's HTML, which
+  causes it to have a data element called "something" with a value of
+  "value".
+- Calling `.data('something', 'value')` on the jQuery selector, which
+  has precisely the same effect.
+
+This is where those list and card IDs come in. We can't easily pass
+around actual List and Card objects, and we can't easily store them in
+our DOM, but we can easily pass around their IDs, attach them to
+elements in the DOM, and refer to them inside of events easily enough.
+Spend a few minutes thinking about which events will require IDs, and
+about how to pass the required data to these events.
+
+Go back to the `render` methods you wrote, and attach `data-*`
+properties to the elements as necessary--you'll need them for the next
+phase.
+
+Here are some hints:
+- Don't confuse list ID and card IDs with the `id` HTML tag used for
+  CSS/jQuery selectors! These concepts have nothing to do with each
+  other.
+
+[data]: https://api.jquery.com/jquery.data/
+
+### PHASE 3. Create card
+
+Let's now set up the events to wire up the "Add a card..." button and
+form. This one is a bit trickier since we can't just do this once, when
+the board is mounted, as we did for the "Add a list..." button. Why not?
+
+Because we'll be adding cards to our lists! And each time we add a card,
+we need to wire up its controls. That makes these events dynamic. Find
+the `horello.mount` function in [horello.js]. This function can be
+called multiple times, when our data changes, so we need to add events
+which _depend upon the data_ here.
+
+Fill in the missing event selectors inside this function. Note that each
+button for each card needs to have a unique (CSS) ID so that you can
+display the right form. You also need to make sure that the (data) IDs
+you added in the last phase are being passed around properly so that
+you're adding the card to the right list. (Again, don't confuse these
+two kinds of IDs.)
+
+### PHASE 4. Edit card
+
+The final step for this project is wiring up the functionality that lets
+you edit a card. When the user taps on a card, the app should display a
+modal with a form that's pre-populated with the current data for that
+card (title and description). If the user edits that data and hits Save,
+the data should be validated (they cannot remove the card title), the
+card data should be updated in memory and on the board, and the modal
+should dismiss.
+
+This is the trickiest part because, as described above, and unlike the
+"Add a card..." forms, we use a single modal component to modify all
+cards. We'll leave the design and implementation of these events up to
+you.
+
+When you finish this step, whirl around the room like a ballerina to let
+your classmates know how amazing you are. Seriously. You just finished
+your first fully-fledged dynamic web application. If your mom could see
+you now!
+
+But we don't rest on our laurels for long. That's not how we roll here.
+Because tomorrow we're on to bigger and better things: adding networking
+to your app.
 

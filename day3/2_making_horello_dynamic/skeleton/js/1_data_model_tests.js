@@ -1,26 +1,24 @@
 "use strict";
 
-var htmlRX = /<(\w+)/g;
-
 describe("<Card> Class", function() {
-  var note;
+  var card;
   beforeAll(function() {
-    note = new horello.Card("Lean Startup", "Eric Ries, Agile Dev, Venture Capital");
+    card = new horello.Card("Lean Startup", "Eric Ries, Agile Dev, Venture Capital");
   });
   
   describe("the id property", function() {
     it("should exist with a getter", function() {
-      expect(note.id).toBeDefined();
-      expect(note.getId).toBeDefined();
+      expect(card.id).toBeDefined();
+      expect(card.getId).toBeDefined();
     });
     
     it("should be a string", function() {
-      expect(note.id).toEqual(jasmine.any(String));
-      expect(note.getId()).toEqual(jasmine.any(String));
+      expect(card.id).toEqual(jasmine.any(String));
+      expect(card.getId()).toEqual(jasmine.any(String));
     });
     
     it("should return the same thing as the getter", function() {
-      expect(note.getId()).toBe(note.id);
+      expect(card.getId()).toBe(card.id);
     });
     
     it("should be a unique property", function() {
@@ -34,89 +32,54 @@ describe("<Card> Class", function() {
   
   describe("the title property", function() {
     it("should exist with a getter and setter", function() {
-      expect(note.title).toBeDefined();
-      expect(note.getTitle).toBeDefined();
-      expect(note.setTitle).toBeDefined();
+      expect(card.title).toBeDefined();
+      expect(card.getTitle).toBeDefined();
+      expect(card.setTitle).toBeDefined();
     });
     
     it("should be a string", function() {
-      expect(note.title).toEqual(jasmine.any(String));
-      expect(note.getTitle()).toEqual(jasmine.any(String));
+      expect(card.title).toEqual(jasmine.any(String));
+      expect(card.getTitle()).toEqual(jasmine.any(String));
     });
     
     it("should return the same thing as the getter", function() {
-      expect(note.getTitle()).toBe(note.title);
+      expect(card.getTitle()).toBe(card.title);
     });
     
     it("should be settable", function() {
-      note.setTitle("Flame");
-      expect(note.getTitle()).toBe("Flame");
-      expect(note.title).toBe("Flame");
+      card.setTitle("Flame");
+      expect(card.getTitle()).toBe("Flame");
+      expect(card.title).toBe("Flame");
     });
   });
   
   describe("the desc property", function() {
     it("should exist with a getter and setter", function() {
-      expect(note.desc).toBeDefined();
-      expect(note.getDescription).toBeDefined();
-      expect(note.setDescription).toBeDefined();
+      expect(card.desc).toBeDefined();
+      expect(card.getDescription).toBeDefined();
+      expect(card.setDescription).toBeDefined();
     });
     
     it("should be a string", function() {
-      expect(note.desc).toEqual(jasmine.any(String));
-      expect(note.getDescription()).toEqual(jasmine.any(String));
+      expect(card.desc).toEqual(jasmine.any(String));
+      expect(card.getDescription()).toEqual(jasmine.any(String));
     });
     
     it("should return the same thing as the getter", function() {
-      expect(note.getDescription()).toBe(note.desc);
+      expect(card.getDescription()).toBe(card.desc);
     });
     
     it("should reflect the same value that was given upon instantiation", function() {
-      expect(note.getDescription()).toBe("Eric Ries, Agile Dev, Venture Capital");
-      expect(note.desc).toBe("Eric Ries, Agile Dev, Venture Capital");
+      expect(card.getDescription()).toBe("Eric Ries, Agile Dev, Venture Capital");
+      expect(card.desc).toBe("Eric Ries, Agile Dev, Venture Capital");
     });
     
     it("should be settable", function() {
-      note.setDescription("Johnny Storm");
-      expect(note.getDescription()).toBe("Johnny Storm");
-      expect(note.desc).toBe("Johnny Storm");
+      card.setDescription("Johnny Storm");
+      expect(card.getDescription()).toBe("Johnny Storm");
+      expect(card.desc).toBe("Johnny Storm");
     });
   });
-  
-  describe("the createdAt property", function() {
-    it("should exist", function() {
-      expect(note.createdAt).toBeDefined();
-    });
-    
-    it("should be a string", function() {
-      expect(note.createdAt).toEqual(jasmine.any(String));
-    });
-  });
-  
-  describe("the updatedAt property", function() {
-    it("should exist", function() {
-      expect(note.updatedAt).toBeDefined();
-    });
-    
-    it("should be a string", function() {
-      expect(note.updatedAt).toEqual(jasmine.any(String));
-    });
-  });
-  
-  describe("the render method", function() {
-    it("should exist", function() {
-      expect(note.render).toBeDefined();
-    });
-    
-    it("should return a string", function() {
-      expect(note.render()).toEqual(jasmine.any(String));
-    });
-    
-    it("should return valid HTML", function() {
-      expect(note.render().search(htmlRX)).not.toEqual(-1);
-    });
-  });
-
 });
 
 describe("<List> Class", function() {
@@ -203,21 +166,6 @@ describe("<List> Class", function() {
       expect(list.cards.length).toBe(2);
     });
   });
-  
-  describe("the render method", function() {
-    it("should exist", function() {
-      expect(list.render).toBeDefined();
-    });
-    
-    it("should return a string", function() {
-      expect(list.render()).toEqual(jasmine.any(String));
-    });
-    
-    it("should return valid HTML", function() {
-      expect(list.render().search(htmlRX)).not.toEqual(-1);
-    });
-  });
-
 });
 
 describe("<Board> Class", function() {
@@ -252,21 +200,5 @@ describe("<Board> Class", function() {
       expect(board.lists.length).toBe(1);
       expect(board.lists[0]).toEqual(jasmine.any(horello.List));
     });
-
   });
-
-  describe("the render method", function() {
-    it("should exist", function() {
-      expect(board.render).toBeDefined();
-    });
-
-    it("should return a string", function() {
-      expect(board.render()).toEqual(jasmine.any(String));
-    });
-
-    it("should return valid HTML", function() {
-      expect(board.render().search(htmlRX)).not.toEqual(-1);
-    });
-  });
-
 });

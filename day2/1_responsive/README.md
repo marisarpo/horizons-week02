@@ -202,12 +202,13 @@ columns on the page, so you can split these up as you like (e.g.,
 width four (i.e., 1/3 of the page width) which stacks on extra small
 devices; use the class `col-md-6` for a column of width six (i.e., 50%
 page width) which stacks on small and extra small devices, etc.
+- You can use two classes together. For instance if you use `col-sm-8
+col-md-6`, it will take up 6 columns (half the page) on laptops and
+medium-sized desktops and 8 columns on smaller devices and tablets.
 
 Here's what the grid system looks like visually:
 
 ![grid]
-
-<sub>(Image Copyright HappyFunCorp)</sub>
 
 We're going to use the grid system to lay out the app buttons in the
 second-to-last section of the page. We want these to be spaced out,

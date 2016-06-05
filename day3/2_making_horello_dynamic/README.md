@@ -54,8 +54,9 @@ a server, and it contains a database where our data will be persisted.
 The server and the database are often referred to in the abstract as
 "the cloud."
 
-We're going to tackle the model and the events today, and we'll work on
-the networking tomorrow. Our goal for today is to recreate this [live] version of the web app.
+We're going to tackle the model and the events today, and we'll work on the
+networking tomorrow. Our goal for today is to recreate this [live] version of
+the web app.
 
 ## PART 1. Data model
 

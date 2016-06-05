@@ -20,6 +20,6 @@ basic web page introducing yourself. Use the following HTML tags:
 - Bonus: Try centering the text and the image
 
 If you're stuck, try looking at the source code for another page in your
-browser. You can hit CMD+CTRL+U in Chrome to do this. You could also try
+browser. You can hit ⌥⌘U in Chrome to do this. You could also try
 Googling "HTML template."
 

@@ -19,9 +19,8 @@ a CSS rule like this:
 
 ## Instructions
 
-Open the skeleton file [index.html][index] in your web browser and text
-editor. Your goal is to use media queries so that the three elements are
-laid out responsively as follows:
+Open the below codepen. Your goal is to use media queries so that the
+three elements are laid out responsively as follows:
 
 - On large displays (>= 900px width), they should all be laid out in a
   row.
@@ -31,13 +30,14 @@ laid out responsively as follows:
 
 Check out the [live, working version][live].
 
+Use this codepen: http://codepen.io/lockehart/pen/PzPzrj
+
 Tips:
-- The media queries are in the skeleton HTML file, but you need to fill
-  in their contents.
+- Fill in the empty media queries in the CSS section.
 - You can achieve this entirely using CSS and media queries, you don't
   need to modify the HTML.
-- Make changes in Dev Tools first to see what works! You can shrink and
-  widen your browser to view the page with different screen sizes.
+- Make changes in Dev Tools first to see what works! You can make your
+  browser window wider or smaller to view the page with different screen
+  sizes.
 
-[index]: ./skeleton/index.html
 [live]: http://horizons-school-of-technology.github.io/week02/day2/1_warmup/solution/index.html

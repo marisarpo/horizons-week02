@@ -9,7 +9,7 @@ top right. For now, click the "X" to close the CSS and JS panes.
 
 Open the file [kittyland.html][kittyland] in your web browser. Your
 goal is to recreate this page precisely using the codepen. Note that
-with codepen you can leave out the `head`, `body` etc. tags and skip
-right to the content.
+with codepen you can leave out the `html`, `head`, `body` etc. tags
+and skip right to the content.
 
 [kittyland]: ./kittyland.html

@@ -11,5 +11,8 @@ Take a look at Kittyland ([image][png], and the [live version][kittyland]). Your
 using the codepen. Note that with codepen you can leave out the
 `html`, `head`, `body` etc. tags and skip right to the content.
 
+(Yes, this page looks pretty basic. This is what HTML looks like
+without CSS, which you're about to learn!)
+
 [kittyland]: http://horizons-school-of-technology.github.io/week02/day1/2_inline_codepen/kittyland.html
 [png]: ./kittyland.png

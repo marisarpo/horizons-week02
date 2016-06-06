@@ -30,7 +30,7 @@ header {
 }
 
 .header-logo-default {
-    background-image: url(../img/title.png);
+    background-image: url(../../img/title.png);
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 5pc 30px;
@@ -48,16 +48,29 @@ a {
 
 /* BOARD */
 
-.board {
-    display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    height: calc(100% - 40px);
-    padding-bottom: 1em;
+.add-list-container {
+    padding: 5px;
 }
 
 .add-list {
     /** PHASE 1 CSS here */
+}
+
+.add-list:hover {
+    /** PHASE 1 CSS here */
+}
+
+.add-list-form {
+    /** PHASE 4 CSS here */
+}
+
+.board {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: calc(100% - 40px);
+    padding-bottom: 1em;
+
+    /** PHASE 2 CSS here */
 }
 
 

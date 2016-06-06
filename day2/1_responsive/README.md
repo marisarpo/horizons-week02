@@ -19,7 +19,9 @@ responsive grid system and one component.
 
 You're going to expand on the Horello landing page you built yesterday
 by adding some responsive elements to make the page function better on a
-small screen.
+small screen. Your goal is to add the responsive elements in
+[this page][live-04] (try shrinking the width of the browser window
+to see).
 
 ## A few important details
 
@@ -31,6 +33,10 @@ Tools. If you still have any questions about it, spend some time with
 a TA today. You'll continue to rely heavily upon this tool all week.
 
 ## Phase 1: Media query
+
+Screenshots:
+- [start][ss-01a]
+- [goal (small)][ss-01b]
 
 While Bootstrap makes responsive web development easier, you can
 build a responsive site without Bootstrap. In fact, Bootstrap's
@@ -57,11 +63,14 @@ Try shrinking the browser window down to the width of a mobile phone
 and see how the page currently responds. Notice how the padding
 around each of the page sections--which looks fine at large
 size--seems disproportionately large when you shrink the size down,
-and takes up too much space in between the content sections. Now take
-a look at the [live Trello site]. Try shrinking this page down as
-well, and notice how it behaves as you slowly increase the size.
+and takes up too much space in between the content sections. You
+should see something which looks like [this][ss-01a].
+
+Now take a look at the [live site][live-04]. Try shrinking this page
+down as well, and notice how it behaves as you slowly increase the size.
 First, around the width of a tablet, a little bit of padding appears;
-then, around the size of a desktop browser, even more padding appears.
+then, around the size of a desktop browser, even more padding appears
+You should see something which looks like [this][ss-01b].
 
 It's worth mentioning that, when designing and building a responsive web
 page or application, you should _begin with the mobile design_ and
@@ -82,6 +91,14 @@ the following:
 vertical, 20px horizontal padding
 - for a screen width greater than or equal to 900px, use 80px
 vertical, 20px horizontal padding
+
+Take a look at these screenshots to see what this should look like in
+the Chrome Developer Tools. By now you should be very comfortable doing
+this sort of in-line analysis using the Developer Tools.
+
+- [small (mobile) view][small]
+- [medium (tablet) view][med]
+- [large (desktop) view][large]
 
 Here's a hint: in addition to the default `section` CSS selector,
 you'll need two media query selectors. Remember, order matters!
@@ -104,6 +121,11 @@ Supplemental reading (optional):
 [Mobile First presentation]: http://www.lukew.com/presos/preso.asp?26
 [Mobile-First Responsive Web Design]: http://bradfrost.com/blog/web/mobile-first-responsive-web-design/
 [Mobile First Design: Why It’s Great and Why It Sucks]: https://codemyviews.com/blog/mobilefirst
+[ss-01a]: ./img/ss-01a.png
+[ss-01b]: ./img/ss-01b.png
+[large]: ./img/large.png
+[med]: ./img/med.png
+[small]: ./img/small.png
 
 ## Phase 2: Installing Bootstrap
 
@@ -147,14 +169,16 @@ _after_ Bootstrap.
 [Content delivery network]: https://en.wikipedia.org/wiki/Content_delivery_network
 [Getting started]: http://getbootstrap.com/getting-started/
 [Bootstrap template]: http://getbootstrap.com/getting-started/#template
-[live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
-[ss-01-a]: ./screenshots/01-start.png
-[ss-01-b]: ./screenshots/01-full.png
 
 Supplemental reading (optional):
 - Bootstrap's [Getting started]
 
 ## Phase 3: Horizontal elements
+
+Screenshots:
+- [start][ss-03a]
+- [goal (small)][ss-03b]
+- [goal (large)][ss-03c]
 
 With Bootstrap in place, let's use it to add a responsive element.
 Bootstrap uses a _grid system_ to achieve responsiveness: all content
@@ -178,12 +202,13 @@ columns on the page, so you can split these up as you like (e.g.,
 width four (i.e., 1/3 of the page width) which stacks on extra small
 devices; use the class `col-md-6` for a column of width six (i.e., 50%
 page width) which stacks on small and extra small devices, etc.
+- You can use two classes together. For instance if you use `col-sm-8
+col-md-6`, it will take up 6 columns (half the page) on laptops and
+medium-sized desktops and 8 columns on smaller devices and tablets.
 
 Here's what the grid system looks like visually:
 
 ![grid]
-
-<sub>(Image Copyright HappyFunCorp)</sub>
 
 We're going to use the grid system to lay out the app buttons in the
 second-to-last section of the page. We want these to be spaced out,
@@ -212,8 +237,18 @@ Supplemental reading (optional):
 [Grid system]: http://getbootstrap.com/css/#grid
 [Bootstrap layout]: http://bootstrap-sass.happyfuncorp.com/bootstrap-sass/layout/README.html
 [grid]: ./img/grid.jpg
+[ss-03a]: ./img/ss-03a.png
+[ss-03b]: ./img/ss-03b.png
+[ss-03c]: ./img/ss-03c.png
 
 ## Phase 4: Menu bar
+
+Screenshots:
+- [goal (medium)][ss-04a]
+- [goal (medium zoomed)][ss-04b]
+- [goal (small)][ss-04c]
+- [goal (small expanded)][ss-04d]
+- [goal (small expanded zoomed)][ss-04e]
 
 In this final phase, you're going to get a taste of the power of
 Bootstrap to help build interactive, responsive user
@@ -221,7 +256,9 @@ interfaces--something we will rely heavily upon over the next few days
 to build a real web app. Take a look at the Bootstrap [Components] to
 get an idea for the sort of components you get out of the box with
 Bootstrap. Your task is to add a nav bar with a drop-down menu to the
-top of the landing page.
+top of the landing page. It should look like [this][ss-04a] before
+collapsing (at medium and large size), and like [this][ss-04c] after
+collapsing (at small size).
 
 Again, you won't need to write any CSS for this phase, since Bootstrap's
 prebuilt classes take care of all the styling you'll need. Look for
@@ -247,8 +284,11 @@ Notice, in particular, how your responsive menu neatly collapses and
 expands as the screen width changes, and works well on small devices
 including phones.
 
-- [Screenshot][ss-01-a]
-- [Live][live-01]
-
 [Components]: http://getbootstrap.com/components/
 [Navbar]: http://getbootstrap.com/components/#navbar
+[live-04]: http://horizons-school-of-technology.github.io/week02/day2/1_responsive/solution/index.html
+[ss-04a]: ./img/ss-04a.png
+[ss-04b]: ./img/ss-04b.png
+[ss-04c]: ./img/ss-04c.png
+[ss-04d]: ./img/ss-04d.png
+[ss-04e]: ./img/ss-04e.png

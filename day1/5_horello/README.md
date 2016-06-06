@@ -117,7 +117,7 @@ Supplemental reading (optional):
 - [CSS Reset][reset-1]
 - [normalize.css][reset-2]
 
-[live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/01-title.html
+[live-01]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/01-title.html
 [ss-01-a]: ./screenshots/01-start.png
 [ss-01-b]: ./screenshots/01-full.png
 [skel-01-html]: ./skeleton/01-title.html
@@ -202,7 +202,7 @@ Supplemental reading (optional):
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
 [3d game]: http://keithclark.co.uk/labs/css-fps/
-[live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/02-button.html
+[live-02]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/02-button.html
 [ss-02-a]: ./screenshots/02-full.png
 
 ## Phase 3: Footer
@@ -248,7 +248,7 @@ same selector. Refresh to see your changes and do a backflip! Well done!
 
 [html-03]: ./skeleton/03-footer.html
 [css-03]: ./skeleton/css/03-footer.css
-[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/03-footer.html
+[live-03]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/03-footer.html
 [ss-03-a]: ./screenshots/03-full.png
 [ss-03-b]: ./screenshots/03-footer.png
 
@@ -305,7 +305,7 @@ Supplemental reading (optional):
 - [CSS Box Model][box model]
 - [Box Sizing][box sizing]
 
-[live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/04-content.html
+[live-04]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/04-content.html
 [html-04]: ./skeleton/04-content.html
 [css-04]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
@@ -366,7 +366,7 @@ five, just one more to go!  🎉
 Supplemental reading (optional):
 - [All About Floats]
 
-[live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/05-clear.html
+[live-05]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/05-clear.html
 [html-05]: ./skeleton/05-clear.html
 [css-05]: ./skeleton/css/05-clear.css
 [All About Floats]: https://css-tricks.com/all-about-floats/
@@ -520,7 +520,7 @@ Supplemental reading (optional):
 
 [html-06]: ./skeleton/06-advanced.html
 [css-06]: ./skeleton/css/06-advanced.css
-[live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_landing_page/solution/06-advanced.html
+[live-06]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/06-advanced.html
 [ss-06-a]: ./screenshots/06-full.png
 [ss-06-b]: ./screenshots/06-zoom.png
 [ss-06-c]: ./screenshots/06-buttons.png

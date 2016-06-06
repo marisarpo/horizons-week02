@@ -97,6 +97,11 @@ img.siteLogo {
 	background: url(vCat.gif);
 	height: 400px;
 }
+.middlekat {
+	display: inline-block;
+	position: relative;
+	padding-right: 490px;
+}
 #purpleLink:hover {
 	color: #3D3D66;
 	background-color: #F7F5F2;
@@ -147,11 +152,6 @@ img.siteLogo {
 }
 #sidekat:hover {
 	color: #2BDE73;
-}
-#middlekat {
-	display: inline-block;
-	position: relative;
-	padding-right: 300px;
 }
 #secondkat {
 	height: 325px;

@@ -1,25 +1,50 @@
 .background-light-blue {
+	background-color:#e4f0f6;
+	position: relative;
+	overflow:hidden;
 }
 
 .layout-grid-frame {
+	max-width: 700px;
+	margin:0px 100px;
 }
 
 .layout-callout-right {
+	position:absolute;
+	right: -10px;
+	top:60px;
+	
 }
 
 .layout-callout-right img {
+
 }
 
 .layout-twothirds-left {
+	left-max-width: 585px;
+
 }
 
 .app-store-link {
+	
 }
 
 .app-store-link img {
+	margin: .4em 1em;
+	display: inline-block;
+	vertical-align: top;
+	height: 54px;
+
+
 }
 
 .outline-link {
+	padding:0.6em 1.3em;
+	border:1px solid;
+	border-radius: .3em;
+	margin: .4em 0 0;
+	display: inline-block;
+	
 }
 
 a {

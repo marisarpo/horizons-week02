@@ -12,10 +12,13 @@ h2 {
 }
 
 section {
+	padding: 80px 20px;
 }
 
 .center-paragraph {
+	margin: 1em 16%; /** may be wrong syntax **/
 }
 
 .text-center {
+	text-align: center;
 }

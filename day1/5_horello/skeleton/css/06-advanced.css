@@ -1,29 +1,51 @@
 .background-light-blue {
+    background-color: #e4f0f6;
 }
 
 .layout-grid-frame {
+    max-width: 890px;
+    margin: 0 auto;
+    position: relative;
 }
 
 .layout-callout-right {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 640px;
 }
 
 .layout-callout-right img {
 }
 
 .layout-twothirds-left {
+    max-width: 585px;
 }
 
 .app-store-link {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 0.4em;
+    margin-right: 1em;
 }
 
 .app-store-link img {
+    height: 54px;
 }
 
 .outline-link {
+    border: 1px solid;
+    padding: 0.6em 1.3em;
+    border-radius: 0.3em;
+    margin-bottom: 0.8em;
+    display: inline-block;
+    vertical-align: top;
+
 }
 
 a {
+    color: #5e98ba;
 }
 
 a:hover {
+    color: #265773;
 }

@@ -1,0 +1,61 @@
+body img {
+    width: 100%;
+}
+
+.Categories_And_Project_Of_Day {
+    min_height: 33%;
+    min_width: 77%;
+    display: block;
+    max_height: 33%:
+    max_width: 77%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+}
+
+#list {
+    width: auto;
+    height: auto;
+    float: right;
+}
+
+#project {
+    margin-top: 53px;
+    margin-bottom: 53px;
+    width: auto;
+    height: auto;
+}
+
+.Columns {
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+}
+
+#columns {
+    height: auto;
+    width: auto;
+}
+
+.Bottom {
+    background-color: #0D2006;
+}
+
+.Footer {
+    margin-left: 10.5%;
+    margin-right: 10.5%;
+}
+
+#footer {
+    height: auto;
+    width: auto;
+}
+
+.Social {
+    margin-left: 1000px;
+}
+
+#social {
+    height: auto;
+    width: auto;
+}

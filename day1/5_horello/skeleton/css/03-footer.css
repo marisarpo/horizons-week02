@@ -3,16 +3,22 @@ section {
 }
 
 footer {
+	padding: 80px 20px;
+	font-color: #999;
 }
 
 footer a {
+	padding: 7px;
 }
 
 footer a:hover {
 }
 
 footer ul {
+	list-style:none;
 }
 
 footer li {
+	text-align:center;
+	display: inline;
 }

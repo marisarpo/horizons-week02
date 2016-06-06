@@ -1,5 +1,10 @@
 .img-float-left {
+	float: left;
+	margin-right: 40px;
+	padding: 0;
+	font-weight: 400;
 }
 
 section {
+	text-align: left;
 }

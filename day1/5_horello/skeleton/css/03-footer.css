@@ -1,18 +1,27 @@
-section {
+section,footer {
     padding: 80px 20px;
 }
 
 footer {
+  font-size: 16px;
+  color: #4d4d4d;
 }
 
 footer a {
+  font-size: 16px;
+  color: #4d4d4d;
 }
 
 footer a:hover {
+  font-size: 16px;
+  color: #4d4d4d;
 }
 
 footer ul {
+  padding: 0;
 }
 
 footer li {
+  display:inline-block;
+  margin: 7px;
 }

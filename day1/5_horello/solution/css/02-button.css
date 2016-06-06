@@ -1,5 +1,6 @@
 .img-title {
     margin-bottom: 2em;
+    margin-top: 2em;
 }
 
 .button {
@@ -16,4 +17,6 @@
 .button:hover {
     background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
     color: #fff;
+
+
 }

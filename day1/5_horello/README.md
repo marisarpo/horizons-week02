@@ -1,4 +1,4 @@
-# HTML and CSS Intro: Building a landing page
+﻿# HTML and CSS Intro: Building a landing page
 
 Congratulations on being hired and welcome to the Horello, Inc. team! As
 our latest web development hire, we're relying on you to build the

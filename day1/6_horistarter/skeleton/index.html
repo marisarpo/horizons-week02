@@ -5,6 +5,100 @@
     <title>Horistarter</title>
     <style>
         /* You may choose to write your CSS here... */
+body {
+    /** Your CSS goes here! **/
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 16px, 20px, 36px;
+    color: #000;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    /** and here (you get the point) **/
+    color: #FFF;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: lighter;
+}
+
+section {
+ 
+   }
+.nav{
+    font-size: 20px;
+    font-color: #000000;
+    padding: 20px 20px;
+    display: inline-block;
+    border-right: .1px solid rgba(0,0,0,.1);
+}
+
+.center-paragraph {
+    margin: 1em 16.67%;
+}
+.main-image {
+    color: white;
+    background-image: url(http://media2.cdn.builtinnyc.com/sites/www.builtinnyc.com/files/edward_lando_abhi_ramesh.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 575px;
+    border: 0;
+    top: 0;
+    left:0;
+
+}
+.title-text {
+    padding: 194px 95px;
+    border: 0;
+    top: 0;
+    left:0;
+    background: rgba(0,0,0,.5);
+    background-size: relative;
+  
+
+}
+.text-center {
+    text-align: center;
+
+    
+}
+.warning {
+    background-color: #FFFFE0;
+    font-size: 14px;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
+}
+li a {
+    font-size: 16px;
+    color: black;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+li a:hover {
+    text-decoration: underline;
+
+}
+.search {
+    border: 1px solid transparent;
+    outline: none;
+    font-size: 16px;
+}
+
+.searchside {
+    display:inline-block;
+    padding-left: 30px;
+    text-align: left;
+}
+
     </style>
     <!--
     Or you can put it in a separate file and include it this way:
@@ -13,5 +107,30 @@
 </head>
 <body>
     <!-- Your HTML goes here. -->
+    <header class="warning">
+        We've updated our Privacy Policy - read about the upcoming changes here. By continuing to use Horistarter on or after June 9, 2016, you're agreeing to the new policy.
+    </header>
+    <section class="nav">
+    <ul>
+    <li><b>HORI</b><span style="color:#ff6347"><b>STARTER</b></span></li>
+    <li><a href="">Discover</a></li>
+    <li><a href="">Start a project</a></li>
+    <li><a href=""> About us</a></li>
+     
+        </ul>    
+ 
+</section>
+ <div class="searchside"><input type="text" class="search" placeholder="Search..."></div>
+
+    <section class="text-center"> 
+    <div class = "main-image">
+    <div class = "title-text">
+    <h2>Horizons Bootcamp</h2>
+    <p class="center-paragraph">
+        Learn how to code and explore and explore the world of technology
+    </p>
+</div>
+</div>
+</section>
 </body>
 </html>

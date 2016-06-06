@@ -1,0 +1,22 @@
+body{
+
+}
+.privacy-statement {
+	background-color: #fcdda3; 
+	font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+	font-size: 100%;
+	text-align: center;
+	padding: 4px 16px 0;
+	line-height: 1.4;
+	vertical-align: middle
+	margin: auto;
+	position: relative;
+	vertical-align: baseline;
+	display: table;
+}
+.logo{
+	height: 19px;
+}
+.navigation-bar{
+
+}

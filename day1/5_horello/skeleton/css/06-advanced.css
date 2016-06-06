@@ -1,7 +1,10 @@
 .background-light-blue {
+	background: #e4f0f6;
 }
 
 .layout-grid-frame {
+	max-width: 890px;
+	position: relative;
 }
 
 .layout-callout-right {
@@ -11,19 +14,31 @@
 }
 
 .layout-twothirds-left {
+	max-width: 890px;
+	margin:  0 auto;
 }
 
 .app-store-link {
 }
 
 .app-store-link img {
+	height: 54px;
 }
 
 .outline-link {
+	border-radius: .3em;
+	border: 1px solid;
+	padding: .6em 1.3em;
+	display: inline-block;
+	vertical-align: top;
 }
 
 a {
+ 	color: #5d98ba;
 }
 
 a:hover {
+	color: #265773;
+
+
 }

@@ -1,23 +1,8 @@
 .img-title {
-	margin-bottom: 2em;
-
 }
 
 .button {
-	background: linear-gradient(#61bd4f,#5aac44);
-	box-shadow: 0px 1.5px #3f6f21;
-	padding-top:0.6em;
-	padding-bottom:0.6em;
-	padding-right:1.3em;
-	padding-left:1.3em;
-	border: 0.3em;
-	margin-bottom:0.8em;
-	font-weight: bold;
-	color: #fff;
-	font-size:20px;
-
 }
 
 .button:hover {
-	background: linear-gradient(#5aac44,#519839)
 }

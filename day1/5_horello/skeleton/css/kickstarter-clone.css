@@ -26,6 +26,11 @@ body{
 	padding: 0;
 	border: 0;
 	margin: 0;
+	position: relative;
+}
+.projects img{
+	margin: auto;
+
 }
 section{
 	padding:0;

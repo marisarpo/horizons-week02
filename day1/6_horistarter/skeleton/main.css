@@ -1,0 +1,129 @@
+body {
+	font-family:'Helvetica Neue',Helvetica,Arial,
+	'Liberation Sans',FreeSans,sans-serif;
+	color: #020621;
+	font-size: 16px;
+	line-height: 1.4;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	-webkit-margin-before: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: bold;
+	-webkit-margin-before: 0;
+	-webkit-margin-after: 0;
+}
+header {
+	height: 60px;
+	background-color: #FFF;
+	display: block;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	border-bottom: solid 1px #F1EEEA;
+}
+header li {
+	float: left;
+	display: inline-block;
+	/*margin: 0px 7px;*/
+	position: relative;
+	padding-right: 20px;
+
+}
+
+img.siteLogo {
+	
+	display: block;
+	text-align: center;
+	padding-right: 40px;
+	margin: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 19px;
+	max-width: 159px;
+}
+.navMenuElt {
+	display: inline-block;
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 10px
+}
+.nav_search {
+	border-left: solid 1px #F1EEEA;
+    color: #3D3D66;
+    display: block;
+    height: 100%;
+    padding: 13px 0px 26px 30px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#purpleLink:hover {
+	color: #3D3D66;
+	background-color: #F7F5F2;
+}
+#purpleLink {
+	color: #80809E;
+}
+#flipTag {
+	max-width: 15px;
+	-moz-transform: scaleX(-1);
+	-o-transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+	filter: FlipH;
+	-ms-filter: 'FlipH';
+}
+#login {
+	padding: 13px 0 10px 10px;
+	color: #2752Ff;
+}
+#kat {
+
+	color: #fff;
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)),
+	  url('kat.jpg');
+	background-size: cover;
+	font-weight: normal;
+	margin: 0;
+	align-items: center;
+	position: relative;
+}
+#katitle {
+	padding-top: 100px;
+	-webkit-margin-before: 0;
+	font-size: 100px;
+	font-weight: normal;
+	text-align: center;
+	margin-bottom: 10px;
+}
+#katontent {
+	-webkit-margin-before: 0;
+	font-size: 45px;
+	font-weight: lighter;
+	text-align: center;
+	padding-bottom: 150px;
+}
+
+/*
+black body - #020621
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

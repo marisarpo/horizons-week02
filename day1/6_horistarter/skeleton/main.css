@@ -9,7 +9,9 @@ body {
 	padding: 0;
 	-webkit-margin-before: 0;
 }
-
+p {
+	margin: 0 0 10px 0;
+}
 h1,h2,h3,h4,h5,h6 {
 	font-weight: bold;
 	-webkit-margin-before: 0;
@@ -33,9 +35,16 @@ header li {
 	padding-right: 20px;
 
 }
-
+span ul li {
+	display: block;
+	padding-top: .3em;
+}
+footer {
+	font-size:10px;
+	text-align: center;
+}
 img.siteLogo {
-	
+	padding-top: 13px;
 	display: block;
 	text-align: center;
 	padding-right: 40px;
@@ -45,11 +54,22 @@ img.siteLogo {
 	line-height: 19px;
 	max-width: 159px;
 }
+.pawject {
+	max-width: 140px;
+	top: 7px;
+	position: relative;
+}
+.divCat {
+	display: inline-block;
+	vertical-align: top;
+	padding-right: 50px;
+	max-width: 400px
+}
 .navMenuElt {
 	display: inline-block;
 	font-size: 14px;
 	font-weight: bold;
-	margin-left: 10px
+	margin: 10px
 }
 .nav_search {
 	border-left: solid 1px #F1EEEA;
@@ -60,6 +80,22 @@ img.siteLogo {
     position: relative;
     overflow: hidden;
     white-space: nowrap;
+}
+.kinformation {
+	display: inline-block;
+	padding-right: 20px;
+	font-size: 13px;
+	padding-top: 0;
+}
+.horizList {
+	font-size: 12px;
+	display: inline-block;
+	padding-left: 10px;
+	padding-right: 45px;
+}
+.vegetaKat {
+	background: url(vCat.gif);
+	height: 400px;
 }
 #purpleLink:hover {
 	color: #3D3D66;
@@ -78,7 +114,7 @@ img.siteLogo {
 	-ms-filter: 'FlipH';
 }
 #login {
-	padding: 13px 0 10px 10px;
+	padding: 3px 0 10px 10px;
 	color: #2752Ff;
 }
 #kat {
@@ -109,7 +145,24 @@ img.siteLogo {
 	text-align: center;
 	padding-bottom: 150px;
 }
-
+#sidekat:hover {
+	color: #2BDE73;
+}
+#middlekat {
+	display: inline-block;
+	position: relative;
+	padding-right: 300px;
+}
+#secondkat {
+	height: 325px;
+	padding: 20px 20px 30px 40px;
+	float: left;	
+}
+#progress {
+	width: 400px;
+	height: 5px;
+	background: #2BDE73;
+}
 /*
 black body - #020621
 

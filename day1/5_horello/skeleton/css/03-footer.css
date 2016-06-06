@@ -1,18 +1,16 @@
-section {
+section, footer {
     padding: 80px 20px;
 }
 
-footer {
-}
-
-footer a {
-}
-
-footer a:hover {
+footer, footer a, footer a:hover {
+    font-size: 16px;
 }
 
 footer ul {
+	padding: 0;
 }
 
 footer li {
+	display: inline-block;
+	margin: 7px;
 }

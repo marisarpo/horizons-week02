@@ -1,18 +1,25 @@
-section {
+section, footer {
     padding: 80px 20px;
 }
 
 footer {
+	color: #999;
+	font-size: 16px;
 }
 
 footer a {
+	color: #999;
+	font-size: 16px;
 }
 
 footer a:hover {
 }
 
 footer ul {
+	padding: 0px 0px;
 }
 
 footer li {
+	display: inline-block;
+	margin: 0px 7px;
 }

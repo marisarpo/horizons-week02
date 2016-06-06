@@ -1,8 +1,10 @@
-section {
+section, footer {
     padding: 80px 20px;
 }
 
-footer {
+footer, footer a, footer a:hover {
+	font-size: 16px;
+	color: #999;
 }
 
 footer a {
@@ -12,7 +14,11 @@ footer a:hover {
 }
 
 footer ul {
+	padding: 0;
 }
 
 footer li {
+	display: inline-block;
+	margin-left: 7px;
+	margin-right: 7px;
 }

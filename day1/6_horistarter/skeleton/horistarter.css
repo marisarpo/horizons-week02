@@ -1,0 +1,72 @@
+.launchBanner {
+  background-color: #f5deb3;
+  font-weight: normal;
+  padding: 20px 10px;
+  position: relative;
+}
+.xMark{
+	vertical-align: top;
+  position: absolute;
+  right: 10px;
+}
+#logo{
+  margin: -20px 0 0 0;
+}
+ul{
+  display: inline;
+  margin: 10px;
+  color: #808080;
+} 
+li{
+  list-style-type: none;
+  display: inline;
+  margin: 15px;
+  padding: 0;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: bold;
+  position: relative;
+  bottom: 25px;
+}
+.search{
+	vertical-align: top;
+	margin: 0 0 0 50px;
+  transform: scaleX(-1);
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -ms-transform: scaleX(-1);
+}
+.ProjectSearch{
+  display: inline;
+  position: relative;
+  bottom: 25px;
+  margin: 50px;
+  font-size: 15px;
+  font-family: Arial;
+  font-size: 15px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #808080;
+}
+.LogInStuff{
+  color: blue;
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+.LogInStuff li{
+  bottom: 0;
+}
+.background{
+  background-image:url("http://cdn.iphonehacks.com/wp-content/uploads/2016/06/image.jpeg");
+  background-size: cover;
+  height: 600px;
+}
+
+.background > h1 {
+  position: relative;
+  top: 400px;
+  left: 100px;
+  font-size: 40px;
+  font-family: Arial;
+}

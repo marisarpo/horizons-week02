@@ -37,23 +37,25 @@ section {
     margin: 1em 16.67%;
 }
 .main-image {
+    position:relative;
     color: white;
     background-image: url(http://media2.cdn.builtinnyc.com/sites/www.builtinnyc.com/files/edward_lando_abhi_ramesh.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
-    height: 575px;
+    height: 70vh;
     border: 0;
     top: 0;
     left:0;
 
 }
 .title-text {
+    position: relative;
     padding: 194px 95px;
     border: 0;
     top: 0;
     left:0;
     background: rgba(0,0,0,.5);
-    background-size: relative;
+  
   
 
 }
@@ -97,6 +99,22 @@ li a:hover {
     display:inline-block;
     padding-left: 30px;
     text-align: left;
+
+  
+}
+#simg{
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    display:inline-block;
+    padding-left: 10px;
+    vertical-align: bottom;
+}
+.login{
+    display: inline-block;
+    text-align: left;
 }
 
     </style>
@@ -120,7 +138,16 @@ li a:hover {
         </ul>    
  
 </section>
- <div class="searchside"><input type="text" class="search" placeholder="Search..."></div>
+ <div class="searchside"><div id="simg"><img src="https://assets1.darbysmart.com/assets/search-bar_icon-a6dec420f6020aea51fca97aa97e4a02.png" height="25px" width="25px" align="center"></div><input type="text" class="search" placeholder="Search...">
+
+
+<div class="login"> <ul>
+ <li><a href="">Sign up</a></li>
+    <li><a href="">Log in</a></li>
+     
+        </ul>  </div>
+ 
+</div>
 
     <section class="text-center"> 
     <div class = "main-image">

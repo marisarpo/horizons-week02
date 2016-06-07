@@ -15,9 +15,13 @@ section {
 }
 .app-button{
 	padding: .6em 1.3em;
+	margin: 20px auto;
 	border-width: 1;
 	border-style: solid;
 	border-radius: .3em;
 	font-weight: bold;
 	display: inline-block;
+}
+.container-fluid{
+	text-align: center;
 }

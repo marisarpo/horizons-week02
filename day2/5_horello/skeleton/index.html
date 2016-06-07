@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Horello</title>
-
     <!-- Bootstrap stuff -->
     <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
     <script src="../../../lib/jquery.js"></script>
     <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
-
     <!-- Our Styles -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
+<div class="modal fade" id="editCard">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <input type="text" class="form-control" value="#DominateAllTheHouses">
+      </div>
+      <div class="modal-body">
+        <h5>Description</h5>
+      <textarea class="form-control" rows="5">Card body goes here
+      </textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <body>
-<header>
-    <a class="header-logo"
-       href="#"><span class="header-logo-default"></span></a>
-</header>
-
-<!-- PHASE 5. Modal -->
-
-<div class="board">
-    <div class="list-container">
-        <div class="list">
-            <div class="list-header">
-                <span class="list-title">House List</span>
+    <header>
+        <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
+    </header>
+    <!-- PHASE 5. Modal -->
+    <div class="board">
+        <div class="list-container">
+            <div class="list">
+                <div class="list-header">
+                    <span class="list-title">House List</span>
+                </div>
+                <div class="list-cards">
+                    <div class="card" data-toggle="modal" data-target="#editCard">
+                        <div class="card-body">
+                            Today we will #DominateAllTheHouses
+                        </div>
+                        <span class="card-more">
+                    <span class="glyphicon glyphicon-align-left"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="list-footer">
+                    <button type="button" class="btn add-card" data-toggle="collapse" data-target="#add-card">Add card...</button>
+                     <div class="collapse" id="add-card"> 
+                    <div class="well add-card-form">
+                        <form>
+                            <input type="text" class="form-control" placeholder="Card title">
+                            <button type="button" class="btn btn-default"> Save
+                            </button>
+                            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                    <!-- PHASE 4. Collapse -->
+                </div>
             </div>
-            <div class="list-cards">
-                <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
+        </div>
+        <div class="list-container">
+            <div class="add-list-container">
+                <button type="button" class="btn add-list" data-toggle="collapse" data-target="#add-list">Add a list...</button>
+                <div class="collapse" id="add-list"> 
+                    <div class="well add-card-form">
+                        <form>
+                            <input type="text" class="form-control" placeholder="List name">
+                            <button type="button" class="btn btn-default"> Save
+                            </button>
+                            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="list-footer">
-                <!-- PHASE 2. Add card button -->
-
-                <!-- PHASE 4. Collapse -->
-            </div>
         </div>
     </div>
-
-    <!-- PHASE 1. Add list button -->
-
-
-</div>
-
 </body>
+
 </html>

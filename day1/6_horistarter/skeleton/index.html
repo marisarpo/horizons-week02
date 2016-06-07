@@ -4,7 +4,70 @@
     <meta charset="UTF-8">
     <title>Horistarter</title>
     <style>
-        /* You may choose to write your CSS here... */
+#header {
+    background-color:#FFFF99;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color:black;
+    text-align:center;
+    padding:5px;
+}
+h1{
+	font-size:16px;
+	font-weight:lighter;
+}
+.nav{
+	color:black;
+	border:1px solid black;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+   
+}
+
+li {
+    float: left;
+    
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:black;
+}
+
+li a:hover {
+	text-decoration:underline;
+    background-color: #D3D3D3;
+}
+#search-bar {
+    width: 10em;
+    display: inline-block;
+	vertical-align: top;
+	margin-top:1em;
+	margin-right:1em;
+	padding:0;
+    }
+ .hero-image{
+ background-image: url("http://i.imgur.com/M6cVJDP.jpg");
+ 	display: block;
+    margin-left: auto;
+    margin-right: auto
+ 	height:1240px;
+ 	width:100%;
+
+
+
+
+ }
+
+
     </style>
     <!--
     Or you can put it in a separate file and include it this way:
@@ -13,5 +76,50 @@
 </head>
 <body>
     <!-- Your HTML goes here. -->
+ <center>
+ <section id="header">
+    <h1>
+       We've updated our Privacy Policy -read about the upcoming changes here. By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to new policy.  X
+    </h1>
+</section>
+
+<section class="nav">
+    <ul>
+        <li>
+           <span style="display: inline-block; vertical-align: top; margin-top:1em;margin-right:1em;padding:0; font-size:18px;"><b>HORI</b><span style="color:#00FFFF"><b>STARTER</b></span></span>
+        </li>
+        <li>
+            <a href="#">Discover</a>
+        </li>
+        <li>
+            <a href="#">Start a project</a>
+        </li>
+        <li>
+            <a href="#">About us</a>
+        </li>
+ 		<span><input id="search-bar" name="search" type="text" placeholder="Search Projects"></span>
+        <li>
+            <a href="#">Sign up</a>
+        </li>
+        <li>
+            <a href="#">Log in</a>
+        </li>
+        
+    </ul>
+</section>
+<section class="hero-image">
+
+
+   <title><b><font color=black>
+   Oliver's Twist
+</font></b></title>
+   
+</section>
+<section class = "footer">
+
+</section>
+
+</center>
+
 </body>
 </html>

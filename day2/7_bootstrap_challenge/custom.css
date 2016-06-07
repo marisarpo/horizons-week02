@@ -40,7 +40,8 @@
 	padding-top: 10px;
 }
 
-.navbar-fixed-bottom{
-	position: absolute;
-    bottom: 0;
+
+.grid-item { 
+	width:240px;
 }
+

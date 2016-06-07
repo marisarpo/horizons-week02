@@ -5,9 +5,10 @@
 Once the user requirements are in place, one of the first, most
 important steps of application design is designing the data model.
 
-Your task is to design a data model for the game of baseball. (If you're
-not a fan of baseball, feel free to choose another team sport.) Do this
-on a piece of paper. Consider the following questions:
+Work with someone sitting next to you. Along with your partner, your
+task is to design a data model for the game of baseball. (If you're not
+a fan of baseball, feel free to choose another team sport.) Do this on a
+piece of paper. Consider the following questions:
 
 - Which classes do we need?
 - What are the properties and methods of those classes?

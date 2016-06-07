@@ -33,8 +33,67 @@
         margin-right:5px;
 }
 
-#hero-button{
+#my-sidebar-list{
+	line-height: 25px;
+	margin-top: 65px;
+	margin-bottom: 65px;
+}
 
+#glyp1{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+#project-button{
+	border-radius: 24px;
+	font-size:11px;
+}
+
+.main-portion{
+	margin-top: 75px;
+	margin-left: 15px;
+}
+
+.author-settings{
+	margin-top: -5px;
+	font-size: 10px;
+}
+
+.description-settings{
+	font-size: 12px;
+
+}
+
+.main-big{
+	font-weight: bold;
+}
+
+.main-small{
+	font-size: 8.5px
+}
+
+.hero-bottom {
+    background-color: #EEEEEE;
+    height:350px;  
+  }
+
+.hero-bottom h1 {
+    color: #000;
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 7;
+    margin-bottom: -120px;
+    text-align: center;
+}
+
+.hero-bottom h2 {
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    padding-top:30px;
+    padding-left:70px;
+    padding-right:70px;
 }
 
 .hero-unit {
@@ -46,15 +105,15 @@
 
 .hero-unit h1 {
     color: #000;
-    font-size: 60px;
+    font-size: 40px;
     letter-spacing: -1px;
-    line-height: 5;
-    margin-bottom: -100px;
+    line-height: 7;
+    margin-bottom: -120px;
     text-align: center;
 }
 
 .hero-unit h2 {
-    font-size: 25px;
+    font-size: 15px;
     color: #000;
     text-align: center;
 }

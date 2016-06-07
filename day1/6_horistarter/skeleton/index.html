@@ -1,17 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Horistarter</title>
-    <style>
-        /* You may choose to write your CSS here... */
-    </style>
-    <!--
-    Or you can put it in a separate file and include it this way:
-    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
-     -->
+   <meta charset="UTF-8">
+   <title>Horistarter</title>
+   <style>
+       /* You may choose to write your CSS here... */
+       .launch-_link {
+            background-color: #fcdda3 ;
+            display: inline-block;
+            font-family: helvetica;
+            width: 100%;
+            margin: 0;
+            font-size: 14.5px;
+            text-align: center;
+            position: relative;
+
+       }
+
+
+       .launch-banner_link {
+           display: inline-block;
+           padding-left: 10%;
+           padding-right: 10%;
+       }
+
+       .js-close_launch-banner_close {
+           position: absolute;
+           vertical-align: middle;
+           display: inline;
+           right: 0;
+           top: 40%;
+           padding: 4px 16px 0  16px;
+           
+       }
+
+       .navigation {
+           display: inline-block;
+           margin: 0;
+           font-size: 16px;
+           height: 67px;
+
+       }
+
+       .site_logo {
+           padding: 15px 40px;
+           display: inline-block;
+           margin: 0;
+
+       }
+
+       .mainNavigation {
+
+       }
+
+
+       .userNavigation {
+            display: inline-block
+            color: blue;
+            margin: 0;
+
+       }
+
+       .form_search {
+            display: inline-block
+            margin: 0;
+       }
+
+       .ksr-logo {
+           height: 30px;
+           width: 30px;
+
+       }
+
+       .primary_menu {
+           margin-top: 0px;
+           color: #80809E;
+           font-family: arial;
+           display: block;
+           float: right;
+           margin: 0;
+           color: #80809E; 
+           text-decoration: none;
+           position: relative;
+
+
+       }
+
+       .user_menu {
+            display: inline-block
+            margin: 0;
+
+       }
+
+       .search_icon {
+            display: inline-block
+            margin: 0;
+
+       }
+
+       .search_bar {
+            display: inline-block
+            margin: 0;
+
+       }
+
+       .navItem {
+            display: inline-block;
+            padding: 25px 15px 24px 15px;
+            margin: 0;
+            font-size: 16px;
+            height: 100%;
+            vertical-align: top;
+
+       }
+
+       .navItem:nth-child(4) {
+        position: relative;
+       }
+
+       a:hover.navItem:nth-child(4) {
+        background: none;
+       }
+
+        a:hover.ksr-logo {
+            background: none;
+       }
+
+
+       .hero-image{
+
+       }
+
+       .inputItem {
+        border: none;
+        margin: 0;
+        padding: 24px 0;
+        font-size: 16px;
+        font-weight: 500;
+       }
+
+       .mag {
+            position: absolute;
+            top: 24px;
+            display: inline-block;
+            left: 0;
+            margin: 0;
+            font-size: 16px;
+
+       }
+
+       a:hover.mag {
+        background: none;
+       }
+
+        a:link {
+            color: #80809E;
+            text-decoration: none;
+        }
+       a:hover {
+            color: #3D3D66;
+            background-color: #F7F5F2;
+       }
+
+       input:focus {
+        outline: none;
+       }
+
+
+
+
+   </style>
+   <link rel="stylesheet" href="css/style.css" type="text/css">
+
+   <!--
+   Or you can put it in a separate file and include it this way:
+   <link rel="stylesheet" href="css/mystyle.css" type="text/css">
+    -->
 </head>
 <body>
-    <!-- Your HTML goes here. -->
+   <!-- Your HTML goes here. -->
+   <div class = "launch-_link">
+           <p class = "launch-banner_link">
+               We've updated our Privacy Policy - read about the upcoming changes <a href = "https://www.kickstarter.com/privacy" > here.</a> By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to the new policy. 
+           </p>
+           <div class = "js-close_launch-banner_close">
+               <b> x </b>
+           </div>
+   </div>
+
+   <header class = "navigation">
+
+       <h1 class = "site_logo" >
+           <a class = "ksr-logo">
+               <img src="https://www.kickstarter.com/download/kickstarter-logo-light.png" height="19">
+           </a> 
+       </h1>
+
+       <h1 class = "primary_menu">
+                <a href="https://www.kickstarter.com/discover" class = "navItem"> <b> Discover </b>
+                </a>
+
+                <a href="https://www.kickstarter.com/learn" class = "navItem"> <b> Start a project </b>
+                </a>
+
+                 <a href="https://www.kickstarter.com/learn" style = "padding-right: 25px; margin-right: 15px; border-right: 2px solid #E0E0E0;" class = "navItem"> <b> About us </b>
+                </a>
+
+                <a class="navItem">
+                    <img  class = "mag" src = "https://d30y9cdsu7xlg0.cloudfront.net/png/27269-200.png" height = 19>
+                </a>
+
+                <input style = "height: 20px" class = "inputItem" placeholder = "Search Projects" >
+       </h1>
+
+       <nav class = "userNavigation">
+           <ul class = "user_menu">
+
+           </ul>
+       </nav>
+
+       <form class = "form_search">
+       </form>
+
+   </header>
+   <div class = "pager-dots pager absolute center full-width z_overlap_clider dark theme">
+   </div>
+   <div class = "hero-image"> 
+
+
+        <img alt="Happening" class="fit" src="https://static.kickstarter.com/assets/happening/light-happening-title-treatment-aeb5f14419345bf367adda7386be47375ce0fb48d81e97ba4e9bf12b36f38ff3.svg">
+        <img src = "https://d3mlfyygrfdi2i.cloudfront.net/homepage-hero-watch-o.jpg">
+        <div class="happening-subtitle mb4">
+The latest in art, culture, and technology.
+<a class="btn btn--green btn--large" href="/happening?ref=hero">Take a look!
+</a>
+        </div>
+    </div>
+
+
+<a class="mega-footer__link" href="/help/faq/kickstarter+basics?ref=footer">FAQ
+
+</a>
+
+<div class="mega-footer__newsletter-signup js-mega-footer__newsletter-signup">
+
+<li> == $0
+    <a class="mega-footer__header-link" href="/discover/advanced?ref=footer">Discover</a>
+<input class="btn  button_submit submit_no_user appended-button-right submit" name="commit" type="submit" value="Subscribe">
+<div class="field append-button-right">
+<label class="overlabel z1 overlabel-newsletter ellipsis-line overlabel-apply">Email address</label>
+<input class="newsletter_email_input append-button-right__input text" id="email" name="email" type="text">
+</div>
+
 </body>
 </html>

@@ -1,0 +1,30 @@
+ body{
+    color: #020621;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;;
+    font-size: 16px
+    line-height: 1.4
+ }
+.Discover {
+	style = "gray" 
+	font-family = "Sans-serif"
+}
+
+.search-bar {
+   width: 10em;
+   display: inline-block;
+    vertical-align: top;
+    margin-top:1em;
+    margin-right:1em;
+    padding:0;
+   }
+ section{
+
+}
+.main-window{
+	display: table-cell;
+	vertical-align: middle;
+	padding: 20px 10%;
+	
+	
+
+}

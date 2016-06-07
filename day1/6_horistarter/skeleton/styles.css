@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	font-size:20px;
+	margin-top: 0px;
+	margin-right: 0px;
+ 	margin-bottom: 0px;
+ 	margin-left: 0px;
+	}
+.privacy {
+	padding-top:1vh;
+	height:auto;
+	background:#fcdda3;
+}
+
+.header {
+	padding-top:0;
+	margin-left:5vh;
+	height:8vh;
+	font-size:20px;
+	color:#727272;
+	font-weight:bold;
+}
+
+li {
+display: inline; 
+padding-right: 5vh;
+}
+.content {
+	height:75vh;
+	position:relative;
+	overflow:hidden;
+	margin-left:0;
+	margin-right:0;
+}
+.overlayed { 
+	position:absolute;
+	color:white;
+	text-align:center;
+	width:50%;
+	margin-left:25%;
+	margin-right:25%;
+	padding-top:none;
+}
+.content img {
+	width:100%;
+}
+
+h1 {
+	font-size: 200px;
+	font-weight:100;
+}
+h2 {
+	font-size:30px;
+}
+h3 {
+	font-size:25px;
+	font-weight:800;
+	text-transform:uppercase;
+	color:orange;
+}
+button {
+	background-color:orange;
+	padding:20px;
+	border-radius:5%;
+	border:none;
+}
+button:hover {
+	background-color:lightgrey;
+	padding:20px;
+	border-radius:5%;
+	border:none;
+}
+a {
+	text-decoration:none;
+	color: lightgrey;
+	font-weight:200;
+	font-size:20px;
+}
+
+button a {
+	text-decoration:none;
+	color: black;
+	font-weight:200;
+	font-size:20px;
+}
+button a:hover {
+	text-decoration:none;
+	color: black;
+	font-weight:200;
+	font-size:20px;
+}
+
+a:hover {
+	font-weight:500;
+	color: grey;
+}
+
+.second {
+margin-left:25%;
+margin-right:25%;
+width:50%;
+height:28vh;
+}
+table {
+	width:100%;
+}
+.tint{
+	display: block;
+    background-color: black;
+}
+.faded{
+	opacity:0.8
+}
+	

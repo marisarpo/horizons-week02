@@ -4,5 +4,7 @@
 
 ## Instructions
 
-Open the file [index.html] in your web browser and your text editor, and follow
-the instructions there to add some HTML tags, links, and content.
+Open the file [index.html][index] in your web browser and your text editor, and
+follow the instructions there to add some HTML tags, links, and content.
+
+[index]: ./index.html

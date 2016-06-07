@@ -111,10 +111,9 @@ by the element we are adding the event handler to (the button with ID "btn").
 Now head over to the folder `1_handling_events` within this directory and begin
 creating events of your own!
 
-## Pair programming: Building Horello with CRUD
+## Pair programming: Making Horello dynamic
 
-TODO - introduce flow for CRUD operations on Horello
 
-## Pair programming: Handling events in Horello
+Head into [`2_making_horello_dynamic`](2_making_horello_dynamic/README.md) to get started!
 
-So you've learned about 
+

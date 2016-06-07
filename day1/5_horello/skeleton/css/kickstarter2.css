@@ -33,23 +33,12 @@ header li{
 	margin: 10px auto;
 	position: relative;
 }
-.right{
-	float: left;
 
-
+.dancer img{
+	margin-left: 5%;
 }
-.right img{
-
-
-}
-.left{
-	float: left;
-	padding: 50px 0 50px 0;
-	margin-left: 25%;
-
-}
-.left img{
-
+.dance-header{
+	margin-left: 8%;
 }
 .main{
 	width:  100%;
@@ -59,4 +48,14 @@ header li{
 }
 .main img{
 	width: 100%
+}
+.columns{
+	margin-left: 25%;
+	font-size: 22;
+}
+.bottom{
+	height: 300px;
+	width: 100%;
+	background-color: #020621;
+	color: white;
 }

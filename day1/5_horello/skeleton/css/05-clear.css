@@ -1,5 +1,13 @@
 .img-float-left {
+	text-align: left;
+	float: left;
+	margin-right: 40px;
 }
 
 section {
+	clear: both;
+}
+
+.left-paragraph {
+	text-align: left;
 }

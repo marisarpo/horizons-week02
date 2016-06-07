@@ -1,6 +1,6 @@
 # Individual Exercise: Building a Weather Dashboard
 
-At some point, you've probably used, or seen someone use **Momentum** - it's a popular Chrome extension that replaces your New Tab page with a beautiful view that looks something like:
+At some point, you've probably used, or seen someone use **Momentum** - a popular Chrome extension that replaces your New Tab page with a beautiful view that looks something like:
 
 <sub>*Sidenote: did you know Momentum supports [Safari](http://static.momentumdash.com/Momentum.safariextz) too? Safari is pretty neat!*</sub>
 
@@ -21,7 +21,8 @@ To style this with CSS, we'll be focusing on the following components:
 	* **Salutation**: `<h3>` element
 	* **Quote**: `<p>` element
 * **Weather Widget** (also set to static value) in the top right
-	* 
+	* **Temperature**: `<span>` element
+	* ***Icon***: Depending on what you what you use (maybe [fontawesome](http://fontawesome.io/icons/) or [ionicons]())
 	
 ## Phase 2 - Building some Momentum for Momentu
 

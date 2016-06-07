@@ -15,12 +15,12 @@
 }
 
 .project-img-div {
-	width: 50%;
+	width: 40%;
 	display: inline-block;
 	margin: 0;
 }
 .project-img {
-	padding-top: 20px;
+	padding: 15px 15px;
 	width: 100%;
 	display: inline-block;
 	float:left;
@@ -32,7 +32,7 @@
 	margin-right: 10px;
 	display: inline-block;
 	float:right;
-	width: 47%;
+	width: 50%;
 }
 
 .project-description > h3{
@@ -61,14 +61,22 @@
 .project-icons > .project-icons-nav > .project-love-button {
 	padding: 0.4em 1.0em;
 	border-radius: 2em;
-	/*margin-bottom: 0.8em;*/
 	display: inline-block;
 	color: #fff;
 	background-color: #6F00FF;
 }
 
 .project-icons > .project-icons-nav li{
-	margin-right: 7px;
+	margin-right: 20px;
+}
+
+.green-bar {
+	border-radius: 7px;
+	background-color: #2BDE73;
+	height: 0.4em;
+/*	margin-right: 35px; */
+	margin-bottom: 10px;
+	width: 80%;
 }
 
 .progress-nav{

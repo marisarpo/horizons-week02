@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+}
+
+#warning {
+  background-color: rgb(252, 221, 163);
+  padding: 5px 16px;
+  margin: 0;
+}
+
+#navbar {
+  height: 60px;
+  box-shadow: 0 2px 0 black;
+}
+
+#navbar * {
+  display: inline-block;
+}
+
+#navbar > img {
+  float: left;
+  width: 20%;
+  margin-top: 15px;
+}
+
+#navbar-center li a{
+  color: grey;
+  margins: 0 40px;
+  font-weight: bold;
+}
+
+#navbar-right {
+  float: right;
+}
+
+#hero {
+  clear: both;
+  width: 100%;
+  background-image: url("https://static.kickstarter.com/assets/site/projects-hero-happening-b87fdef8f9ae2d44255357588ac8143c903523b83dcb70bf58c47032cf2a5932.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 270px 0;
+}
+
+#herobox {
+  font-size: 20px;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+}
+
+#herobox > a {
+  padding: 0.6em 1.3em;
+  border: 0;
+  border-radius: 0.3em;
+  display: inline-block;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(to bottom, #2BDE73 0, #2BDE73 100%);
+  text-decoration: none;
+}
+
+#headliner {
+  width: 60%;
+  margin: auto;
+}
+
+#navlist {
+  float: right;
+}

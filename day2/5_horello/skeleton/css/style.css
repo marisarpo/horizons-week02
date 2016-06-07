@@ -110,7 +110,8 @@ a {
     border-radius: 3px;
     width: 270px;
     background: #e2e4e6;
-
+    display: flex;
+    flex-direction: column;
     /** PHASE 2 CSS here */
 }
 

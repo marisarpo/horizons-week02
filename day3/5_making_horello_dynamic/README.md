@@ -90,7 +90,13 @@ the property and set method to modify it. In other words,
 `Card.prototype` should contain `getTitle`, `setTitle`,
 `getDescription`, and `setDescription`.
 
-(TODO: Why do we need getters and setters? Private data members etc.)
+(If you're curious why we need getters and setters in the first place,
+rather than just directly modifying the class data elements, the short
+answer is that we're providing ourselves extra flexibility: in case we
+later decide to change the way we retrieve or modify the data in
+question, in case we need to do more than just get or set the data
+value, etc. For more information read
+[Why use getters and setters?](http://stackoverflow.com/questions/1568091/why-use-getters-and-setters).)
 
 Open up [1_horello_data_model.html] and [1_data_model.js] and follow the
 instructions in the comments to create the necessary classes and helper
@@ -98,7 +104,7 @@ methods to satisfy the tests.
 
 [1_data_model.js]:./solution/js/1_data_model.js
 [1_horello_data_model.html]:./solution/1_horello_data_model.html
-[live]: http://horizons-school-of-technology.github.io/week02/day3/2_making_horello_dynamic/solution/3_horello_events.html
+[live]: http://horizons-school-of-technology.github.io/week02/day3/5_making_horello_dynamic/solution/3_horello_events.html
 
 This part has three phases:
 

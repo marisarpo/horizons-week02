@@ -1,0 +1,56 @@
+.navbar-brand {
+	font-family: Pacifico, cursive;
+	color: #ff0000 !important;
+	font-size: 24px;
+
+}
+.search-bar {
+	border-radius: 30px;
+}
+.bottom {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+.footer {
+	
+	background-color: #1b1b1b;
+	height: 69px;
+	color: #777777;
+	
+
+}
+
+
+.widgets {
+	color: #444444;
+	font-family: "Open Sans", sans-serif;
+	font-weight: 400;
+	background-color: #fafafa;
+	width: 98%;
+	
+
+}
+.widgets h3 {
+	margin-bottom:0;
+	padding-bottom: 5px;
+}
+.widgets p {
+	padding-bottom: 20px;
+	padding-top: 10px;
+	margin-bottom: 20px;
+
+}
+hr {
+	border-color: #777777;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+img {
+	width: 220px;
+	border: 1px solid #ff1493;
+	padding: 4px;
+	
+}

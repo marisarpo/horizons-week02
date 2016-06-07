@@ -1,0 +1,92 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    color: #020621;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+}
+div {
+	padding: 0;
+}
+
+.background-yellow {
+	z-index: 1001;
+	text-align: center;
+    margin: auto;
+    display: block;
+	background-color: #fcdda3;
+    border-bottom: 1px solid #F1EEEA;
+}
+.center-paragraph {
+	color: #020621;
+    font-weight: normal;
+    font-size: 12px;
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0 20px 10px;
+    margin: auto;
+}
+.navigation{
+	height: 120px;
+	background-color: #FFFFFF;
+    border-bottom: solid 1px #F1EEEA;
+    position: relative;
+    z-index: 1000;
+}
+.menu-item {
+	display: inline-block;
+}
+
+.kickstarter-logo {
+	background-image: url(https://static.kickstarter.com/assets/logo/ksr-logo-sprite-005cc4a6ae198f0690a8998d3605f7f5bba743745dc0be09f7165961b2a0439a.svg);
+	background-size: 159px;
+    display: inline-block;
+    height: 19px;
+    text-indent: -9999px;
+    width: 159px;
+}
+.discover {
+	color: #80809E;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.start-a-project {
+	color: #80809E;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.about-us {
+    color: #80809E;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.signup {
+	color: #2752ff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.login {
+	color: #2752ff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.lebowski {
+	height: 464px;
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #F1EEEA;
+}
+

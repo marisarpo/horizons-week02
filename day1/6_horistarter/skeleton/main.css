@@ -42,6 +42,15 @@ span ul li {
 footer {
 	font-size:10px;
 	text-align: center;
+	font-weight: bold;
+}
+a {
+	color: #020621;
+	text-decoration: none;
+}
+a:visited {
+	color: #aaa;
+	text-decoration: none;
 }
 img.siteLogo {
 	padding-top: 13px;
@@ -150,8 +159,12 @@ img.siteLogo {
 	text-align: center;
 	padding-bottom: 150px;
 }
+#sideKat {
+	color: #020621;
+}
 #sidekat:hover {
 	color: #2BDE73;
+	text-decoration: underline;
 }
 #secondkat {
 	height: 325px;

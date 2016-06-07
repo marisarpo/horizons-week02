@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Horistarter</title>
     <style>
-#header {
+.header {
     background-color:#FFFF99;
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
     color:black;
@@ -15,7 +15,7 @@ h1{
 	font-size:16px;
 	font-weight:lighter;
 }
-.nav{
+.nav{{
 	color:black;
 	border:1px solid black;
 }
@@ -45,7 +45,8 @@ li a {
 li a:hover {
 	text-decoration:underline;
     background-color: #D3D3D3;
-}
+}}
+
 #search-bar {
     width: 10em;
     display: inline-block;
@@ -55,13 +56,6 @@ li a:hover {
 	padding:0;
     }
  .hero-image{
- background-image: url("http://i.imgur.com/M6cVJDP.jpg");
- 	display: block;
-    margin-left: auto;
-    margin-right: auto
- 	height:1240px;
- 	width:100%;
-
 
 
 
@@ -77,13 +71,13 @@ li a:hover {
 <body>
     <!-- Your HTML goes here. -->
  <center>
- <section id="header">
+ <div class="header">
     <h1>
-       We've updated our Privacy Policy -read about the upcoming changes here. By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to new policy.  X
+       We've updated our Privacy Policy -read about the upcoming changes <a href="http://www.wfp.org/">here</a>. By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to new policy.  X
     </h1>
-</section>
+</div>
 
-<section class="nav">
+<div class="nav">
     <ul>
         <li>
            <span style="display: inline-block; vertical-align: top; margin-top:1em;margin-right:1em;padding:0; font-size:18px;"><b>HORI</b><span style="color:#00FFFF"><b>STARTER</b></span></span>
@@ -106,18 +100,61 @@ li a:hover {
         </li>
         
     </ul>
-</section>
-<section class="hero-image">
-
-
-   <title><b><font color=black>
-   Oliver's Twist
-</font></b></title>
+</div>
+<div class = "category list">
+<ul>
+        <li>
+            <a href="#">Art</a>
+        </li>
+        <li>
+            <a href="#">Comics</a>
+        </li>
+        <li>
+            <a href="#">Crafts</a>
+        </li> 
+        <li>
+            <a href="#">Dance</a>
+        </li>
+        <li>
+            <a href="#">Design</a>
+        </li>
+        <li>
+            <a href="#">Fashion</a>
+        </li>
+        <li>
+            <a href="#">Film and Video</a>
+        </li>
+        <li>
+            <a href="#">Food</a>
+        </li> 
+        <li>
+            <a href="#">Games</a>
+        </li>
+        <li>
+            <a href="#">Journalism</a>
+        </li>
+        <li>
+            <a href="#">Music</a>
+        </li>
+        <li>
+            <a href="#">Photography</a>
+        </li>
+        <li>
+            <a href="#">Publishing</a>
+        </li> 
+        <li>
+            <a href="#">Technology</a>
+        </li>
+        <li>
+            <a href="#">Theater</a>
+        </li>
+        
+    </ul>
    
-</section>
-<section class = "footer">
+</div>
+<div class = "footer">
 
-</section>
+</div>
 
 </center>
 

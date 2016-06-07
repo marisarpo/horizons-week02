@@ -1,8 +1,20 @@
 .img-title {
-}
+  margin-bottom: 2em ; /* what is the em in refernece to?*/
 
+}
+/* does order matter? */
 .button {
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  box-shadow: 0 2px 0 #3f6f21 ;
+  display: inline-block ; 
+  border-radius: .3em ; 
+  border : 0;
+  font-weight : bold;
+  color: #fff;
+  padding : .6em 1.3em .6em 1.3em;
 }
 
+/* a pseudp c;ass> */ 
 .button:hover {
+  background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
 }

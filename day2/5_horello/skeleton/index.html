@@ -21,31 +21,96 @@
 
 <!-- PHASE 5. Modal -->
 
+
 <div class="board">
     <div class="list-container">
         <div class="list">
             <div class="list-header">
-                <span class="list-title">House List</span>
+                <span class="list-title">Athletes</span>
             </div>
             <div class="list-cards">
                 <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
+                    <div class="card-body" data-toggle="modal" data-target="#myModal" role="dialog">
+                      Muhammad Ali - Cassius Marcellus Clay Jr. /ˈkæʃəs/ was born on January 17, 1942, in Louisville, Kentucky.[20] He had a sister and four brothers,
+                      African descent, with Irish[24] and English heritage.[25][26][27] His father painted billboards and signs,[20] and his mother,
+                      Odessa O'Grady Clay, was a household domestic.
                     </div>
+                    <span class="glyphicon glyphicon-align-left card-more" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
-
+                <button type="button" class="btn btn-default add-card" data-toggle="collapse" data-target="#cardCollapse">Add a Card</button>
                 <!-- PHASE 4. Collapse -->
+                <div id="cardCollapse" class="collapse">
+                  <div class="well">
+                    <form>
+                      <input type="card title" class="form-control" id="addcard" placeholder="Card Title">
+                      <div class="createRemove">
+                        <button class="btn btn-default" type="button" id="btn-card">Save</button>
+                        <button class="btn btn-default" type="button">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true" id="removeGlyph"></span>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
             </div>
+
         </div>
     </div>
 
     <!-- PHASE 1. Add list button -->
-
-
+    <div class="add-list-container">
+      <button type="button" class="btn btn-default add-list" data-toggle="collapse" data-target="#listCollapse">Add a List...</button>
+      <div id="listCollapse" class="collapse">
+        <div class="well" id="well2">
+          <form>
+            <div>
+              <input type="list title" class="form-control" id="addlist" placeholder="List Title">
+            </div>
+            <div class="createRemove">
+              <div>
+                <button class="btn btn-default" type="button" id="btn-card">Save</button>
+              </div>
+              <div>
+                <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true" id="removeGlyph"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <input type="modal-title" class="form-control" id="myModalLabel" placeholder="List Title"></input>
+      </div>
+      <div class="modal-body">
+      </div>
+      <h>
+        Description
+      </h>
+      <div class="container">
+        <textarea class="form-controltype" rows="5">  Description goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

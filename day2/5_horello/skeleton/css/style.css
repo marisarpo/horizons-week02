@@ -4,6 +4,7 @@ body {
     line-height: 18px;
     height: 100vh;
     background-color: rgb(0,121,191);
+    font-family: Cabin;
     /** PHASE 1 CSS here */
 }
 
@@ -16,6 +17,10 @@ header {
     /** PHASE 1 CSS here */
 }
 @font-family-base;
+
+.well {
+    margin-bottom: 0;
+}
 
 .header-logo {
     bottom: 0;
@@ -149,7 +154,9 @@ a {
 
 .list-cards {
     min-height: 0;
-
+    overflow-y: overlay;
+    overflow-x: hidden;
+    min-height: 0;
     /** PHASE 3 CSS here */
 }
 
@@ -163,6 +170,7 @@ a {
 
 .card-body {
     /** PHASE 3 CSS here */
+    padding-bottom: 10px;
 }
 
 .card-more {

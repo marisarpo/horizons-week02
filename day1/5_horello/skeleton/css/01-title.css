@@ -1,16 +1,22 @@
 body {
     /** Your CSS goes here! **/
+    font-family: Helvetica Neue, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 16px, 20px, 36px;
 }
 
 h2 {
-    /** and here (you get the point) **/
-}
+font-weight: 400;
+}	
 
 section {
+	padding: 80px 20px;
 }
 
 .center-paragraph {
+	margin: 1em;
 }
 
 .text-center {
+	text-align: center;
 }

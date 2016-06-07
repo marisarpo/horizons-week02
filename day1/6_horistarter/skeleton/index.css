@@ -1,0 +1,120 @@
+html, head, body, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+/** banner **/
+.launch-banner {
+	background: #fcdda3;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0;
+}
+
+.launch-banner-text {
+	color: #020621;
+	font-weight: normal;
+	font-size: 14px;
+	vertical-align: middle;
+	height: 100%;
+	
+	text-align: center;
+	padding: 20px 10px 20px 10px;
+	margin: 0;
+}
+
+/** navigation **/
+.site-navigation {
+	height: 60px;
+	background-color: #FFFFFF;
+	border-bottom: solid 1px #F1EEEA;
+	position: relative;
+	display: block;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.site-navigation {
+	height: 60px;
+	background-color: #FFFFFF;
+	border-bottom: solid 1px #F1EEEA;
+	position: relative;
+	display: block;
+	padding: 0;
+	vertical-align: baseline:
+	font-size: 100%;
+}
+.site-logo {
+	float: left;
+	display: inline-block;
+	padding: 20px 40px;
+	margin: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 19px
+	font-weight: bold;
+
+}
+.ksr-logo {
+	background: url(https://static.kickstarter.com/assets/logo/ksr-logo-sprite-005cc4a6ae198f0690a8998d3605f7f5bba743745dc0be09f7165961b2a0439a.svg);
+	background-size: 159px;
+	display: inline-block;
+	height: 19px;
+	text-indent: -9999px;
+	width: 159px;
+	color: #2752ff;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
+}
+.left {
+	float: left;
+	display: block;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+
+}
+.screenreader {
+	position: absolute;
+	top: -100px;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+
+}
+h2 {
+	font-size: 32px;
+	line-height: 40px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	padding: 0;
+	vertical-align: baseline;
+
+}
+.primary-menu {
+	margin-left: 10px;
+	float: left;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+.primary-menu li {
+	display: inline-block;
+	font-size: 100%;
+	padding: 20px 15px;
+	vertical-align: baseline;
+	color: #80809E;
+	font-size: 14px;
+	font-weight: bold;
+	
+
+}
+
+
+

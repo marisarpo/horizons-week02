@@ -148,6 +148,8 @@ a {
 /* CARDS */
 
 .list-cards {
+    overflow-y: overlay;
+    overflow-x: hidden;
     min-height: 0;
     /** PHASE 3 CSS here */
 }

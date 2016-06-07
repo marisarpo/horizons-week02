@@ -140,13 +140,32 @@
             </div>
             <div class="list-cards">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
                         #DominateAllTheHouses
                         <span class="glyphicon glyphicon-align-left" style="display:block" aria-hidden="true"></span>
                     </div>
                 </div>
             </div>
             <div class="list-footer">
+                <!--MODAL -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <input class="form-control" placeholder="#DominateAllTheHouses">
+                  </div>
+                  <div class="modal-body">
+                    <p>Description</p>
+                    <textarea class="form-control" rows="5" placeholder="Card body goes here"></textarea>
+                  </div>
+                  <div class="modal-footer description">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
                 <!-- PHASE 2. Add card button -->
                 <button class="add-card" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Add a card
@@ -176,7 +195,7 @@
     <div class="collapse" id="collapseExample4" style="width:280px;margin: 0px 5px;">
                 <div class="well well-sm" style="margin-bottom:0px; padding:5px; border-radius:4px">
                    
-                    <input class="form-control" placeholder="Card title">
+                    <input class="form-control" placeholder="List name">
                 <button class="btn save">Save</button>
                   <button class="btn save"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
               

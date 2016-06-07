@@ -7,6 +7,7 @@ body {
     /** PHASE 1 CSS here */
     background-color: rgb(0,121,191);
     @font-family-base: Bootstrap default sans-serif;
+
     
 }
 
@@ -128,6 +129,7 @@ a {
 
     /** PHASE 2 CSS here */
     margin: 0 .5em;
+    padding-bottom: 5px;
     color: black;
     font-weight: 700;
 }
@@ -208,5 +210,12 @@ a {
 .card-more {
     /** PHASE 3 CSS here */
 }
+
+.modal-body{
+    margin-top: 10px;
+
+}
+
+
 
 /** PHASE 4 CSS here: add card form */

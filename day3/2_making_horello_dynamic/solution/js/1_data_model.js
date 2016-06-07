@@ -3,7 +3,7 @@
 window.horello = {};
 
 // [Helper] `generateId`
-// This function generates a random, unique string for you use for whatever.
+// This function generates a random, unique string for you to use for whatever.
 // 
 // ex. horello.generateId() -> 'aQ-V-c-u-P4l'
 // ex. horello.generateId() -> 'bh-H-N-9-Vdr'
@@ -19,8 +19,7 @@ horello.generateId = function() {
 
 // PART 1. Data model
 
-// Phase 1. `Card` Class
-// Cards contain a unique ID, a title, and a description.  Write a Card class
+// Phase 1. `Card` Class// Cards contain a unique ID, a title, and a description.  Write a Card class
 // that follows the spec described in `classSpec.png`. This class will contain
 // several properties and methods.
 

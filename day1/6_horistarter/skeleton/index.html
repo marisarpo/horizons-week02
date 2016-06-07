@@ -4,7 +4,152 @@
     <meta charset="UTF-8">
     <title>Horistarter</title>
     <style>
-        /* You may choose to write your CSS here... */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Helvetica Neue', Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif;
+
+        }
+        .launch-banner{
+            background: #fcdda3;
+            border-bottom: 1px solid #F1EEEA;
+            z-index: 1001;
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            display: table;
+        }
+
+        .launch-banner__link{
+            font-size: 14px;
+            font-weight: normal;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+            padding-top: 20px;
+            padding-right: 0px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            vertical-align: middle;
+        }
+        .privacy-link{
+            text-decoration: none;
+        }
+        .launch-banner-close{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            cursor: pointer;
+            font-size: 0.7em;
+            padding-top: 4px;
+            padding-bottom: 0px;
+            padding-right: 16px;
+            padding-left: 16px;
+        }
+
+        #close-banner {
+            display:inline-block;
+            vertical-align: middle;
+            zoom: 1;
+            font-size: 1.3em;
+            font-family: "SSKickstarter";
+            font-style: normal;
+            font-weight: 400;
+            text-decoration: none;
+            text-rendering: optimizeLegibility;
+            white-space: nowrap;
+            font-feature-settings:"liga";
+        }
+        a {
+            color: #2752ff
+        }
+  
+        a:hover {
+            color: #060F46;
+            text-decoration: none;
+        }
+        a:visited {
+            color: #060F46;
+            text-decoration: none;
+        }
+        a:active {
+            text-decoration: none;
+        }
+        p{
+            margin-bottom: 20px;
+        }
+
+        .nav-bar {
+            height: 60px;
+            background-color: #FFFFFF;
+            border-bottom: solid 1px #F1EEEA;
+            position: relative;
+            z-index: 1000;
+        }
+        .site-logo {
+            display: inline;
+            line-height: 48px;
+            margin-left: 40px;
+
+
+        }
+
+        .ksr-logo{
+            background: url(https://static.kickstarter.com/assets/logo/ksr-logo-sprite-005cc4a6ae198f0690a8998d3605f7f5bba743745dc0be09f7165961b2a0439a.svg)
+            no-repeat;
+            background-size: 159px;
+            display: inline-block;
+            height: 19px;
+            text-indent: -9999px;
+            width: 159px;
+        }
+        .main-nav{
+            float: left;
+            display: block;
+        }
+        
+        .hero img{
+            width: 100%;
+        }
+        .projects-we-love{
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: #F1EEEA;
+            background-color: #fff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            max-width: 1040px;
+        }
+        .nav-2{
+            display:inline-block;
+            list-style: none;
+            margin-top:0px;
+            margin-bottom:0px;
+            margin-left:0px;
+            padding-right:35px;
+            border-right: solid 1px #F1EEEA;
+        }
+        .nav-2-item{
+            color: #80809E;
+            font-size:14px;
+            
+            display: inline-block;
+            font-weight:bold;
+            float:left;
+            padding: 20px 15px;
+            border: 0;
+            margin: 0;
+        }
+        .search-projects{
+            display:inline-block;
+            height: 100%;
+            color:#3D3D66;
+            width: 375px;
+            margin-top:-30px;
+        }
+        .search-bar{
+            ;
+        }
     </style>
     <!--
     Or you can put it in a separate file and include it this way:
@@ -12,6 +157,41 @@
      -->
 </head>
 <body>
-    <!-- Your HTML goes here. -->
+    <div class = "launch-banner">
+        <p class = "launch-banner__link"> We've updated our Privacy Policy - read about the upcoming changes
+            <a class="privacy-link" href = "https://www.kickstarter.com/privacy">here</a>. 
+            By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to the new policy.</p>
+            <div class = "launch-banner-close">
+                <span id="close-banner">&#10006</span>
+            </div>
+    </div>
+    <header class = "nav-bar">
+        <h1 class= "site-logo">
+            <a class="ksr-logo" href="https://www.kickstarter.com/?ref=nav">Kickstarter</a>
+        </h1>
+        <ul class="nav-2">
+            <li class="nav-2-item">Discover</li>
+            <li class="nav-2-item">Start a project</li>
+            <li class="nav-2-item" id="last-item">About us</li>
+        </ul>
+        <form class="nav-2">
+            <input class="search-bar" type="button" value = "">
+            <input class="search-bar" type="text" placeholder="Search Projects">
+        </form>
+     
+        <!--
+        <nav class="main-nav">
+            <ul class="primary-menu">
+                <li class="discover">
+                    <a href="https://www.kickstarter.com/discover?ref=nav">Discover</a>
+                </li>
+            </ul>
+        </nav>-->
+    </header>
+    <div class="hero">
+        <img src="https://raw.githubusercontent.com/horizons-school-of-technology/week02/master/day1/6_horistarter/screenshots/03-hero.png?token=APV-T6R3l_YKpXs6fU9A5bYX1NV--kRmks5XXzk1wA%3D%3D">
+    </div>
+    <div class="projects-we-love">
+    </div>
 </body>
 </html>

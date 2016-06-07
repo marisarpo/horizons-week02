@@ -20,6 +20,25 @@
 </header>
 
 <!-- PHASE 5. Modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <a role="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></a>
+        <input type="text" class="form-control" value="#DominateAllTheHouses">
+      </div>
+      <div class="modal-body">
+        <h5>Description</h5>
+        <textarea class="form-control" rows="5"> Card body goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="board">
     <div class="list-container">
@@ -29,13 +48,36 @@
             </div>
             <div class="list-cards">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
                         Today we will #DominateAllTheHouses
+                        <p>
+                        </p>
+                        <div class="glyphicon glyphicon-align-left"></div>
+                        <!-- Button trigger modal -->
                     </div>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
+            <button class="add-card btn" type="button" data-toggle= "collapse" data-target="#add-card-dropdown">
+            Add a card...
+            </button>
+            <div class="collapse" id="add-card-dropdown">
+                <div class="well">
+                    <form class="card-info">
+                        <input type="text" class="form-control" placeholder="Card title">
+                        </input>
+                    </form>
+                    <button class="btn btn-default" type="button">
+                    Save
+                    </button>
+                    <button class="x btn btn-default">
+                        <div class="glyphicon glyphicon-remove" type="button">
+                        </div>
+                    </button>
+                </div>
+            </div>
+
 
                 <!-- PHASE 4. Collapse -->
             </div>
@@ -43,6 +85,26 @@
     </div>
 
     <!-- PHASE 1. Add list button -->
+    <div class = "add-list-container">
+        <button class = "add-list btn" type="button" data-toggle= "collapse" data-target="#add-list-dropdown">
+        Add a list...
+        </button>
+        <div class="collapse" id="add-list-dropdown">
+                <div class="well">
+                    <form class="list-info">
+                        <input type="text" class="form-control" placeholder="List name">
+                        </input>
+                    </form>
+                    <button class="btn btn-default" type="button">
+                    Save
+                    </button>
+                    <button class="x btn btn-default">
+                        <div class="glyphicon glyphicon-remove" type="button">
+                        </div>
+                    </button>
+                </div>
+            </div>
+    </div>
 
 
 </div>

@@ -1,0 +1,14 @@
+body{
+  font-family:Helvetica Neue, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.policy{
+  display: block;
+  height: 59px;
+  text-align: center;
+  font: Arial;
+  font-size: 20px;
+  padding: 20px 20px;
+}

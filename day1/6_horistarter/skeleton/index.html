@@ -3,15 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Horistarter</title>
+    <link rel="stylesheet" href="css/00-reset.css" type="text/css">
+    <link rel="stylesheet" href="/css/01-index.css" type="text/css">
     <style>
-        /* You may choose to write your CSS here... */
+    .policy{
+      display:inline-block;
+      height: 60px;
+      font: "Arial";
+      font-size: 17px;
+      line-height: 22.4px;
+      background-color: #FCDDA3;
+      padding-right: 150px;
+      width: 100%;
+    }
+    #policyStr{
+      text-align: center;
+    }
+    #logo{
+      display: inline-block;
+      height: 50px;
+      width: 159px;
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    .navbar{
+      display: inline-block;
+      border-bottom: solid 1px #F1EEEA;
+      float:left;
+      display:inline;
+      width: 49%;
+    }
+    .navLinks{
+      display: inline;
+    }
+
     </style>
-    <!--
-    Or you can put it in a separate file and include it this way:
-    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
-     -->
 </head>
 <body>
     <!-- Your HTML goes here. -->
+    <div class="policy">
+      <p id="policyStr"> We've updated our privacy policy -- read about the upcoming changes  <a href = https://www.kickstarter.com/privacy> here</a>.  By continuing to use Kickstarter on or after June 9, 2016 you're agreeing to the new policy.</p>
+      <div class="closePolicy">
+          <span aria-hidden="true" class="ss-icon ss-delete"></span>
+      </div>
+    </div>
+    <div class="navbar">
+        <img id="logo" src="http://thenoob.net/wp-content/uploads/2014/03/kickstarter-logo-whitebg.jpg">
+        <navlinks>
+          <li> <a href="https://www.kickstarter.com/discover?ref=nav"> Discover </a></li>
+          <li> <a href="https://www.kickstarter.com/learn?ref=nav"> Start a project </a></li>
+          <li> <a href="https://www.kickstarter.com/about?ref=nav"> About us </a></li>
+        </navlinks>
+    </div>
+
+
 </body>
 </html>

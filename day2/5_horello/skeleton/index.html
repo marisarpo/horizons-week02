@@ -1,51 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Horello</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Horello</title>
 
-    <!-- Bootstrap stuff -->
-    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-    <script src="../../../lib/jquery.js"></script>
-    <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Bootstrap stuff -->
+  <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+  <script src="../../../lib/jquery.js"></script>
+  <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Our Styles -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- Our Styles -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
 <body>
-<header>
-    <a class="header-logo"
-       href="#"><span class="header-logo-default"></span></a>
-</header>
+  <header>
+    <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
+  </header>
 
-<!-- PHASE 5. Modal -->
+  <!-- PHASE 5. Modal -->
 
-<div class="board">
+  <div class="board">
     <div class="list-container">
-        <div class="list">
-            <div class="list-header">
-                <span class="list-title">House List</span>
-            </div>
-            <div class="list-cards">
-                <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
-                    </div>
-                </div>
-            </div>
-            <div class="list-footer">
-                <!-- PHASE 2. Add card button -->
-
-                <!-- PHASE 4. Collapse -->
-            </div>
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">House List</span>
         </div>
+        <div class="list-cards">
+          <div class="card" data-toggle="modal" data-target="#samplemodal">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="modal fade" id="samplemodal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="#DominateAllTheHouses">
+                  </div>
+                </div>
+                <div class="modal-body">
+                  <h4 class="modal-title">Dscription</h4>
+                  <div class="form-group">
+                    <textarea class="form-control" placeholder="Card body goes here" rows="5"></textarea>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list-footer">
+          <button type="button" class="btn add-card" data-toggle="collapse" href="#addCard">Add a card...</button>
+          <div class="collapse" id="addCard">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" placeholder="Card title">
+              <button class="btn">Save</button>
+              <button class="btn glyphicon glyphicon-remove"></button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">House List</span>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+        <div class="list-footer">
+          <button type="button" class="btn add-card" data-toggle="collapse" href="#addCard2">Add a card...</button>
+          <div class="collapse" id="addCard2">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" placeholder="Card title">
+              <button class="btn">Save</button>
+              <button class="btn glyphicon glyphicon-remove"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="add-list-container">
+        <button type="button" class="btn add-list" data-toggle="collapse" href="#addList">Add a list...</button>
+        <div class="collapse" id="addList">
+          <div class="well add-list-form">
+            <input type="text" class="form-control" placeholder="List title">
+            <button class="btn">Save</button>
+            <button class="btn glyphicon glyphicon-remove"></button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- PHASE 1. Add list button -->
 
-
-</div>
+  </div>
 
 </body>
+
 </html>

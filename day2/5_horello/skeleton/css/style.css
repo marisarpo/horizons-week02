@@ -1,19 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
-
 body {
     line-height: 18px;
     height: 100vh;
-
-    /** PHASE 1 CSS here */
+    background-color: rgb(0, 121, 191);
+    font-family: Cabin, sans-serif;
 }
-
 header {
     position: relative;
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
+    padding: 5px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.15);
 }
-
 .header-logo {
     bottom: 0;
     display: block;
@@ -28,7 +26,6 @@ header {
     opacity: 0.5;
     transition: opacity ease-in 85ms;
 }
-
 .header-logo-default {
     background-image: url(../../img/title.png);
     background-position: top right;
@@ -40,95 +37,115 @@ header {
     width: 5pc;
     position: absolute;
 }
-
 a {
     background-color: transparent;
 }
-
 
 /* BOARD */
 
 .add-list-container {
     padding: 5px;
 }
-
 .add-list {
-    /** PHASE 1 CSS here */
+    background: rgba(0, 0, 0, 0.12);
+    color: #fff;
+    min-height: 30px;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    width: 280px;
+    padding: 7px;
+    text-align: left;
 }
-
 .add-list:hover {
-    /** PHASE 1 CSS here */
+    background: rgba(0, 0, 0, .2);
+    color: #fff;
 }
-
 .add-list-form {
-    /** PHASE 4 CSS here */
+  padding: 5px;
+  margin: 0px;
 }
 
+.add-list-form input {
+  margin-bottom: 5px;
+}
 .board {
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
-
-    /** PHASE 2 CSS here */
 }
-
 
 /* LISTS */
 
 .list-container {
     height: 100%;
 }
-
 .list {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     max-height: 100%;
-
-    /** PHASE 2 CSS here */
+    padding: 0.5em;
+    margin: 5px 3px;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
 }
-
 .list-header {
     display: block;
     position: relative;
-
-    /** PHASE 2 CSS here */
+    margin-bottom: .5em;
+    color: black;
+    font-weight: 700;
 }
-
 .list-footer {
-    /** PHASE 2 CSS here */
+    font-weight: 500;
 }
-
 .list-title {
-    /** PHASE 2 CSS here */
+    left: 0;
 }
-
 .add-card {
-    /** PHASE 2 CSS here */
+    width: 100%;
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background: rgba(16, 16, 16, 0.15);
+    color: #333;
+    margin: 3px 0px;
 }
-
 .add-card:hover {
-    /** PHASE 2 CSS here */
+    background: rgba(96, 96, 96, .15);
 }
-
 
 /* CARDS */
 
 .list-cards {
     min-height: 0;
-
-    /** PHASE 3 CSS here */
 }
-
 .card {
-    /** PHASE 3 CSS here */
+    position: relative;
+    margin-bottom: .5em;
+    background: white;
+    border-radius: 3px;
 }
-
 .card-body {
-    /** PHASE 3 CSS here */
+    padding: .5em .5em 2em;
+    font-family: Cabin, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
 }
-
 .card-more {
-    /** PHASE 3 CSS here */
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
 }
 
-/** PHASE 4 CSS here: add card form */
+.add-card-form {
+  padding: 5px;
+  margin: 0px;
+}
+
+.add-card-form input {
+  margin-bottom: 5px;
+}

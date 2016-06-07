@@ -5,11 +5,11 @@
 
 .container > .column {
     border: 1.5px solid #D9D9D9;
-    display: inline-block;
     margin: 15px;
     border-radius: 10px;
     height: 100%;
     width: 30%;
+    float: left;
 }
 
 .container > .column > .col-pic {
@@ -40,6 +40,29 @@
 .container > .column > .progress-bar p{
 	font-size: 16px;
 	margin: 7px;
+}
+
+.container > .column {
+	position: relative;
+}
+
+.container > .column > .progress-bar > .green-bar, .container > .column > .progress-bar > .bottom-col{
+	bottom: 0;
+	position: absolute;
+}
+
+.container > .column > .progress-bar > .green-bar {
+	bottom: 80px;
+	width: 100%;
+	background-color: red;
+}
+
+.container > .column > .progress-bar > .locator {
+	bottom: 115px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	font-size: 18px;
 }
 
 .container > .column > .progress-bar > .bottom-col > .bottom-ul li {

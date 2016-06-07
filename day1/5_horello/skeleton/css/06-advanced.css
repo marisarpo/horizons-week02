@@ -1,21 +1,28 @@
 .background-light-blue {
 	background: #e4f0f6;
+	overflow: hidden;
 }
 
 .layout-grid-frame {
 	max-width: 890px;
 	position: relative;
+	margin:  0 auto;
 }
 
 .layout-callout-right {
+	position: absolute;
+	top: -60px;
+	left: 640px;
 }
 
 .layout-callout-right img {
+	max-width: initial;
 }
 
 .layout-twothirds-left {
-	max-width: 890px;
-	margin:  0 auto;
+	text-align: left;
+	max-width: 585px;
+	
 }
 
 .app-store-link {
@@ -23,14 +30,18 @@
 
 .app-store-link img {
 	height: 54px;
+	margin-top: .4em;
+	margin-right: 1em;
+	display: inline-block;
 }
 
 .outline-link {
 	border-radius: .3em;
 	border: 1px solid;
-	padding: .6em 1.3em;
+	padding: .7em 1em;
 	display: inline-block;
 	vertical-align: top;
+	margin-top:.4em;
 }
 
 a {

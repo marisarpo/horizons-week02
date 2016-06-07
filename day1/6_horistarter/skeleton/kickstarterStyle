@@ -1,0 +1,12 @@
+body{
+	
+}
+
+warningBanner{
+	background-color: #FFFEC5;
+	margin: 1em;
+}
+
+a{
+	color:blue;
+}

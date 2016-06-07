@@ -41,14 +41,14 @@ header li{
 	margin-left: 8%;
 }
 .main{
-	width:  100%;
-	padding: 0;
-	border: 0;
-	margin: 0;
+	height: 800px;
+	width: 100%;
+	background-size: cover;
+	background-image: url("https://raw.githubusercontent.com/horizons-school-of-technology/week02/master/day1/6_horistarter/screenshots/03-hero.png?token=ARcy_doRWz9LrK_m_Yz8nFeBtW1wWXEsks5XXxycwA%3D%3D");
+	background-repeat: no-repeat;
+	background-position: center;
 }
-.main img{
-	width: 100%
-}
+
 .columns{
 	margin-left: 25%;
 	font-size: 22;

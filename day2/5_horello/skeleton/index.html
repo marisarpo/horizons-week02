@@ -128,7 +128,7 @@
             </div>
             <div class="list-cards">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
                         #DominateAllTheHouses
                         <div class="burger">
                         <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></div>
@@ -136,6 +136,30 @@
                 </div>
             </div>
             <div class="list-footer">
+<!-- MODAL -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <input class="form-control" placeholder="#DominateAllTheHouses">
+      </div>
+      <div class="modal-body">
+      <p>Description</p>
+        <textarea class="form-control" rows="5" id="comment" placeholder="Card body goes here" style="font-weight: 300;"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
                 <!-- PHASE 2. Add card button -->
                 <button class="add-card" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 Add a card...
@@ -161,7 +185,7 @@
 </button>
 <div class="collapse" id="collapseExample4">
                 <div class="well well-sm" style="margin-bottom: 0px; padding: 5px; border-radius: 4px; width: 280px; margin-top: 2px">
-                <input class="form-control" placeholder="List Title" style="font-weight: 300;">
+                <input class="form-control" placeholder="List name" style="font-weight: 400;">
                 <button class="btn button-response" >Save</button>
                 <button class="btn button-response" ><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                 </div>

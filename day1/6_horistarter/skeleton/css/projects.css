@@ -1,0 +1,137 @@
+.projects {
+	margin: 10px 0;
+	overflow: hidden;
+	width: 100%;
+	background-color: #F0F4F5;
+	height: 350px;
+}
+
+.project-img-display {
+	outline: 1px #fff;
+	width: 87%;
+	float: left;
+	height: 75vh;
+	display: inline-block;
+}
+
+.project-img-div {
+	width: 50%;
+	display: inline-block;
+	margin: 0;
+}
+.project-img {
+	padding-top: 20px;
+	width: 100%;
+	display: inline-block;
+	float:left;
+	margin: 0;
+}
+
+.project-description{
+	padding-top: 10px;
+	margin-right: 10px;
+	display: inline-block;
+	float:right;
+	width: 47%;
+}
+
+.project-description > h3{
+	font-size: 20px;
+}
+
+.project-description > p{
+	font-size: 16px;
+}
+
+.project-description > .byline {
+	font-size: 12px;
+}
+
+.project-icons-nav {
+	padding: 0;
+}
+
+.project-icons li, .progress-nav li {
+	font-size: 15px;
+	list-style-type: none;
+	display: inline;
+	margin-bottom: 0;
+}
+
+.project-icons > .project-icons-nav > .project-love-button {
+	padding: 0.4em 1.0em;
+	border-radius: 2em;
+	/*margin-bottom: 0.8em;*/
+	display: inline-block;
+	color: #fff;
+	background-color: #6F00FF;
+}
+
+.project-icons > .project-icons-nav li{
+	margin-right: 7px;
+}
+
+.progress-nav{
+	display: inline-block;
+	padding:0;
+	margin: 3px;
+	overflow: auto;
+}
+.progress-nav > .col{
+	float: left;
+	padding:0;
+	margin: 0 10px
+}
+
+.progress-nav > .col > * {
+	display: block;
+	margin: 0;
+	text-align: left;
+}
+
+.progress-nav li > h3 {
+	display: inline;
+}
+
+.progress-nav li > p {
+	display: inline;
+	margin: 0;
+}
+
+.vert-navbar {
+	float: right;
+	width: 13%;
+	height: 75vh;
+}
+
+.vert-nav-list {
+	font-size: 14px;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.vert-navbar > .vert-nav-list{
+	margin: 10px 0;
+}
+
+.vert-nav-list li{
+	margin: 6px 0;
+}
+
+.vert-nav-list a {
+	font-size: 14px;
+	list-style-type: none;
+	margin: 15px 0;
+	text-decoration: none;
+	color: #696969;
+	padding: 0 15px;
+	border-left: solid 1px #ABABAB;
+}
+
+.vert-nav-list a:hover {
+	color: #61bd4f;
+	font-weight: bold;
+	border-left: solid 3px #61bd4f;
+}
+

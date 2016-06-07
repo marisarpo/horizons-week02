@@ -1,0 +1,75 @@
+.hero-slides {
+	width: 100%;
+}
+
+.horizons-img-div{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	height: ;
+}
+
+.horizons-img-wrapper {
+	position: relative;
+}
+
+.horizons-img-wrapper::before {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 99%;
+	background: rgba(0, 0, 0, 0.25);
+	position: absolute;
+}
+
+.horizons-img {
+	width: 100%;
+	position: relative;
+	z-index: -2;
+}
+
+.img-opacity{
+	width: 100%;
+	background-color: black;
+	z-index: -1;
+}
+
+.hero-slide-title-div {
+	position: absolute;
+	text-align: center;
+	bottom: 450px;
+	width: 100%;
+	color: #fff;
+}
+
+.hero-slide-subtitle{
+	position: absolute;
+	width: 50%;
+	left: 25%;
+	bottom: 400px;
+	text-align: center;
+	color: #fff;
+}
+
+.hero-button-div{
+	position: absolute;
+	width: 100%;
+	bottom: 320px;
+	text-align: center;
+	color: #fff;
+}
+
+.hero-button{
+	padding: 0.6em 1.3em;
+	border-radius: 0.3em;
+	margin-bottom: 0.8em;
+	display: inline-block;
+	font-weight: 400;
+	color: #fff;
+	background: linear-gradient(#61bd4f, #5aac44);
+}
+
+.hero-button:hover{
+	background: linear-gradient(#5aac44, #519839);
+	color: #fff;
+}

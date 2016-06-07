@@ -7,7 +7,7 @@ body {
 
 header {
     display: inline-block;
-    max-width: 100%;
+    width: 100%;
     overflow: hidden;
     border-bottom: solid 1px #F1EEEA
 }
@@ -32,7 +32,6 @@ header {
 
 .hsr-logo1 {
 	color: #000;
-	margin: -6px;
 
 }
 
@@ -40,13 +39,20 @@ header {
 	color: #0CED9B;
 }
 
-.left, .right {
+.left {
 	float: left;
     display: inline-block;
     padding: 0;
     margin: 0;
-    height: 60px;
 }
+
+.right {
+    float: right;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
 
 .primary-menu, .secondary-menu {
     margin-left: 10px;
@@ -89,7 +95,7 @@ header {
     color: #3D3D66;
     display: inline-block;
     height: 100%;
-    padding: 19.5px 0 15.5px 30px;
+    padding: 19.5px 0 15px 30px;
     position: relative;
     overflow: hidden;
     white-space: nowrap;

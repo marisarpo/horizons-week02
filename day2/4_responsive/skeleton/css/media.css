@@ -13,3 +13,11 @@ section {
 		padding: 80px 20px;
 	}
 }
+.app-button{
+	padding: .6em 1.3em;
+	border-width: 1;
+	border-style: solid;
+	border-radius: .3em;
+	font-weight: bold;
+	display: inline-block;
+}

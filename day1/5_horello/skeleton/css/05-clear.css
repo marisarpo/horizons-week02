@@ -1,4 +1,7 @@
 .img-float-left {
+	float: left;
+	margin-right: 40px;
+	max-width: 585px;
 }
 
 section {

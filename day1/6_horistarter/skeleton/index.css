@@ -1,0 +1,136 @@
+body {
+  color: #020621;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+}
+input {
+	    text-rendering: auto;
+    color: initial;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: block;
+    text-align: start;
+    margin: 0em 0em 0em 0em;
+    font: 11px;
+}
+main {
+	display: block;
+}
+.launch-banner {
+	background: #fcdda3;
+    border-bottom: 1px solid #F1EEEA;
+    width: 100%;
+    height: 58px;
+	z-index: 1001;
+    position: relative;
+    text-align: center;
+    margin: auto;
+    display: table;
+}
+.launch-banner-link {
+    color: #020621;
+    font-weight: normal;
+    font-size: 12px;
+	display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    text-align: center;
+    padding: 20px 0 20px 10px;
+    margin: auto;
+}
+.launch-banner__close {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.7em;
+    padding: 4px 16px 0;
+}
+.site-nav {
+	min-width: 641px;
+	height: 60px;
+	background-color: #fff;
+	position: relative;
+	display: block;
+  	margin: 0;
+	border-bottom: 1px solid #F1EEEA;
+	z-index: 1000;
+}
+.site-logo {
+	float: left;
+	display: block;
+	padding: 20px 40px;
+	margin: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 15px
+}
+.ksr-logo {
+	background: url(https://static.kickstarter.com/assets/logo/ksr-logo-sprite-005cc4a6ae198f0690a8998d3605f7f5bba743745dc0be09f7165961b2a0439a.svg) no-repeat;
+	background-size: 159px;
+	display: inline-block;
+	height: 19px;
+	width: 159px;
+	text-indent: -9999px;
+}
+.primary-menu {
+	margin-left: 10px;
+	float: left;
+	display: inline-block;
+}
+.primary-menu-link {
+	display: inline-block;
+}
+.primary-menu-link a {
+	display: inline-block;
+	padding: 0px 15px;
+	color: #80809E;
+	font-size: 14px;
+	font-weight: bold;
+}
+.nav-livesearch {
+    border-left: solid 1px #F1EEEA;
+    color: #3D3D66;
+    display: inline-block;
+    height: 100%;
+    padding: 18px 0 18px 30px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.nav-livesearch-input {
+	border: 0;
+    font-weight: bold;
+    margin-left: 5%;
+    padding: 3px 5px;
+    width: 60%;
+}
+.left {
+	float: left;
+	height: 60px;
+}
+.right {
+	float: right;
+	height: 60px;
+}
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+li {
+	border: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+nav {
+	display: block;
+	margin: 0;
+}

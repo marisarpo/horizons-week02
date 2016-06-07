@@ -7,6 +7,16 @@
     <title>Horello</title>
 
     <!-- PHASE 2. Add Bootstrap CSS, Bootstrap JS, and jQuery here -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Our Styles -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -75,20 +85,28 @@
 
             <!-- PHASE 3. Add responsive code here -->
 
-            <div>
-                <a class="app-store-link" href="#">
-                    <img
-                        src="../img/apple.png"
-                        srcset="../img/apple.png 1x, ../img/apple@2x.png 2x"
-                    />
-                </a>
-                <a class="app-store-link" href="#">
-                    <img
-                        src="../img/google.png"
-                        srcset="../img/google.png 1x, ../img/google@2x.png 2x"
-                    />
-                </a>
-                <a class="outline-link">See All Apps</a>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4 col-md-4">
+                        <a class="app-store-link" href="#">
+                            <img
+                                src="../img/apple.png"
+                                srcset="../img/apple.png 1x, ../img/apple@2x.png 2x"
+                            />
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <a class="app-store-link" href="#">
+                            <img
+                                src="../img/google.png"
+                                srcset="../img/google.png 1x, ../img/google@2x.png 2x"
+                            />
+                        </a>
+                    </div>
+                    <div class="col-sm-4 col-md-4">
+                        <a class="outline-link">See All Apps</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

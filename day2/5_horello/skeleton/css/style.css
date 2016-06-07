@@ -106,6 +106,8 @@ a {
     border-radius: 3px;
     width: 270px;
     background-color: #e2e4e6;
+    display: flex;
+    flex-direction: column;
 }
 
 .list-header {
@@ -152,6 +154,7 @@ a {
     overflow-x: hidden;
     min-height: 0;
     /** PHASE 3 CSS here */
+
 }
 
 .card {

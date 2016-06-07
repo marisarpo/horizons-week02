@@ -1,28 +1,59 @@
 .background-light-blue {
+    background: #e4f0f6;
+    overflow-x: hidden;
+
 }
 
 .layout-grid-frame {
+    margin-top: -5vw;
+    margin-left: 4vw;
 }
 
 .layout-callout-right {
+    float: right;
+   
 }
 
 .layout-callout-right img {
+    margin-top: -5vh;
+    margin-right: -7vw;
+
 }
 
 .layout-twothirds-left {
+    margin-right: 4vw;
+    padding-left: 30px;
+    margin-left: 3vw;
+    font-size: 20px;
+    width: 49vw;
+    margin-top: 5vh;
+    
 }
 
 .app-store-link {
 }
 
 .app-store-link img {
+    height: 45px;
+    margin-right: 10px;
+    
 }
 
 .outline-link {
+    height: 30px;
+    border: 1px #5e98ba;
+    border-style: solid;
+    border-radius: 5%;
+    padding-left: 19px;
+    padding-right: 19px;
+    margin-left: 0px;
 }
 
 a {
+    background: none;
+    padding-top: 10px;
+    padding-bottom: 11px;
+    
 }
 
 a:hover {

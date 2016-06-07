@@ -1,5 +1,11 @@
 .background-dark-blue {
+    background: #0079bf;
+    color:#fff;
 }
 
 .layout-fill-img {
+    margin-bottom: 2em;
+    width: 80vw;
+    margin-top: 2em;
+    
 }

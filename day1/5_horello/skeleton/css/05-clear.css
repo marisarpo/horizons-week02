@@ -1,5 +1,13 @@
-.img-float-left {
+.clear .float-left {
+    float: left;
+    margin-left: 3vw;
+    
 }
 
 section {
+    
+}
+.doge{
+    margin: 1em 9em 1em 17em !important;
+    font-size: 23.9px !important;
 }

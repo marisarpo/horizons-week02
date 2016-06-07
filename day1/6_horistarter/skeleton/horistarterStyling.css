@@ -1,0 +1,208 @@
+/* for the banner at the top*/
+.launch-banner--yellow {
+	color: #020621;
+	font-weight: normal;
+	background-color: #f2f2bc;
+}
+.launch-banner__link {
+	display: table-cell;
+	vertical-align: middle;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	padding: 20px 0 20px 10px;
+	margin: auto;
+}
+/* for navigation, which we aren't using right now */
+/*.NS_layouts_navigation site-nav {
+	height: 60px;
+	background-color: #FFFFFF;
+	border-bottom: solid 1px #F1EEEA;
+	position: relative;
+	z-index: 1000;
+}
+*/
+/* for the header */
+.white-background {
+	background-color: #fff;
+	padding: 15px 0;
+}
+.layout-grid-frame {
+	position: relative;
+	max-width: 890px;
+	margin: 0 auto;
+}
+.layout-callout-right {
+	position: absolute;
+	top: -60px;
+	left: 640px;
+}
+.text-center {
+	text-align: center;
+}
+h2 {
+	font-size: 48px;
+}
+section {
+	padding: 80px 0;
+}
+
+
+/* logo stuff */
+.site-logo {
+	float: left;
+	display: inline-block;
+	padding: 0 40px;
+	margin: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	line-height: 19px;
+}
+.ksr-logo {
+	background:url(ksr-logo-pics.svg) no-repeat;
+	background-size: 159px;
+	display: inline-block;
+	height: 19px;
+	text-indent: -9999px;
+	width: 159px;
+}
+.left-tabs {
+	position: absolute;
+	left: 250px;
+	top: 70px;
+	display: inline-block;
+	vertical-align: top;
+	max-width: 500px;
+	font-size: 24px;
+	font-weight: bold;
+
+}
+.discover {
+	max-width: 150px;
+	margin: 1em 1em 0 0;
+	padding-right: 10px;
+
+}
+.start-project {
+	max-width: 200px;
+	margin: 1em 1em 0 0;
+	padding-right: 10px;
+}
+.about-us {
+	max-width: 150px;
+	margin: 1em 1em 0 0;
+}
+.right-tabs {
+	position: absolute;
+	left: 720px;
+	top: 70px;
+	display:inline-block;
+	vertical-align: top;
+	font-size: 24px;
+}
+.login {
+	margin:1em 1em 0 0;
+	padding-right: 10px;
+}
+.signup {
+	margin:1em 1em 0 0;
+	padding-right: 10px;
+
+}
+
+/* hero image */
+.hero-background {
+	margin-top: 2.5em;;
+	background: url(depression.jpg);
+	background-size: 100%;
+	color: #fff;
+	text-align: center;
+}
+.center-paragraph {
+	margin: 1em 16% 1em 16%;
+}
+.button {
+	padding: 0.6em 1.3em;
+	border: 0;
+	border-radius: 0.3em;
+	font-weight: bold;
+	color: #fff;
+	display: inline-block;
+	background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+	box-shadow: 0 2px 0 #3f6f21;
+}
+.button:hover {
+	background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+}
+
+/* right-hand list */
+
+/* full project title */
+
+/* progress bar */
+
+/* list of project tiles */
+
+/* footer */
+.footer {
+	font-size: 18px;
+	line-height: 1.5;
+	padding: 0 20px;
+	position: relative;
+	background-color: #2E0854;
+	height:550px;
+}
+/*.col-center {
+	text-align: center;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+*/
+.footer ul {
+	list-style: none;
+	padding-left: 0;
+	display: inline-block;
+}
+.footer li {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	display: block;
+}
+.footer-header {
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+
+
+}
+.far-left {
+	padding-right: 100px;
+	float: left;
+}
+.second-left {
+	float:left;
+	padding-right: 120px;
+}
+.third-left {
+	float:left;
+	padding-right: 100px;
+}
+.far-right {
+	float:right;
+}
+
+
+/* social media icons */
+
+/* extra stuff */
+a {
+	color: #2752ff;
+	text-decoration: none;
+}
+h3 {
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+}

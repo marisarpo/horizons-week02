@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+}
 body {
   color: #020621;
   font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;

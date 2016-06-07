@@ -3,15 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <title>Horistarter</title>
-    <style>
-        /* You may choose to write your CSS here... */
-    </style>
-    <!--
-    Or you can put it in a separate file and include it this way:
-    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
-     -->
+    <link rel="stylesheet" href="index.css" type="text/css">
 </head>
 <body>
-    <!-- Your HTML goes here. -->
+    <!-- warning banner -->
+    <section class="warning-banner">
+        <p>
+            We've updated our Privacy Policy — read about the upcoming changes here. By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to the new policy.
+        </p>
+        <section class="close">
+            &#215;
+        </section>
+    </section>
+
+    <!-- header menu -->
+    <header id="header">
+        <h1 class="logo">Hori<font color="#2BDE73">starter</font></h1>
+        <nav class=left>
+            <ul class="primary-menu">
+            <li>Discover</li>
+            <li>Start a Project</li>
+            <li>About Us</li>
+            </ul>
+        </nav>
+        <nav class=right>
+            <ul class="user-menu">
+            <li>Sign Up</li>
+            <li>Log in</li>
+            </ul>
+        </nav>
+        <form class="search">
+            <input type="text" class="search-text" placeholder="Search Projects">
+        </form>
+    </header>
+
+    <!-- main page -->
+    <main id="main">
+        <div class="slides">
+            <h1>slides here</h1>
+        </div>
+
+        <div class="project">
+            <div class="project-wrapper">
+                <!-- project content -->
+                <div class="project-content">
+                    <!-- project title -->
+                    <div class="project-title">
+                        <div class="project-title-left">Projects We Love: Film & Video</div>
+                        <div class="project-title-right">See all Film & Video projects</div>
+                    </div>
+                    <div class="project-body">
+                        <div class="project-body-left">
+                            <img src="lullaby.png" width="400px" style="float: left; display: inline-block;">
+                        </div>
+                        <div class="project-body-right">
+                                <span class="title">Chuck Palahniuk's Lullaby</span>
+                                <p style="font-size: 12px;">by Josh Leake</p>
+                                <p>From the mind of Fight Club author, Chuck Palahniuk, comes a once-in-a-lifetime film adaptation of the award-winning novel, Lullaby.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-menu">
+                    <ul>
+                        <li>Art</li>
+                        <li>Comics</li>
+                        <li>Crafts</li>
+                        <li>Dance</li>
+                        <li>Design</li>
+                        <li>Fashion</li>
+                        <li>Film and Video</li>
+                        <li>Food</li>
+                        <li>Games</li>
+                        <li>Journalism</li>
+                        <li>Music</li>
+                        <li>Photography</li>
+                        <li>Publishing</li>
+                        <li>Technology</li>
+                        <li>Theater</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended">
+            <div class="recommended-wrapper">
+                <div class="top">
+                    <div class="title">
+                        Recommended for you
+                    </div>
+                    <div class="see-all">
+                        See all
+                    </div>
+                </div>
+
+                <div class="recommended-row">
+                    <div class="column">
+                        <div class="img">
+                            <img src="rec1.png" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>Galactic Empire Album, Video, and Tour</p></b>
+                            <p>Grant McFarland</p>
+                            <p>Join us in our quest to play live shows in support of our debut full-length album and together, we can rule the galaxy.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Nashville, TN</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="img">
+                            <img src="rec1.png" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>Galactic Empire Album, Video, and Tour</p></b>
+                            <p>Grant McFarland</p>
+                            <p>Join us in our quest to play live shows in support of our debut full-length album and together, we can rule the galaxy.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Nashville, TN</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="img">
+                            <img src="rec1.png" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>Galactic Empire Album, Video, and Tour</p></b>
+                            <p>Grant McFarland</p>
+                            <p>Join us in our quest to play live shows in support of our debut full-length album and together, we can rule the galaxy.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Nashville, TN</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended">
+            <div class="recommended-wrapper">
+                <div class="top">
+                    <div class="title">
+                        What is popular
+                    </div>
+                    <div class="see-all">
+                        See all
+                    </div>
+                </div>
+
+                <div class="recommended-row">
+                    <div class="column">
+                        <div class="img">
+                            <img src="pop1.jpg" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>HATCH - A notebook for makers and entrepreneurs</p></b>
+                            <p>Two Tumbleweeds</p>
+                            <p>An innovative system to help you take your ideas from concept to reality. Brainstorm, evaluate, design & plan all in one place.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Philadelphia, PA</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="img">
+                            <img src="pop1.jpg" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>HATCH - A notebook for makers and entrepreneurs</p></b>
+                            <p>Two Tumbleweeds</p>
+                            <p>An innovative system to help you take your ideas from concept to reality. Brainstorm, evaluate, design & plan all in one place.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Philadelphia, PA</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="img">
+                            <img src="pop1.jpg" width="270px">
+                        </div>
+                        <div class="text">
+                            <b><p>HATCH - A notebook for makers and entrepreneurs</p></b>
+                            <p>Two Tumbleweeds</p>
+                            <p>An innovative system to help you take your ideas from concept to reality. Brainstorm, evaluate, design & plan all in one place.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Philadelphia, PA</p>
+                            <div style="width: 100%; height: 6px; background-color: green; border-radius:3px; overflow: hidden;"></div>
+                            <div style="background-color: green; width: 40%; height:100%;"></div>
+                            <ul class="project-stats">
+                                <li><div class="value">116%</div><span></span>funded</li>
+                                <li><div class="money">$4,073</div><span></span>pledged</li>
+                                <li><div class="days">20</div><span></span>days to go</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+        <div class="footer-links">
+            <!-- about us -->
+            <div class="footer-column">
+                <h3>About us</h3>
+                <ul>
+                <li>What is Kickstarter?</li>
+                <li>Who we are</li>
+                <li>Jobs</li>
+                <li>Press</li>
+                <li>Stats</li>
+                <li>Newsletters</li>
+                <li>Spotlight</li>
+                </ul>
+            </div>
+            <!-- help -->
+            <div class="footer-column">
+                <h3>Help</a></h3>
+                <ul>
+                <li>FAQ</li>
+                <li>Our Rules</li>
+                <li>Creator Handbook</li>
+                <li>Campus</li>
+                <li>Trust & Safety</li>
+                <li>Support</li>
+                <li>Terms of Use</li>
+                <li>Privacy Policy</li>
+                <li>Cookie Policy</li>
+                </ul>
+            </div>
+            <!-- dicover -->
+            <div class="footer-column">
+                <h3>Discover</h3>
+                <ul>
+                <li>Art</li>
+                <li>Comics</li>
+                <li>Crafts</li>
+                <li>Dance</li>
+                <li>Design</li>
+                <li>Fashion</li>
+                <li>Film & Video</li>
+                <li>Food</li>
+                </ul>
+            </div>
+            <!-- hello -->
+            <div class="footer-column">
+                <h3>Hello</h3>
+                <ul>
+                <li>Happening</li>
+                <li>Company Blog</li>
+                <li>Engineering Blog</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mega-footer">
+            <div class="left">
+                <h1 class="logo">Hori<font color="#2BDE73">starter</font></h1>
+                <p>©2016</p>
+            </div>
+            <div class="right">
+
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

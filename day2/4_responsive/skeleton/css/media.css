@@ -19,8 +19,3 @@ section {
 	max-width: 140px;
 	text-align: center;
 }
-@media (min-width: 650px) {
-	#navbar {
-		margin-left: 10%;
-	}
-}

@@ -6,8 +6,8 @@
     <title>Horello</title>
 
     <!-- Bootstrap stuff -->
+        <script src="../../../lib/jquery.js"></script>
     <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-    <script src="../../../lib/jquery.js"></script>
     <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Our Styles -->
@@ -20,6 +20,24 @@
 </header>
 
 <!-- PHASE 5. Modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="board">
     <div class="list-container">
@@ -31,18 +49,51 @@
                 <div class="card">
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
+                        <br>
+                          <span class="card-more glyphicon glyphicon-align-left" aria-hidden="true"></span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="list-cards">
+                <div class="card">
+                    <div class="card-body">
+                        Today we will #DominateAllTheHouses
+                        <br>
+                          <span class="card-more glyphicon glyphicon-align-left" aria-hidden="true"></span>
+
                     </div>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
-
+            <button type="button" class="add-card btn btn-default" data-toggle="collapse" data-target="#demo">Add a card...</button>
                 <!-- PHASE 4. Collapse -->
+            <div class="collapse" id="demo">
+                <div class="well">
+                    <form>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Card title">
+                      </div>
+                      <button type="submit" class="btn btn-default">Save</button>
+                      <button type="submit" class="btn btn-default">
+                        <span class="card-more glyphicon glyphicon-remove" aria-hidden="true" id="remove"></span>
+                      </button>
+                    </form>
+                </div>
+            </div>
+            </div>
             </div>
         </div>
+
+
     </div>
 
+
     <!-- PHASE 1. Add list button -->
+    <div>
+        <button type="button" class="add-list btn btn-primary">Add a list...</button>
+    </div>
 
 
 </div>

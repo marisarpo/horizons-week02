@@ -2,6 +2,8 @@
 
 window.horello = window.horello || {};
 
+// CARD
+
 horello.Card = function(id, title, desc, listId) {
   this.id = id;
   this.listId = listId;
@@ -20,6 +22,13 @@ horello.Card.prototype = {
 
   setTitle: function(titleStr) {
     this.title = titleStr;
+    Trello.put("/cards/" + this.id, {
+      name: titleStr
+    }, function (data) {
+      console.log("Successfully updated title of card " + this.id);
+    }.bind(this), function (err) {
+      console.error("Error updating title of card " + this.id);
+    }.bind(this));
   },
 
   getDescription: function() {
@@ -28,6 +37,13 @@ horello.Card.prototype = {
 
   setDescription: function(desc) {
     this.desc = desc;
+    Trello.put("/cards/" + this.id, {
+      desc: desc
+    }, function (data) {
+      console.log("Successfully updated desc of card " + this.id);
+    }.bind(this), function (err) {
+      console.error("Error updating desc of card " + this.id);
+    }.bind(this));
   },
 
   render: function() {
@@ -48,6 +64,14 @@ horello.Card.prototype = {
     return wrapper.html();
   }
 };
+
+horello.Card.fromJSON = function(data) {
+  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
+};
+
+
+// LIST
 
 horello.List = function(id, name) {
   this.id = id;
@@ -92,16 +116,6 @@ horello.List.prototype = {
       return card[0];
     }
     return null;
-  },
-
-  rmvCard: function(cardId) {
-    var c = this.getCard(cardId);
-    if (c === null) {
-      return null;
-    }
-    var ind = this.cards.indexOf(c);
-    this.cards.splice(ind, 1);
-    return c;
   },
 
   render: function() {
@@ -163,6 +177,15 @@ horello.List.prototype = {
   },
 };
 
+horello.List.fromJSON = function(data) {
+  var list = new horello.List(data.id, data.name);
+  board.lists.push(list);
+  list.loadCards();
+};
+
+
+// BOARD
+
 horello.Board = function () {
   this.lists = [];
 };
@@ -180,16 +203,6 @@ horello.Board.prototype = {
     });
   },
 
-  rmvList: function(listId) {
-    var c = this.getList(listId);
-    if (c === null) {
-      return null;
-    }
-    var ind = this.lists.indexOf(c);
-    this.lists.splice(ind, 1);
-    return c;
-  },
-  
   render: function() {
     var wrapper = $('<div id="board" class="board"></div>');
     wrapper.html(this.lists.reduce(function(prev, cur) {
@@ -212,16 +225,5 @@ horello.Board.download = function(id) {
       console.error("Error loading lists for board " + id + ": " + JSON.stringify(err));
     }
   );
-};
-
-horello.List.fromJSON = function(data) {
-  var list = new horello.List(data.id, data.name);
-  board.lists.push(list);
-  list.loadCards();
-};
-
-horello.Card.fromJSON = function(data) {
-  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
-  return card;
 };
 

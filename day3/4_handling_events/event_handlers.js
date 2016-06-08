@@ -403,6 +403,21 @@ handlers.attachDeleteAction($(".panel"));
 
 handlers.attachFormAdd = function(formElement) {
   // YOUR CODE HERE
+  var beginPanel = "<div class='panel panel-default'><div class='panel-body'>";
+  var endPanel = " <a class='btn btn-danger innerbutton'>Delete</a></div></div>";
+
+  formElement.on("submit", function(e) {
+    e.preventDefault();
+    var item = $("#new-item").val();
+    if (item) {
+      var el = $(beginPanel + item + endPanel);
+      $("#grocery-list").append(el);
+    }
+    $("#new-item").val("");
+    handlers.attachDeleteAction($(el));
+    
+  })
+  
 };
 
 handlers.attachFormAdd($("#grocery-add"));

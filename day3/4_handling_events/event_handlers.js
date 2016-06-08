@@ -177,7 +177,11 @@ handlers.attachHoverClick("nope");
 //          <button class="btn" id="2">Button 3</button> ]
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
-  // YOUR CODE HERE
+  $('.'+className).click(function(e) {
+    alert(alertMessage);
+    e.stopPropagation();
+  });
+  return $('.'+className);
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
@@ -217,7 +221,15 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // click handler.
 
 handlers.attachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+  if ($(elements).get(0) == document) {
+    return;
+  }
+  $(elements).click(function(e) {
+    $(e.currentTarget).css("backgroundColor", "green");
+    alert("You've reached " + $(e.currentTarget).attr("description"));
+    $(e.currentTarget).css("backgroundColor", "");
+  });
+  handlers.attachAlertsWithParents(elements.parent());
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -289,7 +301,11 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // we have detached its event handler from it.
 
 handlers.detachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+  if (elements.get(0) == document) {
+    return;
+  }
+  elements.off('click');
+  handlers.detachAlertsWithParents(elements.parent());
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
@@ -317,7 +333,9 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 // We will delegate the events of the delete button to their parent, the row.
 
 handlers.attachDeleteAction = function(buttonElement) {
-  // YOUR CODE HERE
+  $(buttonElement).click(function() {
+    $(this).remove();
+  });
 };
 
 handlers.attachDeleteAction($(".panel"));
@@ -365,7 +383,14 @@ handlers.attachDeleteAction($(".panel"));
 
 
 handlers.attachFormAdd = function(formElement) {
-  // YOUR CODE HERE
+  $(formElement).submit(function(e) {
+    e.preventDefault();
+    var intxt = $("#new-item").val() + '  ';
+    $("#grocery-list").append('<div class="panel panel-default"><div class="panel-body">' + intxt + '<a class="btn btn-danger innerbutton">Delete</a></div></div>')
+    $(".panel").click(function() {
+      $(this).remove();
+    });
+  });
 };
 
 handlers.attachFormAdd($("#grocery-add"));

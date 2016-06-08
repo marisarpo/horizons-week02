@@ -152,8 +152,10 @@ handlers.attachHoverClick = function(id) {
     handlers.hoverTimeoutNums[id] = setTimeout(function() {
       $('#'+id).trigger('click');
       }, 2000);
+  });
+  handlers.attachUnhover('#'+id,function() {
     clearTimeout(handlers.hoverTimeoutNums[id]);
-  })
+  });
 }
 
 handlers.attachHoverClick("red");
@@ -181,6 +183,12 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  var rVal = [];
+  $('.'+className).on('click', function(e) {
+    alert(alertMessage);
+    e.stopPropagation()
+  });
+  return $('.className');
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
@@ -221,6 +229,13 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  if ($(elements).get(0)===document) {return}
+  $(elements).on('click', function(e) {
+    $(e.currentTarget).css("backgroundColor", "green");
+    alert("You've reached " + $(e.currentTarget).attr("description"));
+    $(e.currentTarget).css("backgroundColor", "");
+  })
+  handlers.attachAlertsWithParents(elements.parent())
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -292,7 +307,9 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // we have detached its event handler from it.
 
 handlers.detachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+  if ($(elements).get(0)===document) {return}
+  $(elements).off('click');
+  handlers.detachAlertsWithParents(elements.parent())
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
@@ -321,6 +338,9 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 
 handlers.attachDeleteAction = function(buttonElement) {
   // YOUR CODE HERE
+  $(buttonElement).click(function() {
+    $(this).remove()
+  })
 };
 
 handlers.attachDeleteAction($(".panel"));
@@ -368,7 +388,13 @@ handlers.attachDeleteAction($(".panel"));
 
 
 handlers.attachFormAdd = function(formElement) {
-  // YOUR CODE HERE
-};
-
+  $(formElement).submit(function(e) {
+    e.preventDefault();
+    var input = $('#new-item').val()+'  ';
+    $('#grocery-list').append('<div class="panel panel-default"> <div class="panel-body">'+input+'<a class="btn btn-danger innerbutton">Delete</a></div></div>')
+    $('.panel').click(function() {
+      $(this).remove();
+    })
+  })
+}
 handlers.attachFormAdd($("#grocery-add"));

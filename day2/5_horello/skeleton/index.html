@@ -20,6 +20,24 @@
 </header>
 
 <!-- PHASE 5. Modal -->
+<div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+         <form><input type="text" value="#DominateAllTheHouses"></form>
+      </div>
+      <div class="modal-body">
+      <h5>Description</h5>
+        <textarea class="class-input" rows="5">Card body goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="board">
     <div class="list-container">
@@ -28,7 +46,7 @@
                 <span class="list-title">House List</span>
             </div>
             <div class="list-cards">
-                <div class="card">
+                <div class="card" data-toggle="modal" data-target=#my-modal>
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
                          </div>
@@ -40,7 +58,14 @@
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
                 <div class="add-card">
-                <button class= "list-button add-card collapsed" data-toggle="collapse">Add a card...</button> 
+                <button class= "list-button add-card collapsed" data-toggle="collapse" data-target=#add-card aria-expanded: "false" aria-controls= "add-card">Add a card...</button> 
+                <div class = "collapse" id="add-card">
+                <div class="well card-list">
+                <form><input type = "text" value= "Card title"></form>
+                <button type = "button" class= "save-list-btn">Save</button>
+                <button type = "button" class ="x-button-btn"><span class = "glyphicon glyphicon-remove"></button>
+                </div>
+                </div>
                 </div>
                 <!-- PHASE 4. Collapse -->
             </div>
@@ -50,7 +75,14 @@
     <!-- PHASE 1. Add list button -->
 <div class= "list-container">
 <div class= "btn-group" role="group" aria-label="...">
-<button type= "button" class ="add-list" data-toggle="collapse" data-targer=#add-drop-list aria-expanded: "false" aria-controls= "add-drop-list">Add a list...</button> 
+<button type= "button" class ="add-list" data-toggle="collapse" data-target=#add-drop-list aria-expanded: "false" aria-controls= "add-drop-list">Add a list...</button> 
+<div class = "collapse" id="add-drop-list">
+<div class = "well for-list">
+<form><input type = "text" value= "List name"></form>
+<button type = "button" class= "save-list-btn">Save</button>
+<button type = "button" class ="x-button-btn"><span class = "glyphicon glyphicon-remove"></button>
+</div>
+</div>
 </div>
 </div>
 

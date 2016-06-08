@@ -196,7 +196,12 @@ this (fill in your Trello key and token):
 
 And you should see a response that looks like this:
 
-    {"id":"57433c1bb4895dc978797a84","name":"Welcome Board","desc":"","lists":[{"id":"57587951145a0bf234aac7da","name":"My Cool List"},{"id":"57433c1bb4895dcb69bbf586","name":"Intermediate"},{"id":"57433c1bb4895dcb69bbf587","name":"Advanced2"},{"id":"5758795e14a8ca28660bf656","name":"Another one"},{"id":"575879ad714eb0300b3f679d","name":"One more"}]}
+    {"id":"57433c1bb4895dc978797a84","name":"Welcome Board","desc":"",
+    "lists":[{"id":"57587951145a0bf234aac7da","name":"My Cool List"},
+    {"id":"57433c1bb4895dcb69bbf586","name":"Intermediate"},{"id":
+    "57433c1bb4895dcb69bbf587","name":"Advanced2"},{"id":"
+    5758795e14a8ca28660bf656","name":"Another one"},{"id":"
+    575879ad714eb0300b3f679d","name":"One more"}]}
 
 Curl is actually more powerful than the previous two tools, since it
 allows you to _write_ to the API as well as reading. You can call curl
@@ -209,8 +214,7 @@ and/or a new card on a list. Then reload the official Trello website to
 see your changes appear! (Actually, these changes should appear in
 realtime if you have the board open--no reloading necessary.)
 
-Or if you prefer an app to a commandline
-tool, read on...
+Or if you prefer an app to a commandline tool, read on...
 
 ### REST client
 
@@ -227,17 +231,57 @@ the official Trello website to see your changes appear! (Actually, these
 changes should appear in realtime if you have the board open--no
 reloading necessary.)
 
+You'll have to figure out how to use Postman on your own, but it's
+pretty intuitive. To fetch data, run a GET query on the resource URL.
+Pass `key` and `token` as params. You should be able to create data
+using POST.
 
-## Phase 4: Download the board
 
-IDs
+## Phase 4: Reading from the API
 
-Add download methods
+Let's pause to recap where we are. We have access to the Trello API, and
+we've used it to read and write data manually. We have an app that can
+read JSON data and turn it into objects that we can render. Any guesses
+what the final couple of steps are?
 
-Read data
+Ask Ethan for a delicious PB&J sandwich? Ask Serry for some of that
+chicory coffee? (Actually, that doesn't sound like a bad meal...)
 
-Async, error handling
+Close. Actually, we still need to wire up our app to the API so that we
+can read data from the cloud, and write our changes back to the cloud.
+This is the most important part of this project, so let's get started.
 
+Step one is to download all of the data for the board we're attaching to
+when our app loads. Double-check that you've hardcoded the board ID in
+`index.html` in the `<script>` section at the top.
+
+We love you--you should know that by now--but you're on your own for
+this part. It's your time to fly, butterfly. Here are some hints to get
+you on your way:
+
+- Think carefully about where IDs come from. Plugging into an API
+  changes this a bit.
+- The Trello JS client makes things relatively straightforward for us.
+  It's documented here: https://developers.trello.com/clientjs. We don't
+  have to worry about authentication at all, as it handles that for us.
+  You can call `Trello.get()` to read a resource, `Trello.put()` to
+  update one, etc.
+- Each time you call one of the methods of the Trello JS client, you
+  need to pass two callbacks, one for success and one for error. E.g.,
+  the function signature for `Trello.get` looks like this:
+      Trello.get(path[, params], success, error)
+- Think about how you want to handle errors. Do something reasonable.
+- The Trello API only returns _metadata_ for the resource. For instance,
+  if you GET a list, you'll get back that list's name and ID, but you
+  won't get back the list of cards it contains. You'll need to make a
+  separate API call for that.
+- Think carefully about how to structure your API calls, and about what
+  order you do things. For example, when loading the lists for a board,
+  where do we get the list data? What about the card data? At what point
+  can we add the cards to the list, and the lists to the board? How do
+  we know that one asynchronous operation--e.g., reading the list of
+  lists--has completed before trying to do something with that data?
+- Think about where, and when, you need to re-render the board.
 
 
 ## Phase 5: Write data

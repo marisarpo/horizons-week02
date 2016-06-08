@@ -34,7 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
-  document.getElemenyById("e").addEventListener("mouseover",fn);
+  $(e).on("mouseenter",fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -44,7 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
-  document.getElemenyById("e").addEventListener("mouseleave",fn);
+  $(e).on("mouseleave",fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -73,10 +73,14 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
-  document.getElemenyById("key").addEventListener("keypress",fn);
+  $(document).on("keypress",function(event){
+    if(event.keyCode===key){
+      fn();
+    }
+  })
 };
 
-// ----------------------------------------------------------------------------
+// ---------------------------------------1-------------------------------------
 
 // Exercise 2. Write a function that simulates storing data on user actions
 // when a button on the defuse panel is clicked. Take a parameter id and using
@@ -87,7 +91,25 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
-  attachClick(id)
+  // handlers.attachClick($("#"+id),function() {
+  //   handlers.userActions[id]++;
+  //   console.log(handlers.attachUserActionRecord);
+  // })
+
+  // handlers.attachClick($(".btn.btn-danger"),function(){
+  //   if(id==="red"){
+  //     handlers.userActions.red++;
+  //     console.log('red')
+  //   }
+  //   if(id==="blue"){
+  //     handlers.userActions.blue++;
+  //     console.log('blue')
+  //   }
+  //   if(id==="nope"){
+  //     handlers.userActions.nope++;
+  //     console.log('nope')
+  //   }
+  // })
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -142,8 +164,16 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+// $(".btn").on("mouseover",function(){
+//   var timeout= setTimeout(function(){
+//     $(element).trigger("click");
+//     if(id==="red" || id==="blue" || id==="nope"){
+//     handlers.hoverTimeoutNums[id]=timeout;
+//     }
+//   },2000);
+// })
 }
-
+  
 handlers.attachHoverClick("red");
 handlers.attachHoverClick("blue");
 handlers.attachHoverClick("nope");
@@ -169,6 +199,9 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  // handlers.attachAlertsToClass($(".btn")function(){
+  //   alert('works')
+  // })
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

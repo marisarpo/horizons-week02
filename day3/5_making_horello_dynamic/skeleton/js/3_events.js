@@ -26,6 +26,9 @@ horello.mountStatic = function() {
   // field).
  
   // YOUR CODE HERE
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $('#addListText').focus();
+  });
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."

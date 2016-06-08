@@ -283,21 +283,48 @@ you on your way:
   lists--has completed before trying to do something with that data?
 - Think about where, and when, you need to re-render the board.
 
+Once you're successfully reading list and card data from the Trello API,
+reload the page--_et voila!_--you should see more or less the same thing
+you see in the official Trello app at Trello.com. Cool beans!
+
 
 ## Phase 5: Write data
 
-- Card
-- List
+Take a deep breath, because you made it to the final phase of this
+killer project. There's a light at the end of the tunnel. It's a tiny
+light, and it's a really, really long tunnel, but it's there. Move
+towards the light.
 
-We've successfully authenticated, and we've tested the API to make sure
-that it's working, and to make sure that we understand how it works. The
-last and most important step is to connect our frontend to it! This is
-the moment you've all been waiting for.
+You're successfully consuming data from the Trello API. The final, final
+step (aside from all those bonus steps below, ignore them for now) is to
+write our changes back to the API so they persist in the cloud. You're
+on your own for this part, too. Here are a few more tips:
+
+- Think carefully about the data flow when creating a new list or a new
+  card. Do you create the object locally first, in memory, or do you
+  create it using the API first? What are the potential advantages and
+  disadvantages of each of these design choices?
+- Do you have to create data both locally and using the API?
+
+With this last phase in place, you can officially call yourself an app
+developer. That's it. I'm out of funny things to say. See you at
+graduation. :drops mic:
+
 
 ## BONUS: Phase 6: Improve it
 
-- Don't render() so much
-- Detect changes automatically like Trello
-- Support multiple boards
-- Promises
+:picks mic up again:
+
+Okay, you're an ambitious grasshopper. We like ambition 'round these
+parts. Well, there's still a bunch of things you can do to make this
+here app as smooth as an armadillo's backside:
+
+- You're probably rendering (i.e., calling `horello.mount`) more often
+  than you need to. Try to optimize how often you render the board, and
+  don't do it more often than necessary, to improve performance.
+- Trello automatically detects when the data changes, and displays those
+  changes immediately, without needing to reload. Add that.
+- Add support for multiple boards.
+- Replace your nasty callback code with sexy new
+  [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 

@@ -2,21 +2,6 @@
 
 window.horello = {};
 
-// [Helper] `generateId`
-// This function generates a random, unique string for you use for whatever.
-// 
-// ex. horello.generateId() -> 'aQ-V-c-u-P4l'
-// ex. horello.generateId() -> 'bh-H-N-9-Vdr'
-horello.generateId = function() {
-  var chunk = function() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  };
-  return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
-    chunk() + '-' + chunk() + chunk() + chunk();
-};
-
 // PART 1. Data model
 
 // Phase 1. `Card` Class
@@ -24,9 +9,9 @@ horello.generateId = function() {
 // that follows the spec described in `classSpec.png`. This class will contain
 // several properties and methods.
 
-horello.Card = function(title, desc, listId) {
+horello.Card = function(id, title, desc, listId) {
   // YOUR CODE HERE
-  this.id = horello.generateId();
+  this.id = id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -75,9 +60,9 @@ horello.Card.prototype = {
 // Phase 2. `List` Class
 // Lists contain a unique ID, a title, and a list of cards.  Write a List class
 // according to the spec in `classSpec.png`.
-horello.List = function(name) {
+horello.List = function(id, name) {
   // YOUR CODE HERE
-  this.id = horello.generateId();
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
@@ -162,7 +147,9 @@ horello.List.prototype = {
 // Phase 3. `Board` Class
 // A board contains a list of lists.  Write a Board class according to the spec
 // in `classSpec.png`.
-horello.Board = function () {
+horello.Board = function (id, name) {
+  this.id = id;
+  this.name = name;
   this.lists = [];
 };
 
@@ -206,4 +193,54 @@ horello.Board.prototype = {
   }
 };
 
+horello.Board.download = function(id) {
+  Trello.rest('GET', '/boards/' + id, function (data) {
+    console.log("Successfully got board: " + JSON.stringify(data));
+    horello.Board.fromJSON(data, function (board) {
+      console.log("Successfully loaded all board data for board " + id);
+      horello.mount(board);
+      horello.mountStatic(board);
+    });
+  }, function (err) {
+    console.log("Error: " + JSON.stringify(err));
+  });
+};
 
+horello.Board.fromJSON = function(data, cb) {
+  var board = new horello.Board(data.id, data.name);
+  Trello.rest(
+    "GET",
+    "/boards/" + data.id + "/lists",
+    function (data2) {
+      console.log("Successfully loaded lists for board " + data.id);
+      board.lists = data2.map(horello.List.fromJSON);
+      cb(board);
+    },
+    function (err) {
+      console.error("Error loading lists for board " + data.id + ": " + JSON.stringify(err));
+    }
+  );
+};
+
+
+horello.List.fromJSON = function(data) {
+  var list = new horello.List(data.id, data.name);
+}
+
+  Trello.rest(
+    "GET",
+    "/boards/" + data.id + "/cards",
+    function (data2) {
+      console.log("Successfully loaded cards for board " + data.id);
+      board.lists = data2.map(horello.Card.fromJSON);
+      cb(board);
+    }, function (err) {
+      console.error("Error loading cards for board " + data.id + ": " + JSON.stringify(err));
+    }
+  );
+};
+
+horello.Card.fromJSON = function(data) {
+  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
+};

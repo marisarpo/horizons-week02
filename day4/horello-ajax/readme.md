@@ -16,15 +16,21 @@ your app is going to do something _persistent._ It's going to touch data
 in the real world. Exciting, right? (And you're going to have to find a
 way to deal with empty nest syndrome.)
 
-## Phase 0. Web server
+## Phase 1. Add JSON support to data model
+
+- We are no longer responsible for generating IDs!
+- from, toJSON methods
+- static methods (fromJSON)
+
+## Phase 2: Authentication
+
+### Note: Web server
 
 This may not work in Chrome without a web server. Use Safari, or a web
 server.
 
 - OS X/Linux: `python -m SimpleHTTPServer 8000`
 - Windows:
-
-## Phase 1: Authentication
 
 The "real world" that we're going to be venturing into today is the
 cloud, i.e., someone else's data server out there somewhere in the
@@ -84,7 +90,7 @@ this JS code:
 Reload, try to auth. Make sure to allow popups in browser. Note that
 this will only appear the first time.
 
-## Phase 2: Test the API
+## Phase 3: Test the API
 
 With authentication in place, we can begin having some fun with data.
 Before we try to hook up our frontend to the Trello backend, let's test
@@ -107,8 +113,23 @@ See JSON data for a card in the browser e.g. https://trello.com/1/cards/57433c1c
 
 Curl command to test full API. Another option is Postman REST client.
 
-## Phase 3: Post your first note
+## Phase 4: Download the board
 
-## Phase 4: Post cards
+Add download methods
 
+Read data
+
+Async, error handling
+
+
+
+## Phase 5: Write data
+
+- Card
+- List
+
+We've successfully authenticated, and we've tested the API to make sure
+that it's working, and to make sure that we understand how it works. The
+last and most important step is to connect our frontend to it! This is
+the moment you've all been waiting for.
 

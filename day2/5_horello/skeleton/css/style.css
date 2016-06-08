@@ -1,17 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
 body {
     line-height: 18px;
     height: 100vh;
+    background-color: rgb(0,121,191);
 
-    /** PHASE 1 CSS here */
+
 }
 
 header {
-    position: relative;
+    position: relative; 
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
+    padding: 5px; 
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.15);
+    
 }
 
 .header-logo {
@@ -50,18 +54,30 @@ a {
 
 .add-list-container {
     padding: 5px;
+
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+    height: auto;
+    width: 280px;
+    border-radius: 3px;
+    border: 0;
+    text-align: left;
+    background-color: rgba(0,0,0, 0.12);
+    color: white;
+    border-radius: 3px; 
+    margin-bottom:5px;
+    padding: 7px;
+
+
 }
 
 .add-list:hover {
-    /** PHASE 1 CSS here */
+    background-color: rgba(96, 96, 96, 0.15);
 }
 
 .add-list-form {
-    /** PHASE 4 CSS here */
+    margin-bottom: 0;
 }
 
 .board {
@@ -69,8 +85,12 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex; 
 
-    /** PHASE 2 CSS here */
+}
+.btn-group{
+    width: 280px; 
+    
 }
 
 
@@ -83,31 +103,46 @@ a {
 .list {
     box-sizing: border-box;
     max-height: 100%;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
+    margin: 5px 5px;
+    padding: 0.5em;
 
-    /** PHASE 2 CSS here */
+
 }
 
 .list-header {
     display: block;
     position: relative;
-
-    /** PHASE 2 CSS here */
+    margin-bottom: 0.5em;
+    font-color: black;
+    font-weight: 700;
 }
 
 .list-footer {
-    /** PHASE 2 CSS here */
+    font-weight: 500;
 }
 
 .list-title {
-    /** PHASE 2 CSS here */
+
 }
 
 .add-card {
-    /** PHASE 2 CSS here */
+   width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background: rgba(16, 16, 16, 0.15);
+    color: #333;
+    margin: 3px 0;
+
 }
 
 .add-card:hover {
-    /** PHASE 2 CSS here */
+    background-color: rgba(96,96,96,0.15);
 }
 
 
@@ -120,15 +155,33 @@ a {
 }
 
 .card {
-    /** PHASE 3 CSS here */
+   margin: 0 0 .5em;
+    background: white;
+    position: relative;
+    border-radius: 3px;
 }
 
 .card-body {
-    /** PHASE 3 CSS here */
+    display: block;
+    padding: .5em .5em 2em;
+    font-family: Cabin,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+    transition: 0.5s all;
 }
 
 .card-more {
-    /** PHASE 3 CSS here */
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
 }
 
-/** PHASE 4 CSS here: add card form */
+.add-card-form {
+    padding: 5px; 
+    margin-bottom: 0;
+}
+
+.add-card-form input {
+    margin-bottom: 5px;
+}

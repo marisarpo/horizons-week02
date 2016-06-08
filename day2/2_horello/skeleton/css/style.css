@@ -1,16 +1,26 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
-
+button{
+    border: 0;
+    padding: 0;
+    background: none;
+    font-size: 1em;
+    width: 100%;
+}
 body {
-    line-height: 18px;
-    height: 100vh;
 
+    margin: 0;
+
+    background: rgb(0,121,191);
+    font-family: sans-serif;
     /** PHASE 1 CSS here */
 }
 
 header {
     position: relative;
-    overflow: hidden;
-
+    padding: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #005E9F;
     /** PHASE 1 CSS here */
 }
 
@@ -43,6 +53,8 @@ header {
 
 a {
     background-color: transparent;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -50,10 +62,29 @@ a {
 
 .add-list-container {
     padding: 5px;
+
+    margin-left: auto;
+
+}
+.add-list-container button{
+    height: 27px;
+    text-align: left;
 }
 
 .add-list {
+    padding: 0.4em;
+    margin: 6px 5px;
+    border-radius: 3px;
+    border: none;
+    width: 270px;
+    height: 30px;
+    background-color:#005E9F ;
+    order: infinity;
     /** PHASE 1 CSS here */
+}
+.add-list p {
+    margin: 0;
+    color: #FFF;
 }
 
 .add-list:hover {
@@ -69,6 +100,8 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex;
+    flex-direction: row;
 
     /** PHASE 2 CSS here */
 }
@@ -77,25 +110,33 @@ a {
 /* LISTS */
 
 .list-container {
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .list {
     box-sizing: border-box;
     max-height: 100%;
-
+    padding: 0.5em;
+    margin: 5px 5px;
+    border-radius: 3px;
+    width: 300px;
+    background: #e2e4e6
     /** PHASE 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
-
+    margin: 0 0 0.5em 0;
+    color: black;
+    font-weight: 700;
     /** PHASE 2 CSS here */
 }
 
 .list-footer {
     /** PHASE 2 CSS here */
+    font-weight: 500;
 }
 
 .list-title {
@@ -104,6 +145,20 @@ a {
 
 .add-card {
     /** PHASE 2 CSS here */
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background: #C0C2C4;
+    color: #363536;
+    margin: 3px 0;
+
+}
+.add-card p {
+    margin: 0;
+    padding-top: 10px;
+    margin-left: 2px;
+    font-size: 1em;
+    font-weight: 600 !important;
 }
 
 .add-card:hover {
@@ -114,21 +169,58 @@ a {
 /* CARDS */
 
 .list-cards {
-    min-height: 0;
 
+
+    border-radius: 3px;
     /** PHASE 3 CSS here */
 }
 
 .card {
-    /** PHASE 3 CSS here */
+   background: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
 }
 
 .card-body {
     /** PHASE 3 CSS here */
+    min-height: 0;
+    max-height: 80vh;
+    padding: .5em .4em 0 .em;
+    font-family: Cabin, Arial, default sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    overflow-y: scroll;
+
+
 }
 
 .card-more {
-    /** PHASE 3 CSS here */
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 10px;
+    padding-left: 0;
+    margin-left: 0;
 }
+.btn-default{
+    width: auto;
+    margin: 0 !important;
 
+}
+.well{
+    height: auto !important;
+    padding: 5px;
+    margin-bottom: 1px;
+}
 /** PHASE 4 CSS here: add card form */
+.form-control{
+    margin: 0;
+
+}
+input{
+    margin: 0;
+}
+.btn-primary{
+   width: auto;
+}

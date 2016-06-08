@@ -6,14 +6,23 @@
     <title>Horello</title>
 
     <!-- Bootstrap stuff -->
-    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-    <script src="../../../lib/jquery.js"></script>
-    <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <script src="jquery-2.2.4.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+
 
     <!-- Our Styles -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
+
 <header>
     <a class="header-logo"
        href="#"><span class="header-logo-default"></span></a>
@@ -28,24 +37,104 @@
                 <span class="list-title">House List</span>
             </div>
             <div class="list-cards">
-                <div class="card">
+                <div class="card" data-toggle = "modal" data-target="#myModal">
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
                     </div>
+                    <span class="glyphicon glyphicon-align-left card-more"></span>
+                </div>
+
+
+                <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" style="width:auto; float:right;" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+      </div>
+
+      <div class="modal-body">
+        <input type="text" class= "form-control" value ="Today we will dominate">
+      </div>
+        <div class="modal-body">
+            <label>Description</label>
+            <textarea class="form-control" rows="4">Description Goes Here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+                <div class="card">
+                    <div class="card-body">
+                        Today we will #DominateAllTheHouses
+
+                    </div><span class="glyphicon glyphicon-align-left card-more"></span>
                 </div>
             </div>
+
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
+<div class= "add-card"><a class="add-card" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+ <p>Add a Card</p>
+    </a></div>
+<div class="collapse" id="collapseExample">
+  <div class="well">
+    <form>
+      <input type="text" class="form-control" placeholder="Card Title">
 
+    </form>
+      <button class="btn btn-default">Save</button>
+     <button class="btn btn-default"><span class = "glyphicon glyphicon-remove"></span></button>
+  </div>
+</div>
                 <!-- PHASE 4. Collapse -->
             </div>
         </div>
-    </div>
-
-    <!-- PHASE 1. Add list button -->
 
 
 </div>
+
+
+
+
+    <!-- PHASE 1. Add list button -->
+    <div class = "add-list-container">
+
+    <div class= "add-list"><a role="button" data-toggle="collapse" href="#list" aria-expanded="false" aria-controls="collapseExample">
+     <p>Add a list...</p>
+        </a></div>
+    <div class="collapse" id="list">
+      <div class="well">
+        <form>
+          <input type="text" id = "listtext" class="form-control" placeholder="List Title">
+
+        </form>
+          <button class="btn btn-default" id = "listsave">Save</button>
+         <button class="btn btn-default"><span class = "glyphicon glyphicon-remove"></span></button>
+      </div>
+    </div>
+
+
+</div>
+
+<script>
+  $("#listsave").click(function(){
+    $val = $("#listtext").val();
+     $(".board").append('<div class = "list-container"><div class="list"><div class="list-header"><span class="list-header">Hello</span> </div><div class="list-footer"><div class= "add-card"<a class="add-card" role="button" data-toggle="collapse" href="newcollapse"><p>Add a card</p></div></div></div></div>');
+  });
+
+
+
+
+
+</script>
 
 </body>
 </html>

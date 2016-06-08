@@ -34,6 +34,9 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+
+  $(e).on("mouseenter",fn);
+
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +46,9 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+
+  $(e).on("mouseleave",fn);
+
 };
 
 // ----------------------------------------------------------------------------
@@ -71,6 +77,10 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  document.addEventListener("keypress",function(event){
+    
+    
+  })
 };
 
 // ----------------------------------------------------------------------------

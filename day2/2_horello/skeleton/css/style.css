@@ -3,6 +3,8 @@
 body {
     line-height: 18px;
     height: 100vh;
+    background-color: rgb(0, 121, 191);
+    font: Bootstrap default sans-serif;
 
     /** PHASE 1 CSS here */
 }
@@ -10,8 +12,15 @@ body {
 header {
     position: relative;
     overflow: hidden;
-
+    padding: 5px;
+    height: 40px;
+    opacity: 0.15;
+    background-color: black;
     /** PHASE 1 CSS here */
+}
+
+p {
+    text-align: left;
 }
 
 .header-logo {
@@ -50,18 +59,29 @@ a {
 
 .add-list-container {
     padding: 5px;
+    display: flex;
 }
 
 .add-list {
     /** PHASE 1 CSS here */
+    background-color: rgba(0,0,0,0.12);
+    color: #fff;
+    max-height: 30px;
+    border-radius: 3px;
+    margin: 5px;
+    margin-bottom: 0;
+    width: 280px;
+    padding: 7px;
 }
 
 .add-list:hover {
     /** PHASE 1 CSS here */
+    background-color: rgba(0,0,0,.20);
 }
 
 .add-list-form {
     /** PHASE 4 CSS here */
+
 }
 
 .board {
@@ -69,6 +89,7 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex;
 
     /** PHASE 2 CSS here */
 }
@@ -81,8 +102,15 @@ a {
 }
 
 .list {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     max-height: 100%;
+    padding: 0.5em;
+    margin: 5px 5px;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
 
     /** PHASE 2 CSS here */
 }
@@ -90,24 +118,39 @@ a {
 .list-header {
     display: block;
     position: relative;
-
+    color: black;
+    margin-bottom: 0.5em;
     /** PHASE 2 CSS here */
 }
 
 .list-footer {
     /** PHASE 2 CSS here */
+    font-weight: 500;
 }
 
 .list-title {
     /** PHASE 2 CSS here */
+    font-weight: 700;
+    left: 0;
+
+
 }
 
 .add-card {
     /** PHASE 2 CSS here */
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    text-align: left;
+    width: 100%;
+    background-color: rgba(16,16,16, 0.15);
+    color: #333;
+    margin: 3px 0;
 }
 
 .add-card:hover {
     /** PHASE 2 CSS here */
+    background-color: rgba(96,96,96, 0.15);
 }
 
 
@@ -115,20 +158,63 @@ a {
 
 .list-cards {
     min-height: 0;
-
+    overflow-y: overlay;
+    overflow-x: hidden;
     /** PHASE 3 CSS here */
 }
 
 .card {
     /** PHASE 3 CSS here */
+    margin-bottom: .5em;
+    background: white;
+    position: relative;
+    border-radius: 3px;
 }
 
 .card-body {
     /** PHASE 3 CSS here */
+    padding: 0.5em .5em .5em .5em;
+    font-family: "Cabin", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+    display: block;
 }
 
 .card-more {
     /** PHASE 3 CSS here */
+/*    justify-content: flex-start;
+    align-items: flex-end;*/
+    position: relative;
+    left: 6px;
+    bottom: 6px;
+
 }
 
+.well {
+    margin: 0 auto;
+    margin-bottom: 0;
+    padding: 5px;
+    width: 100%;
+}
+
+.wellList {
+    width: 93%;
+}
+
+.save {
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    text-align: left;
+    background-color: white;
+    color: #333;
+    margin: 3px 0;
+    padding: 0 15px;
+    margin-top: 6px;
+}
+
+.save:hover {
+    background-color: rgba(96,96,96, 0.05);
+}
 /** PHASE 4 CSS here: add card form */

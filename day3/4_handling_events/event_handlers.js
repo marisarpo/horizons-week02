@@ -392,7 +392,19 @@ handlers.attachDeleteAction($(".panel"));
 
 
 handlers.attachFormAdd = function(formElement) {
-  // YOUR CODE HERE
+  var newItem;
+
+  formElement.get(0).addEventListener('submit', function(e){
+    e.preventDefault();
+
+    newItem = $("#new-item").val();
+    $("#grocery-list").append('<div class="panel panel-default">' +
+'<div class="panel-body">' +
+     newItem +  '<a class="btn btn-danger innerbutton">Delete</a>' +
+  '</div>' +
+'</div>');
+    handlers.attachDeleteAction($(".panel"));
+  });
 };
 
 handlers.attachFormAdd($("#grocery-add"));

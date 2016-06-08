@@ -3,6 +3,8 @@
 body {
     line-height: 18px;
     height: 100vh;
+    background-color: rgb(0,121,191);
+
 
     /** PHASE 1 CSS here */
 }
@@ -10,6 +12,9 @@ body {
 header {
     position: relative;
     overflow: hidden;
+    padding:5px;
+    height:40px;
+    background-color: rgba(0,0,0,0.15);
 
     /** PHASE 1 CSS here */
 }
@@ -50,14 +55,28 @@ a {
 
 .add-list-container {
     padding: 5px;
+    flex:1;
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+    color: #fff;
+    min-height: 30px;
+    border-radius: 3px;
+    border:0;
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right:0;
+    margin-top: 0;
+    width:280px;
+    padding:7px;
+    background-color: rgba(0,0,0,0.12);
+    text-align:left;
+
 }
 
 .add-list:hover {
-    /** PHASE 1 CSS here */
+   background-color: rgba(0,0,0,0.2);
+
 }
 
 .add-list-form {
@@ -69,6 +88,7 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display:flex;
 
     /** PHASE 2 CSS here */
 }
@@ -82,31 +102,51 @@ a {
 
 .list {
     box-sizing: border-box;
-    max-height: 100%;
-
-    /** PHASE 2 CSS here */
+    max-height: 100%;   
+    padding:0.5em;
+    margin:5px 5px;
+    border-radius: 3px;
+    width:270px;
+    background-color: #e2e4e6;
+    flex-direction: column;
+    display:flex;
 }
 
 .list-header {
     display: block;
     position: relative;
-
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right:0;
+    margin-top: 0;
+    font-weight:500;
+    color:#000;
     /** PHASE 2 CSS here */
 }
 
 .list-footer {
+    font-weight:500;
     /** PHASE 2 CSS here */
 }
 
 .list-title {
-    /** PHASE 2 CSS here */
+    font-weight: bold;
 }
 
 .add-card {
+    height:40px;
+    width: 100%;
+    border-radius: 4px;
+    text-align:left;
+    background-color: rgba(16,16,16,0.15);
+    color:#333;
+    margin: 3px 0;
+    border:0;
     /** PHASE 2 CSS here */
 }
 
 .add-card:hover {
+    background-color: rgba(96,96,96,0.15);
     /** PHASE 2 CSS here */
 }
 
@@ -115,20 +155,54 @@ a {
 
 .list-cards {
     min-height: 0;
-
+    overflow-y: overlay;
+    overflow-x: hidden;
     /** PHASE 3 CSS here */
 }
 
 .card {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+    margin-right:0;
+    margin-top: 0;
+    background-color: #fff;
+    border-radius: 3px;
+    position:relative;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-image: none;
+    background-size: auto;
+    background-origin: padding-box;
     /** PHASE 3 CSS here */
 }
 
 .card-body {
+    padding:0.5em 0.5em 2em 0.5em;
+    font-family: Cabin, Arial, default sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position:relative;
+    /** PHASE 3 CSS here */
+}
+p {
+    display:block;
+    
+}
+.card-more {
+    position:absolute;
+    left:6px;
+    bottom:6px;
     /** PHASE 3 CSS here */
 }
 
-.card-more {
-    /** PHASE 3 CSS here */
+.add-card-form {
+    background-color: #fff;
+    padding: 0.5em;
+    border-radius: 3px;
+    
+}
+#add-list1 {
+    width:280px;
 }
 
 /** PHASE 4 CSS here: add card form */

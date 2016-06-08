@@ -53,7 +53,14 @@ a {
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+    background-color: #ff0011;
+    border-radius: 3px;
+    color: #fff;
+    min-height: 30px;
+    margin: 5px 5px;
+    width: 280px;
+    padding: 7px;
+    opacity: .12; 
 }
 
 .add-list:hover {

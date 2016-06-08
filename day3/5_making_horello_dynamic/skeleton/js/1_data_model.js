@@ -182,7 +182,7 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    var retList = undefined;
+    var retList = null;
     this.lists.forEach(function(list){
      if (list.id === listId) {
        retList = list;

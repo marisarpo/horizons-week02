@@ -184,9 +184,14 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   var classId = "."+className;
-  $(classId).on("click", function() {
+
+  handlers.attachClick(classId, function() {
     alert(alertMessage);
-  })
+  });
+
+  // $(classId).on("click", function() {
+  //   alert(alertMessage);
+  // })
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

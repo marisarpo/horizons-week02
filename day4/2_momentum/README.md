@@ -1,4 +1,4 @@
-# Individual Exercise: Building a Weather Dashboard
+# Individual Exercise: Momentum
 
 At some point, you've probably used, or seen someone use **Momentum** - a popular Chrome extension that replaces your New Tab page with a beautiful view that looks something like:
 
@@ -24,6 +24,116 @@ To style this with CSS, we'll be focusing on the following components:
 	* **Temperature**: `<span>` element
 	* ***Icon***: Depending on what you what you use (maybe [fontawesome](http://fontawesome.io/icons/) or [ionicons]())
 	
-## Phase 2 - Building some Momentum for Momentu
+## Phase 1 - Wow, You're Pretty, Let's Go On A Date
 
-## Phase 3 - Hooking into 
+In this phase, we're going to be using the [Unsplash API](https://source.unsplash.com) to pimp out our dashboard background. You should have experience setting an image to be particularly huge and fill a whole screen (sometimes known as a **"hero image"**) from doing that in the Kickstarter clone. We're going to be doing that again here, but pulling the image from an API.
+
+We're also going to learn about a technique using something called a `pseudo-tag` that can be used to improve readability and usage of your web-app. `Pseudo-tags` are a big part of web development and can be used to pull off some particularly tricky things without using extra elements ([everything here](http://a.singlediv.com) was made with a single div).
+
+Your tasks in this phase will be to:
+
+1. Create an img tag and style it so that it fills
+2. Improve readability and 
+3. Use the Date() object and setInterval to create a text-based clock
+
+
+First things first, let's get that image up there. To take advantage of the `pseudo-tag` later, I want you to structure your HTML and CSS like so:
+
+**`momentum.html`**
+```html
+...
+<div class="bg-wrapper">
+	<img src="..." />
+</div>
+...
+```
+
+**`momenutm.css`**
+```css
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper {
+	...
+}
+
+/* selector for the actual image - use this to control img dimensions*/
+.bg-wrapper > img {
+	...
+}
+```
+
+I recommend using the `.bg-wrapper` selector to position the entire image so that it'll fill up the entire size of the screen. Use the child selector `>` to actually reach the image and style that to be full-screen however you'd like.
+Remember, documentation is always helpful! Refer to the [Mozilla Developer Network](https://developer.mozilla.org/en-US/) for information about properties and techniques that might come helpful in accomplishing these tasks.
+
+Once you've finished with that, head over to [Unsplash](https://source.unsplash.com) and familiarize yourself with their docs.
+
+In our case, we're only going to be using their *Source* service, which is a bit different from how typical APIs work (figures, given how they're not a typical web company - they serve images, rather than text data).
+
+The particular URL we're going to use will be: `https://source.unsplash.com/daily/`.
+You don't have to set up any Javascript/do any AJAX calls - here's how you use it:
+
+```html
+...
+	<img src="https://source.unsplash.com/daily/" />
+...
+```
+
+You can use it like any other image, just by pasting the url into the `src` attribute of the `img` tag. Your browser will make the necessary call and load the image for you, just like it would any other image. The cool thing about this is on **Unsplash**'s end - each day, they change the image that is served to that URL so that if you opened your html file with that in it tomorrow, the image that comes from **Unsplash**'s servers would be different.
+
+Now, you probably have to do some tweaking to get this to work with your current page structure. If you read through the docs, you'll see that you can also change the size of the image you're requesting by changing the url. Spend some time getting that full-screen image working, then move on this next part.
+
+Now, we're going to improve the usability of your momentum by applying a translucent **mask** or **layer** of black over the full-screen image. Why, you say?
+
+**This is why.**
+
+<img src="http://ptgmedia.pearsoncmg.com/images/irf_guide_webdesign_evans/elementLinks/horton7_fig05.gif"/>
+
+When you use an image as a background, it can be hard to read the text of your webpage because, while the text color stays the same, the image colors will not, so you will most likely end up experiencing contrast issues with your text. We can fix this by making the images slightly darker so that our white text can shine out against the dark-ish background, and we're going to do that using a `::before` pseudo-tag. Now, this is where things get tricky - you've never seen this `::before` non-sense before.
+
+`::before` references a **pseudo-element**, which you can think of as a *hidden element* that lives inside the elements you write. That means when you write this:
+
+```html
+...
+<div class="my-thing">
+</div>
+...
+```
+
+you actually have **something like this:**
+
+```html
+...
+<div class="my-thing">
+	::before <!-- <= this thing over here actually acts like an element! -->
+</div>
+```
+
+Then, you can style this **fake element** like so:
+
+```css
+.my-thing::before {
+	content: ""; /* <= it's required, this is how you set the "text" of an item.*/
+}
+```
+
+The `content` property is required by all `pseudo` selectors, so even though we won't be using it, we'll need to set it to an empty string.
+
+Okay, to actually use it, we want to set these properties:
++ **position** - absolute
++ **width** and  **height** - full-screen
++ **background** - black, 15-25%  opacity (up to you)
+
+If you've done everything right, you should see that your image is now noticeably darker than it was before.
+
+If you'd like, you can learn more about them [here](https://css-tricks.com/almanac/selectors/a/after-and-before/) and [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
+
+Finally, the last thing we're gonna be doing is adding the text. We're gonna make this text huge, probably Helvetica, and size of 
+
+- using Date.now() and setInterval to update the text
+
+By the end of this phase, you'll have an application that gets a random pretty picture every day and also tells you the time and date.
+
+## Phase 3 - Is It Going to Rain?
+
+- weather api
+
+## Phase 4 - You know they say... "Love is friendship set on fire."

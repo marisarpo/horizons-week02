@@ -160,7 +160,8 @@ horello.List.prototype = {
 // A board contains a list of lists.  Write a Board class according to the spec
 // in `classSpec.png`.
 horello.Board = function () {
-  // YOUR CODE HERE
+  this.id = horello.generateId();
+  this.lists = [];
 };
 
 horello.Board.prototype = {
@@ -170,7 +171,9 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
-    // YOUR CODE HERE
+    var newList = new horello.List(listName);
+    this.lists.push(newList);
+    return newList.id;
   },
 
   // Exercise 3.B `getList(listId<String>)`
@@ -179,7 +182,13 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    // YOUR CODE HERE
+    var retList = undefined;
+    this.lists.forEach(function(list){
+     if (list.id === listId) {
+       retList = list;
+     } 
+   })
+    return retList; 
   },
 
   // Exercise 3.C `rmvList(listId<String>)`
@@ -189,7 +198,12 @@ horello.Board.prototype = {
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
   rmvList: function(listId) {
-    // YOUR CODE HERE
+  var retList = null;
+    if (this.getList(listId)) {
+      var ind = this.lists.indexOf(this.getList(listId));
+      retList = this.lists.splice(ind,1)[0];
+    } 
+    return retList;
   }
 };
 

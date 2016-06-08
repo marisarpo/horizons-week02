@@ -23,7 +23,7 @@ horello.Card.prototype.render = function() {
 // and all of the cards it contains. It returns an HTML string
 // representing the internal object.
 horello.List.prototype.render = function() {
-  // YOUR CODE HERE
+  
 }
 
 // Phase 3. Board

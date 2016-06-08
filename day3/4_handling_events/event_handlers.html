@@ -12,15 +12,6 @@
   <!-- Our files -->
   <script src="../../lib/jquery.js"></script>
   <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
-   <style type="text/css">
-    .selected {
-      background-color: green;
-    }
-
-    #grocery-add {
-      margin-bottom: 30px;
-    }
-  </style>
 </head>
 <body description="the body">
   <div class="container" description="the outermost container div">
@@ -28,34 +19,26 @@
       <h2>Exercises: <code>event_handlers</code></h2>
       <hr>
       <h3>Defuse a bomb</h3>
+      <div class="bomb">
       <a class="btn btn-danger cutbutton" id="red">Cut the red wire</a>
       <a class="btn btn-primary cutbutton" id="blue">Cut the blue wire</a>
       <a class="btn btn-success cutbutton" id="nope">Run</a>
+      </div>
       <hr>
       <h3>Grocery list</h3>
-      <div id="grocery-list" description="the grocery list container">
-        <form id="grocery-add">
-          <div class="input-group">
-            <input type="text" class="form-control" id="new-item" placeholder="Add grocery item">
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit">Add Item</button>
-            </span>
-          </div>
-        </form>
-        <div class="panel panel-default" description="the panel container div">
-          <div class="panel-body" description="the panel body div">
-            Eggs <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
-          </div>
+      <div class="panel panel-default" description="the panel container div">
+        <div class="panel-body" description="the panel body div">
+          Eggs <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
         </div>
-        <div class="panel panel-default" description="the panel container div">
-          <div class="panel-body" description="the panel body div">
-            Milk <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
-          </div>
+      </div>
+      <div class="panel panel-default" description="the panel container div">
+        <div class="panel-body" description="the panel body div">
+          Milk <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
         </div>
-        <div class="panel panel-default" description="the panel container div">
-          <div class="panel-body" description="the panel body div">
-            Bread <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
-          </div>
+      </div>
+      <div class="panel panel-default" description="the panel container div">
+        <div class="panel-body" description="the panel body div">
+          Bread <a class="btn btn-danger innerbutton" description="the delete button">Delete</a>
         </div>
       </div>
     </div>

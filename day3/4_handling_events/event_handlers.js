@@ -77,9 +77,10 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
-  document.addEventListener("keypress",function(event){
-    
-    
+  $(document).on("keypress",function(event){
+    if(event.which === key || event.keyCode === key){
+      fun();
+    };  
   })
 };
 
@@ -94,6 +95,12 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  var idOther = '#'+id;
+  handlers.attachClick(idOther, function(){
+    handlers.userActions[id]++;
+    console.log(handlers.userActions[id]);
+  })
+  
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -148,6 +155,18 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+  //debugger;
+  var idOther = '#'+id;
+  handlers.attachHover(idOther,function(event){
+    handlers.hoverTimeoutNums[id]=setTimeout(function(){
+      $(idOther).trigger("click");
+    },2000)
+  });
+
+  handlers.attachUnhover(idOther,function() {
+    clearTimeout(handlers.hoverTimeoutNums[id])
+  });
+
 }
 
 handlers.attachHoverClick("red");
@@ -175,6 +194,22 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  var class1= "." +className;
+  var arr = [];
+  
+  handlers.attachClick($(class1),function(){
+    var temp = $(this).attr('id');
+    if(arr.indexOf(temp)<0){
+      arr.push(temp);
+    }
+    alert(alertMessage);
+  })
+  console.log(arr);
+  arr.forEach(function(entry){
+    entry = document.getElementById(entry);
+  })
+  return arr;
+
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

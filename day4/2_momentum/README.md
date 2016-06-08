@@ -135,7 +135,9 @@ Make the text:
 + Helvetica
 + huge (192px)
 
-Use`Date` objects and `setInterval` to update the text. Remember how to get the current hour and minute? Use those to methods, along with string concatenation (addition -> hours + ":" + minutes) to produce the time text. Additionally, use `setInterval` to automatically update the time every 30 seconds. Do your work in `js/momentum.js`.
+Use`Date` objects and `setInterval` to update the text. Remember how to get the current hour and minute? Use those to methods, along with string concatenation (addition -> hours + ":" + minutes) to produce the time text. Additionally, use `setInterval` to automatically update the time every 30 seconds.
+
+Your job is to build a `CoreCtrl` object that will fetch the time and render it onto your screen. Do your work in `js/momentum.js`.
 
 By the end of this phase, you'll have an application that gets a random pretty picture every day and also tells you the time of the day. 
 
@@ -147,7 +149,9 @@ In this phase, you will:
 
 + Create a weather controller object that:
 	+ (1) performs AJAX calls for weather data from the API
-	+ (2) updates the DOM with the current temperature data.  
+	+ (2) updates the DOM with the current temperature data.
+
+Do your work in `js/momentum-weather.js`, and remember to put the object in the `momentum` namespace.
 
 First things first, you're going to need to sign up for the OpenWeatherMap API. As you can probably tell, this is something you're usually going to have to do for APIs you want to use in the future - companies will make their data and services available, so long as your sign up, authenticate, and join their community.
 
@@ -161,12 +165,33 @@ and using that to make our AJAX calls.
 
 You job will be to create a `weatherController` object that will do two things: query the **OpenWeatherMap API** for the current temperature of a given city, and insert this information into the DOM.
 
-<!-- TODO: add image of weather corner -->
+It should look something like this (minus the bit about the TODOs):
+
+<img src="weather-example.png" />
+
+<sub>But **better** - look at that terrible contrast! Good thing we used that mask.</sub>
 
 By the end of this phase of this phase, you should have a dashboard with a pretty sweet full-screen background image that also tells you the time and current temperature outside.
 
-[Bonus] Look into using `navigator.geoLocation` to automatically get our position and make the AJAX call.
+[Bonus] Look into using `navigator.geoLocation` to automatically get our position and make the AJAX call. You'll have to use a different URL instead
 
 ## Phase 4 - You know they say... "Love is friendship set on fire."
 
 Finally, we're going to be adding a quote of the day using the [TheySaidSo API](https://theysaidso.com/api/).
+
+In this exercise, you'll need to write a `QuoteController` object that:
+
++ Fetches a daily quote from the API and
++ renders it onto the screen.
+
+You should do your work in `js/momentum-quote.js` and remember to keep your `QuoteController` in the `momentum` namespace.
+
+**TheySaidSo** does not require you to make an account or sign up for API credentials - they have *public* APIs that you can use, much like *Unpslash*. We're going to be using their **Quote of the Day** service, located at:
+
+`http://quotes.rest/qod.json`
+
+If you visit this url in your browser, you can see what kind of output it's going to return. Knowing the structure of the data you get will be helpfully for parsing the output of the AJAX call you'll be making to the API.
+
+When you have the AJAX call working, make sure to render the quote onto the screen.
+
+Once you've finished this, you should have your own fully-functional **Momentum** dashboard that tells you the time, the weather, and shows you some random, nice image.

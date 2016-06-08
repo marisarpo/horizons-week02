@@ -150,7 +150,7 @@ handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
   handlers.attachHover('#'+id,function() {
     handlers.hoverTimeoutNums[id] = setTimeout(function() {
-      $('#'+id).triggers('click');
+      $('#'+id).trigger('click');
       }, 2000);
     clearTimeout(handlers.hoverTimeoutNums[id]);
   })

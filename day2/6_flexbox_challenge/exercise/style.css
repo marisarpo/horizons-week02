@@ -1,0 +1,24 @@
+.wrap {
+	display: flex;
+	height: 90vh;
+	flex-direction: row;
+}
+
+.nav {
+	background-color: yellow;
+	flex: 1;
+}
+
+.aside {
+	background-color:orange;
+	flex: 2;
+}
+
+.article {
+	background-color: red;
+	flex: 3;
+}
+
+.footer {
+	background-color:green;
+}

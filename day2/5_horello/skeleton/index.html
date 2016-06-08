@@ -14,38 +14,217 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<header>
-    <a class="header-logo"
-       href="#"><span class="header-logo-default"></span></a>
-</header>
+    <header>
+        <a class="header-logo"
+        href="#"><span class="header-logo-default"></span></a>
+    </header>
 
-<!-- PHASE 5. Modal -->
-
-<div class="board">
+    <!-- PHASE 5. Modal -->
+<div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+    <div class="board">
     <div class="list-container">
-        <div class="list">
-            <div class="list-header">
-                <span class="list-title">House List</span>
-            </div>
-            <div class="list-cards">
-                <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
+
+
+            <div class="list">
+
+                <div class="list-header">
+                    <span class="list-title">Some List</span>
+                </div>
+                <div class="list-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.
+
+Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation X is on the runway heading towards a streamlined cloud solution. User generated content in real-time will have multiple touchpoints for offshoring.
+
+Capitalise on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
+                            
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
                     </div>
                 </div>
-            </div>
-            <div class="list-footer">
-                <!-- PHASE 2. Add card button -->
+                <div class="list-footer">
+                    <!-- PHASE 2. Add card button -->
+            
+                    <!-- PHASE 4. Collapse -->
+                    <div class="panel-group">
+                      <!-- <div class="panel panel-default"> -->
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a class = "btn add-list-collapsed" data-toggle="collapse" href="#collapse1">Add a card</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class = "well">
 
-                <!-- PHASE 4. Collapse -->
-            </div>
-        </div>
+                        <input type="text" class="form-control" placeholder="Card title"> 
+                        <button class="Save btn">
+                        Save
+                        </button>
+                        <button class = "X btn">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                            </div>
+
+
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="list-container">
+
+
+            <div class="list">
+
+                <div class="list-header">
+                    <span class="list-title">Some List</span>
+                </div>
+                <div class="list-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses again
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses again
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses again
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses again
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            #DominateAllTheHouses again
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                </div>
+                <div class="list-footer">
+                    <!-- PHASE 2. Add card button -->
+            
+                    <!-- PHASE 4. Collapse -->
+                    <div class="panel-group">
+                      <!-- <div class="panel panel-default"> -->
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a class = "btn add-list-collapsed" data-toggle="collapse" href="#collapse1">Add a card</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class = "well">
+
+                        <input type="text" class="form-control" placeholder="Card title"> 
+                        <button class="Save btn">
+                        Save
+                        </button>
+                        <button class = "X btn">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                            </div>
+
+
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+        <div class="list-container">
+
+
+            <div class="list">
+
+                <div class="list-header">
+                    <span class="list-title">Some List</span>
+                </div>
+                <div class="list-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            Today we will #DominateAllTheHouses
+                            
+                        </div>
+                        <p><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></p>
+                    </div>
+                </div>
+                <div class="list-footer">
+                    <!-- PHASE 2. Add card button -->
+            
+                    <!-- PHASE 4. Collapse -->
+                    <div class="panel-group">
+                      <!-- <div class="panel panel-default"> -->
+                        <div class="panel-heading">
+                          <h4 class="panel-title">
+                            <a class = "btn add-list-collapsed" data-toggle="collapse" href="#collapse1">Add a card</a>
+                        </h4>
+                    </div>
+                    <div id="collapse1" class="panel-collapse collapse">
+                      <div class = "well">
+
+                        <input type="text" class="form-control" placeholder="Card title"> 
+                        <button class="Save btn">
+                        Save
+                        </button>
+                        <button class = "X btn">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            </button>
+                            </div>
+
+
+                      
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class = "list-container1"
+  <div class = "add-list-container">
+    <button class = "btn add-list-collapsed" data-toggle = collapse" href = #addList" aria=expanded = "fase"> Add a list...
+    </button>
     </div>
-
-    <!-- PHASE 1. Add list button -->
-
+    </div>
+</div>
 
 </div>
+
+</div>
+<!-- Add list button -->
 
 </body>
 </html>

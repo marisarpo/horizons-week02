@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  e.addEventListener("mouseenter",fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  e.addEventListener("mouseleave",fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -70,6 +72,13 @@ handlers.attachUnhover = function(e, fn) {
 // rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
+      document.addEventListener("keypress", function(evt)){
+        if (evt.which === 32 || evt.keyCode === 32){
+          fn();
+        }
+      }
+    }
+
   // YOUR CODE HERE
 };
 

@@ -317,7 +317,13 @@ handlers.attachAlertsWithParents($(".innerbutton"))
 
 handlers.detachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
-};
+  if($(elements).get(0)==document){
+   return
+  }
+  elements.off('click');
+  handlers.detachAlertsWithParents(elements.parent())
+  return;
+  };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
 
@@ -345,6 +351,12 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 
 handlers.attachDeleteAction = function(buttonElement) {
   // YOUR CODE HERE
+  $(buttonElement).off("click");
+  $(buttonElement).on("click", function(x){
+    if($(x.target).hasClass("innerbutton")){
+      $(this).remove();
+    }
+  });
 };
 
 handlers.attachDeleteAction($(".panel"));
@@ -383,7 +395,6 @@ handlers.attachDeleteAction($(".panel"));
 //      {{ ITEM NAME }} <a class="btn btn-danger innerbutton">Delete</a>
 //   </div>
 // </div>
-
 // Don't worry about adding the "description" attribute for this exercise.
 // Remember to attach a delete action to the new element!
 
@@ -393,6 +404,14 @@ handlers.attachDeleteAction($(".panel"));
 
 handlers.attachFormAdd = function(formElement) {
   // YOUR CODE HERE
+  $(formElement).on("submit",function(e){
+    e.preventDefault();
+    if($("#new-item").val()){
+      $("#grocery-list").append($('"<div class="panel panel-default"><div class="panel-body">' + $("#new-item".val()) + '<a class="btn btn-danger innerbutton">Delete</a></div></div>'))
+    }
+    $("#new-item").val("");
+    handlers.attachDeleteAction($('<div class="panel panel-default"><div class="panel-body">' + $("#new-item".val()) + '<a class="btn btn-danger innerbutton">Delete</a></div></div>'))
+  })
 };
 
 handlers.attachFormAdd($("#grocery-add"));

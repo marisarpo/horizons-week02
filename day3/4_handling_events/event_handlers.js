@@ -33,7 +33,7 @@ handlers.attachClick = function(e, fn) {
 // to select it.
 
 handlers.attachHover = function(e, fn) {
-  // YOUR CODE HERE
+  $(e).on("mouseover", fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ handlers.attachHover = function(e, fn) {
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
-  // YOUR CODE HERE
+  $(e).on("mouseleave", fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -69,8 +69,10 @@ handlers.attachUnhover = function(e, fn) {
 // Another Hint (!): Listen for the keypress event on the 'document' object
 // rather than a specific element 'e' like before.
 
-handlers.attachKeypress = function(key, fn) {
-  // YOUR CODE HERE
+handlers.attachKeypress = function(key, fn, event) {
+  if (event.keyCode === key) {
+    $(document).on("keypress", fn)
+  }
 };
 
 // ----------------------------------------------------------------------------
@@ -83,8 +85,21 @@ handlers.attachKeypress = function(key, fn) {
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
-  // YOUR CODE HERE
+  handlers.attachClick(id, function(){
+  $(id).on("click", function(){
+    if (id === "red") {
+      userActions["red"]++
+    }
+    if (id === "blue") {
+      userActions["blue"]++
+    }
+    if (id === "nope") {
+      userActions["nope"]++
+    }
+  });
+});
 };
+
 
 handlers.attachUserActionRecord("red"); // The red wire button
 handlers.attachUserActionRecord("blue"); // The blue wire button
@@ -137,7 +152,9 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  // YOUR CODE HERE
+  var timeout = attachHover(function(){
+
+  }, 2000)
 }
 
 handlers.attachHoverClick("red");

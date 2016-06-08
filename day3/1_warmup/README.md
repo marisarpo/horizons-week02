@@ -25,12 +25,31 @@ can find a full list of events
    displays an alert when it's pressed. (Hint 1: Use the `$0` trick we
    saw in class. Hint 2: You can display an alert with the `alert(msg)`
    function in Javascript.)
+
+** 
+$0.addEventListener("click", fun());
+
+function fun () {
+   alert("Clicked!");
+}
+**
+
 1. Now add that same event using purely Javascript. (Remove the original
    event using .removeEventListener(), or just reload the page to remove
    it.) This means adding it in the "JS" box in codepen, so that if you
    reload the page, the event is still attached to the button. (Hint:
    give the button an ID to make it easier to locate automatically in
    the DOM.)
+
+**
+button.addEventListener("click", myFunction);
+
+function myFunction () {
+  alert("Clicked!");
+}
+**
+
+
 1. (Bonus) Add a div that changes color when you move the mouse over it,
    using events (i.e., **not** using the `:hover` pseudo-selector).
 

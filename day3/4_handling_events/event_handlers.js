@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  document.getElemenyById("e").addEventListener("mouseover",fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  document.getElemenyById("e").addEventListener("mouseleave",fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -71,6 +73,7 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  document.getElemenyById("key").addEventListener("keypress",fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -84,6 +87,7 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  attachClick(id)
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button

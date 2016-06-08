@@ -213,8 +213,17 @@ horello.Board.fromJSON = function(data, cb) {
     "/boards/" + data.id + "/lists",
     function (data2) {
       console.log("Successfully loaded lists for board " + data.id);
-      board.lists = data2.map(horello.List.fromJSON);
-      cb(board);
+      data2.forEach(function (data3) {
+        horello.List.fromJSON(data3, function (list) {
+          console.log("Added list " + list.id + " to board " + board.id);
+          board.lists.push(list);
+          if (board.lists.length === data2.length) {
+            // This is sloppy! Much easier with promises!
+            // We've got them all!
+            cb(board);
+          }
+        });
+      });
     },
     function (err) {
       console.error("Error loading lists for board " + data.id + ": " + JSON.stringify(err));
@@ -222,20 +231,17 @@ horello.Board.fromJSON = function(data, cb) {
   );
 };
 
-
-horello.List.fromJSON = function(data) {
+horello.List.fromJSON = function(data, cb) {
   var list = new horello.List(data.id, data.name);
-}
-
   Trello.rest(
     "GET",
-    "/boards/" + data.id + "/cards",
+    "/lists/" + data.id + "/cards",
     function (data2) {
-      console.log("Successfully loaded cards for board " + data.id);
-      board.lists = data2.map(horello.Card.fromJSON);
-      cb(board);
+      console.log("Successfully loaded cards for list " + data.id);
+      list.cards = data2.map(horello.Card.fromJSON);
+      cb(list);
     }, function (err) {
-      console.error("Error loading cards for board " + data.id + ": " + JSON.stringify(err));
+      console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
     }
   );
 };

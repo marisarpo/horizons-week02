@@ -201,6 +201,7 @@ handlers.attachAlertsToClass = function(className, alertMessage) {
        arr.push(elem);
     console.log(elem);
     alert(alertMessage);
+    elem.stopPropagation();
 
   })
   console.log(arr);
@@ -245,6 +246,12 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+    handlers.attachClick(elements, function(e) {
+    $(e.currentTarget).css("backgroundColor", "green");
+    alert("You've reached " + $(e.currentTarget).attr("description"));
+    $(e.currentTarget).css("backgroundColor", "");
+
+  })
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -317,6 +324,7 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 handlers.detachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  elements.off('click');
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
@@ -345,6 +353,13 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 
 handlers.attachDeleteAction = function(buttonElement) {
   // YOUR CODE HERE
+ handlers.attachClick(buttonElement, function(e){
+  // remember e.target is the things that fire the event. the button, here, the delete button.
+   $(e.target).css("backgroundColor", "green");
+  alert("You've reached " + $(e.target).attr("description"));
+    $(e.target).css("backgroundColor", "");
+    event.stopPropagation();
+ })
 };
 
 handlers.attachDeleteAction($(".panel"));
@@ -378,11 +393,6 @@ handlers.attachDeleteAction($(".panel"));
 //
 // As you've seen in the HTML, the format for a new item is as follows:
 //
-// <div class="panel panel-default">
-//   <div class="panel-body">
-//      {{ ITEM NAME }} <a class="btn btn-danger innerbutton">Delete</a>
-//   </div>
-// </div>
 
 // Don't worry about adding the "description" attribute for this exercise.
 // Remember to attach a delete action to the new element!
@@ -393,6 +403,19 @@ handlers.attachDeleteAction($(".panel"));
 
 handlers.attachFormAdd = function(formElement) {
   // YOUR CODE HERE
+
+  formElement.on("submit", function(event){
+    event.preventDefault();
+    $("#grocery-list").append("<div class='panel panel-default'><div class='panel-body'>" + $("#new-item").val() + " <a class='btn btn-danger innerbutton'>Delete</a></div></div>");
+
+  })
+
+  //you can use this for easier readability. where you use append to sandwhich stuff within each other.
+  // var panel = $("<div></div>");
+  // var panelBody = $("")
+  // panel.append()
+
+  
 };
 
 handlers.attachFormAdd($("#grocery-add"));

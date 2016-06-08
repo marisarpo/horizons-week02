@@ -231,28 +231,24 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // attachAlertsWithParents() with .parent() after attaching the
 // click handler.
 
-//////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////////////////////////////////////////////////////////
-///////REVISIT LATER FOR EXPLANATION///////////////////////////////////////////////
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
-  while($(elements).get(0)==document){
-  elements.on("click",function(e){
-  $(e.currentTarget).css("backgroundColor", "green");
-  alert("You've reached " + $(e.currentTarget).attr("description"));
-  $(e.currentTarget).css("backgroundColor", "");
-  return;
-  });
+  if($(elements).get(0)==document){
+    return
   }
-  elements=elements.parent();
+  elements.on("click", function() {
+  elements.css("backgroundColor", "green");
+  alert("You've reached " + $(e.currentTarget).attr("description"));
+  elements.css("backgroundColor", "");
+  });
+  handlers.attachAlertsWithParents(elements.parent())
   return;
   }
 
-handlers.attachAlertsWithParents($(".innerbutton"));
-/////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
+handlers.attachAlertsWithParents($(".innerbutton"))
+
+
 // ----------------------------------------------------------------------------
 
 // Did you notice how the order of the click events "bubbled" outward from
@@ -273,7 +269,7 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // the parent elements.
 
 // ----------------------------------------------------------------------------
-
+ 
 // Exercise 6A. Ceasefire!
 // We want to prevent this behavior of the event selectors bubbling up to
 // the parent divs when we click the 'cutbutton'(s). One way to do this is by

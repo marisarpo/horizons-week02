@@ -3,15 +3,16 @@
 body {
     line-height: 18px;
     height: 100vh;
-
-    /** PHASE 1 CSS here */
+    background: rgb(0,121,191);
 }
 
 header {
     position: relative;
+    padding: 5px;
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
+    height: 40px;
+    background: rgba(0,0,0,.15);
+    display: flex;
 }
 
 .header-logo {
@@ -53,11 +54,19 @@ a {
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
-}
+    background: rgba(0,0,0,.12);
+    color: #fff;
+    min-height: 30px;
+    border: 0;
+    border-radius: 3px;
+    margin: 5px 5px;
+    margin-bottom: 5px;
+    width: 280px;
+    padding: 7px;
 
+}
 .add-list:hover {
-    /** PHASE 1 CSS here */
+    background: rgba(96, 96, 96, 0.15);
 }
 
 .add-list-form {
@@ -69,8 +78,7 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
-
-    /** PHASE 2 CSS here */
+    display: flex;
 }
 
 
@@ -82,19 +90,26 @@ a {
 
 .list {
     box-sizing: border-box;
+    width: 270px;
+    padding: 0.5em;
+    margin: 5px 5px;
+    border-radius: 3px;
+    background: #e2e4e6;
+    display: flex;
+    flex-direction: column;
     max-height: 100%;
-
-    /** PHASE 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
-
-    /** PHASE 2 CSS here */
+    margin: 0 0 .5em 0;
+    color: black;
+    font-weight: 700;
 }
 
 .list-footer {
+    font-weight: 500;
     /** PHASE 2 CSS here */
 }
 
@@ -103,10 +118,20 @@ a {
 }
 
 .add-card {
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background: rgba(16, 16, 16, 0.15);
+    color: #333;
+    margin: 3px 0;
     /** PHASE 2 CSS here */
 }
 
 .add-card:hover {
+    background: rgba(96, 96, 96, .15);
     /** PHASE 2 CSS here */
 }
 
@@ -120,14 +145,27 @@ a {
 }
 
 .card {
-    /** PHASE 3 CSS here */
+  margin: 0 0 .5em 0;
+  background: #fff;
+  border-radius: 3px;
 }
 
 .card-body {
+    display: block;
+    padding: .5em .5em 2em;
+    font-family: Cabin, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+    position: relative;
+    transition: 0.5s all;
+
     /** PHASE 3 CSS here */
 }
 
 .card-more {
+    position: relative;
+    left: 6px;
+    bottom: 6px;
     /** PHASE 3 CSS here */
 }
 

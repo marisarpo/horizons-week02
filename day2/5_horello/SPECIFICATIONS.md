@@ -12,13 +12,7 @@
 ## Board
 display: flex;
 - Add list button
-  - background alpha: .12
-  - font color: #fff
-  - min height: 30px
-  - border radius: 3px
-  - margin: 5px vertical, 5px horizontal
-  - width: 280px
-  - padding: 7px
+
 
 ## List
 - padding: 0.5em

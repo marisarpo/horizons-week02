@@ -23,29 +23,54 @@
 
 <div class="board">
     <div class="list-container">
-        <div class="list">
-            <div class="list-header">
-                <span class="list-title">House List</span>
-            </div>
-            <div class="list-cards">
-                <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
+        <div class="row">
+            <div class="list">
+                <div class="col-md-4">
+                    <div class="list-header">
+                    <div class="card">
+                        <div class="list-title">House List</div>
+                            <div class="list-cards">
+                                    <div class="card-body">
+                                        Today we will #DominateAllTheHouses
+                                    </div>
+                                    <span class="glyphicon glyphicon-align-left"></span>
+                                    </span>
+                                    <div class="card">
+                                        <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary over1" autocomplete="off">
+                                        Add a card
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- PHASE 1. Add list button -->
+                    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
+                      Add a list...
+                    </button>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
-
+    
                 <!-- PHASE 4. Collapse -->
             </div>
         </div>
     </div>
+</div>      
 
-    <!-- PHASE 1. Add list button -->
-
-
-</div>
+<script>
+  $('#myButton').on('click', function () {
+    var $btn = $(this).button('loading')
+    // business logic...
+    $btn.button('reset')
+  })
+</script>
+       
 
 </body>
 </html>
+
+
+

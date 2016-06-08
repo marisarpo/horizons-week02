@@ -6,7 +6,7 @@ At some point, you've probably used, or seen someone use **Momentum** - a popula
 
 <img src="https://cdn2.hubspot.net/hub/313892/file-609829972-png/Mom1.png?t=1464717344331" width="500">
 
-Using your skills in AJAX requests, HTML/CSS, and event handlers, you will be creating your own personal Momentum Dashboard!
+Using your skills in AJAX requests, HTML/CSS, JQuery and event handlers, you will be creating your own personal Momentum Dashboard!
 
 ## Phase 1 - The Skeleton
 
@@ -141,6 +141,32 @@ By the end of this phase, you'll have an application that gets a random pretty p
 
 ## Phase 3 - Is It Going to Rain?
 
-- weather api
+Next up, we're going to build the weather module of Momentum. We'll use the [Open Weather API](http://openweathermap.org/api) for retrieving weather information and JQuery to update our DOM with the weather information.
+
+In this phase, you will:
+
++ Create a weather controller object that:
+	+ (1) performs AJAX calls for weather data from the API
+	+ (2) updates the DOM with the current temperature data.  
+
+First things first, you're going to need to sign up for the OpenWeatherMap API. As you can probably tell, this is something you're usually going to have to do for APIs you want to use in the future - companies will make their data and services available, so long as your sign up, authenticate, and join their community.
+
+Navigate to the [OpenWeatherMap API Instructions Page](http://openweathermap.org/appid) to read about what you need to do in order to use OW's weather services. You'll need to get yourself an **APPID** and and `APIKEY` in order to use their weather API services. Don't worry, we'll just be sticking to the free version so no money out of your wallets.
+
+In particular, we're going to be using the **City Name** route:
+
+`api.openweathermap.org/data/2.5/weather?q={city name}`
+
+and using that to make our AJAX calls.
+
+You job will be to create a `weatherController` object that will do two things: query the **OpenWeatherMap API** for the current temperature of a given city, and insert this information into the DOM.
+
+<!-- TODO: add image of weather corner -->
+
+By the end of this phase of this phase, you should have a dashboard with a pretty sweet full-screen background image that also tells you the time and current temperature outside.
+
+[Bonus] Look into using `navigator.geoLocation` to automatically get our position and make the AJAX call.
 
 ## Phase 4 - You know they say... "Love is friendship set on fire."
+
+Finally, we're going to be adding a quote of the day using the [TheySaidSo API](https://theysaidso.com/api/).

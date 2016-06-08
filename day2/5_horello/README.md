@@ -86,7 +86,7 @@ way to lay out content flexibly and dynamically.
 
 Turning on Flexbox is as easy as adding the `display: flex` property
 to an element. Turn on Flexbox for the top-level board (so the lists
-are displayed next to one another), and for list (so the cards are
+are displayed next to one another), and for list (so the cards are`
 displayed vertically). Make sure that `flex-direction` is set correctly!
 
 Reload the page to see your changes. You should see a lovely blue

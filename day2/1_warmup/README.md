@@ -41,3 +41,6 @@ Tips:
   sizes.
 
 [live]: http://horizons-school-of-technology.github.io/week02/day2/1_warmup/solution/index.html
+
+
+/* media query is just an if statement 

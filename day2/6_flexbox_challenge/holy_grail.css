@@ -1,0 +1,56 @@
+body{
+	display:flex;
+	flex-direction:column;
+	height: 99vh;
+}
+
+.main{
+	display:flex;
+	flex-direction:row;
+	flex:4;
+}
+
+.article{
+	order:1;
+	display:flex;
+	background: blue;
+	flex:6;
+}
+
+.nav{
+	order:0;
+	display:flex;
+	background:green;
+	flex:1;
+}
+
+.aside{
+	order:2;
+	display:flex;
+	background:red;
+	flex:1;
+}
+
+.footer{
+	flex:1;	
+	background:yellow;
+}
+
+@media (max-width:640px){
+
+	.main{
+		flex-direction:column;
+	}
+	.article{
+		order:0;
+	}
+	.nav{
+		order:1;
+	}
+	.aside{
+		order:2;
+	}
+	.footer{
+		flex:.5;
+	}
+}

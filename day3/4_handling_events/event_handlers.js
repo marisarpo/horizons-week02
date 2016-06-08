@@ -34,7 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
-  e.addEventListener("mouseenter",fn);
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -44,7 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
-  e.addEventListener("mouseleave",fn);
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -72,12 +72,11 @@ handlers.attachUnhover = function(e, fn) {
 // rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
-      document.addEventListener("keypress", function(evt)){
-        if (evt.which === 32 || evt.keyCode === 32){
-          fn();
-        }
+    document.addEventListener("keypress", function(evt){
+      if (evt.which === key || evt.keyCode === key){
+        fn();
       }
-    }
+    })
 
   // YOUR CODE HERE
 };
@@ -93,6 +92,13 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  var hash = "#" + id;
+  console.log(hash);
+  var that = this;
+ this.attachClick(hash, function(){
+    that.userActions[id] ++;
+    console.log(that.userActions[id]);
+  });
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -147,6 +153,19 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+  var that = this;
+  var hash = '#' + id;
+  var times = function(){
+    that.hoverTimeoutNums[id] = setTimeout(function() {
+      $(hash).trigger("click");
+      }, 2000);
+    that.attachUnhover(hash,function(){
+      clearTimeout(that.hoverTimeoutNums[id])
+      });
+    }
+
+  this.attachHover(hash,times);
+  
 }
 
 handlers.attachHoverClick("red");
@@ -174,6 +193,18 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  
+  var hippo= []
+  $("." + className).on("click", function(e){
+    alert(alertMessage + " " + e.currentTarget.id);
+    if (hippo.indexOf(e.currentTarget) < 0){
+      hippo.push(e.currentTarget);
+      console.log(hippo);
+      }
+  })
+
+  //this.attachClick(element, this.alertMessage(alertMessage));
+
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

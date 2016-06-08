@@ -136,6 +136,7 @@ the moment you've all been waiting for.
 ## BONUS: Phase 6: Improve it
 
 - Don't render() so much
+- Detect changes automatically like Trello
 - Support multiple boards
 - Promises
 

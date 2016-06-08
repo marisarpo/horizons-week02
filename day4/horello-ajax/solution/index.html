@@ -23,9 +23,7 @@
 
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board();
-//      board.addList("Awesomeness");
-//      board.lists[0].addCard("Hello", "Hello, world");
+      var board = new horello.Board(horello.boardId);
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;
@@ -33,19 +31,7 @@
       // Trello auth
       var authenticationSuccess = function() {
         console.log('Successful authentication');
-//        var myList = '57433c1bb4895dcb69bbf587';
-//        var creationSuccess = function(data) {
-//          console.log('Card created successfully. Data returned:' + JSON.stringify(data));
-//        };
-//        var newCard = {
-//          name: 'New Test Card',
-//          desc: 'This is the description of our new card.',
-//          // Place this card at the top of our list
-//          idList: myList,
-//          pos: 'top'
-//        };
-//        Trello.post('/cards/', newCard, creationSuccess);
-        horello.Board.download('57433c1bb4895dcb69bbf584');
+        board.loadData();
       };
       var authenticationFailure = function() { console.log('Failed authentication'); };
       Trello.authorize({

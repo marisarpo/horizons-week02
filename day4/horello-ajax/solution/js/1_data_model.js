@@ -186,13 +186,26 @@ horello.List.fromJSON = function(data) {
 
 // BOARD
 
-horello.Board = function () {
+horello.Board = function (id) {
+  this.id = id;
   this.lists = [];
 };
 
 horello.Board.prototype = {
   addList: function(listName) {
-    var list = new horello.List(listName);
+    Trello.post("/lists", {
+      name: listName,
+      idBoard: this.id,
+      pos: 'bottom'
+      },
+      function (data) {
+        console.log("Successfully created list with ID " + data.id + " for board " + this.id);
+        this.loadData();
+      }.bind(this),
+      function (err) {
+        console.error("Error creating list for board " + this.id);
+      }.bind(this)
+    );
     this.lists.push(list);
     return list.getId();
   },
@@ -209,21 +222,23 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+  },
+
+  loadData: function() {
+    // Clear the current data first
+    this.lists = [];
+
+    // Load data
+    Trello.get(
+      "/boards/" + this.id + "/lists",
+      function (data) {
+        console.log("Successfully loaded lists for board " + this.id);
+        data.forEach(function (data2) {
+          horello.List.fromJSON(data2);
+        });
+      }.bind(this), function (err) {
+        console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
+      }.bind(this)
+    );
   }
 };
-
-horello.Board.download = function(id) {
-  Trello.get(
-    "/boards/" + id + "/lists",
-    function (data2) {
-      console.log("Successfully loaded lists for board " + id);
-      data2.forEach(function (data3) {
-        horello.List.fromJSON(data3);
-      });
-    },
-    function (err) {
-      console.error("Error loading lists for board " + id + ": " + JSON.stringify(err));
-    }
-  );
-};
-

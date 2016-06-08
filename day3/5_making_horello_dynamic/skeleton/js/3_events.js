@@ -37,7 +37,7 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
-  $(".addListSave").click(function(e) {
+  $("#addListSave").click(function(e) {
     board.addList($("#addListText").val());
     $("#boardAnchor").html(board.render());
    
@@ -48,9 +48,9 @@ horello.mountStatic = function() {
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
-  $(".addListCancel").click(function(e){
+  $("#addListCancel").click(function(e){
     $("#addList").collapse('toggle');
-  })
+  });
 }
 
 // This function is called multiple times, to configure dynamic events.

@@ -61,12 +61,17 @@ horello.Board.prototype.render = function() {
   var boardwrapper = $('<div class="board"></div>');
   
   wrapper.append(boardwrapper);
-  
-  if(this.lists.length === 0) return wrapper.html();
+
+  if(this.lists.length === 0) {
+   
+    return wrapper.html();
+  }
   for (var i = 0; i < this.lists.length; i++) {
     boardwrapper.append(this.lists[i].render());
   }
+
   
+
   return wrapper.html();
 
 }

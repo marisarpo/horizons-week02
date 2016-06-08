@@ -164,17 +164,13 @@ horello.List.prototype = {
         console.log("Successfully loaded cards for list " + this.id);
         this.cards = data2.map(horello.Card.fromJSON);
 
-        // Add this list to the board if it's not already there.
-        // if (!board.getList(this.id))
-        //   board.lists.push(this);
-
         // Re-render.
         horello.mount(board);
       }.bind(this), function (err) {
         console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
       }
     );
-  },
+  }
 };
 
 horello.List.fromJSON = function(data) {

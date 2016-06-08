@@ -6,6 +6,9 @@
 
   <script src="../../../lib/underscore.js"></script>
   <script src="../../../lib/jquery.js"></script>
+
+  <!-- Add Trello client JS here -->
+  <!-- DON'T FORGET TO SET YOUR KEY -->
   <script src="https://api.trello.com/1/client.js?key=a244740366ca1cb10449bc41f434a2d5"></script>
 
   <!-- Bootstrap stuff -->
@@ -15,36 +18,16 @@
   <!-- Our files -->
   <link rel="stylesheet" href="../css/style.css">
   <script src="js/1_data_model.js"></script>
-  <script src="js/2_render.js"></script>
-  <script src="js/3_events.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/2_authentication.js"></script>
   <script>
-    // Pre-populate the board with some data. Note that tests depend upon
-    // this data as-is.
-
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board(horello.boardId);
+      var board = new horello.Board('57433c1bb4895dcb69bbf584');
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;
-
-      // Trello auth
-      var authenticationSuccess = function() {
-        console.log('Successful authentication');
-        board.loadData();
-      };
-      var authenticationFailure = function() { console.log('Failed authentication'); };
-      Trello.authorize({
-        type: 'popup',
-        name: 'Horello',
-        scope: {
-          read: true,
-          write: true
-        },
-        expiration: 'never',
-        success: authenticationSuccess,
-        error: authenticationFailure
-      });
+      horello.authenticate();
     });
   </script>
 </head>

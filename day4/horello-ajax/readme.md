@@ -5,32 +5,39 @@ big, scary world to meet other people and find yourself and figure out
 where you fit in? Hopefully you didn't get punched in the face or fall
 off a cliff or something. (I did ¯\\_(ツ)_/¯)
 
-Today is a big day. You're a grown up, but your app isn't. Up to now,
-your app has been sitting pretty on a comfy sofa in the living room,
-drinking Coke and watching football. Pretty much. But Today your app is
-about to walk out the front door.
+Today is a big day. You're a grown up (more or less), but your app
+isn't. Up to now, your app has been sitting pretty on a comfy sofa in
+the living room, drinking Coke and watching football. Pretty much. But
+Today your app is about to walk out the front door.
 
 After this morning's lesson, you now have the tools--namely, JSON, AJAX,
 and APIs--that you need to connect your app to the big bad world. Today,
 your app is going to do something _persistent._ It's going to touch data
 in the real world. Exciting, right? (And you're going to have to find a
-way to deal with empty nest syndrome.)
+way to deal with the empty nest when it's gone. Time to make another
+one?)
 
-## Phase 1. Add JSON support to data model
+## Phase 1. Serialization
 
-- We are no longer responsible for generating IDs!
-- from, toJSON methods
-- static methods (fromJSON)
+Recall from class that JSON is a standard data format that's used to
+exchange information via APIs. We have a data model for Horello's board,
+lists, and cards, but we need a way to _read JSON data_ from the Trello
+API and turn that into the objects that we're used to working with.
+
+Open up `1_data_model.js` (this file should look familiar!) and fill in
+the `.fromJSON()` methods of the Card and List classes to accomplish
+this.
+
+Note that these two methods are _static methods_. A static method is not
+called on any particular _instance_ of the class, so it does not receive
+a `this` variable. All of its inputs must be explicitly passed in as
+variables. In this case, we are _creating a new object_ from JSON data.
+It's the job of the static method to create and return the corresponding
+object. You can read more about [static
+methods](https://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods)
+on Wikipedia.
 
 ## Phase 2: Authentication
-
-### Note: Web server
-
-This may not work in Chrome without a web server. Use Safari, or a web
-server.
-
-- OS X/Linux: `python -m SimpleHTTPServer 8000`
-- Windows:
 
 The "real world" that we're going to be venturing into today is the
 cloud, i.e., someone else's data server out there somewhere in the
@@ -72,23 +79,40 @@ https://developers.trello.com/get-started/start-building and add this in
 the `head` of `index.html`. Make sure to copy your API key, again, as
 part of the `<script>` tag that loads the Trello JS client code.
 
-Finally, we need to use the Trello client to authenticate the user. Add
-this JS code:
+Finally, we need to use the Trello client to authenticate the user. Open
+up `2_authentication.js` and add the relevant authentication code from
+https://developers.trello.com/get-started/start-building. This code is
+called once when the page loads. After adding the authentication code,
+try reloading the page in the browser. If all goes well, you should see
+a popup asking the user to grant access to their Trello account to the
+application. You'll only see the authentication prompt the first time.
+Once you grant the application permission, the authentication process
+will be transparent in the future.
 
-    Trello.authorize({
-      type: 'popup',
-      name: 'Horello',
-      scope: {
-        read: true,
-        write: true
-      },
-      expiration: 'never',
-      success: authenticationSuccess,
-      error: authenticationFailure
-    });
+***NOTE 1:*** The authentication popup window may be blocked by a popup
+blocker in your web browser. If this happens, make sure you enable
+popups for this site.
 
-Reload, try to auth. Make sure to allow popups in browser. Note that
-this will only appear the first time.
+***NOTE 2:*** If, after clicking approve in the popup, you see a blank
+screen, and the following error in Chrome:
+
+    Failed to execute 'postMessage' on 'DOMWindow': The target origin
+    provided ('file://') does not match the recipient window's origin
+    ('null').
+
+You have two choices. The first is to switch to Safari, which should
+work. Safari has better support for something called CORS, which causes
+this error. The other choice is to launch a lightweight web server on
+your laptop and access the files that way instead. If you have Python
+installed (it should be installed on Linux and OS X by default), you
+should be able to do the following:
+
+    > cd week02/
+    > python -m SimpleHTTPServer 8000
+
+Then navigate to http://localhost:8000/day4/horello-ajax/skeleton/ in
+Chrome.
+
 
 ## Phase 3: Test the API
 
@@ -114,6 +138,8 @@ See JSON data for a card in the browser e.g. https://trello.com/1/cards/57433c1c
 Curl command to test full API. Another option is Postman REST client.
 
 ## Phase 4: Download the board
+
+IDs
 
 Add download methods
 

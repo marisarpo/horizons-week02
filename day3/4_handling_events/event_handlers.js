@@ -9,13 +9,13 @@ window.handlers = {};
 // attach an event handler (specified by a function fn) to fire when
 // the click event is called on the element.
 
-handlers.attachClick = function(e, fn) {
-  e.addEventListener('click', fn);
+handlers.attachClick = function(element, fn) {
+  element.addEventListener('click', fn);
 };
 
 // Here's the same thing, with jQuery instead:
-handlers.attachClick = function(e, fn) {
-  $(e).on("click", fn);
+handlers.attachClick = function(element, fn) {
+  $(element).on("click", fn);
 }
 
 // ----------------------------------------------------------------------------
@@ -32,8 +32,8 @@ handlers.attachClick = function(e, fn) {
 // Hint: you can pass in an existing element object to the $() selector
 // to select it.
 
-handlers.attachHover = function(e, fn) {
-  $(e).on("mouseover", fn)
+handlers.attachHover = function(element, fn) {
+  $(element).on("mouseover", fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -41,8 +41,8 @@ handlers.attachHover = function(e, fn) {
 // Exercise 1B. Same thing as 1A - except this time, assign the passed-in
 // handler 'fn' to the "mouseleave" event instead.
 
-handlers.attachUnhover = function(e, fn) {
-  $(e).on("mouseleave", fn)
+handlers.attachUnhover = function(element, fn) {
+  $(element).on("mouseleave", fn)
 };
 
 // ----------------------------------------------------------------------------
@@ -69,10 +69,12 @@ handlers.attachUnhover = function(e, fn) {
 // Another Hint (!): Listen for the keypress event on the 'document' object
 // rather than a specific element 'e' like before.
 
-handlers.attachKeypress = function(key, fn, event) {
-  if (event.keyCode === key) {
-    $(document).on("keypress", fn)
-  }
+handlers.attachKeypress = function(key, fn) {
+    $(document).on("keypress", function(event) {
+      if (event.keyCode === key) {
+        fn();
+      }
+    })
 };
 
 // ----------------------------------------------------------------------------
@@ -85,19 +87,9 @@ handlers.attachKeypress = function(key, fn, event) {
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
-  handlers.attachClick(id, function(){
-  $(id).on("click", function(){
-    if (id === "red") {
-      userActions["red"]++
-    }
-    if (id === "blue") {
-      userActions["blue"]++
-    }
-    if (id === "nope") {
-      userActions["nope"]++
-    }
+  handlers.attachClick($("#" + id), function(event){
+      handlers.userActions[event.currentTarget.id]++;
   });
-});
 };
 
 
@@ -152,10 +144,20 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  var timeout = attachHover(function(){
 
-  }, 2000)
+  handlers.attachHover("#" + id, function() {
+
+    handlers.hoverTimeoutNums[event.currentTarget.id] = setTimeout(function() {
+      $("#" + id).trigger("click");
+
+    }, 2000);
+  });
+
+  handlers.attachUnhover(id, function() {
+    clearTimeout(event.currentTarget.id)
+  });
 }
+  
 
 handlers.attachHoverClick("red");
 handlers.attachHoverClick("blue");
@@ -181,7 +183,13 @@ handlers.attachHoverClick("nope");
 //          <button class="btn" id="2">Button 3</button> ]
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
-  // YOUR CODE HERE
+    var array = $("." + className);
+
+    handlers.attachClick(array, function() {
+      alert(alertMessage)
+  })
+
+    return array.toArray();
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

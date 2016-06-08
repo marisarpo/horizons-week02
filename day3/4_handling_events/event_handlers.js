@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -69,8 +71,11 @@ handlers.attachUnhover = function(e, fn) {
 // Another Hint (!): Listen for the keypress event on the 'document' object
 // rather than a specific element 'e' like before.
 
-handlers.attachKeypress = function(key, fn) {
+handlers.attachKeypress = function(key, fn, event) {
   // YOUR CODE HERE
+  if (event.keycode === key) {
+    fn();
+  }
 };
 
 // ----------------------------------------------------------------------------
@@ -84,6 +89,15 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  
+    $(id).on('click', function(e) {
+      handlers.attachClick(e, function(){
+         handlers.userActions.id++;
+        console.log(handlers.userActions);
+      })
+    });
+   
+  
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button

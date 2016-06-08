@@ -19,9 +19,11 @@
 
 - [Event Listeners]: Create, set, remove, delegate, and bubble events (guided).
 - [Horello App Part 2]: Make your Horello app dynamic, responding to events and updating data models!
+- [Bonus JQuery]: JQuery funsies 
 
 [Event Listeners]: ./day3/4_handling_events
 [Horello App Part 2]: ./day3/5_making_horello_dynamic
+[Bonus JQuery]: ./day3/6_bonus_jquery
 
 
 ## Day 4

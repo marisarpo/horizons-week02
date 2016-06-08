@@ -91,25 +91,11 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
-  // handlers.attachClick($("#"+id),function() {
-  //   handlers.userActions[id]++;
-  //   console.log(handlers.attachUserActionRecord);
-  // })
 
-  // handlers.attachClick($(".btn.btn-danger"),function(){
-  //   if(id==="red"){
-  //     handlers.userActions.red++;
-  //     console.log('red')
-  //   }
-  //   if(id==="blue"){
-  //     handlers.userActions.blue++;
-  //     console.log('blue')
-  //   }
-  //   if(id==="nope"){
-  //     handlers.userActions.nope++;
-  //     console.log('nope')
-  //   }
-  // })
+  handlers.attachClick($("#"+id),function(){
+    handlers.userActions[id]++
+      console.log(handlers.userActions)
+    });
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -163,15 +149,14 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  // YOUR CODE HERE
-// $(".btn").on("mouseover",function(){
-//   var timeout= setTimeout(function(){
-//     $(element).trigger("click");
-//     if(id==="red" || id==="blue" || id==="nope"){
-//     handlers.hoverTimeoutNums[id]=timeout;
-//     }
-//   },2000);
-// })
+  handlers.attachHover($("#"+id),function(){
+  handlers.hoverTimeoutNums[id]=setTimeout(function(){
+    $("#"+id).trigger("click");
+  },2000);
+});
+  handlers.attachUnhover($("#"+id),function(){
+    clearTimeout(handlers.hoverTimeoutNums[id])
+  });
 }
   
 handlers.attachHoverClick("red");
@@ -199,8 +184,14 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
-  // handlers.attachAlertsToClass($(".btn")function(){
-  //   alert('works')
+  // handlers.attachClick($(".btn").toArray(),function(){
+    $("."+className).toArray().forEach(function(item){
+      $(item).on("click",function(x){
+        alert(alertMessage);
+        console.log(alertMessage);
+        x.stopPropagation();
+      });
+    });
   // })
 };
 
@@ -223,7 +214,7 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // $(e.currentTarget).css("backgroundColor", "");
 
 // This will highlight the element you're on in green, display the alert,
-// and remove the background.
+// and remove the background.;
 
 // Note: $(selector).attr(XX) is a way of getting the value of a certain
 // HTML element's attribute - for example, you may get the class name of an
@@ -240,12 +231,28 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // attachAlertsWithParents() with .parent() after attaching the
 // click handler.
 
+//////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////
+///////REVISIT LATER FOR EXPLANATION///////////////////////////////////////////////
+
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
-};
+  while($(elements).get(0)==document){
+  elements.on("click",function(e){
+  $(e.currentTarget).css("backgroundColor", "green");
+  alert("You've reached " + $(e.currentTarget).attr("description"));
+  $(e.currentTarget).css("backgroundColor", "");
+  return;
+  });
+  }
+  elements=elements.parent();
+  return;
+  }
 
 handlers.attachAlertsWithParents($(".innerbutton"));
-
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 // ----------------------------------------------------------------------------
 
 // Did you notice how the order of the click events "bubbled" outward from

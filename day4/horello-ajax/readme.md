@@ -121,21 +121,112 @@ Before we try to hook up our frontend to the Trello backend, let's test
 the API to make sure a.) that it's working and b.) that we know what the
 heck is going on.
 
+Begin by taking a look at the full [Trello API
+reference](https://developers.trello.com/advanced-reference). The panel
+on the left lists the _resources_ that are available via this
+API--things like _board_, _card_, and _list_. (These should look very
+familiar by now, but in an API, they're called _resources_ rather than
+_classes_.) If you click on one of these resources, you'll see a full
+list of the actions that you can take on each of them.
 
-Sandbox
-https://developers.trello.com/sandbox
-- Get Boards
-- Get Lists
-- Create Card
+For instance, [GET
+/boards/BOARD_ID](https://developers.trello.com/advanced-reference/board#get-1-boards-board-id)
+is how we download the metadata for one board from the API. Similarly,
+[POST
+/cards](https://developers.trello.com/advanced-reference/card#post-1-cards)
+is how we create a new card. Recall from class that the four HTTP
+actions--POST, GET, PUT, DELETE--correspond to the four CRUD
+actions--create, read, update, delete. POST creates a new object (and
+usually returns its ID), PUT updates an existing object, GET fetches an
+existing object, and DELETE, well... you get one guess.
 
-Get boards, get board ID, get lists for that board, get list ID, create
-card on that list, then see it appear on the Trello screen.
+We're going to be using a few of these API calls in this project so
+spend some time getting familiar with them. There are a number of tools
+that we can use to test the API. We'll see several of them here.
 
-API docs.
+### Sandbox
 
-See JSON data for a card in the browser e.g. https://trello.com/1/cards/57433c1cb4895dcb69bbf59f
+Trello gives us a cool sandbox tool that we can use on its developer
+site to play around with the API and begin viewing data. Navigate to
+https://developers.trello.com/sandbox to check it out. You'll need to
+enter your API key here as well. Enter it, then tap Authenticate on the
+next screen to kick off the authentication process.
 
-Curl command to test full API. Another option is Postman REST client.
+Once you're in the sandbox, play around with the different examples to
+see what shows up in the Result box on the right. This is the JSON data
+that your app will be receiving from the Trello API. Cool, right?
+
+The most important thing we need is a board ID that we can plug into
+Horello. If you tap on Get Boards on the left, then tap Execute, you
+should see a list of boards appear on the right. There's a bunch of data
+here, but look for the board called "Welcome Board", and copy the value
+from its "id" property. Paste this into `index.html` where indicated.
+
+### Raw JSON
+
+Another trick we can use is to view the raw JSON data for an object in
+our web browser. This is possible because the entire Trello API is
+available via HTTP, i.e., the protocol that's being used under the hood
+to exchange data between the Trello JS client and the backend is
+actually HTTP, which is the same protocol that's used for web pages. The
+URL you need to view the data for a board in Trello is:
+
+    https://trello.com/1/boards/<BOARD_ID>
+
+Copy and paste this URL into your web browser, then replace `<BOARD_ID>`
+with the ID you copied above. Hit enter, and you should see some JSON
+data which looks something like this:
+
+![JSON board data](./img/board_data.png)
+
+You can do this for cards and lists, too. Give it a shot!
+
+### Curl
+
+Another tool which is incredibly useful for exploring and
+troubleshooting APIs is [curl](https://curl.haxx.se/). Curl allows us to
+read data from and write it to an API from the commandline. If you're on
+an OS X or Linux laptop, this tool should already be installed; if
+you're on Windows you may need to download it.
+
+Try reading the same board data using curl. The command should look like
+this (fill in your Trello key and token):
+
+    > curl 'https://api.trello.com/1/boards/<BOARD_ID>?key=<TRELLO_KEY>&token=<TRELLO_TOKEN>'
+
+And you should see a response that looks like this:
+
+    {"id":"57433c1bb4895dc978797a84","name":"Welcome Board","desc":"","lists":[{"id":"57587951145a0bf234aac7da","name":"My Cool List"},{"id":"57433c1bb4895dcb69bbf586","name":"Intermediate"},{"id":"57433c1bb4895dcb69bbf587","name":"Advanced2"},{"id":"5758795e14a8ca28660bf656","name":"Another one"},{"id":"575879ad714eb0300b3f679d","name":"One more"}]}
+
+Curl is actually more powerful than the previous two tools, since it
+allows you to _write_ to the API as well as reading. You can call curl
+with the `--data` argument to send data. Full details on using curl are
+beyond the scope of this project, but you can see lots of examples using
+another API here: https://gist.github.com/caspyin/2288960.
+
+Try using curl to create a new list on the board you just fetched,
+and/or a new card on a list. Then reload the official Trello website to
+see your changes appear! (Actually, these changes should appear in
+realtime if you have the board open--no reloading necessary.)
+
+Or if you prefer an app to a commandline
+tool, read on...
+
+### REST client
+
+The most powerful tool we can use to play around with an API manually is
+something called a REST client. A REST client is basically a graphical
+user interface (GUI) on top of curl. Our favorite free REST client,
+which is available both as a standalone app and as a Chrome plugin, is
+[Postman](https://www.getpostman.com/).
+
+If you prefer using an app over a commandline tool, try installing
+Postman and using it to get the list of boards. Then try using it to
+create a new list on the board, and/or a new card on a list. Then reload
+the official Trello website to see your changes appear! (Actually, these
+changes should appear in realtime if you have the board open--no
+reloading necessary.)
+
 
 ## Phase 4: Download the board
 

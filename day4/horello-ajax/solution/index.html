@@ -23,11 +23,12 @@
 
     // jQuery document ready shorthand.
     $(function () {
-//      var board = new horello.Board();
+      var board = new horello.Board();
 //      board.addList("Awesomeness");
 //      board.lists[0].addCard("Hello", "Hello, world");
-//      horello.mount(board);
-//      horello.mountStatic(board);
+      horello.mount(board);
+      horello.mountStatic(board);
+      window.board = board;
 
       // Trello auth
       var authenticationSuccess = function() {

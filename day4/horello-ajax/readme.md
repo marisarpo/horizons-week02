@@ -133,3 +133,9 @@ that it's working, and to make sure that we understand how it works. The
 last and most important step is to connect our frontend to it! This is
 the moment you've all been waiting for.
 
+## BONUS: Phase 6: Improve it
+
+- Don't render() so much
+- Support multiple boards
+- Promises
+

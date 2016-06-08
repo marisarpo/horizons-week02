@@ -19,7 +19,36 @@
        href="#"><span class="header-logo-default"></span></a>
 </header>
 
+
+<!-- Button trigger modal -->
+
 <!-- PHASE 5. Modal -->
+<div class="modal fade" id='myModal' tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="form-group">
+            <label for="exampleInputEmail1"></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="#DominateAllTheHouses">
+        </div>
+      </div>
+      <div class="modal-body">
+        Description
+         <div class="form-group">
+            <label for="exampleInputEmail1"></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Card body goes here">
+
+            
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <div class="board">
     <div class="list-container">
@@ -27,24 +56,60 @@
             <div class="list-header">
                 <span class="list-title">House List</span>
             </div>
-            <div class="list-cards">
+            <div class="list-cards" data-toggle="modal" data-target="#myModal">
                 <div class="card">
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
                     </div>
+                    <button type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                </button>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
-
+                <button class = "add-card" ="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Add a Card
+                </button>
+                <div class="collapse" id="collapseExample">
+                  <div class="well">
+                 
                 <!-- PHASE 4. Collapse -->
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1"></label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Card Title">
+                  </div>
+                  <button type="submit" class="btn btn-default">Save</button>
+                  <button type="submit" class="btn btn-default">X</button>
+                 </form>
+                  </div>
+                </div>
+                    
+                </button>
+
             </div>
         </div>
     </div>
 
     <!-- PHASE 1. Add list button -->
-
-
+     <button class = "add-list" ="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapselist" aria-expanded="false" aria-controls="collapseExample">
+                    Add a List...
+                </button>
+                <div class="add-form" id="collapselist">
+                    <div class="well">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1"></label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="List name">
+                  </div>
+                  <button type="submit" class="btn btn-default">Save</button>
+                  <button type="submit" class="btn btn-default">X</button>
+                 </form>
+                  </div>
+                </div>
+                    
+                </button>
 </div>
 
 </body>

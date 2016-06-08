@@ -126,11 +126,18 @@ If you've done everything right, you should see that your image is now noticeabl
 
 If you'd like, you can learn more about them [here](https://css-tricks.com/almanac/selectors/a/after-and-before/) and [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements).
 
-Finally, the last thing we're gonna be doing is adding the text. We're gonna make this text huge, probably Helvetica, and size of 
+Finally, the last thing we're gonna be doing is adding the text. We want to put the current time in this format below:
 
-- using Date.now() and setInterval to update the text
+<img src="text-example.png"/>
 
-By the end of this phase, you'll have an application that gets a random pretty picture every day and also tells you the time and date.
+Make the text:
++ white
++ Helvetica
++ huge (192px)
+
+Use`Date` objects and `setInterval` to update the text. Remember how to get the current hour and minute? Use those to methods, along with string concatenation (addition -> hours + ":" + minutes) to produce the time text. Additionally, use `setInterval` to automatically update the time every 30 seconds. Do your work in `js/momentum.js`.
+
+By the end of this phase, you'll have an application that gets a random pretty picture every day and also tells you the time of the day. 
 
 ## Phase 3 - Is It Going to Rain?
 

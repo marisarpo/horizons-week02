@@ -1,0 +1,62 @@
+
+
+body {
+	background-color: #e2e4e6;
+	padding: 0px;
+	margin: 0px;
+}
+
+#searchbar {
+	border-radius: 30px;
+	width: 240px;
+	height: 30px;
+}
+
+#logo {
+	width: 70px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.board {
+    overflow-x: auto;
+    overflow-y: hidden;
+/*    height: calc(100% - 40px);*/
+	height: 600px;
+    padding-bottom: 1em;
+    /** PHASE 2 CSS here */
+}
+
+.photo-container {
+	height: 100%;	
+	padding: 0px 20px 10px 20px;
+	padding: 10px;
+/*    display: flex;
+    flex-wrap: wrap;
+    display: flex;*/
+}
+
+.photo img {
+	width: 170px;
+}
+
+
+.photoback {
+    box-sizing: border-box;
+	max-height: 100%;
+	padding: .5em;
+    margin: 30px;
+    border-radius: 3px;
+    width: 185px;
+    background-color: white;
+/*    display: flex;
+    flex-direction: column;*/
+    /** PHASE 2 CSS here 
+} */
+
+/*.photo {
+    background: white;
+    margin: 0 0 .5em 0;
+    border-radius: 3px;*/
+    /** PHASE 3 CSS here 
+}*/

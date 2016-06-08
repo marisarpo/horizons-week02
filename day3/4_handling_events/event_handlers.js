@@ -9,9 +9,9 @@ window.handlers = {};
 // attach an event handler (specified by a function fn) to fire when
 // the click event is called on the element.
 
-handlers.attachClick = function(e, fn) {
-  e.addEventListener('click', fn);
-};
+// handlers.attachClick = function(e, fn) {
+//   e.addEventListener('click', fn);
+// };
 
 // Here's the same thing, with jQuery instead:
 handlers.attachClick = function(e, fn) {
@@ -149,6 +149,17 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+  var timeout = 0;
+  handlers.attachHover("#"+id, function(){
+    timeout = setTimeout(function() {
+      handlers.hoverTimeoutNums[id] = timeout;
+      $("#"+id).trigger("click");
+    }, 2000);
+  });
+
+  handlers.attachUnhover('#'+id, function(){
+    clearTimeout(timeout);
+  });
 }
 
 handlers.attachHoverClick("red");
@@ -176,6 +187,13 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+
+  var arr = [];
+  handlers.attachClick('.'+className, function(elem){
+    arr.push[elem];
+    alert(alertMessage);
+  });
+  return arr;
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");

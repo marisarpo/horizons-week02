@@ -18,7 +18,9 @@ flexbox:
 
 ![flex]
 
-Skeleton: 
+Skeleton:
 http://codepen.io/lockehart/pen/EyVyRM
 
 [flex]: ./flex.png
+//if a box is horizontal, flex-direction=column; vice versa;
+//if want to equally divide a space (parent), give a flex number 1 to either child; flex number is always relative to the space in parent space

@@ -1,0 +1,11 @@
+.navbar .brand {
+    font-family: 'Pacifico', cursive;
+    color: #ff0000;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+#bs-example-navbar-collapse-1 {
+font-family: sans-serif;
+color: grey;
+}

@@ -3,7 +3,8 @@
 Remember the first time you left home? Like, ventured out into the real,
 big, scary world to meet other people and find yourself and figure out
 where you fit in? Hopefully you didn't get punched in the face or fall
-off a cliff or something. (I did ¯\\_(ツ)_/¯)
+off a cliff or something.
+(I did ¯\\_(ツ)_/¯)
 
 Today is a big day. You're a grown up (more or less), but your app
 isn't. Up to now, your app has been sitting pretty on a comfy sofa in
@@ -56,14 +57,12 @@ Started" (that beautiful button that you spent so long styling on
 Monday...).
 
 Once you've logged into your Trello account:
+
 1. Navigate to the [Trello
    Developers page](https://developers.trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of
    the page.
-1. Copy the key and paste it into `config.js`.
-1. Generate a token manually by clicking on the `Token` link on that page.
-1. Click "Allow" on the authentication screen.
-1. Copy the token string into `config.js` as well.
+1. Grab the key--you're going to need it in a moment.
 
 That was pretty easy, right? These two numbers--the key and the
 token--are how our application (Horello) authenticates to the Trello

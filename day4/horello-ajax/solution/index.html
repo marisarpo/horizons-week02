@@ -8,8 +8,8 @@
   <script src="../../../lib/jquery.js"></script>
 
   <!-- Add Trello client JS here -->
-  <!-- DON'T FORGET TO SET YOUR KEY -->
-  <script src="https://api.trello.com/1/client.js?key=a244740366ca1cb10449bc41f434a2d5"></script>
+  <!-- DON'T FORGET TO SET YOUR TRELLO KEY -->
+  <script src="https://api.trello.com/1/client.js?key=YOUR TRELLO KEY HERE"></script>
 
   <!-- Bootstrap stuff -->
   <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
@@ -23,7 +23,8 @@
   <script>
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board('57433c1bb4895dcb69bbf584');
+      <!-- DON'T FORGET TO SET YOUR BOARD ID HERE -->
+      var board = new horello.Board('YOUR BOARD ID HERE');
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;

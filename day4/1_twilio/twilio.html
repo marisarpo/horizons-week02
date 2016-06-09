@@ -47,7 +47,6 @@
 	<script type="text/javascript" src="twilio.js"></script>
 	<script type="text/javascript">
 		function injectJasmine(targetId) {
-			console.log($(".jasmine_html-reporter"));
 			$("#" + targetId).append($(".jasmine_html-reporter"));
 		}
 		setTimeout(function() { injectJasmine("jasmine-reporter")}, 50);

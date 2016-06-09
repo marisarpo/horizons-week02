@@ -131,11 +131,13 @@ Once you're in the sandbox, play around with the different examples to
 see what shows up in the Result box on the right. This is the JSON data
 that your app will be receiving from the Trello API. Cool, right?
 
-The most important thing we need is a board ID that we can plug into
-Horello. If you tap on Get Boards on the left, then tap Execute, you
-should see a list of boards appear on the right. There's a bunch of data
-here, but look for the board called "Welcome Board", and copy the value
-from its "id" property. Paste this into `index.html` where indicated.
+The most important thing we need is a board ID that we can use in
+Horello. We need to hardcode this board ID somewhere since our app is
+(so far) only designed to work with a single board. If you tap on Get
+Boards on the left, then tap Execute, you should see a list of boards
+appear on the right. There's a bunch of data here, but look for the
+board called "Welcome Board", and copy the value from its "id" property.
+You'll need to use this in the next phase.
 
 ### Raw JSON
 
@@ -226,16 +228,14 @@ Close. Actually, we still need to wire up our app to the API so that we
 can read data from the cloud, and write our changes back to the cloud.
 This is the most important part of this project, so let's get started.
 
-Step one is to download all of the data for the board we're attaching to
-when our app loads. Double-check that you've hardcoded the board ID in
-`index.html` in the `<script>` section at the top.
-
 We love you--you should know that by now--but you're on your own for
 this part. It's your time to fly, butterfly. Here are some hints to get
 you on your way:
 
 - Where, and how, do we want to download the board data from the API so
-  that we can display it to the user when they open our app?
+  that we can display it to the user when they open our app? Where do we
+  store the board ID that we grabbed in the previous phase, and how do
+  we retrieve this board data when the app loads?
 - Think carefully about where IDs come from. Plugging into an API
   changes this a bit.
 - The Trello JS client makes things relatively straightforward for us.

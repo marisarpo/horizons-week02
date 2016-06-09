@@ -15,7 +15,7 @@ window.twilio = {};
 
 twilio.accountId = "AC720f29ac5532f737761085e3c755513f";
 twilio.authToken = "773be995cac24f7e0c3449b17257725d";
-twilio.fromNumber = "3126251678";
+twilio.fromNumber = "13126251678";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -89,8 +89,10 @@ twilio.TwilioShoutout.prototype = {
 	// hint. remember to take care of both upper and lower case letters!
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
+    var testStr = $.trim(phoneStr);
+    var numbers = '0123456789';
     for (var i = 0; i < phoneStr.length; i++) {
-      if (typeof(phoneStr.charAt(i)) != "number") {
+      if (numbers.indexOf(testStr.charAt(i)) < 0) {
         return false;
       }
     }
@@ -108,12 +110,10 @@ twilio.TwilioShoutout.prototype = {
     // only send if both fields are valid
     var numberStr = this.phoneInputField.val();
     var messageStr = this.messageInputField.val();
-    if (validatePhoneField(numberStr) && validateMessageField(messageStr)) {
-      console.log('hit');
-      sendMessage(numberStr, messageStr);
-      clearField(this.messageInputField);
+    if (this.validatePhoneField(numberStr) && this.validateMessageField(messageStr)) {
+      this.sendMessage(numberStr, messageStr);
+      this.clearField(this.messageInputField);
     } else {
-      console.log('hit');
       throw "Invalid fields";
     }
   },
@@ -127,14 +127,12 @@ twilio.TwilioShoutout.prototype = {
     var acctId = this.accountId;
     var authTok = this.authToken;
     var messageList = this.messageList;
-    console.log('sending');
 
 		// Exercise 6.A `callback`
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
 			var messageObj = new Message(toNumber, messageBody);
-      this.messageList.append(messageObj.render());
-      console.log('hit');
+      $(".message-list").append(messageObj.render());
     };
 
 		// `Call` the Twilio API service with our data

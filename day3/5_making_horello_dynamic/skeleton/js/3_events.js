@@ -120,14 +120,11 @@ horello.mount = function (board) {
       var newTitle = $('#modalText').val();
       var newDesc = $('#modalBody').val();
       card.setTitle(newTitle);
-      card.getDescription(newDesc);
+      card.setDescription(newDesc);
       $('#cardEdit').collapse('toggle');
       horello.mount(board);
     })
-     $('#modal-close1').click(function(evt){
-      $('#cardEdit').collapse('toggle');
-     })
-     $('#modal-close2').click(function(evt) {
+     $('.close-modal').click(function(evt){
       $('#cardEdit').collapse('toggle');
      })
   })

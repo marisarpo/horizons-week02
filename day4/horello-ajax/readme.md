@@ -1,9 +1,20 @@
 # Horello continued: APIs and AJAX
 
+## Contents
+
+- Phase 1: [Authentication](#phase-1-authentication)
+- Phase 2. [Getting familiar with the API](#phase-2-getting-familiar-with-the-api)
+- Phase 3. [Serialization/deserialization](#phase-3-serialization-deserialization)
+- Phase 4. [Reading from the API](#phase-4-reading-from-the-api
+- Phase 5. [Writing to the API](#phase-5-writing-to-the-api)
+- Phase 6. [(BONUS) Improvements](#phase-6-bonus-improvements)
+
+## Introduction
+
 Remember the first time you left home? Like, ventured out into the real,
 big, scary world to meet other people and find yourself and figure out
 where you fit in? Hopefully you didn't get punched in the face or fall
-off a cliff or something awful like that.  (I did ¯\\_(ツ)_/¯)
+off a cliff. (I did `¯\_(ツ)_/¯`)
 
 Today is a big day. You're a grown up (more or less), but your app
 isn't. Up to now, your app has been sitting pretty on a comfy sofa in
@@ -48,8 +59,8 @@ Once you've logged into your Trello account:
 1. Find the `<script>` tag to add the `client.js` library and paste this
    into the `head` section of `index.html`. You'll add the key and token
    to this in a moment. (You can leave out jQuery since we've already
-   loaded this. You should also make sure that jQuery is loaded BEFORE the `client.js` file
-   since the latter is dependent on the former).
+   loaded this. You should also make sure that jQuery is loaded BEFORE
+   the `client.js` file since the latter is dependent on the former.)
 1. Click the `Get your Application Key` button in the first section of
    the page.
 1. Copy the key and add it in the `<script>` tag per the instructions.
@@ -70,7 +81,7 @@ access to, and it's how Trello knows whose pretty face to attach to our
 comments.
 
 
-## Phase 2: Test the API
+## Phase 2: Getting familiar with the API
 
 With authentication in place, we can begin having some fun with data.
 Before we try to hook up our frontend to the Trello backend, let's test
@@ -139,42 +150,50 @@ data which looks something like this:
 
 You can do this for cards and lists, too. Give it a shot!
 
-### Curl
+### jQuery AJAX
 
-Another tool which is incredibly useful for exploring and
-troubleshooting APIs is [curl](https://curl.haxx.se/). Curl allows us to
-read data from and write it to an API from the commandline. If you're on
-an OS X or Linux laptop, this tool should already be installed; if
-you're on Windows you may need to download it.
+jQuery comes with a powerful function called
+[`.ajax()`](http://api.jquery.com/jquery.ajax/) that we can use in the
+browser console to test the API. ([This
+doc](http://www.w3schools.com/jquery/ajax_ajax.asp) is also very
+helpful.) Let's try reading a board using the ajax function. It takes a
+URL and an object with a list of settings. The simplest GET command
+would look like this:
 
-Try reading the same board data using curl. The command should look like
-this (fill in your Trello key and token):
+    $.ajax('https://api.trello.com/1/member/me/boards')
 
-    > curl 'https://api.trello.com/1/boards/<BOARD_ID>?key=<TRELLO_KEY>&token=<TRELLO_TOKEN>'
+This will perform a GET on the specified resource (`/member/me/boards`).
+Try running this command in the console and see what happens. You should
+see a 400 error appear. This error is appearing since we haven't
+authenticated! Let's try the same request again, this time including the
+key and token we got above. We include them by adding them to the URL as
+a query string, which begins with '?' and has the format
+`key1=val1&key2=val2`. In this case it should look like (replace
+`[APP_KEY]` with your Trello app key and `[TOKEN]` with your token):
 
-And you should see a response that looks like this:
+    $.ajax('https://api.trello.com/1/member/me/boards?key=[APP_KEY]&token=[TOKEN]')
 
-    {"id":"57433c1bb4895dc978797a84","name":"Welcome Board","desc":"",
-    "lists":[{"id":"57587951145a0bf234aac7da","name":"My Cool List"},
-    {"id":"57433c1bb4895dcb69bbf586","name":"Intermediate"},{"id":
-    "57433c1bb4895dcb69bbf587","name":"Advanced2"},{"id":"
-    5758795e14a8ca28660bf656","name":"Another one"},{"id":"
-    575879ad714eb0300b3f679d","name":"One more"}]}
+This time, you should see something like the following in the console:
 
-Curl is actually more powerful than the previous two tools, since it
-allows you to _write_ to the API as well as reading. You can call curl
-with the `--data` argument to send data. Full details on using curl are
-beyond the scope of this project, but you can see lots of examples using
-another API here: https://gist.github.com/caspyin/2288960.
+    > Object {readyState: 1}
 
-Try using curl to create a new list on the board you just fetched,
-and/or a new card on a list. Then reload the official Trello website to
-see your changes appear! (Actually, these changes should appear in
-realtime if you have the board open--no reloading necessary.)
+It worked! The final step is to pass a success callback into the ajax
+function so that we can view the returned data. Call `$.ajax` one more
+time like this:
 
-Or if you prefer an app to a commandline tool, read on...
+    $.ajax('https://api.trello.com/1/member/me/boards?key=[APP_KEY]&token=[TOKEN]',
+    {success: function(data) { console.log(data[0]) }})
 
-### REST client
+This time you should see something which looks like this:
+
+    > Object {name: "Welcome Board", desc: "", descData: null, closed:
+    false, idOrganization: null…}
+
+This API call returns a _list_ of boards, so we can peek at `data[0]` to
+see the first board. This data should look just like what you saw above
+inside the Trello sandbox and the JSON data you saw in the browser.
+
+### REST client (optional)
 
 The most powerful tool we can use to play around with an API manually is
 something called a REST client. A REST client is basically a graphical
@@ -224,6 +243,7 @@ It's the job of the static method to create and return the corresponding
 object. You can read more about [static
 methods](https://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods)
 on Wikipedia.
+
 
 ## Phase 4: Reading from the API
 
@@ -300,7 +320,7 @@ developer. That's it. I'm out of funny things to say. See you at
 graduation. :drops mic:
 
 
-## BONUS: Phase 6: Improve it
+## BONUS: Phase 6: Improvements
 
 :picks mic up again:
 

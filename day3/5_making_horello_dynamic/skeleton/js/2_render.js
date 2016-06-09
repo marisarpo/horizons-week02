@@ -33,7 +33,7 @@ return wrapper.html();
 // This function renders a list to HTML, representing the internal data
 // and all of the cards it contains. It returns an HTML string
 // representing the internal object.
-
+ 
 ///while setting id do not want hash but want when referencing 
 horello.List.prototype.render = function() {
 // independent trials
@@ -45,16 +45,16 @@ var cardswrapper= $('<div class="list-cards"></div>');
 for(var i=0; i<this.cards.length; i++){
   cardswrapper.append(this.cards[i].render());
 }
-var footerwrapper= $('<div class="list-footer"><button class="add-card" addCardId="'+this.id+'">Add a card...</button></div>')
+var footerwrapper= $('<div class="list-footer"><button class="add-card" addCardId="'+this.getId()+'">Add a card...</button></div>')
 var footercontent = $('\
-      <div class="collapse" id="addCardForm'+this.id+'">\
+      <div class="collapse" id="addCardForm'+this.getId()+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
+      <button type="button" class="btn btn-default" id="addCardBtn'+this.getId()+'">\
       Save\
       </button>\
       <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
+      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.getId()+'"></span>\
       </button>\
       </div>\
       </div>\
@@ -87,9 +87,7 @@ horello.Board.prototype.render = function() {
     boardwrapper.append(this.lists[i].render());
   }
   wrapper.append(boardwrapper);
-  boardAnchor.append(boardwrapper)
   return wrapper.html();
-
 
 
 }

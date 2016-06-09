@@ -5,6 +5,15 @@
 // change the contents of the board. For instance, the "Add list" button
 // always does the same thing. The button doesn't appear or disappear
 // and its behavior never changes.
+function p() {
+  var toPrint = JSON.parse(JSON.stringify(arguments));
+  var i = 0;
+  while(toPrint.hasOwnProperty(i)) {
+    console.log(toPrint[i]);
+    delete toPrint[i++];
+  }
+}
+
 horello.mountStatic = function() {
 
   // Phase 1. Static events
@@ -15,7 +24,7 @@ horello.mountStatic = function() {
   // 1a. [EXAMPLE] Add list form: toggle collapse
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
-  $('.add-list').click(function(e) {
+  $('.add-list').click(function() {
     $('#addList').collapse('toggle');
   });
 
@@ -24,8 +33,11 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
-  // YOUR CODE HERE
+
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $('#addListText').focus();
+  });
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,13 +46,19 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('#addListSave').click(function() {
+    var name = $('#addListText').val();
+    if (name.length > 0) {
+      
+    }
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
-}
+};
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {

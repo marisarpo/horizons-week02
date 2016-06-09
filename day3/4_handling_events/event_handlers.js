@@ -342,13 +342,10 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 // We will delegate the events of the delete button to their parent, the row.
 
 handlers.attachDeleteAction = function(element) {
-  handlers.attachClick(element,function(e) {
-    console.log(e);
-    if ($(e.target).hasClass("innerbutton")) $(e.target).parent().parent().remove();
-  })
-
+  handlers.attachClick(element, function(e) {
+    if ($(e.target).hasClass("innerbutton")) $(this).remove();
+  });
 };
-
 handlers.attachDeleteAction($(".panel"));
 
 // ----------------------------------------------------------------------------
@@ -395,9 +392,12 @@ handlers.attachDeleteAction($(".panel"));
 
 handlers.attachFormAdd = function(formElement) {
   var newItem;
+
   formElement.get(0).addEventListener('submit',function(e){
     e.preventDefault();
+
     newItem = $("#new-item").val();
+
     $('#grocery-list').append(' <div class="panel panel-default"> '
                               + '<div class="panel-body">'
                                 + newItem + ' '

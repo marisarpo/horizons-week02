@@ -26,6 +26,7 @@ horello.mountStatic = function() {
   // field).
  
   // YOUR CODE HERE
+  $('')
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."

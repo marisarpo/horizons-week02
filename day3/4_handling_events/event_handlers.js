@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -71,6 +73,11 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  $(document).on("keypress", function(event) {
+    // debugger;
+    if(event.keyCode === key) {
+      fn() }
+  })
 };
 
 // ----------------------------------------------------------------------------
@@ -82,8 +89,12 @@ handlers.attachKeypress = function(key, fn) {
 // button ("red", "blue", or "nope").
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
+
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  this.attachClick('#' + id, function () {
+    handlers.userActions[id]++    
+  })
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -137,7 +148,17 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  // YOUR CODE HERE
+  // YOUR CODE HERE   
+  handlers.attachHover('#' + id, function() {
+    var timeout = setTimeout(function() {
+      $('#' + id).trigger("click");
+      handlers.hoverTimeoutNums[id]++;
+    }, 2000);
+    handlers.attachUnhover('#' + id, function() {
+      clearTimeout(timeout);
+      console.log(handlers.hoverTimeoutNums)
+    })
+  })
 }
 
 handlers.attachHoverClick("red");

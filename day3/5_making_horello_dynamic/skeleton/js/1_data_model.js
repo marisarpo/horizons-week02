@@ -114,7 +114,7 @@ horello.List.prototype = {
   // 
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
-    var newCard = new horello.Card(name, desc, this.id);
+    var newCard = new horello.Card(name, desc, this.getId());
     this.cards.push(newCard);
     return newCard.getId();
   },
@@ -146,14 +146,15 @@ horello.List.prototype = {
   // it. If it does not exist, then it should return null. Finally, it
   // should return the id of the newly created card.
   rmvCard: function(cardId) {
-    if (this.cardId.getCard()) {
-      console.log(this.cardId.getCard());
-      var rmCard = this.cardId.getCard();
-      index = indexOf(rmCard);
-      this.cards.splice(index);
-      return rmCard;
-    } else { return null }
-  } 
+
+    var c = this.getCard(cardId);
+    if (c === null) {
+      return null;
+    }
+    var ind = this.cards.indexOf(c);
+    this.cards.splice(ind,1);
+    return c; 
+  }
 };
 
 // Phase 3. `Board` Class
@@ -172,7 +173,9 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
-    // YOUR CODE HERE
+    var newList = new horello.List(listName);
+    this.lists.push(newList);
+    return newList.getId();
   },
 
   // Exercise 3.B `getList(listId<String>)`
@@ -181,7 +184,11 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    // YOUR CODE HERE
+    for (var i = 0; i < this.lists.length; i++){
+      if (this.lists[i].getId() == clistId) {
+        return this.lists[i];
+      }
+    } return null;
   },
 
   // Exercise 3.C `rmvList(listId<String>)`
@@ -191,7 +198,13 @@ horello.Board.prototype = {
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
   rmvList: function(listId) {
-    // YOUR CODE HERE
+    var c = this.getList(listId);
+    if (c === null) {
+      return null;
+    }
+    var ind = this.lists.indexOf(c);
+    this.lists.splice(ind,1);
+    return c; 
   }
 };
 

@@ -33,7 +33,7 @@ We're also going to learn about a technique using something called a `pseudo-tag
 Your tasks in this phase will be to:
 
 1. Create an img tag and style it so that it fills
-2. Improve readability and 
+2. Improve readability
 3. Use the Date() object and setInterval to create a text-based clock
 
 

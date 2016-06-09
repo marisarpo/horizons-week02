@@ -1,5 +1,7 @@
 "use strict";
 
+// CAUTION: You probably don't need to make changes here for this project!
+
 window.horello = window.horello || {};
 
 horello.mountStatic = function() {

@@ -56,23 +56,12 @@ Once you've logged into your Trello account:
 
 1. Navigate to the [Trello
    Developers page](https://developers.trello.com/get-started/start-building).
-1. Find the `<script>` tag to add the `client.js` library and paste this
-   into the `head` section of `index.html`. You'll add the key and token
-   to this in a moment. (You can leave out jQuery since we've already
-   loaded this. You should also make sure that jQuery is loaded BEFORE
-   the `client.js` file since the latter is dependent on the former.)
 1. Click the `Get your Application Key` button in the first section of
-   the page.
-1. Copy the key and add it in the `<script>` tag per the instructions.
+   the page. Copy this key and paste it into `config.js` (you'll see
+   where).
 1. Generate a token manually by clicking on the `Token` link on that page.
 1. Click "Allow" on the authentication screen.
-1. Now copy this token and add the following string onto the end of the
-   `<script src=...>` URL, replacing `[Token]` with your token:
-   `&token=[Token]`
-
-***Note:*** The Trello developer docs only mention adding the key
-parameter here. Make sure you add the token parameter too, or none of
-your API calls will work!
+1. Copy this token and paste it into `config.js`.
 
 That was pretty easy, right? These two numbers--the key and the
 token--are how our application (Horello) authenticates to the Trello
@@ -136,9 +125,9 @@ You'll need to use this in the next phase.
 Another trick we can use is to view the raw JSON data for an object in
 our web browser. This is possible because the entire Trello API is
 available via HTTP, i.e., the protocol that's being used under the hood
-to exchange data between the Trello JS client and the backend is
-actually HTTP, which is the same protocol that's used for web pages. The
-URL you need to view the data for a board in Trello is:
+to exchange data between the frontend and the backend is actually HTTP,
+which is the same protocol that's used for web pages. The URL you need
+to view the data for a board in Trello is:
 
     https://trello.com/1/boards/<BOARD_ID>
 
@@ -193,20 +182,20 @@ This API call returns a _list_ of boards, so we can peek at `data[0]` to
 see the first board. This data should look just like what you saw above
 inside the Trello sandbox and the JSON data you saw in the browser.
 
+Now try using `$.ajax` to create a list and a card.
+
 ### REST client (optional)
 
 The most powerful tool we can use to play around with an API manually is
-something called a REST client. A REST client is basically a graphical
-user interface (GUI) on top of curl. Our favorite free REST client,
-which is available both as a standalone app and as a Chrome plugin, is
+something called a REST client. Our favorite free REST client, which is
+available both as a standalone app and as a Chrome plugin, is
 [Postman](https://www.getpostman.com/).
 
-If you prefer using an app over a commandline tool, try installing
-Postman and using it to get the list of boards. Then try using it to
-create a new list on the board, and/or a new card on a list. Then reload
-the official Trello website to see your changes appear! (Actually, these
-changes should appear in realtime if you have the board open--no
-reloading necessary.)
+If you prefer using an app, try installing Postman and using it to get
+the list of boards. Then try using it to create a new list on the board,
+and/or a new card on a list. Then reload the official Trello website to
+see your changes appear! (Actually, these changes should appear in
+realtime if you have the board open--no reloading necessary.)
 
 You'll have to figure out how to use Postman on your own, but it's
 pretty intuitive. To fetch data, run a GET query on the resource URL.
@@ -263,22 +252,27 @@ We love you--you should know that by now--but you're on your own for
 this part. It's your time to fly, butterfly. Here are some hints to get
 you on your way:
 
+- You should be working in `data_model.js`. You shouldn't need to modify
+  the HTML, CSS, or events code.
+- You should use `$.ajax()` for all of your AJAX calls. They should look
+  like this:
+      $.ajax(URL, {
+        data: {
+          key: API KEY,
+          token: API TOKEN,
+          [ other data here as necessary for PUT and POST ]
+        },
+        success: SUCCESS CALLBACK,
+        error: ERROR CALLBACK
+      }
+- ***Make sure you include the API key and token with every single AJAX
+  call!*** See the previous item.
 - Where, and how, do we want to download the board data from the API so
   that we can display it to the user when they open our app? Where do we
   store the board ID that we grabbed in the previous phase, and how do
   we retrieve this board data when the app loads?
 - Think carefully about where IDs come from. Plugging into an API
   changes this a bit.
-- The Trello JS client makes things relatively straightforward for us.
-  It's documented here: https://developers.trello.com/clientjs. We don't
-  have to worry about authentication at all, as it handles that for us.
-  You can call `Trello.get()` to read a resource, `Trello.put()` to
-  update one, etc.
-- Each time you call one of the methods of the Trello JS client, you
-  need to pass two callbacks, one for success and one for error. E.g.,
-  the function signature for `Trello.get` looks like this:
-
-      Trello.get(path[, params], success, error)
 - Think about how you want to handle errors. Do something reasonable.
 - The Trello API only returns _metadata_ for the resource. For instance,
   if you GET a list, you'll get back that list's name and ID, but you
@@ -291,6 +285,9 @@ you on your way:
   we know that one asynchronous operation--e.g., reading the list of
   lists--has completed before trying to do something with that data?
 - Think about where, and when, you need to re-render the board.
+- The function signatures (i.e., the list of arguments they accept and
+  what they return) for some of the data model methods might change.
+  This might be okay. How do we know whether it's okay?
 
 Once you're successfully reading list and card data from the Trello API,
 reload the page--_et voila!_--you should see more or less the same thing

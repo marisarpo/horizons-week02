@@ -119,5 +119,39 @@ horello.mount = function (board) {
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
+
+  $('.card').click(function(e) {
+
+    
+    
+    var cardID = $(e.target).parent().attr('id');
+    
+    var listID = $(e.currentTarget).parent().parent().attr('id');
+    var list = board.getList(listID);
+
+    var card = list.getCard(cardID);
+    var title = card.getTitle();
+    var desc = card.getDescription();
+    
+
+    $("#cardEdit").collapse('toggle');
+    $(".modal-header > .form-control").val(title);
+    $(".modal-body > .form-control").val(desc);
+
+    $(".modal-footer > .btn-primary").click(function(el) {
+       title = $(".modal-header > .form-control").val();
+       
+        desc = $(".modal-body > .form-control").val();
+        card.setTitle(title);
+        card.setDescription(desc);
+        $("#cardEdit").collapse('toggle');
+        horello.mount(board);
+
+    })
+
+     $(".modal-footer > .btn-default").click(function(el) {
+      $("#cardEdit").collapse('toggle');
+    })
+  })
 };
 

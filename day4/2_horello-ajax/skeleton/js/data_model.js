@@ -63,6 +63,7 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  return JSON.parse(JSON.stringify(data));
 };
 
 
@@ -145,6 +146,7 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  return JSON.parse(JSON.stringify(data));
 };
 
 

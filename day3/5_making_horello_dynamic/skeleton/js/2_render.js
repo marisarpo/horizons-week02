@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card"></div>').attr("id", this.getId());
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body"></div>');
 

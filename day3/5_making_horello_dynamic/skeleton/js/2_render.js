@@ -24,6 +24,10 @@ horello.Card.prototype.render = function() {
 // representing the internal object.
 horello.List.prototype.render = function() {
   // YOUR CODE HERE
+
+  for(i in this.cards){
+    return 'asdsd';
+  }
 }
 
 // Phase 3. Board

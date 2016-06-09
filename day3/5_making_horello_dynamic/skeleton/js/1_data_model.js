@@ -191,6 +191,7 @@ horello.Board.prototype = {
     // YOUR CODE HERE
 
     var newlist = new horello.List(listName);
+    this.lists.push(newlist);
     return newlist.getId();
   },
 
@@ -201,6 +202,18 @@ horello.Board.prototype = {
   // otherwise.
   getList: function(listId) {
     // YOUR CODE HERE
+
+    var a = undefined;
+
+    var search = function(value) {
+      if (value.getId() === listId){
+        a = value;
+      }
+    }
+
+    this.lists.forEach(search);
+    return a;
+
   },
 
   // Exercise 3.C `rmvList(listId<String>)`
@@ -211,6 +224,14 @@ horello.Board.prototype = {
   // found, it should return null.
   rmvList: function(listId) {
     // YOUR CODE HERE
-  }
+
+    var c = this.getList(listId);
+   if (c === undefined){
+    return null;
+   }
+   var ind = this.lists.indexOf(c);
+   this.lists.splice(ind,1);
+   return c;
+ },
 };
 

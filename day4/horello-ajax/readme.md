@@ -17,33 +17,13 @@ in the real world. Exciting, right? (And you're going to have to find a
 way to deal with the empty nest when it's gone. Time to make another
 one?)
 
-## Phase 1. Serialization
+You're going to be starting with the solution code from yesterday's
+Horello project (Making Horello Dynamic). We've simplified the code a
+bit, and removed some of the comments. If you prefer to work with your
+own code from yesterday, feel free to do that instead. You won't be
+changing the view code (HTML/CSS) today, this will be pure JS.
 
-Recall from class that JSON is a standard data format that's used to
-exchange information via APIs. We have a data model for Horello's board,
-lists, and cards, but we need a way to _read JSON data_ from the Trello
-API and turn that into the objects that we're used to working with (this
-process is called _deserialization_).
-
-Open up `1_data_model.js` (this file should look familiar!) and fill in
-the `.fromJSON()` methods of the Card and List classes to accomplish
-this.
-
-You may decide, in phase 5 (writing data to the API), that you need to
-do something similar in the opposite direction, i.e., that you need
-methods that serialize your instances into JSON data. Or you might
-decide that you don't need them.
-
-Note that these two methods are _static methods_. A static method is not
-called on any particular _instance_ of the class, so it does not receive
-a `this` variable. All of its inputs must be explicitly passed in as
-variables. In this case, we are _creating a new object_ from JSON data.
-It's the job of the static method to create and return the corresponding
-object. You can read more about [static
-methods](https://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods)
-on Wikipedia.
-
-## Phase 2: Authentication
+## Phase 1: Authentication
 
 The "real world" that we're going to be venturing into today is the
 cloud, i.e., someone else's data server out there somewhere in the
@@ -89,7 +69,7 @@ access to, and it's how Trello knows whose pretty face to attach to our
 comments.
 
 
-## Phase 3: Test the API
+## Phase 2: Test the API
 
 With authentication in place, we can begin having some fun with data.
 Before we try to hook up our frontend to the Trello backend, let's test
@@ -213,6 +193,36 @@ pretty intuitive. To fetch data, run a GET query on the resource URL.
 Pass `key` and `token` as params. You should be able to create data
 using POST.
 
+
+## Phase 3. Serialization/deserialization
+
+Recall from class that JSON is a standard data format that's used to
+exchange information via APIs. Serialization refers to turning our data
+objects--our lists and cards--into JSON for sending "over the wire,"
+i.e., into the cloud via the API. Deserialization is the opposite
+process: reading JSON data and turning it into the objects that we're
+used to working with (this process is called _deserialization_).
+
+Now that we know what the data we're getting from the API looks like,
+let's write some deserialization methods for our objects so that we can
+turn the data we pull from the API into data that we know how to render
+and work with. Open up `data_model.js` (this file should look familiar!)
+and fill in the `.fromJSON()` methods of the Card and List classes to
+accomplish this.
+
+You may decide, in phase 5 (writing data to the API), that you need to
+do something similar in the opposite direction, i.e., that you need
+methods that serialize your instances into JSON data. Or you might
+decide that you don't need them.
+
+Note that these two methods are _static methods_. A static method is not
+called on any particular _instance_ of the class, so it does not receive
+a `this` variable. All of its inputs must be explicitly passed in as
+variables. In this case, we are _creating a new object_ from JSON data.
+It's the job of the static method to create and return the corresponding
+object. You can read more about [static
+methods](https://en.wikipedia.org/wiki/Method_(computer_programming)#Static_methods)
+on Wikipedia.
 
 ## Phase 4: Reading from the API
 

@@ -17,6 +17,7 @@ horello.mountStatic = function() {
   // its associated form to appear and disappear.
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
+
   });
 
   // 1b. Add list form: focus the title text input
@@ -27,6 +28,13 @@ horello.mountStatic = function() {
  
   // YOUR CODE HERE
 
+    $('#addList').on('shown.bs.collpse', function(e){
+    $("addListText").focus();
+    })
+    //bootstrap sends even every time opened/fired, holds form and can listen
+    //for this
+
+
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
   // form is clicked, should 1. validate the input (i.e., make sure that
@@ -34,21 +42,54 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $("#addListSave").click(function(e){
+    if(!$("#addListText").val()){
+      alert("please enter list name");
+      return;
+    }
+    board.addList($("#addListText").val());
+    $("#addListText").val(''); //reset unput field to be empty
+    $('#addList').collapse('hide');
+    horello.mount(board);
+
+  })
+
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-
+$("#addListCancel").click(function(e){
+  $("addList").collapse('hide');
+})
   // YOUR CODE HERE
+// with card click
+$('#cardEdit').on()
+
+
+
+
+
 }
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
   // Phase 3. Create card
+horello.rerender();
+////add new save class to save button (modify within part 2)
+///need list id aka string (Can pull from board)
 
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
   $('#boardAnchor').append(board.render());
+  $('save').click(function(ev){
+    var listId = $(this).atr("data-list-id");
+    var list = board.getList(listId);
+    if(!$("#list_name_" + listId).val()){
+      alert('x')
+    }
+    list.addCard($("#list_name_" + listId).val())
+
+  });
 
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a

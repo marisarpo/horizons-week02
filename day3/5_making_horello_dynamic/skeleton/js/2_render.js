@@ -33,12 +33,14 @@ return wrapper.html();
 // This function renders a list to HTML, representing the internal data
 // and all of the cards it contains. It returns an HTML string
 // representing the internal object.
+
+///while setting id do not want hash but want when referencing 
 horello.List.prototype.render = function() {
 // independent trials
 var wrapper= $('<div></div>');
 var listWrapper= $('<div class="list-container"></div>');
 var list = $('<div class="list"></div>');
-var listheader= $('<div class="list-header"><span class="list-title">'+this.name+'</span></div>');
+var listheader= $('<div class="list-header"><span class="list-title">'+this.getName()+'</span></div>');
 var cardswrapper= $('<div class="list-cards"></div>');
 for(var i=0; i<this.cards.length; i++){
   cardswrapper.append(this.cards[i].render());
@@ -65,6 +67,11 @@ list.append(cardswrapper);
 list.append(footerwrapper);
 footerwrapper.append(footercontent);
 
+// var cardsHtml = _.map(this.cards,function(card){
+//   return card.render;
+// })
+
+///white space: want to keep ierarchy, but ignoreed by browser
 
  return wrapper.html(); //refers to everything inside of empty div (wraps around everything else)
  }
@@ -80,5 +87,9 @@ horello.Board.prototype.render = function() {
     boardwrapper.append(this.lists[i].render());
   }
   wrapper.append(boardwrapper);
+  boardAnchor.append(boardwrapper)
   return wrapper.html();
+
+
+
 }

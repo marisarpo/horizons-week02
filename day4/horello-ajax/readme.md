@@ -3,8 +3,7 @@
 Remember the first time you left home? Like, ventured out into the real,
 big, scary world to meet other people and find yourself and figure out
 where you fit in? Hopefully you didn't get punched in the face or fall
-off a cliff or something.
-(I did ¯\\_(ツ)_/¯)
+off a cliff or something awful like that.  (I did ¯\\_(ツ)_/¯)
 
 Today is a big day. You're a grown up (more or less), but your app
 isn't. Up to now, your app has been sitting pretty on a comfy sofa in
@@ -60,56 +59,29 @@ Once you've logged into your Trello account:
 
 1. Navigate to the [Trello
    Developers page](https://developers.trello.com/get-started/start-building).
+1. Find the `<script>` tag to add the `client.js` library and paste this
+   into the `head` section of `index.html`. You'll add the key and token
+   to this in a moment. (You can leave out jQuery since we've already
+   loaded this.)
 1. Click the `Get your Application Key` button in the first section of
    the page.
-1. Grab the key--you're going to need it in a moment.
+1. Copy the key and add it in the `<script>` tag per the instructions.
+1. Generate a token manually by clicking on the `Token` link on that page.
+1. Click "Allow" on the authentication screen.
+1. Now copy this token and add the following string onto the end of the
+   `<script src=...>` URL, replacing "[Token]" with your token:
 
-That was pretty easy, right? This key is how our application (Horello)
-authenticates to the Trello backend. It's how Trello knows which boards,
-lists, and cards we have access to, and it's how Trello knows whose
-pretty face to attach to our comments.
+       &token=[Token]
 
-Okay, time to start writing some code. Go ahead and open up `index.html`
-in your web browser and text editor. There are two more steps required
-to get authentication working in Horello. The first is to add the Trello
-client JS code--find the link on
-https://developers.trello.com/get-started/start-building and add this in
-the `head` of `index.html`. Make sure to add your API key as part of the
-`<script>` tag that loads the Trello JS client code.
+***Note:*** The Trello developer docs mention adding the key parameter
+here. Make sure you add the token parameter too, or none of your API
+calls will work!
 
-Finally, we need to use the Trello client to authenticate the user. Open
-up `2_authentication.js` and add the relevant authentication code from
-https://developers.trello.com/get-started/start-building. This code is
-called once when the page loads. After adding the authentication code,
-try reloading the page in the browser. If all goes well, you should see
-a popup asking the user to grant access to their Trello account to the
-application. You'll only see the authentication prompt the first time.
-Once you grant the application permission, the authentication process
-will be transparent in the future.
-
-***NOTE 1:*** The authentication popup window may be blocked by a popup
-blocker in your web browser. If this happens, make sure you enable
-popups for this site.
-
-***NOTE 2:*** If, after clicking approve in the popup, you see a blank
-screen, and the following error in Chrome:
-
-    Failed to execute 'postMessage' on 'DOMWindow': The target origin
-    provided ('file://') does not match the recipient window's origin
-    ('null').
-
-You have two choices. The first is to switch to Safari, which should
-work. Safari has better support for something called CORS, which causes
-this error. The other choice is to launch a lightweight web server on
-your laptop and access the files that way instead. If you have Python
-installed (it should be installed on Linux and OS X by default), you
-should be able to do the following:
-
-    > cd week02/
-    > python -m SimpleHTTPServer 8000
-
-Then navigate to http://localhost:8000/day4/horello-ajax/skeleton/ in
-Chrome.
+That was pretty easy, right? These two numbers--the key and the
+token--are how our application (Horello) authenticates to the Trello
+backend. It's how Trello knows which boards, lists, and cards we have
+access to, and it's how Trello knows whose pretty face to attach to our
+comments.
 
 
 ## Phase 3: Test the API
@@ -257,6 +229,8 @@ We love you--you should know that by now--but you're on your own for
 this part. It's your time to fly, butterfly. Here are some hints to get
 you on your way:
 
+- Where, and how, do we want to download the board data from the API so
+  that we can display it to the user when they open our app?
 - Think carefully about where IDs come from. Plugging into an API
   changes this a bit.
 - The Trello JS client makes things relatively straightforward for us.
@@ -267,6 +241,7 @@ you on your way:
 - Each time you call one of the methods of the Trello JS client, you
   need to pass two callbacks, one for success and one for error. E.g.,
   the function signature for `Trello.get` looks like this:
+
       Trello.get(path[, params], success, error)
 - Think about how you want to handle errors. Do something reasonable.
 - The Trello API only returns _metadata_ for the resource. For instance,

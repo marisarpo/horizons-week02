@@ -8,7 +8,7 @@
   <script src="../../../lib/jquery.js"></script>
 
   <!-- Add Trello client JS here -->
-  <!-- DON'T FORGET TO SET YOUR KEY -->
+  <!-- DON'T FORGET TO SET YOUR TRELLO KEY AND TOKEN -->
 
   <!-- Bootstrap stuff -->
   <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="js/1_data_model.js"></script>
   <script src="js/events.js"></script>
-  <script src="js/2_authentication.js"></script>
   <script>
     // jQuery document ready shorthand.
     $(function () {
@@ -26,7 +25,6 @@
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;
-      horello.authenticate();
     });
   </script>
 </head>

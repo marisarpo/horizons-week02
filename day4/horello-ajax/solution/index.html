@@ -8,8 +8,8 @@
   <script src="../../../lib/jquery.js"></script>
 
   <!-- Add Trello client JS here -->
-  <!-- DON'T FORGET TO SET YOUR TRELLO KEY -->
-  <script src="https://api.trello.com/1/client.js?key=a244740366ca1cb10449bc41f434a2d5"></script>
+  <!-- DON'T FORGET TO SET YOUR TRELLO KEY AND TOKEN -->
+  <script src="https://api.trello.com/1/client.js?key=d295f8d5b5ef98bcc7d913e77eba56e8&token=16b97d8784198f4ad55013d82c991ba5db952be9ad1e706211d38970518ffb8a"></script>
 
   <!-- Bootstrap stuff -->
   <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
@@ -19,7 +19,6 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="js/1_data_model.js"></script>
   <script src="js/events.js"></script>
-  <script src="js/2_authentication.js"></script>
   <script>
     // jQuery document ready shorthand.
     $(function () {
@@ -28,7 +27,9 @@
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;
-      horello.authenticate();
+
+      // This triggers the initial API call to download all board data.
+      board.loadData();
     });
   </script>
 </head>

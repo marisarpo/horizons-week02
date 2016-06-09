@@ -19,7 +19,6 @@
 	<!-- Our files -->
 	<!-- Uncomment this to test -->
 	<!-- <script type="text/javascript" src="twilio_tests.js"></script> -->
-	<script type="text/javascript" src="twilio.js"></script>
 </head>
 <body class="tw-app">
 	<div class="container">
@@ -38,13 +37,14 @@
 						<label class="form-group">
 							<input class="message-input-field" type="text" placeholder="Write something..." />
 						</label>
-							<button class="btn message-input-button">Send</button>
+							<button class="btn message-input-button" type="button">Send</button>
 					</form>
 				</div>
 			</div>
 			<div class="col-xs-6" id="jasmine-reporter"></div>
 		</div>
 	</div>
+	<script type="text/javascript" src="twilio.js"></script>
 	<script type="text/javascript">
 		function injectJasmine(targetId) {
 			console.log($(".jasmine_html-reporter"));

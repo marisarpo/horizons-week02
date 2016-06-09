@@ -4,10 +4,10 @@
 
 - Phase 1: [Authentication](#phase-1-authentication)
 - Phase 2. [Getting familiar with the API](#phase-2-getting-familiar-with-the-api)
-- Phase 3. [Serialization/deserialization](#phase-3-serialization-deserialization)
-- Phase 4. [Reading from the API](#phase-4-reading-from-the-api
+- Phase 3. [Serialization/deserialization](#phase-3-serializationdeserialization)
+- Phase 4. [Reading from the API](#phase-4-reading-from-the-api)
 - Phase 5. [Writing to the API](#phase-5-writing-to-the-api)
-- Phase 6. [(BONUS) Improvements](#phase-6-bonus-improvements)
+- Phase 6. [(BONUS) Improvements](#bonus-phase-6-improvements)
 
 ## Introduction
 
@@ -28,11 +28,12 @@ in the real world. Exciting, right? (And you're going to have to find a
 way to deal with the empty nest when it's gone. Time to make another
 one?)
 
-You're going to be starting with the solution code from yesterday's
+You're going to be starting with the solution code from the previous
 Horello project (Making Horello Dynamic). We've simplified the code a
 bit, and removed some of the comments. If you prefer to work with your
-own code from yesterday, feel free to do that instead. You won't be
-changing the view code (HTML/CSS) today, this will be pure JS.
+own code from the previous project, feel free to do that instead, we
+won't be offended. You won't be changing the view code (HTML/CSS) today,
+this will be pure JS.
 
 ## Phase 1: Authentication
 
@@ -63,7 +64,7 @@ Once you've logged into your Trello account:
 1. Click "Allow" on the authentication screen.
 1. Copy this token and paste it into `config.js`.
 
-That was pretty easy, right? These two numbers--the key and the
+That was pretty easy, right? These two strings--the key and the
 token--are how our application (Horello) authenticates to the Trello
 backend. It's how Trello knows which boards, lists, and cards we have
 access to, and it's how Trello knows whose pretty face to attach to our
@@ -145,9 +146,9 @@ jQuery comes with a powerful function called
 [`.ajax()`](http://api.jquery.com/jquery.ajax/) that we can use in the
 browser console to test the API. ([This
 doc](http://www.w3schools.com/jquery/ajax_ajax.asp) is also very
-helpful.) Let's try reading a board using the ajax function. It takes a
-URL and an object with a list of settings. The simplest GET command
-would look like this:
+helpful.) Let's try reading the list of boards (which you saw in the
+sandbox) using the ajax function. It takes a URL and an object with a
+list of settings. The simplest GET command would look like this:
 
     $.ajax('https://api.trello.com/1/member/me/boards')
 
@@ -155,23 +156,37 @@ This will perform a GET on the specified resource (`/member/me/boards`).
 Try running this command in the console and see what happens. You should
 see a 400 error appear. This error is appearing since we haven't
 authenticated! Let's try the same request again, this time including the
-key and token we got above. We include them by adding them to the URL as
-a query string, which begins with '?' and has the format
-`key1=val1&key2=val2`. In this case it should look like (replace
-`[APP_KEY]` with your Trello app key and `[TOKEN]` with your token):
+key and token we got above. We can pass these as a `data` parameter in
+the options argument to `ajax`. In this case it should look like
+(replace `[APP_KEY]` with your Trello app key and `[TOKEN]` with your
+token):
 
-    $.ajax('https://api.trello.com/1/member/me/boards?key=[APP_KEY]&token=[TOKEN]')
+    $.ajax('https://api.trello.com/1/member/me/boards', {
+      data: {
+        key: [APP_KEY],
+        token: [TOKEN],
+      })
 
 This time, you should see something like the following in the console:
 
     > Object {readyState: 1}
 
 It worked! The final step is to pass a success callback into the ajax
-function so that we can view the returned data. Call `$.ajax` one more
-time like this:
+function so that we can work with the returned data. (Why do we need a
+success callback? Why can't we just use the return value of the `ajax`
+call? Because the return value of the `ajax` call isn't what you think
+it is. Read [the docs](http://api.jquery.com/jquery.ajax/) to see if you
+can figure out what it returns.)
 
-    $.ajax('https://api.trello.com/1/member/me/boards?key=[APP_KEY]&token=[TOKEN]',
-    {success: function(data) { console.log(data[0]) }})
+Call `$.ajax` one more time like this:
+
+    $.ajax('https://api.trello.com/1/member/me/boards', {
+      data: {
+        key: [APP_KEY],
+        token: [TOKEN],
+      },
+      success: function(data) { console.log(data[0]) }
+    })
 
 This time you should see something which looks like this:
 
@@ -182,7 +197,10 @@ This API call returns a _list_ of boards, so we can peek at `data[0]` to
 see the first board. This data should look just like what you saw above
 inside the Trello sandbox and the JSON data you saw in the browser.
 
-Now try using `$.ajax` to create a list and a card.
+Now try using `$.ajax` to create a list and a card. Then reload the
+official Trello website to see your changes appear! (Actually, these
+changes should appear in realtime if you have the board open--no
+reloading necessary.)
 
 ### REST client (optional)
 
@@ -256,6 +274,7 @@ you on your way:
   the HTML, CSS, or events code.
 - You should use `$.ajax()` for all of your AJAX calls. They should look
   like this:
+
       $.ajax(URL, {
         data: {
           key: API KEY,
@@ -265,6 +284,7 @@ you on your way:
         success: SUCCESS CALLBACK,
         error: ERROR CALLBACK
       }
+
 - ***Make sure you include the API key and token with every single AJAX
   call!*** See the previous item.
 - Where, and how, do we want to download the board data from the API so
@@ -304,7 +324,7 @@ towards the light.
 You're successfully consuming data from the Trello API. The final, final
 step (aside from all those bonus steps below, ignore them for now) is to
 write our changes back to the API so they persist in the cloud. You're
-on your own for this part, too. Here are a few more tips:
+on your own for this part, too. Here are a couple more tips:
 
 - Think carefully about the data flow when creating a new list or a new
   card. Do you create the object locally first, in memory, or do you
@@ -325,12 +345,16 @@ Okay, you're an ambitious grasshopper. We like ambition 'round these
 parts. Well, there's still a bunch of things you can do to make this
 here app as smooth as an armadillo's backside:
 
+- Rather than passing the authentication information with every single
+  request, see if you can simplify this using
+  [jQuery.ajaxSetup()](https://api.jquery.com/jquery.ajaxsetup/).
 - You're probably rendering (i.e., calling `horello.mount`) more often
   than you need to. Try to optimize how often you render the board, and
   don't do it more often than necessary, to improve performance.
 - Trello automatically detects when the data changes, and displays those
-  changes immediately, without needing to reload. Add that.
+  changes immediately, without needing to reload. Add that. Boom.
 - Add support for multiple boards.
 - Replace your nasty callback code with sexy new
   [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
-
+- Looking for even more? Check out the [list of challenges for the
+  week](../../challenges/1_bonus_horello).

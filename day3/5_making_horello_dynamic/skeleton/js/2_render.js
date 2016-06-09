@@ -82,7 +82,7 @@ footerwrapper.append(footercontent);
 horello.Board.prototype.render = function() {
   // YOUR CODE HERE
   var wrapper = $('<div></div>');
-  var boardwrapper = $('<div class="board></div>');
+  var boardwrapper = $('<div class="board"></div>');
   for(var i=0; i<this.lists.length; i++){
     boardwrapper.append(this.lists[i].render());
   }
@@ -90,4 +90,5 @@ horello.Board.prototype.render = function() {
   return wrapper.html();
 
 
+// return _.map(this.lists, function(list){ return list.render()});
 }

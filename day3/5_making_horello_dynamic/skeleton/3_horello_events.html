@@ -26,18 +26,16 @@
   <script>
     // Pre-populate the board with some data. Note that tests depend upon
     // this data as-is.
-
     // jQuery document ready shorthand.
     $(function () {
       var board = new horello.Board();
-      // board.addList("Awesomeness");
-      // board.lists[0].addCard("Hello", "Hello, world");
+      board.addList("Awesomeness");
+      board.lists[0].addCard("Hello", "Hello, world");
       horello.mount(board);
       horello.mountStatic(board);
-
       // Used for tests
       window.board = board;
-    });
+    }); 
   </script>
 </head>
 

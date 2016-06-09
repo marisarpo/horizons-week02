@@ -28,7 +28,7 @@ horello.mountStatic = function() {
  
   // YOUR CODE HERE
 
-    $('#addList').on('shown.bs.collpse', function(e){
+    $('#addList').on('shown.bs.collapse', function(e){
     $("addListText").focus();
   });
 
@@ -44,11 +44,12 @@ horello.mountStatic = function() {
   $('#addListSave').click(function(e){
     if(!$('#addListText').val()){
       alert("need to name your list dude");
+      return
     }
     board.addList($('#addListText').val());
      $('#addList').collapse('toggle');
     $('#addListText').val('');
-    console.log('x')
+    console.log('x') 
     horello.mount(board);
   }); 
 
@@ -56,14 +57,20 @@ horello.mountStatic = function() {
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
+  $('#addListCancel').click(function(e){
+    $('#addList').collapse('hide');
+  })
 
 
-  // YOUR CODE HERE
-// with card click
+ // Modal: these events control the modal that appears when you click
+  // on a card.
 
-
-
-
+ // YOUR CODE HERE
+//with card click
+// $('cardEdit').on(shown.bs.collapse)
+// $('.close').click(function(e){
+// $('#cardEdit').collapse('toggle');
+// })
 
 
 }
@@ -74,6 +81,9 @@ horello.mount = function (board) {
 ////add new save class to save button (modify within part 2)
 ///need list id aka string (Can pull from board)
 
+//render and rerender
+$('#boardAnchor').empty();
+ $('#boardAnchor').append(board.render());
 
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a

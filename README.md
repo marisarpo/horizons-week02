@@ -29,6 +29,6 @@
 ## Day 4 - Day 5
 - [Finish up Horello App Part 2](./day3/5_making_horello_dynamic)
 - [Twilio](./day4/1_twilio)
-- [Horello App Part 3 - Add Real Data with AJAX!]:
-- [Momentum](./day4/2_momentum)
+- [Horello App Part 3 - Add Real Data with AJAX!](./day4/2_horello-ajax)
+- [Momentum](./day4/3_momentum)
 - [FACEBOOK - intro coming Friday afternoon]:

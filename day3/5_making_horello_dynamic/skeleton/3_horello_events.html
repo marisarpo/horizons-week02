@@ -22,13 +22,13 @@
   <script src="js/1_data_model.js"></script>
   <script src="js/2_render.js"></script>
   <script src="js/3_events.js"></script>
-  <script src="js/3_events_tests.js"></script>
   <script>
     // Pre-populate the board with some data. Note that tests depend upon
     // this data as-is.
 
     // jQuery document ready shorthand.
     $(function () {
+     // console.log("starting");
       var board = new horello.Board();
       board.addList("Awesomeness");
       board.lists[0].addCard("Hello", "Hello, world");
@@ -64,6 +64,7 @@
         <button type="button" class="close" data-dismiss="modal">
           <span>&times;</span>
         </button>
+        <h5>Title</h5>
         <input type="text" class="form-control" id="modalText">
       </div>
       <div class="modal-body">
@@ -72,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default"
-                data-dismiss="modal">Close
+                data-dismiss="modal">Cancel
         </button>
         <button type="button" class="btn btn-primary" id="modalSave">
           Save changes
@@ -82,13 +83,13 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="board">
+<div class="board" id='outer'>
 
   <!-- The board renders here -->
   <div id="boardAnchor"></div>
 
   <div class="list-container">
-    <div class="add-list-container">
+    <div class="add-list-container" id='special'>
       <button class="add-list">Add a list...</button>
       <div class="collapse" id="addList">
         <div class="well add-card-form">
@@ -118,5 +119,6 @@
     <!--injectJasmine('jasmineAnchor');-->
   <!--});-->
 <!--</script>-->
+<script src="js/3_events_tests.js"></script>
 </body>
 </html>

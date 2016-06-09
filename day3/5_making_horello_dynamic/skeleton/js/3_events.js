@@ -5,7 +5,7 @@
 // change the contents of the board. For instance, the "Add list" button
 // always does the same thing. The button doesn't appear or disappear
 // and its behavior never changes.
-horello.mountStatic = function() {
+horello.mountStatic = function(board) {
 
   // Phase 1. Static events
 
@@ -15,6 +15,7 @@ horello.mountStatic = function() {
   // 1a. [EXAMPLE] Add list form: toggle collapse
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
+
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
   });
@@ -24,8 +25,16 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
-  // YOUR CODE HERE
+ $('.add-list').on('click', function() {
+    $('#addListText').focus();
+  })
+
+ $('#addListText').on('keypress', function(event){
+    if(event.keyCode == 13){
+      $("#addListSave").trigger("click");
+    }
+ })
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,12 +43,27 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('#addListSave').click(function(e){
+    var listName = $('#addListText').val();
+    if(!listName && listName.length<1){
+      alert("Invalid list name");
+    }
+    else{
+      ///console.log("fwakgfbraufliwa")
+        board.addList(listName);
+        $('#addListText').val('');
+        horello.mount(board);
+    }
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
+  $('#addListCancel').click(function(e){
+    $('#addList').collapse('hide');
+  })
+
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -60,8 +84,109 @@ horello.mount = function (board) {
 
   // YOUR CODE HERE
 
-  // Phase 4(a). Edit card
+  $('.add-card').click(function(e) {
+    $('#'+$(e.target).attr('id')+'.addCard').collapse('show');
+  });
 
-  // YOUR CODE HERE
+  $('.add-card').on('click', function(e) {
+    $('#'+$(e.target).attr('id')+'.addCardText').focus();
+  })
+
+  $('.addCardText').on('keypress', function(event){
+    if(event.keyCode == 13){
+      $("#"+$(event.target).attr('id')+".addCardSave").trigger("click");
+    }
+  })
+  $('.addCardSave').click(function(e){
+    var cardName = $('#'+$(e.target).attr('id')+'.addCardText').val();
+    if(!cardName && cardName.length<1){
+      alert("Invalid card name");
+    }
+    else{
+      board.getList($(e.target).attr('id')).addCard(cardName,'');
+      $('#'+$(e.target).attr('id')+'.addCardText').val('');
+      horello.mount(board);
+    }
+  });
+  $('.addCardCancel').click(function(e){
+    $('#'+$(e.target).attr('id')+'.addCard').collapse('hide');
+  })
+
+//Edit List Name
+
+$('.list-title').on("click",function(e){
+  console.log("list-title clicked")
+//   $('#'+$(e.target).attr('id')+'.titleChanger').trigger("click");
+// })
+
+// $('.titleChanger').on('click',function(e){
+  var titleSpace = $('#'+$(e.target).data('id')+'.titleChanger');
+  titleSpace.prop('disabled',false);
+  titleSpace.focus();
+  console.log("should be enabled")
+  //save on click away or enter
+
+
+  $('#'+$(e.target).attr('id')+'.titleChanger').on('keypress', function(event){
+    if(event.keyCode == 13){
+      console.log("clicked enter");
+      checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).attr('id')),titleSpace);
+    }
+  })
+
+  $('#'+$(e.target).attr('id')+'.titleChanger').blur(function(e){
+    checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).attr('id')),titleSpace);  
+  })
+
+})
+
+var checkAndSaveTitle = function(tempTitle,list,titleSpace){
+  if(!tempTitle && tempTitle.length<1){
+      alert("Invalid list title");
+    }
+    else{
+      list.setName(tempTitle);
+      $(titleSpace).prop('disabled',true);
+      horello.mount(board);
+    }
+}
+
+// Phase 4(a). Edit card
+  var clickedCard = null;
+  $('.card').on("click",function(e){
+    clickedCard = board.getList($(e.target).data("listId")).getCard($(e.target).data("cardId"));
+    $('#modalText').val(clickedCard.getTitle());
+    $('#modalBody').val(clickedCard.getDescription());
+    $('#cardEdit').modal('show');
+
+  })
+
+  $('#cardEdit').on('shown.bs.modal',function(e){
+    $('#modalText').focus();
+  })
+
+  $('#modalSave').on('click',function(e){
+    var clickedCardName = $('#modalText').val();
+    var clickedCardDesc = $('#modalBody').val();
+    if(!clickedCardName && clickedCardName.length<1){
+      alert("Invalid card name");
+    }
+    else{
+      clickedCard.setTitle(clickedCardName);
+      clickedCard.setDescription(clickedCardDesc);
+      $('#cardEdit').modal('hide');
+      horello.mount(board);
+    }
+    
+  })
+  
+  $('#modalText,#modalBody').on('keypress', function(event){
+    
+    if(event.keyCode == 13){
+      $("#modalSave").trigger("click");
+    }
+  })
+
+
 };
 

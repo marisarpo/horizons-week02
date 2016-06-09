@@ -2,6 +2,7 @@
 
 describe("Render to DOM", function() {
   // TODO: Do we want selenium tests?
+  //console.log("testing");
 
   describe("the board", function() {
     it("should exist in the DOM", function() {

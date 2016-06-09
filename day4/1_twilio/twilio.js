@@ -61,6 +61,7 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    console.log(this.messageSendButton);
     this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
@@ -102,7 +103,7 @@ twilio.TwilioShoutout.prototype = {
     var whitelist = "0123456789";
 
     // check phone number length
-    if(temp.length !== 11)
+    if(temp.length === 0)
       return false;
 
     for(var i = 0; i < temp.length; i++){
@@ -123,6 +124,7 @@ twilio.TwilioShoutout.prototype = {
 		
     // only send if both fields are valid
     // YOUR CODE HERE
+    debugger;
     var phoneTemp = this.phoneInputField.val();
     var msgTemp = this.messageInputField.val();
     if(this.validatePhoneField(phoneTemp) && this.validateMessageField(msgTemp)){
@@ -200,11 +202,12 @@ Message.prototype = {
     var body = $('<p></p>').text(this.body);
     listElem.append(sender);
     listElem.append(body);
-    
     return listElem;
   }
 };
 
 // Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
-var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
+$( document ).ready(function() { 
+    var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber);
+});
 // Just instantiating the app will set up the event handlers and make the UI interactive (as you should know, you built it haha)

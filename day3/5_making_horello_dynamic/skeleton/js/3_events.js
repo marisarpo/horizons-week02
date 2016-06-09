@@ -15,7 +15,7 @@ horello.mountStatic = function() {
   // 1a. [EXAMPLE] Add list form: toggle collapse
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
-  $('.add-list').click(function(e) {
+  $('.add-list').click(function() {
     $('#addList').collapse('toggle');
   });
 
@@ -25,21 +25,30 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-  // YOUR CODE HERE
+  $('.add-list').click(function() {
+    $('.form-control').focus();
+  })
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
   // form is clicked, should 1. validate the input (i.e., make sure that
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
+  $('#addListSave').click(function() {
+    var input = $("#addListText").val();
+    if(input) {
+      board.addList(input);
+    }
+    horello.mount(board);
+  })
 
-  // YOUR CODE HERE
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-
-  // YOUR CODE HERE
+  $('#addListCancel').click(function(){
+     $('#addList').collapse('toggle');
+  });
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -57,11 +66,34 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
+  $('.add-card').click(function(evt) {
+    var dd = $('#'+evt.target.nextSibling.id);
+    dd.collapse('toggle');
+    var listId = $(evt.target).attr('listid');
+    $('#save-card'+listId).focus();
 
-  // YOUR CODE HERE
+
+    $('#save-btn'+listId).click(function(){
+      var input = $('#save-card'+listId).val();
+      if (input){
+        var listUsed = board.getList(listId);
+        listUsed.addCard(input, null);
+        horello.mount(board);
+      }
+      // else {
+      //   $("save-card"+listId).collapse('toggle');
+      // }
+    })
+
+    $('footer'+listId + '> .well > .btn:last-child').click(function(evt) {
+      dd.collapse('toggle');
+    })
+  });
 
   // Phase 4(a). Edit card
-
-  // YOUR CODE HERE
+  $('.card-body').click(function(evt){
+    $('.card-edit').collapse('toggle');
+  })
+  
 };
 

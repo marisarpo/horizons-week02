@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -71,7 +73,13 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  $(document).keypress(function(event) {
+    if(event.keycode === key) {
+      fn();
+    }
+  })
 };
+//handlers.attachKeypress(32, function() {console.log("you pressed space")})
 
 // ----------------------------------------------------------------------------
 
@@ -84,6 +92,9 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+  handlers.attachClick($("#"+id), function() {
+    handlers.userActions[id]++;
+  })
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -138,6 +149,14 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+  handlers.attachHover($("#"+id), function() {
+    var timeout = setTimeout(function() {
+    $("#"+id).trigger("click");
+    handlers.hoverTimeoutNums[id]=timeout;}, 2000)
+    handlers.attachUnhover($("#"+id), function() {
+      clearTimeout(timeout)
+    })
+  })
 }
 
 handlers.attachHoverClick("red");
@@ -165,6 +184,11 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  var array = $("." + className).toArray();
+  handlers.attachClick(array, function(e) {
+    alert(alertMessage);
+    e.stopPropagation();
+  })
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
@@ -205,6 +229,18 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  
+  //var classes = $(elements).attr("class");
+  var array = $(elements).toArray();
+  handlers.attachClick(array, function(e) {
+    if($(elements).get(0) == document) {
+      return
+  }
+    $(e.currentTarget).css("backgroundColor", "green");
+    alert("You've reached " + $(e.currentTarget).attr("description"));
+    $(e.currentTarget).css("backgroundColor", "");
+  })
+  handlers.attachAlertsWithParents($(elements).parent());
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -277,6 +313,9 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 handlers.detachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  var array = $(elements).toArray();
+  handlers.off("click")
+  handlers.detachAlertsWithParents($(elements).parent());
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));

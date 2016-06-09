@@ -114,6 +114,6 @@ creating events of your own!
 ## Pair programming: Making Horello dynamic
 
 
-Head into [`2_making_horello_dynamic`](2_making_horello_dynamic/README.md) to get started!
+Head into [`5_making_horello_dynamic`](5_making_horello_dynamic/README.md) to get started!
 
 

@@ -156,7 +156,7 @@ twilio.TwilioShoutout.prototype = {
 // [Helper] `Message(sender<String>, body<String>)`
 // This is a helper class that appends your sent message to the DOM.
 var Message = function(sender, body) {
-  this.sender = sender;
+  this.sender = sender; // NOTE: THIS IS JUST THE NUMBER YOU ARE SENDING A TEXT TOO
   this.body = body;
 };
 

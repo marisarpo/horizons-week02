@@ -49,15 +49,57 @@ horello.mountStatic = function() {
   $('#addListSave').click(function() {
     var name = $('#addListText').val();
     if (name.length > 0) {
-      
-    }
+      board.addList(name);
+      $('addListText').val('');
+      $('#addList').collapse('toggle');
+      horello.mount(board);
+    } else {alert("enter a list name")};
   });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
+  $('#addListCancel').click(function() {
+    $('addListText').val('');
+    $('#addList').collapse('toggle');
+  })
+
+  $('#cardEdit').on('show.bs.collapse',function() {
+    console.log(this);
+  })
+
+  $('#cardEdit').on('show.bs.modal', function (e) {
+    var button = $(e.relatedTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+    $('#modalBody').val(card.getDescription());
+    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('card-id', cardId);
+  });
+
+  // 1f. Modal save
+  $('#modalSave').click(function (e) {
+    var title = $('#modalText').val();
+    var desc = $('#modalBody').val();
+    if (!title) {
+      alert('Please enter a title');
+      return;
+    }
+
+    var listId = $(e.currentTarget).data('list-id');
+    var cardId = $(e.currentTarget).data('card-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    card.setTitle(title);
+    card.setDescription(desc);
+    $('#cardEdit').modal('hide');
+    horello.mount(board);
+  });
+
 };
 
 // This function is called multiple times, to configure dynamic events.
@@ -77,8 +119,39 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
+  $('.add-card').click(function(event) {
+    var formId = $(this).attr('addCardId');
+    $('#addCardForm'+formId).collapse('toggle');
+    $('#addCardTitle'+formId).focus();
+  });
+
+  $('.savebtn').click(function() {
+    var formId = $(this).attr('id').split('addCardBtn')[1];
+    var name = $('#addCardTitle' + formId).val();
+    if (name.length > 0) {
+      board.getList(formId).addCard(name, 'desc');
+      $('#addCardTitle' + formId).val('');
+      $('#addCardForm' + formId).collapse('toggle');
+      horello.mount(board);
+    } else {
+      alert("enter a card name");
+    };
+  });
+  $('.addCardCancelBtn').click(function(){
+    var formId = $(this).attr('id').split('addCardCancelBtn')[1];
+    console.log(formId);
+    $('#addCardTitle' + formId).val('');
+    $('#addCardForm' + formId).collapse('toggle');
+  });
 
   // Phase 4(a). Edit card
+
+  $('.card').each(function (idx) {
+    $(this).off();
+    $(this).click(function (e) {
+      $('#cardEdit').modal('toggle', $(this));
+    });
+  });
 
   // YOUR CODE HERE
 };

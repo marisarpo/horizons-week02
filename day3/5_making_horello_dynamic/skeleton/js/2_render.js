@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card" id = "' + this.id + '"></div>');
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body"><p>'+this.title+'</p></div>');
 
@@ -27,21 +27,21 @@ horello.List.prototype.render = function() {
   var listwrapper = $('<div class="list"></div>');
   var listbody = $('<div class="list-header"><span class = "list-title">' + this.name + '</span></div>');
   var listbody2 = $('<div class="list-cards"></div>');
-  var listfooter = $('<div class="list-footer"></div>');
+  var listFooter = $('<div class="list-footer"></div>');
   wrapper.append(listwrapper);
   listwrapper.append(listbody);
   listwrapper.append(listbody2);
-  listwrapper.append(listfooter);
+  listwrapper.append(listFooter);
   listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
   listFooter.append($('\
       <div class="collapse" id="addCardForm'+this.id+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
+      <button type="button" class="btn btn-default savebtn" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
-      <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
+      <button type="button" class="btn btn-default addCardCancelBtn" id="addCardCancelBtn'+this.id+'">\
+      <span class="glyphicon glyphicon-remove"></span>\
       </button>\
       </div>\
       </div>\
@@ -59,7 +59,7 @@ horello.List.prototype.render = function() {
 horello.Board.prototype.render = function() {
   var outterWrapper = $('<div></div>');
   var wrapper = $('<div class="board"></div>');
-  for (var i = 0; i < this.lists.lenth; i ++) {
+  for (var i = 0; i < this.lists.length; i ++) {
     wrapper.append(this.lists[i].render());
   }
   outterWrapper.append(wrapper);

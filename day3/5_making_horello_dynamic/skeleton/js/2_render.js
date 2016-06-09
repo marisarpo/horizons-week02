@@ -11,9 +11,9 @@ horello.Card.prototype.render = function() {
   var cardbody = $('<div class="card-body"></div>');
 
   wrapper.append(cardwrapper);
-  if(this.desc) {
-    cardwrapper.append(cardmore);
-  }
+  
+  cardwrapper.append(cardmore);
+  
   cardwrapper.append(cardbody);
   cardbody.append($("<p></p>")).text(this.title);
   if(this.desc) {
@@ -30,11 +30,13 @@ horello.List.prototype.render = function() {
   // YOUR CODE HERE
   var wrapper = $('<div></div>');
   var listcontainer = $('<div class=list-container></div>');
-  var listwrapper = $('<div class="list"></div>');
+  var listwrapper = $('<div class="list"></div>').attr("id", this.getId());
   var listheader = $('<div class="list-header"></div>');
-  var listtitle = $('<span class="list-title">' + this.name +'</span>');
+  var listtitle = $('<span class="list-title">' + this.getName() +'</span>');
   var listcards = $('<div class="list-cards"></div>');
-  var listfooter = $('<div class="list-footer"><button class="list-button add-card"data-toggle="collapse" href="#addCard1">Add a card...</button><div class="collapse" id="addCard1"><div class="well add-card-form"><input type="text" class="form-control" placeholder="Card title"><button type="button" class="btn btn-default">Save</button><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div></div></div>');
+  var listfooter = $('<div class="list-footer"><button class="list-button add-card" id="addCard_' + this.getId()+ '" data-toggle="collapse" href="#addCard1">Add a card...</button><div class="collapse" id="'+ this.getId()+'"><div class="well add-card-form"><input type="text" class="form-control" placeholder="Card title" id="addCardText_' + this.getId() + '""><button type="button" class="btn btn-default addCardSave" >Save</button><button type="button" class="btn btn-default addCardCancel"><span class="glyphicon glyphicon-remove"></span></button></div></div></div>');
+
+
   wrapper.append(listcontainer);
   listcontainer.append(listwrapper);
   listwrapper.append(listheader);

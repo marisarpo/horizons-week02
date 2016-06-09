@@ -38,9 +38,13 @@ horello.mountStatic = function() {
 
   // YOUR CODE HERE
   $("#addListSave").click(function(e) {
+    var textInput = $('#addListText').val();
+    if (textInput.length === 0) {
+      alert("no text");
+      return;
+    }
     board.addList($("#addListText").val());
-    $("#boardAnchor").html(board.render());
-   
+    horello.mount(board);
   });
 
   // 1d. Add list form: cancel button
@@ -64,12 +68,53 @@ horello.mount = function (board) {
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
-  // - Clicking the button reveals the form
-  // - When the form is revealed, the title field is focused
-  // - Clicking Save validates the input and creates the new card
-  // - Clicking Cancel collapses the form
+  
 
   // YOUR CODE HERE
+  // - Clicking the button reveals the form
+  $('.add-card').click(function(e) {
+    
+    var listID = "#" + $(e.target).attr('id');
+    
+    $(listID).siblings().collapse('toggle');
+  });
+  // // - When the form is revealed, the title field is focused
+  $(".add-card").click(function(e) {
+    var listID = "#" + $(e.target).attr('id');
+    $(listID).parent().find(".form-control").focus();
+  });
+
+  // // - Clicking Save validates the input and creates the new card
+  $(".addCardSave").click(function(e) {
+
+   
+   
+   var listID = $(e.target).parent().parent().attr('id');
+  
+     var cardText = $("#addCardText_" + listID).val();
+    
+     if (cardText.length === 0) {
+       alert("no text");
+       return;
+     }
+     var listOne = board.getList(listID);
+    
+    
+     listOne.addCard(cardText, "");
+
+    horello.mount(board);
+  });
+
+  // // - Clicking Cancel collapses the form
+  $(".addCardCancel").click(function(e){
+
+    var listID = $(e.target).parent().parent().attr('id');
+    var list = board.getList(listID);
+
+     $("#addCard_" + listID).siblings().collapse('toggle');
+     horello.mount(board);
+
+  });
 
   // Phase 4(a). Edit card
 

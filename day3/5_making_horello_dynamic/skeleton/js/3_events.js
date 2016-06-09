@@ -25,6 +25,13 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
+
+  // $('.add-list').on('shown.bs.collapse', function(evt) {
+  //   $('.form-control').focus();
+  // })
+
+  // how i did it
+  //
   $('.add-list').click(function() {
     $('.form-control').focus();
   })
@@ -36,9 +43,13 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
   $('#addListSave').click(function() {
     var input = $("#addListText").val();
-    if(input) {
-      board.addList(input);
+    if(!input) {
+     alert("pls add list name");
     }
+
+    board.addList(input);
+    // $("#addListText").val('');
+    // $('#addList').collapse('hide');
     horello.mount(board);
   })
 
@@ -57,6 +68,9 @@ horello.mount = function (board) {
 
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
+
+  // this is important. you must append to the dom were you want
+  // it to be in order for you to see it on the screen
   $('#boardAnchor').append(board.render());
 
   // 2a. Add card forms
@@ -67,6 +81,7 @@ horello.mount = function (board) {
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
   $('.add-card').click(function(evt) {
+    // instead of evt.target you can also use $(this)
     var dd = $('#'+evt.target.nextSibling.id);
     dd.collapse('toggle');
     var listId = $(evt.target).attr('listid');
@@ -78,7 +93,9 @@ horello.mount = function (board) {
       if (input){
         var listUsed = board.getList(listId);
         listUsed.addCard(input, null);
-        horello.mount(board);
+        horello.mount(board); // we do this because
+        // we need to do this because we need to reload the
+        // listeners after we rerender the page
       }
       // else {
       //   $("save-card"+listId).collapse('toggle');
@@ -92,8 +109,32 @@ horello.mount = function (board) {
 
   // Phase 4(a). Edit card
   $('.card-body').click(function(evt){
-    $('.card-edit').collapse('toggle');
+    
+    $('#cardEdit').collapse('toggle');
+
+    var listId = $(evt.target).attr('listId');
+    var cardId = $(evt.target).attr('id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalSave').click(function(evt){
+      var newTitle = $('#modalText').val();
+      var newDesc = $('#modalBody').val();
+      card.setTitle(newTitle);
+      card.getDescription(newDesc);
+      $('#cardEdit').collapse('toggle');
+      horello.mount(board);
+    })
+     $('#modal-close1').click(function(evt){
+      $('#cardEdit').collapse('toggle');
+     })
+     $('#modal-close2').click(function(evt) {
+      $('#cardEdit').collapse('toggle');
+     })
   })
+
+  // $('.card-body').click(function(evt){
+  //   $('.card-edit').collapse('toggle');
+  // })
   
 };
 

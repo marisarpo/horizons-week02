@@ -8,12 +8,12 @@ horello.Card.prototype.render = function() {
   var wrapper = $('<div></div>');
   var cardwrapper = $('<div class="card"></div>');
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
-  var cardbody = $('<div class="card-body">'+this.title+'</div>');
+  var cardbody = $('<div class="card-body" listId = "'+this.listId+'"id = "'+this.getId()+'">'+this.title+'</div>');
 
   wrapper.append(cardwrapper);
   cardwrapper.append(cardmore);
   cardwrapper.append(cardbody);
-  cardbody.append($("<p></p>")).text(this.title);
+  // cardbody.append($("<p></p>").text(this.title));
 
   return wrapper.html();
 };
@@ -39,6 +39,16 @@ horello.List.prototype.render = function() {
     listbody.append(card.render());
   });
 
+  // the way that darwish & lane did it
+  //
+  // var cardsHtml = _.map(this.cards, function(card) {
+  //   return card.render();
+  // })
+  // cardsHtml = cardsHtml.join("\n")
+  //
+  // add cardsHtml into the place where the cards 
+  // should be put in (listbody)
+
   wrapper.append(listcontainer);
   listcontainer.append(listwrapper);
   listwrapper.append(listhead);
@@ -52,6 +62,15 @@ horello.List.prototype.render = function() {
 // This function renders a Board, and all of the lists it contains, to
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
+
+  //the way that darwish and lane did it 
+  //
+  // $('#boardAnchor').append(
+  //   _.map(this.lists, function(lists){
+  //     return list.render();
+  // }).join("\n"))
+
+
   var wrapper = $('<div></div>');
   var boardwrapper = $('<div class="board"></div>');
   

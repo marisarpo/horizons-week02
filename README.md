@@ -10,8 +10,8 @@
 
 ## Day 2
 
-- [Horello Part 2]: Make the Horello landing page responsive (guided).
-- [Horello App Part 1]: Begin to build the Horello web app.
+- [Horello Part 2](./day2/4_responsive): Make the Horello landing page responsive (guided).
+- [Horello App Part 1](./day2/5_horello): Begin to build the Horello web app.
 
 ## Day 3
 
@@ -21,10 +21,9 @@
 - [Horello App Part 2]: Make your Horello app dynamic, responding to events and updating data models!
 - [Bonus JQuery]: JQuery funsies 
 
-[Event Listeners](./day3/4_handling_events)
+[Event Listeners]: (./day3/4_handling_events)
 [Horello App Part 2]: ./day3/5_making_horello_dynamic
 [Bonus JQuery]: ./day3/6_bonus_jquery
-
 
 ## Day 4 - Day 5
 - [Finish up Horello App Part 2](./day3/5_making_horello_dynamic)

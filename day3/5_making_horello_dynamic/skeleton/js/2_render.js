@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card" data-list-id="'+ this.listId +'"data-card-id="'+ this.id +'"></div>');
   var cardmore = $('<span class="card-more"></span>');
   if (this.getDescription()) {
     cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'))
@@ -31,7 +31,7 @@ horello.List.prototype.render = function() {
 
   var listcontainer = $('<div class="list-container"></div>');
   var listwrapper = $('<div class="list"></div>');
-  var listheader = $('<div class="list-header"><span class="list-title">' + this.name + '</span></div>');
+  var listheader = $('<div class="list-header"><span class="list-title">'+this.name+'</span></div>');
   var listcards = $('<span class="list-cards"></span>'); // where we have to add the repeating cards
 
   for(var i = 0; i < this.cards.length; i++) {
@@ -39,14 +39,14 @@ horello.List.prototype.render = function() {
   }
 
   var listfooter = $('<div class="list-footer"></div>');
-  var footercontent = $('<button class="add-card" data-toggle="collapse" href="#' + this.id + '>Add a card...' +
-                        '</button>' + 
-                        '<div class="collapse" id=' + this.id + '>' +
-                        '<div class="well add-card-form">' +
-                        '<input type="text" class="form-control" placeholder="Card title">' +
-                        '<button type="button" class="btn btn-default">Save' +
+  var footercontent = $('<button class="add-card" data-toggle="collapse" href="#'+this.id+'">Add a card...' +
                         '</button>' +
-                        '<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>' +
+                        '<div class="collapse" id='+this.id+'>' +
+                        '<div class="well add-card-form">' +
+                        '<input type="text" class="form-control" placeholder="Card title" id="card_name_'+this.id+'">' +
+                        '<button type="button" class="btn btn-default save" data-list-id="'+this.id+'">Save' +
+                        '</button>' +
+                        '<button type="button" class="btn btn-default cancel" data-list-id="'+this.id+'"><span class="glyphicon glyphicon-remove"></span>' +
                         '</button>' +
                         '</div>' +
                         '</div>)');
@@ -54,9 +54,9 @@ horello.List.prototype.render = function() {
   wrapper.append(listcontainer);
   listcontainer.append(listwrapper);
   listwrapper.append(listheader);
-  listwrapper.append(listcards)
-  listwrapper.append(listfooter)
-  listfooter.append(footercontent)
+  listwrapper.append(listcards);
+  listwrapper.append(listfooter);
+  listfooter.append(footercontent);
 
   return wrapper.html();
 
@@ -76,6 +76,6 @@ horello.Board.prototype.render = function() {
   }
 
   wrapper.append(boardwrapper);
-  return wrapper.html(); 
+  return wrapper.html();
 }
 

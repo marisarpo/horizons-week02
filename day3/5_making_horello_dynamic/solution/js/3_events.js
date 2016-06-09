@@ -2,7 +2,9 @@
 //
 // This function is called once, when the page loads, to set up all of
 // the static events, i.e., events that do not need to change as we
-// change the contents of the board. For instance, the "Add list" button
+// change the contents of the board. 
+// 
+// For instance, the "Add list" button
 // always does the same thing. The button doesn't appear or disappear
 // and its behavior never changes.
 horello.mountStatic = function() {

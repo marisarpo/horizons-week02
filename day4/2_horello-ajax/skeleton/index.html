@@ -19,10 +19,11 @@
   <script>
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board();
+      var board = new horello.Board('5022f7272547168f2d183e16');
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;
+      board.load();
     });
   </script>
 </head>

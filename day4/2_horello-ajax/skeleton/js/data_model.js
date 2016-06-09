@@ -33,6 +33,20 @@ horello.Card.prototype = {
 
   setTitle: function(titleStr) {
     this.title = titleStr;
+    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+      method: "PUT",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: titleStr
+      },
+      success: function (data) {
+        console.log("Updated title of card " + this.getId());
+      }.bind(this),
+      error: function (error) {
+        console.error("Hit a snag when updating title of card " + this.getId() + ": " + JSON.stringify(error));
+      }.bind(this)
+    });
   },
 
   getDescription: function() {
@@ -40,7 +54,21 @@ horello.Card.prototype = {
   },
 
   setDescription: function(desc) {
-    this.desc = desc;
+   this.desc = desc;
+   $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+     method: "PUT",
+     data: {
+       key: horello.apiKey,
+       token: horello.apiToken,
+       name: desc
+     },
+     success: function (data) {
+       console.log("Updated description of card " + this.getId());
+     }.bind(this),
+     error: function (error) {
+       console.error("Hit a snag when updating desc of card " + this.getId() + ": " + JSON.stringify(error));
+     }.bind(this)
+   }); 
   },
 
   render: function() {
@@ -143,6 +171,25 @@ horello.List.prototype = {
     }, ""));
 
     return wrapper.html();
+  },
+
+  load: function() {
+    $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken
+      },
+      success: function (temp) {
+        console.log("Successfully loaded cards for list " + this.getId());
+        this.cards = temp.map(horello.Card.fromJSON);
+
+        // Re-render.
+        horello.mount(board);
+      }.bind(this),
+      error: function (error) {
+        console.error("Error loading cards for list " + data.getId() + ": " + JSON.stringify(error));
+      }
+    });
   }
 };
 
@@ -150,21 +197,41 @@ horello.List.fromJSON = function(data) {
   // PHASE 1 code here
   var list = new horello.List(data.id, data.name);
   board.lists.push(list);
-  return list;
+  list.load();
 };
 
 
 // BOARD
 
-horello.Board = function () {
+horello.Board = function (id) {
+  this.id = id;
   this.lists = [];
 };
 
-horello.Board.prototype = {
+horello.Board.prototype = { 
+  getId: function(){
+    return this.id;
+  },
+
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    $.ajax(horello.apiUrl + "/lists", {
+        method: "POST",
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken,
+          name: listName,
+          idBoard: this.id,
+          pos: 'bottom'
+        },
+        success: function (data) {
+          console.log("Successfully created list with ID " + data.id + " for board " + this.getId());
+          this.loadData();
+        }.bind(this),
+        error: function (error) {
+          console.error("Hit a snag when adding list for board " + this.getId() + ": " + JSON.stringify(error));
+        }.bind(this)
+      }
+    );
   },
 
   getList: function(listId) {
@@ -179,5 +246,28 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+  },
+
+  load: function() {
+    // Clear the current data first
+    this.lists = [];
+
+    // Load data
+    $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken
+        },
+        success: function (data) {
+          console.log("Board " + this.getId() + " was successfully loaded");
+          data.forEach(function (temp) {
+            horello.List.fromJSON(temp);
+          });
+        }.bind(this),
+        error: function (error) {
+          console.error("Error loading lists for board " + this.getId() + ": " + JSON.stringify(error));
+        }.bind(this)
+      }
+    );
   }
 };

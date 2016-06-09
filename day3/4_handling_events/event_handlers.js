@@ -192,6 +192,7 @@ handlers.attachAlertsToClass = function(className, alertMessage) {
   handlers.attachClick('.'+className, function(elem){
     arr.push[elem];
     alert(alertMessage);
+    stopPropagation();
   });
   return arr;
 };
@@ -234,6 +235,11 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  handlers.attachClick(elements, function(elem){
+    $(elem.currentTarget).css("backgroundColor", "green");
+    alert("You've reached " + $(elem.currentTarget).attr("description"));
+    $(elem.currentTarget).css("backgroundColor", "");
+  });
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -306,6 +312,8 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 handlers.detachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  elements.off('click');
+
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
@@ -332,10 +340,15 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 // We are going to do the same thing, with the rows and their delete buttons.
 // We will delegate the events of the delete button to their parent, the row.
 
-handlers.attachDeleteAction = function(buttonElement) {
+handlers.attachDeleteAction = function(element) {
   // YOUR CODE HERE
+  handlers.attachClick(element, function(event)){
+    $(event.target).css("backgroundColor", "green");
+    alert("You've reached " + $(event.target).attr("description"));
+    $(event.target).css("backgroundColor", "");
+    event.stopPropagation();
+  });
 };
-
 handlers.attachDeleteAction($(".panel"));
 
 // ----------------------------------------------------------------------------
@@ -382,6 +395,7 @@ handlers.attachDeleteAction($(".panel"));
 
 handlers.attachFormAdd = function(formElement) {
   // YOUR CODE HERE
+
 };
 
 handlers.attachFormAdd($("#grocery-add"));

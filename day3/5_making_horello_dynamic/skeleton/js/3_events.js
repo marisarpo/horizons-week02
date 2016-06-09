@@ -24,8 +24,12 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
+
   // YOUR CODE HERE
+  $('.add-list').on('click', function(e){
+    $('#addListText').focus();
+  });
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,17 +38,30 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('#addListSave').on('click', function(){
+      if(!$('#addListText').val()){
+        alert("Empty");
+        return;
+      }
+      var name = $('#addListText').val();
+      board.addList(name);
+      horello.mount(board);
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-
   // YOUR CODE HERE
+  $('#addListCancel').on('click', function(){
+    $('#addList').collapse('toggle');
+  });
+
 }
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
   // Phase 3. Create card
+
 
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
@@ -59,9 +76,28 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
+  $('.add-card').on('click', function(e){
+    $(this).next().collapse('show');
+    $(this).next().find('input').focus();
+  });
+
+  $('.saveButton').on('click',function(){
+    if(!$(this).prev().val()){
+      alert("Empty");
+      return;
+    }
+    var list = board.getList($(this).attr("id").substring(10));
+    list.addCard($(this).prev().val());
+    horello.mount(board);
+  });
+
+  $('.cancelBtn').on('click', function(){
+      console.log("clicked");
+      $(this).parents().eq(1).collapse('hide');
+
+  });
 
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
 };
-

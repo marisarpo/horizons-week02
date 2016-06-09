@@ -4,7 +4,7 @@ window.horello = {};
 
 // [Helper] `generateId`
 // This function generates a random, unique string for you use for whatever.
-// 
+//
 // ex. horello.generateId() -> 'aQ-V-c-u-P4l'
 // ex. horello.generateId() -> 'bh-H-N-9-Vdr'
 horello.generateId = function() {
@@ -47,7 +47,7 @@ horello.Card.prototype = {
 
   // Exercise 1.C `setTitle(titleStr<String>)`
   // Write a setter funtion for the `titleStr` property
-  // 
+  //
   // ex. var card = horello.Card("Thing I had to do", "What was it?");
   //   card.setTitle("Buy Milk");
   //   card.getTitle() -> "Buy Milk";
@@ -98,7 +98,7 @@ horello.List.prototype = {
 
   // Exercise 2.C `setName(name<String>)`
   // Write a setter funtion for the `name` property
-  // 
+  //
   // ex. var l = horello.List("Pokemon");
   //   l.setTitle("Digimon");
   //   l.getTitle() -> "Digimon";
@@ -112,25 +112,25 @@ horello.List.prototype = {
   // with those give arguments, and add the newly created object to its
   // array of cards. Finally, it should return the id of the newly
   // created card.
-  // 
+  //
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
     return card.getId();
   },
-  
+
   // Exercise 2.E `getCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
   // string. It should search its card array for the Card object with
   // the given id, and return it. If the card cannot be found, it should
   // return null.
-  // 
+  //
   // ex. var l = horello.List("Superheroes");
   //   var cId = l.addCard("Miss Marvel", "Carol Danvers");
-  //   l.getCard(cId) -> 
+  //   l.getCard(cId) ->
   //   l.getTitle() -> "Digimon";
-  // 
+  //
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
     var card = this.cards.filter(function(c) {
@@ -141,7 +141,7 @@ horello.List.prototype = {
     }
     return null;
   },
-  
+
   // Exercise 2.F `rmvCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
   // string. It should retrieve the cardObject which corresponds to that
@@ -205,5 +205,3 @@ horello.Board.prototype = {
     return c;
   }
 };
-
-

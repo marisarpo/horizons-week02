@@ -36,10 +36,12 @@ body { margin: 0; padding: 0; overflow: hidden; font-family: Helvetica; }
 .time {
   margin-bottom: 0.10em;
   font-size: 7em;
+	font-weight: 700;
 }
 
 .quote {
   width: 70%;
+	display: inline-block;
 }
 
 .weather-text {

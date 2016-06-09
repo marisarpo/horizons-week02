@@ -70,9 +70,10 @@ horello.mountStatic = function() {
   })
 
   $('#cardEdit').on('show.bs.modal', function (e) {
-    var button = $(e.relatedTarget);
-    var cardId = button.data('card-id');
-    var listId = button.data('list-id');
+    var card = $(e.relatedTarget);
+    var cardId = card.attr('id');
+    var listId = card.parent().attr('id');
+    console.log(card);
     var list = board.getList(listId);
     var card = list.getCard(cardId);
     $('#modalText').val(card.getTitle());
@@ -81,7 +82,7 @@ horello.mountStatic = function() {
     $('#modalSave').data('card-id', cardId);
   });
 
-  // 1f. Modal save
+  //1f. Modal save
   $('#modalSave').click(function (e) {
     var title = $('#modalText').val();
     var desc = $('#modalBody').val();

@@ -26,8 +26,8 @@ horello.List.prototype.render = function() {
   var wrapper = $('<div class="list-container"></div>');
   var listwrapper = $('<div class="list"></div>');
   var listbody = $('<div class="list-header"><span class = "list-title">' + this.name + '</span></div>');
-  var listbody2 = $('<div class="list-cards"></div>');
-  var listFooter = $('<div class="list-footer"></div>');
+  var listbody2 = $('<div class="list-cards" id = "' + this.id + '"></div>');
+  var listFooter = $('<div class="list-footer"></div>')
   wrapper.append(listwrapper);
   listwrapper.append(listbody);
   listwrapper.append(listbody2);

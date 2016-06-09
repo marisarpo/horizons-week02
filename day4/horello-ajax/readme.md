@@ -266,7 +266,7 @@ reload the page--_et voila!_--you should see more or less the same thing
 you see in the official Trello app at Trello.com. Cool beans!
 
 
-## Phase 5: Write data
+## Phase 5: Writing to the API
 
 Take a deep breath, because you made it to the final phase of this
 killer project. There's a light at the end of the tunnel. It's a tiny

@@ -162,7 +162,7 @@ var Message = function(sender, body) {
 
 // [Helper] `render`
 // This part actually does the work.
-// It returns a jQuery object that encloses span and p tags that encapsulat the sender and body properties, respectively.
+// It returns a jQuery object that encloses span and p tags that encapsulate the sender and body properties, respectively.
 Message.prototype = {
   render: function() {
     var listElem = $('<li></li>').addClass('message');

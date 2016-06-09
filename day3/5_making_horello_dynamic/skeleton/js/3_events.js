@@ -40,9 +40,10 @@ horello.mountStatic = function() {
     if (listName.length < 1) {
       return;
     }
-    board.addList(listName);
+    var listId = board.addList(listName);
     $('#addList').collapse('toggle');
-    $('#addListText').val = '';
+    $('#addListText').val("");
+    $('#board').append(board.getList(listId).render());
     horello.mount(board);
   });
 
@@ -56,12 +57,17 @@ horello.mountStatic = function() {
 }
 
 // This function is called multiple times, to configure dynamic events.
+var once = false;
 horello.mount = function(board) {
   // Phase 3. Create card
 
   // Unrender and re-render the board.
-  $('#boardAnchor').empty();
-  $('#boardAnchor').append(board.render());
+  if (!once) {
+    console.log('only once!');
+    $('#boardAnchor').empty();
+    $('#boardAnchor').append(board.render());
+    once = true;
+  }
 
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
@@ -74,18 +80,22 @@ horello.mount = function(board) {
   $(".add-card").each(function() {
     var id = $(this).attr('id');
 
-    $(this).off();
+    $('#collapse' + id).off();
     $('#collapse' + id).on('shown.bs.collapse', function() {
       $('#addCardTitle' + id).focus();
     });
 
+    $('#saveCardBtn' + id).off();
     $('#saveCardBtn' + id).click(function() {
       if ($('#addCardTitle' + id).val().length < 1) {
         return;
       }
 
-      board.getList(id).addCard($('#addCardTitle' + id).val(), 'description');
+      var cardId = board.getList(id).addCard($('#addCardTitle' + id).val(), 'description');
+      $('#' + id).children().eq(1).append(board.getList(id).getCard(cardId).render());
       horello.mount(board);
+      $('#addCardTitle' + id).val("");
+      $('#collapse' + id).collapse('toggle');
     });
 
     $('#addCardCancelBtn' + id).off();

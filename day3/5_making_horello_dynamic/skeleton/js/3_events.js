@@ -37,21 +37,25 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
-  $('.add-list').click(function(e) {
-    $("#addListSave").on('click', function() {
-      if ($('#addListText').val()) {
-        //update data model (add list)
-        horello.Board.addList($('#addListText').val());
-        //cause new list to appear (render)
+    $("#addListSave").click(function(e) {
+      if (!$('#addListText').val()) {
+        alert("Please enter a list name.")
+        return;
       }
+      board.addList($('#addListText').val());
+      $('#addListText').val(""); //reset input field to empty
+      $('#addList').collapse('toggle'); //collapse
+      horello.mount(board);
     });
-  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+  $('#addListCancel').click(function() {
+    $('#addList').collapse('hide');
+  })
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -71,9 +75,52 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
+  $('.add-card').click(function (e) {
+    $($(e.target)).siblings().collapse('toggle');
+  })
+
+  $('.add-card').click(function() {
+    $('input').focus();
+  });
+
+  $('.save').click(function(e) {
+    var listId = $(this).attr("data-list-id");
+    var input = $(e.target).siblings().val();
+    if (!input) {
+      alert("Enter card name.");
+      return;
+    }
+    var list = board.getList(listId);
+    list.addCard(input, "Add description", listId);
+    $('.add-card-form > input').val(""); //reset input field to empty
+    $('#' + listId).siblings().collapse('toggle'); //collapse
+    horello.mount(board);
+  })
 
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
+  $('.card').click(function(e) {
+    $('#cardEdit').modal('toggle');
+    var cardId = $(e.currentTarget).attr('id');
+    var listId = $(e.currentTarget).parent().attr('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    var cardTitle = card.getTitle();
+    var cardDesc = card.getDescription();
+    $('#modalText').val(cardTitle);
+    $('#modalBody').val(cardDesc);
+    $('#modalSave').off();
+    $('#modalSave').click(function(e) {
+      if ($('#modalText').val()) {
+        card.setTitle($('#modalText').val());
+      }
+      if ($('#modalBody').val()) {
+        card.setDescription($('#modalBody').val());
+      }
+      $('#cardEdit').modal('hide');
+      horello.mount(board);
+      })
+    })
 };
 

@@ -124,9 +124,9 @@ horello.List.prototype = {
   // created card.
   // 
   // hint. You can create a card using new horello.Card(...)
-  addCard: function(name, desc) {
+  addCard: function(name, desc, listId) {
     // YOUR CODE HERE
-    var newCard = new horello.Card(name, desc);
+    var newCard = new horello.Card(name, desc, listId);
     this.cards.push(newCard);
     return newCard.getId();
   },

@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card" id="'+this.getId().trim()+'"></div>');
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body"></div>');
 
@@ -15,8 +15,8 @@ horello.Card.prototype.render = function() {
     cardwrapper.append(cardmore);
   }
   cardwrapper.append(cardbody);
-  if (this.desc) {
-    cardbody.append($("<p></p>")).text(this.desc);
+  if (this.title) {
+    cardbody.append($("<p></p>")).text(this.title);
   }
   return wrapper.html();
 };
@@ -31,11 +31,23 @@ horello.List.prototype.render = function() {
   var listcontainerwrapper = $('<div class="list-container"></div')
   var listwrapper = $('<div class="list"></div>');
   var listheader = $('<div class="list-header"><span class="list-title">' + this.name +'</span></div>');
-  var listcards = $('<div class="list-cards"></div>');
-  var listfooter = $('<div class="list-footer"><button class="list-button add-card"data-toggle="collapse"href="#addCard1">Add a card...</button><div class="collapse" id="addCard1"><div class="well add-card-form"><input type="text" class="form-control"placeholder="Card title"><button type="button" class="btn btn-default">Save</button><button type="button"class="btn btn-default"><spanclass="glyphicon glyphicon-remove"></span></button></div></div></div></div>')
+  var listcards = $('<div class="list-cards" list-id="'+this.getId().trim()+'"></div>');
+  var listfooter = $(
+    '<div class="list-footer">' + 
+      '<button class="list-button add-card" data-toggle="collapse" id="'+this.getId().trim()+'">Add a card...</button>' + 
+      '<div class="collapse" collapse-id="'+this.getId().trim()+'">' +
+        '<div class="well add-card-form">' +
+          '<input type="text" class="form-control" placeholder="Card title" input-id="'+this.getId().trim()+'">' + 
+          '<button type="button" class="btn btn-default save" data-list-id="'+this.getId().trim()+'">Save</button>' + 
+          '<button type="button"class="btn btn-default">' +
+            '<span class="glyphicon glyphicon-remove"></span>' + 
+          '</button>' + 
+        '</div>' + 
+      '</div>' + 
+    '</div>');
 
   wrapper.append(listcontainerwrapper);
-  listcontainerwrapper.append(listwrapper)
+  listcontainerwrapper.append(listwrapper);
   listwrapper.append(listheader);
   listheader.append(listcards);
   listwrapper.append(listfooter);

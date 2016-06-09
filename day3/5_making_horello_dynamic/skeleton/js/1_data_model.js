@@ -147,10 +147,10 @@ horello.List.prototype = {
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
     // YOUR CODE HERE
-    var x =this.cards;
+    //var x=this.cards;
    // console.log(x[0].id)
     for(var i=0;i<this.cards.length;i++){
-      if(x[i].getId()===cardId)
+      if(this.cards[i].getId()===cardId)
         return this.cards[i]
     }
     return null
@@ -204,9 +204,9 @@ horello.Board.prototype = {
   // otherwise.
   getList: function(listId) {
     // YOUR CODE HERE
-    for(var i=0; i<lists.length; i++){
-      if(lists[i].getId()===ListId){
-        return lists[i];
+    for(var i=0; i<this.lists.length; i++){
+      if(this.lists[i].getId()===listId){
+        return this.lists[i];
       }
     }
     return undefined

@@ -67,11 +67,29 @@ horello.mountStatic = function() {
 
  // YOUR CODE HERE
 //with card click
-// $('cardEdit').on(shown.bs.collapse)
-// $('.close').click(function(e){
-// $('#cardEdit').collapse('toggle');
-// })
+//to open
+$('.card-body').click(function(e){
+$('#cardEdit').modal('toggle');
+})
 
+//close button
+$('.close').click(function(e){
+$('#'+this.id).collapse('hide');
+});
+
+var listId= $('#data-list-id');
+var carId = $('#data-card-id')
+
+  $('#modalSave').click(function(e){
+    if(!$('#modalText').val()){
+      alert("need to name your list dude");
+      return
+    }
+    board.addList($('#modalText').val());
+     $('#'+this.id).collapse('toggle');
+    $('#modalText').val(''); 
+    horello.mount(board);
+  }); 
 
 }
 

@@ -77,17 +77,63 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
-  $('#addCardButton').on('shown.bs.collapse', function (e) {
-    $('#addCardId').focus();
+  $('.addCardWell').on('shown.bs.collapse', function (e) {
+    
+    var id = $(this).attr('data-listId');
+    $("#save-card" + id).focus();
   });
 
-  // $("#addCardRemove").click(function() {
-  //   $("#addCard_" +).collapse("hide");
+
+  // board.lists.forEach(function(list){
+  //   var id = list.getId();
+  //   ("#addCard" + id).on('shown.bs.collapse', function (e) {
+  //     $("#save-card" + id).focus();
+  //   });
   // })
+
+
+
+  $(".addCardCancel").click(function() {
+      
+      console.log("hello");
+      $(".addCardWell").collapse("hide");
+    });
+
+  // save card
+  $(".save").click(function(evt) {
+
+    var listId = $(this).attr('listId');
+    console.log(listId);
+    var list = board.getList(listId);
+
+    if(!$('#save-card' + listId).val()) {
+      alert("Enter a card name");
+      return;
+    }
+
+    var nameCard = $('#save-card' + listId).val();
+    list.addCard(nameCard);
+    $(".addCardWell").collapse("hide");
+    horello.mount(board);
+
+  });
 
 
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
+  //   var id = $(this).attr('addCardId');
+  //   $(".saveButton").click(function(ev) {
+  //   if(!$("#cancelButton"+id).val()) {
+  //     alert("please enter a list name");
+  //     return;
+  //   }
+  //   board.addList($("#addListText").val());
+  //   $("#addListText").val("")
+  //   $("#addList").collapse("hide");
+
+  //   horello.mount(board);
+  // })
+
 };
 

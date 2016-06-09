@@ -49,8 +49,8 @@ horello.List.prototype.render = function() {
       <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
-      <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
+      <button type="button" class="btn btn-default save">\
+      <span class="glyphicon glyphicon-remove"></span>\
       </button>\
       </div>\
       </div>\

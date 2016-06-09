@@ -35,6 +35,9 @@ own code from the previous project, feel free to do that instead, we
 won't be offended. You won't be changing the view code (HTML/CSS) today,
 this will be pure JS.
 
+Check out the [live, final version of Horello at the end of this
+project](http://horizons-school-of-technology.github.io/week02/day4/2_horello-ajax/solution/index.html).
+
 ## Phase 1: Authentication
 
 The "real world" that we're going to be venturing into today is the

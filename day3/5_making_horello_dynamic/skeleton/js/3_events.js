@@ -44,6 +44,7 @@ horello.mountStatic = function() {
         return;
       }
       var name = $('#addListText').val();
+
       board.addList(name);
       horello.mount(board);
   });

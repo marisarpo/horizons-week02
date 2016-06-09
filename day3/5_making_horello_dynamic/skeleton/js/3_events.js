@@ -103,10 +103,11 @@ horello.mount = function (board) {
       $('#modalBody').val(cardBody)
       $('#cardEdit').modal('toggle', $(this));
     });
-    $('#modalSave').click(function(e) {
-      console.log(this)
-      console.log(card)
-    })
+    // $('#modalSave').click(function(e) {
+    //     var card = new horello.Card($('#modalText'), $('#modalBody'))
+    //     console.log(card)
+    //     $('#cardEdit').modal('toggle', $(this));
+    //   })
   });
 };
 

@@ -26,6 +26,9 @@ horello.mountStatic = function() {
   // field).
  
   // YOUR CODE HERE
+  $('.add-list').click(function(e) {
+    $("#addListText").focus();
+  });
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,6 +37,15 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('.add-list').click(function(e) {
+    $("#addListSave").on('click', function() {
+      if ($('#addListText').val()) {
+        //update data model (add list)
+        horello.Board.addList($('#addListText').val());
+        //cause new list to appear (render)
+      }
+    });
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a

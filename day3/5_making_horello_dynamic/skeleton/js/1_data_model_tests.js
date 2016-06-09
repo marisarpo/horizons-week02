@@ -147,10 +147,8 @@ describe("<List> Class", function() {
     
     it("should get a card", function() {
       var cardId = list.addCard("Thing", "Other");
-      expect(list.cards.length).toBe(2);
       expect(list.getCard(cardId)).toEqual(jasmine.any(horello.Card));
       expect(list.getCard(cardId).getTitle()).toBe("Thing");
-      expect(list.cards.length).toBe(2);
     });
   });
   

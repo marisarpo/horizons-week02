@@ -26,6 +26,11 @@ horello.mountStatic = function() {
   // field).
  
   // YOUR CODE HERE
+  $('#addlist').on('shown.bs.collapse', function(e){
+    $('#addListText').focus();
+  });
+
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,22 +39,36 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('#addListSave').click(function(e) {
+    if (!$('#addListText').val()) {
+      alert("You need to name your stupid freaking list!");
+    }
+    
+    board.addList($('#addListText').val());
 
+     $('#addList').collapse('toggle');
+     $('#addListText').val("");
+     horello.mount(board);
+
+  })
+       
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
-}
+
+
+  }
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
   // Phase 3. Create card
 
   // Unrender and re-render the board.
-  $('#boardAnchor').empty();
-  $('#boardAnchor').append(board.render());
 
+
+  
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:

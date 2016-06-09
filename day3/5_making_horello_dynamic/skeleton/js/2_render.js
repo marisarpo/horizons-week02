@@ -10,10 +10,15 @@ horello.Card.prototype.render = function() {
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
 
+  if (this.getDescription()) {
+    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+  }
+  var cardbody = $('<div class="card-body">'+this.title+'</div>');
+
   wrapper.append(cardwrapper);
   cardwrapper.append(cardmore);
   cardwrapper.append(cardbody);
-  cardbody.append($("<p></p>")).text(this.title);
+  //cardbody.append($("<p></p>")).text(this.title);
 
   return wrapper.html();
 };

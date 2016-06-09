@@ -2,20 +2,21 @@
 
 window.horello = window.horello || {};
 
-horello.generateId = function() {
-  var chunk = function() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  };
-  return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
-    chunk() + '-' + chunk() + chunk() + chunk();
-};
+// NOT RELEVANT ANYMORE - KEEPING JUST IN CASE
+// horello.generateId = function() {
+//   var chunk = function() {
+//     return Math.floor((1 + Math.random()) * 0x10000)
+//       .toString(16)
+//       .substring(1);
+//   };
+//   return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
+//     chunk() + '-' + chunk() + chunk() + chunk();
+// };
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(id, title, desc, listId) {
+  this.id = id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -63,13 +64,15 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
@@ -145,6 +148,9 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  var list = new horello.List(data.id, data.name);
+  board.lists.push(list);
+  return list;
 };
 
 

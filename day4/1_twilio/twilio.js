@@ -124,7 +124,6 @@ twilio.TwilioShoutout.prototype = {
 		
     // only send if both fields are valid
     // YOUR CODE HERE
-    debugger;
     var phoneTemp = this.phoneInputField.val();
     var msgTemp = this.messageInputField.val();
     if(this.validatePhoneField(phoneTemp) && this.validateMessageField(msgTemp)){

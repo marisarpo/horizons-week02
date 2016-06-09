@@ -22,11 +22,17 @@ one?)
 Recall from class that JSON is a standard data format that's used to
 exchange information via APIs. We have a data model for Horello's board,
 lists, and cards, but we need a way to _read JSON data_ from the Trello
-API and turn that into the objects that we're used to working with.
+API and turn that into the objects that we're used to working with (this
+process is called _deserialization_).
 
 Open up `1_data_model.js` (this file should look familiar!) and fill in
 the `.fromJSON()` methods of the Card and List classes to accomplish
 this.
+
+You may decide, in phase 5 (writing data to the API), that you need to
+do something similar in the opposite direction, i.e., that you need
+methods that serialize your instances into JSON data. Or you might
+decide that you don't need them.
 
 Note that these two methods are _static methods_. A static method is not
 called on any particular _instance_ of the class, so it does not receive
@@ -69,13 +75,12 @@ Once you've logged into your Trello account:
 1. Generate a token manually by clicking on the `Token` link on that page.
 1. Click "Allow" on the authentication screen.
 1. Now copy this token and add the following string onto the end of the
-   `<script src=...>` URL, replacing "[Token]" with your token:
+   `<script src=...>` URL, replacing `[Token]` with your token:
+   `&token=[Token]`
 
-       &token=[Token]
-
-***Note:*** The Trello developer docs mention adding the key parameter
-here. Make sure you add the token parameter too, or none of your API
-calls will work!
+***Note:*** The Trello developer docs only mention adding the key
+parameter here. Make sure you add the token parameter too, or none of
+your API calls will work!
 
 That was pretty easy, right? These two numbers--the key and the
 token--are how our application (Horello) authenticates to the Trello

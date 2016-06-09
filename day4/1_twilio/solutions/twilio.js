@@ -64,7 +64,7 @@ twilio.TwilioShoutout.prototype = {
     this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
-  // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
+  // Write a function that takes a JQuery input field                                                                                                                                                                                                                                                      m./and clears the text inside it. It should not return anything.
   //
 	// hint. use $.trim(), see https://api.jquery.com/jQuery.trim/
   // hint. what does it mean to `clear` a field? Set it to an empty string.

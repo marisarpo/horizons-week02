@@ -1,0 +1,43 @@
+
+body > img {
+   width : 100%;
+}
+.sidebyside img{
+    padding:20px 20px;
+    margin:0 130.5px;
+    max-width: 1040px;
+    position:relative;
+    overflow: hidden;
+}
+.listProj {
+    vertical-align: baseline;
+}
+#list{
+    float:left;
+    height:390px;
+    width:180px;
+    padding:0;
+    margin:0;
+    left:75%;
+    
+}
+#project{
+    float:left;
+    width:900px;
+    height:390px;
+    margin:0;
+    padding:0;
+
+}
+.last{
+    background-color: #022305;
+    width :100%;
+}
+.last > img {
+    padding:20px 20px;
+    margin:0 130.5px;
+    max-width: 1040px;
+}
+#social {
+    padding-left: 68%;
+}

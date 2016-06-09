@@ -5,6 +5,15 @@
 // change the contents of the board. For instance, the "Add list" button
 // always does the same thing. The button doesn't appear or disappear
 // and its behavior never changes.
+function p() {
+  var toPrint = JSON.parse(JSON.stringify(arguments));
+  var i = 0;
+  while(toPrint.hasOwnProperty(i)) {
+    console.log(toPrint[i]);
+    delete toPrint[i++];
+  }
+}
+
 horello.mountStatic = function() {
 
   // Phase 1. Static events
@@ -15,7 +24,7 @@ horello.mountStatic = function() {
   // 1a. [EXAMPLE] Add list form: toggle collapse
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
-  $('.add-list').click(function(e) {
+  $('.add-list').click(function() {
     $('#addList').collapse('toggle');
   });
 
@@ -24,8 +33,11 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
-  // YOUR CODE HERE
+
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $('#addListText').focus();
+  });
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,13 +46,61 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $('#addListSave').click(function() {
+    var name = $('#addListText').val();
+    if (name.length > 0) {
+      board.addList(name);
+      $('addListText').val('');
+      $('#addList').collapse('toggle');
+      horello.mount(board);
+    } else {alert("enter a list name")};
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
-}
+  $('#addListCancel').click(function() {
+    $('addListText').val('');
+    $('#addList').collapse('toggle');
+  })
+
+  $('#cardEdit').on('show.bs.collapse',function() {
+    console.log(this);
+  })
+
+  $('#cardEdit').on('show.bs.modal', function (e) {
+    var button = $(e.relatedTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+    $('#modalBody').val(card.getDescription());
+    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('card-id', cardId);
+  });
+
+  // 1f. Modal save
+  $('#modalSave').click(function (e) {
+    var title = $('#modalText').val();
+    var desc = $('#modalBody').val();
+    if (!title) {
+      alert('Please enter a title');
+      return;
+    }
+
+    var listId = $(e.currentTarget).data('list-id');
+    var cardId = $(e.currentTarget).data('card-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    card.setTitle(title);
+    card.setDescription(desc);
+    $('#cardEdit').modal('hide');
+    horello.mount(board);
+  });
+
+};
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
@@ -59,8 +119,39 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
+  $('.add-card').click(function(event) {
+    var formId = $(this).attr('addCardId');
+    $('#addCardForm'+formId).collapse('toggle');
+    $('#addCardTitle'+formId).focus();
+  });
+
+  $('.savebtn').click(function() {
+    var formId = $(this).attr('id').split('addCardBtn')[1];
+    var name = $('#addCardTitle' + formId).val();
+    if (name.length > 0) {
+      board.getList(formId).addCard(name, 'desc');
+      $('#addCardTitle' + formId).val('');
+      $('#addCardForm' + formId).collapse('toggle');
+      horello.mount(board);
+    } else {
+      alert("enter a card name");
+    };
+  });
+  $('.addCardCancelBtn').click(function(){
+    var formId = $(this).attr('id').split('addCardCancelBtn')[1];
+    console.log(formId);
+    $('#addCardTitle' + formId).val('');
+    $('#addCardForm' + formId).collapse('toggle');
+  });
 
   // Phase 4(a). Edit card
+
+  $('.card').each(function (idx) {
+    $(this).off();
+    $(this).click(function (e) {
+      $('#cardEdit').modal('toggle', $(this));
+    });
+  });
 
   // YOUR CODE HERE
 };

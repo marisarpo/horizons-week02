@@ -34,7 +34,7 @@ horello.List.prototype.render = function() {
   }
 
   var listfooter = $('<div class="list-footer"></div>');
-  var footercontent = $('<button class="list-button add-card" data-toggle="collapse" href="#"'+this.id+'>Add a card...</button><div class="collapse" id="'+this.id+
+  var footercontent = $('<button class="list-button add-card" data-toggle="collapse" href="#"'+this.id+'>Add a card...</button><div class="collapse" id='+this.id+
                     '<div class="well add-card-form">'+
                         '<input type="text" class="form-control" placeholder="Card title">'+
                         '<button type="button" class="btn btn-default">Save</button>'+

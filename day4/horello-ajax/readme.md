@@ -48,7 +48,8 @@ Once you've logged into your Trello account:
 1. Find the `<script>` tag to add the `client.js` library and paste this
    into the `head` section of `index.html`. You'll add the key and token
    to this in a moment. (You can leave out jQuery since we've already
-   loaded this.)
+   loaded this. You should also make sure that jQuery is loaded BEFORE the `client.js` file
+   since the latter is dependent on the former).
 1. Click the `Get your Application Key` button in the first section of
    the page.
 1. Copy the key and add it in the `<script>` tag per the instructions.

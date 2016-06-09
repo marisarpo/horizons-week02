@@ -177,4 +177,4 @@ Message.prototype = {
 
 // Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
 // var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
-// Just instantiating the app will set up the event handlers and make the give UI interactive (as you should know, you built it haha)
+// Just instantiating the app will set up the event handlers and make the UI interactive (as you should know, you built it haha)

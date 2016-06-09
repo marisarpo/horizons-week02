@@ -54,8 +54,8 @@ horello.mountStatic = function() { // this only happens once and does the same t
     $('#addList').collapse('hide');
   });
 
-  // Modal: these events control the modal that appears when you click
-  // on a card.
+//   // Modal: these events control the modal that appears when you click
+//   // on a card.
 
   // 1b. This event, triggered when the user clicks on a card, should
   // reveal the "Edit card" modal, populated with that card's data. It

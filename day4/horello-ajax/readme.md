@@ -64,19 +64,18 @@ Once you've logged into your Trello account:
    the page.
 1. Grab the key--you're going to need it in a moment.
 
-That was pretty easy, right? These two numbers--the key and the
-token--are how our application (Horello) authenticates to the Trello
-backend. It's how Trello knows which boards, lists, and cards we have
-access to, and it's how Trello knows whose pretty face to attach to our
-comments.
+That was pretty easy, right? This key is how our application (Horello)
+authenticates to the Trello backend. It's how Trello knows which boards,
+lists, and cards we have access to, and it's how Trello knows whose
+pretty face to attach to our comments.
 
 Okay, time to start writing some code. Go ahead and open up `index.html`
 in your web browser and text editor. There are two more steps required
 to get authentication working in Horello. The first is to add the Trello
 client JS code--find the link on
 https://developers.trello.com/get-started/start-building and add this in
-the `head` of `index.html`. Make sure to copy your API key, again, as
-part of the `<script>` tag that loads the Trello JS client code.
+the `head` of `index.html`. Make sure to add your API key as part of the
+`<script>` tag that loads the Trello JS client code.
 
 Finally, we need to use the Trello client to authenticate the user. Open
 up `2_authentication.js` and add the relevant authentication code from

@@ -30,6 +30,38 @@ horello.mountStatic = function() {
     $('#addListText').focus();
   });
 
+  
+  $('#cardEdit').on('show.bs.modal', function (e) {
+    var button = $(e.relatedTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+    $('#modalBody').val(card.getDescription());
+    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('card-id', cardId);
+  });
+
+  // 1f. Modal save
+  $('#modalSave').click(function (e) {
+    var title = $('#modalText').val();
+    var desc = $('#modalBody').val();
+    if (!title) {
+      alert('Please enter a title');
+      return;
+    }
+
+    var listId = $(e.currentTarget).data('list-id');
+    var cardId = $(e.currentTarget).data('card-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    card.setTitle(title);
+    card.setDescription(desc);
+    $('#cardEdit').modal('hide');
+    horello.mount(board);
+  });
+
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
   // form is clicked, should 1. validate the input (i.e., make sure that
@@ -37,12 +69,27 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+    $('#addListSave').click(function(e) {
+    var listName = $('#addListText').val();
+    // validate input
+    if (!listName) {
+      alert("Please enter a list name");
+      return;
+    }
+    board.addList(listName);
+    $('#addListText').val('');
+    $('#addList').collapse('toggle');
+    horello.mount(board);
+  });
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+   $('#addListCancel').click(function(e) {
+    $('#addList').collapse('hide');
+  });
 }
 
 // This function is called multiple times, to configure dynamic events.

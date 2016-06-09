@@ -1,9 +1,8 @@
 'use strict';
 
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/master
+
+refs/remotes/origin/master
 window.handlers = {};
 
 // Welcome! As mentioned in the README, this is how we would attach
@@ -40,7 +39,7 @@ handlers.attachHover = function(e, fn) {
 
   $('e').on('mouseenter',fn);
 
-  // YOUR CODE HERE
+
 
 };
 
@@ -53,7 +52,7 @@ handlers.attachUnhover = function(e, fn) {
 
   $('e').on('mousleave',fn);
 
-  // YOUR CODE HERE
+ 
 
 };
 
@@ -83,10 +82,11 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
 
-  $('key').on('')
-
-  // YOUR CODE HERE
-
+  $(document).on('keypress', function(event) {
+  	if(event.keyCode === key) {
+  		fn();
+  	}
+	});
 };
 
 // ----------------------------------------------------------------------------
@@ -99,7 +99,15 @@ handlers.attachKeypress = function(key, fn) {
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
-  // YOUR CODE HERE
+// 	var count = 0;
+//   $('id').on('click', attachClick() {
+//   	count++;
+//   });
+// };
+handlers.attachClick($("#" + id), function() {
+    handlers.userActions[id]++;
+    console.log(handlers.userActions);
+  });
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -153,8 +161,19 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  // YOUR CODE HERE
+	var el = $("#" + id);
+
+  handlers.attachHover(el, function() {
+    handlers.hoverTimeoutNums[id] = setTimeout(function() {
+      el.trigger("click");
+    }, 2000);
+  });
+
+  handlers.attachUnhover($("#" + id), function() {
+    clearTimeout(handlers.hoverTimeoutNums[id]);
+  }); 
 }
+
 
 handlers.attachHoverClick("red");
 handlers.attachHoverClick("blue");
@@ -180,7 +199,11 @@ handlers.attachHoverClick("nope");
 //          <button class="btn" id="2">Button 3</button> ]
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
-  // YOUR CODE HERE
+  $("." + className).on('click', function(e) {
+  	alert(alertMessage);
+  })
+  e.stopPropagation();
+  return $('.' + className).toArray();
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
@@ -220,10 +243,19 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // click handler.
 
 handlers.attachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
-};
+  var currentElement = elements;
+  while (currentElement.get(0) !== document) {
+    currentElement.on("click", function(e) {
+      $(e.currentTarget).css("backgroundColor", "green");
+      alert("You've reached " + $(e.currentTarget).attr("description"));
+      $(e.currentTarget).css("backgroundColor", "");
+    });
+    currentElement = currentElement.parent();
+  }
+  return;
 
 handlers.attachAlertsWithParents($(".innerbutton"));
+}
 
 // ----------------------------------------------------------------------------
 
@@ -292,7 +324,12 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // we have detached its event handler from it.
 
 handlers.detachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+  var currentElement = elements;
+  while (currentElement.get(0) !== document) {
+    currentElement.off("click");
+    currentElement = currentElement.parent();
+  }
+  return;
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));
@@ -320,7 +357,12 @@ handlers.detachAlertsWithParents($(".innerbutton"));
 // We will delegate the events of the delete button to their parent, the row.
 
 handlers.attachDeleteAction = function(buttonElement) {
-  // YOUR CODE HERE
+  $(buttonElement).off("click");
+  $(buttonElement).on("click", function(e) {
+    if ($(e.target).hasClass("innerbutton")) {
+      $(this).remove();
+    }
+  });
 };
 
 handlers.attachDeleteAction($(".panel"));
@@ -368,7 +410,20 @@ handlers.attachDeleteAction($(".panel"));
 
 
 handlers.attachFormAdd = function(formElement) {
-  // YOUR CODE HERE
+  var beginPanel = "<div class='panel panel-default'><div class='panel-body'>";
+  var endPanel = " <a class='btn btn-danger innerbutton'>Delete</a></div></div>";
+
+  $(formElement).on("submit", function(e) {
+    e.preventDefault();
+    var newItem = $("#new-item").val();
+    if (newItem) {
+      var el = $(beginPanel + newItem + endPanel);
+      $("#grocery-list").append(el);
+    }
+    $("#new-item").val("");
+    handlers.attachDeleteAction($(el));
+  });
 };
+
 
 handlers.attachFormAdd($("#grocery-add"));

@@ -24,6 +24,22 @@ horello.Card.prototype.render = function() {
 // representing the internal object.
 horello.List.prototype.render = function() {
   // YOUR CODE HERE
+  var wrapper = $('<div></div>');
+  var listwrapper = $('<div class="list-container"></div>');
+  var list = $('<div class="list"></div>');
+  var listheader = $('<div class="list-header"><span class="list-title">' + this.title + '</span></div>');
+  var listcards = $('<div class="list-cards"></div>');
+  for (var i = 0; i < this.cards.length; i++)
+    listcards.append(this.cards[i].render());
+  var listfooter = $('<div class="list-footer"><button class="list-button add-card"><div class="collapse"><div class="well add-card-form"></div><input type="text" class="form-control" placeholder="Card title"><button type="button" class="btn btn-default">Save</button><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div></button></div>');
+
+  wrapper.append(listwrapper);
+  listwrapper.append(list);
+  list.append(listheader);
+  list.append(listcards);
+  list.append(listfooter);
+
+  return wrapper.html();
 }
 
 // Phase 3. Board
@@ -31,5 +47,15 @@ horello.List.prototype.render = function() {
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
   // YOUR CODE HERE
+  var wrapper = $('<div></div>');
+  var boardwrapper = $('<div class="board"></div>');
+  for (var j = 0; j < this.lists.length; j++) {
+    console.log(this.lists[j]);
+    boardwrapper.append(this.lists[j].render());
+  }
+
+  wrapper.append(boardwrapper);
+
+  return wrapper.html();
 }
 

@@ -22,13 +22,20 @@ horello.Card.prototype = {
 
   setTitle: function(titleStr) {
     this.title = titleStr;
-    Trello.put("/cards/" + this.id, {
-      name: titleStr
-    }, function (data) {
-      console.log("Successfully updated title of card " + this.id);
-    }.bind(this), function (err) {
-      console.error("Error updating title of card " + this.id);
-    }.bind(this));
+    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+      method: "PUT",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: titleStr
+      },
+      success: function (data) {
+        console.log("Successfully updated title of card " + this.getId());
+      }.bind(this),
+      error: function (err) {
+        console.error("Error updating title of card " + this.getId() + ": " + JSON.stringify(err));
+      }.bind(this)
+    });
   },
 
   getDescription: function() {
@@ -37,13 +44,20 @@ horello.Card.prototype = {
 
   setDescription: function(desc) {
     this.desc = desc;
-    Trello.put("/cards/" + this.id, {
-      desc: desc
-    }, function (data) {
-      console.log("Successfully updated desc of card " + this.id);
-    }.bind(this), function (err) {
-      console.error("Error updating desc of card " + this.id);
-    }.bind(this));
+    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+      method: "PUT",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        desc: desc
+      },
+      success: function (data) {
+        console.log("Successfully updated desc of card " + this.getId());
+      }.bind(this),
+      error: function (err) {
+        console.error("Error updating desc of card " + this.getId() + ": " + JSON.stringify(err));
+      }.bind(this)
+    });
   },
 
   render: function() {
@@ -94,17 +108,24 @@ horello.List.prototype = {
 
   addCard: function(name, desc) {
     // First create the data in the API.
-    Trello.post("/cards", {
-      name: name,
-      desc: desc,
-      idList: this.id
-    }, function (data) {
-      // Success! Now we have an ID and we can create it locally. Or,
-      // we can reload the data from the API.
-      console.log("Successfully created new card: " + JSON.stringify(data));
-      this.loadCards();
-    }.bind(this), function (err) {
-      console.error("Error creating new card: " + JSON.stringify(err));
+    $.ajax(horello.apiUrl + "/cards", {
+      method: "POST",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: name,
+        desc: desc,
+        idList: this.getId()
+      },
+      success: function (data) {
+        // Success! Now we have an ID and we can create it locally. Or,
+        // we can reload the data from the API.
+        console.log("Successfully created new card: " + JSON.stringify(data));
+        this.loadCards();
+      }.bind(this),
+      error: function (err) {
+        console.error("Error creating new card: " + JSON.stringify(err));
+      }
     });
   },
 
@@ -158,18 +179,22 @@ horello.List.prototype = {
   },
 
   loadCards: function() {
-    Trello.get(
-      "/lists/" + this.id + "/cards",
-      function (data2) {
-        console.log("Successfully loaded cards for list " + this.id);
+    $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken
+      },
+      success: function (data2) {
+        console.log("Successfully loaded cards for list " + this.getId());
         this.cards = data2.map(horello.Card.fromJSON);
 
         // Re-render.
         horello.mount(board);
-      }.bind(this), function (err) {
-        console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
+      }.bind(this),
+      error: function (err) {
+        console.error("Error loading cards for list " + data.getId() + ": " + JSON.stringify(err));
       }
-    );
+    });
   }
 };
 
@@ -188,22 +213,29 @@ horello.Board = function (id) {
 };
 
 horello.Board.prototype = {
+  getId: function() {
+    return this.id;
+  },
+
   addList: function(listName) {
-    Trello.post("/lists", {
-      name: listName,
-      idBoard: this.id,
-      pos: 'bottom'
-      },
-      function (data) {
-        console.log("Successfully created list with ID " + data.id + " for board " + this.id);
-        this.loadData();
-      }.bind(this),
-      function (err) {
-        console.error("Error creating list for board " + this.id);
-      }.bind(this)
+    $.ajax(horello.apiUrl + "/lists", {
+        method: "POST",
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken,
+          name: listName,
+          idBoard: this.id,
+          pos: 'bottom'
+        },
+        success: function (data) {
+          console.log("Successfully created list with ID " + data.id + " for board " + this.getId());
+          this.loadData();
+        }.bind(this),
+        error: function (err) {
+          console.error("Error creating list for board " + this.getId() + ": " + JSON.stringify(err));
+        }.bind(this)
+      }
     );
-    this.lists.push(list);
-    return list.getId();
   },
 
   getList: function(listId) {
@@ -225,16 +257,21 @@ horello.Board.prototype = {
     this.lists = [];
 
     // Load data
-    Trello.get(
-      "/boards/" + this.id + "/lists",
-      function (data) {
-        console.log("Successfully loaded lists for board " + this.id);
-        data.forEach(function (data2) {
-          horello.List.fromJSON(data2);
-        });
-      }.bind(this), function (err) {
-        console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
-      }.bind(this)
+    $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken
+        },
+        success: function (data) {
+          console.log("Successfully loaded lists for board " + this.getId());
+          data.forEach(function (data2) {
+            horello.List.fromJSON(data2);
+          });
+        }.bind(this),
+        error: function (err) {
+          console.error("Error loading lists for board " + this.getId() + ": " + JSON.stringify(err));
+        }.bind(this)
+      }
     );
   }
 };

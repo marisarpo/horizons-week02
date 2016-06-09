@@ -82,6 +82,13 @@ a {
     padding-bottom: 1em;
 }
 
+/*
+  Required to make list vertical scroll work properly.
+*/
+#boardAnchor {
+    height: 100%;
+}
+
 
 /* LISTS */
 

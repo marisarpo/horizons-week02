@@ -24,7 +24,9 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
+    $('#addlist').click('shown.bs.collapse',function(e) {
+    $('#addListText').focus();
+  });
   // YOUR CODE HERE
 
   // 1c. Add list form: save button
@@ -34,12 +36,24 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $("#addListSave").click(function(e) {
+  	if(! $("#addListText").val()) {
+  		alert("Please enter a list name");
+  		return;
+  	}
+  	board.addList(listName);
+    $("#addListText").val('');
+    $("#addList").collapse('toggle');
+    horello.mount(board);
+
+  })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-
-  // YOUR CODE HERE
+  $("#addListClose").click(function(e) {
+  	("#addList").collapse("hide");
+  })
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -57,7 +71,16 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
-
+  $('.save').click(function(e) {
+  	var listId= $(this).attr("data-list-id");
+  	var list = board.getList(listId);
+  	if(!$('#list_name_'+listId).val()) {
+  		alert("Enter a card name");
+  		return;
+  	}
+  	list.addCard($("#list_name_" + listId).val());
+  	horello.mount(board);
+  })
   // YOUR CODE HERE
 
   // Phase 4(a). Edit card

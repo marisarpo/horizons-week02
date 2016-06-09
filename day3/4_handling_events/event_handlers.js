@@ -34,6 +34,7 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -43,6 +44,7 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
   // YOUR CODE HERE
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -71,6 +73,11 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
   // YOUR CODE HERE
+  $(document).on("keypress", function(event){
+  	if(event.keyCode===key){
+  		fn();
+  	}
+  });
 };
 
 // ----------------------------------------------------------------------------
@@ -84,6 +91,9 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
   // YOUR CODE HERE
+handlers.attachClick($('#' + id), function(){
+	handlers.userActions[id]++;	
+});
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -138,6 +148,16 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
   // YOUR CODE HERE
+ handlers.attachHover($('#' + id), function(){
+	var mytimeout = setTimeout(function(){
+		$("#" + id).trigger("click");
+		handlers.hoverTimeoutNums[id]= mytimeout;		
+	},2000);	
+
+  handlers.attachUnhover($('#'+ id), function(){
+  	clearTimeout(mytimeout);
+  });
+});
 }
 
 handlers.attachHoverClick("red");
@@ -165,6 +185,11 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  var newArray = $("."+ className).toArray();
+  handlers.attachClick(newArray, function(){
+	alert(alertMessage);	
+});
+
 };
 
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
@@ -205,6 +230,13 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 handlers.attachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+  if(elements.get(0) == document){return};
+	handlers.attachClick(elements, function(e) {
+		$(e.currentTarget).css("backgroundColor", "green");
+		alert("You've reached " + $(e.currentTarget).attr("description"));
+		$(e.currentTarget).css("backgroundColor", "");
+	})
+	handlers.attachAlertsWithParents($(elements).parent());
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));

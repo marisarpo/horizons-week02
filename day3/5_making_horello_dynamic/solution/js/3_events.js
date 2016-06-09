@@ -16,7 +16,7 @@ horello.mountStatic = function() {
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
   $('.add-list').click(function(e) {
-    $('#addList').collapse('toggle');
+    $('#addList').collapse('oggle');
   });
 
   // 1b. Add list form: focus the title text input
@@ -41,8 +41,8 @@ horello.mountStatic = function() {
       return;
     }
     board.addList(listName);
-    $('#addListText').val('');
-    $('#addList').collapse('toggle');
+    $('#addListText').val('');//clear input
+    $('#addList').collapse('toggle'); //when card is added, the add card part would disappear
     horello.mount(board);
   });
 
@@ -58,7 +58,7 @@ horello.mountStatic = function() {
 
   // 1b. This event, triggered when the user clicks on a card, should
   // reveal the "Edit card" modal, populated with that card's data. It
-  // should store the necessary 
+  // should store the necessary
   $('#cardEdit').on('show.bs.modal', function (e) {
     var button = $(e.relatedTarget);
     var cardId = button.data('card-id');
@@ -67,7 +67,7 @@ horello.mountStatic = function() {
     var card = list.getCard(cardId);
     $('#modalText').val(card.getTitle());
     $('#modalBody').val(card.getDescription());
-    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('list-id', listId); //this is how you save data
     $('#modalSave').data('card-id', cardId);
   });
 
@@ -86,7 +86,7 @@ horello.mountStatic = function() {
     var card = list.getCard(cardId);
     card.setTitle(title);
     card.setDescription(desc);
-    $('#cardEdit').modal('hide');
+    $('#cardEdit').modal('hide'); //modal is a method from bootstrap
     horello.mount(board);
   });
 }
@@ -116,7 +116,7 @@ horello.mount = function (board) {
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
   $('.add-card').each(function (idx) {
-    $(this).off();
+    $(this).off(); //what is this for??
 
     var id = $(this).attr('addCardId');
 
@@ -153,7 +153,7 @@ horello.mount = function (board) {
   });
 
   // Phase 4(a). Edit card
- 
+
   // 4a. Re-bind card detail modals.
   $('.card').each(function (idx) {
     $(this).off();

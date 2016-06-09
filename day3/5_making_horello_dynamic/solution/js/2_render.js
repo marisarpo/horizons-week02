@@ -56,6 +56,7 @@ horello.List.prototype.render = function() {
       </div>\
     '));
 
+
   // Build cards in the body
   listBody.html(this.cards.reduce(function(prev, cur) {
     return prev + cur.render();
@@ -72,6 +73,5 @@ horello.Board.prototype.render = function() {
   wrapper.html(this.lists.reduce(function(prev, cur) {
     return prev + cur.render();
   }, ""));
-  return wrapper;    
+  return wrapper;
 }
-

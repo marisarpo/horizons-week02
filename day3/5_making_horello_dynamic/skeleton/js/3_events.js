@@ -24,8 +24,12 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
+
   // YOUR CODE HERE
+  $('#addList').on("shown.bs.collapse", function(e){
+    console.log(e);
+    $("#addListText").focus();
+  })
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,12 +38,23 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $("#addListSave").click(function(e){
+    var listName = $('#addListText').val();
+    if (listName != null) {
+      horello.Board.prototype.addList(listName);
+      horello.List.prototype.render();
+      horello.Board.prototype.render();
+    }
+  })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+  $("#addListCancel").click(function() {
+
+  })
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -48,7 +63,7 @@ horello.mount = function (board) {
 
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
-  $('#boardAnchor').append(board.render());
+  // $('#boardAnchor').append(board.render());
 
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
@@ -64,4 +79,3 @@ horello.mount = function (board) {
 
   // YOUR CODE HERE
 };
-

@@ -25,7 +25,7 @@ horello.Card.prototype.render = function() {
 horello.List.prototype.render = function() {
   // YOUR CODE HERE
   var wrapper = $('<div></div>');
-  var listcontainer = $('<div class="list-container" id="'+this.id+'"></div>');
+  var listcontainer = $('<div class="list-container" data-list-id="'+this.id+'"></div>');
   var listwrapper = $('<div class="list" id="'+this.id+'"></div>');
   var listheader = $('<div class="list-header"></div>');
   var listtitle = $('<span class="list-title">'+this.getName()+'</span>');

@@ -42,8 +42,9 @@ horello.mountStatic = function() {
     if (newList.length<0) {
       return
     }
-    board.addList(newList)
+    var listId = board.addList(newList)
     $('#addList').collapse('toggle');
+    $('.add-list-container').parent().before(board.getList(listId).render())
     horello.mount(board)
   })
 
@@ -56,14 +57,17 @@ horello.mountStatic = function() {
     $('#addList').collapse('toggle');
   });
 }
-
+var once = false;
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
   // Phase 3. Create card
 
   // Unrender and re-render the board.
-  $('#boardAnchor').empty();
-  $('#boardAnchor').append(board.render());
+  if (!once) {
+    $('#boardAnchor').empty();
+    $('#boardAnchor').append(board.render());
+    once = true
+  }
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
@@ -76,10 +80,14 @@ horello.mount = function (board) {
     $('#collapse'+id).on('shown.bs.collapse', function() {
       $('.form-control').focus()
     })
+    $('#save'+id).off()
     $('#save'+id).click(function() {
       var newCard = $('#cardform'+id).val()
       if (newCard.length<1) {return}
-      board.getList(id).addCard(newCard,'Add text here')
+      var cardId = board.getList(id).addCard(newCard,'Add text here')
+      $('#'+id).children().eq(1).append(board.getList(id).getCard(cardId).render())
+      $('#cardform'+id).val('')
+      $('#collapse'+id).collapse('toggle');
       horello.mount(board)
     })
     $('#cancel'+id).click(function() {
@@ -93,7 +101,7 @@ horello.mount = function (board) {
   $('.card').each(function () {
     $(this).off();
     $(this).click(function (e) {
-      console.log(e.currentTarget)
+      // console.log(e.currentTarget)
       var cardId = $(e.currentTarget).data('card-id')
       var listId = $(e.currentTarget).data('list-id')
       var card = board.getList(listId).getCard(cardId)
@@ -103,11 +111,11 @@ horello.mount = function (board) {
       $('#modalBody').val(cardBody)
       $('#cardEdit').modal('toggle', $(this));
     });
-    // $('#modalSave').click(function(e) {
-    //     var card = new horello.Card($('#modalText'), $('#modalBody'))
-    //     console.log(card)
-    //     $('#cardEdit').modal('toggle', $(this));
-    //   })
+    $('#modalSave').click(function(e) {
+        var card = new horello.Card($('#modalText'), $('#modalBody'))
+        console.log(card)
+        $('#cardEdit').modal('toggle', $(this));
+      })
   });
 };
 

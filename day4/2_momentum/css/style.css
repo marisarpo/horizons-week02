@@ -1,0 +1,59 @@
+body {
+	background-image:url('costalSpain.jpg');
+	background-size:cover;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
+	color: rgba(230,230,230,0.95);
+}
+.navbar {
+   background-color: transparent;
+   background: transparent;
+   border-color: transparent;
+}
+/*.navbar li { color: #000 } */
+html,body,.container {
+	height: 100%
+}
+.container {
+	width: 100%;
+    margin-top: -50px;
+    padding-top: 50px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.row {
+	height: 100%;
+}
+.col-md-4.col-md-offset-4 {
+	height: 100%;
+	float: none;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+#time {
+	font-weight: 600;
+}
+#salutation {
+	font-weight: 600;
+}
+#quoteblock {
+	font-weight: 400;
+}
+#quote {
+	text-align: center;
+}
+#quoteBody {
+	background-color: transparent;
+	padding-bottom: 2px;
+	border-color: rgba(230,230,230,0.95);
+    border-width: 0 0 1px 0;
+    border-radius: 0;
+	color:rgba(230,230,230,0.95);
+
+}
+#quoteBody:focus {
+	outline: none;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}

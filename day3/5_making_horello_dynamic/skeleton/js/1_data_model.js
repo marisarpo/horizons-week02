@@ -184,7 +184,9 @@ horello.Board.prototype = {
   // of the new list.
   addList: function(listName) {
     // YOUR CODE HERE
-    this.lists.push(new horello.List(listName))
+    var list = new horello.List(listName)
+    this.lists.push(list)
+    return list.id
   },
 
   // Exercise 3.B `getList(listId<String>)`

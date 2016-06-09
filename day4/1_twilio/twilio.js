@@ -2,35 +2,62 @@
 
 window.twilio = {};
 
-// Preface. In this exercise, you're going to be building a Twilio Shoutout Application that communicates with Twilio's API (Application Programming Inerface) over AJAX. You can think of a Web API as an application black-box that you can leverage and interact with using HTTP. If you wanted to get weather data for your city, you could query some weather API and access the data that application generates.
-// In this case, we're going to be using Twilio's device SMS messaging service. We're going to build an application that lets you `shoutout` (one-way message) a Twilio-enabled phone number programmatically. You'll be able to send yourself a text message from your browser (and much more)!
-// You've been provided with a UI skeleton that you can dig into if you'd like, but the major focus of this exercise are the AJAX calls, validation, and of course OOP.
+// Preface. In this exercise, you're going to be building a Twilio Shoutout Application 
+// that communicates with Twilio's API (Application Programming Inerface) over AJAX. You can 
+// hink of a Web API as an application black-box that you can leverage and interact with using 
+// HTTP. If you wanted to get weather data for your city, you could query some weather API and 
+// access the data that application generates.
+// In this case, we're going to be using Twilio's device SMS messaging service. We're 
+// going to build an application that lets you `shoutout` (one-way message) a Twilio-enabled
+//  phone number programmatically. You'll be able to send yourself a text message from your
+//   browser (and much more)!
+// You've been provided with a UI skeleton that you can dig into if you'd like, but the 
+// major focus of this exercise are the AJAX calls, validation, and of course OOP.
 
 // Exercise 0. Get Twilio credentials
 // Please navigate to https://www.twilio.com, and get a free API Key.
-// You're going to be signing up for the service yourself, and it won't be asking you to pay for anything. Enter your name, phone number, and whatever else they ask you for (within reason - if they're asking for an ssn, call one of us over)
-// You'll need 3 pieces of information to be able to interact with the Twilio API - your `accountId (or SID)`, an `auth token` and your Twilio phone number.
-// Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
+// You're going to be signing up for the service yourself, and it won't be asking you to 
+// pay for anything. Enter your name, phone number, and whatever else they ask you for 
+// (within reason - if they're asking for an ssn, call one of us over)
+// You'll need 3 pieces of information to be able to interact with the Twilio API - your 
+// `accountId (or SID)`, an `auth token` and your Twilio phone number.
+// Follow the steps listed by Twilio to get familiar with their API console and retrieve 
+// your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "ACa1f23f5382f3227590a2872aaa4fc3ee";
+twilio.authToken = "c239afaac2b79b0ac0bf1d3bc390623a";
+twilio.fromNumber = "+14804093922";
 
 // Exercise 1. Implement the `initialize` method
-// When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
+// When the TwilioShoutout class is constructed, it calls its initialize() method. 
+// That method should set up event listener(s) that will allow you to capture and send 
+// data from your web UI. More information is provided at the method.
 
 // Exercise 2. Implement the `clear` method
-// There are going to be two input fields in the application you're building, and it would be nice to have some function to clear their values.
+// There are going to be two input fields in the application you're building, and it 
+// would be nice to have some function to clear their values.
 
 // Exercise 3. Implement the `validateMessageField` method
-// TwilioShoutout has a `validateMessageField` method that needs to be implemented. The function takes a string and returns true or false based on whether the string is a valid message or not. More information is provided at the method.
+// TwilioShoutout has a `validateMessageField` method that needs to be implemented. 
+// The function takes a string and returns true or false based on whether the string is 
+// a valid message or not. More information is provided at the method.
 
 // Exercise 4. Implement the `validatePhoneField` method
-// TwilioShoutout has a `validatePhoneField` method that needs to be implemented. The function takes a string and returns true or false based on whether the string is a valid phone number or not. Validating phone numbers can be extremely hard, so we're going to be using the simple no-parentheses, non-hyphenated phone number format, including international code. I.E. +1 (201) - 705 - 1234 becomes 12017051234. More information is provided at the method.
+// TwilioShoutout has a `validatePhoneField` method that needs to be implemented. The 
+// function takes a string and returns true or false based on whether the string is a 
+// valid phone number or not. Validating phone numbers can be extremely hard, so we're 
+// going to be using the simple no-parentheses, non-hyphenated phone number format, 
+// including international code. I.E. +1 (201) - 705 - 1234 becomes 12017051234. More 
+// information is provided at the method.
 
 // Exercise 5. Implement the `handleMessageSend` method
-// The `handleMessageSend` method is going to act as the callback for the event listener you set up in the initialize() method. It's supposed to make sure all the necessary fields are valid, and if so, make an ajax call to a Twilio API url with our data. Otherwise, it should raise an alert, telling the user (you) that one or both of the input fields are invalid. This is a multipart exercise that requires a few key steps, and we've provided you with a bit of what you need to get you going.
+// The `handleMessageSend` method is going to act as the callback for the event listener 
+// you set up in the initialize() method. It's supposed to make sure all the necessary 
+// fields are valid, and if so, make an ajax call to a Twilio API url with our data. 
+// Otherwise, it should raise an alert, telling the user (you) that one or both of the 
+// input fields are invalid. This is a multipart exercise that requires a few key steps, 
+// and we've provided you with a bit of what you need to get you going.
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   // Assign properties
@@ -54,12 +81,17 @@ twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
 
 twilio.TwilioShoutout.prototype = {
   // Exercise 1. `initialize()` method
-  // Implement the initialize method. The initialize method is called when the TwilioApp class is instantiated.
-  // It should set up a click handler for `messageSendButton`, and fire `this.handleMessageSend` .
+  // Implement the initialize method. The initialize method is called when the 
+  // TwilioApp class is instantiated.
+  // It should set up a click handler for `messageSendButton`, and fire `
+  // this.handleMessageSend` .
 	// 
-  // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
+  // hint. remember about context and maybe .bind()? you should, you'll run into some 
+  // problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    document.addEventListener('click', this.messageSendButton.bind(this));
+    document.addEventListener('fire', this.handleMessageSend.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.

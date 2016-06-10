@@ -31,7 +31,7 @@ header {
 }
 
 .header-logo-default {
-    background-image: url(../../img/title.png);
+    background-image: url(../img/title.png);
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 5pc 30px;
@@ -80,6 +80,13 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+}
+
+/*
+  Required to make list vertical scroll work properly.
+*/
+#boardAnchor {
+    height: 100%;
 }
 
 

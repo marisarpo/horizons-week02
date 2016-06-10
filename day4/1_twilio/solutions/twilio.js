@@ -96,7 +96,7 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
 		var modStr = $.trim(phoneStr);
 		var whiteList = '1234567890';
-		for (var i = 0; i < modStr.length - 1; i++) {
+		for (var i = 0; i <= modStr.length - 1; i++) {
 			if (whiteList.indexOf(modStr[i]) === -1) return false;
 		}
 		

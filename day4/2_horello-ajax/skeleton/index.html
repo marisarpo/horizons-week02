@@ -19,7 +19,8 @@
   <script>
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board();
+      var board = new horello.Board("575ac08e82af25b4cb577ae0");
+      board.loadBoard();
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;

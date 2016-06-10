@@ -45,12 +45,12 @@ horello.Card.prototype = {
   render: function() {
     // build wrappers
     var wrapper = $('<div></div>');
-    var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+    var cardwrapper = $('<div class="card" data-list-id="' + this.listId + '" data-card-id="' + this.id + '"></div>');
     var cardmore = $('<span class="card-more"></span>');
     if (this.getDescription()) {
       cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
     }
-    var cardbody = $('<div class="card-body">'+this.title+'</div>');
+    var cardbody = $('<div class="card-body">' + this.title + '</div>');
 
     wrapper.append(cardwrapper);
     cardwrapper.append(cardmore);
@@ -62,14 +62,20 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+  var cd = new horello.Card(data.name, data.desc, data.idList);
+  return cd;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  if (arguments.length === 1) {
+    this.id = horello.generateId();
+  }
+  if (arguments.length === 2) {
+    this.id = id;
+  }
   this.name = name;
   this.cards = [];
 };
@@ -90,6 +96,24 @@ horello.List.prototype = {
   addCard: function(name, desc) {
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
+
+    $.ajax(horello.apiUrl + '/lists/' + this.id + '/cards', {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: name,
+        desc: desc,
+        idList: this.idList,
+      },
+      method: 'POST',
+      success: function(data) {
+        console.log('successful api call to post card');
+      },
+      error: function(data) {
+        throw 'failed api call';
+      }
+    });
+
     return card.getId();
   },
 
@@ -108,7 +132,7 @@ horello.List.prototype = {
     var wrapper = $('<div></div>');
 
     var listContainer = $('<div class="list-container"></div>');
-    var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
+    var listWrapper = $('<div class="list" id="' + this.id + '"></div>');
     var listHeader = $('<div class="list-header"></div>');
     var listBody = $('<div class="list-cards"></div>');
     var listFooter = $('<div class="list-footer"></div>');
@@ -119,16 +143,16 @@ horello.List.prototype = {
     listWrapper.append(listBody);
     listWrapper.append(listFooter);
     listHeader.append($('<span class="list-title"></span>').text(this.name));
-    listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
+    listFooter.append($('<button class="add-card" addCardId="' + this.id + '">Add a card...</button>'));
     listFooter.append($('\
-      <div class="collapse" id="addCardForm'+this.id+'">\
+      <div class="collapse" id="addCardForm' + this.id + '">\
       <div class="well add-card-form">\
-      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
+      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle' + this.id + '">\
+      <button type="button" class="btn btn-default" id="addCardBtn' + this.id + '">\
       Save\
       </button>\
       <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
+      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn' + this.id + '"></span>\
       </button>\
       </div>\
       </div>\
@@ -140,24 +164,62 @@ horello.List.prototype = {
     }, ""));
 
     return wrapper.html();
+  },
+
+  loadList: function() {
+    $.ajax(horello.apiUrl + '/lists/' + this.id + '/cards', {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+      },
+      success: function(data) {
+        console.log('successful api call to get cards');
+        for (var i = 0; i < data.length; i++) {
+          board.getList(data[i].idList).cards.push(horello.Card.fromJSON(data[i]));
+        };
+        horello.mount(board);
+      },
+      error: function(data) {
+        throw 'failed api call';
+      }
+    });
   }
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  var lst = new horello.List(data.id, data.name);
+  return lst;
 };
 
 
 // BOARD
 
-horello.Board = function () {
+horello.Board = function(id) {
   this.lists = [];
+  this.id = id;
 };
 
 horello.Board.prototype = {
   addList: function(listName) {
     var list = new horello.List(listName);
     this.lists.push(list);
+
+    $.ajax(horello.apiUrl + '/boards/' + this.id + '/lists', {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: listName,
+        pos: "bottom"
+      },
+      method: 'POST',
+      success: function(data) {
+        console.log('successful api call to post list');
+      },
+      error: function(data) {
+        throw 'failed api call';
+      }
+    });
+
     return list.getId();
   },
 
@@ -173,5 +235,25 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+  },
+
+  loadBoard: function() {
+    $.ajax(horello.apiUrl + '/boards/' + this.id + '/lists', {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+      },
+      success: function(data) {
+        console.log('successful api call to get lists');
+        for (var i = 0; i < data.length; i++) {
+          var lst = horello.List.fromJSON(data[i]);
+          board.lists.push(lst);
+          lst.loadList();
+        };
+      },
+      error: function(data) {
+        throw 'failed api call';
+      }
+    });
   }
 };

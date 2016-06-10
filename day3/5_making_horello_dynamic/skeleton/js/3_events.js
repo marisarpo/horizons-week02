@@ -99,6 +99,8 @@ horello.mount = function (board) {
   $('.card').on('click', function(e) {
     $('.modal').modal('show');
   })
-
+  $('.modal').on('show.bs.modal', function(e) {
+    
+  })
 };
 

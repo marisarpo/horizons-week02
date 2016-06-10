@@ -42,7 +42,7 @@ handlers.attachHover = function(e, fn) {
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
-  // YOUR CODE HERE
+  $(e).on("mouseleave", fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ handlers.attachUnhover = function(e, fn) {
 // rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
-  // YOUR CODE HERE
+  $(key).on("keypress", )
 };
 
 // ----------------------------------------------------------------------------

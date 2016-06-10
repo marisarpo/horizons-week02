@@ -25,12 +25,13 @@ horello.generateId = function() {
 // several properties and methods.
 
 horello.Card = function(title, desc, listId) {
-  // YOUR CODE HERE
   this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
   this.desc = desc;
 };
+
+//var bananacard = new horello.Card("bananas", "yellow", shoppinglistId);
 
 horello.Card.prototype = {
   // Exercise 1.A `getId`
@@ -55,6 +56,8 @@ horello.Card.prototype = {
     this.title = titleStr;
   },
 
+// bananacard.setTitle("my super awesome banana card");
+
   // Exercise 1.D `getDescription`
   // Write a getter function for the `desc` property
   getDescription: function() {
@@ -73,14 +76,22 @@ horello.Card.prototype = {
 };
 
 // Phase 2. `List` Class
-// Lists contain a unique ID, a title, and a list of cards.  Write a List class
+// Lists contain a unique ID, a name, and a list of cards.  Write a List class
 // according to the spec in `classSpec.png`.
 horello.List = function(name) {
-  // YOUR CODE HERE
   this.id = horello.generateId();
   this.name = name;
   this.cards = [];
 };
+
+// var grocerylist = new List("grocerylist");
+
+// horello.Card = function(title, desc, listId) {
+//   this.id = horello.generateId();
+//   this.listId = listId;
+//   this.title = title;
+//   this.desc = desc;
+// };
 
 horello.List.prototype = {
   // Exercise 2.A `getId`
@@ -107,7 +118,7 @@ horello.List.prototype = {
   },
 
   // Exercise 2.D `addCard(title<String>, desc<String>)`
-  // Write a function that takes two arguments, `title` and `desc`,
+  // Write a function that takes two arguments, `name` and `desc`,
   // which are both strings. It should instantiate a new Card object
   // with those give arguments, and add the newly created object to its
   // array of cards. Finally, it should return the id of the newly
@@ -115,10 +126,20 @@ horello.List.prototype = {
   // 
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+    var cardToBeAdded = new horello.Card(name, desc, this.getId()) 
+    this.cards.push(cardToBeAdded);
+    return cardToBeAdded.getId();
   },
+
+  // var myFavoriteMovies = new horello.List("joost's all time favorites");
+  // myFavoriteMovies.addCard("batman", "Fighting and stuff") {}
+
+//   horello.Card = function(title, desc, listId) {
+//   this.id = horello.generateId();
+//   this.listId = listId;
+//   this.title = title;
+//   this.desc = desc;
+// };
   
   // Exercise 2.E `getCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
@@ -133,15 +154,31 @@ horello.List.prototype = {
   // 
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
-    var card = this.cards.filter(function(c) {
-      return (c.getId() == cardId);
-    });
-    if (card.length > 0) {
-      return card[0];
-    }
-    return null;
+    // YOUR CODE HERE
+      var cardArray = this.card.filter(function(c){ 
+      return c.getId === cardId })
+      if(cardArray.length > 0){
+        return cardArray;
+      }
+      else {
+        return null;
+      }
   },
-  
+
+
+
+    // var card = null;
+    // for ( var i = 0 ; i < this.cards.length ; i++){
+    //     if (this.cards[i] === cardId) {
+    //       card = this.cards[i]
+    //     }
+    // }
+    // return card;
+
+
+
+
+
   // Exercise 2.F `rmvCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
   // string. It should retrieve the cardObject which corresponds to that
@@ -149,20 +186,22 @@ horello.List.prototype = {
   // it. If it does not exist, then it should return null. Finally, it
   // should return the id of the newly created card.
   rmvCard: function(cardId) {
-    var c = this.getCard(cardId);
-    if (c === null) {
+    // YOUR CODE HERE
+    var cardArray = this.getCard(cardId)
+    if (cardArray.length > 0) {
+      cardArray.splice(0,1);
+      return cardArray.getId();
+    };
+    else {
       return null;
-    }
-    var ind = this.cards.indexOf(c);
-    this.cards.splice(ind, 1);
-    return c;
+    }    
   }
-};
 
 // Phase 3. `Board` Class
 // A board contains a list of lists.  Write a Board class according to the spec
 // in `classSpec.png`.
-horello.Board = function () {
+horello.Board = function (lists) {
+  this.id = horello.generateId();
   this.lists = [];
 };
 
@@ -173,10 +212,11 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    var listToBeAdded = new horello.List(name)
+    this.lists.push(listToBeAdded);
+    return listToBeAdded.getId();
   },
+
 
   // Exercise 3.B `getList(listId<String>)`
   // Write a function that takes one argument, `listId`, which is a
@@ -184,10 +224,17 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    return this.lists.find(function(c) {
-      return (c.getId() == listId);
-    });
+    var listArray = this.list.filter(function(c){
+      return.c.getId === listId
+    })
+    if (listArray.length > 0){
+      return listArray;
+    }
+    else{
+      return null;
+    }
   },
+
 
   // Exercise 3.C `rmvList(listId<String>)`
   // Write a function that takes one argument, `listId`, which is a
@@ -195,15 +242,23 @@ horello.Board.prototype = {
   // lists, and if one is found, it should delete this list from the
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
-  rmvList: function(listId) { // listId => grocery list id 
-    var c = this.getList(listId); // grocery list 
-    if (c === null) {
+
+
+  // Function that removes a list from a board.
+  rmvList: function(listId) {
+    // YOUR CODE HERE
+    var listArray = this.getList(listId)
+    if(listArray.length > 0){
+      listArray.splice(listArray.indexOf(listId), 1);
+      return listArray.getId();
+    };
+    else{
       return null;
     }
-    var ind = this.lists.indexOf(c); // ["grocery list", "movie list", "musician list"]
-    this.lists.splice(ind, 1); // array.splice(0, 1)
-    return c;
   }
+
+
+// end of horello.Board
 };
 
-
+ 

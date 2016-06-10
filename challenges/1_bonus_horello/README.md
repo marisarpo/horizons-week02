@@ -14,13 +14,19 @@ Spend a few moments getting familiar with how Trello works
 Horello. Feel free to attack this list in whatever order you think makes
 sense.
 
+1. Allow inline editing of card and list titles (i.e., without opening a
+   modal).
+1. Submit forms/save edits using the enter key (rather than requiring
+   the user to tap a button).
 1. Delete cards
 1. Delete lists
 1. Add comments to cards (for now, without users)
 1. Card activity feed
 1. Card due dates
 1. Card labels
-1. Card attachments
+1. Card attachments: in particular, add support for images! (You'll
+   notice that the Trello welcome board has a card with an image of Taco
+   the Trello spokes-husky.)
 1. Drag and drop lists to other locations (on the same list, or on a
    different list)
 1. Multiple boards
@@ -29,4 +35,4 @@ sense.
 1. List "members" (now that you have users, you can add all sorts of
    user-related functionality such as list members, user info on list
    comments, card subscribe, etc.)
-
+1. Feel free to make your own tweaks. Be creative!

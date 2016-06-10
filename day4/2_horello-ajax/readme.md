@@ -357,6 +357,8 @@ here app as smooth as an armadillo's backside:
 - Trello automatically detects when the data changes, and displays those
   changes immediately, without needing to reload. Add that. Boom.
 - Add support for multiple boards.
+- AJAX calls are expensive. Think about how you can minimize the number
+  of API calls you're making.
 - Replace your nasty callback code with sexy new
   [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 - Looking for even more? Check out the [list of challenges for the

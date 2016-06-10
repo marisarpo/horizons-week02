@@ -14,8 +14,8 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(id, title, desc, listId) {
+  this.id = id; //dont need to generate a new id 
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -62,14 +62,15 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+  var card = new horello.Card(data.id, data.name, data.desc, data.listId);
+  return card; 
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id; // you're putting in from your own id, so you dont have to generate a new one 
   this.name = name;
   this.cards = [];
 };
@@ -144,7 +145,8 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  var list = new horello.list(data.id, data.name);
+  return list; 
 };
 
 

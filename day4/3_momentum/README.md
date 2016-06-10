@@ -1,4 +1,4 @@
-# Individual Exercise: Momentum
+Momentum
 
 At some point, you've probably used, or seen someone use **Momentum** - a popular Chrome extension that replaces your New Tab page with a beautiful view that looks something like:
 

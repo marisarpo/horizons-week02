@@ -1,3 +1,4 @@
+
 "use strict";
 $.ajaxSetup({
   data: {
@@ -20,7 +21,8 @@ horello.generateId = function() {
 // CARD
 
 horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+  if (arguments.length===1) {this.id = horello.generateId();}
+  else {this.id=id}  
   this.listId = listId;
   this.title = title;
   this.desc = desc;

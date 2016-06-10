@@ -1,5 +1,10 @@
 "use strict";
-
+$.ajaxSetup({
+  data: {
+    key: horello.apiKey,
+    token: horello.apiToken,
+  }
+})
 window.horello = window.horello || {};
 
 horello.generateId = function() {
@@ -63,13 +68,16 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var card = new horello.Card(data.name,data.desc,data.idList);
+  return card;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  if (arguments.length===1) {this.id = horello.generateId();}
+  else {this.id=id}
   this.name = name;
   this.cards = [];
 };
@@ -90,6 +98,17 @@ horello.List.prototype = {
   addCard: function(name, desc) {
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
+    $.ajax('https://trello.com/1/cards',{
+      data: {
+        due: null,
+        idList: this.getId(),
+        name: card.getTitle()
+      },
+      method: "POST",
+      success: function() {
+        //////
+      }
+    })
     return card.getId();
   },
 
@@ -140,11 +159,24 @@ horello.List.prototype = {
     }, ""));
 
     return wrapper.html();
+  },
+  loadList: function() {
+    var id = this.id
+    $.ajax('https://trello.com/1/lists/'+this.id+'/cards',{
+      success: function(data) {
+        for (var i = 0; i < data.length; i++) {
+          board.getList(id).cards.push(horello.Card.fromJSON(data[i]))
+        }
+        horello.mount(board)
+      }
+    })
   }
 };
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  var list = new horello.List(data.id, data.name);
+  return list;
 };
 
 
@@ -173,5 +205,25 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+  },
+  loadBoard: function() {
+    $.ajax('https://api.trello.com/1/member/me/boards',{
+      success: function(data) {
+        var id = data[0].id
+        $.ajax(horello.boardSite+id+'/lists/', {
+          success: function(data) {
+            for (var i = 0; i < data.length; i++) {
+              var newList = horello.List.fromJSON(data[i])
+              var listId = newList.id
+              newList.loadList()
+              board.lists.push(newList)
+            }
+            horello.mount(board)
+          }
+        })
+      }
+    })
   }
 };
+
+

@@ -36,7 +36,11 @@ horello.Card.prototype = {
   // Write a getter function for the `id` property
   getId: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.id
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -46,7 +50,11 @@ horello.Card.prototype = {
   // Write a getter function for the `title` property
   getTitle: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.title
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -60,7 +68,11 @@ horello.Card.prototype = {
   //   card.getTitle() -> "Buy Milk";
   setTitle: function(titleStr) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.title = titleStr
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -70,7 +82,11 @@ horello.Card.prototype = {
   // Write a getter function for the `desc` property
   getDescription: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.desc
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -84,7 +100,11 @@ horello.Card.prototype = {
   //   card.getDescription() -> "BMaybe check Whole Foods?;
   setDescription: function(desc) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.desc = desc
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -96,9 +116,13 @@ horello.Card.prototype = {
 // according to the spec in `classSpec.png`.
 horello.List = function(name) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   this.name = name;
   this.id = horello.generateId();
   this.cards = []   //why empty array
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 =======
   // YOUR CODE HERE
 >>>>>>> master
@@ -109,10 +133,16 @@ horello.List.prototype = {
   // Write a getter function for the `id` property
   getId: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.id;
   },
 
 
+=======
+    // YOUR CODE HERE
+  },
+
+>>>>>>> master
 =======
     // YOUR CODE HERE
   },
@@ -123,7 +153,11 @@ horello.List.prototype = {
   // Write a getter function for the `name` property
   getName: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     return this.name;
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -137,7 +171,11 @@ horello.List.prototype = {
   //   l.getTitle() -> "Digimon";
   setName: function(name) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     this.name = name;
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -153,9 +191,13 @@ horello.List.prototype = {
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
 <<<<<<< HEAD
+<<<<<<< HEAD
    var newCard = new horello.Card(name, desc, this.getId);
    this['cards'].push(newCard); //this.cards.push(newCard)
     return newCard.getId();
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -175,12 +217,16 @@ horello.List.prototype = {
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     for (var i = 0; i< this.cards.length; i++){
       if (this.cards[i].id=== cardId){
         return this.cards[i];
       }
       }
       return null;
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -194,6 +240,7 @@ horello.List.prototype = {
   // should return the id of the newly created card.
   rmvCard: function(cardId) {
 <<<<<<< HEAD
+<<<<<<< HEAD
        for (var i = 0; i< this.cards.length; i++){
       if (this.cards[i].id === cardId){
         var x = this.cards[i];
@@ -205,6 +252,9 @@ horello.List.prototype = {
 =======
     // YOUR CODE HERE
 >>>>>>> master
+=======
+    // YOUR CODE HERE
+>>>>>>> master
   }
 };
 
@@ -213,7 +263,11 @@ horello.List.prototype = {
 // in `classSpec.png`.
 horello.Board = function () {
 <<<<<<< HEAD
+<<<<<<< HEAD
   this.lists= [];
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 =======
   // YOUR CODE HERE
 >>>>>>> master
@@ -227,9 +281,13 @@ horello.Board.prototype = {
   // of the new list.
   addList: function(listName) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     var newList = new horello.List(listName);
     this.lists.push(newList)
     return newList.id
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -242,12 +300,16 @@ horello.Board.prototype = {
   // otherwise.
   getList: function(listId) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     for (var i=0; i<this.lists.length; i++){
       if (this.lists[i].id === listId){
         return this.lists[i];
       }
     }
     return undefined;
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -261,6 +323,7 @@ horello.Board.prototype = {
   // found, it should return null.
   rmvList: function(listId) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     for (var i=0; i<this.lists.length; i++){
       if (this.lists[i].id === listId){
         var x = this.lists[i];
@@ -270,6 +333,10 @@ horello.Board.prototype = {
     }
     return undefined;
   },
+=======
+    // YOUR CODE HERE
+  }
+>>>>>>> master
 =======
     // YOUR CODE HERE
   }

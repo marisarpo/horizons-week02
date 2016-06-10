@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
   'use strict';
+=======
+'use strict';
+>>>>>>> master
 =======
 'use strict';
 >>>>>>> master
@@ -38,7 +42,11 @@ handlers.attachClick = function(e, fn) {
 
 handlers.attachHover = function(e, fn) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   $(e).on("mouseenter", fn);
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 =======
   // YOUR CODE HERE
 >>>>>>> master
@@ -51,7 +59,11 @@ handlers.attachHover = function(e, fn) {
 
 handlers.attachUnhover = function(e, fn) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   $(e).on("mouseleave", fn);
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 =======
   // YOUR CODE HERE
 >>>>>>> master
@@ -63,7 +75,11 @@ handlers.attachUnhover = function(e, fn) {
 // 'key' with the intended keycode of the key to listen for and a parameter
 // 'fn' with a function to call if the key to listen for matches the
 <<<<<<< HEAD
+<<<<<<< HEAD
 // key pressed.   function(key, parameter)
+=======
+// key pressed.
+>>>>>>> master
 =======
 // key pressed.
 >>>>>>> master
@@ -72,7 +88,10 @@ handlers.attachUnhover = function(e, fn) {
 // "event object" returned by the event listener. The event object is full
 // of properties related to the event that was just fired.
 <<<<<<< HEAD
+<<<<<<< HEAD
 // function(key, parameter, event)
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -80,8 +99,11 @@ handlers.attachUnhover = function(e, fn) {
 // event.keyCode - determine if this matches the "key" parameter passed into
 // handlers.attachKeypress. Remember to only call "fn" if this is the case!
 <<<<<<< HEAD
+<<<<<<< HEAD
 // function(key, event.keyCode)
 
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -96,11 +118,15 @@ handlers.attachUnhover = function(e, fn) {
 
 handlers.attachKeypress = function(key, fn) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   $(document).on('keypress', function(event){
     if (event.keyCode === key){   //intended keycode
       fn();   //function to call if the key listen for matches keypress
     }
   });
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 =======
   // YOUR CODE HERE
 >>>>>>> master
@@ -117,12 +143,17 @@ handlers.attachKeypress = function(key, fn) {
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   // if (('#').click){
     handlers.attachClick ('#' + id ,function(){    //attachClick is something we made before
       handler.userActions[id]++    //handler.userActions is the object and you do [id] to mention the key in the object which you ++ bc you want to add
     })
 }
 
+=======
+  // YOUR CODE HERE
+};
+>>>>>>> master
 =======
   // YOUR CODE HERE
 };
@@ -180,6 +211,7 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   var timeOut = setTimeout(function(){    //what goes in function? 
     var x = setTimeout //but returns where do i put time? return value of setTimeout?
   }; 2000);
@@ -205,6 +237,10 @@ handlers.attachHoverClick = function(id) {
 //   attachUnhover()
 //   }
 // }
+=======
+  // YOUR CODE HERE
+}
+>>>>>>> master
 =======
   // YOUR CODE HERE
 }

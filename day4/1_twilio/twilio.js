@@ -14,9 +14,15 @@ window.twilio = {};
 // When you have all this information, please replace them in the variables down there.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 twilio.accountId = "ACc3f11493bd2b11bce0dfdb46f7510859";
 twilio.authToken = "effbe0a0cadaf5b196baaf487f38ce82";
 twilio.fromNumber = "16462485863";
+=======
+twilio.accountId = "YOUR ACCOUNT ID HERE";
+twilio.authToken = "YOUR AUTH TOKEN HERE";
+twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+>>>>>>> master
 =======
 twilio.accountId = "YOUR ACCOUNT ID HERE";
 twilio.authToken = "YOUR AUTH TOKEN HERE";
@@ -66,9 +72,13 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
     $(".message-input-button").click(function(e){
       this.handleMessageSend(this.messageInputField, this.fromNumber)
     }.bind(this))
+=======
+    // YOUR CODE HERE
+>>>>>>> master
 =======
     // YOUR CODE HERE
 >>>>>>> master
@@ -81,8 +91,13 @@ twilio.TwilioShoutout.prototype = {
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     },
+=======
+    // YOUR CODE HERE
+  },
+>>>>>>> master
 =======
     // YOUR CODE HERE
   },

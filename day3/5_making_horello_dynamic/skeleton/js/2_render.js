@@ -5,6 +5,7 @@
 // It returns an HTML string representing the internal object.
 horello.Card.prototype.render = function() {
 <<<<<<< HEAD
+<<<<<<< HEAD
  // build wrappers
  var wrapper = $('<div></div>');  
  var cardwrapper = $('<div class="card" data-cardid='+this.id+'></div>');   //this.id = card id    this.listId = list id
@@ -21,6 +22,8 @@ horello.Card.prototype.render = function() {
 
  return wrapper.html();   //deletes div
 =======
+=======
+>>>>>>> master
   // build wrappers
   var wrapper = $('<div></div>');
   var cardwrapper = $('<div class="card"></div>');
@@ -33,6 +36,9 @@ horello.Card.prototype.render = function() {
   cardbody.append($("<p></p>")).text(this.title);
 
   return wrapper.html();
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 };
 
@@ -41,6 +47,7 @@ horello.Card.prototype.render = function() {
 // and all of the cards it contains. It returns an HTML string
 // representing the internal object.
 horello.List.prototype.render = function() {
+<<<<<<< HEAD
 <<<<<<< HEAD
  // YOUR CODE HERE
  var wrapper = $('<div></div>');
@@ -69,12 +76,16 @@ horello.List.prototype.render = function() {
 =======
   // YOUR CODE HERE
 >>>>>>> master
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 }
 
 // Phase 3. Board
 // This function renders a Board, and all of the lists it contains, to
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
+<<<<<<< HEAD
 <<<<<<< HEAD
  // YOUR CODE HERE
  var wrapper = $('<div></div>')
@@ -86,6 +97,11 @@ horello.Board.prototype.render = function() {
 wrapper.append(boardwrapper)
  return wrapper.html(); 
 }
+=======
+  // YOUR CODE HERE
+}
+
+>>>>>>> master
 =======
   // YOUR CODE HERE
 }

@@ -13,9 +13,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC002e874747e30effdfb01094774e74b8";
+twilio.authToken = "a4837de9878dfd57f717b2ffa2eeefe7";
+twilio.fromNumber = "12158838148";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -61,7 +61,7 @@ twilio.TwilioShoutout.prototype = {
   initialize: function() {
     // YOUR CODE HERE
     this.messageSendButton.click(this.handleMessageSend.bind(this));
-  }
+  },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
   //
@@ -93,14 +93,18 @@ twilio.TwilioShoutout.prototype = {
 	// hint. remember to take care of both upper and lower case letters! 
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
-    for (var i=0; i<phonseStr.lengt; i++) {
-      if (isNaN(phoneStr.charAt(i)) === false &&
-          phoneStr != "" &&
-          $.trim(textStr) != "") {
-        return true;
-      }
+    if (phoneStr === "") {
       return false;
-    } 
+    }
+    else if ($.trim(phoneStr) === "") {
+      return false;
+    }
+    for (var i=0; i<phoneStr.length; i++) {
+      if (isNaN(phoneStr.charAt(i)) === true) {
+        return false;
+      }
+    }
+    return true;
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -115,11 +119,12 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
     var Phone = this.phoneInputField.val();
     var Message = this.messageInputField.val();
-    if (validatePhoneField(Phone) === true && validateMessageField(Message) === true) {
+    if (this.validatePhoneField(Phone) && this.validateMessageField(Message)) {
       this.sendMessage(Phone,Message);
       this.clearField(this.messageInputField);
+    } else {
+      throw "Ivalid fields";
     }
-    throw "Invalid fields";
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
   // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.
@@ -133,9 +138,9 @@ twilio.TwilioShoutout.prototype = {
     var messageList = this.messageList;
 		
 		// Exercise 6.A `callback`
-    // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
+    // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the generated JQuery object to the DOM messageList.
     var cb = function(data) {
-			// YOUR CODE HERE
+      messageList.append(new Message(toNumber, messageBody).render());
     };
 		
 		// `Call` the Twilio API service with our data
@@ -148,15 +153,15 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
+      url: this.apiUrl+"/Accounts/" + this.accountId + "/Messages",
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			// 
 			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
+        "To" : "+" + toNumber,
+        "From": "+" + this.fromNumber,
+        "Body": messageBody
       },
 			success: cb,
       headers: {

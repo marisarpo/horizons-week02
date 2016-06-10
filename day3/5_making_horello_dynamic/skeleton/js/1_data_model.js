@@ -55,7 +55,7 @@ horello.Card.prototype = {
   setTitle: function(titleStr) {
     // YOUR CODE HERE
     this.title= titleStr;
-    return this.title;
+    //return this.title;
   },
 
   // Exercise 1.D `getDescription`
@@ -74,7 +74,7 @@ horello.Card.prototype = {
   setDescription: function(desc) {
     // YOUR CODE HERE
     this.desc=desc;
-    return this.desc;
+    //return this.desc;
   }
 };
 
@@ -114,7 +114,7 @@ horello.List.prototype = {
   setName: function(name) {
     // YOUR CODE HERE
     this.name=name;
-    return this.name;
+    //return this.name;
   },
 
   // Exercise 2.D `addCard(title<String>, desc<String>)`
@@ -149,11 +149,20 @@ horello.List.prototype = {
     // YOUR CODE HERE
     //var x=this.cards;
    // console.log(x[0].id)
-    for(var i=0;i<this.cards.length;i++){
-      if(this.cards[i].getId()===cardId)
-        return this.cards[i]
+  //   for(var i=0;i<this.cards.length;i++){
+  //     if(this.cards[i].getId()===cardId){
+  //       return this.cards[i]
+  //     }
+  //   }
+  //   return null
+  // },
+      var card = this.cards.filter(function(c) {
+      return (c.getId() == cardId);
+    });
+    if (card.length > 0) {
+      return card[0];
     }
-    return null
+    return null;
   },
   
   // Exercise 2.F `rmvCard(cardId<String>)`

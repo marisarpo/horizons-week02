@@ -89,6 +89,9 @@ horello.mountStatic = function() {
     $('#cardEdit').modal('hide');
     horello.mount(board);
   });
+
+  
+
 }
 
 // This function is called multiple times, to configure dynamic events.

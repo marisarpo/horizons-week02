@@ -6,8 +6,11 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.getId()+'""></div>');
-  var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
+  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+  var cardmore = $('<span class="card-more"></span>');
+  if(this.getDescription()){
+    cardmore.append('<span class="glyphicon glyphicon-align-left"></span>')
+  }
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
   wrapper.append(cardwrapper);
   cardwrapper.append(cardmore);
@@ -23,28 +26,38 @@ horello.List.prototype.render = function() {
   // YOUR CODE HERE you need addition signs on each line 
     var wrapper = $('<div></div>');
     var listcon = $('<div class ="list-container"></div>');
-    var list = $('<div class="list" data-list-id="'+this.getId()+'"></div>');
-    var listhead = $('<div class="list-header"><span class="list-title">' + this.getName() + '</span></div>');
+    var list = $('<div class="list" id="'+this.id+'"></div>');
+    var listhead = $('<div class="list-header"><span class="list-title"></span>' + this.getName() + '</div>');
     var listcards = $('<div class="list-cards"></div>');
     for (var i = 0; i < this.cards.length; i++) {
       listcards.append(this.cards[i].render());
     }
-    var listfoot = $('<div class="list-footer">\
-      <button class="add-card" addCardId="' + this.getId() + '">Add a card...</button>\
-      <div class="collapse" id="' + this.getId() + '">\
-      <div class="well add-card-form"\
-      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle' + this.getId() + '">\
-      <button type="button" class="btn btn-default" id="addCardBtn' + this.getId() + '">Save</button>\
+  var listFooter = $('<div class="list-footer"></div>');
+  listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
+  listFooter.append($('\
+      <div class="collapse" id="addCardForm'+this.id+'">\
+      <div class="well add-card-form">\
+      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
+      <button type="button" class="btn btn-default save-btn" id="addCardBtn'+this.id+'">\
+      Save\
+      </button>\
       <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn' + this.getId() + '"></span>\
+      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
       </button>\
       </div>\
-      </div></div>');
+      </div>\
+    '));
       wrapper.append(listcon);
       listcon.append(list);
       list.append(listhead);
       list.append(listcards);
-      list.append(listfoot);
+      list.append(listFooter);
+
+        listcards.html(this.cards.reduce(function(prev, cur) {
+    return prev + cur.render();
+  }, ""));
+
+
       return wrapper.html();
       
     // "\"" allows you do do multi line strings but delete spaces after
@@ -55,5 +68,11 @@ horello.List.prototype.render = function() {
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
   // YOUR CODE HERE
-  return _.map(this.lists, function(list){ return list.render()});
+//   return _.map(this.lists, function(list){ return list.render()});
+// }
+  var wrapper = $('<div id="board" class="board"></div>');
+  wrapper.html(this.lists.reduce(function(prev, cur) {
+    return prev + cur.render();
+  }, ""));
+  return wrapper;    
 }

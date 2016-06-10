@@ -87,6 +87,7 @@ a {
 */
 #boardAnchor {
     height: 100%;
+    display: flex;
 }
 
 

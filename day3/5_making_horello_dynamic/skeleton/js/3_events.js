@@ -24,8 +24,9 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
-  // YOUR CODE HERE
+  $('#addList').on('shown.bs.collapse', function(e) {
+    $("#addListText").focus();
+  })
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -33,13 +34,39 @@ horello.mountStatic = function() {
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
-  // YOUR CODE HERE
+$("#addListSave").click(function(e) {
+  var listName = $('#addListText').val();
+
+  if(!$("#addListText").val()) {
+    alert("Por favor anota un nombre para la lista");
+    return;
+  }
+
+  board.addList(listName);
+  $("#addListText").val("");
+  $('#addList').collapse('hide');
+  horello.mount(board);
+})
+
+
+
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
+$("#addListCancel").click(function() {
+  $('#addList').collapse('hide');
+})
+
+  // Modal: these events control the modal that appears when you click
+  // on a card.
+
+  // 1b. This event, triggered when the user clicks on a card, should
+  // reveal the "Edit card" modal, populated with that card's data. It
+  // should store the necessary 
+
+
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -57,11 +84,74 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
+  $('.add-card').each(function(index) {
+    $(this).off();
 
-  // YOUR CODE HERE
+    var id = $(this).attr("addCardId");
 
-  // Phase 4(a). Edit card
+    $(this).click(function (e) {
+      $('#addCardForm' + id).collapse('toggle');
+    });
 
-  // YOUR CODE HERE
+    //focus
+    $('#addCardForm' + id).off();
+    $('#addCardForm' + id).on('shown.bs.collapse', function(e) {
+      $('#addCardTitle'  + id).focus();
+    })
+
+    //save and add title
+    $('#addCardBtn' + id).click(function(e) {
+      var title = $('#addCardTitle' + id).val();
+
+      if(!title) {
+        alert("Por favor anota un nombre para el titulo de la carta");
+        return;
+      }
+
+      var list = board.getList(id);
+      list.addCard(title);
+      horello.mount(board);
+    });
+
+    $('#addCardCancelBtn' + id).click(function(e) {
+      $('#addCardForm' + id).collapse('hide');
+    });
+
+
+  });
+
+  
+  $('.card').click(function(e) {
+    $('#modalSave').off();
+
+
+    $('#cardEdit').modal('show');
+
+      var cardID = $(e.currentTarget).data('card-id');
+      var listID = $(e.currentTarget).data('list-id'); 
+      var List = board.getList(listID);
+      var Card = List.getCard(cardID);
+      var desc = Card.desc;
+      var title = Card.title;
+
+      $('#modalText').val(title);
+      $('#modalBody').val(desc);
+
+      $('#modalSave').click(function(e) {
+        Card.desc = $('#modalBody').val();
+        Card.title = $('#modalText').val();
+        $('#cardEdit').modal('hide');
+
+
+        // $('#boardAnchor').empty();
+        // $('#boardAnchor').append(board.render());
+        horello.mount(board);
+
+      })
+
+      $('#modalClose').click(function(e) {
+        $('#cardEdit').modal('hide');
+      })
+  })  
 };
 

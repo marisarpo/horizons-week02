@@ -74,7 +74,7 @@ horello.Card.prototype = {
 // Phase 2. `List` Class
 // Lists contain a unique ID, a title, and a list of cards.  Write a List class
 // according to the spec in `classSpec.png`.
-horello.List = function(name, cards) {
+horello.List = function(name) {
   this.id = horello.generateId();
   this.name = name;
   this.cards = [];
@@ -186,13 +186,17 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    for (var i = 0; i < this.lists.length; i++) {
-      if (this.lists[i].listId === listId) {
-        return this.lists[i];
-      }
-    }
-    return null; 
+        return this.lists.find(function(c) {
+      return (c.getId() == listId);
+    });
   },
+  //   for (var i = 0; i < this.lists.length; i++) {
+  //     if (this.lists[i].listId === listId) {
+  //       return this.lists[i];
+  //     }
+  //   }
+  //   return null; 
+  // },
 
   // Exercise 3.C `rmvList(listId<String>)`
   // Write a function that takes one argument, `listId`, which is a
@@ -202,7 +206,7 @@ horello.Board.prototype = {
   // found, it should return null.
   rmvList: function(listId) {
     for (var i = 0; i < this.lists.length; i++) {
-      if (this.lists[i].listId === listId) {
+      if (this.lists[i].Id === listId) {
         var ListA = this.lists[i];
         this.lists.splice(i, 1);
         return ListA;

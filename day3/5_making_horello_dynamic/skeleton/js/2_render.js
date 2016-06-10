@@ -6,8 +6,11 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card" data-listId="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-  var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
+  var cardwrapper = $('<div class="card" data-desc = "'+this.desc+'" data-title = "'+this.title+'" data-listId="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+  var cardmore = $('<span class="card-more"></span>');
+  if(this.getDescription()) {
+    cardmore.append($("<span class=glyphicon glyphicon-align-left></span>"));
+  }
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
 
   wrapper.append(cardwrapper);
@@ -15,7 +18,7 @@ horello.Card.prototype.render = function() {
   cardwrapper.append(cardbody);
   cardbody.append($("<p></p>")).text(this.title);
 
-  return wrapper.html();
+  return wrapper.get(0);
 };
 
 // Phase 2. List

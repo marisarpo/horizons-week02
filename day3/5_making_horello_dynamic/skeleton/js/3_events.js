@@ -95,15 +95,14 @@ horello.mount = function (board) {
 
   $(".addCardCancel").click(function() {
       
-      console.log("hello");
       $(".addCardWell").collapse("hide");
+
     });
 
   // save card
   $(".save").click(function(evt) {
 
     var listId = $(this).attr('listId');
-    console.log(listId);
     var list = board.getList(listId);
 
     if(!$('#save-card' + listId).val()) {
@@ -113,10 +112,54 @@ horello.mount = function (board) {
 
     var nameCard = $('#save-card' + listId).val();
     list.addCard(nameCard);
+    // $("").attr('data-desc') = "";
     $(".addCardWell").collapse("hide");
     horello.mount(board);
 
   });
+
+  //show the modal
+  $(".card").off();
+  $(".card").on('click', function(evt) {
+    var cardSelector = $(this);
+    var title = cardSelector.attr('data-title');
+
+    var cardId = $(this).attr("data-card-id");
+    var listId = $(this).attr("data-listId");
+    var list = board.getList(listId);
+    var foundCard;
+
+    $('#cardEdit').modal('show');
+    // console.log(body);
+
+    for(var i=0; i<list.cards.length; i++) {
+      if(list.cards[i].getId() === cardId) {
+        foundCard = list.cards[i];
+      }
+    }
+
+    $('#modalText').val(title);
+    $("#modalBody").val(foundCard.getDescription());
+    console.log(foundCard);
+    
+    $("#modalBody").val("");
+    var desc = foundCard.getDescription();
+    $("#modalBody").val(desc);
+
+    $('#modalSave').off();
+    $('#modalSave').click(function(evt) {
+        foundCard.setDescription($('#modalBody').val());
+        foundCard.setTitle($('#modalText').val());
+
+        $('#cardEdit').modal('hide');
+        horello.mount(board);
+    })
+
+  })
+
+  //save the modal
+
+
 
 
   // Phase 4(a). Edit card
@@ -134,6 +177,5 @@ horello.mount = function (board) {
 
   //   horello.mount(board);
   // })
-
 };
 

@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card" data-list-id="' + this.listId + '" data-card-id="' + this.getId() + '"></div>');
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
 
@@ -26,7 +26,7 @@ horello.List.prototype.render = function() {
   // YOUR CODE HERE you need addition signs on each line 
     var wrapper = $('<div></div>');
     var listcon = $('<div class ="list-container"></div>');
-    var list = $('<div class="list"></div>');
+    var list = $('<div class="list" data-list-id="' + this.id + '"></div>');
     var listhead = $('<div class="list-header"><span class="list-title">' + this.getName() + '</span></div>');
     var listcards = $('<div class="list-cards"></div>');
     for (var i = 0; i < this.cards.length; i++) {
@@ -35,10 +35,10 @@ horello.List.prototype.render = function() {
     var listfoot = $('<div class="list-footer">\
       <button class="add-card" addCardId="' + this.getId() + '">Add a card...</button>\
       <div class="collapse" id="' + this.getId() + '">\
-      <div class="well add-card-form"\
+      <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle' + this.getId() + '">\
-      <button type="button" class="btn btn-default" id="addCardBtn' + this.getId() + '">Save</button>\
-      <button type="button" class="btn btn-default">\
+      <button type="button" class="btn btn-default save" id="addCardBtn' + this.getId() + '">Save</button>\
+      <button type="button" class="btn btn-default addCardCancel" addcardid="'+ this.getId() + '">\
       <span class="glyphicon glyphicon-remove" id="addCardCancelBtn' + this.getId() + '"></span>\
       </button>\
       </div>\

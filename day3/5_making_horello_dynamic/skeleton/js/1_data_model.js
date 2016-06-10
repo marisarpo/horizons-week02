@@ -204,7 +204,7 @@ horello.Board.prototype = {
     // YOUR CODE HERE
     for (var i = 0; i < this.lists.length; i++) {
       if (this.lists[i].id === listId) {
-        return this.list[i];
+        return this.lists[i];
       }
     }
     return undefined;

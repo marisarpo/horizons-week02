@@ -42,8 +42,8 @@ horello.mountStatic = function() {
   $('#addListSave').click(function(e) {
     if (!$('#addListText').val()) {
       alert("You need to name your stupid freaking list!");
+      return;
     }
-    
     board.addList($('#addListText').val());
 
      $('#addList').collapse('toggle');
@@ -57,7 +57,11 @@ horello.mountStatic = function() {
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+  $('#addListCancel').click(function(e) {
+    $('#addList').collapse('toggle');
 
+  });
+  
 
   }
 
@@ -66,7 +70,8 @@ horello.mount = function (board) {
   // Phase 3. Create card
 
   // Unrender and re-render the board.
-
+   $('#boardAnchor').empty();
+  $('#boardAnchor').append(board.render());
 
   
   // 2a. Add card forms
@@ -78,9 +83,62 @@ horello.mount = function (board) {
   // - Clicking Cancel collapses the form
 
   // YOUR CODE HERE
+  $(".add-card").click(function(e) {
+    console.log(e);
+    $("#" + this.getAttribute("addcardid")).collapse('toggle');
+     $('#addCardTitle' +  this.getAttribute("addcardid")).focus();
+  });
+
+  $(".save").click(function(e) {
+    console.log(this);
+    var str = this.getAttribute("id").split("addCardBtn");
+    if (!$('#addCardTitle' + str[1])) {
+      alert("You need to name your stupid freaking card!");
+    }
+    // var listId = ($(".save").parents(".list")[0]).getAttribute("data-list-id");
+
+    var list = board.getList(str[1]);
+    list.addCard($('#addCardTitle' + str[1]).val());
+
+
+     $('#addCardForm').collapse('toggle');
+     $('#addCardTitle' + str[1]).val("");
+     horello.mount(board);
+
+  })
+
+    $('.addCardCancel').click(function(e) {
+    $("#" + this.getAttribute("addcardid")).collapse('toggle');
+
+  });
 
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
-};
+  // Modal: these events control the modal that appears when you click
+ // on a card.
 
+  $(".card").click(function(e) {
+    $("#cardEdit").modal('toggle');
+    var button = $(e.currentTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+
+    $("#modalSave").click(function(e) {
+      console.log(e);
+      if (!$('#modalText').val()) {
+        alert("You need to name your stupid freaking list!");
+        return;
+      }
+      card.setDescription($("#modalBody").val());
+
+      $('#cardEdit').collapse('hide');
+    });
+    $('.close').click(function(e) {
+      $('#cardEdit').collapse('hide');
+    });
+  });
+};

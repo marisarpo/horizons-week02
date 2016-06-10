@@ -30,8 +30,8 @@
     // jQuery document ready shorthand.
     $(function () {
       var board = new horello.Board();
-      board.addList("Awesomeness");
-      board.lists[0].addCard("Hello", "Hello, world");
+      var newList = board.addList("Awesomeness");
+      board.lists[0].addCard("Hello", "Hello, world", newList);
       horello.mount(board);
       horello.mountStatic(board);
 

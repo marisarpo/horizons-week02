@@ -36,14 +36,14 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
-  $("#addListSave").click(function(e) {
-  	if(! $("#addListText").val()) {
+  $('#addListSave').click(function(e) {
+  	if(! $('#addListText').val()) {
   		alert("Please enter a list name");
   		return;
   	}
-  	board.addList(listName);
-    $("#addListText").val('');
-    $("#addList").collapse('toggle');
+  	board.addList($('#addListText').val());
+    $('#addListText').val('');
+    $('#addList').collapse('hide');
     horello.mount(board);
 
   })
@@ -51,8 +51,8 @@ horello.mountStatic = function() {
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-  $("#addListClose").click(function(e) {
-  	("#addList").collapse('hide');
+  $('#addListCancel').click(function(e) {
+  	$('#addList').collapse('hide');
   })
 }
 
@@ -72,8 +72,6 @@ horello.mount = function (board) {
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
 
-  // Make sure all .add-card buttons toggle
-  //Add
 
 
   $('.add-card').click(function(e) {
@@ -81,12 +79,9 @@ horello.mount = function (board) {
   	var listId = btn.attr('addCardId');
   	$('#addCardForm' + listId).collapse('toggle');
   	$('#addCardForm' + listId).click('shown.bs.collapse',function(e) {
-  		$('#addCardTitle' + listId).focus();
+  		$('addCardTitle' + listId).focus();
   	})
   })
-
-
-
   $('.save').click(function (e) {
   	var listId = $('.save').attr('addCardBtn');
   	var list = board.getList(listId);
@@ -99,9 +94,27 @@ horello.mount = function (board) {
   	horello.mount(board);
   })
   $('.cancel').click(function (e) {
-  	var listId = $(this).attr('listId');
-  	console.log($(this));
+  	var listId = $(this).attr('addCardCancelBtn');
   	$('#addCardForm'+ listId).collapse('hide');
-  });
-}
+  })
+  // Phase 4(a). Edit card
+ 
+  // 4a. Re-bind card detail modals.
+  //make card,list,carid,listid usng this card.setTitle(modaltext) modalBody.val()  
 
+ $('.card').click(function(e){
+ 	$('#cardEdit').modal('toggle');
+ 	var listId = $(e.currentTarget).data('list-id')
+ 	var cardId = $(e.currentTarget).data('card-id')
+ 	var list = board.getList(listId)
+ 	var card = list.getCard(cardId)
+ 	$("#modalText").val(card.getTitle())
+ 	$("#modalBody").val(card.getDescription())
+ 	$("#modalSave").click(function(e){
+ 		card.setTitle($('#modalText').val() );
+ 		card.setDescription($('#modalBody').val());
+ 		$('#cardEdit').modal('toggle');
+ 		horello.mount(board);
+ 	});
+ });
+}

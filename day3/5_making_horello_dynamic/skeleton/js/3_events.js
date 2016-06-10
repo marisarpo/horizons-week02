@@ -66,31 +66,41 @@ horello.mount = function (board) {
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
-    // - Clicking.add the button reveals the form
+    // - Clicking the button reveals the form
     // - When the form is revealed, the title field is focused
   $(".add-card").click(function(e){
-    console.log('s')
-    $("add-card-form").collapse('show')
+    console.log(e.target)
+    $("#addCardForm"+this.getAttribute("addcardid")).collapse('toggle')
     $(".form-control").focus();
   })
 
 
   // - Clicking Save validates the input and creates the new card
-  $('.btn.save-btn').click(function(e){ // use e.target or this to get the save button that was pressed
-    debugger; 
-    if(!$("#addCardTitle"+ $(".add-card").attr("addcardid")).val()){
+  $(".save-btn").click(function(e){ // use e.target or this to get the save button
+    console.log(e.target)
+    var z=this.id
+    z=z.split("addCardBtn")
+    console.log(z)
+    if(!$("#addCardTitle"+z[1]).val()){
       alert('need list title');
       return;
     }
-    console.log($("#list"))
-    //horello.mount(board)
+  var y = board.getList(z[1])
+  // //  console.log(y)
+    y.addCard($("#addCardTitle"+z[1]).val(),[])
+    horello.mount(board)
   })
 
   // - Clicking Cancel collapses the form
 
-  $('.btn-default').click(function(e){
-    console.log('.btn-default')
-    $("#addCardForm"+$(".add-card").attr("addcardid")).collapse('toggle')
+  $('.close-btn').click(function(e){
+  //debugger;
+   var z=$(this).children('span').attr('id')
+   z=z.split("addCardCancelBtn")
+    console.log(z[1])
+    //z=z.split("addCardTitle")
+    //console.log(z[1])
+    $("#addCardForm"+z[1]).collapse('toggle')
   });
   // YOUR CODE HERE
   // Phase 4(a). Edit card

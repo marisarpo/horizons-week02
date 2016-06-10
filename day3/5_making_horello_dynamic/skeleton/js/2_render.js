@@ -35,13 +35,13 @@ horello.List.prototype.render = function() {
   var listFooter = $('<div class="list-footer"></div>');
   listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
   listFooter.append($('\
-      <div class="collapse" id="addCardForm'+this.id+'">\
+      <div class="collapse open-card" id="addCardForm'+this.id+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
       <button type="button" class="btn btn-default save-btn" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
-      <button type="button" class="btn btn-default">\
+      <button type="button" class="btn btn-default close-btn">\
       <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
       </button>\
       </div>\

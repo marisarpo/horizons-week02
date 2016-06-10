@@ -14,8 +14,8 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(title, desc, listId, id) {
+  this.id = id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -62,14 +62,14 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+  return new horello.Card(data.name, data.desc, data.idList, data.id);
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
@@ -144,13 +144,15 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  return new horello.List(data.id, data.name);
 };
+
 
 
 // BOARD
 
 horello.Board = function () {
+  this.id = horello.boardId;
   this.lists = [];
 };
 
@@ -175,3 +177,50 @@ horello.Board.prototype = {
     return wrapper;
   }
 };
+
+
+horello.loadData = function(boardId) {
+
+  $.ajax({
+    url: horello.apiUrl+"/board/"+boardId+"/lists", 
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    method: "GET",
+    success: function(response){
+      var realLists = _.map(response, horello.List.fromJSON);
+      board.lists = realLists;
+      realLists.forEach(function(inputlist){
+        horello.loadCards(inputlist.id);
+      })
+    },
+    error: function(error){
+      console.log(JSON.stringify(error))
+    }
+ }) 
+}
+
+horello.loadCards = function(listId){
+  $.ajax({
+    url: horello.apiUrl+"/lists/"+listId+"?fields=name&cards=open&card_fields=name", 
+    data: {
+      key: horello.apiKey, 
+      token: horello.apiToken
+    },
+    method: "GET",
+    success: function(response){
+      var list = board.getList(listId);
+      response.cards.forEach(function(inputcard) { 
+        var card = horello.Card.fromJSON(inputcard);
+        list.cards.push(card);
+        horello.mount(board);
+      })
+    },
+    error: function(error){
+      console.log(JSON.stringify(error))
+    }
+ })
+}
+
+

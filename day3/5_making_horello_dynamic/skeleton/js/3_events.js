@@ -24,8 +24,11 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
+
   // YOUR CODE HERE
+  $("#addList").on("show.bs.collapse",function(e){
+    $("#addListText").focus();
+  })
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,12 +37,22 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+    $("#addListSave").click(function(e){
+      if ( !$("#addListText").val()){alert ("error"); return;}
+      board.addList($("#addListText").val());
+      $('#addList').collapse('toggle');
+      horello.mount(board)
+
+  })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+  $("#addListCancel").click(function(e){
+    $('#addList').collapse('toggle');})
+
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -60,8 +73,88 @@ horello.mount = function (board) {
 
   // YOUR CODE HERE
 
+  $(".add-card").click(function(evt) {
+    //console.log(evt);
+    var listId = $(this).data('list-id')
+    //console.log(listId)
+    $('#list-dropdown-' + listId).collapse('toggle');
+
+
+  });
+
+
+  $(".save").click(function(e){
+    //console.log(e);
+    var btn= $(this);
+    //console.log(btn);
+    var listId =btn.data('list-id');
+
+    //console.log(listId);
+    var list=board.getList(listId)
+    //console.log(listId)
+    var name=$("#text"+ listId).val();
+    //console.log(name)
+    //console.log(name)
+    if ( !$("#text"+listId).val()){alert ("error"); return;}
+    list.addCard(name);
+
+    horello.mount(board);
+
+  });
+
+  $(".cancel").click(function(e){
+    console.log(e);
+    console.log($(this));
+    var listId=$(this).data("list-id");
+    console.log(listId)
+    $('#list-dropdown-'+ listId).collapse('toggle');
+  })
+
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
-};
+  $(".card").off();
+  $(".card").click(function(e){
+    $("#cardEdit").off();
+    $("#modalSave").off();
 
+
+    $("#cardEdit").modal("toggle");
+    var cardelement = $(e.currentTarget);
+    // console.log(cardelement)
+    var cardId = cardelement.data('card-id');
+    var listId = cardelement.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $("#modalText").val(card.getTitle())
+    $("#modalBody").val(card.getDescription())
+    $("#modalSave").click(function(e){
+
+        card.setTitle($('#modalText').val() );
+        card.setDescription($('#modalBody').val());
+        $("#cardEdit").modal("toggle");
+        horello.mount(board);
+
+     });
+  //  $('#modalSave').data('list-id', listId);
+  //  $('#modalSave').data('card-id', cardId);
+
+  //  $("#modalSave").click(function(e){
+  //    .addCard($("#addListText").val());
+  //    $("#cardEdit").modal("toggle");
+  //    horello.mount(board)
+   //
+  //  })
+
+
+  })
+  // .modal("show");
+    // $("#cardEdit").on('show.bs.modal',function(){
+    //   alert("hello")
+    // })
+//save button
+
+
+
+
+};

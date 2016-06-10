@@ -69,7 +69,6 @@ horello.mount = function (board) {
     // - Clicking the button reveals the form
     // - When the form is revealed, the title field is focused
   $(".add-card").click(function(e){
-    console.log(e.target)
     $("#addCardForm"+this.getAttribute("addcardid")).collapse('toggle')
     $(".form-control").focus();
   })
@@ -112,16 +111,16 @@ horello.mount = function (board) {
   // debugger;
 
 
-  console.log(e);
+  //console.log(e);
   var cardId = button.data('card-id');
-  console.log(cardId);
+  //console.log(cardId);
   var listId = button.data('list-id');
-  console.log(listId);
+  //console.log(listId);
   var list = board.getList(listId);
-  console.log(list);
+  //console.log(list);
   var card = list.getCard(cardId);
   $('#modalText').val(card.getTitle());
-    console.log(card.getTitle());
+  //console.log(card.getTitle());
   });
  // $("#cardEdit").on('shown.bs.modal', function (evt) {
   

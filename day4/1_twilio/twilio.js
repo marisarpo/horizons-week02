@@ -13,9 +13,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC7cdc2e47f516a80c236859882189c27c";
+twilio.authToken = "2d4e4486e13f539b5fd833d6000c35fd";
+twilio.fromNumber = "+8563419100";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -60,6 +60,11 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    console.log(this)
+    // $('.message-input-button').click(function(e){
+    //   debugger;
+    //   return this.handleMessageSend(e);
+    // })
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.

@@ -12,6 +12,7 @@ horello.mountStatic = function() {
   // Add list form: these events control the "Add a list" form that
   // appears on the top-level board.
 
+<<<<<<< HEAD
   // 1a. [EXAMPLE] Add list form: toggle collapses 
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
@@ -24,10 +25,21 @@ horello.mountStatic = function() {
   });
 
   // 1b. Add list form: focus the title text input                        //if you click add list -> it goes to the text edit area
+=======
+  // 1a. [EXAMPLE] Add list form: toggle collapse
+  // This event, attached to the "Add a list..." button, should cause
+  // its associated form to appear and disappear.
+  $('.add-list').click(function(e) {
+    $('#addList').collapse('toggle');
+  });
+
+  // 1b. Add list form: focus the title text input
+>>>>>>> master
   // This event, triggered whenever the "Add a list..." form appears,
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
+<<<<<<< HEAD
 
   $('#addList').on('shown.bs.collapse', function(e){    //addList not add-list bc we what it when the thing opens up
     $("#addListText").focus();
@@ -36,6 +48,10 @@ horello.mountStatic = function() {
   // $('#mModal').on ('shown.bs.collase', function(e){     //shown.bs.collase -> bs collapse right after event is sent -> set new events 
   //   $("#addListText").focus();    //id so it is just quotation marks and #
   // });
+=======
+ 
+  // YOUR CODE HERE
+>>>>>>> master
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -43,6 +59,7 @@ horello.mountStatic = function() {
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
+<<<<<<< HEAD
   // we need a click action for the save button
 
   $('#addListSave').click(function(e){
@@ -60,17 +77,24 @@ horello.mountStatic = function() {
   }
 )
 
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
+<<<<<<< HEAD
     $('#addListCancel').click(function(e){
     $("#addListText").val("")
     $('#addList').collapse('hide');
     // horello.mount(board)    //render to board
   }
 )
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -84,6 +108,7 @@ horello.mount = function (board) {
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
+<<<<<<< HEAD
   // Clicking the button reveals the form
   // When the form is revealed, the title field is focused
   // Clicking Save validates the input and creates the new card
@@ -255,4 +280,17 @@ horello.mount = function (board) {
 
 //   // YOUR CODE HERE
 // };
+=======
+  // - Clicking the button reveals the form
+  // - When the form is revealed, the title field is focused
+  // - Clicking Save validates the input and creates the new card
+  // - Clicking Cancel collapses the form
+
+  // YOUR CODE HERE
+
+  // Phase 4(a). Edit card
+
+  // YOUR CODE HERE
+};
+>>>>>>> master
 

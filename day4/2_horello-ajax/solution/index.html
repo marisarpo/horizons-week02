@@ -4,12 +4,10 @@
   <meta charset="utf-8">
   <title>Horizons - W2D3 - Making Horello Dynamic</title>
 
-  <link rel="shortcut icon" type="image/png" href="../../../lib/jasmine/jasmine_favicon.png">
-  <link rel="stylesheet" href="../../../lib/jasmine/jasmine.css">
+  <!-- pace -->
+  <script src="../../../lib/pace.min.js"></script>
+  <link rel="stylesheet" href="../../../lib/pace.css">
 
-  <script src="../../../lib/jasmine/jasmine.js"></script>
-  <script src="../../../lib/jasmine/jasmine-html.js"></script>
-  <script src="../../../lib/jasmine/boot.js"></script>
   <script src="../../../lib/underscore.js"></script>
   <script src="../../../lib/jquery.js"></script>
 
@@ -19,30 +17,19 @@
 
   <!-- Our files -->
   <link rel="stylesheet" href="../css/style.css">
-  <script src="js/1_data_model.js"></script>
-  <script src="js/2_render.js"></script>
-  <script src="js/3_events.js"></script>
-  <script src="js/3_events_tests.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/data_model.js"></script>
+  <script src="js/events.js"></script>
   <script>
-    // Pre-populate the board with some data. Note that tests depend upon
-    // this data as-is.
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     // jQuery document ready shorthand.
     $(function () {
-      var board = new horello.Board();
-      board.addList("Awesomeness");
-      board.lists[0].addCard("Hello", "Hello, world");
+      var board = new horello.Board('5758d29570a6a1673ae873bf');
       horello.mount(board);
       horello.mountStatic(board);
-<<<<<<< HEAD
-=======
-
->>>>>>> master
-      // Used for tests
       window.board = board;
+
+      // This triggers the initial API call to download all board data.
+      board.loadData();
     });
   </script>
 </head>
@@ -54,9 +41,6 @@
 </style>
 
 <body>
-
-<!-- Jasmine reporting goes here -->
-<div id="jasmineAnchor"></div>
 
 <header>
   <a class="header-logo"
@@ -116,13 +100,5 @@
   </div>
 
 </div>
-<!--<script>-->
-  <!--$(function() {-->
-    <!--function injectJasmine(targetId) {-->
-      <!--$("#" + targetId).append($(".jasmine_html-reporter"));-->
-    <!--}-->
-    <!--injectJasmine('jasmineAnchor');-->
-  <!--});-->
-<!--</script>-->
 </body>
 </html>

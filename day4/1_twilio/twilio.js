@@ -13,9 +13,15 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
+<<<<<<< HEAD
 twilio.accountId = "ACc3f11493bd2b11bce0dfdb46f7510859";
 twilio.authToken = "effbe0a0cadaf5b196baaf487f38ce82";
 twilio.fromNumber = "16462485863";
+=======
+twilio.accountId = "YOUR ACCOUNT ID HERE";
+twilio.authToken = "YOUR AUTH TOKEN HERE";
+twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+>>>>>>> master
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -59,9 +65,13 @@ twilio.TwilioShoutout.prototype = {
 	// 
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
+<<<<<<< HEAD
     $(".message-input-button").click(function(e){
       this.handleMessageSend(this.messageInputField, this.fromNumber)
     }.bind(this))
+=======
+    // YOUR CODE HERE
+>>>>>>> master
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -70,8 +80,13 @@ twilio.TwilioShoutout.prototype = {
   // hint. what does it mean to `clear` a field? Set it to an empty string.
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
+<<<<<<< HEAD
     
     },
+=======
+    // YOUR CODE HERE
+  },
+>>>>>>> master
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions: 
   // (1) The field should not be a blank string ("")

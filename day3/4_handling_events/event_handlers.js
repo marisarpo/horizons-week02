@@ -1,4 +1,8 @@
+<<<<<<< HEAD
   'use strict';
+=======
+'use strict';
+>>>>>>> master
 
 window.handlers = {};
 
@@ -33,7 +37,11 @@ handlers.attachClick = function(e, fn) {
 // to select it.
 
 handlers.attachHover = function(e, fn) {
+<<<<<<< HEAD
   $(e).on("mouseenter", fn);
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 };
 
 // ----------------------------------------------------------------------------
@@ -42,7 +50,11 @@ handlers.attachHover = function(e, fn) {
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
+<<<<<<< HEAD
   $(e).on("mouseleave", fn);
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 };
 
 // ----------------------------------------------------------------------------
@@ -50,18 +62,28 @@ handlers.attachUnhover = function(e, fn) {
 // Exercise 1C. Do the same for the "keypress" event, and take a parameter
 // 'key' with the intended keycode of the key to listen for and a parameter
 // 'fn' with a function to call if the key to listen for matches the
+<<<<<<< HEAD
 // key pressed.   function(key, parameter)
+=======
+// key pressed.
+>>>>>>> master
 
 // Note: To determine what key was called, add a parameter "event" to get the
 // "event object" returned by the event listener. The event object is full
 // of properties related to the event that was just fired.
+<<<<<<< HEAD
 // function(key, parameter, event)
+=======
+>>>>>>> master
 
 // The property of the event object we are looking for in this case is called
 // event.keyCode - determine if this matches the "key" parameter passed into
 // handlers.attachKeypress. Remember to only call "fn" if this is the case!
+<<<<<<< HEAD
 // function(key, event.keyCode)
 
+=======
+>>>>>>> master
 
 // See a full list of properties of the event object here:
 // http://www.w3schools.com/jsref/dom_obj_event.asp#table5
@@ -73,11 +95,15 @@ handlers.attachUnhover = function(e, fn) {
 // rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
+<<<<<<< HEAD
   $(document).on('keypress', function(event){
     if (event.keyCode === key){   //intended keycode
       fn();   //function to call if the key listen for matches keypress
     }
   });
+=======
+  // YOUR CODE HERE
+>>>>>>> master
 };
 
 // ----------------------------------------------------------------------------
@@ -90,12 +116,17 @@ handlers.attachKeypress = function(key, fn) {
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
+<<<<<<< HEAD
   // if (('#').click){
     handlers.attachClick ('#' + id ,function(){    //attachClick is something we made before
       handler.userActions[id]++    //handler.userActions is the object and you do [id] to mention the key in the object which you ++ bc you want to add
     })
 }
 
+=======
+  // YOUR CODE HERE
+};
+>>>>>>> master
 
 handlers.attachUserActionRecord("red"); // The red wire button
 handlers.attachUserActionRecord("blue"); // The blue wire button
@@ -148,6 +179,7 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
+<<<<<<< HEAD
   var timeOut = setTimeout(function(){    //what goes in function? 
     var x = setTimeout //but returns where do i put time? return value of setTimeout?
   }; 2000);
@@ -173,6 +205,10 @@ handlers.attachHoverClick = function(id) {
 //   attachUnhover()
 //   }
 // }
+=======
+  // YOUR CODE HERE
+}
+>>>>>>> master
 
 handlers.attachHoverClick("red");
 handlers.attachHoverClick("blue");

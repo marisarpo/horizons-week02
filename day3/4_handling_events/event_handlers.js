@@ -309,6 +309,9 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 
 handlers.detachAlertsWithParents = function(elements) {
   // YOUR CODE HERE
+   if(elements.get(0) == document){return};
+   
+
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));

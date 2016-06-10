@@ -195,13 +195,13 @@ horello.Board.prototype = {
   // lists, and if one is found, it should delete this list from the
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
-  rmvList: function(listId) {
-    var c = this.getList(listId);
+  rmvList: function(listId) { // listId => grocery list id 
+    var c = this.getList(listId); // grocery list 
     if (c === null) {
       return null;
     }
-    var ind = this.lists.indexOf(c);
-    this.lists.splice(ind, 1);
+    var ind = this.lists.indexOf(c); // ["grocery list", "movie list", "musician list"]
+    this.lists.splice(ind, 1); // array.splice(0, 1)
     return c;
   }
 };

@@ -25,7 +25,9 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-  // YOUR CODE HERE
+$('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+  $("#addListText").focus();
+});
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -33,7 +35,16 @@ horello.mountStatic = function() {
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
-  // YOUR CODE HERE
+$('#addListSave').click(function(ev){
+  if(!$("addListText")val()){
+    alert("please enter a list name");
+    return
+  }
+
+  board.addList($("#addListText").val());
+  $("#addListText").val(""); //reset the input field to be empty.
+  $('#addList').collapse('toggle'); //appear, disappear for things (collapse methods)
+})
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a

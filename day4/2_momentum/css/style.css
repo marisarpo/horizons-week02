@@ -1,14 +1,25 @@
 body {
-	background-image:url('costalSpain.jpg');
+	background: linear-gradient(
+		rgba(0, 0, 0, 0.2), 
+		rgba(0, 0, 0, 0.2)),
+		url('costalSpain.jpg');
 	background-size:cover;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, sans-serif;
-	color: rgba(230,230,230,0.95);
+	color: rgba(230,230,230,0.85);
 }
+h1 {
+	font-size: 48px;
+}
+
 .navbar {
    background-color: transparent;
    background: transparent;
    border-color: transparent;
 }
+.navbar-default .navbar-brand {
+	color: rgba(230,230,230,0.85);
+}
+
 /*.navbar li { color: #000 } */
 html,body,.container {
 	height: 100%
@@ -24,6 +35,7 @@ html,body,.container {
 	height: 100%;
 }
 .col-md-4.col-md-offset-4 {
+	padding-top: 10vh;
 	height: 100%;
 	float: none;
 	display: flex;
@@ -45,15 +57,27 @@ html,body,.container {
 #quoteBody {
 	background-color: transparent;
 	padding-bottom: 2px;
-	border-color: rgba(230,230,230,0.95);
+	border-color: rgba(230,230,230,0.85);
     border-width: 0 0 1px 0;
     border-radius: 0;
-	color:rgba(230,230,230,0.95);
-
+	color:rgba(230,230,230,0.85);
+	width: 35vw;
+	text-align: center;
 }
 #quoteBody:focus {
 	outline: none;
 	-webkit-box-shadow: none !important;
 	-moz-box-shadow: none !important;
 	box-shadow: none !important;
+}
+#weather {
+	color: rgba(230,230,230,0.85);
+}
+#weatherButton {
+	border-color: rgba(230,230,230,0.85); 
+	color: rgba(230,230,230,0.85);
+}
+#weatherButton:hover {
+	background-color: rgba(230,230,230,0.85);
+	color: white;
 }

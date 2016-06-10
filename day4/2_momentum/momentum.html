@@ -26,18 +26,17 @@
 			setInterval(GetClock,1000);
 		}
 	</script>
-	<script src="momentum.js"></script>
+	<script type="text/javascript" src="js/momentum.js"></script>
+	<script type="text/javascript" src="js/momentum-quote.js"></script>
+	<script type="text/javascript" src="js/momentum-weather.js"></script>
 </head>
-<body onload="momentum.startTime()"> <!-- look closely at how to add a clock -->
+<body> <!-- look closely at how to add a clock -->
 	<nav class="navbar navbar-default">
 	  <div class="container-fluid">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
+	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" id="weatherButton">
+	        weather
 	      </button>
 	      <a class="navbar-brand" href="#">Apps</a>
 	    </div>
@@ -45,7 +44,7 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#" id="weather"></a></li>
+	        <li><a href="#" id="weather">weather</a></li>
 	      </ul>
 	    </div><!-- /.navbar-collapse -->
 	  </div><!-- /.container-fluid -->
@@ -56,7 +55,7 @@
 				<h1 id="time"></h1>
 				<h3 id="salutation">Hello, Cole</h3>
 				<div id="quoteblock">
-					<p id="quote">Even monkeys fall from trees</p>
+					<p id="quote">xXx</p>
 					<input class="form-control" type="text" rows="1" id="quoteBody"></input>
 				</div>
 			</div>

@@ -3,7 +3,6 @@
 window.momentum = window.momentum || {};
 
 // Quotes
-
 momentum.QuoteCtrl = function() {
   this.apiUrl = "http://quotes.rest/qod.json";
 };
@@ -16,5 +15,11 @@ momentum.QuoteCtrl.prototype = {
 	// hint. read through the documentation for the TheySaidSo API.
   fetchQuote: function(cb) {
 		// YOUR CODE HERE
+		$.ajax({
+			type: "GET",
+			url: this.apiUrl,
+			success: function(data) {
+				return data.contents.quotes[0].quote
+			}})
   }
 };

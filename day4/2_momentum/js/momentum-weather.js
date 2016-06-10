@@ -5,7 +5,7 @@ window.momentum = window.momentum || {};
 // Weather
 
 momentum.WeatherCtrl = function() {
-  this.apiKey = "YOUR APP ID HERE";
+  this.apiKey = "3bc5f4af0dac70b223735bf323a0fb78";
   this.apiUrl = "http://api.openweathermap.org/data/2.5/weather?q=Philadelphia&APPID=" + this.apiKey;
 };
 
@@ -17,5 +17,12 @@ momentum.WeatherCtrl.prototype = {
 	// hint. read through the documentation for the OpenWeatherAPI.
   fetchWeather: function(cb) {
 		// YOUR CODE HERE
-  }
+		$.ajax({
+			type: "GET",
+			url: this.apiUrl,
+			success: function(data) {
+			return [data.weather[0].main,Math.round((data.main.temp-273.1)*10)/10]
+			}
+		})
+	}
 };

@@ -89,6 +89,7 @@ twilio.TwilioShoutout.prototype = {
   // problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    console.log('initializing...')
     this.messageSendButton.click(this.handleMessageSend.bind(this))
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
@@ -126,10 +127,11 @@ twilio.TwilioShoutout.prototype = {
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
     console.log('number validated')
-    _.forEach(phoneStr,function(elt) {
-      if (sNaN(elt)) {return false}
-    })
-    return this.validateMessageField(phoneStr)
+    phoneStr = $.trim(phoneStr)
+    for (var i in phoneStr) {
+      if (isNaN(phoneStr[i])) {return false}
+    }
+    return phoneStr.length>0
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, 
@@ -170,7 +172,7 @@ twilio.TwilioShoutout.prototype = {
     // using its render() method. It should append the gnerated JQuery object to the 
     // DOM messageList.
     var cb = function(data) {
-			this.messageList.append(new Message(toNumber,messageBody))
+			$('.message-list').append((new Message(toNumber,messageBody)).render())
     };
 		
 		// `Call` the Twilio API service with our data
@@ -184,7 +186,7 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: this.apiUrl +"/Accounts/"+this.accountId,
+      url: this.apiUrl+"/Accounts/"+this.accountId+'/Messages',
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			// 
@@ -193,7 +195,7 @@ twilio.TwilioShoutout.prototype = {
       data : {
         "To" : "+" + toNumber,
         "From": "+" + twilio.fromNumber,
-        "Body": messageInputField
+        "Body": messageBody
       },
 			success: cb,
       headers: {

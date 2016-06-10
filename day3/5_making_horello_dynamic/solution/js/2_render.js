@@ -27,7 +27,7 @@ horello.Card.prototype.render = function() {
 // representing the internal object.
 horello.List.prototype.render = function() {
   // Build wrappers
-  var wrapper = $('<div></div>');
+  //var wrapper = $('<div></div>');
 
   var listContainer = $('<div class="list-container"></div>');
   var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
@@ -35,7 +35,7 @@ horello.List.prototype.render = function() {
   var listBody = $('<div class="list-cards"></div>');
   var listFooter = $('<div class="list-footer"></div>');
 
-  wrapper.append(listContainer);
+  //wrapper.append(listContainer);
   listContainer.append(listWrapper);
   listWrapper.append(listHeader);
   listWrapper.append(listBody);
@@ -61,7 +61,7 @@ horello.List.prototype.render = function() {
     return prev + cur.render();
   }, ""));
 
-  return wrapper.html();
+  return listContainer.html();
 }
 
 // Phase 3. Board

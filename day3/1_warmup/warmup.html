@@ -1,0 +1,45 @@
+<h2>Events inline exercise</h1>
+<h4>1. Intercept the click events for these links. Display an alert with the site the user intended to visit, but don't navigate to that site.</h3>
+<ul>
+  <li><a href="http://www.google.com"   id = 'link1'>Google</a></li>
+  <li><a href="http://www.facebook.com" id = 'link2' >Facebook</a></li>
+  <li><a href="http://www.yahoo.com" class = "somelink">Yahoo</a></li>
+</ul>
+<p>Hint: return <tt>false</tt> in the onclick handler to prevent the default browser action.
+<h4>2. Dismiss this alert when the "x" icon is clicked.</h4>
+  <div class="alert alert-warning 
+ alert-dismissible fade in" id = "yellow" role="alert"> <button type="button" class="close" id="mint">×</button> <strong>Holy guacamole!</strong> Best check yo self, you're not looking too good. </div>
+<p>Hint: use <tt>display: none</tt> to make something disappear</p>
+<h4>3. Change this image when the thumbnails below are clicked</h4>
+<img src="http://javascript.info/files/tutorial/browser/events/gallery/img6-lg.jpg" id = "bigImg">
+<div id="thumbs">
+  <a id = 'img2' href="http://javascript.info/files/tutorial/browser/events/gallery/img2-lg.jpg" title="Image 2" ><img src="http://javascript.info/files/tutorial/browser/events/gallery/img2-thumb.jpg"></a>
+  <a id = 'img3' href="http://javascript.info/files/tutorial/browser/events/gallery/img3-lg.jpg" title="Image 3"><img src="http://javascript.info/files/tutorial/browser/events/gallery/img3-thumb.jpg"></a>
+  <a id = 'img4' href="http://javascript.info/files/tutorial/browser/events/gallery/img4-lg.jpg" title="Image 4"><img src="http://javascript.info/files/tutorial/browser/events/gallery/img4-thumb.jpg"></a>
+  <a id = 'img5' href="http://javascript.info/files/tutorial/browser/events/gallery/img5-lg.jpg" title="Image 5"><img src="http://javascript.info/files/tutorial/browser/events/gallery/img5-thumb.jpg"></a>
+  <a id = 'img6' href="http://javascript.info/files/tutorial/browser/events/gallery/img6-lg.jpg" title="Image 6"><img src="http://javascript.info/files/tutorial/browser/events/gallery/img6-thumb.jpg"></a>
+</div>
+
+
+
+
+
+<style>
+
+body {
+  padding: 10px;
+}
+
+#thumbs img {
+  border: solid 1px #ccc;
+  width: 100px;
+  height: 100px;
+  padding: 4px;
+  margin: 4px;
+}
+
+#thumbs img:hover {
+  border-color: #FF9900;
+}
+
+</style>

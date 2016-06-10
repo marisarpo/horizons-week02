@@ -24,8 +24,9 @@ horello.mountStatic = function() {
   // should focus on its text input (so the user can start typing
   // immediately, without having to click again to select the text input
   // field).
- 
-  // YOUR CODE HERE
+  $('.add-list').click(function(e) {
+    $('#addListText').focus();
+    });
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -34,12 +35,24 @@ horello.mountStatic = function() {
   // accordingly, and 3. cause the new list to appear on the board.
 
   // YOUR CODE HERE
+  $("#addListSave").click(function(event) {
+    var newname = $("#addListText").val();
+    if (newname){
+      board.addList(newname);
+    }
+    $("#addListText").val('');
+    $('#addList').collapse('toggle');
+    console.log(board);
+    horello.mount(board);
 
+  });
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
-
   // YOUR CODE HERE
+  $("#addListCancel").click(function(event) {
+    $("#addList").collapse('toggle');
+  });
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -54,6 +67,33 @@ horello.mount = function (board) {
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
   // - Clicking the button reveals the form
+  $('.add-card').click(function(event){
+    var listId = $(this).attr("addcardid") // 'this' is card that was pressed
+    $("#addCardForm" + listId).collapse('toggle');
+
+    $("#addCardForm" + listId + " :first-child").focus();
+
+  });
+   
+    $(".save-btn").click(function(event) {
+      var listId = $(this).attr("data-list-id")
+      var newname = $("#addCardTitle" + listId).val();
+      if (newname){
+        var list = board.getList(listId);
+        list.addCard(newname);
+        }
+      $("#addCardForm" + listId + " :first-child").val('');
+      $("#addCardForm" + listId).collapse('toggle');
+      horello.mount(board);
+    });
+    
+
+    $(".close-btn").click(function(event) {
+      var listId = $(this).attr("data-list-id");
+       $("#addCardForm" + listId).collapse('toggle');
+    });
+    
+
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
@@ -61,7 +101,11 @@ horello.mount = function (board) {
   // YOUR CODE HERE
 
   // Phase 4(a). Edit card
-
   // YOUR CODE HERE
+
+  $(".card-body").click(function(event){
+  
+    //$(".modal-body").val("Moo");
+  });
 };
 

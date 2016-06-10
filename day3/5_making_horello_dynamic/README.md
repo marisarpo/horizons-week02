@@ -102,9 +102,9 @@ Open up [1_horello_data_model.html] and [1_data_model.js] and follow the
 instructions in the comments to create the necessary classes and helper
 methods to satisfy the tests.
 
-[1_data_model.js]:./solution/js/1_data_model.js
-[1_horello_data_model.html]:./solution/1_horello_data_model.html
-[live]: http://horizons-school-of-technology.github.io/week02/day3/5_making_horello_dynamic/solution/3_horello_events.html
+[1_data_model.js]:./skeleton/js/1_data_model.js
+[1_horello_data_model.html]:./skeleton/1_horello_data_model.html
+[live]: http://horizons-school-of-technology.github.io/week02/day3/5_making_horello_dynamic/skeleton/3_horello_events.html
 
 This part has three phases:
 
@@ -168,8 +168,8 @@ This part has three phases, which you can follow in [2_render.js].
 - PHASE 2. List
 - PHASE 3. Board
 
-[2_render.js]:./solution/js/2_render.js
-[2_horello_render.html]:./solution/2_horello_render.html
+[2_render.js]:./skeleton/js/2_render.js
+[2_horello_render.html]:./skeleton/2_horello_render.html
 [previous]: http://horizons-school-of-technology.github.io/week02/day2/2_horello/solution/index.html
 [jquery]: http://api.jquery.com/jQuery/#jQuery2
 [append]: http://api.jquery.com/append/
@@ -334,5 +334,5 @@ But we don't rest on our laurels for long. That's not how we roll here.
 Because tomorrow we're on to bigger and better things: adding networking
 to your app.
 
-[3_events.js]:./solution/js/3_events.js
-[3_horello_events.html]:./solution/3_horello_events.html
+[3_events.js]:./skeleton/js/3_events.js
+[3_horello_events.html]:./skeleton/3_horello_events.html

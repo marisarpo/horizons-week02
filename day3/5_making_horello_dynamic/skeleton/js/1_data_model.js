@@ -85,7 +85,8 @@ horello.List.prototype = {
   // Write a getter function for the `id` property
   getId: function() {
     return this.id;
-},
+  },
+
 
   // YOUR CODE HERE
   // Exercise 2.B `getName`
@@ -162,7 +163,6 @@ horello.List.prototype = {
 // in `classSpec.png`.
 horello.Board = function () {
   this.lists= [];
-
 };
 
 horello.Board.prototype = {
@@ -191,8 +191,6 @@ horello.Board.prototype = {
     return undefined;
   },
 
-
-
   // Exercise 3.C `rmvList(listId<String>)`
   // Write a function that takes one argument, `listId`, which is a
   // string. It should look for a list with this ID among the Board's
@@ -200,14 +198,14 @@ horello.Board.prototype = {
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
   rmvList: function(listId) {
-   for (var i=0; i<this.lists.length; i++){
-    if (this.lists[i].id === listId){
-      var x = this.lists[i];
-        this.lists.splice(i, 1);
-        return x;
+    for (var i=0; i<this.lists.length; i++){
+      if (this.lists[i].id === listId){
+        var x = this.lists[i];
+          this.lists.splice(i, 1);
+          return x;
+      }
     }
-  }
-  return undefined;
-},
+    return undefined;
+  },
 };
 

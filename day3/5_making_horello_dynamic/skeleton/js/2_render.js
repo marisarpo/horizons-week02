@@ -6,7 +6,7 @@
 horello.Card.prototype.render = function() {
  // build wrappers
  var wrapper = $('<div></div>');  
- var cardwrapper = $('<div class="card"></div>');   //this.id = card id    this.listId = list id
+ var cardwrapper = $('<div class="card" data-cardid='+this.id+'></div>');   //this.id = card id    this.listId = list id
  var cardmore = $('<span class="card-more"><span>'); 
   // if (this.getDescription()){
   //   cardmore.append ($('span class="glyphicon glyphicon-align-left"></span>'));
@@ -36,11 +36,11 @@ horello.List.prototype.render = function() {
    listcards.append(this.cards[i].render());
  }  //we render every card
  var listfooter = $('<div class="list-footer"></div>');
- var footercontent = $('<button class="list-button add-card" data-toggle="collapse" href="#"'+this.id+'>Add a card...</button><div class="collapse" id="'+this.id+
-                   '<div class="well add-card-form">'+
-                       '<input type="text" class="form-control" placeholder="Card title">'+
-                       '<button type="button" class="btn btn-default">Save</button>'+
-                       '<button type="button"class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div></div>');
+ var footercontent = $('<button class="list-button add-card " data-toggle="collapse" href="#'+this.id+'">Add a card...</button><div class="collapse card-well" id="'+this.id+
+                   '"><div class="well add-card-form">'+
+                       '<input type="text" class="form-control" placeholder="Card title" id="addCardText'+this.id+'">'+
+                       '<button type="button" class="save1 btn btn-default" data-list='+this.id+'>Save</button>'+
+                       '<button type="button"class="exit1 btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div></div>');
 
  wrapper.append(listcontainer);
  listcontainer.append(listwrapper);

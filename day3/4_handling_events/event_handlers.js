@@ -94,7 +94,7 @@ handlers.attachUserActionRecord = function(id) {
     handlers.attachClick ('#' + id ,function(){    //attachClick is something we made before
       handler.userActions[id]++    //handler.userActions is the object and you do [id] to mention the key in the object which you ++ bc you want to add
     })
-  }
+}
 
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -158,7 +158,8 @@ handlers.attachHoverClick = function(id) {
   clearTimeout(timeout)
   handlers.attachClick ('#' + id ,function(){    //attachClick is something we made before
       x = handler.hoverTimeoutNums[id]  
-  })}
+  })
+}
   
 //   $(id).trigger("mouseover"){
 //     var timeout = setTimeout(function(){

@@ -18,7 +18,7 @@
 
 	<!-- Our files -->
 	<!-- Uncomment this to test -->
-	<!-- <script type="text/javascript" src="twilio_tests.js"></script> -->
+	<script type="text/javascript" src="twilio_tests.js"></script>
 	<script type="text/javascript" src="twilio.js"></script>
 </head>
 <body class="tw-app">
@@ -47,10 +47,9 @@
 	</div>
 	<script type="text/javascript">
 		function injectJasmine(targetId) {
-			console.log($(".jasmine_html-reporter"));
 			$("#" + targetId).append($(".jasmine_html-reporter"));
 		}
-		setTimeout(function() { injectJasmine("jasmine-reporter")}, 50);
+		setTimeout(function() { injectJasmine("jasmine-reporter")}, 0);
 	</script>
 </body>
 

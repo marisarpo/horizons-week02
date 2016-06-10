@@ -25,31 +25,64 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-  // YOUR CODE HERE
-
+  $('#addList').on('shown.bs.collapse', function() {
+    $('#addListText').focus()
+  })
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
   // form is clicked, should 1. validate the input (i.e., make sure that
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
-  // YOUR CODE HERE
-
+  $('#addListSave').click(function(e) {
+    if(!$('#addListText').val()) {
+      alert("You didn't enter a list name!");
+      return;
+    }
+    board.addList($('#addListText').val());
+    $('#addListText').val("");
+    $('#addList').collapse('hide');
+    horello.mount(board);
+  })
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
+  $('#addListCancel').click(function(e) {
+    $('#addList').collapse('hide');
+  })
 }
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
-  // Phase 3. Create card
-
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
   $('#boardAnchor').append(board.render());
+  // Phase 3. Create card
+  $('.save').click(function(ev) {
+    var listId = $(this).attr("data-list-id");
+    var list = board.getList(listId);
+    if(!$("#listName_" + listId).val()) {
+      console.log(listId);
+      console.log($("#listName_" + listId));
+      alert("You didn't enter any text!");
+      return;
+    }
+    list.addCard($("#listName_" + listId).val());
+    $("#listName_" + listId).val("");
+    $("#addCard_" + listId).collapse('hide');
+    horello.mount(board);
+  })
 
+  $('.addCardCancel').click(function(e) {
+    var listId = $(this).attr("data-list-id");
+    $('#addCard_' + listId).collapse('hide');
+  })
+
+  $('.addCard').on('shown.bs.collapse', function() {
+    var listId = $(this).attr("data-list-id");
+    $('#listName_' + listId).focus()
+  })
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
@@ -60,8 +93,12 @@ horello.mount = function (board) {
 
   // YOUR CODE HERE
 
-  // Phase 4(a). Edit card
+  // Phase 4(a). Edit card (MODALs)
 
   // YOUR CODE HERE
+  $('.card').on('click', function(e) {
+    $('.modal').modal('show');
+  })
+
 };
 

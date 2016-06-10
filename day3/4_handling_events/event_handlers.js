@@ -33,7 +33,7 @@ handlers.attachClick = function(e, fn) {
 // to select it.
 
 handlers.attachHover = function(e, fn) {
-  // YOUR CODE HERE
+  $(e).on("mouseenter", fn);
 };
 
 // ----------------------------------------------------------------------------

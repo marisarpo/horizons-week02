@@ -13,7 +13,16 @@ window.horello = window.horello || {};
 //     chunk() + '-' + chunk() + chunk() + chunk();
 // };
 
+// Ajax Setup tokens
+$.ajaxSetup({
+  data: {
+    key: horello.apiKey,
+    token: horello.apiToken
+  }
+});
+
 // CARD
+
 
 horello.Card = function(id, title, desc, listId) {
   this.id = id;
@@ -36,8 +45,6 @@ horello.Card.prototype = {
     $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
       method: "PUT",
       data: {
-        key: horello.apiKey,
-        token: horello.apiToken,
         name: titleStr
       },
       success: function (data) {
@@ -58,8 +65,6 @@ horello.Card.prototype = {
    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
      method: "PUT",
      data: {
-       key: horello.apiKey,
-       token: horello.apiToken,
        name: desc
      },
      success: function (data) {
@@ -123,8 +128,6 @@ horello.List.prototype = {
     $.ajax(horello.apiUrl + "/cards", {
       method: "POST",
       data: {
-        key: horello.apiKey,
-        token: horello.apiToken,
         name: name,
         desc: desc,
         idList: this.getId()
@@ -193,8 +196,6 @@ horello.List.prototype = {
   load: function() {
     $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
       data: {
-        key: horello.apiKey,
-        token: horello.apiToken
       },
       success: function (temp) {
         console.log("Successfully loaded cards for list " + this.getId());
@@ -234,8 +235,6 @@ horello.Board.prototype = {
     $.ajax(horello.apiUrl + "/lists", {
         method: "POST",
         data: {
-          key: horello.apiKey,
-          token: horello.apiToken,
           name: listName,
           idBoard: this.id,
           pos: 'bottom'
@@ -269,11 +268,9 @@ horello.Board.prototype = {
     // Clear the current data first
     this.lists = [];
 
-    // Load data
+    // Load board
     $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
         data: {
-          key: horello.apiKey,
-          token: horello.apiToken
         },
         success: function (data) {
           console.log("Board " + this.getId() + " was successfully loaded");

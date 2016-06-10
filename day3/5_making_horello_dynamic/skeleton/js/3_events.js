@@ -25,7 +25,11 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
+<<<<<<< HEAD
 $('#addList').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+=======
+$('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+>>>>>>> master
   $("#addListText").focus();
 });
 
@@ -36,6 +40,7 @@ $('#addList').on('shown.bs.collapse',function(e){ //bootstrap sends an event eve
   // accordingly, and 3. cause the new list to appear on the board.
 
 $('#addListSave').click(function(ev){
+<<<<<<< HEAD
   if(!$("#addListText").val()){
     alert("Please enter a list name!");
   }
@@ -45,6 +50,16 @@ $('#addListSave').click(function(ev){
   $('#addList').collapse('toggle'); //appear, disappear for things (collapse methods)
   horello.mount(board);
   }
+=======
+  if(!$("addListText")val()){
+    alert("please enter a list name");
+    return
+  }
+
+  board.addList($("#addListText").val());
+  $("#addListText").val(""); //reset the input field to be empty.
+  $('#addList').collapse('toggle'); //appear, disappear for things (collapse methods)
+>>>>>>> master
 })
 
   // 1d. Add list form: cancel button

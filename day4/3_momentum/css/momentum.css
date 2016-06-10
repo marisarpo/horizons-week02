@@ -1,0 +1,55 @@
+.bg-wrapper{
+    background-image:url('https://source.unsplash.com/category/buildings/1920x1080');
+    background-size:cover;
+    height:100vh;
+}
+
+.bg-wrapper h1, h2, h3{
+    font-family: "Helvetica Neue";
+    color: white;
+    font-size: 14em;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin:0;
+}
+
+.bg-wrapper h3{
+    font-size: 3em;
+}
+
+.bg-wrapper h2{
+    font-size: 2em;
+}
+
+.bg-wrapper::before{
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.35);
+}
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-right {
+  position: fixed;
+  top: 5%;
+  left: 85%;
+}
+
+.block-text h1,h2{
+    display:inline;
+}
+
+.weather{
+    font-family: "Helvetica Neue";
+    color: white;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin:0;
+}

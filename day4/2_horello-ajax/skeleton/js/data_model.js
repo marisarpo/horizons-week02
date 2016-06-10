@@ -13,7 +13,7 @@ window.horello = window.horello || {};
 //     chunk() + '-' + chunk() + chunk() + chunk();
 // };
 
-// Ajax Setup tokens
+// ajaxSetup tokens
 $.ajaxSetup({
   data: {
     key: horello.apiKey,
@@ -48,7 +48,7 @@ horello.Card.prototype = {
         name: titleStr
       },
       success: function (data) {
-        console.log("Updated title of card " + this.getId());
+        console.log("Updated title of card with the id of " + this.getId());
       }.bind(this),
       error: function (error) {
         console.error("Hit a snag when updating title of card " + this.getId() + ": " + JSON.stringify(error));
@@ -270,8 +270,6 @@ horello.Board.prototype = {
 
     // Load board
     $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
-        data: {
-        },
         success: function (data) {
           console.log("Board " + this.getId() + " was successfully loaded");
           data.forEach(function (temp) {

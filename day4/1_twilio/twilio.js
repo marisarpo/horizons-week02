@@ -15,7 +15,7 @@ window.twilio = {};
 
 twilio.accountId = 'AC0ea8f636ab9ec98fd4ae93b2037c9bd9';
 twilio.authToken = '65aaaabe1f1453707e33a46df1be6383';
-twilio.fromNumber = "3132283587";
+twilio.fromNumber = "13134519917";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -136,6 +136,7 @@ twilio.TwilioShoutout.prototype = {
     var numberTemp = this.phoneInputField.val();
 		
     if (this.validateMessageField(msgTemp) && this.validatePhoneField(numberTemp)) {
+      console.log("sending message");
       this.sendMessage(numberTemp, msgTemp);
       this.clearField(this.messageInputField);
     }

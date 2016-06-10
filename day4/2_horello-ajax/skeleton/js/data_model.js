@@ -14,8 +14,8 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(title, desc, listId, id) {
+  //this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -62,9 +62,9 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+  var jsonCard = new horello.Card(data.title, data.desc, data.listId, data.id);
+  return jsonCard;
 };
-
 
 // LIST
 
@@ -144,11 +144,95 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  var jsonList = new horello.List(data.id, data.name);
+  return jsonList;
 };
+
+horello.List.loadCards = function(listId) {
+
+          var Cards;
+          $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
+          data: {
+            key:horello.apiKey,
+            token: horello.apiToken
+          },
+          method: 'GET',
+          success: function(response) {
+              console.log(JSON.stringify(response));
+              Cards = response;
+              var realCards = _.map(Cards, horello.Cards.fromJSON);
+              return realCards;
+          },
+          error: function(err) {
+              console.log(JSON.stringify(err));
+          }
+        })
+
+
+        $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
+          data: {
+            key:horello.apiKey,
+            token: horello.apiToken
+          },
+          method: 'POST',
+          success: function(response) {
+              
+
+              horello.List.addCard(response);
+             
+              
+      
+          },
+          error: function(err) {
+              console.log(JSON.stringify(err));
+          }
+        })
+}
+
+
+// Load function
+// horello.List.load = function() {
+// //get data from trello
+// $.ajax(horello.apiUrl + '/GET/1/boards/555c8e8438613a1b6f665efc', {
+//   data: {
+//     key: JSON.stringify(horello.apiKey),
+//     token: JSON.stringify(horello.apiToken)
+//   },
+//   success: function(data) {
+//     this.fromJSON(data);
+//   }
+//   error: function(data) {
+//     console.log('error');
+//   }
+// }
+
+// $.ajax(horello.apiUrl + '/PUT/1/boards/555c8e8438613a1b6f665efc', {
+//   data: {
+//     key: horello.apiKey,
+//     token: horello.apiToken
+//   },
+//   success: function(data) {
+//     this.fromJSON(data);
+//   }
+//   error: function(data) {
+//     console.log('error');
+//   }
+// }
+
+// }
+// $.ajax('horello.apiUrl/1/boards/555c8e8438613a1b6f665efc', {
+//   data: {
+//     key: JSON.stringify(horello.apiKey),
+//     token: JSON.stringify(horello.apiToken)
+//   },
+//   success: 'PUT//   error: //throw error if can't find board
+// }
+
 
 
 // BOARD
+
+
 
 horello.Board = function () {
   this.lists = [];
@@ -175,3 +259,55 @@ horello.Board.prototype = {
     return wrapper;
   }
 };
+
+// Note: ajax call takes longer to run than last map function, meaning that the last portion returns before the ajax call
+horello.loadData = function(board_id) {
+var listOfLists;
+var Cards;
+
+  $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
+    data: {
+      key:horello.apiKey,
+      token: horello.apiToken
+    },
+    method: 'GET',
+    success: function(boardData) {
+
+      listOfLists = boardData;
+      var realLists = _.map(listOfLists, horello.List.fromJSON);
+
+        // then get card from the list using ajax (use a forEach loop)
+        // then render board within new success function
+      realLists.forEach(function(listItem) {
+      horello.List.loadCards(listItem.id);
+      })
+      horello.mount(board);
+    },
+    error: function(err) {
+      console.log(JSON.stringify(err));
+    }
+  })
+
+  
+//success function for 'PUT'
+ $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
+    data: {
+      key:horello.apiKey,
+      token: horello.apiToken
+      //may need name 
+    },
+    method: 'POST', //might be POST instead
+    success: function(boardData) {
+
+      // call addList to create a new list
+      horello.Board.addList(boardData);
+      horello.List.loadCards(listItem.name);
+      
+      })
+    horello.mount(board);
+    },
+    error: function(err) {
+      console.log(JSON.stringify(err));
+    }
+  })
+}

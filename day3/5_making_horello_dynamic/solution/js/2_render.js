@@ -72,6 +72,5 @@ horello.Board.prototype.render = function() {
   wrapper.html(this.lists.reduce(function(prev, cur) {
     return prev + cur.render();
   }, ""));
-  return wrapper;    
+  return wrapper;
 }
-

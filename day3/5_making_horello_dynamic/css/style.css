@@ -142,6 +142,10 @@ a {
 
 /* CARDS */
 
+#boardAnchor {
+    display: flex;
+}
+
 .card {
     margin: 0 0 .5em;
     background: white;

@@ -16,7 +16,7 @@ handlers.attachClick = function(e, fn) {
 // Here's the same thing, with jQuery instead:
 handlers.attachClick = function(e, fn) {
   $(e).on("click", fn);
-}
+};
 
 // ----------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ handlers.attachClick = function(e, fn) {
 // to select it.
 
 handlers.attachHover = function(e, fn) {
-  // YOUR CODE HERE
+    $(e).on('mouseenter', fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -42,7 +42,7 @@ handlers.attachHover = function(e, fn) {
 // handler 'fn' to the "mouseleave" event instead.
 
 handlers.attachUnhover = function(e, fn) {
-  // YOUR CODE HERE
+    $(e).on('mouseenter', fn);
 };
 
 // ----------------------------------------------------------------------------
@@ -70,7 +70,12 @@ handlers.attachUnhover = function(e, fn) {
 // rather than a specific element 'e' like before.
 
 handlers.attachKeypress = function(key, fn) {
-  // YOUR CODE HERE
+    $(document).on("keypress", function (event) {
+        var keyCode = event.keyCode;
+        if (keyCode === key) {
+            fn();
+        }
+    })
 };
 
 // ----------------------------------------------------------------------------
@@ -83,7 +88,9 @@ handlers.attachKeypress = function(key, fn) {
 
 handlers.userActions = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachUserActionRecord = function(id) {
-  // YOUR CODE HERE
+    $("#" + id).on('click', function() {
+        handlers.userActions[id]++;
+    });
 };
 
 handlers.attachUserActionRecord("red"); // The red wire button
@@ -137,7 +144,14 @@ handlers.attachUserActionRecord("nope"); // The "run" button
 
 handlers.hoverTimeoutNums = {"red": 0, "blue": 0, "nope": 0};
 handlers.attachHoverClick = function(id) {
-  // YOUR CODE HERE
+    handlers.attachHover("#" + id, function() {
+        handlers.hoverTimeoutNums[id] = setTimeout(function () {
+            $("#" + id).trigger("click")
+        }, 2000);
+    })
+handlers.attachUnhover("#" + id, function () {
+    clearTimeout(handlers.hoverTimeoutNums[id])
+})
 }
 
 handlers.attachHoverClick("red");
@@ -165,8 +179,17 @@ handlers.attachHoverClick("nope");
 
 handlers.attachAlertsToClass = function(className, alertMessage) {
   // YOUR CODE HERE
+  handlers.attachClick("." + className, function () {
+      $("." + className).on("click", function () {
+          alert(alertMessage);
+      });
+  });
 };
 
+// handlers.attachClick(button, function(e) {
+//   alert(alertMessage);
+//   EXERCISE 4 CODE HERE
+// });
 handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 
 // ----------------------------------------------------------------------------
@@ -204,7 +227,13 @@ handlers.attachAlertsToClass("cutbutton", "Bad choice!");
 // click handler.
 
 handlers.attachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+    if ($(elements).get(0) == document) {return;}
+    $(elements).on("click", function () {
+        $(this).css("backgroundColor", "green");
+        alert("You've reached " + $(this).attr("description"));
+        $(this).css("backgroundColor", "");
+    })
+    handlers.attachAlertsWithParents(elements.parent());
 };
 
 handlers.attachAlertsWithParents($(".innerbutton"));
@@ -276,7 +305,7 @@ handlers.attachAlertsWithParents($(".innerbutton"));
 // we have detached its event handler from it.
 
 handlers.detachAlertsWithParents = function(elements) {
-  // YOUR CODE HERE
+
 };
 
 handlers.detachAlertsWithParents($(".innerbutton"));

@@ -99,6 +99,48 @@ horello.mount = function (board) {
 //selecter now grabs all save buttons. one click event now for all saved buttons
 
 
+  // Modal: these events control the modal that appears when you click
+  // on a card.
+
+  // 1b. This event, triggered when the user clicks on a card, should
+  // reveal the "Edit card" modal, populated with that card's data. It
+  // should store the necessary 
+
+  // took this from solutions>>>
+  $('#cardEdit').on('show.bs.modal', function (e) {
+    var button = $(e.relatedTarget);
+    var cardId = button.data('card-id');
+    var listId = button.data('list-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    $('#modalText').val(card.getTitle());
+    $('#modalBody').val(card.getDescription());
+    $('#modalSave').data('list-id', listId);
+    $('#modalSave').data('card-id', cardId);
+  });
+
+  // 1f. Modal save
+  $('#modalSave').click(function (e) {
+    var title = $('#modalText').val();
+    var desc = $('#modalBody').val();
+    if (!title) {
+      alert('Please enter a title');
+      return;
+    }
+
+    var listId = $(e.currentTarget).data('list-id');
+    var cardId = $(e.currentTarget).data('card-id');
+    var list = board.getList(listId);
+    var card = list.getCard(cardId);
+    card.setTitle(title);
+    card.setDescription(desc);
+    $('#cardEdit').modal('hide');
+    horello.mount(board);
+  });
+
+
+  ///// took that from solutions^^^
+
   // // Unrender and re-render the board.
   // $('#boardAnchor').empty();
   // $('#boardAnchor').append(board.render());
@@ -164,7 +206,7 @@ $('.add-card').each(function (idx) {
   $('#addCard_'+id).off();
 
   $("#addCard_"+id).on("shown.bs.collapse", function(event){
-    $("#list_name_" + this.getId()).focus();
+    $("#list_name_" + id).focus();
   });
 
   var addCardBtn = $(this).attr("data-list-id")

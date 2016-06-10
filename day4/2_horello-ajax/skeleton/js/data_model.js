@@ -62,7 +62,13 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+
+  var newCard = new Card(newtitle, newdesc, newlistId) {
+    newCard.id = data.id;
+    newCard.newlistId = data.idList
+    newCard.title = data.name;
+    newCard.desc = data.desc;
+  };
 };
 
 
@@ -144,7 +150,15 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  var newList = new List(jsonid, jsonname) {
+    newList.jsonid = data.id;
+    newList.jsonname = data.name;
+    newList.cards = [];
+    board.lists.push(newList);
+    newList.loadCards();
+};
+
+
 };
 
 

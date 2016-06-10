@@ -26,7 +26,7 @@ horello.List.prototype.render = function() {
   // YOUR CODE HERE
   var wrapper = $('<div></div>');
   var listcontainering =$('<div class="list-container"></div>');
-  var listwrapper = $('<div class="list"></div>');
+  var listwrapper = $('<div class="list" data-list-id="'+ this.id +'"></div>');
   var listheader = $('<div class="list-header"></div>');
   var listtitler = $('<span class="list-title"></span>').text(this.name);
   var listcarder = $('<div class="list-cards"></div>');
@@ -38,21 +38,24 @@ horello.List.prototype.render = function() {
   listwrapper.append(listcarder);
   listwrapper.append(listfooter);
   listheader.append(listtitler);
-  listfooter.append($("<button class="add-card" addCardId="+this.id+">Add a card...</button>"));
+  listfooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
   listfooter.append($('\
       <div class="collapse" id="addCardForm'+this.id+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
+      <button type="button" class="btn btn-default save" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
-      <button type="button" class="btn btn-default">\
+      <button type="button" class="btn btn-default cancel"  addCardId="'+this.id+'">\
       <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
       </button>\
       </div>\
       </div>\
     '));
 
+for(var i=0; i<this.cards.length; i++){
+  listcarder.append(this.cards[i].render());
+}
 
   return wrapper.html();
 }
@@ -61,6 +64,15 @@ horello.List.prototype.render = function() {
 // This function renders a Board, and all of the lists it contains, to
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
-  // YOUR CODE HERE
+  var boardAnchor = $('<div id="boardAnchor"></div>');
+  var board = $('<div id="board" class="board"></div>');
+
+  boardAnchor.append(board);
+
+  for(var i=0; i<this.lists.length; i++){
+  board.append(this.lists[i].render());
+}
+
+return boardAnchor.html();
 }
 

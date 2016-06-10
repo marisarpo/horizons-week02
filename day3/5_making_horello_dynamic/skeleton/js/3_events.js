@@ -25,7 +25,7 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-$('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+$('#addList').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
   $("#addListText").focus();
 });
 
@@ -36,21 +36,24 @@ $('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event ev
   // accordingly, and 3. cause the new list to appear on the board.
 
 $('#addListSave').click(function(ev){
-  if(!$("addListText")val()){
-    alert("please enter a list name");
-    return
+  if(!$("#addListText").val()){
+    alert("Please enter a list name!");
   }
-
+  else{
   board.addList($("#addListText").val());
   $("#addListText").val(""); //reset the input field to be empty.
   $('#addList').collapse('toggle'); //appear, disappear for things (collapse methods)
+  horello.mount(board);
+  }
 })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
-  // YOUR CODE HERE
+$('#addListCancel').click(function(ev){
+  $('#addList').collapse('toggle');
+})
 }
 
 // This function is called multiple times, to configure dynamic events.
@@ -69,8 +72,38 @@ horello.mount = function (board) {
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
 
-  // YOUR CODE HERE
+  $('.add-card').click(function(ev){
+    console.log(this);
+    $('#addCardForm' + this.getAttribute('addcardid')).collapse('toggle');
+    $('#addCardTitle' + this.getAttribute('addcardid')).focus();
+  });
 
+    $('.save').click(function(ev){
+      console.log(this);
+      var saver = this.getAttribute('id').split('addCardBtn');
+      if(!$('#addCardTitle' + saver[1]).val()){
+        alert("Please enter a card title!");
+      }
+      else{
+        // data-list-id
+        var listId = saver[1];       
+        // var listId = ($(".save").parents(".list")[0]).getAttribute("data-list-id");
+        var list = board.getList(listId);
+
+        list.addCard($("#addCardTitle" + saver[1]).val());
+        $("#addCardTitle" + saver[1]).val(""); //reset the input field to be empty.
+        $('#addCardForm').collapse('toggle'); //appear, disappear for things (collapse methods)
+        horello.mount(board);
+            }
+    })
+
+    $('#addListCancel').click(function(ev){
+    $('#addList').collapse('toggle');
+    })
+
+      $('.cancel').click(function(e) {
+      $('#addCardForm' + this.getAttribute('addcardid')).collapse('toggle');
+  })
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE

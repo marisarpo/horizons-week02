@@ -335,12 +335,5 @@ Because tomorrow we're on to bigger and better things: adding networking
 to your app.
 
 [3_events.js]:./skeleton/js/3_events.js
-<<<<<<< HEAD
-<<<<<<< HEAD
 [3_horello_events.html]:./skeleton/3_horello_events.html
-=======
-[3_horello_events.html]:./skeleton/3_horello_events.html
->>>>>>> master
-=======
-[3_horello_events.html]:./skeleton/3_horello_events.html
->>>>>>> master
+

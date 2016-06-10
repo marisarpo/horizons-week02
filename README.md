@@ -21,8 +21,6 @@
 - [Horello App Part 2]: Make your Horello app dynamic, responding to events and updating data models!
 - [Bonus JQuery]: JQuery funsies 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 [Event Listeners](./day3/4_handling_events)
 [Horello App Part 2]: ./day3/5_making_horello_dynamic
 [Bonus JQuery]: ./day3/6_bonus_jquery
@@ -33,20 +31,5 @@
 - [Twilio](./day4/1_twilio)
 - [Horello App Part 3 - Add Real Data with AJAX!]:
 - [Momentum](./day4/2_momentum)
-=======
-=======
->>>>>>> master
-[Event Listeners]: (./day3/4_handling_events)
-[Horello App Part 2]: ./day3/5_making_horello_dynamic
-[Bonus JQuery]: ./day3/6_bonus_jquery
 
-## Day 4 - Day 5
-- [Finish up Horello App Part 2](./day3/5_making_horello_dynamic)
-- [Twilio](./day4/1_twilio)
-- [Horello App Part 3 - Add Real Data with AJAX!](./day4/2_horello-ajax)
-- [Momentum](./day4/3_momentum)
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 - [FACEBOOK - intro coming Friday afternoon]:

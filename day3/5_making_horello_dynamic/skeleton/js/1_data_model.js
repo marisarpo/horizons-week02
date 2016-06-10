@@ -25,6 +25,7 @@ horello.generateId = function() {
 // several properties and methods.
 
 horello.Card = function(title, desc, listId) {
+  // YOUR CODE HERE
   this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
@@ -75,9 +76,16 @@ horello.Card.prototype = {
 // Lists contain a unique ID, a title, and a list of cards.  Write a List class
 // according to the spec in `classSpec.png`.
 horello.List = function(name) {
+<<<<<<< HEAD
   this.name = name;
   this.cards = [];
   this.id = horello.generateId();
+=======
+  // YOUR CODE HERE
+  this.id = horello.generateId();
+  this.name = name;
+  this.cards = [];
+>>>>>>> master
 };
 
 horello.List.prototype = {
@@ -113,9 +121,15 @@ horello.List.prototype = {
   // 
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
+<<<<<<< HEAD
     var newCard = new horello.Card(name, desc, this.getId());
     this.cards.push(newCard);
     return newCard.getId(); 
+=======
+    var card = new horello.Card(name, desc, this.getId());
+    this.cards.push(card);
+    return card.getId();
+>>>>>>> master
   },
   
   // Exercise 2.E `getCard(cardId<String>)`
@@ -131,6 +145,7 @@ horello.List.prototype = {
   // 
   // hint. you can use anything of wha you've learned before!
   getCard: function(cardId) {
+<<<<<<< HEAD
      var array = this.cards.filter(function(c) {
       return (c.getId() == cardId);
      });
@@ -140,6 +155,15 @@ horello.List.prototype = {
      }
 
      return null;
+=======
+    var card = this.cards.filter(function(c) {
+      return (c.getId() == cardId);
+    });
+    if (card.length > 0) {
+      return card[0];
+    }
+    return null;
+>>>>>>> master
   },
   
   // Exercise 2.F `rmvCard(cardId<String>)`
@@ -149,6 +173,7 @@ horello.List.prototype = {
   // it. If it does not exist, then it should return null. Finally, it
   // should return the id of the newly created card.
   rmvCard: function(cardId) {
+<<<<<<< HEAD
     var temp = this.getCard(cardId);
     if (temp === null){
       return null;
@@ -164,6 +189,16 @@ horello.List.prototype = {
     // }
     // return null;
    }
+=======
+    var c = this.getCard(cardId);
+    if (c === null) {
+      return null;
+    }
+    var ind = this.cards.indexOf(c);
+    this.cards.splice(ind, 1);
+    return c;
+  }
+>>>>>>> master
 };
 
 // Phase 3. `Board` Class
@@ -171,7 +206,11 @@ horello.List.prototype = {
 // in `classSpec.png`.
 horello.Board = function () {
   this.lists = [];
+<<<<<<< HEAD
 }
+=======
+};
+>>>>>>> master
 
 horello.Board.prototype = {
   // Exercise 3.A `addList(listName<String>)`
@@ -180,8 +219,14 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
+<<<<<<< HEAD
     var newList = new horello.List(listName);
     this.lists.push(newList);
+=======
+    var list = new horello.List(listName);
+    this.lists.push(list);
+    return list.getId();
+>>>>>>> master
   },
 
   // Exercise 3.B `getList(listId<String>)`
@@ -190,6 +235,7 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
+<<<<<<< HEAD
       var array = this.lists.filter(function(c) {
       return (c.getId() == listId);
      });
@@ -199,6 +245,11 @@ horello.Board.prototype = {
      }
 
      return null;
+=======
+    return this.lists.find(function(c) {
+      return (c.getId() == listId);
+    });
+>>>>>>> master
   },
   
 
@@ -209,12 +260,21 @@ horello.Board.prototype = {
   // Board's lists, then return the list object. If no matching list is
   // found, it should return null.
   rmvList: function(listId) {
+<<<<<<< HEAD
     var temp = this.getList(lstId);
     if (temp === null) {
       return null;
     }
     this.cards.splice(this.lists.indexOf(temp), 1);
       return temp;
+=======
+    var c = this.getList(listId);
+    if (c === null) {
+      return null;
+    }
+    var ind = this.lists.indexOf(c);
+    this.lists.splice(ind, 1);
+    return c;
+>>>>>>> master
   }
 };
-

@@ -6,10 +6,10 @@
 horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
+  var cardwrapper = $('<div class="card"data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
   var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
-
+ 
   wrapper.append(cardwrapper);
   cardwrapper.append(cardmore);
   cardwrapper.append(cardbody);
@@ -27,11 +27,16 @@ horello.List.prototype.render = function() {
   var wrapper = $('<div></div>');
   var listwrapper = $('<div class="list-container"></div>');
   var list = $('<div class="list"></div>');
-  var listheader = $('<div class="list-header"><span class="list-title">' + this.title + '</span></div>');
+  var listheader = $('<div class="list-header"><span class="list-title">' + this.getName() + '</span></div>');
   var listcards = $('<div class="list-cards"></div>');
   for (var i = 0; i < this.cards.length; i++)
     listcards.append(this.cards[i].render());
-  var listfooter = $('<div class="list-footer"><button class="list-button add-card"><div class="collapse"><div class="well add-card-form"></div><input type="text" class="form-control" placeholder="Card title"><button type="button" class="btn btn-default">Save</button><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button></div></button></div>');
+  var listfooter = $('<div class="list-footer">\
+    <button class="list-button add-card" data-toggle="collapse" data-list-id="'+this.id+'">Add a card...</button>\
+    <div class="collapse" id="add-card_'+this.id+'"><div class="well add-card-form newCard">\
+    <input type="text" class="form-control" id="add-card-text-'+this.id+'" placeholder="Card title">\
+    <button type="button" class="btn btn-default save" data-data-data-list-id="'+this.id+'">Save</button><button type="button"class="btn btn-default">\
+    <span class="glyphicon glyphicon-remove"></span></button></div></div></div>');
 
   wrapper.append(listwrapper);
   listwrapper.append(list);

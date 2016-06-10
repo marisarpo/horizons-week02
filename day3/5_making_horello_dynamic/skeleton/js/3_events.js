@@ -25,7 +25,9 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-  // YOUR CODE HERE
+  $('#addList').on('shown.bs.collapse', function (e) {
+    $("#addListText").focus();
+  });
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -33,22 +35,68 @@ horello.mountStatic = function() {
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
-  // YOUR CODE HERE
+  $("#addListSave").click(function(ev){
+    console.log("clicked");
+    if(!$("#addListText").val()){
+      alert("please enter a list name");
+      return
+    } 
+
+    // debugger;
+    board.addList($("#addListText").val());
+    $("#addListText").val(""); // reset the input field to be empty. 
+    $('#addList').collapse('hide');
+
+    horello.mount(board);
+
+  })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
+  $("#addListCancel").click(function(){
+      $('#addList').collapse('hide');
+  })
+
   // YOUR CODE HERE
 }
 
+
+horello.rerender = function(board){
+    $('#boardAnchor').empty();
+    $('#boardAnchor').append(board.render());
+}
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
   // Phase 3. Create card
 
   // Unrender and re-render the board.
-  $('#boardAnchor').empty();
-  $('#boardAnchor').append(board.render());
+  horello.rerender(board);
+
+  $('.add-card').click(function(evt) {
+    console.log(evt);
+
+    var listId = $(this).data('list-id');
+    console.log(listId);
+
+    $("#add-card_" + listId).collapse('toggle');
+  })
+
+  // $('.save').click(function(ev) {
+  //   // debugger;
+  //   var listId = $(this).attr("data-list-id"); // could also use ev.target instead of this here
+  //   var list = board.getList(listId);
+  //   if(!$("#list_name_" + listId).val()){
+  //     alert("Enter a card name");
+  //     return;
+  //   }
+
+  //   var nameOfCard = $("#list_name_" + listId).val()
+    
+  //   list.addCard(nameOfCard);
+  //   horello.mount(board);
+  // });
 
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
@@ -63,5 +111,24 @@ horello.mount = function (board) {
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
-};
 
+  $('.save').click(function(e) {
+
+    // get listId from thing clicked
+    var listId2= $(this).attr("data-data-data-list-id");
+
+    // get list from the board
+    var list = board.getList(listId2);
+    // update the list with the card
+
+    if(!($("#add-card-text-"+list.getId()).val()))
+    {
+      alert("Enter a valid title");
+    }
+    var text = $("#add-card-text-"+list.getId()).val();
+    list.addCard(text);
+
+    // re-render
+    horello.mount(board);
+  });
+};

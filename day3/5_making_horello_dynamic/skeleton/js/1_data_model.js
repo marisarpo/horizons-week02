@@ -185,7 +185,7 @@ horello.Board.prototype = {
   // otherwise.
   getList: function(listId) {
     for (var i = 0; i < this.lists.length; i++){
-      if (this.lists[i].getId() == clistId) {
+      if (this.lists[i].getId() == listId) {
         return this.lists[i];
       }
     } return null;

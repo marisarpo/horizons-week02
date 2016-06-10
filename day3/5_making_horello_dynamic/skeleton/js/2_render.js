@@ -59,7 +59,7 @@ horello.List.prototype.render = function() {
                           </button>\
                           <button type="button"\
                                   class="btn btn-default">\
-                                  <span class="glyphicon glyphicon-remove"></span>\
+                                  <span class="glyphicon glyphicon-remove" id="addCardCancelBtn ' + this.getId() + '"></span>\
                           </button>\
                       </div>\
                   </div>\
@@ -109,10 +109,21 @@ horello.List.prototype.render = function() {
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
   //do same thing we did for cards, except iterate through lists, join them together, and attach them to board anchor
+  var wrapper = $('<div></div>');
+
+  //need this because of CSS and flex
   var boardwrapper = $("<div class='board'></div>")
 
-boardwrapper.append(_.map(this.lists, function() {
-  return list.render()}).join("\n") )
+  var lists = _.map(this.lists, function(list){ return list.render()}).join("\n")  
+
+  boardwrapper.append(lists);
+
+  wrapper.append(boardwrapper);
+
+  return wrapper.html();
+
+// boardwrapper.append(_.map(this.lists, function() {
+//   return list.render()}).join("\n") )
 
   // var wrapper = $('<div id="board" class="board"></div>');
   // wrapper.html(this.lists.reduce(function(prev, cur) {

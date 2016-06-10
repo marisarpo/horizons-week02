@@ -115,8 +115,7 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
-  $('.add-card').each(function (idx) {
-    $(this).off();
+
 
     var id = $(this).attr('addCardId');
 
@@ -139,6 +138,12 @@ horello.mount = function (board) {
         return;
       }
 
+    // if (!$("#list_name_" + listId).val()) {
+    //   alert("enter card body");
+    //   return;
+    // }
+
+    //    var list = board.getList(listId);
       // Get the list object
       var list = board.getList(id);
       list.addCard(val);

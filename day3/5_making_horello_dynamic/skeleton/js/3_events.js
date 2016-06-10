@@ -16,6 +16,7 @@ horello.mountStatic = function() {
   // 1a. [EXAMPLE] Add list form: toggle collapse
   // This event, attached to the "Add a list..." button, should cause
   // its associated form to appear and disappear.
+
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
   });
@@ -28,7 +29,7 @@ horello.mountStatic = function() {
  
   // YOUR CODE HERE
   //look up javascript events and it should be shown
-  $('#addList').on("shown.bs.collapse", function(e){
+  $('#addList').on("shown.bs.collapse", function (e){
     $("#addListText").focus();
   });
 
@@ -41,15 +42,19 @@ horello.mountStatic = function() {
   //need a click action for save button, so get that id
   $("#addListSave").click(function(ev){
     //tells us what we need to do
-    if (!$("#addListText").val()){
+    var listName = $("#addListText").val()
+    console.log(listName);
+    if (!listName){
       alert("enter a list name");
       return
     }
 
     //update data model accordingly
-    board.addList($("#addListText"));
+    board.addList(listName);
+    console.log(board)
     $("#addListText").val("");//reset the input field to be empty.
     $('#addList').collapse('hide'); //collapse toggle also, could either do 'hide' or 'toggle'
+
 
     //make the new list appear on the board. data model was updated but board
     //was not being re-rendered.
@@ -72,7 +77,7 @@ horello.mountStatic = function() {
 
 
   // Unrender and re-render the board.
-horello.rerender = function(){
+horello.rerender = function(board){
   $('#boardAnchor').empty();
   $('#boardAnchor').append(board.render());
 }
@@ -80,6 +85,7 @@ horello.rerender = function(){
 
 // This function is called multiple times, to configure dynamic events.
 horello.mount = function (board) {
+  console.log("Mounting!");
   // Phase 3. Create card
 //inspect the save button in console, and see that there is no id anymore just button type and class
 //does it matter which list we're on, for the save button? yes, if we click save on list 1 then we
@@ -96,7 +102,7 @@ horello.mount = function (board) {
   // // Unrender and re-render the board.
   // $('#boardAnchor').empty();
   // $('#boardAnchor').append(board.render());
-  horello.rerender() //calling what's outside of horello.mount
+  horello.rerender(board); //calling what's outside of horello.mount
 
 
   $(".save").click(function(ev){
@@ -121,16 +127,18 @@ horello.mount = function (board) {
     //pass in the text value of the card. inspect the card in the console and see what's there, attach an id so you can easily find it
     //(into file two) -- added that next to the title
     //make sure it actually contains something -- if not, then display alert, just as before
-    if (!$("#list_name_" + listId.val())) {
-      alert("enter card body");
+    if (!$("#list_name_" + listId).val()) {
+      alert("enter card title");
       return;
-    };
-    list.addCard($("#list_name_" + listId).val());
-    horello.mount(); //this looks like a recursive call but it's not because you're not clicking save. recursion keeps calling
+    }
+    var nameOfCard = $("#list_name_" + listId).val()
+    
+    list.addCard(nameOfCard);
+    horello.mount(board); //this looks like a recursive call but it's not because you're not clicking save. recursion keeps calling
     //until it reaches the base case. there is no base case here. it's clicking save. otherwise it'd be an infinite loop because
     //there is no base case.  so it's just calling horello.rerender() when reaching that last line.
     //if you called just rerender, all our event listeners would go away
-});
+  });
 
 
   // 2a. Add card forms
@@ -143,8 +151,60 @@ horello.mount = function (board) {
 
   // YOUR CODE HERE
 
+//When the form is revealed, the title field is focused
+$('.add-card').each(function (idx) {
+  $(this).off();
+
+  var id= $(this).attr("href");
+
+  $(this).click(function (event) {
+    $('#addCard_'+id).collapse('toggle');
+  });
+
+  $('#addCard_'+id).off();
+
+  $("#addCard_"+id).on("shown.bs.collapse", function(event){
+    $("#list_name_" + this.getId()).focus();
+  });
+
+  var addCardBtn = $(this).attr("data-list-id")
+
+  $(addCardBtn+id).off();
+  $(addCardBtn+id).click(function (event) {
+    if (!$("#list_name_" + id).val()) {
+      alert("enter card title");
+      return;
+    }
+
+    var list = board.getList(id);
+    list.addCard($("#list_name_" + id).val());
+    horello.mount(board);
+  });
+
+  $("#addCardCancelBtn"+id).off();
+  $("#addCardCancelBtn"+id).click(function (event) {
+    $("#addCard_"+id).collapse('hide')
+  });
+
+});
+  // $(".add-card").on("shown.bs.collapse", function (evt){
+  //   var id = $(evt.target).attr('href');
+  //   $("#list_name_" + id).focus();
+  // });
+
+
+  // $(".add-card").on("shown.bs.collapse", function(evt){
+  //   $("#list_name_" + this.getId()).focus();
+  // })
+
   // Phase 4(a). Edit card
 
   // YOUR CODE HERE
+  $('.card').each(function (idx) {
+    $(this).off();
+    $(this).click(function (e) {
+      $('#cardEdit').modal('toggle', $(this));
+    });
+  });
 };
 

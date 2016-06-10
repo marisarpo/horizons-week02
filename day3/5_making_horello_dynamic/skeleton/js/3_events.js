@@ -25,7 +25,10 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
  
-  // YOUR CODE HERE
+  $('.add-list').click(function(e) {
+    $('addlistheader').focus();
+  });
+
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."

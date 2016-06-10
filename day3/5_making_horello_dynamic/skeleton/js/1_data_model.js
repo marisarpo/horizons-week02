@@ -25,6 +25,7 @@ horello.generateId = function() {
 // several properties and methods.
 
 horello.Card = function(title, desc, listId) {
+  // YOUR CODE HERE
   this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
@@ -35,14 +36,12 @@ horello.Card.prototype = {
   // Exercise 1.A `getId`
   // Write a getter function for the `id` property
   getId: function() {
-    // YOUR CODE HERE
     return this.id;
   },
 
   // Exercise 1.B `getTitle`
   // Write a getter function for the `title` property
   getTitle: function() {
-    // YOUR CODE HERE
     return this.title;
   },
 
@@ -53,13 +52,12 @@ horello.Card.prototype = {
   //   card.setTitle("Buy Milk");
   //   card.getTitle() -> "Buy Milk";
   setTitle: function(titleStr) {
-    this.title = titleStr
+    this.title = titleStr;
   },
 
   // Exercise 1.D `getDescription`
   // Write a getter function for the `desc` property
   getDescription: function() {
-    // YOUR CODE HERE
     return this.desc;
   },
 
@@ -70,7 +68,7 @@ horello.Card.prototype = {
   //   card.setDescription("Maybe check Whole Foods?");
   //   card.getDescription() -> "BMaybe check Whole Foods?;
   setDescription: function(desc) {
-    this.desc = desc
+    this.desc = desc;
   }
 };
 
@@ -95,7 +93,6 @@ horello.List.prototype = {
   // Exercise 2.B `getName`
   // Write a getter function for the `name` property
   getName: function() {
-    // YOUR CODE HERE
     return this.name;
   },
 
@@ -106,7 +103,6 @@ horello.List.prototype = {
   //   l.setTitle("Digimon");
   //   l.getTitle() -> "Digimon";
   setName: function(name) {
-    // YOUR CODE HERE
     this.name = name;
   },
 
@@ -119,13 +115,10 @@ horello.List.prototype = {
   // 
   // hint. You can create a card using new horello.Card(...)
   addCard: function(name, desc) {
-    // YOUR CODE HERE
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
     return card.getId();
   },
-
-   
   
   // Exercise 2.E `getCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
@@ -139,17 +132,16 @@ horello.List.prototype = {
   //   l.getTitle() -> "Digimon";
   // 
   // hint. you can use anything of wha you've learned before!
-getCard: function(cardId) {
+  getCard: function(cardId) {
     var card = this.cards.filter(function(c) {
       return (c.getId() == cardId);
     });
-    if (card) {
+    if (card.length > 0) {
       return card[0];
     }
     return null;
   },
-
-
+  
   // Exercise 2.F `rmvCard(cardId<String>)`
   // Write a function that takes one argument, `cardId`, which is a
   // string. It should retrieve the cardObject which corresponds to that
@@ -166,7 +158,6 @@ getCard: function(cardId) {
     return c;
   }
 };
-    
 
 // Phase 3. `Board` Class
 // A board contains a list of lists.  Write a Board class according to the spec
@@ -182,12 +173,10 @@ horello.Board.prototype = {
   // the list of this Board's lists. Finally, it should return the ID
   // of the new list.
   addList: function(listName) {
-    // YOUR CODE HERE
-      var list = new horello.List(listName);
+    var list = new horello.List(listName);
     this.lists.push(list);
     return list.getId();
   },
-
 
   // Exercise 3.B `getList(listId<String>)`
   // Write a function that takes one argument, `listId`, which is a
@@ -195,7 +184,9 @@ horello.Board.prototype = {
   // lists, and return the matching list if one is found, or undef
   // otherwise.
   getList: function(listId) {
-    // YOUR CODE HERE
+    return this.lists.find(function(c) {
+      return (c.getId() == listId);
+    });
   },
 
   // Exercise 3.C `rmvList(listId<String>)`
@@ -214,4 +205,5 @@ horello.Board.prototype = {
     return c;
   }
 };
+
 

@@ -119,9 +119,26 @@ horello.List.prototype = {
   },
 
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+    // First create the data in the API.
+    $.ajax(horello.apiUrl + "/cards", {
+      method: "POST",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: name,
+        desc: desc,
+        idList: this.getId()
+      },
+      success: function (data) {
+        // Success! Now we have an ID and we can create it locally. Or,
+        // we can reload the data from the API.
+        console.log("Successfully created new card: " + JSON.stringify(data));
+        this.load();
+      }.bind(this),
+      error: function (err) {
+        console.error("Error creating new card: " + JSON.stringify(err));
+      }
+    });
   },
 
   getCard: function(cardId) {
@@ -225,7 +242,7 @@ horello.Board.prototype = {
         },
         success: function (data) {
           console.log("Successfully created list with ID " + data.id + " for board " + this.getId());
-          this.loadData();
+          this.load();
         }.bind(this),
         error: function (error) {
           console.error("Hit a snag when adding list for board " + this.getId() + ": " + JSON.stringify(error));

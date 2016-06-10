@@ -14,8 +14,8 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(id,title, desc, listId) {
+  this.id = id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -63,13 +63,15 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  return new horello.Card(data.id,data.name,data.desc,data.idList);
+  
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
@@ -145,6 +147,7 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+   return new horello.List(data.id,data.name);
 };
 
 

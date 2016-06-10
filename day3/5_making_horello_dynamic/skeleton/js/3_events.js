@@ -25,8 +25,8 @@ horello.mountStatic = function() {
   // immediately, without having to click again to select the text input
   // field).
     $('#addlist').click('shown.bs.collapse',function(e) {
-    $('#addListText').focus();
-  });
+    	$('#addListText').focus();
+    });
   // YOUR CODE HERE
 
   // 1c. Add list form: save button
@@ -52,7 +52,7 @@ horello.mountStatic = function() {
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
   $("#addListClose").click(function(e) {
-  	("#addList").collapse("hide");
+  	("#addList").collapse('hide');
   })
 }
 
@@ -63,7 +63,7 @@ horello.mount = function (board) {
   // Unrender and re-render the board.
   $('#boardAnchor').empty();
   $('#boardAnchor').append(board.render());
-
+  
   // 2a. Add card forms
   // Write selectors to add the following functionality to each "Add a
   // card..." button and form:
@@ -71,20 +71,37 @@ horello.mount = function (board) {
   // - When the form is revealed, the title field is focused
   // - Clicking Save validates the input and creates the new card
   // - Clicking Cancel collapses the form
-  $('.save').click(function(e) {
-  	var listId= $(this).attr("data-list-id");
+
+  // Make sure all .add-card buttons toggle
+  //Add
+
+
+  $('.add-card').click(function(e) {
+  	var btn = $(this);
+  	var listId = btn.attr('addCardId');
+  	$('#addCardForm' + listId).collapse('toggle');
+  	$('#addCardForm' + listId).click('shown.bs.collapse',function(e) {
+  		$('#addCardTitle' + listId).focus();
+  	})
+  })
+
+
+
+  $('.save').click(function (e) {
+  	var listId = $('.save').attr('addCardBtn');
   	var list = board.getList(listId);
-  	if(!$('#list_name_'+listId).val()) {
-  		alert("Enter a card name");
+  	var itemTitle = $('#addCardTitle' + listId).val();
+  	if (!itemTitle) {
+  		alert("Please enter name");
   		return;
   	}
-  	list.addCard($("#list_name_" + listId).val());
+  	list.addCard(itemTitle);
   	horello.mount(board);
   })
-  // YOUR CODE HERE
-
-  // Phase 4(a). Edit card
-
-  // YOUR CODE HERE
-};
+  $('.cancel').click(function (e) {
+  	var listId = $(this).attr('listId');
+  	console.log($(this));
+  	$('#addCardForm'+ listId).collapse('hide');
+  });
+}
 

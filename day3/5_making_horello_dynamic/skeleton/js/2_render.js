@@ -6,8 +6,11 @@
 horello.Card.prototype.render = function() {
 
   var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card"></div>');
-  var cardmore = $('<span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span>');
+  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+  var cardmore = $('<span class="card-more"></span>');
+  if (this.getDescription()) {
+    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+  }
   var cardbody = $('<div class="card-body">'+this.title+'</div>');
 
   wrapper.append(cardwrapper);
@@ -32,6 +35,11 @@ horello.List.prototype.render = function() {
   var listBody = $('<div class="list-cards"></div>');
   var listFooter = $('<div class="list-footer"></div>');
 
+
+  for (var i=0; i<this.cards.length; i++) {
+    listBody.append(this.cards[i].render()
+      )};
+
   wrapper.append(listContainer);
   listContainer.append(listWrapper);
   listWrapper.append(listHeader);
@@ -43,35 +51,31 @@ horello.List.prototype.render = function() {
       <div class="collapse" id="addCardForm'+this.id+'">\
       <div class="well add-card-form">\
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
+      <button type="button" class="btn btn-default save" addCardBtn="'+this.id+'">\
       Save\
       </button>\
-      <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
+     <button type="button" class="btn btn-default cancel" listId="'+this.id+'">\
+      <span class="glyphicon glyphicon-remove" ></span>\
       </button>\
       </div>\
       </div>\
     '));
 
-  listBody.html(this.cards.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-
   return wrapper.html();
 
-
-
-}
+};
 
 // Phase 3. Board
 // This function renders a Board, and all of the lists it contains, to
 // HTML. It returns an HTML string representing the internal object.
 horello.Board.prototype.render = function() {
-  // YOUR CODE HERE
-  var wrapper = $('<div id="board" class="board"></div>');
-  wrapper.html(this.lists.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-  return wrapper;    
+  var wrapper = $('<div></div>')
+  var boardWrapper = $('<div id="board" class="board"></div>');
+  for (var i=0; i<this.lists.length; i++) {
+    boardWrapper.append(this.lists[i].render());
+  }
+  wrapper.append(boardWrapper)
+  return wrapper;
 }
+
 

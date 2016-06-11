@@ -21,7 +21,7 @@ horello.mountStatic = function() {
       alert("Please enter a list name");
       return;
     }
-    board.addList(listName);
+    board.addListByName(listName);
     $('#addListText').val('');
     $('#addList').collapse('toggle');
     horello.mount(board);
@@ -103,7 +103,7 @@ horello.mount = function (board) {
 
       // Get the list object
       var list = board.getList(id);
-      list.addCard(val);
+      list.addCardByName(val);
       horello.mount(board);
     });
 

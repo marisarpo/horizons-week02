@@ -14,8 +14,8 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+horello.Card = function(id, title, desc, listId) {
+  this.id = id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -63,13 +63,15 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id
   this.name = name;
   this.cards = [];
 };
@@ -87,8 +89,13 @@ horello.List.prototype = {
     this.name = name;
   },
 
-  addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
+  addCard: function(card) {
+    this.cards.push(card);
+    return card.getId();
+  },
+
+  addCardByName: function(cardName) {
+    var card = new horello.Card(horello.generateId(), cardName);
     this.cards.push(card);
     return card.getId();
   },
@@ -145,6 +152,8 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  var list = new horello.List(data.id, data.name);
+  return list;
 };
 
 
@@ -155,16 +164,24 @@ horello.Board = function () {
 };
 
 horello.Board.prototype = {
-  addList: function(listName) {
-    var list = new horello.List(listName);
+  addList: function(list) {
+    this.lists.push(list);
+    return list.getId();
+  },
+
+  addListByName: function(listName) {
+    var list = new horello.List(horello.generateId(), listName);
     this.lists.push(list);
     return list.getId();
   },
 
   getList: function(listId) {
-    return this.lists.find(function(c) {
-      return (c.getId() == listId);
-    });
+    for (var i = 0; i < this.lists.length; i++) {
+      if(this.lists[i].getId() === listId) {
+        return this.lists[i];
+      }
+    }
+    return undefined;
   },
 
   render: function() {
@@ -175,3 +192,53 @@ horello.Board.prototype = {
     return wrapper;
   }
 };
+
+var listOfLists = [];
+var listOfCards = [];
+horello.loadLists = function(board_id) {
+  $.ajax(horello.apiUrl + '/boards/' + board_id + '/lists', {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    method: 'GET',
+    success: function(response) {
+      listOfLists = _.map(response, horello.List.fromJSON);
+      console.log(listOfLists);
+      for (var i = 0; i < listOfLists.length; i++) {
+        //debugger;
+        board.addList(listOfLists[i]);
+        horello.loadCards(listOfLists[i].id);
+      }
+    },
+    error: function(err) {
+      console.error(JSON.stringify(err));
+    }
+  })
+}
+horello.loadCards = function(list_id) {
+  //debugger;
+  $.ajax(horello.apiUrl + '/lists/' + list_id + '/cards', {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    method: 'GET',
+    success: function(response) {
+      //debugger;
+      listOfCards = _.map(response, horello.Card.fromJSON);
+      console.log(listOfCards);
+      var list = board.getList(list_id);
+      for(var i = 0; i < listOfCards.length; i++) {
+        list.addCard(listOfCards[i]);
+      }
+      horello.mount(board);
+    },
+    error: function(err) {
+      console.error(JSON.stringify(err));
+    }
+  })
+}
+
+
+horello.loadLists(horello.boardId);

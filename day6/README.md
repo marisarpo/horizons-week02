@@ -1,4 +1,4 @@
-## Day 6 - Interview Practice
+## Day 6 - Frontend Practice! 
 
 
 

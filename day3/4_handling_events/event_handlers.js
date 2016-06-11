@@ -10,6 +10,7 @@ window.handlers = {};
 // the click event is called on the element.
 
 handlers.attachClick = function(e, fn) {
+  debugger;
   e.addEventListener('click', fn);
 };
 

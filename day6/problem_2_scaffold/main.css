@@ -10,10 +10,24 @@ body{
 .glyphicon{
 	margin-left: 5px;
 	margin-right: 10px;
+	float: left;
 	vertical-align: center;
+	color: #00BFFF;
 }
-.home{
-	margin-left: 10px;
+.link{
+	margin-left: 1%;
 	font-size: 20px;
 	vertical-align: center;
+}
+.searchbar{
+	font-size: 20px;
+	float: right;
+	text-align: center;
+}
+.well{
+	width: 30%;
+	height: 30%;
+}
+.title-card{
+	float: center;
 }

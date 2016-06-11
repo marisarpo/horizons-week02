@@ -102,7 +102,7 @@ horello.List.prototype = {
     return this.name;
   },
 
-  setName: function(name) {
+  setName: function(name) { // you dont have to change this from trello or horello because you set the name inside the board 
     this.name = name;
   },
 

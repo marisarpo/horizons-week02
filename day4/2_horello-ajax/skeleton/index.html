@@ -19,8 +19,9 @@
   <script src="js/events.js"></script>
   <script>
     // jQuery document ready shorthand.
-    $(function () {
+    $(function () {                               
       var board = new horello.Board();
+      horello.requestLists(); 
       horello.mount(board);
       horello.mountStatic(board);
       window.board = board;

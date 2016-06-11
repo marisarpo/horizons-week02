@@ -1,0 +1,20 @@
+/***Centered column**: `<div>` element: *suggestion: `col-md-4 col-md-offset-4`?* (set all to static values for now):
+	* **Time**: `<h1>` element
+	* **Salutation**: `<h3>` element
+	* **Quote**: `<p>` element
+* **Weather Widget** (also set to static value) in the top right
+	* **Temperature**: `<span>` element
+	* ***Icon***: Depending on what you what you use (maybe [fontawesome](http://fontawesome.io/icons/) or [ionicons]()) */
+body {
+	color: white;
+	text-shadow: 0 1px 0 black;
+}
+
+.bgwrapper{
+	background-image: url("https://source.unsplash.com/random");
+	background-size: cover;
+	height: 100vh;
+	width: 100vw;
+}
+
+

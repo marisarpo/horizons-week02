@@ -32,11 +32,11 @@ horello.List.prototype.render = function() {
   for (var i = 0; i < this.cards.length; i++)
     listcards.append(this.cards[i].render());
   var listfooter = $('<div class="list-footer">\
-    <button class="list-button add-card" data-toggle="collapse" data-list-id="'+this.id+'">Add a card...</button>\
+    <button class="list-button add-card" data-toggle="collapse" id="addCardForm'+this.id+'" data-list-id="'+this.id+'">Add a card...</button>\
     <div class="collapse" id="add-card_'+this.id+'"><div class="well add-card-form newCard">\
     <input type="text" class="form-control" id="add-card-text-'+this.id+'" placeholder="Card title">\
     <button type="button" class="btn btn-default save" data-data-data-list-id="'+this.id+'">Save</button><button type="button"class="btn btn-default">\
-    <span class="glyphicon glyphicon-remove"></span></button></div></div></div>');
+    <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span></button></div></div></div>');
 
   wrapper.append(listwrapper);
   listwrapper.append(list);

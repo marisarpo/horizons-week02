@@ -39,7 +39,7 @@ horello.mountStatic = function() {
     console.log("clicked");
     if(!$("#addListText").val()){
       alert("please enter a list name");
-      return
+      return;
     } 
 
     // debugger;
@@ -77,11 +77,18 @@ horello.mount = function (board) {
   $('.add-card').click(function(evt) {
     console.log(evt);
 
-    var listId = $(this).data('list-id');
-    console.log(listId);
+  var listId = $(this).data('list-id');
 
     $("#add-card_" + listId).collapse('toggle');
   })
+  
+  // $("#addCardCancelBtn" + listId).click(function(evt) {
+  //   console.log(evt);
+
+  // var listId = $(this).data('list-id');
+
+  //   $("#addCardCancelBtn" + listId).collapse('toggle');
+  // })
 
   // $('.save').click(function(ev) {
   //   // debugger;
@@ -131,4 +138,25 @@ horello.mount = function (board) {
     // re-render
     horello.mount(board);
   });
+
+// $('#addCardCancelBtn'+id).off();
+// $('#addCardCancelBtn'+id).click(function (e) {
+// $('#addCardForm'+id).collapse('hide');
+//     });
+
+
+    $('.card').each(function (idx) {
+    $(this).off();
+    $(this).click(function (e) {
+      $('#cardEdit').modal('toggle', $(this));
+      });
+    });
+    var card = $(this);
+    console.log(this);
+      $('#modalSave').off();
+      $('#modalSave').click(function (e) {
+        console.log(card);
+        card.setTitle($('#modalText').val());
+        card.setDescription($('#modalBody').val());
+      });
 };

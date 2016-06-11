@@ -14,6 +14,10 @@ horello.generateId = function() {
 
 // CARD
 
+// horello.apiKey = "8aa42f134ca8a6caeee22d86021ff209";
+// horello.apiToken = "315f3998dee8268a7c268c06729abe01b357aa594aac81f8949d7ae450e20942";
+// horello.apiUrl = "https://api.trello.com/1";
+
 horello.Card = function(title, desc, listId) {
   this.id = horello.generateId();
   this.listId = listId;
@@ -61,7 +65,19 @@ horello.Card.prototype = {
   }
 };
 
+//takes a data object and RETURNS A CARD
+//HOW? LOOK AT CONSTRUCTOR: TAKES TITLE, DESC, AND LIST ID
+//TAKES ONE OF TRELLO'S RESPONSE AND RETURNS A CARD OBJECT (cuz we don't want all of the things that trello returns)
+//THIS IS A STATIC METHOD
+//this is not part of the prototype, so we don't use 'this'
 horello.Card.fromJSON = function(data) {
+  var title = data.name;
+  var id = data.id;
+  var description = data.desc;
+  var listID= data.idList;
+  var c = new Car(title, description,listId);
+  c.id = id;
+  return c;
   // PHASE 1 code here
 };
 

@@ -1,7 +1,6 @@
 "use strict";
 
 window.twilio = {};
-
 // Preface. In this exercise, you're going to be building a Twilio Shoutout Application that communicates with Twilio's API (Application Programming Inerface) over AJAX. You can think of a Web API as an application black-box that you can leverage and interact with using HTTP. If you wanted to get weather data for your city, you could query some weather API and access the data that application generates.
 // In this case, we're going to be using Twilio's device SMS messaging service. We're going to build an application that lets you `shoutout` (one-way message) a Twilio-enabled phone number programmatically. You'll be able to send yourself a text message from your browser (and much more)!
 // You've been provided with a UI skeleton that you can dig into if you'd like, but the major focus of this exercise are the AJAX calls, validation, and of course OOP.
@@ -13,9 +12,9 @@ window.twilio = {};
 // Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "ACfbccf598db89def2166fe7aeba96dc75";
+twilio.authToken = "ff3dd3db46ec38a6700af57457347680";
+twilio.fromNumber = "12533439344";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -31,10 +30,9 @@ twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
 
 // Exercise 5. Implement the `handleMessageSend` method
 // The `handleMessageSend` method is going to act as the callback for the event listener you set up in the initialize() method. It's supposed to make sure all the necessary fields are valid, and if so, make an ajax call to a Twilio API url with our data. Otherwise, it should raise an alert, telling the user (you) that one or both of the input fields are invalid. This is a multipart exercise that requires a few key steps, and we've provided you with a bit of what you need to get you going.
-
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   // Assign properties
-  this.apiUrl = "https://api.twilio.com/2010-04-01";
+  this.apiUrl = "https://api.twilio.com/2010-04-01/Accounts/"+twilio.accountId+"/Messages";
   this.accountId = accountId;
   this.authToken = authToken;
   this.fromNumber = fromNumber;
@@ -43,7 +41,7 @@ twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   this.messageList = $(".message-list");
   this.messageInputField = $(".message-input-field");
   this.phoneInputField = $(".phone-input-field");
-  this.messageSendButton = $(".message-input-button");
+  (this.messageSendButton) = $(".message-input-button");
   
   // Set up the event handlers
   this.initialize();
@@ -59,7 +57,7 @@ twilio.TwilioShoutout.prototype = {
 	// 
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.click(this.handleMessageSend.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -68,7 +66,7 @@ twilio.TwilioShoutout.prototype = {
   // hint. what does it mean to `clear` a field? Set it to an empty string.
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
-    // YOUR CODE HERE
+    jqField.val("");
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions: 
@@ -77,7 +75,12 @@ twilio.TwilioShoutout.prototype = {
   //
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    var trimmed = $.trim(textStr);
+    if(trimmed.length < 0){
+      return false;
+    }
+    return true;
+
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions: 
@@ -89,7 +92,16 @@ twilio.TwilioShoutout.prototype = {
 	// hint. remember to take care of both upper and lower case letters! 
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    var trimmed = $.trim(phoneStr);
+    if (trimmed.length<1){
+      return false;
+    }
+    for(var i =0; i<trimmed.length; i++){
+      if(isNaN(trimmed[i])){
+        return false;
+      }
+    }
+    return true;
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -97,11 +109,22 @@ twilio.TwilioShoutout.prototype = {
 	// note. here's where `validatePhoneField` and `validateMessageField` come in handy!
 	// note. also `clear`
 	// note. also `sendMessage`
+
   handleMessageSend: function(evt) {
 		evt.preventDefault();
 		
     // only send if both fields are valid
     // YOUR CODE HERE
+    if(this.validatePhoneField(this.phoneInputField.val()) && this.validateMessageField(this.messageInputField.val())){
+      this.sendMessage(this.phoneInputField.val(), this.messageInputField.val())
+      this.clearField(this.phoneInputField);
+      this.clearField(this.messageInputField);
+    }
+    else{
+      this.clearField(this.phoneInputField);
+      this.clearField(this.messageInputField);
+      throw ("Invalid fields");
+    }
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
   // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.
@@ -115,9 +138,12 @@ twilio.TwilioShoutout.prototype = {
     var messageList = this.messageList;
 		
 		// Exercise 6.A `callback`
-    // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
+    // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the generated JQuery object to the DOM messageList.
     var cb = function(data) {
 			// YOUR CODE HERE
+      var newObj = new Message(toNumber, messageBody);
+      newObj.render();
+      messageList.append(newObj);
     };
 		
 		// `Call` the Twilio API service with our data
@@ -130,15 +156,15 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
+      url: this.apiUrl,
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			// 
 			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
+        "To" : "+" + toNumber,
+        "From": "+" + this.fromNumber,
+        "Body": messageBody
       },
 			success: cb,
       headers: {
@@ -176,5 +202,5 @@ Message.prototype = {
 };
 
 // Nice, you got to the end. Right now, the test is instantiating the app and allowing you to run it, but if you wanted to use it yourself (removing the tests) you can use it by
-// var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
+var app = new twilio.TwilioShoutout(twilio.accountId, twilio.authToken, twilio.fromNumber)
 // Just instantiating the app will set up the event handlers and make the UI interactive (as you should know, you built it haha)

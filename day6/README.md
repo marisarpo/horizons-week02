@@ -2,7 +2,10 @@
 
 
 
-For the following problems, you use the `scaffold` directories to get empty HTML 
+For the following problems, you use the `scaffold` directories to get empty HTML pages with JQuery, Bootstrap, and Underscore already required for you. You will write your JS in `main.js` and your css in `main.css` :). 
+
+
+Enjoy. 
 
 
 

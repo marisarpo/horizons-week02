@@ -1,0 +1,12 @@
+body{
+	list-style-type: none; /*to get rid of the bullets in the list*/
+	font-size: 25px;
+}
+ul{
+	list-style-type: none;
+	font-size: 20px;
+	color: blue;
+}
+li{
+	background-color: yellow;
+}

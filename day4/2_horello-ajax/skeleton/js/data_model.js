@@ -74,8 +74,8 @@ horello.Card.fromJSON = function(data) {
   var title = data.name;
   var id = data.id;
   var description = data.desc;
-  var listID= data.idList;
-  var c = new Car(title, description,listId);
+  var listId= data.idList;
+  var c = new horello.Card(title, description,listId);
   c.id = id;
   return c;
   // PHASE 1 code here
@@ -85,7 +85,7 @@ horello.Card.fromJSON = function(data) {
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id
   this.name = name;
   this.cards = [];
 };
@@ -93,6 +93,30 @@ horello.List = function(id, name) {
 horello.List.prototype = {
   getId: function() {
     return this.id;
+  },
+
+  getData: function(){
+    console.log(this.id, "asdfasdf")
+    $.ajax("https://api.trello.com/1/lists/" + this.id + "/cards",{
+      method: "GET",
+      data: {
+        key: "8aa42f134ca8a6caeee22d86021ff209",
+        token: "315f3998dee8268a7c268c06729abe01b357aa594aac81f8949d7ae450e20942"
+      },
+      success: function(response){
+        response.forEach(function(card){
+          var newCard = horello.Card.fromJSON(card);
+          //'this' is not what we expect here - not reliable in jquery functions
+          board.getList(newCard.listId).cards.push(newCard);
+          //getting from the board the list(getlist(newCard.listId)) and pushing it onto the newcard
+          //created a new card in the data model
+          horello.mount(board); //rewrite the html
+        })
+      },
+      error: function(err){
+      console.error(err);
+      }
+    });
   },
 
   getName: function() {
@@ -161,6 +185,8 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  console.log(data)
+  return new horello.List(data.id, data.name);
 };
 
 
@@ -180,6 +206,30 @@ horello.Board.prototype = {
   getList: function(listId) {
     return this.lists.find(function(c) {
       return (c.getId() == listId);
+    });
+  },
+
+  getData: function(){//this refers to the horello.Board.prototype's getData()
+    $.ajax("https://api.trello.com/1/boards/MbW4EUuP/lists",{
+      method: "GET",
+      data: {
+        key: "8aa42f134ca8a6caeee22d86021ff209",
+        token: "315f3998dee8268a7c268c06729abe01b357aa594aac81f8949d7ae450e20942"
+      },
+      success: function(response){
+        //this is what we want to change - we got an array of objects (lists)
+        //we want to save these lists (and fill them with cards)
+        //how do we add an object to an array?
+        response.forEach(function(list){
+          //add this to an array
+              var newList = horello.List.fromJSON(list);
+              board.lists.push(newList);
+              newList.getData(); //this refers to the horello.List.prototype's getData() - this doesn't get an argument anymore
+        });
+      },
+      error: function(err){
+        console.error(err);
+      }
     });
   },
 

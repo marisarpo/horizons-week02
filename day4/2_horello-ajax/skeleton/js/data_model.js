@@ -63,13 +63,26 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  // takes a data object and returns a card object
+  // data corresponds to one of the objects that we returned on the jQuery console we tried
+  // TAKES ONE OF TRELLO"S RESPONSES AND RETURNS A CARD OBJECT
+  // not part of prototype so we don't have "this" available to us
+  var title = data.name;
+  var description = data.desc;
+  var id = data.id;
+  var listId = data.idList;
+
+  var newCard = new horello.Card(title, description, listId);
+  newCard.id = id;
+
+  return newCard;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id; // we are not using generatedId because, quote ethan, its dumb
   this.name = name;
   this.cards = [];
 };

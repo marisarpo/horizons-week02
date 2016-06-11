@@ -14,8 +14,9 @@ horello.generateId = function() {
 
 // CARD
 
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+
+horello.Card = function(id,title, desc, listId) {
+  this.id=id;
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -63,13 +64,15 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var card=new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
@@ -77,6 +80,30 @@ horello.List = function(id, name) {
 horello.List.prototype = {
   getId: function() {
     return this.id;
+  },
+
+  getData:function(listId){
+    $.ajax(horello.apiUrl+"/lists/"+listId+"/cards",{
+      data:{
+        key: horello.apiKey,
+        token: horello.apiToken
+      },
+      method:"GET",
+      success: function(response){
+        response.forEach(function(card){
+          var newCard=horello.Card.fromJSON(card);
+          board.getList(newCard.listId).cards.push(newCard);
+          horello.mount(board);
+        })
+      }
+
+      ,
+      error:function(err){
+        console.error(JSON.stringify(err))
+      }
+
+    })
+
   },
 
   getName: function() {
@@ -142,9 +169,11 @@ horello.List.prototype = {
     return wrapper.html();
   }
 };
-
+//returns a card object
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  var list=new horello.List(data.id,data.name);
+  return list;
 };
 
 
@@ -175,3 +204,27 @@ horello.Board.prototype = {
     return wrapper;
   }
 };
+
+horello.loadData=function(boardId){
+  //var listofLists;
+  $.ajax(horello.apiUrl+"/boards/"+horello.boardId+"/lists",{
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    method:"GET",
+    success: function(response){
+      response.forEach(function(list){
+        var newList=horello.List.fromJSON(list);
+        board.lists.push(newList);
+        newList.getData(newList.id);
+      })
+    },
+
+
+    error: function(err){
+      console.error(JSON.stringify(err));
+    }
+  })
+
+}

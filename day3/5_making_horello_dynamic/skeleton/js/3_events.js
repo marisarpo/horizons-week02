@@ -26,6 +26,9 @@ horello.mountStatic = function() {
   // field).
  
   // YOUR CODE HERE
+  $('.add-list').click(function() {
+    $('#addListText').focus();
+  })
 
   // 1c. Add list form: save button
   // This event, triggered when the "Save" button on the "Add a list..."
@@ -33,13 +36,28 @@ horello.mountStatic = function() {
   // a value has been input for the list name), 2. update the data model
   // accordingly, and 3. cause the new list to appear on the board.
 
-  // YOUR CODE HERE
+  // YOUR CODE 
+  $('#addListSave').click(function() {
+
+    var listName = $('#addListText').val();
+
+    if(listName) {
+      var newList = new horello.List(listName);
+      board.addList(newList);
+
+      horello.mount(board);
+    }
+
+  })
 
   // 1d. Add list form: cancel button
   // This event, triggered when the "X" (cancel) button on the "Add a
   // list..." form is clicked, should hide the form.
 
   // YOUR CODE HERE
+  $('#addListCancel').click(function(e) {
+    $('#addList').collapse('hide');
+  });
 }
 
 // This function is called multiple times, to configure dynamic events.

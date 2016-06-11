@@ -1,0 +1,56 @@
+/*html { 
+  background: url("https://source.unsplash.com/random") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
+
+/*#bg {
+	position: fixed;
+	top:0;
+	left:0;
+	min-width: 100%;
+	min-height: 100%;
+}*/
+
+#time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900);
+
+body {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),
+    url(https://source.unsplash.com/random);
+  background-size: cover;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 3rem;
+  white-space: nowrap;
+}
+p {
+  margin: 0;
+  font-size: 1.5rem;
+}

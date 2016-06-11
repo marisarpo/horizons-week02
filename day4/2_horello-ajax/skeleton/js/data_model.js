@@ -31,16 +31,48 @@ horello.Card.prototype = {
     return this.title;
   },
 
+  //set ajax
+
   setTitle: function(titleStr) {
-    this.title = titleStr;
+    $.ajax("https://api.trello.com/1/cards/"+ this.getId(), {
+      method: "PUT",
+        data: {
+        key: "0bcc95c82f5216eed9742694918ea858",
+        token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013",
+        name: titleStr
+      },
+      success: function(response) {
+        this.title = titleStr;
+        horello.mount(board);
+      }.bind(this),
+      error: function(err) {
+        console.error(err);
+      }
+    });
   },
 
   getDescription: function() {
     return this.desc;
   },
 
+  //set ajax
+
   setDescription: function(desc) {
-    this.desc = desc;
+    $.ajax("https://api.trello.com/1/cards/" + this.getId(), {
+      method: "PUT",
+        data: {
+        key: "0bcc95c82f5216eed9742694918ea858",
+        token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013",
+        desc: desc
+      },
+      success: function(response) {
+        this.desc = desc;
+        horello.mount(board);
+      }.bind(this),
+      error: function(err) {
+        console.error(err);
+      }
+    });
   },
 
   render: function() {
@@ -116,9 +148,26 @@ horello.List.prototype = {
   },
 
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+    $.ajax("https://api.trello.com/1/lists/"+this.getId()+"/cards", {
+    method: "POST",
+    data: {
+      key: "0bcc95c82f5216eed9742694918ea858",
+      token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013",
+      name: name,
+      desc: desc
+    },
+    success: function(response) {
+      console.log(response);
+      var card = new horello.Card(name, desc, this.getId());
+      card.id = response.id;
+      this.cards.push(card);
+      horello.mount(board);
+
+    }.bind(this),
+    error: function(err) {
+      console.error(err);
+    }
+    })
   },
 
   getCard: function(cardId) {
@@ -181,13 +230,29 @@ horello.List.fromJSON = function(data) {
 
 horello.Board = function () {
   this.lists = [];
+  this.getData();
 };
 
 horello.Board.prototype = {
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    $.ajax("https://api.trello.com/1/lists/", {
+    method: "POST",
+      data: {
+      key: "0bcc95c82f5216eed9742694918ea858",
+      token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013",
+      name: "List 3",
+      idBoard: "575b03e2c107d8252bc38af5",
+      pos: "bottom"
+    },
+    success: function(response) {
+      var newList = new horello.List(response.id, listName);
+      this.lists.push(newList);
+      horello.mount(board);
+    }.bind(this),
+    error: function(err) {
+    console.error(err);
+    }
+    })
   },
 
   getList: function(listId) {

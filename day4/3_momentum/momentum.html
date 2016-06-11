@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Momentum</title>
+
 	<!-- Weather Icons stuff -->
 	<link rel="stylesheet" href="css/weather-icons.min.css">
 
@@ -33,6 +34,7 @@
 		// I only want to fetch and update the weather once every ten minutes
 		setInterval(function() {
 			core.updateWeather();
+			core.render();
 		}, 1000*60*10);
 	});
 	</script>
@@ -41,15 +43,18 @@
 	<!-- YOUR HTML IN HERE -->
 	<div class="bg-wrapper">
 		<div class ="text-right top-right weather">
-		<h3 id="weather"><i class="wi wi-day-sunny"></i>&nbsp;23&#8451;</h3>	
-		<h5 id="location">PHILADELPHIA</h5>
+			<div><i class="wi wi-day-sunny"></i>&nbsp;<span id="weather"></span>&#8451;</div>	
+			<h5 id="location">PHILADELPHIA</h5>
 		</div>
-			<div class ="text-center centered">
+		<div class ="text-center centered">
 				<div class="block-text">
 					<h1 id="time"></h1><h2 id="ampm"></h2>
 				</div>
 				<h3 id="greetings"></h3>
-			</div>
+		</div>
+		<div class ="text-center bottom-third quote">
+				<div id="quote-text"></div>
+		</div>
 	</div>
 </body>
 </html>

@@ -11,7 +11,7 @@ momentum.Core = function() {
   this.ampm = "AM";
   
   this.timeEl = $("#time");
-  this.quoteEl = $("YOUR SELECTOR HERE");
+  this.quoteEl = $("#quote-text");
   this.weatherEl = $("#weather");
   this.greetingEl = $("#greetings");
   this.ampmEl = $("#ampm");
@@ -52,6 +52,11 @@ momentum.Core.prototype = {
 	// hint. figure out what kind of response the quoteData is going to be, and see how you might be able to access the quote of the day from that.
   setQuote: function(quoteData) {
 		// YOUR CODE HERE
+		console.log("TEST Starts");
+		console.log(quoteData.message);
+		this.quoteStr = quoteData.message;
+		this.quoteEl.text(this.quoteStr);
+		this.render();
   },
 	// `setWeather` method
 	// This method should set the `weatherStr` property of the momentum core. This method will be used as the callback for weatherCtrl's `fetchWeather` function.
@@ -60,6 +65,7 @@ momentum.Core.prototype = {
   setWeather: function(weatherData) {
 		// YOUR CODE HERE
 		this.weatherStr = Math.floor(weatherData.main.temp - 273.15);
+		this.render();
   },
 	// `updateTime` method
 	// This function should call setTime() so that this.timeStr is updated.
@@ -81,6 +87,8 @@ momentum.Core.prototype = {
 	// note. you might run into scoping issues again. You should know how to solve them by now, using .call, .apply, or .bind.
 	updateQuote: function() {
 		// YOUR CODE HERE
+		this.quoteCtrl.fetchQuote(this.setQuote.bind(this));
+		this.render();
 	},
 	// `start` method
 	// This method will call some of the `update...` methods. This function will be called when the page has finished loading, so that Momentum can start off with the more up-to-date data.
@@ -88,6 +96,7 @@ momentum.Core.prototype = {
 		// YOUR CODE HERE
 		this.setTime();
 		this.updateWeather();
+		this.updateQuote();
 		this.render();
 	},
 	// `render` method
@@ -99,5 +108,6 @@ momentum.Core.prototype = {
 		this.greetingEl.text("Good afternoon, Ying Hang");
 		this.ampmEl.text(this.ampm);
 		this.weatherEl.text(this.weatherStr);
+		this.quoteEl.text(this.quoteStr);
   }
 };

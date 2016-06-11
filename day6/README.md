@@ -1,4 +1,4 @@
-## Day 6 - Front-end Practice! 
+## Day 6 - Frontend Practice! 
 
 
 

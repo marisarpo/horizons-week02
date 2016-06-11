@@ -1,6 +1,6 @@
 body {
 	background-color: #c0fff4;
-	display: flex;
+	font-family: 'Abel', sans-serif;
 }
 
 h1 {
@@ -8,3 +8,32 @@ h1 {
 	color: #fdc67b;
 }
 
+.container {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+}
+
+.left {
+	flex: 1;
+	width: 30%;
+	height: 500px;
+	border: 1px solid;
+	background-color: #ffc0cb;
+}
+
+.content {
+	flex: 2;
+	width: 30%;
+	height: 500px;
+	border: 1px solid;
+	background-color: #de4150;
+}
+
+.right {
+	flex: 1;
+	width:30%;
+	height: 500px;
+	border: 1px solid;
+	background: #ba6a6d;
+}

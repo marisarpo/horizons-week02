@@ -30,16 +30,48 @@ horello.Card.prototype = {
     return this.title;
   },
 
+// needs AJAX
   setTitle: function(titleStr) {
-    this.title = titleStr;
+    $.ajax("https://api.trello.com/1/cards/" + this.getId(), { 
+      method: "PUT",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" ,
+      name: titleStr
+      },
+      success: function(response) {
+      this.title = titleStr;
+      horello.mount(board);
+      }.bind(this),
+      error: function(err) {
+      console.log(err);
+      }
+      });
+    
   },
 
   getDescription: function() {
     return this.desc;
   },
 
+
+// needs AJAX
   setDescription: function(desc) {
-    this.desc = desc;
+    $.ajax("https://api.trello.com/1/cards/" + this.getId(), { 
+      method: "PUT",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" ,
+      desc: desc
+      },
+      success: function(response) {
+      this.desc = desc;
+      horello.mount(board);
+      }.bind(this),
+      error: function(err) {
+      console.log(err);
+      }
+      });
   },
 
   render: function() {
@@ -63,13 +95,26 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  // takes a data object and returns a card object
+  // data corresponds to one of the objects that we returned on the jQuery console we tried
+  // TAKES ONE OF TRELLO"S RESPONSES AND RETURNS A CARD OBJECT
+  // not part of prototype so we don't have "this" available to us
+  var title = data.name;
+  var description = data.desc;
+  var id = data.id;
+  var listId = data.idList;
+
+  var newCard = new horello.Card(title, description, listId);
+  newCard.id = id;
+
+  return newCard;
 };
 
 
 // LIST
 
-horello.List = function(name) {
-  this.id = horello.generateId();
+horello.List = function(id, name) {
+  this.id = id; // we are not using generatedId because, quote ethan, its dumb
   this.name = name;
   this.cards = [];
 };
@@ -77,6 +122,29 @@ horello.List = function(name) {
 horello.List.prototype = {
   getId: function() {
     return this.id;
+  },
+
+  getData: function() {
+    $.ajax("https://api.trello.com/1/lists/" + this.id + "/cards/", { 
+      method: "GET",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" },
+      success: function(response) {
+      // we want to change this
+      // loop through array of cards
+      //this is not reliable in jQuery functions
+      response.forEach(function(card) {
+        var newCard = horello.Card.fromJSON(card);
+        board.getList(newCard.listId).cards.push(newCard);
+        // rerendering the board
+        horello.mount(board);
+      })
+      },
+      error: function(err) {
+      console.error(err);
+      }
+      });
   },
 
   getName: function() {
@@ -88,9 +156,31 @@ horello.List.prototype = {
   },
 
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+      $.ajax("https://api.trello.com/1/lists/" + this.getId() + "/cards/", { 
+      method: "POST",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" ,
+      name: name,
+      desc: desc
+      },
+      success: function(response) {
+        var card = new horello.Card(name, desc, this.getId());
+        // horello.Card(ttitle, descrption, listId)
+        card.id = response.id;
+        this.cards.push(card);
+        horello.mount(board);
+      }.bind(this), // this of the this.getId is just the $ so in order to 
+      //access the list this of our file, we need to bind to this
+      // use bind only when you are in a function context like this
+      // that's why we didn't need it before
+      error: function(err) {
+      console.log(err);
+      }
+      });
+
+
+    
   },
 
   getCard: function(cardId) {
@@ -145,6 +235,7 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  return new horello.List(data.id, data.name);
 };
 
 
@@ -152,19 +243,56 @@ horello.List.fromJSON = function(data) {
 
 horello.Board = function () {
   this.lists = [];
+  this.getData(); // initialize the board and populate it. this happens once so we stick it here
 };
 
 horello.Board.prototype = {
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    $.ajax("https://api.trello.com/1/boards/7G3PJMj0/lists", { 
+      method: "POST",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" ,
+      name: listName,
+      pos: "bottom"
+      },
+      success: function(response) {
+        var newList = new horello.List(response.id, listName)
+        this.lists.push(newList);
+        horello.mount(board);
+      }.bind(this),
+      error: function(err) {
+      console.log(err);
+      }
+      });
   },
 
   getList: function(listId) {
     return this.lists.find(function(c) {
       return (c.getId() == listId);
     });
+  },
+
+  getData: function() {
+    $.ajax("https://api.trello.com/1/boards/7G3PJMj0/lists", { 
+      method: "GET",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" },
+      success: function(response) {
+      //this is what we want to change from our console code
+      // we want to save the lists and add the cards.
+      //loop through the array of lists
+      response.forEach(function(list) {
+        var newList = horello.List.fromJSON(list);
+        board.lists.push(newList);
+        newList.getData(); // this is the horello.List.prototype's getData
+      })
+      },
+      error: function(err) {
+      console.error(err);
+      }
+      });
   },
 
   render: function() {

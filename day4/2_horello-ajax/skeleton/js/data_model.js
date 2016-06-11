@@ -19,6 +19,7 @@ horello.Card = function(title, desc, listId) {
   this.listId = listId;
   this.title = title;
   this.desc = desc;
+
 };
 
 horello.Card.prototype = {
@@ -63,13 +64,20 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var title = data.name;
+  var description = data.desc;
+  var id = data.id;
+  var listId = data.idList;
+  var c = new horello.Card(title, description, listId);
+  c.id = id;
+  return c;
 };
 
 
 // LIST
 
 horello.List = function(id, name) {
-  this.id = horello.generateId();
+  this.id = id
   this.name = name;
   this.cards = [];
 };
@@ -77,6 +85,26 @@ horello.List = function(id, name) {
 horello.List.prototype = {
   getId: function() {
     return this.id;
+  },
+
+  getData: function() {
+    $.ajax("https://api.trello.com/1/lists/"+this.id+"/cards", {
+      method: "GET",
+      data: {
+        key: "0bcc95c82f5216eed9742694918ea858",
+        token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013"
+      },
+      success: function(response) {
+        response.forEach(function(card) {
+          var newCard = horello.Card.fromJSON(card);
+          board.getList(newCard.listId).cards.push(newCard);
+          horello.mount(board);
+        });
+      },
+      error: function(err) {
+        console.error(err);
+      }
+    });
   },
 
   getName: function() {
@@ -145,6 +173,7 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  return new horello.List(data.id, data.name)
 };
 
 
@@ -164,6 +193,26 @@ horello.Board.prototype = {
   getList: function(listId) {
     return this.lists.find(function(c) {
       return (c.getId() == listId);
+    });
+  },
+
+  getData: function() {
+    $.ajax("https://api.trello.com/1/boards/rTqq9r9A/lists", {
+      method: "GET",
+      data: {
+        key: "0bcc95c82f5216eed9742694918ea858",
+        token: "d65dd77971eec1d66ad0da8dbe16ac9b93aae4fc666017df4bc370156e324013"
+      },
+      success: function(response) {
+        response.forEach(function(list) {
+          var newList = horello.List.fromJSON(list);
+          board.lists.push(newList);
+          newList.getData(); //this refers to the horello.List.prototype's getData()
+        })
+      },
+      error: function(err) {
+        console.error(err);
+      }
     });
   },
 

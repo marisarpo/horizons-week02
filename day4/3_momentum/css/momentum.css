@@ -1,0 +1,49 @@
+html{
+	background: url(https://source.unsplash.com/random/) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+html::before {
+	content: "";
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0, 0, 0, .15);
+	z-index: -1;
+} 
+
+body{
+	color: #fff;
+	overflow: hidden;
+	margin: auto;
+	
+}
+
+.right {
+	float: right;
+	display: inline;
+	padding-right: 10px;
+}
+
+.left{
+	display: inline;
+	padding-left: 10px;
+}
+
+
+.bottomBar{
+	position: absolute;
+	bottom: 0;
+	width: 99%;
+}
+
+.topBar{
+
+}
+
+.container-fluid{
+	text-align: center;
+}

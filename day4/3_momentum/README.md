@@ -1,4 +1,7 @@
-# Individual Exercise: Building a Weather Dashboard
+
+=======
+Momentum
+>>>>>>> master
 
 At some point, you've probably used, or seen someone use **Momentum** - it's a popular Chrome extension that replaces your New Tab page with a beautiful view that looks something like:
 

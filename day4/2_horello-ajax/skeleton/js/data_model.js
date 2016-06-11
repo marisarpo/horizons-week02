@@ -159,8 +159,13 @@ horello.Card.fromJSON = function(card) {
 //==================================================================================================
 // LIST
 
+<<<<<<< HEAD
 horello.List = function(id, name) {
   this.id = id;
+=======
+horello.List = function(name) {
+  this.id = horello.generateId();
+>>>>>>> refs/remotes/origin/master
   this.name = name;
   this.cards = [];
 };

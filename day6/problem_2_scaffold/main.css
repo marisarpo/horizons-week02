@@ -1,0 +1,19 @@
+body{
+	background-color: #00BFFF;
+}
+.nav-bar{
+	background-color: white;
+	font-size: 30px;
+	height: 50px;
+	margin-bottom: 30px;
+}
+.glyphicon{
+	margin-left: 5px;
+	margin-right: 10px;
+	vertical-align: center;
+}
+.home{
+	margin-left: 10px;
+	font-size: 20px;
+	vertical-align: center;
+}

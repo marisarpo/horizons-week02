@@ -122,7 +122,7 @@ horello.mount = function (board) {
         $("#cardEdit").modal('hide');
         horello.rerender(board);
     });
-    $('.save').off()
+    $('.save').off();
     $('.save').click(function(ev){
         // debugger;
         var listId = $(this).attr("data-list-id"); // could also use ev.target instead of this here
@@ -137,6 +137,7 @@ horello.mount = function (board) {
         list.addCard(nameOfCard);
         horello.mount(board);
     });
+    $
 
     // 2a. Add card forms
     // Write selectors to add the following functionality to each "Add a

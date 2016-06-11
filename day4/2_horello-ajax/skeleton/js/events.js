@@ -121,3 +121,19 @@ horello.mount = function (board) {
     });
   });
 };
+
+// $.ajax("http://api.trello.com/1/boards/W9IdnnQU/lists", {
+// method: "GET",
+// data: {
+// key: "4426aaac3e3ddf941ff93930255038d8",
+// token: "2a9829c4a7de4076e6c22b25237f356586253597b6760047cdddc0225923eaae"
+// },
+// success: function(response) {
+// console.log(response);
+// },
+// error: function(err){
+// console.error(err);
+// }
+// });
+/////need list ID from ajax request to get Cards
+//id= card id, id-list= list id

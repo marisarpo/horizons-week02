@@ -11,7 +11,9 @@ Enjoy.
 
 ### Problem #1: JQuery Practice
 
-- Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`<li>`) that store names of 10 of your horizonite classmates. Print the index of the of the list item when a list item is clicked.
+![Index Problem](img/index_problem.gif)
+
+Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`<li>`) that store names of 10 of your horizonite classmates. Print the index of the of the list item when a list item is clicked. Above is an example with 3 names.The scaffold file for this problem starts you off with the right HTML! 
 
 ### Problem #2: Simple Twitter
 

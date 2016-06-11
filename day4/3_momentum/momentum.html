@@ -14,8 +14,20 @@
 	<link rel="stylesheet" href="css/momentum.css" type="text/css">
 	<script src="js/momentum-weather.js"></script>
 	<script src="js/momentum-quote.js"></script>
-	<script src="js/momentum.js"></script>
-	<script>
+	<script src="js/momentum.js">
+
+	// font
+	<style>
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+      body {
+        font-family: 'Monteserrat', sans-serif;
+      }
+
+	<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+
 	$(function() {
 		// create a new momentum core
 		var core = new momentum.Core();
@@ -35,6 +47,17 @@
 	</script>
 </head>
 <body>
-	<!-- YOUR HTML IN HERE -->
+	<div class = "bg-wrapper">
+		<img src="https://source.unsplash.com/daily/"/>
+		<div class="momentum">
+			<h1 class="time">12:01</h1>
+			<h3 class="salutation">Greetings, Tom.</h3>
+			<p class="quote">What is your main focus for today?</p>
+		</div>
+		<div class="weather">
+			<span class="icon"></span><i class="glyphicon glyphicon-cloud" aria-hidden="true"></i>
+			<span class="temp">65</span>
+		</div>
+	</div>
 </body>
 </html>

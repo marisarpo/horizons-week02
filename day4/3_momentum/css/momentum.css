@@ -1,0 +1,60 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: white;
+  	}
+
+.bg-wrapper{
+	position:absolute;
+	left:0;
+	width: 100%;
+	text-align:center;
+}
+.momentum{
+	position:absolute;
+	left:0;
+	top:10%;
+	width: 100%;
+	text-align:center;
+}
+
+.bg-wrapper::before{
+	content:"";
+	position: absolute;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,.15)
+}
+
+.bg-wrapper > img{
+	width:100%;
+}
+
+.time{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 400px;
+	font-weight: 900;
+	color: rgba(255,255,255,.35);
+	margin-bottom: 0;
+	-webkit-margin-before: 0em;
+    -webkit-margin-after: 0em;
+}
+
+.salutation{
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	font-size: 50px;
+	margin-top: 0;
+}
+
+.quote{
+	font-weight: 200;
+	font-size: 30px;
+	color: rgba(255,255,255,.35);
+}
+
+.weather{
+	position: absolute;
+	top:1%;
+	right:1%;
+	font-size:30px;
+}

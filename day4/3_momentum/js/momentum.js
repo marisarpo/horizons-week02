@@ -9,9 +9,9 @@ momentum.Core = function() {
   this.quoteStr = "";
   this.weatherStr = 64;
   
-  this.timeEl = $("YOUR SELECTOR HERE");
-  this.quoteEl = $("YOUR SELECTOR HERE");
-	this.weatherEl = $("YOUR SELECTOR HERE");
+  this.timeEl = $("time");
+  this.quoteEl = $("quote");
+	this.weatherEl = $("temp");
   
   // weather controller
   this.weatherCtrl = new momentum.WeatherCtrl();

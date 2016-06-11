@@ -1,0 +1,9 @@
+div{
+    width:100vw;
+    background-color: yellow;
+    margin:10px;
+}
+span{
+    color:rgb(255,0,0);
+    margin:10px;
+}

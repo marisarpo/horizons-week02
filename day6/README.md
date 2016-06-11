@@ -23,7 +23,7 @@ without always having detailed design input. Feel free to use any tools you want
 
 ### Problem #3: Infinite Scroll
 
-![Infinite Scroll](img/calendar.png)
+![Infinite Scroll](img/infinite.gif)
 
 Create an infinite scroll page as seen in the GIF above. You will create a list of tiles that hold a random person's name. Names must be generated through `https://randomuser.me` by making a request to `https://randomuser.me/api/`. This API returns JSON data about a single random user. You can parse this data to find the user's first name. You will then display it in a tile as seen above. 
 

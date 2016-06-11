@@ -30,4 +30,3 @@
 - [Twilio](./day4/1_twilio)
 - [Horello App Part 3 - Add Real Data with AJAX!](./day4/2_horello-ajax)
 - [Momentum](./day4/3_momentum)
-- [FACEBOOK - intro coming Friday afternoon]:

@@ -5,7 +5,8 @@ window.momentum = window.momentum || {};
 // Quotes
 
 momentum.QuoteCtrl = function() {
-  this.apiUrl = "http://quotes.rest/qod.json";
+  //this.apiUrl = "http://quotes.rest/qod.json";
+  this.apiUrl = "https://horizonshq.herokuapp.com/api/quotes";
 };
 
 momentum.QuoteCtrl.prototype = {
@@ -15,6 +16,9 @@ momentum.QuoteCtrl.prototype = {
 	// hint. look into $.ajax here: http://api.jquery.com/jquery.ajax/
 	// hint. read through the documentation for the TheySaidSo API.
   fetchQuote: function(cb) {
-		// YOUR CODE HERE
+		$.ajax(this.apiUrl,{
+            success:cb,
+            error: function(msg) {console.error(msg);}
+        })
   }
 };

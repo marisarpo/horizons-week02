@@ -29,10 +29,10 @@ Create an infinite scroll page as seen in the GIF above. You will create a list 
 
 Your page must behave as follows: 
 	
-1. Load 20 new users at a time. 
+1. Load 50 new users at a time. 
 2. When a user scrolls to the bottom of the page, load 50 more new users. 
 3. You should render each new user's tile as his/her data is received from the server. You should also update the count at the top of the page as each new user's data count.
-4. Every time you start 50 new requests, show a "started" notification under the count. Once all 50 students are back, make the notification say "finished". After 2 seconds, the "finished" should disappear again. 
+4. Every time you start 50 new requests, show a "started" notification under the count. Once all 50 students are back, make the notification say "finished". After 2 seconds, the "finished" notification should disappear. 
 
 
 ### Problem #4: Calendar Challenge
@@ -40,9 +40,9 @@ Your page must behave as follows:
 ![Calendar Challenge](img/calendar.png)
 
 Given a set of events, render the events on a single day calendar (similar to Outlook, Calendar.app, and Google Calendar). There are several properties of the layout:
-1. No events may visually overlap.
-2. If two events collide in time, they must have the same width.
-3. An event should utilize the maximum width available, but constraint 2) takes precedence over this constraint.
+	1. No events may visually overlap.
+	2. If two events collide in time, they must have the same width.
+	3. An event should utilize the maximum width available, but constraint 2) takes precedence over this constraint.
 
 Each event is represented by a JS object with a start and end attribute. The value of these attributes is the number of minutes since 9am. So {start:30, end:90) represents an event from 9:30am to 10:30am. The events should be rendered in a container that is 620px wide (600px + 10px padding on the left/right) and 720px (the day will end at 9pm). 
 

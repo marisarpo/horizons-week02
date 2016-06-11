@@ -17,6 +17,8 @@ Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`
 
 NOTE: Don't add `id's` or `classes` to any of the HTML elements! That would make this too easy.
 
+NOTE 2: YOU CANNOT USE THE `index` or `indexOf` functions in jQuery to do this. 
+
 ### Problem #2: Simple Twitter
 
 ![Simple Twitter](img/simpletwitter.gif)

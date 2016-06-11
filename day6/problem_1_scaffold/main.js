@@ -10,7 +10,7 @@ $("li").click(function(e) {
 			count = i;
 			console.log("count " + count);
 			console.log(i);
-			$('span').html("This index" + count);
+			$('span').html("This index " + count);
 		}
 	}
 });

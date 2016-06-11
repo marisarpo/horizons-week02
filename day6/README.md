@@ -15,6 +15,11 @@ Enjoy.
 
 Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`<li>`) that store names of 10 of your horizonite classmates. Print the index of the of the list item when a list item is clicked. Above is an example with 3 names.The scaffold file for this problem starts you off with the right HTML! 
 
+<<<<<<< HEAD
+=======
+NOTE: Don't add `id's` or `classes` to any of the HTML elements! That would make this too easy.
+
+>>>>>>> master
 ### Problem #2: Simple Twitter
 
 ![Simple Twitter](img/simpletwitter.gif)

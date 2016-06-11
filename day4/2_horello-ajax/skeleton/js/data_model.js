@@ -95,6 +95,7 @@ horello.Card.fromJSON = function(data) {
 
 // LIST
 
+
 horello.List = function(id, name) {
   this.id = id;
   this.name = name;

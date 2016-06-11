@@ -15,7 +15,7 @@ window.twilio = {};
 
 twilio.accountId = "AC04730fbf8cae01edac87ac71ffbf9e6a";
 twilio.authToken = "8b9af2afadab21673c357f83c5d04647";
-twilio.fromNumber = "6319542458";
+twilio.fromNumber = "16319542458";
 
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
@@ -92,7 +92,7 @@ twilio.TwilioShoutout.prototype = {
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
     for (var i = 0; i < phoneStr.length; i++) {
-    if (typeof phoneStr.charAt(i) !== 'number') { return true}
+    if (typeof phoneStr.charAt(i) !== 'number') { return true; }
   }
     return false;
     //call validatemessagefield?
@@ -110,6 +110,7 @@ twilio.TwilioShoutout.prototype = {
       this.sendMessage(this.phoneInputField.val(), this.messageInputField.val())
       this.clearField(this.phoneInputField)
       this.clearField(this.messageInputField)
+      return;
    }
    throw 'Invalid fields'
   },
@@ -143,7 +144,7 @@ twilio.TwilioShoutout.prototype = {
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
       // 
-      url: this.apiUrl + '/Accounts/' + this.accountId + '/Messages'
+      url: this.apiUrl + '/Accounts/' + this.accountId + '/Messages',
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			// 

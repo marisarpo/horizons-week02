@@ -8,16 +8,44 @@
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/js/underscore.js"></script>
+	<script src="main.js"></script>	
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<script type="text/javascript">
+		$(function() {
+			var tweets = new twitter.PostList()
+			window.tweets = tweets
+		})
+	</script>
 </head>
-
-
 <body>
-
-
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4 col-xs-6">
+				<form>
+					<textarea id="tweet" class="form-control" maxlength="140" placeholder="Enter Tweet..."></textarea>
+					<div class="collapse">
+						<span id="button-row"">
+							<span>
+								<p class="bump"><b>0</b> TWEETS</p>
+								<p class="bump"><b>13</b> FOLLOWING</p>
+								<p><b>1,729</b> FOLLOWERS</p>
+							</span>
+							<span>
+								<span id="charcount" class="bump">140</span>
+								<button id="submit" type="submit" class="btn btn-default">submit</button>
+							</span>
+						</span>
+					</div>
+				</form>
+				<div class="post-container" id="madTweets">
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
-
-<script src="main.js"></script>	
-<link rel="stylesheet" type="text/css" href="main.css">
+<script type="text/javascript">
+twitter.mount()
+</script>
 
 </html>

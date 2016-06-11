@@ -81,8 +81,13 @@ horello.Card.fromJSON = function(data) {
 
 // LIST
 
+<<<<<<< HEAD:day4/2_horello-ajax/skeleton/js/data_model.js
 horello.List = function(id, name) {
   this.id = id; // we are not using generatedId because, quote ethan, its dumb
+=======
+horello.List = function(name) {
+  this.id = horello.generateId();
+>>>>>>> master:day4-5/2_horello-ajax/skeleton/js/data_model.js
   this.name = name;
   this.cards = [];
 };

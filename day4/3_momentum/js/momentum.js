@@ -9,9 +9,9 @@ momentum.Core = function() {
   this.quoteStr = "";
   this.weatherStr = 64;
   
-  this.timeEl = $("YOUR SELECTOR HERE");
+  this.timeEl = $("#time");
   this.quoteEl = $("YOUR SELECTOR HERE");
-	this.weatherEl = $("YOUR SELECTOR HERE");
+  this.weatherEl = $("YOUR SELECTOR HERE");
   
   // weather controller
   this.weatherCtrl = new momentum.WeatherCtrl();
@@ -26,7 +26,17 @@ momentum.Core.prototype = {
 	// 
 	// hint. check out the `Date` object! Use `getHours` and `getMinutes`.
   setTime: function() {
-		// YOUR CODE HERE
+
+		var currentDate = new Date();
+
+		var hours = currentDate.getHours().toString();
+		var minutes = currentDate.getMinutes().toString();
+
+		if (minutes.length === 1) {
+			minutes = '0' + minutes;
+		}
+
+		this.timeStr = hours + ':' + minutes;	
   },
 	// `setQuote` method
 	// This method should set the `quoteStr` property of the momentum core. This method will be used as the callback for quoteCtrl's `fetchQuote` function.
@@ -46,7 +56,7 @@ momentum.Core.prototype = {
 	// `updateTime` method
 	// This function should call setTime() so that this.timeStr is updated.
   updateTime: function() {
-		// YOUR CODE HERE
+		this.setTime();
   },
 	// `updateWeather` method
 	// This function should call weatherCtrl.fetchWeather and pass in this.setWeather as the callback.
@@ -65,12 +75,12 @@ momentum.Core.prototype = {
 	// `start` method
 	// This method will call some of the `update...` methods. This function will be called when the page has finished loading, so that Momentum can start off with the more up-to-date data.
 	start: function() {
-		// YOUR CODE HERE
+		this.setTime();
 	},
 	// `render` method
 	// This method should "render" the time, quote and weather strings on your page by replacing the text value of your elements with their respective properties.
 	// ex. this.timeStr will be rendered on to the screen using this.timeEl.text(this.timeStr);
-  render: function() {
-		// YOUR CODE HERE
+ 	render: function() {
+		this.timeE1.text(this.timeStr);
   }
 };

@@ -39,7 +39,7 @@ Create an infinite scroll page as seen in the GIF above. You will create a list 
 
 Your page must behave as follows: 
 	
-1. Load 50 new users at a time. 
+1. Load 50 new users upon page load. Note: The randomuser API only supports requesting 1 user at a time. 
 2. When a user scrolls to the bottom of the page, load 50 more new users. 
 3. You should render each new user's tile as his/her data is received from the server. You should also update the count at the top of the page as each new user's data count.
 4. Every time you start 50 new requests, show a "started" notification under the count. Once all 50 students are back, make the notification say "finished". After 2 seconds, the "finished" notification should disappear. 

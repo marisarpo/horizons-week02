@@ -92,6 +92,29 @@ horello.List.prototype = {
     return this.id;
   },
 
+  getData: function() {
+    $.ajax("https://api.trello.com/1/lists/" + this.id + "/cards/", { 
+      method: "GET",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" },
+      success: function(response) {
+      // we want to change this
+      // loop through array of cards
+      //this is not reliable in jQuery functions
+      response.forEach(function(card) {
+        var newCard = horello.Card.fromJSON(card);
+        board.getList(newCard.listId).cards.push(newCard);
+        // rerendering the board
+        horello.mount(board);
+      })
+      },
+      error: function(err) {
+      console.error(err);
+      }
+      });
+  },
+
   getName: function() {
     return this.name;
   },
@@ -158,6 +181,7 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  return new horello.List(data.id, data.name);
 };
 
 
@@ -178,6 +202,29 @@ horello.Board.prototype = {
     return this.lists.find(function(c) {
       return (c.getId() == listId);
     });
+  },
+
+  getData: function() {
+    $.ajax("https://api.trello.com/1/boards/7G3PJMj0/lists", { 
+      method: "GET",
+      data: {
+       key: "63aa587ffd2bc71922dbbbdf72958ded",
+      token: "a347b3f17d5ca9479ee565757c0e5a80661b163dd7e2e67aaa7af535e4cd73f7" },
+      success: function(response) {
+      //this is what we want to change from our console code
+      // we want to save the lists and add the cards.
+      //loop through the array of lists
+      response.forEach(function(list) {
+        var newList = horello.List.fromJSON(list);
+        board.lists.push(newList);
+        newList.getData(); // this is the horello.List.prototype's getData
+      })
+      board.addList();
+      },
+      error: function(err) {
+      console.error(err);
+      }
+      });
   },
 
   render: function() {

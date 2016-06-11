@@ -1,6 +1,14 @@
 ## Day 6 - Interview Practice
 
 
+
+For the following problems, you use the `scaffold` directories to get empty HTML pages with JQuery, Bootstrap, and Underscore already required for you. You will write your JS in `main.js` and your css in `main.css` :). 
+
+
+Enjoy. 
+
+
+
 ### Problem #1: JQuery Practice
 
 - Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`<li>`) that store names of 10 of your horizonite classmates. Print the index of the of the list item when a list item is clicked.

@@ -132,8 +132,13 @@ horello.Card.fromJSON = function(data) {
 // LIST
 //go through object of list attributes, take in the attributes of each list in the object, turn it into a list, and return it.
 
+<<<<<<< HEAD
 horello.List = function(id, name) {
   this.id = id;
+=======
+horello.List = function(name) {
+  this.id = horello.generateId();
+>>>>>>> refs/remotes/origin/master
   this.name = name;
   this.cards = [];
 };

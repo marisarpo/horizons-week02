@@ -1,0 +1,23 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+ul {
+	list-style: none;
+}
+li {
+	width: 20vw;
+	padding: 5px;
+	background: #333;
+	color: #fff;
+	margin: 5px;
+}
+li:hover {
+	background: #ddd;
+	color: #333;
+}
+#everything {
+	text-align: center
+}

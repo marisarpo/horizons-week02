@@ -15,7 +15,7 @@ horello.generateId = function() {
 // CARD
 
 horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
+  //this.id = horello.generateId();
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -63,6 +63,9 @@ horello.Card.prototype = {
 
 horello.Card.fromJSON = function(data) {
   // PHASE 1 code here
+  var card = new horello.Card(data.id, data.name, data.desc, data.listId);
+  return card;
+
 };
 
 
@@ -109,7 +112,7 @@ horello.List.prototype = {
 
     var listContainer = $('<div class="list-container"></div>');
     var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
-    var listHeader = $('<div class="list-header"></div>');
+    var listHeader = $('<div class="list-header">'+this.name+'</div>');
     var listBody = $('<div class="list-cards"></div>');
     var listFooter = $('<div class="list-footer"></div>');
 
@@ -118,7 +121,7 @@ horello.List.prototype = {
     listWrapper.append(listHeader);
     listWrapper.append(listBody);
     listWrapper.append(listFooter);
-    listHeader.append($('<span class="list-title"></span>').text(this.name));
+    listHeader.append($('<span class="list-title"></span>')).text(this.name);
     listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
     listFooter.append($('\
       <div class="collapse" id="addCardForm'+this.id+'">\
@@ -145,6 +148,8 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+  var list = new horello.List(data.id, data.name);
+  return list;
 };
 
 
@@ -175,3 +180,46 @@ horello.Board.prototype = {
     return wrapper;
   }
 };
+
+
+horello.loadData = function(board_id) {
+  // Part 1
+  console.log("Part 1");
+  $.ajax(horello.apiUrl + "/board/" + board_id + "/lists", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    method: "GET",
+    success: function(response) {
+      // Part 2
+      console.log("Part 2");
+      console.log(JSON.stringify(response));
+      var realLists = _.map(response, horello.List.fromJSON);
+      // get cards for the list using ajax (use a forEach loop)
+      realLists.forEach(function(list) {
+      $.ajax(horello.apiUrl + "/lists/" + list.id + "/cards", {
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken
+        },
+        method: "GET",
+        success: function(cards) {
+          cards.forEach(function() {
+            var thisCard = horello.Card.fromJSON(cards.data);
+            //horello.Board.render();
+            horello.mount(board);
+          })
+        }
+      })
+    })},
+    error: function(err) {
+      console.error(JSON.stringify(err));
+    }
+  });
+
+  // Part 3
+  
+
+}
+

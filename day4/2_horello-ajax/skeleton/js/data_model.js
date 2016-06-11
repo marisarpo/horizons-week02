@@ -77,6 +77,7 @@ horello.Card.fromJSON = function(data) {
 
 // LIST
 
+
 horello.List = function(id, name) {
   if (arguments.length===1) {this.id = horello.generateId();}
   else {this.id=id}

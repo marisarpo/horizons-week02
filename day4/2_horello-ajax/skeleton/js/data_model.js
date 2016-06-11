@@ -16,7 +16,7 @@ horello.generateId = function() {
 
 horello.Card = function(title, desc, listId, id) {
   //this.id = horello.generateId();
-  this.listId = listId;
+  this.listId = this.id;
   this.title = title;
   this.desc = desc;
 };
@@ -30,6 +30,7 @@ horello.Card.prototype = {
     return this.title;
   },
 
+// use ajax and PUT method to set a new title
   setTitle: function(titleStr) {
     this.title = titleStr;
   },
@@ -38,6 +39,7 @@ horello.Card.prototype = {
     return this.desc;
   },
 
+// use ajax and PUT method to set a new description
   setDescription: function(desc) {
     this.desc = desc;
   },
@@ -62,7 +64,7 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  var jsonCard = new horello.Card(data.title, data.desc, data.listId, data.id);
+  var jsonCard = new horello.Card(data.id, data.name, data.desc, data.idList);
   return jsonCard;
 };
 
@@ -78,6 +80,33 @@ horello.List.prototype = {
   getId: function() {
     return this.id;
   },
+
+// Code-along from later
+// need a getData functio for board as well
+  getData: function() {
+
+    $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
+      method:'GET',
+
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken
+      },
+
+      success: function(response) {
+        response.forEach(function(card)) {
+          var newCard = horello.Card.fromJSON(card);
+          board.getList(newCard.listId).cards.push(newCard);
+          horello.mount(board);
+          }
+      },
+
+      error: function(err) {
+        console.error(err);
+      }
+    }
+  }
+  
 
   getName: function() {
     return this.name;
@@ -311,3 +340,12 @@ var Cards;
     }
   })
 }
+
+// PUT: should modify the list or card
+
+
+/// End solution: the setTitle and setDescription of Cards can be updated using PUT
+/// this is the same with List
+/// Basically, portions of Cards, Lists, and Boards can be updated with either PUT or POST by using
+/// ajax calls
+/// Then, load functions are needed to load new cards and lists

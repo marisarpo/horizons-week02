@@ -159,6 +159,7 @@ horello.Board.prototype = {
     addList: function(listName) {
         var list = new horello.List(listName);
         this.lists.push(list);
+        $ajax(horello.apiUrl + "/boards/" + horello.boardId + "/lists");
         return list.getId();
     },
 

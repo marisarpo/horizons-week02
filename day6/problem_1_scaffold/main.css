@@ -1,0 +1,24 @@
+.names {
+	outline: 1px solid;
+	width: 300px;
+	margin: 10px;
+	padding: 5px;
+	text-align: center;
+	font-weight: 300;
+	font-size: 15px;
+}
+
+.names:hover {
+	background-color: #FFACAC;
+	color: #FFFFFF;
+	outline: 2px solid #E19191;
+}
+
+
+#txt-insert {
+	display: inline-block;
+	text-align: center;
+	width: 300px;
+	font-weight: 300;
+	font-size: 15px;
+}

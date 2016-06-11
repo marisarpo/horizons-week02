@@ -7,6 +7,18 @@ horello.apiToken = "d65ed174b1eb67ce67c2f2b865c5c1b76a068a49e72e764d8e587b440848
 horello.apiUrl = "https://api.trello.com/1";
 
 
+// Can use the shorthand id for the board in the trello hyperlink 
+
+// to access lists you can literally just do the api.trello.com/boards/1/board id/lists
+// but you also need to do ?key=xjdfks;ljflda & token=jdfkal;sdfjka;
+// at the end of the url
+
+// "get" in the get link is the automatic thing because nobody really
+// wants to post straight with the url, so can't do post in the url
+
+// then you do get/1/lists/fdjakllist/cards and then you get the cards! yay
+
+
 // $.ajax('https://api.trello.com/1/cards', {
 //     data: {
 //         key: '',

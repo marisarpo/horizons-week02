@@ -14,12 +14,28 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<header>
-    <a class="header-logo"
-       href="#"><span class="header-logo-default"></span></a>
-</header>
+    <header>
+        <a class="header-logo"
+        href="#"><span class="header-logo-default"></span></a>
+    </header>
 
-<!-- PHASE 5. Modal -->
+    <div class="modal fade in" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>One fine body&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
 <div class="board">
     <div class="list-container">
@@ -29,20 +45,39 @@
             </div>
             <div class="list-cards">
                 <div class="card">
+                    <div class="card-more">
+                        <span class="glyphicon glyphicon-align-left">
+                        </span>
+                    </div> 
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
                     </div>
                 </div>
             </div>
             <div class="list-footer">
-                <!-- PHASE 2. Add card button -->
+                <button class="list-button add-card" data-toggle="collapse" href="#addCard1" aria-expanded="true">Add a card...
+                </button>
+                <div class="collapse" id="addCard1">
+                    <div class="well add-card-form">
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class>Save</button>
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-remove">
+                            </span>
+                        </button>
+                    </div>
+                </div>
 
                 <!-- PHASE 4. Collapse -->
             </div>
         </div>
     </div>
 
-    <!-- PHASE 1. Add list button -->
+    <div class="list-container">
+        <div class="add-list-container">
+            <div class="add-list">Add a list</div>
+        </div>
+    </div>
 
 
 </div>

@@ -3,6 +3,8 @@
 body {
     line-height: 18px;
     height: 100vh;
+    /*color: #fff;*/
+    background-color: rgb(0,121,191);  
 
     /** PHASE 1 CSS here */
 }
@@ -10,6 +12,9 @@ body {
 header {
     position: relative;
     overflow: hidden;
+    padding: 5px;
+    height: 40px;
+    opacity: 0.15;
 
     /** PHASE 1 CSS here */
 }
@@ -53,7 +58,13 @@ a {
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+    color: #fff;
+    background: rgba(0, 0, 0, 0.12);
+    min-height: 30px;
+    border-radius: 3px;
+    margin: 0, 0, 5px, 0;
+    width: 280px;
+    padding: 7px;
 }
 
 .add-list:hover {
@@ -69,6 +80,8 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex;
+    flex-direction: row;
 
     /** PHASE 2 CSS here */
 }
@@ -83,6 +96,13 @@ a {
 .list {
     box-sizing: border-box;
     max-height: 100%;
+    padding: 0.5em;
+    margin: 5px;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
+    display: flex;
+    flex-direction: column;
 
     /** PHASE 2 CSS here */
 }
@@ -90,24 +110,35 @@ a {
 .list-header {
     display: block;
     position: relative;
+    margin-bottom: .5em;
+    color: black;
+    font-weight: 700;
 
     /** PHASE 2 CSS here */
 }
 
 .list-footer {
-    /** PHASE 2 CSS here */
+    font-weight: 500;
 }
 
 .list-title {
-    /** PHASE 2 CSS here */
+    left: 0;
 }
 
 .add-card {
-    /** PHASE 2 CSS here */
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background: rgba(16, 16, 16, 0.15);
+    color: #333;
+    margin: 3px 0;
 }
 
 .add-card:hover {
-    /** PHASE 2 CSS here */
+    background: rgba(96, 96, 96, 0.15);
 }
 
 
@@ -115,20 +146,40 @@ a {
 
 .list-cards {
     min-height: 0;
-
-    /** PHASE 3 CSS here */
+    overflow-y: overlay;
+    overflow-x: hidden;
 }
 
 .card {
-    /** PHASE 3 CSS here */
+    margin: 0 0 .5em;
+    background: white;
+    position: relative;
+    border-radius: 3px;
 }
 
 .card-body {
-    /** PHASE 3 CSS here */
+    display: block;
+    padding: .5em .5em 2em;
+    font-family: Cabin,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+    transition: 0.5s all;
 }
 
 .card-more {
-    /** PHASE 3 CSS here */
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+}
+
+#addCard1 {
+
 }
 
 /** PHASE 4 CSS here: add card form */
+
+
+.modal {
+    display: block;
+}

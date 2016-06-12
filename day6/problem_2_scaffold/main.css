@@ -25,9 +25,10 @@ body{
 	margin-right: 20px;
 	margin-top: 7px;
 }
-.list-container{
+.main-container{
 	/*background-color: white;*/
-	height: 100%;
+	height: auto;
+	float: top;
 }
 .center-block{
 	background-color: white;

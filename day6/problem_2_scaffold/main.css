@@ -5,7 +5,7 @@ body{
 	background-color: white;
 	font-size: 30px;
 	height: 50px;
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 }
 .glyphicon{
 	margin-left: 5px;
@@ -22,12 +22,28 @@ body{
 .searchbar{
 	font-size: 20px;
 	float: right;
-	text-align: center;
-}
-.well{
-	width: 30%;
-	height: 30%;
+	margin-right: 20px;
+	margin-top: 7px;
 }
 .title-card{
-	float: center;
+	width: 800px;
+	/*width: auto;*/
+	height: 100px;
+	margin: 0;
+	background-color: white;
+
+}
+.main-container{
+	margin-top: 30px;
+	border: 0;
+	border-radius: 10%;
+	/*vertical-align: center;*/
+	/*width: auto;
+	height: auto;*/
+}
+.input-group:{
+	width: 300px;
+}
+.form-control:{
+	width: 100%;
 }

@@ -7,13 +7,32 @@ horello.Card.prototype.render = function() {
   // build wrappers
   var wrapper = $('<div></div>');
   var cardwrapper = $('<div class="card"></div>');
-  var cardmore = $('<span class="card-more"><type="button" class="edit" data-toggle="modal" data-target="#editCard"><span class="glyphicon glyphicon-align-left"></span></span>');
-  var cardbody = $('<div class="card-body" data-card-id="'+this.getId()+'" data-list-id="'+this.getListId()+'">'+this.title+'</div>');
+  var cardexpandwithdescription = 
+  $('<button type="button" class="desc hasDesc" id="expandButton'+this.getId()+'" data-id="'+this.getId()+'" display="'+this.getShowGlyph()+'">\
+  			<span class="desc glyphicon glyphicon-align-left" data-id="'+this.getId()+'">\
+  			</span>\
+  		</button>\
+  		<div class="collapse desc" data-id="'+this.getId()+'">'+this.getDescription()+'\
+  		</div>');
+  var cardmore = $('<div class="card-more"></div>');
+	var cardedit = $('<type="button" class="edit" data-toggle="modal" data-target="#editCard">');
+  var outercardbody = $('<div class="card-body" data-id="'+this.getId()+'" data-list-id="'+this.getListId()+'"></div>')
+  var cardbody = $('<div class="titleText" data-id="'+this.getId()+'" data-list-id="'+this.getListId()+'">'+this.title+'</div>');
+  var cardremove = $('<button type="button" class="close cardClose"><span class="glyphicon glyphicon-remove" data-list-id="'+this.getListId()+'" data-id="'+this.getId()+'"></span></button');
 
   wrapper.append(cardwrapper);
-  cardwrapper.append(cardmore);
-  cardwrapper.append(cardbody);
+  cardmore.append(cardexpandwithdescription);
+  outercardbody.append(cardmore);
+  cardwrapper.append(cardedit);
+  
+  outercardbody.append(cardremove);
+  outercardbody.append(cardbody);
+  
+  cardwrapper.append(outercardbody);
+
   cardbody.append($("<p></p>")).text(this.title);
+
+
 
   return wrapper.html();
 };
@@ -29,17 +48,18 @@ horello.List.prototype.render = function() {
   var listcontainerwrapper = $('<div class="list-container"></div>');
   var listwrapper = $('<div class="list"></div>');
   var listheader = $('<div class="list-header"></div>');
-  var listtitle = $('<div class="list-title" id="'+this.getId()+'"></div>')
-  var listtitlechanger = $('<input type="text" class="titleChanger" id="'+this.getId()+'" value="'+this.getName()+'"disabled></input>');
+  var listtitle = $('<div class="list-title" data-id="'+this.getId()+'"></div>')
+  var listremove = $('<button type="button" class="close listClose" data-id="'+this.getId()+'"><span data-id="'+this.getId()+'">&times;</span></button');
+  var listtitlechanger = $('<input type="text" class="titleChanger" data-id="'+this.getId()+'" value="'+this.getName()+'"disabled></input>');
   var listcards = $('<div class="list-cards"></div>');
   var listfooter = 
   $('<div class="list-footer">\
-  		<button class="list-button add-card" id="'+this.getId()+'">Add a card...</button>\
-  		<div class="collapse addCard" id="'+this.getId()+'">\
+  		<button class="list-button add-card" data-id="'+this.getId()+'">Add a card...</button>\
+  		<div class="collapse addCard" data-id="'+this.getId()+'">\
   			<div class="well add-card-form">\
-  				<input type="text" placeholder="Card title" class="form-control addCardText" id="'+this.getId()+'">\
-  				<button type="button" class="btn btn-default addCardSave" id="'+this.getId()+'">Save</button>\
-	  			<button type="button" class="btn btn-default addCardCancel" id="'+this.getId()+'">\
+  				<input type="text" placeholder="Card title" class="form-control addCardText" data-id="'+this.getId()+'">\
+  				<button type="button" class="btn btn-default addCardSave" data-id="'+this.getId()+'">Save</button>\
+	  			<button type="button" class="btn btn-default addCardCancel" data-id="'+this.getId()+'">\
 	  				<span class="glyphicon glyphicon-remove"></span>\
 	  			</button>\
 	  		</div>\
@@ -47,10 +67,9 @@ horello.List.prototype.render = function() {
   	</div>');
 
 
-   
-
   wrapper.append(listcontainerwrapper);
-  listcontainerwrapper.append(listwrapper)
+  listcontainerwrapper.append(listwrapper);
+  listheader.append(listremove);
   listtitle.append(listtitlechanger)
   listheader.append(listtitle);
   listwrapper.append(listheader);

@@ -29,6 +29,7 @@ horello.Card = function(title, desc, listId) {
   this.listId = listId;
   this.title = title;
   this.desc = desc;
+  this.showExpandGlyph = 'none';
 };
 
 horello.Card.prototype = {
@@ -37,6 +38,12 @@ horello.Card.prototype = {
   getId: function() {
     // YOUR CODE HERE
     return this.id;
+  },
+
+  emptyDesc: function() {
+    if(this.desc!=''){
+      this.showExpandGlyph = 'block';
+    }
   },
 
   getListId: function() {
@@ -59,6 +66,7 @@ horello.Card.prototype = {
   setTitle: function(titleStr) {
     // YOUR CODE HERE
     this.title = titleStr;
+    this.emptyDesc();
   },
 
   // Exercise 1.D `getDescription`
@@ -77,7 +85,18 @@ horello.Card.prototype = {
   setDescription: function(desc) {
     // YOUR CODE HERE
     this.desc = desc;
+    this.emptyDesc();
+    
+  },
+
+  getShowGlyph: function(){
+    return this.showExpandGlyph;
+  },
+
+  setShowGlyph: function(newSetting){
+    this.showExpandGlyph = newSetting;
   }
+
 };
 
 // Phase 2. `List` Class

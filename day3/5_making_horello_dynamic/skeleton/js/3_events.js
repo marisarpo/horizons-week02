@@ -30,9 +30,7 @@ horello.mountStatic = function(board) {
   })
 
  $('#addListText').on('keypress', function(event){
-    if(event.keyCode == 13){
-      $("#addListSave").trigger("click");
-    }
+    hitEnter(event,"#addListSave","click");
  })
 
 
@@ -45,15 +43,15 @@ horello.mountStatic = function(board) {
   // YOUR CODE HERE
   $('#addListSave').click(function(e){
     var listName = $('#addListText').val();
-    if(!listName && listName.length<1){
-      alert("Invalid list name");
+    var okay = checkInput(listName,"list name");
+    
+    ///console.log("fwakgfbraufliwa")
+    if(okay){
+      board.addList(listName);
+      $('#addListText').val('');
+      horello.mount(board);
     }
-    else{
-      ///console.log("fwakgfbraufliwa")
-        board.addList(listName);
-        $('#addListText').val('');
-        horello.mount(board);
-    }
+  
   });
 
   // 1d. Add list form: cancel button
@@ -85,93 +83,96 @@ horello.mount = function (board) {
   // YOUR CODE HERE
 
   $('.add-card').click(function(e) {
-    $('#'+$(e.target).attr('id')+'.addCard').collapse('show');
+    $('.addCard[data-id="'+$(e.target).data('id')+'"]').collapse('show');
   });
 
-  $('.add-card').on('click', function(e) {
-    $('#'+$(e.target).attr('id')+'.addCardText').focus();
+  $('.add-card').click(function(e) {
+    $('.addCardText[data-id="'+$(e.target).data('id')+'"]').focus();
+  })
+  $('.addCardText').off();
+  $('.addCardText').on('keypress', function(e){
+    hitEnter(e,'.addCardSave',"click");
   })
 
-  $('.addCardText').on('keypress', function(event){
-    if(event.keyCode == 13){
-      $("#"+$(event.target).attr('id')+".addCardSave").trigger("click");
-    }
-  })
   $('.addCardSave').click(function(e){
-    var cardName = $('#'+$(e.target).attr('id')+'.addCardText').val();
-    if(!cardName && cardName.length<1){
-      alert("Invalid card name");
-    }
-    else{
-      board.getList($(e.target).attr('id')).addCard(cardName,'');
-      $('#'+$(e.target).attr('id')+'.addCardText').val('');
+    var cardName = $('.addCardText[data-id="'+$(e.target).data('id')+'"]').val();
+    var okay = checkInput(cardName,"card name");
+    if(okay){
+      board.getList($(e.target).data('id')).addCard(cardName,'');
+      $('.addCardText[data-id="'+$(e.target).data('id')+'"]').val('');
+      $('#expandButton'+$(e.target).data('id')).hide(); 
       horello.mount(board);
     }
   });
+
   $('.addCardCancel').click(function(e){
-    $('#'+$(e.target).attr('id')+'.addCard').collapse('hide');
+    $('.addCard[data-id="'+$(e.target).data('id')+'"]').collapse('hide');
   })
 
 //Edit List Name
 
-$('.list-title').on("click",function(e){
-  console.log("list-title clicked")
-//   $('#'+$(e.target).attr('id')+'.titleChanger').trigger("click");
-// })
+  $('.list-title').click(function(e){
+    //console.log("list-title clicked")
+  //   $('#'+$(e.target).data('id')+'.titleChanger').trigger("click");
+  // })
 
-// $('.titleChanger').on('click',function(e){
-  var titleSpace = $('#'+$(e.target).data('id')+'.titleChanger');
-  titleSpace.prop('disabled',false);
-  titleSpace.focus();
-  console.log("should be enabled")
-  //save on click away or enter
+  // $('.titleChanger').on('click',function(e){
+    var titleSpace = $('.titleChanger[data-id="'+$(e.target).data('id')+'"]');
+    titleSpace.prop('disabled',false);
+    titleSpace.focus();
+    //console.log("should be enabled")
+    //save on click away or enter
 
-
-  $('#'+$(e.target).attr('id')+'.titleChanger').on('keypress', function(event){
+    titleSpace.off();
+    titleSpace.on('keypress', function(event){
+    
     if(event.keyCode == 13){
       console.log("clicked enter");
-      checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).attr('id')),titleSpace);
+      checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).data('id')),titleSpace);
     }
+    })
+
+    $('.titleChanger[data-id="'+$(e.target).data('id')+'"]').blur(function(e){
+      checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).data('id')),titleSpace);  
+    })
+
   })
 
-  $('#'+$(e.target).attr('id')+'.titleChanger').blur(function(e){
-    checkAndSaveTitle(titleSpace.val(),board.getList($(e.target).attr('id')),titleSpace);  
-  })
+  var checkAndSaveTitle = function(tempTitle,list,titleSpace){
 
-})
-
-var checkAndSaveTitle = function(tempTitle,list,titleSpace){
-  if(!tempTitle && tempTitle.length<1){
-      alert("Invalid list title");
-    }
-    else{
+    var okay = checkInput(tempTitle,"list title")
+    if(okay){
       list.setName(tempTitle);
       $(titleSpace).prop('disabled',true);
       horello.mount(board);
-    }
-}
+    }      
+  }
+
+
+$('.card-body').click(function(e){console.log("clicked")})
 
 // Phase 4(a). Edit card
   var clickedCard = null;
-  $('.card').on("click",function(e){
-    clickedCard = board.getList($(e.target).data("listId")).getCard($(e.target).data("cardId"));
+  $('.card-body').click(function(e){
+    var temp = $('.card-body[data-id="'+$(e.target).data('id')+'"]');
+    clickedCard = board.getList($(e.target).data("listId")).getCard($(e.target).data("id"));
     $('#modalText').val(clickedCard.getTitle());
     $('#modalBody').val(clickedCard.getDescription());
     $('#cardEdit').modal('show');
 
   })
-
+  $('#cardEdit').off();
   $('#cardEdit').on('shown.bs.modal',function(e){
     $('#modalText').focus();
   })
 
-  $('#modalSave').on('click',function(e){
+  $('#modalSave').click(function(e){
+    //console.log("savingggggg")
     var clickedCardName = $('#modalText').val();
     var clickedCardDesc = $('#modalBody').val();
-    if(!clickedCardName && clickedCardName.length<1){
-      alert("Invalid card name");
-    }
-    else{
+
+    var okay = checkInput(clickedCardName,"card name");
+    if(okay){
       clickedCard.setTitle(clickedCardName);
       clickedCard.setDescription(clickedCardDesc);
       $('#cardEdit').modal('hide');
@@ -179,14 +180,79 @@ var checkAndSaveTitle = function(tempTitle,list,titleSpace){
     }
     
   })
-  
+  $('#modalText,#modalBody').off()
   $('#modalText,#modalBody').on('keypress', function(event){
-    
-    if(event.keyCode == 13){
-      $("#modalSave").trigger("click");
-    }
+    hitEnter(event,'#modalSave','click')
+  })
+
+  //Delete list
+
+  $('.listClose').click(function(e){
+    board.rmvList($(e.target).data('id'));
+    horello.mount(board);
   })
 
 
+  //Delete card
+  $('.cardClose').click(function(e){
+    var tempList = board.getList($(e.target).data("listId"));
+    var tempCard = tempList.getCard($(e.target).data('id'));
+    tempList.rmvCard(tempCard.getId());
+    horello.mount(board);
+  })
+
+  //Close buttons appear on hover
+  $('.list-header').off();
+  $('.list-header').on("mouseenter",function(e){
+    console.log("moved on"+$(e.target).data('id'))
+      $('.close[data-id="'+$(e.target).data('id')+'"').show();
+  })
+  $('.list-header').on("mouseleave",function(e){
+      console.log("moved off")
+      $('.close[data-id="'+$(e.target).data('id')+'"').hide();
+      console.log("x is gone")
+  })
+
+  //click on left align to expand  
+
+  $('.card-more').click(function(e){
+
+    var tempList = board.getList($('.card-body[data-id="'+$(e.target).data('id')+'"').data("listId"));
+    var tempCard = tempList.getCard($(e.target).data('id'));
+    tempCard.setShowGlyph("none");
+    console.log("hidden")
+    $('.desc[data-id="'+$(e.target).data('id')+'"').collapse('show');
+    $('#expandButton'+$(e.target).data('id')+".hasDesc").hide();
+  })
+  
+  $('.desc.collapse').click(function(e){
+    var tempList = board.getList($('.card-body[data-id="'+$(e.target).data('id')+'"').data("listId"));
+    var tempCard = tempList.getCard($(e.target).data('id'))
+    
+    $('.desc[data-id="'+$(e.target).data('id')+'"').collapse('hide');
+    $('#expandButton'+$(e.target).data('id')).show();
+    tempCard.setShowGlyph("block");
+  })
+
+  
+
 };
 
+
+function hitEnter(e, inputBox, effect) {
+  
+  if(e.keyCode == 13){
+    
+    console.log("hit enter")
+      $(inputBox).trigger(effect);
+    }
+}
+
+function checkInput(input,alertMessage){
+  if(!input || input.length<1){
+    console.log("alerting");
+    alert("Invalid "+alertMessage);
+    return false;
+  }
+  return true;
+}

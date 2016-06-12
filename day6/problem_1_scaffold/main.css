@@ -1,0 +1,7 @@
+.names{
+	display: flex;
+	background-color: yellow;
+}
+ul{
+	list-style-type: none;
+}

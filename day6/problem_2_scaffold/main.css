@@ -1,0 +1,24 @@
+.body{
+	background-color: #add8e6;
+}
+#header{
+	background-color: white;
+}
+.text-center{
+	border-style: solid;
+	padding: 10px;
+	width: 600px;
+	height: 100px;
+	margin: auto;
+}
+.input-text{
+	border-style: groove;
+	margin: 20px 10px 15px 10px;
+}
+#input-collapse{
+	border-style: solid;
+	margin: 10px 20px 0 20px;
+}
+.header-container{
+	display: inline;
+}

@@ -9,9 +9,9 @@ momentum.Core = function() {
   this.quoteStr = "";
   this.weatherStr = 64;
   
-  this.timeEl = $("#time");
+  this.timeEl = $(".time");
   this.quoteEl = $("YOUR SELECTOR HERE");
-  this.weatherEl = $("YOUR SELECTOR HERE");
+  this.weatherEl = $(".weather");
   
   // weather controller
   this.weatherCtrl = new momentum.WeatherCtrl();
@@ -31,12 +31,13 @@ momentum.Core.prototype = {
 
 		var hours = currentDate.getHours().toString();
 		var minutes = currentDate.getMinutes().toString();
+		var seconds = currentDate.getSeconds().toString();
 
 		if (minutes.length === 1) {
 			minutes = '0' + minutes;
 		}
 
-		this.timeStr = hours + ':' + minutes;	
+		this.timeStr = hours + ':' + minutes + ':' + seconds;	
   },
 	// `setQuote` method
 	// This method should set the `quoteStr` property of the momentum core. This method will be used as the callback for quoteCtrl's `fetchQuote` function.
@@ -51,7 +52,7 @@ momentum.Core.prototype = {
 	// 
 	// hint. figure out what kind of response the weatherData is going to be, and see how you might be able to access the quote of the day from that.
   setWeather: function(weatherData) {
-		// YOUR CODE HERE
+		this.weatherStr = Math.floor(weatherData.main.temp * (9/5) - 459.67); // convert from Kelvin
   },
 	// `updateTime` method
 	// This function should call setTime() so that this.timeStr is updated.
@@ -63,7 +64,7 @@ momentum.Core.prototype = {
 	//
 	// note. you might run into scoping issues again. You should know how to solve them by now, using .call, .apply, or .bind.
   updateWeather: function() {
-		// YOUR CODE HERE
+		this.weatherCtrl.fetchWeather(this.setWeather.bind(this)); //this calls fetchWeather, which passes setWeather as an argument, but I don't know why bind is used exactly
   },
 	// `updateQuote` method
 	// This function should call quoteCtrl.fetchQuote and pass in this.setQuote as the callback.
@@ -75,12 +76,14 @@ momentum.Core.prototype = {
 	// `start` method
 	// This method will call some of the `update...` methods. This function will be called when the page has finished loading, so that Momentum can start off with the more up-to-date data.
 	start: function() {
-		this.setTime();
+		this.updateTime();
+		this.updateWeather();
 	},
 	// `render` method
 	// This method should "render" the time, quote and weather strings on your page by replacing the text value of your elements with their respective properties.
 	// ex. this.timeStr will be rendered on to the screen using this.timeEl.text(this.timeStr);
  	render: function() {
-		this.timeE1.text(this.timeStr);
+		this.timeEl.text(this.timeStr);
+		this.weatherEl.text(this.weatherStr);
   }
 };

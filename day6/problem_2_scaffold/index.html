@@ -24,13 +24,20 @@
 </div>
 
 <!--creating the new list container to hold the list of cards-->
-<div class="container main-container" align="center">
-<div class = "well title-card">
-<div class = "input"><input type="text" class="form-control" placeholder="Tweet here!"></span></div>
-
+<div class = "container list-container">
+<div class = "center-block">
+<span class = "type-box"><form><div class="form-group"><input type="text" class= "form-control" id="text-input" placeholder="Tweet here!" data-toggle="collapse" href="#add-buttons" aria-expanded="false" aria-controls="add-buttons"></div></form></span>
+<div class="collapse" id="add-buttons">
+<div class="well">
+<span class = "tweets">0 TWEETS</span>
+<span class = "following">91 FOLLOWING</span>
+<span class = "followers">22,100 FOLLOWERS</span>
+<span class = "word-count">0</span>
+<span class = "submit"><button type = "button" id="submit-btn" data-toggle="button" aria-pressed="false">Submit</button></span>
+</div>
+</div> 
 </div>
 </div>
-
 </body>
 
 

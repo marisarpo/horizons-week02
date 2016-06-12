@@ -16,6 +16,12 @@ momentum.WeatherCtrl.prototype = {
 	// hint. look into $.ajax here: http://api.jquery.com/jquery.ajax/
 	// hint. read through the documentation for the OpenWeatherAPI.
   fetchWeather: function(cb) {
-		// YOUR CODE HERE
+  	$.ajax("http://api.openweathermap.org/data/2.5/weather", {
+  		method: "GET",
+  		data: {
+  			APPID:"fa936a9d43816a7587ebad77a1695c06",
+  			zip: "19104,us",
+  		}, success: cb
+  	});
   }
 };

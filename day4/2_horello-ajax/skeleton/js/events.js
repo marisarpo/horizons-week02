@@ -103,6 +103,7 @@ horello.mount = function (board) {
 
       // Get the list object
       var list = board.getList(id);
+     
       list.addCard(val);
       horello.mount(board);
     });

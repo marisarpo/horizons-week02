@@ -26,6 +26,8 @@ momentum.Core.prototype = {
 	// 
 	// hint. check out the `Date` object! Use `getHours` and `getMinutes`.
   setTime: function() {
+  	d = new Date();
+	document.getElementById("demo").innerHTML = d.toString();
 		// YOUR CODE HERE
   },
 	// `setQuote` method

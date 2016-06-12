@@ -49,5 +49,11 @@ img{
 	float: left;
 }
 
+p.byline {
+	text-align: left;
+	padding: 0px;
+	margin-left: 0px;
+}
+
 
 

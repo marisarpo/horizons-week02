@@ -54,3 +54,17 @@ body{
 	height: 100px;
 	width: 100px;
 }
+.icon{
+	margin: 25px;
+	float: left;
+}
+.date{
+	float: right;
+	margin-top: 25px;
+	margin-right: 25px;
+}
+.user{
+	float: left;
+	margin-top:25px;
+	margin-left: 25px;
+}

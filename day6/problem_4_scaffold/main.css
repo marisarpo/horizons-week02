@@ -1,0 +1,13 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+.item {
+	border-color: #496da8;
+	border: 0 0 0 5px;
+}
+#calendar {
+	width: 600px;
+	padding: 0 10px;
+	background-color: #ececec;
+}

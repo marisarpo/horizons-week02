@@ -8,8 +8,8 @@ simpleTwitter.mount = function(board) {
 
 };
 
-simpleTwitter.Post = function(msg) {
-	this.msg = msg;
+simpleTwitter.Post = function() {
+	this.msg = $(".msgInputField").val();
 };
 
 simpleTwitter.Post.prototype = {

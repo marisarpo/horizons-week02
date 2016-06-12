@@ -1,0 +1,12 @@
+li {
+	margin: 5px;
+	padding: 0 10px;
+	background: yellow;
+	list-style-position:inside;
+	font-weight: 700;
+}
+
+span {
+	color: red;
+	font-weight: 700;
+}

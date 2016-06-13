@@ -84,10 +84,13 @@ horello.Card.fromJSON = function(data) {
 
 // LIST
 
+<<<<<<< HEAD
 // <<<<<<< HEAD
 horello.List = function(id, name) {
   this.id = id
 // =======
+=======
+>>>>>>> master
 horello.List = function(name) {
   this.id = horello.generateId();
 // >>>>>>> master

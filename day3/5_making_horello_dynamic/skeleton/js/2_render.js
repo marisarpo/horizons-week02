@@ -28,7 +28,11 @@ horello.List.prototype.render = function() {
   var listcontainering =$('<div class="list-container"></div>');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   var listwrapper = $('<div class="list" data-list-id="'+ this.id +'"></div>');
+=======
+  var listwrapper = $('<div class="list"></div>');
+>>>>>>> master
 =======
   var listwrapper = $('<div class="list"></div>');
 >>>>>>> master
@@ -48,7 +52,11 @@ horello.List.prototype.render = function() {
   listheader.append(listtitler);
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   listfooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
+=======
+  listfooter.append($("<button class="add-card" addCardId="+this.id+">Add a card...</button>"));
+>>>>>>> master
 =======
   listfooter.append($("<button class="add-card" addCardId="+this.id+">Add a card...</button>"));
 >>>>>>> master
@@ -61,6 +69,7 @@ horello.List.prototype.render = function() {
       <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <button type="button" class="btn btn-default save" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
@@ -68,11 +77,16 @@ horello.List.prototype.render = function() {
 =======
 =======
 >>>>>>> master
+=======
+>>>>>>> master
       <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
       Save\
       </button>\
       <button type="button" class="btn btn-default">\
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master
@@ -84,9 +98,12 @@ horello.List.prototype.render = function() {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 for(var i=0; i<this.cards.length; i++){
   listcarder.append(this.cards[i].render());
 }
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 =======

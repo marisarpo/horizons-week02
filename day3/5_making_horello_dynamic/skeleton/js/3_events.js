@@ -27,7 +27,11 @@ horello.mountStatic = function() {
  
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 $('#addList').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+=======
+$('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
+>>>>>>> master
 =======
 $('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event everytime one of its collapse its fired/opened
 >>>>>>> master
@@ -46,6 +50,7 @@ $('.add-list').on('shown.bs.collapse',function(e){ //bootstrap sends an event ev
 $('#addListSave').click(function(ev){
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   if(!$("#addListText").val()){
     alert("Please enter a list name!");
   }
@@ -58,6 +63,8 @@ $('#addListSave').click(function(ev){
 =======
 =======
 >>>>>>> master
+=======
+>>>>>>> master
   if(!$("addListText")val()){
     alert("please enter a list name");
     return
@@ -67,6 +74,9 @@ $('#addListSave').click(function(ev){
   $("#addListText").val(""); //reset the input field to be empty.
   $('#addList').collapse('toggle'); //appear, disappear for things (collapse methods)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 =======
 >>>>>>> master

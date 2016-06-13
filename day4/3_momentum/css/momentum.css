@@ -1,0 +1,42 @@
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper::before {
+  content: "";
+  position: absolute;
+  /*width: full-screen;*/
+  /*height: full-screen;*/
+  background-color: black;
+  opacity: .025;
+
+}
+
+.bg-wrapper > img {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+  width: 100vw;
+/*  min-width: 100%;
+  min-height: 100%;*/
+}
+
+h1{
+	margin: 0px;
+	color: white;
+	font-family: Helvetica;
+	font-size: 192px;
+}
+body {
+	color: white;
+}
+
+.weather-widget {
+	float:right;
+}
+
+.centered-column {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	
+}
+

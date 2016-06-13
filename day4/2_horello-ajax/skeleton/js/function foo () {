@@ -1,0 +1,25 @@
+function foo () {
+	do something;
+	do something else;
+	do one more thing;
+}
+
+
+
+function doesSomethingWithAjax () {
+	1. ajax_call(success: function() {
+		2. do_something_when_success();
+	});
+	3. do_something_else();
+}
+
+
+1, 3, 2
+
+
+function ajax_call (success) {
+	go off and do ajax
+	might take a few seconds
+	when we succeed
+	success()
+}

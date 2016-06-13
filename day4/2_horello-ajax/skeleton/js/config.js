@@ -7,6 +7,7 @@ horello.apiToken = "9ca61e0018bca1f70af01082773b2a8e40d88e43c87d32ad6bddd41ff8c0
 horello.apiUrl = "https://api.trello.com/1";
 
 //Syntax for creating list
+//when POST you get back an object which will contain the ID
 // $.ajax('https://api.trello.com/1/lists', {
 
 //   method:'POST',

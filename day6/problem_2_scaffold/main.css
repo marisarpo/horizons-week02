@@ -64,7 +64,8 @@ body{
 	margin-right: 25px;
 }
 .user{
-	float: left;
-	margin-top:25px;
-	margin-left: 25px;
+	/*float: left;
+	position: absolute;*/
+	width: auto;
+	margin-top:50px;
 }

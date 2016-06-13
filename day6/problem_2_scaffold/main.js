@@ -14,6 +14,7 @@ $('.form-control').click(function(e){
 $('.submit').click(function(e){
 	if($.trim($('#text-input').val())===""){
 		alert("Need to tweet!");
+		return;
 	}
 		//create the tweet
 		//new date object for date input
@@ -22,10 +23,11 @@ $('.submit').click(function(e){
 		$('.list-container').prepend($('<div class = "center-block tweeted">\
 		<img class = "icon" src = "https://img.buzzfeed.com/buzzfeed-static/static/imagebuzz\
 		/terminal01/2010/1/26/14/bear-with-foot-long-tongue-14326-1264534270-16.jpg"\
-		height="100" width="100"><span class="msg">'+$('#text-input').val()+'</span>\
-		<span class ="date">'+x.getDate()+" "+months[x.getMonth()]+'</span>\
-		<span class = "user"><b>Taylor</b> @taylor_concannon</span>\
-		<span class= "expand">Expand</span></div>'));
+		height="100" width="100">\
+		<div class ="date">'+x.getDate()+" "+months[x.getMonth()]+'</div>\
+		<div class = "user"><b>Taylor</b> @taylor_concannon</div>\
+		<div class="msg">'+$('#text-input').val()+'</div>\
+		<div class= "expand">Expand</div></div>'));
 		
 		//clear out the text field
 		$('#text-input').val("");

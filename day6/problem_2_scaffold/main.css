@@ -1,0 +1,23 @@
+.form-group{
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.fa-twitter{
+	font-size: 3em;
+}
+
+.navbar-brand {
+	float: none;
+	height:100%;
+}
+
+a{
+	background-color: none;
+}
+
+.navbar-default .navbar-nav>.active>a {
+	background-color: none;
+}
+
+.navbar-header{}

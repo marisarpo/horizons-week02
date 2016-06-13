@@ -19,6 +19,11 @@ Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`
 =======
 NOTE: Don't add `id's` or `classes` to any of the HTML elements! That would make this too easy.
 
+<<<<<<< HEAD
+>>>>>>> master
+=======
+NOTE 2: YOU CANNOT USE THE `index` or `indexOf` functions in jQuery to do this. 
+
 >>>>>>> master
 ### Problem #2: Simple Twitter
 
@@ -35,6 +40,9 @@ Build a simplified single-page version of something like the Twitter Home page, 
 - The exercise is fairly open-ended as we want to get an idea of your ability to create something great
 without always having detailed design input. Feel free to use any tools you want (jQuery, SASS, etc.), and it doesn't need to support IE or anything. The deliverable should be a zip file with the page and any assets.
 
+The devil is also in the details:
+
+![Detailed Twitter](img/twitter_detail.gif)
 
 ### Problem #3: Infinite Scroll
 

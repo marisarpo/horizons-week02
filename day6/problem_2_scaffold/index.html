@@ -20,6 +20,7 @@
 		  list.addTweet("Test Tweet");
 		  twitter.mount(list);
 		  twitter.mountStatic(list);
+		  window.list = list;
 		});
 	</script>
 </head>
@@ -64,9 +65,10 @@
 
 		<div class="data-box">
 			<textarea id="tweetText" placeholder="What's on your mind?" rows="1" cols="10"></textarea>
-			<button type="button" id="#tweetSubmit" class="btn btn-primary">Submit</button>
+			<button type="button" id="tweetSubmit" class="btn btn-primary">Submit</button>
 		</div>
 		<div id="listAnchor"></div>
+		
 	</div>
 
 </body>

@@ -1,4 +1,23 @@
 /* Your CSS goes here! */
 
 section {
+	padding: 0px 20px;
 }
+
+@media (min-width: 650px) {
+	.section-wrapper{
+	padding: 40px 20px
+}
+}
+
+@media (min-width: 900px) {
+	.section-wrapper{
+  padding: 80px 20px;
+	}
+}
+@media (max-width: 1000px) {
+	.layout-callout-right img {
+		display: none;
+	}
+}
+

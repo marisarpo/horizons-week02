@@ -32,6 +32,18 @@ horello.Card.prototype = {
 
   setTitle: function(titleStr) {
     this.title = titleStr;
+
+    $.ajax(horello.apiUrl+"/cards/"+this.getId()+"/name", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        value: this.title
+        //[ other data here as necessary for PUT and POST ]
+      },
+      success: console.log("success"),
+      error: "set title fail"
+    })
+
   },
 
   getDescription: function() {
@@ -40,6 +52,17 @@ horello.Card.prototype = {
 
   setDescription: function(desc) {
     this.desc = desc;
+
+    $.ajax(horello.apiUrl+"/cards/"+this.getId()+"/desc", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        value: this.desc
+        //[ other data here as necessary for PUT and POST ]
+      },
+      success: console.log("success"),
+      error: "set description fail"
+    }) 
   },
 
   render: function() {
@@ -62,7 +85,11 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
+
+  var card = new Card(data.name, '');
+  card.id = data.id;
+  return card;
+
 };
 
 
@@ -85,11 +112,39 @@ horello.List.prototype = {
 
   setName: function(name) {
     this.name = name;
+
+    $.ajax(horello.apiUrl+"/lists/"+this.getId()+"/name", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        value: this.name
+        //[ other data here as necessary for PUT and POST ]
+      },
+      success: console.log("success"),
+      error: "set list name fail"
+    })
   },
 
   addCard: function(name, desc) {
     var card = new horello.Card(name, desc, this.getId());
     this.cards.push(card);
+
+    $.ajax(horello.apiUrl+"/cards", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: card.getName(),
+        desc: card.getDesc(),
+        idList: this.getId(),
+        due:null
+        //[ other data here as necessary for PUT and POST ]
+      },
+      success: console.log("success"),
+      error: "add card fail"
+    })
+
+
+
     return card.getId();
   },
 
@@ -145,6 +200,12 @@ horello.List.prototype = {
 
 horello.List.fromJSON = function(data) {
   // PHASE 1 code here
+
+  var list = new List(data.name);
+  list.id = data.id;
+  list.cards = data.cards;
+  return list;
+
 };
 
 
@@ -158,6 +219,20 @@ horello.Board.prototype = {
   addList: function(listName) {
     var list = new horello.List(listName);
     this.lists.push(list);
+
+    $.ajax(horello.apiUrl+"/lists", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: this.name,
+        idBoard: horello.boardId
+        //[ other data here as necessary for PUT and POST ]
+      },
+      success: console.log("success"),
+      error: "add list fail"
+    })
+
+
     return list.getId();
   },
 

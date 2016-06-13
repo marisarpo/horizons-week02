@@ -5,16 +5,38 @@
 * **Weather Widget** (also set to static value) in the top right
 	* **Temperature**: `<span>` element
 	* ***Icon***: Depending on what you what you use (maybe [fontawesome](http://fontawesome.io/icons/) or [ionicons]()) */
-body {
+
+#bg {
+  background: url("https://source.unsplash.com/random") no-repeat 50% 50% fixed; 
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.full-container{
 	color: white;
 	text-shadow: 0 1px 0 black;
+	text-align: center; 
+}
+.centered-text{
+	top: 50%;
+	right: 50%;
+}
+.time{
+	font-size: 2em;
+	font-weight: 600;
+	
+}
+.quote{
+	display:inline-block;
+	font-size: 2em;
+
 }
 
-.bgwrapper{
-	background-image: url("https://source.unsplash.com/random");
-	background-size: cover;
-	height: 100vh;
-	width: 100vw;
+.top-right{
+	position:absolute;
+	top:0;
+	right:0;
+
 }
-
-

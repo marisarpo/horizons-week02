@@ -11,7 +11,8 @@ momentum.WeatherCtrl = function() {
 
 momentum.WeatherCtrl.prototype = {
 	// `fetchWeather(cb<Function>)` method
-	// This function should fetch the current weather in Philly by performing an AJAX call. It should pass the given cb (callback) function to the success property of the call.
+	// This function should fetch the current weather in Philly by performing an AJAX call. 
+	// It should pass the given cb (callback) function to the success property of the call.
 	// 
 	// hint. look into $.ajax here: http://api.jquery.com/jquery.ajax/
 	// hint. read through the documentation for the OpenWeatherAPI.

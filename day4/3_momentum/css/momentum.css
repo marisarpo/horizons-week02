@@ -3,6 +3,8 @@ body {
     color: white;
   	}
 
+
+
 .bg-wrapper{
 	position:absolute;
 	left:0;
@@ -47,7 +49,7 @@ body {
 }
 
 .quote{
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 30px;
 	color: rgba(255,255,255,.35);
 }

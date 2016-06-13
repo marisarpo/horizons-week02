@@ -8,16 +8,66 @@
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/js/underscore.js"></script>
+	<script src="main.js"></script>
+	<script src="data_model.js"></script>
+	<script src="execution.js"></script>
+	<script src="render.js"></script>			
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<!-- Start the list -->
+	<script>
+		$(function () {
+		  var list = new twitter.List();
+		  list.addTweet("Test Tweet");
+		  twitter.mount(list);
+		  twitter.mountStatic(list);
+		});
+	</script>
 </head>
 
 
 <body>
 
+	<div class="container example5">
+	  <nav class="navbar navbar-default navbar-fixed-top">
+	    <div class="container-fluid">
+	      <div class="navbar-header">
+	      	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-nav" aria-expanded="false">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	        <a class="navbar-brand" href="#"><img style="width: 74px;" src="assets/logo.png" alt="Twitter2">Twitter 2.0
+	        </a>
+
+	      </div>
+
+
+	<div class="navbar-collapse collapse pull-right" id="header-nav">
+	      <form class="navbar-form">
+	          <div class="form-group" style="display:inline;">
+	            <div class="input-group">
+	              <input type="text" class="form-control">
+	              <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+	            </div>
+	          </div>
+	      </form>
+	</div>
+
+	    </div>
+	    </div>
+	    <!--/.container-fluid -->
+	  </nav>
+	</div>
+
+	<div class="container c-body">
+
+		<div class="data-box">
+			<textarea id="tweetText" placeholder="What's on your mind?" rows="1" cols="10"></textarea>
+			<button type="button" id="#tweetSubmit" class="btn btn-primary">Submit</button>
+		</div>
+		<div id="listAnchor"></div>
+	</div>
 
 </body>
-
-
-<script src="main.js"></script>	
-<link rel="stylesheet" type="text/css" href="main.css">
-
 </html>

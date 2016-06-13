@@ -1,0 +1,71 @@
+.example5 .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: Gotham;
+  letter-spacing: -1px;
+}
+.example5 .navbar-brand>img {
+  padding: 7px 14px;
+}
+
+.navbar{
+	background-color: white;
+}
+
+.c-body{
+	font-family: Gotham;
+    background-color: #55acee;
+    height:100vh;
+    width: 100vw;  
+    padding-top: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-box{
+	border-radius: 15px;
+	display: flex;
+  flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #e1e8ed;
+	height:20vh;
+  width: 40vw;
+  margin: 1em;
+}
+
+@media (max-width: 750px) {
+  .data-box {
+    min-width: 60vw;
+  }
+
+  textarea {
+    min-width: 52.5vw;
+  }
+
+}
+
+textarea {
+    height: 3em;
+    width: 33vw;
+    padding: 3px;
+    transition: all 0.5s ease;
+    resize: none;
+}
+
+textarea:focus {
+    height: 6em;
+}
+
+.btn {
+  position:relative;
+  display: none;
+  margin: .5em;
+  left: 34%;
+}
+
+textarea:focus + .btn {
+  display: block;
+}

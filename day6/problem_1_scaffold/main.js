@@ -5,6 +5,7 @@ var clicked;
 list.on('click', function(evt) {
 	span.empty();
 	var number;
+	console.log(evt);
 	for(var i=0; i<list.length; i++) {
 		if(evt.target === list[i]) {
 			clicked = list[i];

@@ -1,0 +1,153 @@
+body {
+	background-color: #3498DB;
+/*	font-family: sans-serif;*/
+}
+
+div {
+	display: inline-block;
+	background-color: #fff;
+	height: 50px;
+	width: 100%;
+}
+
+h3 {
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.header {
+	padding: 15px 20px;
+	display: inline-block;
+	min-height: 75px;
+}
+
+.fa-twitter {
+	color: #3498DB;
+	vertical-align: sub;
+}
+
+.logo {
+	display: inline-block;
+	font-size: 20px;
+	color: #3498DB;
+	margin-left: 5px;
+}
+
+#nav-list, a {
+	display: inline-block;
+	color: gray;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+#nav-list li, #form-info li{
+	list-style: none;
+	display: inline;
+	font-size: 18px;
+	margin: 0 10px;
+}
+
+#feed {
+	display: block;
+	margin: 0 auto;
+	width: 50%;
+	height: 100%;
+	background-color: #3498DB;
+}
+
+#enter-form, .tweets {
+	display: block;
+	width: 600px;
+	background-color: #ECF0F1;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 10px;
+}
+
+#form-info {
+	display: inline-block;
+	text-align: left;
+	padding: 0;
+	padding-top: 10px;
+}
+
+#form-info li{
+	text-align: left;
+	font-weight: bold;
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	resize: none;
+	min-height: 20px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	padding: 5px;
+}
+
+button {
+	display: inline-block;
+	background-color: #E74C3C;
+	color: #fff;
+	margin-left: 100px;
+}
+
+.popout {
+	/*background-color: black;*/
+}
+
+.submit:hover {
+	background-color: #990000;
+	color: #fff;
+}
+
+.submit:focus {
+	background-color: #660000;
+}
+
+.tweets {
+	margin-top: 0;
+	height: 125px;
+	width: 600px;
+}
+
+
+.tweets-header {
+	width: 100%;
+}
+
+.pic {
+	height: 85px;
+	border-radius: 5px;
+	margin-right: 5px;
+	float: left;
+}
+
+.name {
+	display: inline;
+}
+
+.handle, .date, .expand {
+	display: inline;
+	color: gray;
+	font-size: 14px;
+}
+
+.date {
+	float: right;
+	margin: 0;
+}
+
+.content {
+	margin: 5px 0;
+
+}
+
+.expand {
+	text-decoration: underline;
+}

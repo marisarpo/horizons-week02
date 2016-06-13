@@ -12,13 +12,32 @@
 
 
 <body>
- 
-	<span>Click to get an index</span>
-	<div>Josh</div>
-	<div>Ethan</div>
-	<div>Moose</div>
-	 
+    <span>Click to get an index</span>
+    <ul>
+        <li><div>Bruce Lee</div></li>
+	    <li><div>Jackie Chan</div></li>
+	    <li><div>Jet Li</div></li>
+	    <li><div>Tony Jaa</div></li>
+	    <li><div>Sylvester Stallone</div></li>
+	    <li><div>Arnold Schwalzenegger</div></li>
+	    <li><div>Bruce Willis</div></li>
+	    <li><div>Jason Statham</div></li>
+	    <li><div>Jean Calude Van Damme</div></li>
+	    <li><div>Steven Seagal</div></li>
+	</ul>
 </body>
+
+<script>
+$("li").click(function(evt){
+	var target = evt.currentTarget
+	$.each($($(this).parent()).children(), function( index, value ) {
+		if (target === value) {
+			$("span").text( "That was div index #" + index );
+		}
+	});
+});
+</script>
+
 
 
 <script src="main.js"></script>	

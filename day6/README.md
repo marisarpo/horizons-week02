@@ -15,6 +15,10 @@ Enjoy.
 
 Create an empty HTML page with an unordered list (`</ul>`) with 10 list items (`<li>`) that store names of 10 of your horizonite classmates. Print the index of the of the list item when a list item is clicked. Above is an example with 3 names.The scaffold file for this problem starts you off with the right HTML! 
 
+NOTE: Don't add `id's` or `classes` to any of the HTML elements! That would make this too easy.
+
+NOTE 2: YOU CANNOT USE THE `index` or `indexOf` functions in jQuery to do this. 
+
 ### Problem #2: Simple Twitter
 
 ![Simple Twitter](img/simpletwitter.gif)
@@ -30,6 +34,9 @@ Build a simplified single-page version of something like the Twitter Home page, 
 - The exercise is fairly open-ended as we want to get an idea of your ability to create something great
 without always having detailed design input. Feel free to use any tools you want (jQuery, SASS, etc.), and it doesn't need to support IE or anything. The deliverable should be a zip file with the page and any assets.
 
+The devil is also in the details:
+
+![Detailed Twitter](img/twitter_detail.gif)
 
 ### Problem #3: Infinite Scroll
 
@@ -39,7 +46,7 @@ Create an infinite scroll page as seen in the GIF above. You will create a list 
 
 Your page must behave as follows: 
 	
-1. Load 50 new users at a time. 
+1. Load 50 new users upon page load. Note: The randomuser API only supports requesting 1 user at a time. 
 2. When a user scrolls to the bottom of the page, load 50 more new users. 
 3. You should render each new user's tile as his/her data is received from the server. You should also update the count at the top of the page as each new user's data count.
 4. Every time you start 50 new requests, show a "started" notification under the count. Once all 50 students are back, make the notification say "finished". After 2 seconds, the "finished" notification should disappear. 

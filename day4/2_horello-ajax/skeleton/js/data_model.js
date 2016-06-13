@@ -30,19 +30,46 @@ horello.Card.prototype = {
     return this.title;
   },
 
-// use ajax and PUT method to set a new title
+// Use PUT method from API docs to add new title
   setTitle: function(titleStr) {
     this.title = titleStr;
+  		
+    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+      method: "PUT",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: titleStr
+      },
+      success: function (data) {
+      }.bind(this),
+      error: function (err) {
+      }.bind(this)
+    });
   },
 
   getDescription: function() {
     return this.desc;
   },
 
-// use ajax and PUT method to set a new description
+// Same PUT method as title, but used for adding new description
   setDescription: function(desc) {
     this.desc = desc;
+
+    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+      method: "PUT",
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken,
+        name: desc
+      },
+      success: function (data) {
+      }.bind(this),
+      error: function (err) {
+      }.bind(this)
+    });
   },
+ 
 
   render: function() {
     // build wrappers
@@ -82,7 +109,7 @@ horello.List.prototype = {
   },
 
 // Code-along from later
-// need a getData functio for board as well
+// need a getData function for board as well
   getData: function() {
 
     $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
@@ -177,46 +204,46 @@ horello.List.fromJSON = function(data) {
   return jsonList;
 };
 
-horello.List.loadCards = function(listId) {
+// horello.List.loadCards = function(listId) {
 
-          var Cards;
-          $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
-          data: {
-            key:horello.apiKey,
-            token: horello.apiToken
-          },
-          method: 'GET',
-          success: function(response) {
-              console.log(JSON.stringify(response));
-              Cards = response;
-              var realCards = _.map(Cards, horello.Cards.fromJSON);
-              return realCards;
-          },
-          error: function(err) {
-              console.log(JSON.stringify(err));
-          }
-        })
+//           var Cards;
+//           $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
+//           data: {
+//             key:horello.apiKey,
+//             token: horello.apiToken
+//           },
+//           method: 'GET',
+//           success: function(response) {
+//               console.log(JSON.stringify(response));
+//               Cards = response;
+//               var realCards = _.map(Cards, horello.Cards.fromJSON);
+//               return realCards;
+//           },
+//           error: function(err) {
+//               console.log(JSON.stringify(err));
+//           }
+//         })
 
 
-        $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
-          data: {
-            key:horello.apiKey,
-            token: horello.apiToken
-          },
-          method: 'POST',
-          success: function(response) {
+//         $.ajax(horello.apiUrl + '1/board/' + board_id + '/cards', {
+//           data: {
+//             key:horello.apiKey,
+//             token: horello.apiToken
+//           },
+//           method: 'POST',
+//           success: function(response) {
               
 
-              horello.List.addCard(response);
+//               horello.List.addCard(response);
              
               
       
-          },
-          error: function(err) {
-              console.log(JSON.stringify(err));
-          }
-        })
-}
+//           },
+//           error: function(err) {
+//               console.log(JSON.stringify(err));
+//           }
+//         })
+// }
 
 
 // Load function
@@ -269,10 +296,27 @@ horello.Board = function () {
 
 horello.Board.prototype = {
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    // var list = new horello.List(listName);
+    // this.lists.push(list);
+    // return list.getId();
+    $.ajax(horello.apiUrl + "/lists", {
+        method: "POST",
+        data: {
+          key: horello.apiKey,
+          token: horello.apiToken,
+          name: listName,
+          idBoard: this.id,
+          pos: 'bottom'
+        },
+        success: function (data) {
+          this.loadData();
+        }.bind(this),
+        error: function (err) {
+        }.bind(this)
+      }
+    );
   },
+ },
 
   getList: function(listId) {
     return this.lists.find(function(c) {
@@ -319,32 +363,32 @@ var Cards;
 
   
 //success function for 'PUT'
- $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
-    data: {
-      key:horello.apiKey,
-      token: horello.apiToken
-      //may need name 
-    },
-    method: 'POST', //might be POST instead
-    success: function(boardData) {
+//  $.ajax(horello.apiUrl + '1/board/' + board_id + '/lists', {
+//     data: {
+//       key:horello.apiKey,
+//       token: horello.apiToken
+//       //may need name 
+//     },
+//     method: 'POST', //might be POST instead
+//     success: function(boardData) {
 
-      // call addList to create a new list
-      horello.Board.addList(boardData);
-      horello.List.loadCards(listItem.name);
+//       // call addList to create a new list
+//       horello.Board.addList(boardData);
+//       horello.List.loadCards(listItem.name);
       
-      })
-    horello.mount(board);
-    },
-    error: function(err) {
-      console.log(JSON.stringify(err));
-    }
-  })
-}
+//       })
+//     horello.mount(board);
+//     },
+//     error: function(err) {
+//       console.log(JSON.stringify(err));
+//     }
+//   })
+// }
 
 // PUT: should modify the list or card
 
 
-/// End solution: the setTitle and setDescription of Cards can be updated using PUT
+/// the setTitle and setDescription of Cards can be updated using PUT
 /// this is the same with List
 /// Basically, portions of Cards, Lists, and Boards can be updated with either PUT or POST by using
 /// ajax calls

@@ -2,10 +2,27 @@
 
 window.horello = window.horello || {};
 
+<<<<<<< HEAD
 // CARD
 
 horello.Card = function(id, title, desc, listId) {
   this.id = id;
+=======
+horello.generateId = function() {
+  var chunk = function() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  };
+  return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
+    chunk() + '-' + chunk() + chunk() + chunk();
+};
+
+// CARD
+
+horello.Card = function(title, desc, listId) {
+  this.id = horello.generateId();
+>>>>>>> master
   this.listId = listId;
   this.title = title;
   this.desc = desc;
@@ -20,6 +37,7 @@ horello.Card.prototype = {
     return this.title;
   },
 
+<<<<<<< HEAD
   // ajax call inside
   setTitle: function(titleStr) {
     this.title = titleStr;
@@ -36,10 +54,17 @@ horello.Card.prototype = {
   },
 
   // should have ajax?
+=======
+  setTitle: function(titleStr) {
+    this.title = titleStr;
+  },
+
+>>>>>>> master
   getDescription: function() {
     return this.desc;
   },
 
+<<<<<<< HEAD
   // ajax call inside
   setDescription: function(desc) {
     this.desc = desc;
@@ -54,6 +79,10 @@ horello.Card.prototype = {
       method: "PUT",
       data: putData
     });
+=======
+  setDescription: function(desc) {
+    this.desc = desc;
+>>>>>>> master
   },
 
   render: function() {
@@ -76,16 +105,25 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
+<<<<<<< HEAD
   var card = new horello.Card(data.id, data.name, data.desc, data.idList);
   return card;
+=======
+  // PHASE 1 code here
+>>>>>>> master
 };
 
 
 // LIST
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 horello.List = function(id, name) {
   this.id = id;
+=======
+horello.List = function(name) {
+  this.id = horello.generateId();
+>>>>>>> master
 =======
 horello.List = function(name) {
   this.id = horello.generateId();
@@ -107,6 +145,7 @@ horello.List.prototype = {
     this.name = name;
   },
 
+<<<<<<< HEAD
   // ajax call inside
   addCard: function(name, desc) {
 
@@ -131,6 +170,12 @@ horello.List.prototype = {
       data: postData,
       success: successFunction.bind(this)
     });
+=======
+  addCard: function(name, desc) {
+    var card = new horello.Card(name, desc, this.getId());
+    this.cards.push(card);
+    return card.getId();
+>>>>>>> master
   },
 
   getCard: function(cardId) {
@@ -180,6 +225,7 @@ horello.List.prototype = {
     }, ""));
 
     return wrapper.html();
+<<<<<<< HEAD
   },
 
   // ajax call inside
@@ -211,17 +257,29 @@ horello.List.fromJSON = function(data) {
   var list = new horello.List(data.id, data.name);
   board.lists.push(list);
   list.loadCards();
+=======
+  }
+};
+
+horello.List.fromJSON = function(data) {
+  // PHASE 1 code here
+>>>>>>> master
 };
 
 
 // BOARD
 
+<<<<<<< HEAD
 horello.Board = function (id) {
   this.id = id;
+=======
+horello.Board = function () {
+>>>>>>> master
   this.lists = [];
 };
 
 horello.Board.prototype = {
+<<<<<<< HEAD
   getId: function() {
     return this.id;
   },
@@ -255,6 +313,12 @@ horello.Board.prototype = {
         error: errorFunction.bind(this)
       }
     );
+=======
+  addList: function(listName) {
+    var list = new horello.List(listName);
+    this.lists.push(list);
+    return list.getId();
+>>>>>>> master
   },
 
   getList: function(listId) {
@@ -269,6 +333,7 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+<<<<<<< HEAD
   },
 
   // ajax call inside
@@ -301,3 +366,7 @@ horello.Board.prototype = {
 };
 
 
+=======
+  }
+};
+>>>>>>> master

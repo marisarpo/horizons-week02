@@ -19,6 +19,7 @@
   <script>
     // jQuery document ready shorthand.
     $(function () {
+<<<<<<< HEAD
       var board = new horello.Board('575ac89d19234734f14f8a28');
       horello.mount(board);
       horello.mountStatic(board);
@@ -30,6 +31,12 @@
       // sync with Trello
       setInterval(function() {board.loadBoard();}, 10000);
 
+=======
+      var board = new horello.Board();
+      horello.mount(board);
+      horello.mountStatic(board);
+      window.board = board;
+>>>>>>> master
     });
   </script>
 </head>

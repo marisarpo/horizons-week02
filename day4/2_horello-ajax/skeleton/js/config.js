@@ -2,6 +2,7 @@
 
 window.horello = window.horello || {};
 
+<<<<<<< HEAD
 horello.apiKey = "7b4448e785fa10aa56b731990b873c49";
 horello.apiToken = "bd3d9596b944d3944231ce0e7ac19e6bdb481ef3a83dac32402303a322975bc6";
 horello.apiUrl = "https://api.trello.com/1";
@@ -23,3 +24,8 @@ horello.apiUrl = "https://api.trello.com/1";
 //     }.bind(this)
 //   }
 // );
+=======
+horello.apiKey = "YOUR API KEY HERE";
+horello.apiToken = "YOUR API TOKEN HERE";
+horello.apiUrl = "https://api.trello.com/1";
+>>>>>>> master

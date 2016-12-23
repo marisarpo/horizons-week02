@@ -1,5 +1,11 @@
 # Making Horello dynamic
 
+1. Add List
+1. Add Card
+1. Edit Card
+1. **Bonus:** Drag and drop cards
+1. **Bonus:** Delete card by hovering and hitting <kbd>c</kbd>
+
 Most of the applications you worked on last week were pretty simple.
 They just involved things like manipulating data, or printing
 information to the console. (You need to learn to walk before you can

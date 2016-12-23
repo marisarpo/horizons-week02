@@ -1,17 +1,12 @@
 "use strict";
 
 $('.post').click(function() {
-  var comment = prompt('Enter your comment');
-  var author = prompt('Enter your name');
-  console.log(comment, author);
-  if (comment && author) {
-    $('.comments').append(createComment(author, comment));
-  }
+  $('.comments').append(promptForComment());
 });
 
 function promptForComment() {
-  var comment = prompt('Enter your comment');
   var author = prompt('Enter your name');
+  var comment = prompt('Enter your comment');
   console.log(comment, author);
   if (comment && author) {
     return createComment(author, comment);
@@ -23,33 +18,26 @@ function createComment(author, comment, replies) {
   elem.append($('<div class="author">').text('"' + author + '" says:'));
   elem.append($('<div class="message">').text(comment));
   var controls = $('<div class="controls">');
-  controls.append($('<button class="hide-replies">Hide Replies</button>'));
-  controls.append($('<button class="show-replies">Show Replies</button>'));
-  controls.append($('<button class="hide-replies">Hide Replies</button>'));
+  controls.append($('<button class="hide-replies btn btn-default">Hide Replies</button>'));
+  controls.append($('<button class="show-replies btn btn-default">Show Replies</button>'));
+  controls.append($('<button class="reply btn btn-default">Reply</button>'));
   elem.append(controls);
   elem.append($('<div class="replies">').append(replies));
   return elem;
 }
-
-$('.comments').append(createComment('Darwish', "What does 'this' do inside a click handler?",
-    createComment('Moose', 'It points to the element that was clicked',
-      createComment('Darwish', "I don't get it",
-        createComment('Ricky', 'Imagine you added the same click handler to 5 different buttons. When the click handler is called, how can you tell which button was clicked? "this" is the answer!')))));
-$('.comments').append(createComment('Abhi', 'Anyone wanna go lift later?'));
 
 $('.comments').on('click', '.reply', function() {
   var $this = $(this);
   var replies = $this.closest('.comment').children('.replies');
   replies.show();
   replies.append(promptForComment());
-  $this.closest('.controls').find('.show-replies').show();
-  $this.closest('.controls').find('.hide-replies').hide();
+  //$this.closest('.controls').find('.show-replies').show();
+  //$this.closest('.controls').find('.hide-replies').hide();
 });
 
 $('.comments').on('click', '.hide-replies', function() {
   var $this = $(this);
-  var replies = $this.closest('.comment').children('.replies');
-  replies.hide();
+  $this.closest('.comment').children('.replies').hide();
   $this.hide();
   $this.closest('.controls').find('.show-replies').show();
 });

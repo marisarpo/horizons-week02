@@ -1,4 +1,20 @@
-# JavaScript, jQuery, and the DOM: Making your app dynamic
+# Week 2, Day 3 Exercises: jQuery, how I love thee
+
+## Inline Exercises
+
+1. [Single click hander](http://codepen.io/moose-horizons/pen/rWbVjj?editors=1011)
+1. [Many click handlers](http://codepen.io/moose-horizons/pen/WoWvpN?editors=1010)
+1. [Image selector](http://codepen.io/moose-horizons/pen/ObGVwL?editors=1011) 
+
+## Pair Programming Exercises
+
+1. [Collapsible comment threads](comment_threads/README.md)
+
+## Modal Alert
+
+## Threaded conversations
+
+TODO DELETE STUFF BELOW
 
 ## A review of the DOM
 

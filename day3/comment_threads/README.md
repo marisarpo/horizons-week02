@@ -93,7 +93,6 @@ functions.
     function() {
       // `this` points to the current `.reply` button that was clicked
       var $this = $(this);
-      // 
       var commentDiv = $this.closest('PARENT SELECTOR HERE');
       var repliesDiv = commentDiv.children('REPLIES DIV SELECTOR');
       repliesDiv.append(NEW COMMENT DIV HERE);

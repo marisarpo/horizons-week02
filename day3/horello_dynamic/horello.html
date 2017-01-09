@@ -5,6 +5,7 @@
     <title>Horizons - W2D3 - Making Horello Dynamic</title>
     <script src="../../lib/underscore.js"></script>
     <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/jquery-ui.js"></script>
 
     <!-- Bootstrap stuff -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
@@ -20,26 +21,24 @@
       </a>
     </header>
 
-    <div class="modal fade" id="cardEdit">
+    <div class="modal fade" id="card-edit">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"
+            <button type="button" class="close card-edit-cancel" data-dismiss="modal"
                                                 aria-label="Close"><span
                                                 aria-hidden="true">&times;</span></button>
-            <input type="text" class="form-control"
-                               value="Example card text">
+            <h3>Edit card</h3>
           </div>
           <div class="modal-body">
-            <h5>Description</h5>
-            <textarea class="form-control" rows="5">Card body goes here</textarea>
+            <textarea class="form-control" rows="5" id="card-edit-body" placeholder="Card contents"></textarea>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default"
-                                  data-dismiss="modal">Close
+            <button type="button" class="btn btn-default card-edit-cancel" data-dismiss="modal">
+              Cancel
             </button>
-            <button type="button" class="btn btn-primary">Save
-              changes
+            <button type="button" class="btn btn-primary card-edit-save">
+              Save changes
             </button>
           </div>
         </div><!-- /.modal-content -->
@@ -57,31 +56,7 @@
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                <p>Leverage agile frameworks to provide a robust
-                synopsis for high level overviews. Iterative
-                approaches to corporate strategy foster
-                collaborative thinking to further the overall
-                value proposition. Organically grow the holistic
-                world view of disruptive innovation via
-                workplace diversity and empowerment.</p>
-
-                <p>Bring to the table win-win survival strategies
-                to ensure proactive domination. At the end of
-                the day, going forward, a new normal that has
-                evolved from generation X is on the runway
-                heading towards a streamlined cloud solution.
-                User generated content in real-time will have
-                multiple touchpoints for offshoring.</p>
-
-                <p>Capitalise on low hanging fruit to identify a
-                ballpark value added activity to beta test.
-                Override the digital divide with additional
-                clickthroughs from DevOps. Nanotechnology
-                immersion along the information highway will
-                close the loop on focusing solely on the bottom
-                line.</p>
-              </div>
+              <div class="card-body">First card in first list</div>
             </div>
           </div>
           <div class="list-footer">
@@ -106,7 +81,7 @@
       <div class="list-container">
         <div class="list">
           <div class="list-header">
-            <span class="list-title">Some List</span>
+            <span class="list-title">List 2</span>
           </div>
 
           <div class="list-cards">
@@ -114,54 +89,42 @@
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card
-              </div>
+              <div class="card-body">Example card with lots of text that should not fit into a single line</div>
             </div>
 
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card again
-              </div>
+              <div class="card-body">Example card 3</div>
             </div>
 
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card again
-              </div>
+              <div class="card-body">Example card 4</div>
             </div>
 
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card again
-              </div>
+              <div class="card-body">Example card 5</div>
             </div>
 
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card again
-              </div>
+              <div class="card-body">Example card 6</div>
             </div>
 
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card again
-              </div>
+              <div class="card-body">Example card 7</div>
             </div>
           </div>
 
@@ -187,16 +150,14 @@
       <div class="list-container">
         <div class="list">
           <div class="list-header">
-            <span class="list-title">Some List</span>
+            <span class="list-title">List 3</span>
           </div>
           <div class="list-cards">
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
               </span>
-              <div class="card-body">
-                Example card
-              </div>
+              <div class="card-body">Example card on the last list</div>
             </div>
           </div>
           <div class="list-footer">

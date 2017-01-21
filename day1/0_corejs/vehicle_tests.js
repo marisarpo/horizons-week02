@@ -10,11 +10,17 @@ describe("Constructor", function() {
 });
 
 describe("Instance creation", function() {
-  it("Nothing shoul be added to the window object", function() {
-    expect(builtins.trim('  Horizons  ')).toEqual('Horizons');
+  it("Nothing should be added to the window object", function() {
+    expect(window.year).toEqual(undefined);
+    expect(window.model).toEqual(undefined);
+
   });
   it("Instances have the right attributes", function() {
-    expect(builtins.trim('Hello World!    ')).toEqual('Hello World!');
+    var sentra = new Vehicle("sentra", 2015, "white", allSeasonTires);
+    expect(sentra.model).toEqual("sentra");
+    expect(sentra.color).toEqual("white");
+    expect(sentra.year).toEqual(2015);
+    expect(sentra.tyreType).toEqual(allSeasonTires);
   });
 });
 

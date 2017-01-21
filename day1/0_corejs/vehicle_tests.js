@@ -16,28 +16,19 @@ describe("Instance creation", function() {
 
   });
   it("Instances have the right attributes", function() {
-    var sentra = new Vehicle("sentra", 2015, "white", allSeasonTires);
-    expect(sentra.model).toEqual("sentra");
-    expect(sentra.color).toEqual("white");
-    expect(sentra.year).toEqual(2015);
-    expect(sentra.tyreType).toEqual(allSeasonTires);
-  });
-});
-
-describe("Instance creation", function() {
-  it("Nothing should be added to the window object", function() {
-    expect(builtins.trim('  Horizons  ')).toEqual('Horizons');
-  });
-  it("Instances have the right attributes", function() {
-    expect(builtins.trim('Hello World!    ')).toEqual('Hello World!');
+    expect(jeep.model).toEqual("jeep");
+    expect(jeep.color).toEqual("yellow");
+    expect(jeep.year).toEqual(2010);
+    expect(jeep.tyreType).toEqual(allSeasonTires);
   });
 });
 
 describe("Adding functions", function() {
   it("The function changeColor is available to all Vehicles.", function() {
-    expect(builtins.trim('  Horizons  ')).toEqual('Horizons');
+    expect(Vehicle.prototype.changeColor).not.toEqual(undefined);
   });
   it("The function whichTyres is only on the correct object.", function() {
-    expect(builtins.trim('Hello World!    ')).toEqual('Hello World!');
+    expect(jeep.whichTyres).not.toEqual(undefined);
+    expect(Vehicle.prototype.whichTyres).toEqual(undefined);
   });
 });

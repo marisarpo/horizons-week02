@@ -29,7 +29,7 @@ describe("Adding functions", function() {
     expect(teslaS.changeColor).not.toEqual(undefined);
     expect(Vehicle.prototype.changeColor).not.toEqual(undefined);
   });
-  it("The function whichTires is only on the correct object.", function() {
+  it("The function whichTires only on the correct object.", function() {
     expect(jeep.whichTires).not.toEqual(undefined);
     expect(teslaS.whichTires).toEqual(undefined);
     expect(Vehicle.prototype.whichTires).toEqual(undefined);

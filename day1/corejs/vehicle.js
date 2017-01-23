@@ -2,7 +2,7 @@
 // This will include prototype, using new, this and  many more.
 
 // To start you have to build a "Vehicle" constructor that takes in 4 parameters:
-// model, year, color, tyreType. The constructor should store the properties in
+// model, year, color, tireType. The constructor should store the properties in
 // an object whenever it is called with the new keyword.
 
 var Vehicle // = YOUR CODE HERE

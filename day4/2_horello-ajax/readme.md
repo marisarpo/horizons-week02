@@ -58,6 +58,7 @@ Monday...).
 
 Once you've logged into your Trello account:
 
+**TODO: this is good**
 1. Navigate to the [Trello
    Developers page](https://developers.trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of
@@ -85,8 +86,7 @@ Begin by taking a look at the full [Trello API
 reference](https://developers.trello.com/advanced-reference). The panel
 on the left lists the _resources_ that are available via this
 API--things like _board_, _card_, and _list_. (These should look very
-familiar by now, but in an API, they're called _resources_ rather than
-_classes_.) If you click on one of these resources, you'll see a full
+familiar by now, but in an API, they're called _resources_.) If you click on one of these resources, you'll see a full
 list of the actions that you can take on each of them.
 
 For instance, [GET
@@ -138,6 +138,8 @@ to view the data for a board in Trello is:
 Copy and paste this URL into your web browser, then replace `<BOARD_ID>`
 with the ID you copied above. Hit enter, and you should see some JSON
 data which looks something like this:
+
+// TODO Download JSON formatter.
 
 ![JSON board data](./img/board_data.png)
 

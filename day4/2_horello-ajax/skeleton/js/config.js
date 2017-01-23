@@ -2,6 +2,8 @@
 
 window.horello = window.horello || {};
 
-horello.apiKey = "YOUR API KEY HERE";
-horello.apiToken = "YOUR API TOKEN HERE";
+horello.apiKey = "ac960adda2eff64acbbd98e795c025ca";
+
+// TODO: Manually generate a token
+horello.apiToken = "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125";
 horello.apiUrl = "https://api.trello.com/1";

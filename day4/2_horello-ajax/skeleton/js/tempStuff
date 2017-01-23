@@ -1,0 +1,58 @@
+// client-side js
+// run by the browser each time your view template is loaded
+
+// by default, you've got jQuery,
+// add other scripts at the bottom of index.html
+
+$(function() {
+
+// get all boards, print first one in array
+// $.ajax('https://api.trello.com/1/member/me/boards', {
+//       data: {
+//         key: "ac960adda2eff64acbbd98e795c025ca",
+//         token: "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125",
+//       },
+//       success: function(data) { console.log(data[0]) }
+//     })
+
+// get all boards, print first trello test 588577bb8423080722cabe8c
+// $.ajax('https://api.trello.com/1/boards/588577bb8423080722cabe8c', {
+//       data: {
+//         key: "ac960adda2eff64acbbd98e795c025ca",
+//         token: "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125",
+//       },
+//       success: function(data) { console.log(data) }
+//     })
+
+// create a card
+$.ajax('https://api.trello.com/1/cards', {
+      method: "POST",
+      data: {
+        key: "ac960adda2eff64acbbd98e795c025ca",
+        token: "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125",
+        name: "I just created a new card!",
+        desc: "Using the Trello API is fun and easy!",
+        pos: "top",
+        due: null,
+        idList: "5885963ac15ad6bf1e892155"
+      },
+      success: function(data) { console.log(data) }
+    })
+
+
+
+//create a list.
+
+  // $.ajax('https://api.trello.com/1/lists/', {
+  //     method: "POST",
+  //     data: {
+  //       idBoard: "588577bb8423080722cabe8c",
+  //       key: "ac960adda2eff64acbbd98e795c025ca",
+  //       token: "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125",
+  //       name: "I just created a new list!",
+  //     },
+  //     success: function(data) { console.log(data) }
+  //   })
+
+
+});

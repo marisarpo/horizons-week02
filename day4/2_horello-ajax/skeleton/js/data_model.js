@@ -2,6 +2,7 @@
 
 window.horello = window.horello || {};
 
+// remove this stuff
 horello.generateId = function() {
   var chunk = function() {
     return Math.floor((1 + Math.random()) * 0x10000)
@@ -31,7 +32,7 @@ horello.Card.prototype = {
   },
 
   setTitle: function(titleStr) {
-    this.title = titleStr;
+    // YOUR CODE TO PUT TO TRELLO
   },
 
   getDescription: function() {
@@ -39,7 +40,7 @@ horello.Card.prototype = {
   },
 
   setDescription: function(desc) {
-    this.desc = desc;
+      // YOUR CODE TO PUT TO TRELLO
   },
 
   render: function() {
@@ -62,6 +63,7 @@ horello.Card.prototype = {
 };
 
 horello.Card.fromJSON = function(data) {
+  // YOUR CODE HERE
   // PHASE 1 code here
 };
 
@@ -88,11 +90,13 @@ horello.List.prototype = {
   },
 
   addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
+
+// YOUR CODE HERE TO POST TO TRELLO
+// on success call       this.loadCards();
   },
 
+
+// WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
   getCard: function(cardId) {
     var card = this.cards.filter(function(c) {
       return (c.getId() == cardId);
@@ -144,24 +148,41 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
+  // THIS IS  NEEDED TO RENDER LIST??
 };
+horello.List.loadCards =function() {
+  // YOUR CODE TO IMPORT CARDS
+  // CALLS  horello.mount(board);
+  });
 
+horello.List.fromJSON = function(data) {
+    // YOUR CODE HERE. DO WE NEED THIS??
+    // PROBABS NOT.
+    var list = new horello.List(data.id, data.name);
+    board.lists.push(list);
+    list.loadCards();
+  };
 
 // BOARD
 
 horello.Board = function () {
+  // ADD ID
   this.lists = [];
 };
 
 horello.Board.prototype = {
   addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
+    // YOUR CODE HERE
+    //THIS SHOULD POST TO TRELLO /lists
+    // calls   this.loadData(); on success, the one below that in time
+    //         calls   list.loadCards();
+    //         calls   horello.mount(board);
+
+
   },
 
   getList: function(listId) {
+    // DO WE NEED THIS? PROBABLY BEING GET AT  LOADDATA
     return this.lists.find(function(c) {
       return (c.getId() == listId);
     });
@@ -173,5 +194,13 @@ horello.Board.prototype = {
       return prev + cur.render();
     }, ""));
     return wrapper;
+  },
+  loadData: function() {
+  // YOUR CODE HERE TO LOAD LISTS
+  // CALLS  data.forEach(function (data2) {
+  //               horello.List.fromJSON(data2);
+  //       });
+  // Which calls   list.loadCards();
+  // Which calls   horello.mount(board);
   }
 };

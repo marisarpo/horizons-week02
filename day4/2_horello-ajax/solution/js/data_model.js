@@ -79,7 +79,9 @@ horello.Card.prototype = {
   }
 };
 
+//Parses data from a single api card to a Card instance
 horello.Card.fromJSON = function(data) {
+  // YOUR CODE HERE
   var card = new horello.Card(data.id, data.name, data.desc, data.idList);
   return card;
 };
@@ -121,7 +123,6 @@ horello.List.prototype = {
         // Success! Now we have an ID and we can create it locally. Or,
         // we can reload the data from the API.
         console.log("Successfully created new card: " + JSON.stringify(data));
-        this.loadCards();
       }.bind(this),
       error: function (err) {
         console.error("Error creating new card: " + JSON.stringify(err));
@@ -199,6 +200,7 @@ horello.List.prototype = {
 };
 
 horello.List.fromJSON = function(data) {
+  // YOUR CODE HERE. DO WE NEED THIS??
   var list = new horello.List(data.id, data.name);
   board.lists.push(list);
   list.loadCards();

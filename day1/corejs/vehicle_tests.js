@@ -5,11 +5,11 @@ describe("Constructor", function() {
   });
   it("Check the newly created object builds an object with the correct arrtibutes", function() {
     var sentra = new Vehicle("sentra", 2015, "white", allSeasonTires);
-    expect(Object.keys(sentra)).toEqual(['model', 'year', 'color', 'tyreType']);
+    expect(Object.keys(sentra)).toEqual(['model', 'year', 'color', 'tireType']);
   });
 });
 
-describe("Instance creation", function() {
+describe("Instance creation:", function() {
   it("Nothing should be added to the window object", function() {
     expect(window.year).toEqual(undefined);
     expect(window.model).toEqual(undefined);
@@ -19,7 +19,7 @@ describe("Instance creation", function() {
     expect(jeep.model).toEqual("jeep");
     expect(jeep.color).toEqual("yellow");
     expect(jeep.year).toEqual(2010);
-    expect(jeep.tyreType).toEqual(allSeasonTires);
+    expect(jeep.tireType).toEqual(allSeasonTires);
   });
 });
 

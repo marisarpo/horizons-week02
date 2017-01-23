@@ -20,8 +20,12 @@
     // jQuery document ready shorthand.
     $(function () {
       var board = new horello.Board();
-      horello.mount(board);
-      horello.mountStatic(board);
+      //horello.mount(board);
+      //horello.mountStatic(board);
+
+      board.id = "588577bb8423080722cabe8c";//This Remove
+      board.loadData(); //This Remove
+
       window.board = board;
     });
   </script>

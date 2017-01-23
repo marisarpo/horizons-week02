@@ -1,5 +1,20 @@
 # Horello continued: APIs and AJAX
 
+1. Create a board with whateverr.
+1. put sum stuff in it. 
+1. How to get board id.
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
 ## Contents
 
 - Phase 1: [Authentication](#phase-1-authentication)

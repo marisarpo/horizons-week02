@@ -25,10 +25,13 @@ describe("Instance creation", function() {
 
 describe("Adding functions", function() {
   it("The function changeColor is available to all Vehicles.", function() {
+    expect(jeep.changeColor).not.toEqual(undefined);
+    expect(teslaS.changeColor).not.toEqual(undefined);
     expect(Vehicle.prototype.changeColor).not.toEqual(undefined);
   });
-  it("The function whichTyres is only on the correct object.", function() {
-    expect(jeep.whichTyres).not.toEqual(undefined);
-    expect(Vehicle.prototype.whichTyres).toEqual(undefined);
+  it("The function whichTires is only on the correct object.", function() {
+    expect(jeep.whichTires).not.toEqual(undefined);
+    expect(teslaS.whichTires).toEqual(undefined);
+    expect(Vehicle.prototype.whichTires).toEqual(undefined);
   });
 });

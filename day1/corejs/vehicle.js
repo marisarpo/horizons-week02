@@ -23,6 +23,7 @@ var allSeasonTires = {type: "all season"};
 // Create a "teslaS" variable that contains a new vehicle called "teslaS" that has
 // "snowTires" and a "red" color.
 // YOUR CODE HERE
+//var teslaS
 var teslaS = new Vehicle("TeslaS", 2016, "red", allSeasonTires);
 
 // Create a "jeep" variable that contains a new vehicle called "jeep" that has "allSeasonTires" and a "white" color.
@@ -39,8 +40,8 @@ Vehicle.prototype.changeColor = function(newColor){
   this.color = newColor;
 }
 
-// The second method we want to add is "checkSnowTyres". This method should return
+// The second method we want to add is "whichTires". This method should return
 // true if the vehicle has snow tires on. And it should only be available to "jeep".
-jeep.whichTyres = function(){
+jeep.whichTires = function(){
   return this.tires.type;
 }

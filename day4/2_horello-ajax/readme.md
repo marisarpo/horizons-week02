@@ -1,9 +1,27 @@
 # Horello continued: APIs and AJAX
 
+
+##Setup.
+
 1. Create a board with whateverr.
-1. put sum stuff in it. 
+1. put sum stuff in it.
 1. How to get board id.
 
+##To display stuff on the screen.
+
+1. Call board.loadData();
+    1. This brings a 'data' array with all the lists.
+    1. Call horello.List.fromJSON(data2) for each list
+        1. fromJSON converts each list data into a List Object
+        1. pushes the list into the board's list array
+        1. and calls 'list.loadCards' for each list.
+
+1. list.loadCards();
+    1. brings an array of cards for that list
+    1. calls fromJSON to create Cards from data.
+    1. pushes the Cards into the list's cardarray
+       "this.cards = data2.map(horello.Card.fromJSON)"
+    1. Calls *horello.mount(board);* THIS IS THE CODE THAT REFFRESHES STUFF.
 
 
 

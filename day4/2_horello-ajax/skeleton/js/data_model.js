@@ -12,11 +12,11 @@ horello.List = function(id, name) {
   this.name = name;
   this.cards = [];
 };
-horello.Card = function(id, title, desc, listId) {
+horello.Card = function(id, title, description, listId) {
   this.id = id;
   this.listId = listId;
   this.title = title;
-  this.desc = desc;
+  this.description = description;
 };
 
 ///////////////////// STATIC OBJECT CREATORS /////////////////////
@@ -30,45 +30,67 @@ horello.List.listFromJSON = function(data) {
   return new horello.List(data.id, data.name);
 };
 horello.Card.cardFromJSON = function(data) {
-  return new horello.Card(data.id, data.name, data.desc, data.idList);
+  return new horello.Card(data.id, data.name, data.description, data.idList);
 };
+
+///////////////////// GET THAT DATA /////////////////////
+
+horello.Board.prototype.loadListData = function() {
+  // This is the calling point from index.js.
+  // loadListData -> loadsCards -> which Mounts the board
+  $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    success: function (listData) {
+      console.log("Successfully loaded lists for board " + this.id);
+      // step 1 parsing the data
+      this.lists = listData.map(horello.List.listFromJSON);
+
+      // step 2. doing stuff for each card.
+      // TODO: Should this be here?
+      this.lists.forEach(function (list) {
+        list.loadCards();
+      });
+    }.bind(this),
+    error: function (err) {
+      console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  }
+);
+}
+
+horello.List.prototype.loadCards= function() {
+  // YOUR CODE TO IMPORT CARDS
+  // is being called once for every board
+  $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    success: function (data2) {
+      console.log("Successfully loaded cards for list " + this.id);
+      this.cards = data2.map(horello.Card.cardFromJSON);
+      // Re-render.
+      horello.mount(board);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
+    }
+  });
+}
+
+
+
 
 /////////////////////////////////////////////////
 ///////////////////// BOARD /////////////////////
 /////////////////////////////////////////////////
 
-horello.Board.prototype = {
-  loadListData: function() {
-    // This is the calling point from index.js.
-    // Brings in an array of lists.
-    // Clears board's list array.
-    // CALLS horello.List.listFromJSON(data2); This creates a LIST object from every
-    // element in the array, pushes it into the board's list array. and:
-    //loadsData -> loadsCards -> Mounts the board
-
-    $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
-      data: {
-        key: horello.apiKey,
-        token: horello.apiToken
-      },
-      success: function (data) {
-        console.log("Successfully loaded lists for board " + this.id);
-        this.lists = data.map(function(listData){
-          return horello.List.listFromJSON(listData)
-        });
-        this.lists.forEach(function (list) {
-          list.loadCards();
-        });
-      }.bind(this),
-      error: function (err) {
-        console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
-      }.bind(this)
-    }
-  );
-},
 
 
-addList: function(listName) {
+horello.Board.prototype.addList = function(listName) {
   // YOUR CODE HERE
   //THIS SHOULD POST TO TRELLO /lists
   // calls   this.loadListData(); on success, the one below that in time
@@ -103,35 +125,16 @@ console.error("Error creating list for board " + this.id + ": " + JSON.stringify
 //     return (c.id == listId);
 //   });
 // },
-};
+////////CLOSE BOARD STUFF
 
 
 /////////////////////////////////////////////////
 ///////////////////// LIST /////////////////////
 /////////////////////////////////////////////////
 
-horello.List.prototype = {
-  loadCards: function() {
-    // YOUR CODE TO IMPORT CARDS
-    // is being called once for every board
-    $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
-      data: {
-        key: horello.apiKey,
-        token: horello.apiToken
-      },
-      success: function (data2) {
-        console.log("Successfully loaded cards for list " + this.id);
-        this.cards = data2.map(horello.Card.cardFromJSON);
-        // Re-render.
-        horello.mount(board);
-      }.bind(this),
-      error: function (err) {
-        console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
-      }
-    });
-  },
 
-  addCard: function(name, desc) {
+
+  horello.List.prototype.addCard= function(name, description) {
     // YOUR CODE HERE TO POST TO TRELLO
     // First create the data in the API? WHAT?
     // on success call       this.loadCards();
@@ -142,7 +145,7 @@ horello.List.prototype = {
     key: horello.apiKey,
     token: horello.apiToken,
     name: name,
-    desc: desc,
+    description: description,
     idList: this.id
   },
 
@@ -156,9 +159,9 @@ console.error("Error creating new card: " + JSON.stringify(err));
 }
 });
 */
-},
+}
 
-getCard: function(cardId) {
+horello.List.prototype.getCard= function(cardId) {
   /*
   // WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
   var card = this.cards.filter(function(c) {
@@ -171,7 +174,7 @@ return null;
 */
 }
 
-};
+
 
 
 
@@ -203,26 +206,23 @@ console.error("Error updating title of card " + this.id + ": " + JSON.stringify(
 */
 },
 
-getDescription: function() {
-  return this.desc;
-},
 
-setDescription: function(desc) {
+setDescription: function(description) {
   // YOUR CODE TO PUT TO TRELLO, probs when updating a description??
   /*
-  this.desc = desc;
+  this.description = description;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
   method: "PUT",
   data: {
   key: horello.apiKey,
   token: horello.apiToken,
-  desc: desc
+  description: description
 },
 success: function (data) {
-console.log("Successfully updated desc of card " + this.id);
+console.log("Successfully updated description of card " + this.id);
 }.bind(this),
 error: function (err) {
-console.error("Error updating desc of card " + this.id + ": " + JSON.stringify(err));
+console.error("Error updating description of card " + this.id + ": " + JSON.stringify(err));
 }.bind(this)
 });
 */
@@ -291,7 +291,7 @@ horello.Card.prototype.render = function() {
   var wrapper = $('<div></div>');
   var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
   var cardmore = $('<span class="card-more"></span>');
-  if (this.getDescription()) {
+  if (this.description) {
     cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
   }
   var cardbody = $('<div class="card-body">'+this.title+'</div>');

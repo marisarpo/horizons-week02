@@ -30,7 +30,7 @@ three elements are laid out responsively as follows:
 
 Check out the [live, working version][live].
 
-Use this codepen: http://codepen.io/lockehart/pen/PzPzrj
+Use this codepen: http://codepen.io/moose-horizons/pen/YNQjvq
 
 Tips:
 - Fill in the empty media queries in the CSS section.

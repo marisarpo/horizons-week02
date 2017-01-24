@@ -1,6 +1,7 @@
 .background-light-blue {
   background-color: #e4f0f6;
-  //border-style: dotted;
+  /*border-style: dotted;*/
+  overflow:hidden;
 
 }
 
@@ -8,6 +9,7 @@
   max-width: 890px;
   margin: 0 auto;
   position: relative;
+
 }
 
 .layout-callout-right {
@@ -15,6 +17,7 @@
   position: absolute;
   top: -60px;
   left: 640px;
+
 }
 
 .layout-callout-right img {
@@ -23,6 +26,7 @@
 
 .layout-twothirds-left {
   max-width: 585px;
+
 }
 
 .app-store-link {

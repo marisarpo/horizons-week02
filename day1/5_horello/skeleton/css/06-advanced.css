@@ -1,29 +1,60 @@
 .background-light-blue {
+  background-color: #e4f0f6;
+  //border-style: dotted;
+
 }
 
 .layout-grid-frame {
+  max-width: 890px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .layout-callout-right {
+  //float:right;
+  position: absolute;
+  top: -60px;
+  left: 640px;
 }
 
 .layout-callout-right img {
+
 }
 
 .layout-twothirds-left {
+  max-width: 585px;
 }
 
 .app-store-link {
 }
 
 .app-store-link img {
+  display: inline-block;
+  vertical-align: top;
+
+  height: 54px;
+
+  margin-right: 1em;
 }
 
 .outline-link {
+  display: inline-block;
+  vertical-align: top;
+
+  //margin-top: 8px;
+  border-style:solid;
+  border-width: 1px;
+  border-color: #5e98ba;
+  border-radius:0.3em;
+  padding:0.7em 1.0em;
 }
 
 a {
+  color:#5e98ba;
 }
 
 a:hover {
+  //background-color: #2b6083;
+  color: #2b6083;
+  border-color: #2b6083;
 }

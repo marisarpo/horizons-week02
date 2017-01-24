@@ -1,5 +1,43 @@
-body {
-    /** Your CSS goes here! **/
+.navbar{
+  width:100%;
+  height: 80%
+}
+
+.warning{
+  /*width:100%;*/
+}
+.hero{
+  width:100%;
+}
+
+.project_list{
+  width:100%;
+  background-color:red;
+  border-bottom:solid;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.project{
+  height:300px;
+  margin-right: 15px;
+
+}
+.list{
+  height:300px;
+  margin-left: 15px;
+  
+  
+  /*float:right;*/
+}
+
+/*li:hover{
+  color:green;
+  text-decoration: underline;
+}*/
+
+/*body {
+
       font-family: "Helvetica Neue", Arial, sans-serif;
       font-weight: 400;
       font size: 20px;
@@ -7,7 +45,7 @@ body {
 }
 
 h2 {
-    /** and here (you get the point) **/
+
     font-size: 36px;
 }
 
@@ -31,3 +69,4 @@ section {
 .text-center {
   text-align: center;
 }
+*/

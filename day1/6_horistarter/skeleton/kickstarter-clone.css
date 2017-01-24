@@ -1,0 +1,192 @@
+html, head, body, h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+header,
+section,
+footer {
+    margin: 0;
+    padding: 1px; /* tweaked from 0 to 1px */
+}
+
+body {
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+}
+
+header {
+}
+
+header a {
+  text-decoration: none;
+}
+
+header ul {
+  padding: 0;
+}
+
+header li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 24px;
+}
+
+.site-nav {
+  margin: 0 auto;
+  height: 60px;
+}
+
+.site-nav_left {
+  vertical-align: top;
+  float: left;
+  text-align: left;
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+}
+
+.site-nav_center {
+  vertical-align: middle;
+  display: inline-block;
+  margin: auto;
+  width: 33%;
+  height: 100%;
+}
+
+.site-nav_center_image {
+  height: 17.4px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.site-nav_right {
+  vertical-align: top;
+  float: right;
+  text-align: right;
+  display: inline-block;
+  width: 33%;
+  height: 100%;
+}
+
+
+.intro-image {
+  background: url(https://c1.staticflickr.com/2/1520/24330829813_944c817720_b.jpg);
+  height: 575px;
+  color: white;
+  vertical-align: center;
+}
+
+h1 {
+
+}
+
+.button-project {
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 0.3em;
+  font-weight: bold;
+  color: #fff;
+  display: inline-block;
+  background: #61bd4f;
+}
+
+.button-project:hover {
+  background: #5aac44;
+}
+
+
+.main-body {
+  border: 1px solid blue;
+  background-color: white;
+}
+
+
+footer {
+  background-color: #020621;
+  color: #E6E7E8;
+  font-size: 14px;
+  text-align: left;
+}
+
+footer a {
+  color: #E6E7E8;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: grey;
+}
+
+.footer-a-h5 {
+  font-weight: bold;
+}
+
+footer ul {
+  padding: 0;
+}
+
+footer li {
+  list-style-type: none;
+  text-align: left;
+}
+
+.footer-spacing {
+  padding: 12px 9% 50px;
+}
+
+.footer-topseparate {
+  border-bottom: 1px solid grey;
+}
+
+.footer-topformat {
+  display: inline-block;
+  vertical-align:top;
+  width: 49%
+}
+
+.footer-topformat_list {
+  display: inline-block;
+  vertical-align:top;
+}
+
+.footer-topformat_list_discover  {
+  display: inline-block;
+  vertical-align:top;
+  padding-right: 10%
+}
+
+.footer-topfloatright {
+  float: right;
+  display: inline-block;
+  vertical-align:top;
+  width: 49%;
+}
+
+.footer-topfloatleft {
+  display: inline-block;
+  vertical-align:top;
+  width: 49%;
+}
+
+.footer-topformatright1 {
+  display: inline-block;
+  vertical-align:top;
+  width: 63%;
+}
+
+.footer-topformatright2 {
+  display: inline-block;
+  vertical-align:top;
+  width: 33%;
+}
+
+/*.footer-logo {
+    background-size: 175px 17px;
+    background: url(https://static.kickstarter.com/assets/logo/ksr-pbc-logo-5855ba7587ad442e2f44100c5c2bc2da5ac3857ef8f8aef59be74f7ccc295e16.svg) no-repeat;
+    width: 175px;
+    height: 17px;
+  }*/

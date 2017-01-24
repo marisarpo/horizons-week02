@@ -125,45 +125,24 @@ horello.List.prototype = {
   setName: function(name) {
     this.name = name;
   },
-
-  addCard: function(name, desc) {
-    // YOUR CODE HERE TO POST TO TRELLO
-    // First create the data in the API? WHAT?
-    // on success call       this.loadCards();
-    /*
-    $.ajax(horello.apiUrl + "/cards", {
-      method: "POST",
+  loadCards: function() {
+    // YOUR CODE TO IMPORT CARDS
+    // is being called once for every board
+    $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
       data: {
         key: horello.apiKey,
-        token: horello.apiToken,
-        name: name,
-        desc: desc,
-        idList: this.getId()
+        token: horello.apiToken
       },
-
-      success: function (data) {
-        // Success! Now we have an ID and we can create it locally. Or,
-        // we can reload the data from the API.
-        console.log("Successfully created new card: " + JSON.stringify(data));
+      success: function (data2) {
+        console.log("Successfully loaded cards for list " + this.getId());
+        this.cards = data2.map(horello.Card.fromJSON);
+        // Re-render.
+        horello.mount(board);
       }.bind(this),
       error: function (err) {
-        console.error("Error creating new card: " + JSON.stringify(err));
+        console.error("Error loading cards for list " + data.getId() + ": " + JSON.stringify(err));
       }
     });
-    */
-  },
-
-  getCard: function(cardId) {
-    /*
-    // WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
-    var card = this.cards.filter(function(c) {
-      return (c.getId() == cardId);
-    });
-    if (card.length > 0) {
-      return card[0];
-    }
-    return null;
-    */
   },
 
   render: function() {
@@ -205,25 +184,46 @@ horello.List.prototype = {
     return wrapper.html();
   },
 
-  loadCards: function() {
-    // YOUR CODE TO IMPORT CARDS
-    // is being called once for every board
-    $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
+  addCard: function(name, desc) {
+    // YOUR CODE HERE TO POST TO TRELLO
+    // First create the data in the API? WHAT?
+    // on success call       this.loadCards();
+    /*
+    $.ajax(horello.apiUrl + "/cards", {
+      method: "POST",
       data: {
         key: horello.apiKey,
-        token: horello.apiToken
+        token: horello.apiToken,
+        name: name,
+        desc: desc,
+        idList: this.getId()
       },
-      success: function (data2) {
-        console.log("Successfully loaded cards for list " + this.getId());
-        this.cards = data2.map(horello.Card.fromJSON);
-        // Re-render.
-        horello.mount(board);
+
+      success: function (data) {
+        // Success! Now we have an ID and we can create it locally. Or,
+        // we can reload the data from the API.
+        console.log("Successfully created new card: " + JSON.stringify(data));
       }.bind(this),
       error: function (err) {
-        console.error("Error loading cards for list " + data.getId() + ": " + JSON.stringify(err));
+        console.error("Error creating new card: " + JSON.stringify(err));
       }
     });
+    */
+  },
+
+  getCard: function(cardId) {
+    /*
+    // WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
+    var card = this.cards.filter(function(c) {
+      return (c.getId() == cardId);
+    });
+    if (card.length > 0) {
+      return card[0];
+    }
+    return null;
+    */
   }
+
 };
 
 
@@ -255,6 +255,23 @@ horello.Card.prototype = {
 
   getTitle: function() {
     return this.title;
+  },
+  render: function() {
+    // build wrappers
+    var wrapper = $('<div></div>');
+    var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+    var cardmore = $('<span class="card-more"></span>');
+    if (this.getDescription()) {
+      cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+    }
+    var cardbody = $('<div class="card-body">'+this.title+'</div>');
+
+    wrapper.append(cardwrapper);
+    cardwrapper.append(cardmore);
+    cardwrapper.append(cardbody);
+    cardbody.append($("<p></p>")).text(this.title);
+
+    return wrapper.html();
   },
 
   setTitle: function(titleStr) {
@@ -301,23 +318,6 @@ horello.Card.prototype = {
       }.bind(this)
     });
     */
-  },
-
-  render: function() {
-    // build wrappers
-    var wrapper = $('<div></div>');
-    var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-    var cardmore = $('<span class="card-more"></span>');
-    if (this.getDescription()) {
-      cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
-    }
-    var cardbody = $('<div class="card-body">'+this.title+'</div>');
-
-    wrapper.append(cardwrapper);
-    cardwrapper.append(cardmore);
-    cardwrapper.append(cardbody);
-    cardbody.append($("<p></p>")).text(this.title);
-
-    return wrapper.html();
   }
+
 };

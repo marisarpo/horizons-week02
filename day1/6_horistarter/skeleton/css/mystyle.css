@@ -1,0 +1,136 @@
+body {
+  background-color: white;
+  font-family: Helvetica Neue;
+  display: inline;
+}
+
+.explore {
+  align-self: center;
+  white-space: nowrap;
+}
+
+table {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.text-left {
+  display: inline;
+  text-align: left;
+
+}
+
+#topdoc {
+  width: 100%;
+}
+
+#topdoc th {
+  width: 33%;
+}
+
+.leftside p {
+  float:left;
+}
+.rightside p {
+  float:right !important;
+}
+
+.rightside{
+  width: 33%;
+  text-align: right !important;
+}
+
+#topdoc .myimage {
+  position: relative;
+  transform: (-50%, 0);
+}
+
+#topdoc p {
+  display: inline;
+  padding-left: 20px;
+  padding-right: 20px;
+  float: left;
+}
+
+.text-center {
+  text-align: center;
+  font-weight: bold;
+  padding-top: 20px;
+  box-sizing: content-box;
+}
+
+#logo {
+  font-size: 40px;
+}
+
+.content-center {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("https://www.kickstarter.com/assets/site/projects-hero-happening-b87fdef8f9ae2d44255357588ac8143c903523b83dcb70bf58c47032cf2a5932.jpg")
+}
+
+
+
+footer {
+  font-size: 15px;
+  background-color: black;
+  color: white;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: left;
+  margin-top: 600px;
+}
+
+.happenings {
+  position: relative;
+  margin: auto;
+  left: 0;
+  width: 700px;
+  top: 250px;
+  left: 28%;
+
+}
+
+.maincontainer {
+  position: absolute;
+  top: 900px;
+}
+
+
+/*.helplabel {
+  left: 50px;
+  position: relative;
+}
+
+.help {
+  left: 200px;
+  position: relative;
+}
+
+.discoverlabel {
+  left: 300px;
+  position: relative;
+}
+
+.discover {
+  left: 300px;
+  position: relative;
+}
+
+.discover2label {
+  left: 400px;
+  position: relative;
+}
+
+.discover2 {
+  left: 400px;
+  position: relative;
+}
+
+.hellolabel {
+
+}
+
+.hello {
+
+}*/

@@ -3,16 +3,27 @@ section {
 }
 
 footer {
+  color: #999;
+  font-size: 16px;
+  padding: 80px 20px;
 }
 
 footer a {
+  text-decoration: underline;
+  cursor: auto;
+  color: #999;
+
 }
 
 footer a:hover {
+  color: #000;
 }
 
 footer ul {
+  padding: 0
 }
 
 footer li {
+  display: inline-block;
+  margin: 0 7px;
 }

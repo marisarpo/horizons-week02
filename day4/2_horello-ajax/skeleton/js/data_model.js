@@ -1,29 +1,49 @@
 "use strict";
-
 window.horello = window.horello || {};
+
+///////////////////// CONSTRUCTORS /////////////////////
+
+horello.Board = function (id) {
+this.id = id;
+  this.lists = [];
+};
+horello.List = function(id, name) {
+  this.id = id;
+  this.name = name;
+  this.cards = [];
+};
+horello.Card = function(id, title, desc, listId) {
+  this.id = id;
+  this.listId = listId;
+  this.title = title;
+  this.desc = desc;
+};
+
+///////////////////// STATIC OBJECT CREATORS /////////////////////
+// These transfer Data from api to  actual objects using constructors.
+// TODO: STUDENTS SHOULD IMPLEMENT THESE
+
+horello.Board.boardFromJSON = function(data) {
+  return new horello.Board(data.id);
+};
+horello.List.fromJSON = function(data) {
+  var list = new horello.List(data.id, data.name);
+  board.lists.push(list);
+  list.loadCards();
+};
+horello.Card.fromJSON = function(data) {
+  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
+  return card;
+};
 
 /////////////////////////////////////////////////
 ///////////////////// BOARD /////////////////////
 /////////////////////////////////////////////////
 
-horello.Board = function (id) {
-  // added id. (trello one, not the weird one)
-
-  this.id = id;
-  this.lists = [];
-};
-
-// STATIC METHOD YO! to generate a Board instance from jsonData
-horello.Board.boardFromJSON = function(data) {
-  return new horello.Board(data.id);
-};
-
 horello.Board.prototype = {
   getId: function() {
     return this.id;
   },
-
-
   loadData: function() {
     // This is the calling point from index.js.
     // Brings in an array of lists.
@@ -98,20 +118,6 @@ horello.Board.prototype = {
 /////////////////////////////////////////////////
 ///////////////////// LIST /////////////////////
 /////////////////////////////////////////////////
-
-horello.List = function(id, name) {
-  this.id = id;
-  this.name = name;
-  this.cards = [];
-};
-
-// STATIC METHOD YO! to generate a List instance from jsonData
-horello.List.fromJSON = function(data) {
-  // Transfers an object that comes from the api to a JSON object.
-  var list = new horello.List(data.id, data.name);
-  board.lists.push(list);
-  list.loadCards();
-};
 
 horello.List.prototype = {
   getId: function() {
@@ -232,21 +238,6 @@ horello.List.prototype = {
 /////////////////////////////////////////////////
 ///////////////////// CARD /////////////////////
 /////////////////////////////////////////////////
-
-
-horello.Card = function(id, title, desc, listId) {
-  this.id = id;
-  this.listId = listId;
-  this.title = title;
-  this.desc = desc;
-};
-
-// STATIC METHOD YO! to generate a Card instance from jsonData
-horello.Card.fromJSON = function(data) {
-  // YOUR CODE HERE
-  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
-  return card;
-};
 
 horello.Card.prototype = {
   getId: function() {

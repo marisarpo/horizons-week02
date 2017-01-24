@@ -26,14 +26,13 @@ horello.Card = function(id, title, desc, listId) {
 horello.Board.boardFromJSON = function(data) {
   return new horello.Board(data.id);
 };
-horello.List.fromJSON = function(data) {
-  var list = new horello.List(data.id, data.name);
-  board.lists.push(list);
-  list.loadCards();
+horello.List.listFromJSON = function(data) {
+  return new horello.List(data.id, data.name);
+  //board.lists.push(list);
+  //list.loadCards();
 };
-horello.Card.fromJSON = function(data) {
-  var card = new horello.Card(data.id, data.name, data.desc, data.idList);
-  return card;
+horello.Card.cardFromJSON = function(data) {
+  return new horello.Card(data.id, data.name, data.desc, data.idList);
 };
 
 /////////////////////////////////////////////////
@@ -48,7 +47,7 @@ horello.Board.prototype = {
     // This is the calling point from index.js.
     // Brings in an array of lists.
     // Clears board's list array.
-    // CALLS horello.List.fromJSON(data2); This creates a LIST object from every
+    // CALLS horello.List.listFromJSON(data2); This creates a LIST object from every
     // element in the array, pushes it into the board's list array. and:
     //loadsData -> loadsCards -> Mounts the board
     this.lists = [];
@@ -60,7 +59,9 @@ horello.Board.prototype = {
       success: function (data) {
         console.log("Successfully loaded lists for board " + this.getId());
         data.forEach(function (data2) {
-          horello.List.fromJSON(data2);
+          var list = horello.List.listFromJSON(data2);
+          board.lists.push(list);
+          list.loadCards();
         });
       }.bind(this),
       error: function (err) {
@@ -135,7 +136,7 @@ horello.List.prototype = {
       },
       success: function (data2) {
         console.log("Successfully loaded cards for list " + this.getId());
-        this.cards = data2.map(horello.Card.fromJSON);
+        this.cards = data2.map(horello.Card.cardFromJSON);
         // Re-render.
         horello.mount(board);
       }.bind(this),

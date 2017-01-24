@@ -12,5 +12,5 @@ challenge is to do the same thing using Bootstrap. To recap:
   one below on its own line.
 - On small displays (< 650px width), the three should stack.
 
-http://codepen.io/lockehart/pen/PzPzrj
+http://codepen.io/moose-horizons/pen/wgeEMX
 

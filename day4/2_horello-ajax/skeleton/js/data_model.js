@@ -23,6 +23,40 @@ horello.Board.prototype = {
     return this.id;
   },
 
+
+  loadData: function() {
+    // This is the calling point from index.js.
+    // Brings in an array of lists.
+    // Clears board's list array.
+    // CALLS horello.List.fromJSON(data2); This creates a LIST object from every
+    // element in the array, pushes it into the board's list array. and:
+    //loadsData -> loadsCards -> Mounts the board
+    this.lists = [];
+    $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
+      data: {
+        key: horello.apiKey,
+        token: horello.apiToken
+      },
+      success: function (data) {
+        console.log("Successfully loaded lists for board " + this.getId());
+        data.forEach(function (data2) {
+          horello.List.fromJSON(data2);
+        });
+      }.bind(this),
+      error: function (err) {
+        console.error("Error loading lists for board " + this.getId() + ": " + JSON.stringify(err));
+      }.bind(this)
+    }
+  );
+},
+  render: function() {
+    var wrapper = $('<div id="board" class="board"></div>');
+    wrapper.html(this.lists.reduce(function(prev, cur) {
+      return prev + cur.render();
+    }, ""));
+    return wrapper;
+  },
+
   addList: function(listName) {
     // YOUR CODE HERE
     //THIS SHOULD POST TO TRELLO /lists
@@ -49,7 +83,7 @@ horello.Board.prototype = {
   }
   );
   */
-},
+}
 
 // DELETE THIS > LOOKS LIKE THIS ISNT USED
 // getList: function(listId) {
@@ -58,44 +92,6 @@ horello.Board.prototype = {
 //     return (c.getId() == listId);
 //   });
 // },
-
-render: function() {
-  var wrapper = $('<div id="board" class="board"></div>');
-  wrapper.html(this.lists.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-  return wrapper;
-},
-
-loadData: function() {
-  // This is the calling point from index.js.
-  // Brings in an array of lists.
-
-  // Clears board's list array.
-  // CALLS horello.List.fromJSON(data2); This creates a LIST object from every
-  // element in the array, pushes it into the board's list array. and:
-
-  //loadsData -> loadsCards -> Mounts the board
-
-  this.lists = [];
-
-  $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
-    data: {
-      key: horello.apiKey,
-      token: horello.apiToken
-    },
-    success: function (data) {
-      console.log("Successfully loaded lists for board " + this.getId());
-      data.forEach(function (data2) {
-        horello.List.fromJSON(data2);
-      });
-    }.bind(this),
-    error: function (err) {
-      console.error("Error loading lists for board " + this.getId() + ": " + JSON.stringify(err));
-    }.bind(this)
-  }
-);
-}
 };
 
 

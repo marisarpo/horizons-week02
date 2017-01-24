@@ -1,0 +1,39 @@
+#navcontainer ul
+{
+  margin: 15px;
+  padding: 0;
+  list-style-type: none;
+}
+
+#navcontainer ul li {
+  display: inline;
+}
+
+#navcontainer ul li a {
+  text-decoration: none;
+  padding: .3em 1em;
+  color: #00008B;
+  background-color: #fff;
+}
+
+#navcontainer ul li a:hover{
+  color: #00008B;
+  background-color: #fff;
+}
+
+.kickimage {
+
+}
+
+.left{
+  float: left;
+  padding-top: 1.0em;
+}
+
+.right{
+
+  float: right;
+  padding-bottom: 9em;
+  padding-right: 10em;
+
+}

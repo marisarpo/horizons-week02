@@ -1,7 +1,10 @@
 .background-light-blue {
+  background-color: #e4f0f6;
 }
 
 .layout-grid-frame {
+  max-width: 890px;
+  margin: 0 auto;
 }
 
 .layout-callout-right {
@@ -11,15 +14,27 @@
 }
 
 .layout-twothirds-left {
+
 }
 
 .app-store-link {
+
 }
 
 .app-store-link img {
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1 0 0;
 }
 
 .outline-link {
+
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: 0.7em 0.1em;
+  margin: .4em 0 0;
+  display: inline-block;
+
 }
 
 a {

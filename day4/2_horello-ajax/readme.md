@@ -25,7 +25,7 @@
 
 
 
-
+why does board loadListData? instead of lists loading their own data? 
 
 
 

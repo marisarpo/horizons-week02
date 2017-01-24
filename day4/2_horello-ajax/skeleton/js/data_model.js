@@ -38,14 +38,14 @@ horello.Card.cardFromJSON = function(data) {
 /////////////////////////////////////////////////
 
 horello.Board.prototype = {
-  loadData: function() {
+  loadListData: function() {
     // This is the calling point from index.js.
     // Brings in an array of lists.
     // Clears board's list array.
     // CALLS horello.List.listFromJSON(data2); This creates a LIST object from every
     // element in the array, pushes it into the board's list array. and:
     //loadsData -> loadsCards -> Mounts the board
-    this.lists = [];
+
     $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
       data: {
         key: horello.apiKey,
@@ -53,11 +53,12 @@ horello.Board.prototype = {
       },
       success: function (data) {
         console.log("Successfully loaded lists for board " + this.id);
-        data.forEach(function (data2) {
-          var list = horello.List.listFromJSON(data2);
-          board.lists.push(list);
+        this.lists = data.map(function(listData){
+          var list = horello.List.listFromJSON (listData)
           list.loadCards();
+          return list;
         });
+
       }.bind(this),
       error: function (err) {
         console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
@@ -70,7 +71,7 @@ horello.Board.prototype = {
 addList: function(listName) {
   // YOUR CODE HERE
   //THIS SHOULD POST TO TRELLO /lists
-  // calls   this.loadData(); on success, the one below that in time
+  // calls   this.loadListData(); on success, the one below that in time
   //         loadsData -> loadsCards -> Mounts the board
 
   /*
@@ -85,7 +86,7 @@ addList: function(listName) {
 },
 success: function (data) {
 console.log("Successfully created list with ID " + data.id + " for board " + this.id);
-this.loadData();
+this.loadListData();
 }.bind(this),
 error: function (err) {
 console.error("Error creating list for board " + this.id + ": " + JSON.stringify(err));

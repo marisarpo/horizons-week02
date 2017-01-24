@@ -81,123 +81,74 @@ horello.List.prototype.loadCards= function() {
   });
 }
 
+///////////////////// ADD CARD AND ADD LIST /////////////////////
 
-
-
-/////////////////////////////////////////////////
-///////////////////// BOARD /////////////////////
-/////////////////////////////////////////////////
-
-
+horello.List.prototype.addCard= function(name, description) {
+  // THIS WORKS!
+  // First create the data in the API? WHAT?
+  // on success call       this.loadCards();
+  $.ajax(horello.apiUrl + "/cards", {
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: name,
+      description: description,
+      idList: this.id
+    },
+    success: function (data) {
+      // Success! Now we have an ID and we can create it locally. Or,
+      // we can reload the data from the API.
+      console.log("Successfully created new card: " + JSON.stringify(data));
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating new card: " + JSON.stringify(err));
+    }
+  });
+}
 
 horello.Board.prototype.addList = function(listName) {
-  // YOUR CODE HERE
+  // THIS DOESNT WORK
   //THIS SHOULD POST TO TRELLO /lists
   // calls   this.loadListData(); on success, the one below that in time
   //         loadsData -> loadsCards -> Mounts the board
-
-  /*
+  console.log("Addlist")
   $.ajax(horello.apiUrl + "/lists", {
-  method: "POST",
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: listName,
+      idBoard: this.id,
+      pos: 'bottom'
+    },
+    success: function (data) {
+      console.log("Successfully created list with ID " + data.id + " for board " + this.id);
+      this.loadListData();
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating list for board " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+}
+
+
+
+///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
+
+horello.Card.prototype.setTitle= function(titleStr) {
+  // YOUR CODE TO PUT TO TRELLO and UPDATE CARDS
+  /*
+  this.title = titleStr;
+  $.ajax(horello.apiUrl + "/cards/" + this.id, {
+  method: "PUT",
   data: {
   key: horello.apiKey,
   token: horello.apiToken,
-  name: listName,
-  idBoard: this.id,
-  pos: 'bottom'
+  name: titleStr
 },
 success: function (data) {
-console.log("Successfully created list with ID " + data.id + " for board " + this.id);
-this.loadListData();
-}.bind(this),
-error: function (err) {
-console.error("Error creating list for board " + this.id + ": " + JSON.stringify(err));
-}.bind(this)
-}
-);
-*/
-}
-
-// DELETE THIS > LOOKS LIKE THIS ISNT USED
-// getList: function(listId) {
-//   // DO WE NEED THIS? PROBABLY BEING GET AT  LOADDATA
-//   return this.lists.find(function(c) {
-//     return (c.id == listId);
-//   });
-// },
-////////CLOSE BOARD STUFF
-
-
-/////////////////////////////////////////////////
-///////////////////// LIST /////////////////////
-/////////////////////////////////////////////////
-
-
-
-  horello.List.prototype.addCard= function(name, description) {
-    // YOUR CODE HERE TO POST TO TRELLO
-    // First create the data in the API? WHAT?
-    // on success call       this.loadCards();
-    /*
-    $.ajax(horello.apiUrl + "/cards", {
-    method: "POST",
-    data: {
-    key: horello.apiKey,
-    token: horello.apiToken,
-    name: name,
-    description: description,
-    idList: this.id
-  },
-
-  success: function (data) {
-  // Success! Now we have an ID and we can create it locally. Or,
-  // we can reload the data from the API.
-  console.log("Successfully created new card: " + JSON.stringify(data));
-}.bind(this),
-error: function (err) {
-console.error("Error creating new card: " + JSON.stringify(err));
-}
-});
-*/
-}
-
-horello.List.prototype.getCard= function(cardId) {
-  /*
-  // WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
-  var card = this.cards.filter(function(c) {
-  return (c.id == cardId);
-});
-if (card.length > 0) {
-return card[0];
-}
-return null;
-*/
-}
-
-
-
-
-
-
-/////////////////////////////////////////////////
-///////////////////// CARD /////////////////////
-/////////////////////////////////////////////////
-
-horello.Card.prototype = {
-
-  setTitle: function(titleStr) {
-    // YOUR CODE TO PUT TO TRELLO and UPDATE CARDS
-    /*
-    this.title = titleStr;
-    $.ajax(horello.apiUrl + "/cards/" + this.id, {
-    method: "PUT",
-    data: {
-    key: horello.apiKey,
-    token: horello.apiToken,
-    name: titleStr
-  },
-  success: function (data) {
-  console.log("Successfully updated title of card " + this.id);
+console.log("Successfully updated title of card " + this.id);
 }.bind(this),
 error: function (err) {
 console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
@@ -207,7 +158,7 @@ console.error("Error updating title of card " + this.id + ": " + JSON.stringify(
 },
 
 
-setDescription: function(description) {
+horello.Card.prototype.setDescription=function(description) {
   // YOUR CODE TO PUT TO TRELLO, probs when updating a description??
   /*
   this.description = description;
@@ -228,15 +179,12 @@ console.error("Error updating description of card " + this.id + ": " + JSON.stri
 */
 }
 
-};
+
 
 
 
 
 ///////////////////// RENDERERS /////////////////////
-
-
-
 
 horello.Board.prototype.render = function() {
   var wrapper = $('<div id="board" class="board"></div>');
@@ -249,7 +197,6 @@ horello.Board.prototype.render = function() {
 horello.List.prototype.render = function() {
   // Build wrappers
   var wrapper = $('<div></div>');
-
   var listContainer = $('<div class="list-container"></div>');
   var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
   var listHeader = $('<div class="list-header"></div>');
@@ -281,10 +228,8 @@ horello.List.prototype.render = function() {
   listBody.html(this.cards.reduce(function(prev, cur) {
     return prev + cur.render();
   }, ""));
-
   return wrapper.html();
 };
-
 
 horello.Card.prototype.render = function() {
   // build wrappers
@@ -303,3 +248,25 @@ horello.Card.prototype.render = function() {
 
   return wrapper.html();
 };
+
+
+///////////////////// GET CARD AND LIST /////////////////////
+
+horello.List.prototype.getCard= function(cardId) {
+  // TODO: WHAT DOESTHIS DO???
+  // ANY WAY OF IMPROVING??
+  var card = this.cards.filter(function(c) {
+    return (c.id == cardId);
+  });
+  if (card.length > 0) {
+    return card[0];
+  }  return null;
+}
+
+horello.Board.prototype.getList = function(listId) {
+  // TODO: WHAT DOESTHIS DO???
+  // ANY WAY OF IMPROVING??
+  return this.lists.find(function(c) {
+    return (c.id == listId);
+  });
+}

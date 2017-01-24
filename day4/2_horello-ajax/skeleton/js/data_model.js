@@ -14,8 +14,7 @@ horello.Board = function (id) {
 };
 
 // STATIC METHOD YO! to generate a Board instance from jsonData
-horello.Board.fromJSON = function(data) {
-  // YOUR CODE HERE
+horello.Board.boardFromJSON = function(data) {
   return new horello.Board(data.id);
 };
 

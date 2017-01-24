@@ -54,11 +54,11 @@ horello.Board.prototype = {
       success: function (data) {
         console.log("Successfully loaded lists for board " + this.id);
         this.lists = data.map(function(listData){
-          var list = horello.List.listFromJSON (listData)
-          list.loadCards();
-          return list;
+          return horello.List.listFromJSON(listData)
         });
-
+        this.lists.forEach(function (list) {
+          list.loadCards();
+        });
       }.bind(this),
       error: function (err) {
         console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));

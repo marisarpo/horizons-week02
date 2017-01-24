@@ -17,15 +17,14 @@
   <script src="js/data_model.js"></script>
   <script src="js/events.js"></script>
   <script>
+
     // jQuery document ready shorthand.
     $(function () {
-      var data = { id: "588577bb8423080722cabe8c"} // THIS CHANGE
+      var data = { id: horello.boardId} // THIS CHANGE
       var board = horello.Board.boardFromJSON(data);
       //horello.mount(board);
       //horello.mountStatic(board);
-
       board.loadData(); //This Remove
-
       window.board = board;
     });
   </script>

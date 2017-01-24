@@ -28,8 +28,6 @@ horello.Board.boardFromJSON = function(data) {
 };
 horello.List.listFromJSON = function(data) {
   return new horello.List(data.id, data.name);
-  //board.lists.push(list);
-  //list.loadCards();
 };
 horello.Card.cardFromJSON = function(data) {
   return new horello.Card(data.id, data.name, data.desc, data.idList);
@@ -40,9 +38,6 @@ horello.Card.cardFromJSON = function(data) {
 /////////////////////////////////////////////////
 
 horello.Board.prototype = {
-  getId: function() {
-    return this.id;
-  },
   loadData: function() {
     // This is the calling point from index.js.
     // Brings in an array of lists.
@@ -51,13 +46,13 @@ horello.Board.prototype = {
     // element in the array, pushes it into the board's list array. and:
     //loadsData -> loadsCards -> Mounts the board
     this.lists = [];
-    $.ajax(horello.apiUrl + "/boards/" + this.getId() + "/lists", {
+    $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
       data: {
         key: horello.apiKey,
         token: horello.apiToken
       },
       success: function (data) {
-        console.log("Successfully loaded lists for board " + this.getId());
+        console.log("Successfully loaded lists for board " + this.id);
         data.forEach(function (data2) {
           var list = horello.List.listFromJSON(data2);
           board.lists.push(list);
@@ -65,7 +60,7 @@ horello.Board.prototype = {
         });
       }.bind(this),
       error: function (err) {
-        console.error("Error loading lists for board " + this.getId() + ": " + JSON.stringify(err));
+        console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
       }.bind(this)
     }
   );
@@ -89,11 +84,11 @@ addList: function(listName) {
   pos: 'bottom'
 },
 success: function (data) {
-console.log("Successfully created list with ID " + data.id + " for board " + this.getId());
+console.log("Successfully created list with ID " + data.id + " for board " + this.id);
 this.loadData();
 }.bind(this),
 error: function (err) {
-console.error("Error creating list for board " + this.getId() + ": " + JSON.stringify(err));
+console.error("Error creating list for board " + this.id + ": " + JSON.stringify(err));
 }.bind(this)
 }
 );
@@ -104,7 +99,7 @@ console.error("Error creating list for board " + this.getId() + ": " + JSON.stri
 // getList: function(listId) {
 //   // DO WE NEED THIS? PROBABLY BEING GET AT  LOADDATA
 //   return this.lists.find(function(c) {
-//     return (c.getId() == listId);
+//     return (c.id == listId);
 //   });
 // },
 };
@@ -115,33 +110,22 @@ console.error("Error creating list for board " + this.getId() + ": " + JSON.stri
 /////////////////////////////////////////////////
 
 horello.List.prototype = {
-  getId: function() {
-    return this.id;
-  },
-
-  getName: function() {
-    return this.name;
-  },
-
-  setName: function(name) {
-    this.name = name;
-  },
   loadCards: function() {
     // YOUR CODE TO IMPORT CARDS
     // is being called once for every board
-    $.ajax(horello.apiUrl + "/lists/" + this.getId() + "/cards", {
+    $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
       data: {
         key: horello.apiKey,
         token: horello.apiToken
       },
       success: function (data2) {
-        console.log("Successfully loaded cards for list " + this.getId());
+        console.log("Successfully loaded cards for list " + this.id);
         this.cards = data2.map(horello.Card.cardFromJSON);
         // Re-render.
         horello.mount(board);
       }.bind(this),
       error: function (err) {
-        console.error("Error loading cards for list " + data.getId() + ": " + JSON.stringify(err));
+        console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
       }
     });
   },
@@ -158,7 +142,7 @@ horello.List.prototype = {
     token: horello.apiToken,
     name: name,
     desc: desc,
-    idList: this.getId()
+    idList: this.id
   },
 
   success: function (data) {
@@ -177,7 +161,7 @@ getCard: function(cardId) {
   /*
   // WHAT IS THIS?? GET FROM WHERE? WHY DO WE need this.
   var card = this.cards.filter(function(c) {
-  return (c.getId() == cardId);
+  return (c.id == cardId);
 });
 if (card.length > 0) {
 return card[0];
@@ -196,19 +180,12 @@ return null;
 /////////////////////////////////////////////////
 
 horello.Card.prototype = {
-  getId: function() {
-    return this.id;
-  },
-
-  getTitle: function() {
-    return this.title;
-  },
 
   setTitle: function(titleStr) {
     // YOUR CODE TO PUT TO TRELLO and UPDATE CARDS
     /*
     this.title = titleStr;
-    $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+    $.ajax(horello.apiUrl + "/cards/" + this.id, {
     method: "PUT",
     data: {
     key: horello.apiKey,
@@ -216,10 +193,10 @@ horello.Card.prototype = {
     name: titleStr
   },
   success: function (data) {
-  console.log("Successfully updated title of card " + this.getId());
+  console.log("Successfully updated title of card " + this.id);
 }.bind(this),
 error: function (err) {
-console.error("Error updating title of card " + this.getId() + ": " + JSON.stringify(err));
+console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
 }.bind(this)
 });
 */
@@ -233,7 +210,7 @@ setDescription: function(desc) {
   // YOUR CODE TO PUT TO TRELLO, probs when updating a description??
   /*
   this.desc = desc;
-  $.ajax(horello.apiUrl + "/cards/" + this.getId(), {
+  $.ajax(horello.apiUrl + "/cards/" + this.id, {
   method: "PUT",
   data: {
   key: horello.apiKey,
@@ -241,10 +218,10 @@ setDescription: function(desc) {
   desc: desc
 },
 success: function (data) {
-console.log("Successfully updated desc of card " + this.getId());
+console.log("Successfully updated desc of card " + this.id);
 }.bind(this),
 error: function (err) {
-console.error("Error updating desc of card " + this.getId() + ": " + JSON.stringify(err));
+console.error("Error updating desc of card " + this.id + ": " + JSON.stringify(err));
 }.bind(this)
 });
 */

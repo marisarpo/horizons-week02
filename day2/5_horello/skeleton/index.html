@@ -20,6 +20,39 @@
 </header>
 
 <!-- PHASE 5. Modal -->
+<!-- Button trigger modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form>
+            <input type="list" class="form-control" id="titlename" placeholder="Name">
+        </form>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-title" id="myModalLabel">Description</h4>
+        <!-- <form class="form-description">
+            <input type="list" class="form-control" id="Description" placeholder="Name">
+        </form> -->
+           <textarea class="form-control" id="Description" placeholder="Description"></textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>
+
+
+<!-- end phase 5 -->
+
 
 <div class="board">
     <div class="list-container">
@@ -28,23 +61,127 @@
                 <span class="list-title">House List</span>
             </div>
             <div class="list-cards">
-                <div class="card">
+                <div class="card" data-toggle="modal" data-target="#myModal">
                     <div class="card-body">
                         Today we will #DominateAllTheHouses
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
+                    </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <!-- PHASE 4. Collapse -->
+                <button class="add-card" type="button" data-toggle="collapse" data-target="#addlist1" aria-expanded="false" aria-controls="collapseExample">
+                      Add a card...
+                </button>
+                <div class="collapse" id="addlist1">
+                  <div class="well add-list-form">
+                    <form>
+                      <div>
+                        <input type="list" class="form-control" id="exampleInputEmail1" placeholder="Card Name">
+                      </div>
+                      <button type="submit" class="btn btn-default">Submit</button>
+                      <button type="cancel" class="btn btn-default">
+                        <div class="glyphicon glyphicon-remove"></div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Another list -->
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">House List</span>
+            </div>
+            <div class="list-cards">
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHouses Today we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHousesToday we will #DominateAllTheHousesToday we will #DominateAllTheHouses
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
+                    </div>
+                </div>
+            </div>
+            <div class="list-cards">
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                        #buttface
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
                     </div>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
 
+
                 <!-- PHASE 4. Collapse -->
+
+                <button class="add-card" data-toggle="collapse" data-target="#addlist2" >
+                      Add a card...
+                </button>
+                <div class="collapse" id="addlist2">
+                  <div class="well add-list-form">
+                    <form>
+                      <div>
+                        <input type="list" class="form-control" id="exampleInputEmail1" placeholder="Card Name">
+                      </div>
+                      <button type="submit" class="">Submit</button>
+                      <button type="cancel" class="">
+                        <div class="glyphicon glyphicon-remove"></div>
+                      </button>
+                    </form>
+                  </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- PHASE 1. Add list button -->
+    <div class = "list-container">
+      <div class = "add-list-container ">
+          <button class="add-list" type="button" data-toggle="collapse" data-target="#addlist3" aria-expanded="false" aria-controls="collapseExample">
+                Add a list...
+          </button>
+          <div class="collapse" id="addlist3">
+            <div class="well add-list-form">
+              <form>
+                <div>
+                  <input type="list" class="form-control" id="exampleInputEmail1" placeholder="List Name">
+                </div>
+                <button type="submit" onclick="none" class="btn btn-default">Submit</button>
+                <button type="cancel" class="btn btn-default">
+                  <div class="glyphicon glyphicon-remove"></div>
+                </button>
+              </form>
+            </div>
+          </div>
 
-
+      </div>
+    </div>
 </div>
 
 </body>

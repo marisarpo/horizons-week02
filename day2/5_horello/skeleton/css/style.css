@@ -3,15 +3,16 @@
 body {
     line-height: 18px;
     height: 100vh;
-
-    /** PHASE 1 CSS here */
+    background-color: rgb(0,121,191);
+    font: sans-serif;
 }
 
 header {
+    background: rgba(0,0,0,.15);
+    padding: 5px;
+    height: 40px;
     position: relative;
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
 }
 
 .header-logo {
@@ -50,14 +51,27 @@ a {
 
 .add-list-container {
     padding: 5px;
+    line-height: 18px;
+    font-size: 14px;
+
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+  background-color: rgba(0,0,0,.12);
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px;
+  width: 280px;
+  padding: 7px;
+  height: auto;
+  text-align: left;
+
 }
 
 .add-list:hover {
-    /** PHASE 1 CSS here */
+  background: rgba(0,0,0,.2);
+
 }
 
 .add-list-form {
@@ -65,6 +79,7 @@ a {
 }
 
 .board {
+    display: flex;
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
@@ -83,19 +98,26 @@ a {
 .list {
     box-sizing: border-box;
     max-height: 100%;
+    padding: 0.5em;
+    margin: 5px 5px;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
+    flex-direction: column;
+    display: flex;
 
-    /** PHASE 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
-
-    /** PHASE 2 CSS here */
+    margin: 0.5em 0;
+    color: black;
+    font-weight: 700;
 }
 
 .list-footer {
-    /** PHASE 2 CSS here */
+  font-weight: 500;
 }
 
 .list-title {
@@ -103,11 +125,25 @@ a {
 }
 
 .add-card {
-    /** PHASE 2 CSS here */
+  height: 40px;
+  border-radius: 4px;
+  text-align: left;
+  background: rgba(16,16,16, 0.15);
+  color: #333;
+  margin: 3px 0;
+  width: 100%;
+}
+
+.add-card .button{
+  text-transform: none;
+  overflow: visible;
+  margin: 0;
+  padding: 1px 6px;
+  color: inherit;
 }
 
 .add-card:hover {
-    /** PHASE 2 CSS here */
+  background: rgba(96, 96, 96, 0.15);
 }
 
 
@@ -120,11 +156,28 @@ a {
 }
 
 .card {
-    /** PHASE 3 CSS here */
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0.5em;
+  background: white;
+  border-radius: 3px;
 }
 
 .card-body {
-    /** PHASE 3 CSS here */
+  display: block;
+  padding-top: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-bottom: 2em;
+  font-family: Cabin, Arial, default sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  position: relative;
+  transition: 0.5s, all;
+  max-height: 200px;
+  overflow: auto;;
+  overflow-x: hidden;
 }
 
 .card-more {

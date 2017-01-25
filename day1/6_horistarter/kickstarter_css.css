@@ -1,0 +1,94 @@
+body {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/*The part above specifies the body of the design. and the what the text, margin, and padding should be*/
+
+.nav-container {
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.nav-container ul li {
+  display: inline;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 14.5px;
+}
+
+.nav-container ul li:hover {
+  border-bottom: solid	#2BDE73 4px;
+  padding-bottom: 23px;
+}
+
+.nav-container .leftnav {
+  width: 30%;
+  display: inline-block;
+  height: 60px;
+  text-align: left;
+  vertical-align: middle;
+  margin-top: 7px;
+}
+
+.nav-container .rightnav {
+  width: 30%;
+  display: inline-block;
+  height: 60px;
+  text-align: right;
+  vertical-align: middle;
+}
+
+#search-icon img {
+  display: inline-block;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.nav-container .centernav {
+  width: 38%;
+  text-align: center;
+  display: inline-block;
+  height: 60px;
+  vertical-align: middle;
+  margin-top: 7px;
+}
+
+.hero {
+  height: 700px;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+}
+
+button {
+  height: 3em;
+  width: 10%;
+  background: #2BDE73;
+  border-radius: .3em;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1em;
+  position: relative;
+  top: -60%;
+}
+
+button:hover {
+  background: #1aa853;
+}
+
+h2 {
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-bottom: 60%;
+  top: -80%;
+
+}

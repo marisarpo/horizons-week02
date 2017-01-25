@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--This part is for setting the stage of what will be in the code. For example the top link is too the CSS file so that CSS
+code can augment the HTML that is already there. -->
+    <meta charset="UTF-8">
+    <title>Horistarter</title>
+    <link rel="stylesheet" href="kickstarter_css.css" type="text/css">
+    <link rel="shortcut icon"  href="horistarter.png" type="image/png">
+</head>
+<body>
+  <div class="nav-container">
+    <!-- this Div is a body of text essentially that represent the top bar on the kickstarter page.   -->
+    <ul>
+      <span class="leftnav">
+        <!--this class will represent the left bar and the Li's below is the list of stuff that will be there. It will also be
+      augmented by CSS in the future.  -->
+        <li>Explore</li>
+        <li>Start a project</li>
+        <li>About us</li>
+      </span>
+      <!-- the two classes below this are the other two areas of the top bar. The center is an image because it is the kickstarter logo.
+    the one below that, the rightnav, is a list of things and one of them is an image. An id was used on the image because it is
+  within a class.  -->
+      <span class="centernav"><img src="https://www.kickstarter.com/download/kickstarter-logo-light.png" alt="Kickstarter Logo" height="17.5px"></span>
+      <span class="rightnav">
+        <li id="search-icon"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/744183-200.png" alt="Search Icon"></li>
+        <li>Log in</li>
+        <li>Sign up</li>
+      </span>
+    </ul>
+  </div>
+  <div class="hero">
+    <img src="C:\Users\jzinger1\Desktop\horizons\week02\day1\6_horistarter\skeleton\3oiymgdkj6k-dariusz-sankowski.png" alt="Startup">
+    <!-- Ask what the point of the alt is -->
+    <!-- The statment below creates a button within an "A" type which essentially makes a link out of a button
+  and the image above this is the image used in the background of the general area.  -->
+    <a href="https://www.kickstarter.com/discover/popular?ref=discovery_overlay" target="_blank"><button type="button">Check them out!</button></a>
+    <h2>Hundreds of amazing projects are being launched on Kickstarter every single day. Our community of supportive backers allow startup dreams to become reality!</h2>
+  </div>
+</body>
+</html>

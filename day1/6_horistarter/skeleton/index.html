@@ -5,6 +5,66 @@
     <title>Horistarter</title>
     <style>
         /* You may choose to write your CSS here... */
+        body {
+          margin: 0 0;
+        }
+        .warning{
+          font-family: "Helvetica", Arial, sans-serif;
+          font-size: 16px;
+          text-align: center;
+          background-color: #fcebae;
+          color: #3a3737;
+          padding: 22px 0;
+          margin: 0 0;
+        }
+        #link{
+          color: #007bff;
+        }
+        #link:hover{
+          text-decoration: underline;
+          color: #3b00ff;
+         }
+        .KickstarterLogo{
+            width: 200px;
+            padding: 20px 50px;
+            float:left;
+        }
+        .unorderedlist{
+            margin: 0;
+        }
+        .buttons{
+            float:left;
+            padding: 20px 38px 24px 15px;
+            list-style:none;
+            font-family: "Helvetica", Arial, sans-serif;
+            font-size: 18px;
+            color: #7f7b7b;
+          }
+        #discover{
+          padding-left: 50px;
+        }
+        #about{
+          padding-right: 52px;
+          border-right: thin solid #d3d3d3;
+        }
+        .search{
+          float:left;
+
+        }
+        .searchbutton{
+          width: 20px;
+          padding: 20px 10px 20px 40px;
+        }
+        #pad {
+          list-style:none;
+          font-family: "Helvetica", Arial, sans-serif;
+          font-size: 18px;
+          color: #7f7b7b;
+          padding: 20px 10px 20px 25px;
+        }
+
+
+
     </style>
     <!--
     Or you can put it in a separate file and include it this way:
@@ -13,5 +73,40 @@
 </head>
 <body>
     <!-- Your HTML goes here. -->
+    <p class="warning" id="first part">
+      We've updated our Privacy Policy - read about
+      all the upcoming changes <a class="warning" id="link">here</a>.
+      By continuing to use Kickstarter on or after June 9, 2016, you're agreeing to
+      the new policy.
+    </p>
+
+    <div class = "top bar" id = "logo">
+      <img src="../img/logo.png" class="KickstarterLogo"/>
+    </div>
+    <div class = "topbar">
+      <ul class = "unorderedlist">
+          <li class = "buttons" id = "discover">
+              <a>Discover</a>
+          </li>
+          <li class = "buttons">
+              <a>Start a project</a>
+          </li>
+          <li class = "buttons" id = "about">
+              <a>About us</a>
+          </li>
+      </ul>
+    </div>
+    <div class = "search" id = "searchimage">
+      <img src="../img/search.png" class="searchbutton"/>
+    </div>
+    <div>
+      <li class = "search" id ="pad">
+        Search Projects
+      </li>
+    </div>
+
+
+
+
 </body>
 </html>

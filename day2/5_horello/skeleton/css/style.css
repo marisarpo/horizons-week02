@@ -1,15 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
 body {
+  display: block;
     line-height: 18px;
     height: 100vh;
-
+    display: block;
     /** PHASE 1 CSS here */
+    background-color: #0079BF;
 }
 
 header {
     position: relative;
     overflow: hidden;
+    padding: 5px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.15);
+
 
     /** PHASE 1 CSS here */
 }
@@ -28,6 +34,7 @@ header {
     opacity: 0.5;
     transition: opacity ease-in 85ms;
 }
+
 
 .header-logo-default {
     background-image: url(../../img/title.png);
@@ -48,12 +55,24 @@ a {
 
 /* BOARD */
 
+/*button {
+  background-color: #0067A3;
+}*/
+
 .add-list-container {
     padding: 5px;
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+  display: flex;
+  background-color: rgba(0,0,0,0.12);
+  border: 0px;
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  
+  width: 280px;
+  padding: 7px;
 }
 
 .add-list:hover {
@@ -69,6 +88,8 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex;
+    align-items: flex-start;
 
     /** PHASE 2 CSS here */
 }
@@ -83,7 +104,13 @@ a {
 .list {
     box-sizing: border-box;
     max-height: 100%;
-
+    background-color: #fff;
+    border-radius: 3px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0.5em;
+    padding: 0.5em;
     /** PHASE 2 CSS here */
 }
 
@@ -100,10 +127,30 @@ a {
 
 .list-title {
     /** PHASE 2 CSS here */
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0.5em;
+    color: black;
+    font-weight: 700;
 }
 
 .add-card {
     /** PHASE 2 CSS here */
+    display: flex;
+    height: 40px;
+    border-radius: 4px;
+    text-align: left;
+    background-color: rgba(16,16,16,0.15);
+    color: #333;
+    margin: 5px 5px;
+    border: 0px;
+    font-weight: bold;
+    width: 270px;
+    padding: 0.5em;
+
+
+
 }
 
 .add-card:hover {

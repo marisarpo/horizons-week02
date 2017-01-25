@@ -8,10 +8,11 @@ html, head, body, h2 {
 body {
     font-family: "Helvetica Neue",Arial,sans-serif;
     color: #4d4d4d;
+
 }
 
 section {
-    padding: 80px 20px;
+    padding: 0px 20px;
     clear: both;
     overflow: hidden;
 }
@@ -19,7 +20,21 @@ section {
 .section-wrapper {
     max-width: 540px;
     margin: 0 auto;
+    padding: 0px 20px;
 }
+
+@media (min-width: 650px) {
+    .section {
+      padding: 40px 20px;
+    }
+}
+
+@media (min-width: 650px) {
+    .section {
+      padding: 80px 20px;
+    }
+}
+
 
 .center-paragraph {
     margin: 1em auto;
@@ -78,6 +93,7 @@ footer li {
 .background-dark-blue {
     color: #fff;
     background-color: #0079bf;
+
 }
 
 .layout-fill-img {

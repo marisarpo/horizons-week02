@@ -11,12 +11,12 @@
 
 
 // method 1: .click();
-// $(function() {
-	// $("button").click(function() {
-	// 	console.log("clicked");
-	// 	$("div").hide("slow");
-	// });
-// });
+$(function() {
+	$("button").click(function() {
+		console.log("clicked");
+		$("div").hide("slow");
+	});
+});
 
 // method2: .on();
 
@@ -34,3 +34,25 @@ $(".close").click(function(){
 // $(document).ready("#close").click(function() {
 //       alert('button clicked');
 // });
+
+
+//exercise 2
+$(function() {
+	$("a").click(function() {
+		console.log("clicked");
+    console.log(this);
+    alert(this);
+    return false;
+	});
+});
+
+//exercise 3
+$(function() {
+	$("a").click(function() {
+		console.log("clicked");
+    console.log(this);
+    alert(this);
+    $(".main-image").attr('src', this);
+    return false;
+	});
+});

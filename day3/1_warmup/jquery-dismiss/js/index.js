@@ -12,20 +12,24 @@
 
 // method 1: .click();
 // $(function() {
-	$("button").click(function() {
-		console.log("clicked");
-		$("div").hide("slow");
-	});
+	// $("button").click(function() {
+	// 	console.log("clicked");
+	// 	$("div").hide("slow");
+	// });
 // });
 
 // method2: .on();
 
-$(document).ready(function() {
-	$(document).on("click", "button", function() {
-		$("div").hide("slow");
-	});
-});
+// $(document).ready(function() {
+// 	$(document).on("click", "button", function() {
+// 		$("div").hide("slow");
+// 	});
+// });
 
+$(".close").click(function(){
+	console.log("clicked");
+	$("div").hide();
+});
 
 // $(document).ready("#close").click(function() {
 //       alert('button clicked');

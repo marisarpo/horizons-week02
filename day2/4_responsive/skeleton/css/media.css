@@ -1,4 +1,20 @@
 /* Your CSS goes here! */
 
 section {
+  padding: 0px 20px;
+  /*@media(min-width: )*/
+  /*<div class="elem col-xs-12 col-sm-6 col-md-4">First</div>*/
+}
+
+@media(min-width: 650px){
+  section{
+    padding: 40px 20px;
+  }
+
+}
+
+@media(min-width: 900px){
+  section{
+    padding: 80px 20px;
+  }
 }

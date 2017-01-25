@@ -3,6 +3,7 @@
 body {
     line-height: 18px;
     height: 100vh;
+    background-color: rgb(0,121,191);
 
     /** PHASE 1 CSS here */
 }
@@ -10,6 +11,11 @@ body {
 header {
     position: relative;
     overflow: hidden;
+    padding: 5px;
+    height: 40px;
+    background-color: rgb(0,103,163);
+
+    /*alpha (opacity) 0.15*/
 
     /** PHASE 1 CSS here */
 }
@@ -49,11 +55,22 @@ a {
 /* BOARD */
 
 .add-list-container {
-    padding: 5px;
+    /*padding: 5px;*/
+    vertical-align: top;
 }
 
 .add-list {
     /** PHASE 1 CSS here */
+    background-color: rgb(0,97,153);
+    color: #fff;
+    min-height: 30px;
+    border-radius: 3px;
+    border-color: rgb(38,132,222);
+    margin: 5px 5px;
+    width: 280px;
+    padding: 7px;
+
+
 }
 
 .add-list:hover {
@@ -69,6 +86,7 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    display: flex;
 
     /** PHASE 2 CSS here */
 }
@@ -78,11 +96,24 @@ a {
 
 .list-container {
     height: 100%;
+    display: block;
+    /*display:flex;*/
+
 }
 
 .list {
     box-sizing: border-box;
     max-height: 100%;
+    padding: 0.5em;
+    margin: 5px 5px;
+    border-radius: 3px;
+    width: 270px;
+    background-color: #e2e4e6;
+    display: inline-block;
+    vertical-align: top;
+
+    /*flex-direction: row;*/
+
 
     /** PHASE 2 CSS here */
 }
@@ -90,11 +121,20 @@ a {
 .list-header {
     display: block;
     position: relative;
+    margin-bottom: .5em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    color: black;
+    font-weight: 700;
 
     /** PHASE 2 CSS here */
 }
 
 .list-footer {
+  font-weight: 500;
+  /*display: flex;*/
+
     /** PHASE 2 CSS here */
 }
 
@@ -104,10 +144,40 @@ a {
 
 .add-card {
     /** PHASE 2 CSS here */
+    height: 40px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: left;
+    background-color: rgba(16, 16, 16, 0.15);
+    color: #333;
+    margin: 3px 0px;
+    border: 0;
+    flex:1;
+    font-weight: 400;
+
+
+}
+
+.well{
+  margin:0;
+  padding:5px
+}
+
+.form-control{
+  margin-bottom: 5px;
+  font-weight: 400;
 }
 
 .add-card:hover {
     /** PHASE 2 CSS here */
+    background-color: rgba(96, 96, 96,0.15);
+}
+
+.add-list:hover {
+    /** PHASE 2 CSS here */
+    /*background-color: rgb(0, 97, 153);*/
+    background-color: rgb(3,62,96);
+
 }
 
 
@@ -116,19 +186,50 @@ a {
 .list-cards {
     min-height: 0;
 
+
     /** PHASE 3 CSS here */
 }
 
 .card {
     /** PHASE 3 CSS here */
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0.5em;
+    background-color: white;
+    border-radius: 3px;
 }
 
 .card-body {
     /** PHASE 3 CSS here */
+    padding-top: .5em;
+    padding-left: .5em;
+    padding-right: .5em;
+    padding-bottom: 0.5em;
+    font-family: "Cabin", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+
 }
+
 
 .card-more {
     /** PHASE 3 CSS here */
+    padding-left: 0.5em;
+    padding-bottom: 0.5em;
 }
+
+h5{
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#modal-booty{
+  min-height:114px;
+  vertical-align:top;
+}
+
+
 
 /** PHASE 4 CSS here: add card form */

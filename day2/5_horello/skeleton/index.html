@@ -25,26 +25,174 @@
     <div class="list-container">
         <div class="list">
             <div class="list-header">
-                <span class="list-title">House List</span>
+                <span class="list-title">Horizons List</span>
             </div>
             <div class="list-cards">
-                <div class="card">
+                <div class="card" data-toggle="modal" data-target="#myModal">
                     <div class="card-body">
-                        Today we will #DominateAllTheHouses
+                        Today we will #DominateAllTheHorizons
                     </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Darwish the fish.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Irvin the Pervin.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+
+                  <div class="card-body">
+                      Yasmeen the Queen.
+                  </div>
+
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
+                  <button class = "add-card" data-toggle="collapse" href="#addCard" aria-expanded="false"> Add a card... </button>
+                  <div class="collapse" id="addCard" aria-expanded="true">
+                    <div class="well">
+                      <form>
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class="btn btn-default">Save </button>
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
 
                 <!-- PHASE 4. Collapse -->
             </div>
         </div>
+
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Horizons List 2</span>
+            </div>
+            <div class="list-cards">
+              <div class="card" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                        Sungsu the poo.
+                    </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Holly the folly.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Blaise the maze.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+
+                  <div class="card-body">
+                      Don the con.
+                  </div>
+
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <!-- PHASE 2. Add card button -->
+                <button class = "add-card" data-toggle="collapse" href="#addCard1" aria-expanded="false"> Add a card... </button>
+                  <div class="collapse" id="addCard1" aria-expanded="false">
+                    <div class="well">
+                      <form>
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class="btn btn-default">Save </button>
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+
+                <!-- PHASE 4. Collapse -->
+            </div>
+        </div>
+
     </div>
 
     <!-- PHASE 1. Add list button -->
 
+    <div class = "add-list-container">
+      <!-- <div class = "add-list"> Add a list... </div> -->
+      <div class = "add-list" data-toggle="collapse" href="#addList" aria-expanded="false"> Add a list... </div>
+      <div class="collapse" id="addList" aria-expanded="true">
+        <div class="well">
+          <form>
+            <input type="text" class="form-control" placeholder="List name">
+            <button type="button" class="btn btn-default">Save </button>
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
 
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form>
+          <input type="text" class="form-control" placeholder="List name">
+        </form>
+
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" id="myModalLabel">Description</h5>
+        <textarea class="form-control" rows="5"> Card body goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>

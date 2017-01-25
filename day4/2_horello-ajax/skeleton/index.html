@@ -22,7 +22,7 @@
     $(function () {
       var data = { id: horello.boardId} // THIS CHANGE
       var board = horello.Board.boardFromJSON(data);
-      //horello.mount(board);
+      horello.mount(board);
       horello.mountStatic(board);
       board.loadListData(); //This Remove
       window.board = board;

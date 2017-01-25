@@ -7,7 +7,6 @@ window.horello = window.horello || {};
 horello.mountStatic = function() {
 
   $('.add-list').click(function(e) {
-    console.log("asd")
     $('#addList').collapse('toggle');
   });
 
@@ -33,13 +32,14 @@ horello.mountStatic = function() {
   });
 
   $('#cardEdit').on('show.bs.modal', function (e) {
+    console.log("BAMS")
     var button = $(e.relatedTarget);
     var cardId = button.data('card-id');
     var listId = button.data('list-id');
     var list = board.getList(listId);
     var card = list.getCard(cardId);
-    $('#modalText').val(card.getTitle());
-    $('#modalBody').val(card.getDescription());
+    $('#modalText').val(card.title);
+    $('#modalBody').val(card.description);
     $('#modalSave').data('list-id', listId);
     $('#modalSave').data('card-id', cardId);
   });
@@ -56,7 +56,7 @@ horello.mountStatic = function() {
     var cardId = $(e.currentTarget).data('card-id');
     var list = board.getList(listId);
     var card = list.getCard(cardId);
-    card.setTitle(title);
+    card.updateCardTitle(title);
     card.setDescription(desc);
     $('#cardEdit').modal('hide');
     horello.mount(board);

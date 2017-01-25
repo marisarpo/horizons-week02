@@ -51,17 +51,17 @@ horello.Board.prototype.loadListData = function() {
       // step 2. doing stuff for each card.
       // TODO: Should this be here?
       this.lists.forEach(function (list) {
-        list.loadCards();
+        list.loadCardData();
       });
     }.bind(this),
     error: function (err) {
-      console.error("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
+      conupdateCardTitleor("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
     }.bind(this)
   }
 );
 }
 
-horello.List.prototype.loadCards= function() {
+horello.List.prototype.loadCardData= function() {
   // YOUR CODE TO IMPORT CARDS
   // is being called once for every board
   $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
@@ -83,32 +83,7 @@ horello.List.prototype.loadCards= function() {
 
 ///////////////////// ADD CARD AND ADD LIST /////////////////////
 
-horello.List.prototype.addCard= function(name, description) {
-  // THIS WORKS!
-  // First create the data in the API? WHAT?
-  // on success call       this.loadCards();
-  $.ajax(horello.apiUrl + "/cards", {
-    method: "POST",
-    data: {
-      key: horello.apiKey,
-      token: horello.apiToken,
-      name: name,
-      description: description,
-      idList: this.id
-    },
-    success: function (data) {
-      // Success! Now we have an ID and we can create it locally. Or,
-      // we can reload the data from the API.
-      console.log("Successfully created new card: " + JSON.stringify(data));
-    }.bind(this),
-    error: function (err) {
-      console.error("Error creating new card: " + JSON.stringify(err));
-    }
-  });
-}
-
 horello.Board.prototype.addList = function(listName) {
-  // THIS DOESNT WORK
   //THIS SHOULD POST TO TRELLO /lists
   // calls   this.loadListData(); on success, the one below that in time
   //         loadsData -> loadsCards -> Mounts the board
@@ -132,57 +107,85 @@ horello.Board.prototype.addList = function(listName) {
   });
 }
 
-
+horello.List.prototype.addCard= function(name, description) {
+  // THIS WORKS!
+  // First create the data in the API? WHAT?
+  // on success call       this.loadCardData();
+  $.ajax(horello.apiUrl + "/cards", {
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: name,
+      description: description,
+      idList: this.id
+    },
+    success: function (data) {
+      // Success! Now we have an ID and we can create it locally. Or,
+      // we can reload the data from the API.
+      // TODO: EXPLAIN why this one uses loadCard and the other one calls load list.
+      // This one only realoads this list, the other needs to reload the whole board.
+      this.loadCardData()
+      console.log("Successfully created new card: " + JSON.stringify(data));
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating new card: " + JSON.stringify(err));
+    }
+  });
+}
 
 ///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
 
-horello.Card.prototype.setTitle= function(titleStr) {
+horello.Card.prototype.updateCardTitle= function(titleStr) {
   // YOUR CODE TO PUT TO TRELLO and UPDATE CARDS
-  /*
+  // WORKS
   this.title = titleStr;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
-  method: "PUT",
-  data: {
-  key: horello.apiKey,
-  token: horello.apiToken,
-  name: titleStr
-},
-success: function (data) {
-console.log("Successfully updated title of card " + this.id);
-}.bind(this),
-error: function (err) {
-console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
-}.bind(this)
-});
-*/
+    method: "PUT",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: titleStr
+    },
+    success: function (data) {
+      console.log("Successfully updated title of card " + this.id);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+
 },
 
 
 horello.Card.prototype.setDescription=function(description) {
   // YOUR CODE TO PUT TO TRELLO, probs when updating a description??
-  /*
   this.description = description;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
-  method: "PUT",
-  data: {
-  key: horello.apiKey,
-  token: horello.apiToken,
-  description: description
-},
-success: function (data) {
-console.log("Successfully updated description of card " + this.id);
-}.bind(this),
-error: function (err) {
-console.error("Error updating description of card " + this.id + ": " + JSON.stringify(err));
-}.bind(this)
-});
-*/
+    method: "PUT",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      description: description
+    },
+    success: function (data) {
+      console.log("Successfully updated description of card " + this.id);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error updating description of card " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+
 }
 
+// TODO
+//Archive card
+// Archive list
 
+// Move card in list
+// move card between lists
 
-
-
+// Poll server periodically.
 
 ///////////////////// RENDERERS /////////////////////
 

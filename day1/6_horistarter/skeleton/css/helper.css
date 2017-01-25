@@ -1,0 +1,59 @@
+.warning {
+  background-color: yellow;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+.navigation-bar {
+  color: grey;
+  border-bottom-style: solid;
+  border-bottom-color: grey;
+}
+
+.navigation-bar a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navigation-bar a:hover {
+  text-decoration: underline;
+  color: rgb(43, 222, 115);
+}
+
+td:nth-child(1n+6) {
+  color: blue;
+}
+
+.leftbar a:hover{
+  text-decoration: underline;
+  color: rgb(43, 222, 115);
+}
+
+.leftbar a{
+  text-decoration: none;
+  color: grey;
+}
+
+.leftbar li {
+  list-style: none;
+}
+
+.leftbar ul {
+  padding: 0;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.rightbar {
+  width: 87%;
+  float: right;
+}
+
+.rightbar img {
+  width: 100%;
+}
+
+.leftbar {
+  width: 13%;
+  float: left;
+}

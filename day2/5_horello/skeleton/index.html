@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Horello</title>
+    <link rel="shortcut icon" href="C:\Users\jzinger1\Desktop\horizons\week02\day2\5_horello\img\Horello Transparent.png" type="image/png">
 
     <!-- Bootstrap stuff -->
     <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
@@ -20,6 +21,29 @@
 </header>
 
 <!-- PHASE 5. Modal -->
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div>
+          <input type="card" class="form-control" id="exampleCard" placeholder="Card title">
+        </div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <h5 id="modal-desc">Description</h5>
+          <textarea class="form-control" id="modalBody" placeholder="Card body goes here"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="board">
     <div class="list-container">
@@ -29,23 +53,104 @@
             </div>
             <div class="list-cards">
                 <div class="card">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
                         Today we will #DominateAllTheHouses
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
                     </div>
                 </div>
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
+                <button class="add-card" type="button" data-toggle="collapse" data-target="#add-card" aria-expanded="false" aria-controls="collapseExample">Add a card...</button>
+                <div class="collapse" id="add-card">
+                  <div class="well add-list-form">
+                    <form>
+                      <div>
+                        <input type="card" class="form-control" id="exampleCard" placeholder="Card title">
+                      </div>
+                      <div>
+                        <button type="Save" class="btn btn-default">Save</button>
+                        <button type="X" class="btn btn-default"><div class="glyphicon glyphicon-remove"</div></button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
 
                 <!-- PHASE 4. Collapse -->
             </div>
         </div>
     </div>
 
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">House List</span>
+            </div>
+            <div class="list-cards">
+                <div class="card">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
+                        Poop
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
+                        Poop more #DominateAllTheToilets
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body" data-toggle="modal" data-target="#myModal">
+                        Even more #poop
+                    </div>
+                    <div class="card-more glyphicon glyphicon-align-left">
+                    </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <!-- PHASE 2. Add card button -->
+                <button class="add-card" type="button" data-toggle="collapse" data-target="#add-card2" aria-expanded="false" aria-controls="collapseExample">Add a card...</button>
+                <div class="collapse" id="add-card2">
+                  <div class="well add-list-form">
+                    <form>
+                      <div>
+                        <input type="card" class="form-control" id="exampleCard" placeholder="Card title">
+                      </div>
+                      <div>
+                        <button type="Save" class="btn btn-default">Save</button>
+                        <button type="X" class="btn btn-default"><div class="glyphicon glyphicon-remove"</div></button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <!-- PHASE 4. Collapse -->
+            </div>
+        </div>
+      </div>
+
     <!-- PHASE 1. Add list button -->
-
-
-</div>
+    <div class="list-container">
+      <div class="add-list-container">
+        <button class="add-list" type="button" data-toggle="collapse" data-target="#add-list" aria-expanded="false" aria-controls="collapseExample">Add a list...</button>
+        <div class="collapse" id="add-list">
+          <div class="well add-list-form">
+            <form>
+              <div>
+                <input type="list" class="form-control" id="exampleList" placeholder="List name">
+              </div>
+              <div>
+                <button type="Save" class="btn btn-default">Save</button>
+                <button type="X" class="btn btn-default"><div class="glyphicon glyphicon-remove"</div></button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>

@@ -36,6 +36,20 @@
             </div>
             <div class="list-footer">
                 <!-- PHASE 2. Add card button -->
+                <button class="list-button add-card collapsed" data-toggle="collapse" href="#addCard2" aria-expanded="false">Add a card...
+                </button>
+                <div class="collapse" id = "addCard2" aria-expanded = "false" style = "height: 0px;">
+                  <div class="well add-card-form">
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class="btn btn-default">
+                            Save
+                        </button>
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                  </div>
+
 
                 <!-- PHASE 4. Collapse -->
             </div>
@@ -44,6 +58,20 @@
 
     <!-- PHASE 1. Add list button -->
 
+    <div class= "add-list-container">
+      <div class = "add-list">
+        <button class="add-list" data-toggle="collapse" href="#addList" aria-expanded="true">Add a list...
+        </button>
+      </div>
+      <div class="collapse" id="addList" aria-expanded="false" style="height: 0px;">
+        <div class="well add-card-form">
+          <input type="text" class="form-control" placeholder="List name">
+          <button type="button" class="btn btn-default">Save
+          </button>
+          <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
+      </div>
 
 </div>
 

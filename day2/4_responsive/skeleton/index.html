@@ -3,183 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horello</title>
 
-    <!-- PHASE 2. Add Bootstrap CSS, Bootstrap JS, and jQuery here -->
-
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <!-- Bootstrap stuff -->
+    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+    <script src="../../../lib/jquery.js"></script>
+    <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Our Styles -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/media.css" type="text/css">
 </head>
 <body>
+<header>
+    <a class="header-logo"
+       href="#"><span class="header-logo-default"></span></a>
+</header>
 
-<!-- PHASE 4. Add responsive nav bar here -->
+<!-- PHASE 5. Modal -->
 
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Horello</a>
-    </div>
-
-
-    <!-- <button class = "add-card" data-toggle="collapse" href="#addCard" aria-expanded="false"> Add a card... </button>
-    <div class="collapse" id="addCard" aria-expanded="true"> -->
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <!-- <div class="dropdown" aria-expanded="true"> -->
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </div>
-        </li>
-      </ul>
-
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-<section class="text-center">
-    <div class="section-wrapper">
-        <img src="../img/title.png" class="img-title"/>
-        <h2 class="text-center">The platform that gives you a shared horizon.</h2>
-        <p class="center-paragraph">
-            It's high time you stopped digging through emails and Slack
-            to find that message from your housemate. Communicate, upload files,
-            add due dates, and plot to #DominateAllTheHouses, all within a
-            Horello board.
-        </p>
-        <a class="button">Sign Up - It's Free.</a>
-    </div>
-</section>
-<section class="background-dark-blue">
-    <div class="section-wrapper">
-        <p class="center-paragraph">
-            This is a Horello board. It's a list of lists filled with cards,
-            used by your house or by yourself.
-        </p>
-        <img src="../img/home-hero.png" class="layout-fill-img"/>
-        <p class="center-paragraph">
-            Drag and drop cards between lists to show progress. Add as many
-            people as you need and drag them to cards. Add and reorder lists
-            as you need. <strong>Horello adapts to your project, house, and
-            workflow.</strong>
-        </p>
-        <p class="center-paragraph">
-            You’ll see everything about your project just by glancing at the
-            board, and it all updates in real-time. There’s nothing to set
-            up and everyone gets it instantly.
-        </p>
-    </div>
-</section>
-<section>
-    <div class="section-wrapper">
-        <img src="../img/home-power-up-icons.png" class="img-float-left"/>
-        <p class="center-paragraph">
-            Horello will never overwhelm you with features you won’t use. For
-            those who want more out of their boards, there are Power-Ups like
-            calendar, card aging, and voting, that you can turn on. It’s a way
-            to offer more without cluttering things for everyone.
-        </p>
-    </div>
-</section>
-<section class="background-light-blue">
-    <div class="layout-grid-frame">
-        <div class="layout-callout-right">
-            <img src="../img/home-devices.png"/>
-        </div>
-        <div class="layout-twothirds-left">
-            <p>
-                Horello stays perfectly in sync across all your devices,
-                wherever you are. There are fast and intuitive apps for
-                the web, Android phones and tablets, iPhone and iPad and
-                Kindle Fire.
-            </p>
-
-            <!-- PHASE 3. Add responsive code here -->
-            <div class = "container-fluid">
-              <!-- <div class = "row">
-                <div class = "col-"
-              </div>
-            </div> -->
-            <div class = "row">
-                <a class="app-store-link col-xs-12 col-md-4 col-lg-4" href="#">
-                    <img
-                        src="../img/apple.png"
-                        srcset="../img/apple.png 1x, ../img/apple@2x.png 2x"
-                    />
-                </a>
-                <a class="app-store-link col-xs-12 col-md-4 col-lg-4" href="#">
-                    <img
-                        src="../img/google.png"
-                        srcset="../img/google.png 1x, ../img/google@2x.png 2x"
-                    />
-                </a>
-                <a class="outline-link col-xs-12 col-md-4 col-lg-4">See All Apps</a>
+<div class="board">
+    <div class="list-container">
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Horizons List</span>
             </div>
-          </div>
-        </div>
-    </div>
-</section>
-<footer class="text-center">
-    <ul>
-        <li>
-            <a href="#">Tour</a>
-        </li>
-        <li>
-            <a href="#">Pricing</a>
-        </li>
-        <li>
-            <a href="#">Apps</a>
-        </li>
-        <li>
-            <a href="#">Jobs</a>
-        </li>
-        <li>
-            <a href="#">Blog</a>
-        </li>
-        <li>
-            <a href="#">Developers</a>
-        </li>
-        <li>
-            <a href="#">About</a>
-        </li>
-        <li>
-            <a href="#">Help</a>
-        </li>
-        <li>
-            <a href="#">Legal</a>
-        </li>
-    </ul>
-    <p>© Copyright 2016, Horizons School of Education, LLC. All rights
-        reserved.</p>
-</footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <div class="list-cards">
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                        Today we will #DominateAllTheHorizons
+                    </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
 
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Darwish the fish.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Irvin the Pervin.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+
+                  <div class="card-body">
+                      Yasmeen the Queen.
+                  </div>
+
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <!-- PHASE 2. Add card button -->
+                  <button class = "add-card" data-toggle="collapse" href="#addCard" aria-expanded="false"> Add a card... </button>
+                  <div class="collapse" id="addCard" aria-expanded="true">
+                    <div class="well">
+                      <form>
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class="btn btn-default">Save </button>
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+
+                <!-- PHASE 4. Collapse -->
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="list-header">
+                <span class="list-title">Horizons List 2</span>
+            </div>
+            <div class="list-cards">
+              <div class="card" data-toggle="modal" data-target="#myModal">
+                    <div class="card-body">
+                        Sungsu the poo.
+                    </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Holly the folly.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+                  <div class="card-body">
+                      Blaise the maze.
+                  </div>
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+
+                <div class="card" data-toggle="modal" data-target="#myModal">
+
+                  <div class="card-body">
+                      Don the con.
+                  </div>
+
+                  <div class = "card-more">
+                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                  </div>
+                </div>
+            </div>
+            <div class="list-footer">
+                <!-- PHASE 2. Add card button -->
+                <button class = "add-card" data-toggle="collapse" href="#addCard1" aria-expanded="false"> Add a card... </button>
+                  <div class="collapse" id="addCard1" aria-expanded="false">
+                    <div class="well">
+                      <form>
+                        <input type="text" class="form-control" placeholder="Card title">
+                        <button type="button" class="btn btn-default">Save </button>
+                        <button type="button" class="btn btn-default">
+                          <span class="glyphicon glyphicon-remove"></span>
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+
+                <!-- PHASE 4. Collapse -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PHASE 1. Add list button -->
+
+    <div class = "add-list-container">
+      <!-- <div class = "add-list"> Add a list... </div> -->
+      <div class = "add-list" data-toggle="collapse" href="#addList" aria-expanded="false"> Add a list... </div>
+      <div class="collapse" id="addList" aria-expanded="true">
+        <div class="well">
+          <form>
+            <input type="text" class="form-control" placeholder="List name">
+            <button type="button" class="btn btn-default">Save </button>
+            <button type="button" class="btn btn-default">
+              <span class="glyphicon glyphicon-remove"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form>
+          <input type="text" class="form-control" placeholder="List name">
+        </form>
+
+      </div>
+      <div class="modal-body">
+        <h5 class="modal-title" id="myModalLabel">Description</h5>
+        <textarea class="form-control" rows="5"> Card body goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

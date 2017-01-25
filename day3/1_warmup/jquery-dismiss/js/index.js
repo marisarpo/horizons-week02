@@ -12,10 +12,10 @@
 
 // method 1: .click();
 // $(function() {
-// 	$("button").click(function() {
-// 		console.log("clicked");
-// 		$("div").hide("slow");
-// 	});
+	$("button").click(function() {
+		console.log("clicked");
+		$("div").hide("slow");
+	});
 // });
 
 // method2: .on();

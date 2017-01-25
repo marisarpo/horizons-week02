@@ -3,15 +3,16 @@
 body {
     line-height: 18px;
     height: 100vh;
-
-    /** PHASE 1 CSS here */
-}
+    background-color: rgb(0,121,191);
+    font-family: sans-serif;
+  }
 
 header {
     position: relative;
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
+    padding: 5px;
+    height: 40px;
+    opacity: 0.7;
 }
 
 .header-logo {
@@ -49,11 +50,26 @@ a {
 /* BOARD */
 
 .add-list-container {
-    padding: 5px;
+  display:flex;
+  flex:1;
+  flex-direction:column;
+  padding: 5px;
 }
 
+.add-list button{
+  background: rgba(0,0,0,.12);
+}
 .add-list {
-    /** PHASE 1 CSS here */
+
+      color: #fff;
+      border: 0;
+      text-align: left;
+      height: auto;
+      min-height: 30px;
+      border-radius: 3px;
+      margin-bottom: 5px;
+      width: 280px;
+      padding: 7px;
 }
 
 .add-list:hover {
@@ -65,6 +81,8 @@ a {
 }
 
 .board {
+    display: flex;
+    flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
@@ -77,14 +95,21 @@ a {
 /* LISTS */
 
 .list-container {
+  display: flex;
+   flex:1;
     height: 100%;
 }
 
 .list {
-    box-sizing: border-box;
-    max-height: 100%;
-
-    /** PHASE 2 CSS here */
+  box-sizing: border-box;
+width: 270px;
+padding: 0.5em;
+margin: 5px 5px;
+border-radius: 3px;
+background: #e2e4e6;
+display: flex;
+flex-direction: column;
+max-height: 100%;
 }
 
 .list-header {
@@ -103,20 +128,28 @@ a {
 }
 
 .add-card {
-    /** PHASE 2 CSS here */
+width: 100%;
+border: none;
+outline: none;
+height: 40px;
+border-radius: 4px;
+text-align: left;
+background: rgba(16, 16, 16, 0.15);
+color: #333;
+margin: 3px 0;
 }
 
 .add-card:hover {
-    /** PHASE 2 CSS here */
+background: rgba(96, 96, 96, 0.15);
 }
 
 
 /* CARDS */
 
 .list-cards {
-    min-height: 0;
-
-    /** PHASE 3 CSS here */
+  overflow-y: overlay;
+overflow-x: hidden;
+min-height: 0;
 }
 
 .card {
@@ -124,7 +157,13 @@ a {
 }
 
 .card-body {
-    /** PHASE 3 CSS here */
+  display: block;
+padding: .5em .5em 2em;
+font-family: Cabin,Arial,sans-serif;
+font-size: 16px;
+line-height: 1.5em;
+position: relative;
+transition: 0.5s all;
 }
 
 .card-more {

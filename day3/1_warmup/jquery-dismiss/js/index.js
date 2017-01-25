@@ -10,13 +10,22 @@
 // });
 
 
+// method 1: .click();
+// $(function() {
+// 	$("button").click(function() {
+// 		console.log("clicked");
+// 		$("div").hide("slow");
+// 	});
+// });
 
-$(function() {
-	$("button").click(function() {
-		console.log("clicked");
+// method2: .on();
+
+$(document).ready(function() {
+	$(document).on("click", "button", function() {
 		$("div").hide("slow");
 	});
 });
+
 
 // $(document).ready("#close").click(function() {
 //       alert('button clicked');

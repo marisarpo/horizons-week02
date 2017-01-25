@@ -1,7 +1,10 @@
 .background-light-blue {
+  background-color: #e4f0f6;
+  /*overflow: hidden;*/
 }
 
 .layout-grid-frame {
+    max-width: 890px;
 }
 
 .layout-callout-right {
@@ -11,6 +14,7 @@
 }
 
 .layout-twothirds-left {
+  max-width: 890px;
 }
 
 .app-store-link {

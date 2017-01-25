@@ -7,6 +7,7 @@ window.horello = window.horello || {};
 horello.mountStatic = function() {
 
   $('.add-list').click(function(e) {
+    console.log("asd")
     $('#addList').collapse('toggle');
   });
 

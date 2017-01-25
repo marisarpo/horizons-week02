@@ -1,50 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Horello</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Horello</title>
 
-    <!-- Bootstrap stuff -->
-    <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-    <script src="../../../lib/jquery.js"></script>
-    <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Bootstrap stuff -->
+  <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
+  <script src="../../../lib/jquery.js"></script>
+  <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Our Styles -->
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+  <!-- Our Styles -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <body>
-<header>
+  <header>
     <a class="header-logo"
-       href="#"><span class="header-logo-default"></span></a>
-</header>
+    href="#"><span class="header-logo-default"></span></a>
+  </header>
 
-<!-- PHASE 5. Modal -->
+  <!-- PHASE 5. Modal -->
 
-<div class="board">
+  <div class="board">
     <div class="list-container">
-        <div class="list">
-            <div class="list-header">
-                <span class="list-title">House List</span>
-            </div>
-            <div class="list-cards">
-                <div class="card">
-                    <div class="card-body">
-                        Today we will #DominateAllTheHouses
-                    </div>
-                </div>
-            </div>
-            <div class="list-footer">
-                <!-- PHASE 2. Add card button -->
-
-                <!-- PHASE 4. Collapse -->
-            </div>
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">House List</span>
         </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              <p>
+                Leverage agile frameworks to provide a robust synopsis for
+                high level overviews. Iterative approaches to corporate
+                strategy foster collaborative thinking to further
+                the overall value proposition. Organically grow the holistic
+                world view of disruptive innovation via workplace diversity
+                and empowerment.
+              </p>
+              <p>
+                Bring to the table win-win survival strategies to ensure
+                proactive domination. At the end of the day, going forward,
+                a new normal that has evolved from generation X is on the
+                runway heading towards a streamlined cloud solution.
+                User generated content in real-time will have multiple
+                touchpoints for offshoring.
+              </p>
+              <p>
+                Capitalise on low hanging fruit to identify a ballpark value
+                added activity to beta test. Override the digital divide with
+                additional clickthroughs from DevOps. Nanotechnology
+                immersion along the information highway will close the loop
+                on focusing solely on the bottom line.
+              </p>
+            </div>
+            <span class="card-more">
+              <span class="glyphicon glyphicon-align-left">
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="list-footer">
+          <!-- PHASE 2. Add card button -->
+
+
+
+          <button class = "add-card" type = "button"
+          data-toggle="collapse" href="#cardExample2">Add a card...</button>
+          <div class="collapse" id = "cardExample2">
+            <div class="well">
+              <input type="text" class="form-control" id="cardExample2"
+              placeholder="Card title">
+            </div>
+          </div>
+          <!-- PHASE 4. Collapse -->
+        </div>
+      </div>
     </div>
 
-    <!-- PHASE 1. Add list button -->
 
 
+
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <span class="card-more">
+              <span class="glyphicon glyphicon-align-left">
+              </span>
+            </span>
+          </div>
+        </div>
+        <div class="list-footer">
+          <!-- PHASE 2. Add card button -->
+
+          <button class = "add-card" type = "button"
+          data-toggle="collapse" href="#collapseExample1">Add a card...</button>
+          <div class="collapse" id = "collapseExample1">
+            <div class="well">
+              <input type="text" class="form-control" id="collapseExample1"
+              placeholder="Card title">
+            </div>
+          </div>
+          <!-- PHASE 4. Collapse -->
+        </div>
+      </div>
+    </div>
+
+
+    <div class="list-container">
+      <div class="add-list-container">
+        <a class = "add-list" type = "button"
+        data-toggle="collapse" href="#collapseExample"
+        aria-expanded="false" aria-controls="collapseExample">Add a list...</a>
+        <div class="collapse" id="collapseExample" aria-expanded="false">
+          <div class="well">
+            <input type="text" class="form-control" id="collapseExample"
+            placeholder="List name">
+            <button type="button" class="btn btn-default">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- PHASE 1. Add list button -->
+
+  <!--
+  THIS IS THE GOOD LIST BUTTON -->
+  <!-- <button class = "add-list" type = "button"
+  data-toggle="collapse" href=".list-dropdown">Add a list...</button>
+  <form>
+  <div class="list-dropdown">
+  <input type="text" class="form-control" id="example"
+  placeholder="List name">
+</div>
+</form> -->
+<!-- STOP -->
+
+<!-- <div class = "list-container">
+<div class = "add-list-container">
+<a class = "add-list">Add a list...</a>
+</div>
+</div> -->
 </div>
 
 </body>

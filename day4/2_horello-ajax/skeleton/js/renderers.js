@@ -80,7 +80,4 @@ horello.Board.prototype.render = function() {
   return boardHTML;
 };
 
-
-
-
 */

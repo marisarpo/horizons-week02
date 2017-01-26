@@ -239,7 +239,7 @@ every once in a while, you check the server for new content and update your app.
 
 Remember how on warmup we created our lists by doing `var list1 = new horello.List("1", "My first list")`? Now we are going to implement the code that does this. By doing `card.render()`, you will generate all the needed HTML for that card.
 
-Head over to `renderers`, un-comment the file and start rendering!
+Head over to `renderers`, un-comment the entire file by removing the first and last lines and start rendering!
 
 ## SUPER BONUS
 You are on your own now. From HTML all the way to the backend you are going to make

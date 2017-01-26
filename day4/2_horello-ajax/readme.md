@@ -8,15 +8,16 @@ You can check the final version of the project [here](http://horizons-school-of-
 
 ## Contents
 
-- Phase 1: [Authentication](#phase-1-authentication)
-- Phase 2. [Getting familiar with the API](#phase-2-getting-familiar-with-the-api)
-- Phase 3. [Serialization/deserialization](#phase-3-serializationdeserialization)
-- Phase 4. [Reading from the API](#phase-4-reading-from-the-api)
-- Phase 5. [Writing to the API](#phase-5-writing-to-the-api)
-- Phase 6. [(BONUS) Improvements](#bonus-phase-6-improvements)
+- Step 1: [Authentication](#step-1-authentication)
+- Step 2. [Getting familiar with the API](#step-2-getting-familiar-with-the-api)
+- Step 3. [Serialization/deserialization](#step-3-serializationdeserialization)
+- Step 4. [Reading from the API](#step-4-reading-from-the-api)
+- Step 5. [Writing to the API](#step-5-writing-to-the-api)
+- Step 6. [(BONUS) Improvements](#bonus-step-6-improvements)
 
+# Section 1
 
-## Phase 1: How the project works.
+## Step 1: How the project works.
 
 To start, we are giving you the models that make up Trello: `board`, `list` and `card`,
 These are simple JS objects that can be created using `new`. On this project, the
@@ -45,7 +46,7 @@ Ready to get the data from the API into our models? Head over to the part in
 `index.html` where `board = dummyData()` is called and comment it out. Uncomment the
 `board = realData()` line.
 
-## Phase 2: Trello
+## Step 2: Trello
 
 Now we know how to make some list and card objects show up on our screen, we are
 going to try getting the data from the Trello API. To be able to do it, we first
@@ -72,7 +73,7 @@ better. Yours could look a bit different.
 
 1. Copy the id for the board and paste it into `config.js` in `Horello.boardId`.
 
-## Phase 3: Getting familiar with the API
+## Step 3: Getting familiar with the API
 
 We are going to use the same 3 _resources_ we have as models from the Trello API:
  _board_, _card_, and _list_. We are able to create/read/update/destroy resources
@@ -142,7 +143,7 @@ These are called when your ajax ends in success. The data from these ajax calls
 is now passed to these methods to create the appropriate objects for cards and lists.
 You can look at `Horello.Board.boardFromJSON` to get an idea of how it works.
 
-## Phase 4: Sanity Check.
+## Step 4: Sanity Check.
 
 If your methods were correctly implemented according to the steps here and on
 `data_model.js`, refreshing your page should show you Horello with all the data
@@ -168,60 +169,47 @@ this method to update the UI. Head over to Trello.com and edit your board. Refre
 the Horello page and you should see your changes!
 
 
-## Phase 5: Writing to the API
+## Step 5: Writing to the API
+
+You are ready to start implementing your AJAX calls to perform new actions on the
+API. The first thing we are going to do is implement the code that allows you to
+edit a card's title and description. The event handlers from the HTML are already
+done and the modal is working too. The functions `updateCardTitle` and `setDescription`
+are called by the event listeners when someone saves a new title to a card. Implement:
+
+`horello.Card.prototype.updateCardTitle` Make a PUT request to the 'cards' endpoint
+to the API to update the card's title. Don't forget to do `this.title = titleStr;`
+so your interface also refreshes.
+
+
+`horello.Card.prototype.setDescription` Same concept as above, for card descriptions.
+
+Now, you are going to implement functions that do an API request and refresh the
+page when the ajax request ends in success.
+
+`horello.Board.prototype.addList` This function should create a new POST request
+with the list's name and other needed data and call the API. On the success callback
+of this function, remember to call `this.loadListData();` so the lists are refreshed
+and your new list shows.
+
+`horello.List.prototype.addCard` This function should create a new POST request
+with the cards's name and other needed data and call the API. On the success callback
+of this function, remember to call `this.loadCardData();` so the cards on your list are refreshed and your new list shows.
 
 
 
-## BONUS: Phase 6: Improvements
+## BONUS: Step 6: Improvements
 
-
-Note:
-- Think about how you want to handle errors.
-
-:picks mic up again:
-
-Okay, you're an ambitious grasshopper. We like ambition 'round these
-parts. Well, there's still a bunch of things you can do to make this
-here app as smooth as an armadillo's backside:
-
+These are some of the things that need to be improved in Part 1:
 - Rather than passing the authentication information with every single
   request, see if you can simplify this using
   [jQuery.ajaxSetup()](https://api.jquery.com/jquery.ajaxsetup/).
-- You're probably rendering (i.e., calling `Horello.mount`) more often
-  than you need to. Try to optimize how often you render the board, and
-  don't do it more often than necessary, to improve performance.
-- Trello automatically detects when the data changes, and displays those
-  changes immediately, without needing to reload. Add that. Boom.
-- Add support for multiple boards.
-- Replace your nasty callback code with sexy new
-  [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
-- Looking for even more? Check out the [list of challenges for the
-  week](../../challenges/1_bonus_Horello).
+- Add server polling. Whenever you change things in the real Trello, they won't
+show up on Horello if you don't refresh the page. Add `polling` which means that
+every once in a while, you check the server for new content and update your app.
+- Handle errors when calling the API. What happens if you update the text and the
+  request fails? Does the card show the previous text? Does it show the updated one,
+  even if a refresh will return to the original text? and so on.
 
 
-
-
-
-
-
-  //sep1
-  learning models
-  var board =new board("boardname");
-  var list =new list;
-  board.lists.push(list);
-  render;
-
-  // step2
-  getting data -> ajax
-
-  //sete3
-  ajax -> MODELS
-
-  //step 4
-  models -> html
-  // show a bit of description.
-  // Augment the ui a bit.
-
-  // hover over button -> shows trash
-  // click -> deletes the card.
-  //
+# Section 2: Rendering

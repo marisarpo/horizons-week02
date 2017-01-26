@@ -137,8 +137,6 @@ horello.List.prototype.addCard= function(name, description) {
 ///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
 
 horello.Card.prototype.updateCardTitle= function(titleStr) {
-  // YOUR CODE TO PUT TO TRELLO and UPDATE CARDS
-  // WORKS
   this.title = titleStr;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
     method: "PUT",
@@ -159,7 +157,6 @@ horello.Card.prototype.updateCardTitle= function(titleStr) {
 
 
 horello.Card.prototype.setDescription=function(description) {
-  // YOUR CODE TO PUT TO TRELLO, probs when updating a description??
   this.description = description;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
     method: "PUT",

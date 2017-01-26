@@ -319,6 +319,6 @@ To check if your code works, head over to the page and refresh it. It should lik
     1. Refresh your data so the card disappears.
 - Delete list. This one should work similarly to the previous one.
 - Move card between lists
-    1. A move is two operations: a remove followed by an add.
+    1. A move is two operations: a `remove` followed by an `add`.
     One to remove the card from the actual list, and one to add it to the newly specified list.
 - Move a card inside the list

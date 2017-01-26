@@ -12,20 +12,6 @@ it from our front-end and from the backend too, making a DELETE request to the A
 
 To get an idea on how the project works, visit the final version of the project [here](http://horizons-school-of-technology.github.io/week02/day4/2_Horello-ajax/solution/index.html).
 
-## Contents
-
-TODO FIX THIS.
-
-Section 1
-- Step 1: [Warmup](#step-1-authentication)
-- Step 2. [Setting up Trello](#step-2-getting-familiar-with-the-api)
-- Step 3. [Getting familiar with the API](#step-3-serializationdeserialization)
-- Step 4. [Writing to the API](#step-4-reading-from-the-api)
-- Step 5. [Sanity Check.](#step-5-writing-to-the-api)
-- Step 6. [(BONUS) Improvements](#bonus-step-6-improvements)
-
-
-
 # Section 1
 
 ## Step 1: Warmup
@@ -57,7 +43,7 @@ horello.refresh(board);
 
 If everything went ok, this is what you should see:
 
-TODO: Insert capture 3 here.
+![Created Lists](images/capture3.jpeg)
 
 Now that we have a list, we want to add a card to it. We follow a similar process
 to add a card to the list. First, we have to create the card. The card takes in
@@ -72,7 +58,7 @@ horello.refresh(board);
 
 This is how your board should look now.
 
-TODO: Insert capture 4 here.
+![Created Cards](images/capture4.jpeg)
 
 Try adding more lists and cards into your console and displaying them to the board.
 Don't forget to push the newly created lists into the board by doing `board.lists.push(list1);` and cards to lists by doing `list1.cards.push(card1);`
@@ -91,7 +77,7 @@ We added a couple more cards to out board and this is the result we got.
 Ready to start working? head over to `index.html` and un-comment the line that
 says `board = realData()` your code on `index.html` should look like this:
 
-TODO: Insert capture 5 here.
+![Uncomment code](images/capture5.jpeg)
 
 ## Step 2: Setting up Trello
 
@@ -115,6 +101,7 @@ TODO. PICTURES.
 **Creating test data**
 1. Head back to http://www.Trello.com
 1. Create a new board and add some lists and cards to it.
+
 TODO ADD PICTURE OF THIS Step
 
 1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test`

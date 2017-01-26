@@ -82,7 +82,6 @@ Here's our test board we generated using these steps:
 
 ![Test Data](images/capture1.jpeg)
 
-
 Ready to start working? head over to `index.html` and un-comment the line that
 says `board = realData()` your code on `index.html` should look like this:
 
@@ -200,7 +199,7 @@ The first function: `horello.Board.prototype.loadListData` is already implemente
 
 Implement `horello.List.prototype.loadCardData`. This function should make a GET request to get the cards that belong to a list. If we were trying to get the cards for the list with id "123123", our URL for the request would look like this: "list/12312/cards". You can look at the code in the function above for reference. The difference on this one is the success part of the function. When successful this function should convert al the cards it gets from the API and parsing them using `cardFromJSON`. It should also refresh the board using `horello.refresh(board);`
 
-### Verifying your work
+### Verifying your function.
 Up to this point, the best way to verify your AJAX code is working is logging the `this.cards` array at the end of the success part of the function to the console. This should log and array of cards that looks like capture below. You may have a different number of cards depending on the cards you created directly on Trello. But it *should* be an array of `Card` objects
 
 ![Verifying 1](images/capture11.jpeg)
@@ -209,24 +208,27 @@ If you need help implementing these methods head over to [Trello API
 reference](https://developers.Trello.com/advanced-reference). For more info on how
 the API works.
 
+## Verifying your code works up to this point
+
+If you load your page and it loads lists and cards, you are good to go! It should contain the same data from your Trello board.
+
+![Verifying 3](images/capture14.jpeg)
 
 ## Exercise 5: Writing data to the Trello API
 
 Head over to the `SET TITLE AND DESCRIPTION ON CARDS` section in
 `week02/day4/2_horello-ajax/skeleton/js/data_model.js`.
 
-TODO describe what students are supposed to do
-
-TODO describe how they can verify that what they've done works, screenshots?
-
 Now, we are going implement the code that sends updates to the server via AJAX
 when a card's title or description is updated.
 
 When you click on save on the edit card modal
 `horello.Card.prototype.updateCardTitle` and
-`horello.Card.prototype.setDescription` are called. Implement these functions.
+`horello.Card.prototype.setDescription` are called.
 
 ### `horello.Card.prototype.updateCardTitle()`
+
+We are giving you the code to modify the title of the current card. This is what the function should do to modify the title:
 
 1. Modify the title of the current card
 
@@ -239,15 +241,18 @@ When you click on save on the edit card modal
 
 ### `horello.Card.prototype.setDescription()`
 
+You are going to implement this function to update the description of the current card. It should take the following steps:
+
 1. Modify the description of the current card.
 1. Make an AJAX `PUT` request to the `/cards` endpoint to update the card's
-   description.
+   description on the backend
 
+### Verifying your work
+To check your code works click on a card, edit it and save it. Refresh the page. If the card was updated, you are good to go!
 
-`horello.Card.prototype.setDescription` Same concept as above.
+   ![Verifying 3](images/capture13.jpeg)
 
 ### `horello.Board.prototype.addList()`
-
 TODO rewrite this
 
 Whenever a list is added, this function is called.  You should make a POST
@@ -258,7 +263,6 @@ and your new list shows up on the page.
 ### `horello.List.prototype.addCard()`
 
 TODO flesh this out
-
 Same concept as above.
 
 ## Exercise 6: Rendering
@@ -274,10 +278,14 @@ defined on `horello.Card`, `horello.List` and `horello.Board`. `.render()`
 returns a string that contains the HTML for the current `Card`, `List` or
 `Board`.
 
-TODO describe how they can verify that what they've done works, screenshots?
-
 Head over to `week02/day4/2_horello-ajax/skeleton/js/renderers.js`, delete the
-lines that say `DELETE THIS LINE`.
+lines that say `DELETE THIS LINE`. And start implementing your renderers replacing the `YOUR CODE HERE` parts.
+
+
+### Verifying your code
+To check if your code works, head over to the page and refresh it. It should like the original Horello we started working on today!
+
+![Verifying 3](images/capture14.jpeg)
 
 ## Bonus: Exercise 7: AJAX Improvements
 

@@ -91,20 +91,28 @@ Trello to know what boards your app has access to.
 1. Click the `Get your Application Key` button in the first section of
    the page. This gives you an identifier for your app. Now, Trello knows that key
    will try to access their backend. Copy this key and paste it into `config.js` in the appropriate spot: `horello.apiKey`.
+
+  ![API KEY](images/capture6.jpeg)
+
 1. Generate a token manually by clicking on the `Token` link on that page. This allows
    Trello to verify that your app is making the request and not someone else.
+
+  ![Getting the token](images/capture7.jpeg)
+
 1. Click "Allow" on the authentication screen.
 1. Copy this token and paste it into `config.js` into `horello.apiToken`.
 
-TODO. PICTURES.
+By now, this is how your `config.js` file should look like.
+
+  ![Config File](images/capture8.jpeg)
 
 **Creating test data**
 1. Head back to http://www.Trello.com
 1. Create a new board and add some lists and cards to it.
 
-TODO ADD PICTURE OF THIS Step
+  ![Trello Test Board](images/capture9.jpeg)
 
-1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test`
+1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlited in red in the previous picture)
 1. Add .json at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
 
   ![Test Data](images/capture2.jpeg)

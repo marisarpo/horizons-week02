@@ -52,7 +52,7 @@ $('.board').on('click', '.add-card', function() {
   $(this).siblings('.add-card-form-wrapper').removeClass('collapse');
 });
 
-$('.board').on('click', '.add-card-save', function() {
+$('.board').on('click', '.add-card-save', function() {  
   var cardBody = $(this).siblings('input').val();
   $(this).siblings('input').val('');
   var card = $(`<div class="card">

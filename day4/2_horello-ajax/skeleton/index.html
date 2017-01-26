@@ -18,31 +18,27 @@
   <script src="js/events.js"></script>
   <script>
   function dummyData(){
-    var board = new horello.Board("1");
-    var list1 = new horello.List("li1", "FirstList");
-    var list2 = new horello.List("li1", "FirstList");
-    var card1 = new horello.Card("ca1", "firstCard", "desc", "li1");
-    board.lists.push(list1);
-    board.lists.push(list2);
-    list1.cards.push(card1);
-    list1.cards.push(card1);
-    list2.cards.push(card1);
-    return board
+    // YOUR CODE HERE FOR PHASE 1
+
+    return board;
+  }
+  function realData(){
+    var data = { id: horello.boardId}
+    var board = horello.Board.boardFromJSON(data);
+    board.loadListData();
+    return board;
   }
   </script>
   <script>
-
-  // jQuery document ready shorthand.
+  
   $(function () {
-
-    board = dummyData()
-    // var data = { id: horello.boardId} // THIS CHANGE
-    // var board = horello.Board.boardFromJSON(data);
-    // board.loadListData(); //This Remove
-     horello.mount(board);
-     horello.mountStatic(board);
-     window.board = board;
-
+    // PHASE 1: Comment dummyData()
+    var board
+    // board = dummyData()
+    board = realData()
+    horello.mount(board);
+    horello.mountStatic(board);
+    window.board = board;
   });
   </script>
 </head>

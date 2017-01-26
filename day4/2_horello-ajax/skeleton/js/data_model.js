@@ -74,7 +74,7 @@ horello.List.prototype.loadCardData= function() {
       console.log("Successfully loaded cards for list " + this.id);
       this.cards = data2.map(horello.Card.cardFromJSON);
       // Re-render.
-      horello.mount(board);
+      horello.refresh(board);
     }.bind(this),
     error: function (err) {
       console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
@@ -151,7 +151,7 @@ horello.Card.prototype.updateCardTitle= function(titleStr) {
 
 
 horello.Card.prototype.setDescription=function(description) {
-  // YOUR CODE HERE 
+  // YOUR CODE HERE
 
   this.description = description;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {

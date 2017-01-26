@@ -4,7 +4,7 @@
 
 window.horello = window.horello || {};
 
-horello.mountStatic = function() {
+horello.refreshStatic = function() {
 
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
@@ -24,7 +24,7 @@ horello.mountStatic = function() {
     board.addList(listName);
     $('#addListText').val('');
     $('#addList').collapse('toggle');
-    horello.mount(board);
+    horello.refresh(board);
   });
 
   $('#addListCancel').click(function(e) {
@@ -59,12 +59,12 @@ horello.mountStatic = function() {
     card.updateCardTitle(title);
     card.setDescription(desc);
     $('#cardEdit').modal('hide');
-    horello.mount(board);
+    horello.refresh(board);
   });
 };
 
 // This function is called multiple times, to configure dynamic events.
-horello.mount = function (board) {
+horello.refresh = function (board) {
   /*
     Note: we are NOT unbinding event listeners from elements that are
     going away. It looks like this isn't necessary with jquery per
@@ -105,7 +105,7 @@ horello.mount = function (board) {
       // Get the list object
       var list = board.getList(id);
       list.addCard(val);
-      horello.mount(board);
+      horello.refresh(board);
     });
 
     // Cancel

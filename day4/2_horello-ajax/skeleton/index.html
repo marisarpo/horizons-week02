@@ -20,11 +20,6 @@
   <script src="js/events.js"></script>
 
   <script>
-  function dummyData(){
-    // YOUR CODE HERE FOR PHASE 1
-
-    return board;
-  }
   function realData(){
     var data = { id: horello.boardId}
     var board = horello.Board.boardFromJSON(data);
@@ -35,12 +30,11 @@
   <script>
 
   $(function () {
-    // PHASE 1: Comment dummyData()
-    var board
-    // board = dummyData()
+    var board;
+    board = new horello.Board("My Horello Board");
     board = realData()
-    horello.mount(board);
-    horello.mountStatic(board);
+    horello.refresh(board);
+    horello.refreshStatic(board);
     window.board = board;
   });
   </script>

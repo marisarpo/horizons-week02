@@ -84,15 +84,6 @@ $('.board').on('click', '.card', function(){
 
 $('.modal-footer').on('click', '.card-edit-save', function(){
   var newText = $("#card-edit-body").val();
-  // var hh = $(cardBeingEdited).find(".card-body").text();
-  // console.log(hh);
   $(cardBeingEdited).find(".card-body").text(newText);
-
-
-  // console.log(blah);
-//   // debugger;
-// .modal("toggle")
-//   $(this).closest(".modal").hid();
-  // blah = newText;
   $('.modal').modal('hide');
 });

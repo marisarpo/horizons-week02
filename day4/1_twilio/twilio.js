@@ -20,12 +20,8 @@ twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
 // Exercise 1. Implement the `initialize` method
 // When the TwilioShoutout class is constructed, it calls its initialize() method. That method should set up event listener(s) that will allow you to capture and send data from your web UI. More information is provided at the method.
 
-twilio.initialize(  );
-
 // Exercise 2. Implement the `clear` method
 // There are going to be two input fields in the application you're building, and it would be nice to have some function to clear their values.
-
-twilio.clear(); 
 
 // Exercise 3. Implement the `validateMessageField` method
 // TwilioShoutout has a `validateMessageField` method that needs to be implemented. The function takes a string and returns true or false based on whether the string is a valid message or not. More information is provided at the method.

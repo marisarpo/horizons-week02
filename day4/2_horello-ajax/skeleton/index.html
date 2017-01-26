@@ -17,48 +17,65 @@
   <script src="js/data_model.js"></script>
   <script src="js/events.js"></script>
   <script>
+  function dummyData(){
+    var board = new horello.Board("1");
+    var list1 = new horello.List("li1", "FirstList");
+    var list2 = new horello.List("li1", "FirstList");
+    var card1 = new horello.Card("ca1", "firstCard", "desc", "li1");
+    board.lists.push(list1);
+    board.lists.push(list2);
+    list1.cards.push(card1);
+    list1.cards.push(card1);
+    list2.cards.push(card1);
+    return board
+  }
+  </script>
+  <script>
 
-    // jQuery document ready shorthand.
-    $(function () {
-      var data = { id: horello.boardId} // THIS CHANGE
-      var board = horello.Board.boardFromJSON(data);
-      horello.mount(board);
-      horello.mountStatic(board);
-      board.loadListData(); //This Remove
-      window.board = board;
-    });
+  // jQuery document ready shorthand.
+  $(function () {
+
+    board = dummyData()
+    // var data = { id: horello.boardId} // THIS CHANGE
+    // var board = horello.Board.boardFromJSON(data);
+    // board.loadListData(); //This Remove
+     horello.mount(board);
+     horello.mountStatic(board);
+     window.board = board;
+
+  });
   </script>
 </head>
 
 <style>
-  body {
-    font-family: Verdana, sans-serif;
-  }
+body {
+  font-family: Verdana, sans-serif;
+}
 </style>
 
 <body>
 
-<header>
-  <a class="header-logo"
-     href="#"><span class="header-logo-default"></span></a>
-</header>
+  <header>
+    <a class="header-logo"
+    href="#"><span class="header-logo-default"></span></a>
+  </header>
 
-<div class="modal fade" id="cardEdit">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
-          <span>&times;</span>
-        </button>
-        <input type="text" class="form-control" id="modalText">
-      </div>
-      <div class="modal-body">
-        <h5>Description</h5>
+  <div class="modal fade" id="cardEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <input type="text" class="form-control" id="modalText">
+        </div>
+        <div class="modal-body">
+          <h5>Description</h5>
           <textarea class="form-control" rows="5" id="modalBody"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default"
-                data-dismiss="modal">Close
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"
+          data-dismiss="modal">Close
         </button>
         <button type="button" class="btn btn-primary" id="modalSave">
           Save changes
@@ -79,21 +96,21 @@
       <div class="collapse" id="addList">
         <div class="well add-card-form">
           <input type="text" class="form-control"
-                 placeholder="List name" id="addListText">
+          placeholder="List name" id="addListText">
           <button type="button"
-                  class="btn btn-default"
-                  id="addListSave">
-            Save
-          </button>
-          <button type="button"
-                  class="btn btn-default"
-                  id="addListCancel">
-            <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </div>
-      </div>
+          class="btn btn-default"
+          id="addListSave">
+          Save
+        </button>
+        <button type="button"
+        class="btn btn-default"
+        id="addListCancel">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
     </div>
   </div>
+</div>
+</div>
 
 </div>
 </body>

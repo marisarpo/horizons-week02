@@ -187,6 +187,9 @@ horello.Card.prototype.setDescription=function(description) {
 
 // Poll server periodically.
 
+// TODO:
+// Do the renderers.
+
 ///////////////////// RENDERERS /////////////////////
 
 horello.Board.prototype.render = function() {
@@ -233,6 +236,8 @@ horello.List.prototype.render = function() {
   }, ""));
   return wrapper.html();
 };
+
+
 
 horello.Card.prototype.render = function() {
   // build wrappers

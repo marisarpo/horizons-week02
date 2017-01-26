@@ -1,37 +1,10 @@
 # Horello continued: APIs and AJAX
 
+## Introduction
 
-##Setup.
-
-1. Create a board with whateverr.
-1. put sum stuff in it.
-1. How to get board id.
-
-##To display stuff on the screen.
-
-1. Call board.loadData();
-    1. This brings a 'data' array with all the lists.
-    1. Call horello.List.fromJSON(data2) for each list
-        1. fromJSON converts each list data into a List Object
-        1. pushes the list into the board's list array
-        1. and calls 'list.loadCards' for each list.
-
-1. list.loadCards();
-    1. brings an array of cards for that list
-    1. calls fromJSON to create Cards from data.
-    1. pushes the Cards into the list's cardarray
-       "this.cards = data2.map(horello.Card.fromJSON)"
-    1. Calls *horello.mount(board);* THIS IS THE CODE THAT REFFRESHES STUFF.
-
-
-
-why does board loadListData? instead of lists loading their own data? 
-
-
-
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
+Today you are going to make your Horello work with the real Trello API to get and
+store your data. You are going to use `ajax` to get and send data back to the API.
+You can check the final version of the project [here](http://horizons-school-of-technology.github.io/week02/day4/2_horello-ajax/solution/index.html).
 
 ## Contents
 
@@ -42,54 +15,33 @@ why does board loadListData? instead of lists loading their own data?
 - Phase 5. [Writing to the API](#phase-5-writing-to-the-api)
 - Phase 6. [(BONUS) Improvements](#bonus-phase-6-improvements)
 
-## Introduction
 
-Remember the first time you left home? Like, ventured out into the real,
-big, scary world to meet other people and find yourself and figure out
-where you fit in? Hopefully you didn't get punched in the face or fall
-off a cliff. (I did `¯\_(ツ)_/¯`)
+## Phase 1: How the project works.
 
-Today is a big day. You're a grown up (more or less), but your app
-isn't. Up to now, your app has been sitting pretty on a comfy sofa in
-the living room, drinking Coke and watching football. Pretty much. But
-Today your app is about to walk out the front door.
+To start, we are giving you the models that make up Trello: `board`, `list` and `card`,
+These are simple objects that can be instanciated and whenever you load data to them,
+they show it on the screen.
 
-After this morning's lesson, you now have the tools--namely, JSON, AJAX,
-and APIs--that you need to connect your app to the big bad world. Today,
-your app is going to do something _persistent._ It's going to touch data
-in the real world. Exciting, right? (And you're going to have to find a
-way to deal with the empty nest when it's gone. Time to make another
-one?)
 
-You're going to be starting with the solution code from the previous
-Horello project (Making Horello Dynamic). We've simplified the code a
-bit, and removed some of the comments. If you prefer to work with your
-own code from the previous project, feel free to do that instead, we
-won't be offended. You won't be changing the view code (HTML/CSS) today,
-this will be pure JS.
 
-Check out the [live, final version of Horello at the end of this
-project](http://horizons-school-of-technology.github.io/week02/day4/2_horello-ajax/solution/index.html).
+
+
+TODO: Renderers, create objects. and so on.
+
+1. Create a board with whateverr.
+1. put sum stuff in it.
+1.
+
+
 
 ## Phase 1: Authentication
 
-The "real world" that we're going to be venturing into today is the
-cloud, i.e., someone else's data server out there somewhere in the
-Internet. Before we can do anything in the cloud, or on someone else's
-server, and before we can use someone else's API, we first need to
-authenticate ourselves. Authentication is like sticking a "Hello, my
-name is..." badge on our chest before we ask for data. The other guy is
-going to want to know who you are. (Why? Permissions, throttling, etc.)
+Before we can use someone else's API, we first need to
+authenticate ourselves. (Why? Permissions, throttling, etc.)
 
 Step one today is to establish your credentials with Trello--since we're
 going to be working with the Trello API.
-
-Head over to http://www.trello.com and log in to your Trello account. If
-you don't yet have a Trello account, create one first by clicking "Get
-Started" (that beautiful button that you spent so long styling on
-Monday...).
-
-Once you've logged into your Trello account:
+Head over to http://www.trello.com and sign-up/log-in to your Trello account.
 
 **TODO: this is good**
 1. Navigate to the [Trello
@@ -101,82 +53,59 @@ Once you've logged into your Trello account:
 1. Click "Allow" on the authentication screen.
 1. Copy this token and paste it into `config.js`.
 
-That was pretty easy, right? These two strings--the key and the
-token--are how our application (Horello) authenticates to the Trello
-backend. It's how Trello knows which boards, lists, and cards we have
-access to, and it's how Trello knows whose pretty face to attach to our
-comments.
-
+**TODO**
+API KEY
+vs auth key
+vs board id.
 
 ## Phase 2: Getting familiar with the API
 
-With authentication in place, we can begin having some fun with data.
-Before we try to hook up our frontend to the Trello backend, let's test
-the API to make sure a.) that it's working and b.) that we know what the
-heck is going on.
+We use models to connect the data that comes from the API to your horello app.
+Whenever you make an api request the data comes in from Trello looks something
+like this:
 
-Begin by taking a look at the full [Trello API
-reference](https://developers.trello.com/advanced-reference). The panel
-on the left lists the _resources_ that are available via this
-API--things like _board_, _card_, and _list_. (These should look very
-familiar by now, but in an API, they're called _resources_.) If you click on one of these resources, you'll see a full
-list of the actions that you can take on each of them.
 
-For instance, [GET
-/boards/BOARD_ID](https://developers.trello.com/advanced-reference/board#get-1-boards-board-id)
-is how we download the metadata for one board from the API. Similarly,
-[POST
-/cards](https://developers.trello.com/advanced-reference/card#post-1-cards)
-is how we create a new card. Recall from class that the four HTTP
-actions--POST, GET, PUT, DELETE--correspond to the four CRUD
-actions--create, read, update, delete. POST creates a new object (and
-usually returns its ID), PUT updates an existing object, GET fetches an
-existing object, and DELETE, well... you get one guess.
+```javascript
+{
+  "id":"588942909124b090631636b8",
+  "dateLastActivity":"2017-01-26T00:28:00.955Z",
+  "desc":"Using the Trello API is fun and easy!",
+  "idBoard":"588577bb8423080722cabe8c",
+  "labels":[],
+  "name":"I just created a new card!",
+  "pos":4,
+  "shortUrl":"https://trello.com/c/ScscdDsE",
+  "url":"https://trello.com/c/ScscdDsE/22-i-just-created-a-new-card",
+}
+```
 
-We're going to be using a few of these API calls in this project so
-spend some time getting familiar with them. There are a number of tools
-that we can use to test the API. We'll see several of them here.
+We are going to use 3 _resources_ that are available via the
+API: _board_, _card_, and _list_. To get more familiar on how each one works take a look
+at
 
-### Sandbox
+[Trello API
+reference](https://developers.trello.com/advanced-reference).
 
-Trello gives us a cool sandbox tool that we can use on its developer
-site to play around with the API and begin viewing data. Navigate to
-https://developers.trello.com/sandbox to check it out. You'll need to
-enter your API key here as well. Enter it, then tap Authenticate on the
-next screen to kick off the authentication process.
+We are able to create/read/update/destroy resources through the four HTTP
+actions--POST, GET, PUT, DELETE--
 
-Once you're in the sandbox, play around with the different examples to
-see what shows up in the Result box on the right. This is the JSON data
-that your app will be receiving from the Trello API. Cool, right?
 
-The most important thing we need is a board ID that we can use in
-Horello. We need to hardcode this board ID somewhere since our app is
-(so far) only designed to work with a single board. If you tap on Get
-Boards on the left, then tap Execute, you should see a list of boards
-appear on the right. There's a bunch of data here, but look for the
-board called "Welcome Board", and copy the value from its "id" property.
-You'll need to use this in the next phase.
+$.ajax(URL, {
+  data: {
+    key: API KEY,
+    token: API TOKEN,
+    [ other data here as necessary for PUT and POST ]
+  },
+  success: SUCCESS CALLBACK,
+  error: ERROR CALLBACK
+}
 
-### Raw JSON
 
-Another trick we can use is to view the raw JSON data for an object in
-our web browser. This is possible because the entire Trello API is
-available via HTTP, i.e., the protocol that's being used under the hood
-to exchange data between the frontend and the backend is actually HTTP,
-which is the same protocol that's used for web pages. The URL you need
-to view the data for a board in Trello is:
 
-    https://trello.com/1/boards/<BOARD_ID>
+### TODO
 
-Copy and paste this URL into your web browser, then replace `<BOARD_ID>`
-with the ID you copied above. Hit enter, and you should see some JSON
-data which looks something like this:
+GEt board data.
 
-// TODO Download JSON formatter.
-
-![JSON board data](./img/board_data.png)
-
-You can do this for cards and lists, too. Give it a shot!
 
 ### jQuery AJAX
 
@@ -240,26 +169,28 @@ official Trello website to see your changes appear! (Actually, these
 changes should appear in realtime if you have the board open--no
 reloading necessary.)
 
-### REST client (optional)
 
-The most powerful tool we can use to play around with an API manually is
-something called a REST client. Our favorite free REST client, which is
-available both as a standalone app and as a Chrome plugin, is
-[Postman](https://www.getpostman.com/).
+##To display stuff on the screen.
 
-If you prefer using an app, try installing Postman and using it to get
-the list of boards. Then try using it to create a new list on the board,
-and/or a new card on a list. Then reload the official Trello website to
-see your changes appear! (Actually, these changes should appear in
-realtime if you have the board open--no reloading necessary.)
+1. Call board.loadData();
+    1. This brings a 'data' array with all the lists.
+    1. Call horello.List.fromJSON(data2) for each list
+        1. fromJSON converts each list data into a List Object
+        1. pushes the list into the board's list array
+        1. and calls 'list.loadCards' for each list.
 
-You'll have to figure out how to use Postman on your own, but it's
-pretty intuitive. To fetch data, run a GET query on the resource URL.
-Pass `key` and `token` as params. You should be able to create data
-using POST.
+1. list.loadCards();
+    1. brings an array of cards for that list
+    1. calls fromJSON to create Cards from data.
+    1. pushes the Cards into the list's cardarray
+       "this.cards = data2.map(horello.Card.fromJSON)"
+    1. Calls *horello.mount(board);* THIS IS THE CODE THAT REFFRESHES STUFF.
+
+why does board loadListData? instead of lists loading their own data?
 
 
-## Phase 3. Serialization/deserialization
+
+## Phase 3. Passing data to models.?
 
 Recall from class that JSON is a standard data format that's used to
 exchange information via APIs. Serialization refers to turning our data
@@ -292,21 +223,6 @@ on Wikipedia.
 
 ## Phase 4: Reading from the API
 
-Let's pause to recap where we are. We have access to the Trello API, and
-we've used it to read and write data manually. We have an app that can
-read JSON data and turn it into objects that we can render. Any guesses
-what the final couple of steps are?
-
-Ask Ethan for a delicious PB&J sandwich? Ask Serry for some of that
-chicory coffee? (Actually, that doesn't sound like a bad meal...)
-
-Close. Actually, we still need to wire up our app to the API so that we
-can read data from the cloud, and write our changes back to the cloud.
-This is the most important part of this project, so let's get started.
-
-We love you--you should know that by now--but you're on your own for
-this part. It's your time to fly, butterfly. Here are some hints to get
-you on your way:
 
 - You should be working in `data_model.js`. You shouldn't need to modify
   the HTML, CSS, or events code.
@@ -372,7 +288,9 @@ on your own for this part, too. Here are a couple more tips:
 
 With this last phase in place, you can officially call yourself an app
 developer. That's it. I'm out of funny things to say. See you at
-graduation. :drops mic:
+graduation.
+
+:drops mic:
 
 
 ## BONUS: Phase 6: Improvements
@@ -396,3 +314,31 @@ here app as smooth as an armadillo's backside:
   [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 - Looking for even more? Check out the [list of challenges for the
   week](../../challenges/1_bonus_horello).
+
+
+
+
+
+
+
+  //sep1
+  learning models
+  var board =new board("boardname");
+  var list =new list;
+  board.lists.push(list);
+  render;
+
+  // step2
+  getting data -> ajax
+
+  //sete3
+  ajax -> MODELS
+
+  //step 4
+  models -> html
+  // show a bit of description.
+  // Augment the ui a bit.
+
+  // hover over button -> shows trash
+  // click -> deletes the card.
+  //

@@ -20,24 +20,25 @@ horello.Card = function(id, title, description, listId) {
 };
 
 ///////////////////// STATIC OBJECT CREATORS /////////////////////
-// These transfer Data from api to  actual objects using constructors.
-// TODO: STUDENTS SHOULD IMPLEMENT THESE
+// These transfer Data from api to actual objects using constructors.
 
 horello.Board.boardFromJSON = function(data) {
   return new horello.Board(data.id);
 };
 horello.List.listFromJSON = function(data) {
+  // YOUR CODE HERE
   return new horello.List(data.id, data.name);
 };
 horello.Card.cardFromJSON = function(data) {
+  // YOUR CODE HERE
   return new horello.Card(data.id, data.name, data.description, data.idList);
 };
 
 ///////////////////// GET THAT DATA /////////////////////
 
 horello.Board.prototype.loadListData = function() {
-  // This is the calling point from index.js.
-  // loadListData -> loadsCards -> which Mounts the board
+  // YOUR CODE HERE
+
   $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
     data: {
       key: horello.apiKey,
@@ -45,6 +46,7 @@ horello.Board.prototype.loadListData = function() {
     },
     success: function (listData) {
       console.log("Successfully loaded lists for board " + this.id);
+
       // step 1 parsing the data
       this.lists = listData.map(horello.List.listFromJSON);
 
@@ -62,8 +64,7 @@ horello.Board.prototype.loadListData = function() {
 }
 
 horello.List.prototype.loadCardData= function() {
-  // YOUR CODE TO IMPORT CARDS
-  // is being called once for every board
+  // YOUR CODE HERE
   $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
     data: {
       key: horello.apiKey,
@@ -84,10 +85,7 @@ horello.List.prototype.loadCardData= function() {
 ///////////////////// ADD CARD AND ADD LIST /////////////////////
 
 horello.Board.prototype.addList = function(listName) {
-  //THIS SHOULD POST TO TRELLO /lists
-  // calls   this.loadListData(); on success, the one below that in time
-  //         loadsData -> loadsCards -> Mounts the board
-  console.log("Addlist")
+  // YOUR CODE HERE
   $.ajax(horello.apiUrl + "/lists", {
     method: "POST",
     data: {
@@ -108,9 +106,7 @@ horello.Board.prototype.addList = function(listName) {
 }
 
 horello.List.prototype.addCard= function(name, description) {
-  // THIS WORKS!
-  // First create the data in the API? WHAT?
-  // on success call       this.loadCardData();
+  // YOUR CODE HERE
   $.ajax(horello.apiUrl + "/cards", {
     method: "POST",
     data: {
@@ -121,10 +117,6 @@ horello.List.prototype.addCard= function(name, description) {
       idList: this.id
     },
     success: function (data) {
-      // Success! Now we have an ID and we can create it locally. Or,
-      // we can reload the data from the API.
-      // TODO: EXPLAIN why this one uses loadCard and the other one calls load list.
-      // This one only realoads this list, the other needs to reload the whole board.
       this.loadCardData()
       console.log("Successfully created new card: " + JSON.stringify(data));
     }.bind(this),
@@ -137,6 +129,8 @@ horello.List.prototype.addCard= function(name, description) {
 ///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
 
 horello.Card.prototype.updateCardTitle= function(titleStr) {
+  // YOUR CODE HERE
+
   this.title = titleStr;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
     method: "PUT",
@@ -157,6 +151,8 @@ horello.Card.prototype.updateCardTitle= function(titleStr) {
 
 
 horello.Card.prototype.setDescription=function(description) {
+  // YOUR CODE HERE 
+
   this.description = description;
   $.ajax(horello.apiUrl + "/cards/" + this.id, {
     method: "PUT",
@@ -171,107 +167,5 @@ horello.Card.prototype.setDescription=function(description) {
     error: function (err) {
       console.error("Error updating description of card " + this.id + ": " + JSON.stringify(err));
     }.bind(this)
-  });
-
-}
-
-// TODO
-//Archive card
-// Archive list
-
-// Move card in list
-// move card between lists
-
-// Poll server periodically.
-
-// TODO:
-// Do the renderers.
-
-///////////////////// RENDERERS /////////////////////
-
-horello.Board.prototype.render = function() {
-  var wrapper = $('<div id="board" class="board"></div>');
-  wrapper.html(this.lists.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-  return wrapper;
-},
-
-horello.List.prototype.render = function() {
-  // Build wrappers
-  var wrapper = $('<div></div>');
-  var listContainer = $('<div class="list-container"></div>');
-  var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
-  var listHeader = $('<div class="list-header"></div>');
-  var listBody = $('<div class="list-cards"></div>');
-  var listFooter = $('<div class="list-footer"></div>');
-
-  wrapper.append(listContainer);
-  listContainer.append(listWrapper);
-  listWrapper.append(listHeader);
-  listWrapper.append(listBody);
-  listWrapper.append(listFooter);
-  listHeader.append($('<span class="list-title"></span>').text(this.name));
-  listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
-  listFooter.append($('\
-  <div class="collapse" id="addCardForm'+this.id+'">\
-  <div class="well add-card-form">\
-  <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-  <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
-  Save\
-  </button>\
-  <button type="button" class="btn btn-default">\
-  <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
-  </button>\
-  </div>\
-  </div>\
-  '));
-
-  // Build cards in the body
-  listBody.html(this.cards.reduce(function(prev, cur) {
-    return prev + cur.render();
-  }, ""));
-  return wrapper.html();
-};
-
-
-
-horello.Card.prototype.render = function() {
-  // build wrappers
-  var wrapper = $('<div></div>');
-  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-  var cardmore = $('<span class="card-more"></span>');
-  if (this.description) {
-    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
-  }
-  var cardbody = $('<div class="card-body">'+this.title+'</div>');
-
-  wrapper.append(cardwrapper);
-  cardwrapper.append(cardmore);
-  cardwrapper.append(cardbody);
-  cardbody.append($("<p></p>")).text(this.title);
-
-  return wrapper.html();
-};
-
-
-///////////////////// GET CARD AND LIST /////////////////////
-
-horello.List.prototype.getCard= function(cardId) {
-  // TODO: WHAT DOESTHIS DO???
-  // ANY WAY OF IMPROVING??
-  var card = this.cards.filter(function(c) {
-    return (c.id == cardId);
-  });
-  if (card.length > 0) {
-    return card[0];
-  }  return null;
-}
-
-horello.Board.prototype.getList = function(listId) {
-  // TODO: WHAT DOESTHIS DO???
-  // ANY WAY OF IMPROVING??
-  return this.lists.find(function(c) {
-    return (c.id == listId);
   });
 }

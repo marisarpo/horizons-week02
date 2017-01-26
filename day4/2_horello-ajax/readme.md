@@ -8,6 +8,8 @@ You can check the final version of the project [here](http://horizons-school-of-
 
 ## Contents
 
+TODO
+
 - Step 1: [Authentication](#step-1-authentication)
 - Step 2. [Getting familiar with the API](#step-2-getting-familiar-with-the-api)
 - Step 3. [Serialization/deserialization](#step-3-serializationdeserialization)
@@ -213,3 +215,11 @@ every once in a while, you check the server for new content and update your app.
 
 
 # Section 2: Rendering
+
+TODO: WRITE THIS PART>
+
+## SUPER BONUS stuff
+// Archive card
+// Archive list
+// Move card in list
+// move card between lists

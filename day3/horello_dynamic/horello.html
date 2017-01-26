@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Horizons - W2D3 - Making Horello Dynamic</title>
+    <title>Horello: BEAST MODE</title>
+    <link id="favicon" rel="shortcut icon" href="img/faviconblue.png" type="image/png">
     <script src="../../lib/underscore.js"></script>
     <script src="../../lib/jquery.js"></script>
     <script src="../../lib/jquery-ui.js"></script>
@@ -16,9 +17,23 @@
   </head>
   <body>
     <header>
-      <a class="header-logo" href="#">
+      <!-- <a class="header-logo" href="#">
         <span class="header-logo-default"></span>
+      </a> -->
+      <a class="header-logo" href="#" id="dropdownMenuButton">
+        <span class="header-logo-default dropdown-toggle"></span>
       </a>
+      <div class="dropdown">
+        <!-- <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+        <div class="dropdown-menu">
+          <a id="blueButton" class="dropdown-item" href="#"></a>
+          <a id="redButton" class="dropdown-item" href="#"></a>
+          <a id="greenButton" class="dropdown-item" href="#"></a>
+          <a id="orangeButton" class="dropdown-item" href="#"></a>
+          <a id="yellowButton" class="dropdown-item" href="#"></a>
+          <a id="purpleButton" class="dropdown-item" href="#"></a>
+        </div>
+      </div>
     </header>
 
     <div class="modal fade" id="card-edit">
@@ -199,6 +214,6 @@
       </div>
 
     </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script
   </body>
 </html>

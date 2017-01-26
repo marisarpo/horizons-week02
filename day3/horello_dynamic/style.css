@@ -9,10 +9,56 @@ body {
 
 header {
     background: rgba(0,0,0,.15);
-    padding: 5px;
     height: 40px;
     position: relative;
-    overflow: hidden;
+    padding-top: 2.5px;
+}
+
+.dropdown-menu {
+  padding: 0 0;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  transition: width 0.7s;
+  display: flex;
+  overflow: hidden;
+  width: 0px;
+  min-width: 0px;
+  margin-left: 53%;
+}
+
+.dropdown-item {
+  height: 30px;
+  border-radius: 0.3em;
+  margin: 0 5px;
+  border: 0;
+  outline: 0;
+  flex: 1;
+  min-width: 0px;
+}
+
+#blueButton {
+  background-color: rgb(0,121,191);
+}
+
+#redButton {
+  background-color: #c0392b;
+}
+
+#greenButton {
+  background-color: #27ae60;
+}
+
+#orangeButton {
+  background-color: #e67e22;
+}
+
+#yellowButton {
+  background-color: #f1c40f;
+}
+
+#purpleButton {
+  background-color: #9b59b6;
 }
 
 .header-logo {
@@ -31,7 +77,7 @@ header {
 }
 
 .header-logo-default {
-    background-image: url(img/title.png);
+    background-image: url(img/titlewhite.png);
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 5pc 30px;

@@ -3,15 +3,16 @@
 body {
     line-height: 18px;
     height: 100vh;
-
-    /** PHASE 1 CSS here */
-}
+    background-color: rgb(0,121,191);
+    font-family: sans-serif;
+  }
 
 header {
     position: relative;
     overflow: hidden;
-
-    /** PHASE 1 CSS here */
+    padding: 5px;
+    height: 40px;
+    opacity: 0.7;
 }
 
 .header-logo {
@@ -49,11 +50,19 @@ a {
 /* BOARD */
 
 .add-list-container {
-    padding: 5px;
+  display:flex;
+  flex:1;
+  padding: 5px;
 }
-
+/*button{
+  */
+}
 .add-list {
-    /** PHASE 1 CSS here */
+display:flex;
+flex:1;
+background: rgba(0,0,0,0.12);
+color: #fff;
+
 }
 
 .add-list:hover {
@@ -65,11 +74,12 @@ a {
 }
 
 .board {
+    display: flex;
+    flex-direction: row;
     overflow-x: auto;
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
-
     /** PHASE 2 CSS here */
 }
 
@@ -77,21 +87,28 @@ a {
 /* LISTS */
 
 .list-container {
+  display: flex;
+   flex:1;
     height: 100%;
 }
 
 .list {
     box-sizing: border-box;
+    padding: 0.5em;
+    margin: 5px 5px;
+    border radius: 3px;
+    width: 270px;
+    background color: #e2e4e6;
     max-height: 100%;
 
-    /** PHASE 2 CSS here */
+   /** PHASE 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
 
-    /** PHASE 2 CSS here */
+   /** PHASE 2 CSS here */
 }
 
 .list-footer {
@@ -103,6 +120,13 @@ a {
 }
 
 .add-card {
+height: 40px;
+border radius: 4px;
+text align: left;
+background: rgba(16, 16, 16,.15);
+color: #333;
+margin: 3px 0;
+width:100%;
     /** PHASE 2 CSS here */
 }
 
@@ -116,7 +140,7 @@ a {
 .list-cards {
     min-height: 0;
 
-    /** PHASE 3 CSS here */
+   /** PHASE 3 CSS here */
 }
 
 .card {

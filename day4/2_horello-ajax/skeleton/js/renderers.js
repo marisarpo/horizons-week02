@@ -1,4 +1,4 @@
-/*  UNCOMMENT THIS FILE TO START PART 2
+/* DELETE THIS LINE
 
 "use strict";
 window.horello = window.horello || {};
@@ -78,4 +78,4 @@ horello.Board.prototype.render = function() {
   return boardHTML;
 };
 
-*/
+DELETE THIS LINE */

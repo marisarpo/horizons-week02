@@ -16,8 +16,6 @@ By the end of the day, making a change in Trello should update our site and the 
 
 ![Updating](images/capture10.jpeg)
 
-To get an idea on how the project works, visit the final version of the project [here](http://horizons-school-of-technology.github.io/week02/day4/2_Horello-ajax/solution/index.html).
-
 # Section 1
 
 ## Exercise 1: Warmup
@@ -98,7 +96,7 @@ Trello to identify your app and know what boards it has access to.
    Developers page](https://developers.Trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of the page.
    Copy this key and paste it into
-   `week02/day4/2_horello-ajax/skeleton/js/config.js` (you'll see where).
+   `week02/day4/2_horello-ajax/skeleton/js/config.js`.
 
   ![API KEY](images/capture6.jpeg)
 
@@ -147,10 +145,10 @@ In this section, we start by creating some data manually on Trello. After creati
 ## Exercise 3: Getting familiar with the API
 
 We are finally ready to get real data from Trello. Open up your console
-and try the following `ajax` request: (Don't forget to insert your key an token)
+and try the following `ajax` request: (Don't forget to insert your key, token and boardId in the corresponding places)
 
 ```
-$.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
+$.ajax('https://api.Trello.com/1/boards/"YOURBOARDIDHERE"', {
       data: {
         key: "YOUR KEY",
         token: "YOUR TOKEN",
@@ -201,10 +199,10 @@ Head over to the `GET DATA` section in
 
 The first function: `horello.Board.prototype.loadListData` is already implemented and it should give you an idea on how to implement the next one. This one brings an array of lists for your board.
 
-Implement `horello.List.prototype.loadCardData`. This function should make a GET request to get the cards that belong to a list. If we were trying to get the cards for the list with id "123123", our URL for the request would look like this: "list/12312/cards". You can look at the code in the function above for reference. The difference on this one is the success part of the function. When successful this function should convert al the cards it gets from the API and parsing them using `cardFromJSON`. It should also refresh the board using `horello.refresh(board);`
+Implement `horello.List.prototype.loadCardData`. This function should make a GET request to get the cards that belong to a list. If we were trying to get the cards for the list with id "123123", our URL for the request would look like this: "list/12312/cards". You can look at the code in the `horello.Board.prototype.loadListData` function for reference. The difference on this one is the success part of the function. When successful, this function should convert all the cards it gets from the API and parse them using `cardFromJSON`. You should also refresh the board by calling `horello.refresh(board);`
 
 ### Verifying your function.
-Up to this point, the best way to verify your AJAX code is working is logging the `this.cards` array at the end of the success part of the function to the console. This should log and array of cards that looks like capture below. You may have a different number of cards depending on the cards you created directly on Trello. But it *should* be an array of `Card` objects
+Log `this.cards` at the end of the success function (The success callback). This should log an array of cards that looks like the capture below. You may have different cards depending on what you created directly on Trello. But it *should* be an array of `Card` objects
 
 ![Verifying 1](images/capture11.jpeg)
 
@@ -212,7 +210,7 @@ If you need help implementing these methods head over to [Trello API
 reference](https://developers.Trello.com/advanced-reference). For more info on how
 the API works.
 
-## Verifying your code works up to this point
+## Checkpoint
 
 If you load your page and it loads lists and cards, you are good to go! It should contain the same data from your Trello board.
 
@@ -302,8 +300,6 @@ To check if your code works, head over to the page and refresh it. It should lik
 
 ## Bonus: Exercise 7: AJAX Improvements
 
-Make these improvements to make to the AJAX process:
-
 - Rather than passing the authentication information with every single
   request, see if you can simplify this using
   [jQuery.ajaxSetup()](https://api.jquery.com/jquery.ajaxsetup/).
@@ -316,8 +312,6 @@ Make these improvements to make to the AJAX process:
 
 ## Double Bonus: Exercise 8: UI Improvements
 
-Implement these UI Implement:
-
 - Delete card. To be able to delete a card, you should follow these steps:
     1. Add an [X] button to the right upper corner of each card.
     1. Add a listener for that button, so when a user clicks it, it triggers a function   `card.delete();`
@@ -325,6 +319,6 @@ Implement these UI Implement:
     1. Refresh your data so the card disappears.
 - Delete list. This one should work similarly to the previous one.
 - Move card between lists
-    1. To move a card between lists you have to make two requests. One to remove the
-    card from the actual list, and one to add it to the newly specified list.
+    1. A move is two operations: a remove followed by an add.
+    One to remove the card from the actual list, and one to add it to the newly specified list.
 - Move a card inside the list

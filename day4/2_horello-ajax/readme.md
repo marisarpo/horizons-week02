@@ -115,6 +115,8 @@ TODO. PICTURES.
 **Creating test data**
 1. Head back to http://www.Trello.com
 1. Create a new board and add some lists and cards to it.
+TODO ADD PICTURE OF THIS Step
+
 1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test`
 1. Add .json at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
 
@@ -125,28 +127,8 @@ TODO. PICTURES.
 
 ## Step 3: Getting familiar with the API
 
-We are going to use the same 3 _resources_ we have as models from the Trello API:
- _board_, _card_, and _list_. We are able to create/read/update/destroy resources
- through the four HTTP actions `POST GET PUT DELETE`
-
-To get familiar on how the API we start by making a few api calls from your console.
-To get a board. Replace the `TOKEN`, `KEY` and set up all the necessary values for
-the request that you are making. Try to get a board, list and card from the console.
-The general format of a request looks like this:
-
-```
-$.ajax(URL, {
-  data: {
-    key: API KEY,
-    token: API TOKEN,
-    [ other data here as necessary for PUT and POST ]
-  },
-  success: SUCCESS CALLBACK,
-  error: ERROR CALLBACK
-}
-```
-
-We will give you the code to get the board. Copy and paste this code to the console. Remember to change `YOUR BOARD ID HERE` to the board id we got on the previous step.
+We are finally ready to make requests and get data for the boards. This is how a
+GET request would look like to get information for a board.
 
 ```
 $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
@@ -158,7 +140,8 @@ $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
     })
 ```
 
-If you get an object like the following one, you are good to go.
+That request would return an object like the one below, containing all the information
+about the board, including its id, name, description and much more.
 
 ```
 {
@@ -171,29 +154,38 @@ If you get an object like the following one, you are good to go.
 }
 ```
 
-Now let's start to code! Head on to the `data_model.js` file and **implement**:
+You can use the code above as a base for all the requests you are going to make.
+Remember to replace the `TOKEN` and `KEY` when actually using the code.
+
+
+Now let's start to code! Head on to the `data_model.js` file and **implement** the
+following methods using ajax to get the information:
 
 - `Horello.List.prototype.getCard`
 - `Horello.Board.prototype.getList`
 
-The comments on `data_model.js` give you more information on how to do it. On the
-success callbacks of the functions `console.log` the data to be sure you
-are getting board/list data!
+The comments on `data_model.js` give you more information on how to do it.
 
 If you need help implementing these methods head over to [Trello API
 reference](https://developers.Trello.com/advanced-reference). For more info on how
 the API works.
 
-Note: Remember to include the API KEY and TOKEN in every request.
 
 ### From AJAX to models.
 
-**Implement** the `Horello.List.listFromJSON` and `Horello.Card.cardFromJSON` methods.
-These are called when your ajax ends in success. The data from these ajax calls
-is now passed to these methods to create the appropriate objects for cards and lists.
-You can look at `Horello.Board.boardFromJSON` to get an idea of how it works.
+**Implement** The following methods. `Horello.Board.boardFromJSON` to get an idea of how they should work.
+
+`Horello.List.listFromJSON`
+`Horello.Card.cardFromJSON`
+
+These methods are used to convert the JSON you get from the API into actual objects
+on your code. They should do the same thing we did on the `Warmup` section when
+we created all the objects doing `new horello.List()`. They should take in data
+and return the newly created `list` object.
 
 ## Step 4: Sanity Check.
+
+This is just a quick review on how things are (or should be) working on the app to get the data from our backend (Trello API) and rendering into the frontend.
 
 If your methods were correctly implemented according to the steps here and on
 `data_model.js`, refreshing your page should show you Horello with all the data
@@ -221,30 +213,24 @@ the Horello page and you should see your changes!
 
 ## Step 5: Writing to the API
 
-You are ready to start implementing your AJAX calls to perform new actions on the
-API. The first thing we are going to do is implement the code that allows you to
-edit a card's title and description. The event handlers from the HTML are already
-done and the modal is working too. The functions `updateCardTitle` and `setDescription`
-are called by the event listeners when someone saves a new title to a card. Implement:
+If you can see all the lists and cards on your Horello board, you are ready to start implementing your AJAX calls to perform new actions on the API. Now, we are going implement the code that allows you to edit a card's title and description.
 
-`horello.Card.prototype.updateCardTitle` Make a PUT request to the 'cards' endpoint
-to the API to update the card's title. Don't forget to do `this.title = titleStr;`
-so your interface also refreshes.
+Whenever someone clicks on a card, a modal shows up. If you edit the card and click
+on save, `updateCardTitle` and `setDescription` are called. You have to implement
+them to make the request to Trello and update the title on the backend.
+
+`horello.Card.prototype.updateCardTitle` Should make a PUT request to the '/cards' endpoint to update the card's title. Don't forget to modify the current card doing  `this.title = titleStr;` so your interface also refreshes!
 
 
-`horello.Card.prototype.setDescription` Same concept as above, for card descriptions.
+`horello.Card.prototype.setDescription` Same concept as above.
 
-Now, you are going to implement functions that do an API request and refresh the
+Now, you are going to implement similar functions that do an API request and refresh the
 page when the ajax request ends in success.
 
-`horello.Board.prototype.addList` This function should create a new POST request
-with the list's name and other needed data and call the API. On the success callback
-of this function, remember to call `this.loadListData();` so the lists are refreshed
-and your new list shows.
+`horello.Board.prototype.addList` Whenever a list is added, this function is called.
+You should make a POST request to create a new `List` on the backend. On the success callback of this function, remember to call `this.loadListData();` so the lists are refreshed and your new list shows up on the page.
 
-`horello.List.prototype.addCard` This function should create a new POST request
-with the cards's name and other needed data and call the API. On the success callback
-of this function, remember to call `this.loadCardData();` so the cards on your list are refreshed and your new list shows.
+`horello.List.prototype.addCard` Same concept as above.
 
 
 
@@ -264,10 +250,21 @@ every once in a while, you check the server for new content and update your app.
 
 # Section 2: Rendering
 
-TODO: WRITE THIS PART>
+Remember how on warmup we created our lists by doing `var list1 = new horello.List("1", "My first list")`? Now we are going to implement the code that does this. By doing `card.render()`, you will generate all the needed HTML for that card.
 
-## SUPER BONUS stuff
-// Archive card
-// Archive list
-// Move card in list
-// move card between lists
+Head over to `renderers`, un-comment the file and start rendering!
+
+## SUPER BONUS
+You are on your own now. From HTML all the way to the backend you are going to make
+the connections to make the code work. We will give you a couple of hints on how
+you can do this.
+- Delete card. To be able to delete a card, you should follow these steps:
+    1. Add an [X] button to the right upper corner of each card.
+    1. Add a listener for that button, so when a user clicks it, it triggers a function   `card.delete();`
+    1. Define and the function `horello.Card.prototype.deleteCard` on your `data_model.js` file. This one should make the DELETE request to the Trello API.
+    1. Refresh your data so the card disappears.
+- Delete list. This one should work similarly to the previous one.
+- Move card between lists
+    1. To move a card between lists you have to make two requests. One to remove the
+    card from the actual list, and one to add it to the newly specified list.
+- Move a card inside the list.

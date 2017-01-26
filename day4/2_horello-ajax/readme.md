@@ -2,13 +2,15 @@
 
 ## Introduction
 
-Up to yesterday, you created a functioning version of Trello in HTML. You can add
-cards, but they will get deleted once the webpage is reloaded. Today, we are going
-to use the Trello API as a backend for our app to store all our data.
+During the first half of this week, you have been creating a functioning version
+of Trello in HTML without a connection to any server. You can add cards, but
+they will get deleted if you refresh the page. Today, we are going to use the
+Trello API as a backend for our app so our changes are stored for posterity.
 
 Every action like `adding a card` or `changing a title` needs to be sent to the
-backend now, so it can save our changes. If a user deletes a card, we have to remove
-it from our front-end and from the backend too, making a DELETE request to the API.
+backend now, so it can save our changes. If a user deletes a card, we have to
+remove it from our front-end and from the backend too, making a `DELETE` request
+to the API.
 
 To get an idea on how the project works, visit the final version of the project [here](http://horizons-school-of-technology.github.io/week02/day4/2_Horello-ajax/solution/index.html).
 
@@ -16,8 +18,8 @@ To get an idea on how the project works, visit the final version of the project 
 
 ## Step 1: Warmup
 
-To start, we are going to create some data on the console and display it onto the
-board. Open `index.html` and the console.
+To start, we are going to create some data on the page from the console and
+display it onto a Horello board. Open `index.html` and the console.
 
 Paste the following code into the console. This creates a list with "id" of "1"
 and the name "My first list".
@@ -26,29 +28,30 @@ and the name "My first list".
 var list1 = new horello.List("1", "My first list");
 ```
 
-Now, you have to specify that our list belongs to our board. So let's push it into
-the `board.lists` array that contains all the lists on our board.
+There is a global object called `board` that contains the whole Horello board.
+Add this new list to the `board ` object:
 
 ```javascript
 board.lists.push(list1);
 ```
 
-Finally, refresh the board to see the newly added list. This should display your
-board to the screen. Every time we make a new change, we need to refresh our screen
-with this command to see it working.
+Finally, refresh the board to display it on the screen.  When we make a change
+to the board later on in this project, we will need to rember to call this
+function!
 
 ```javascript
 horello.refresh(board);
 ```
 
-If everything went ok, this is what you should see:
+You should see this:
 
 ![Created Lists](images/capture3.jpeg)
 
-Now that we have a list, we want to add a card to it. We follow a similar process
-to add a card to the list. First, we have to create the card. The card takes in
-a cardId, cardName, description, and list id. Then we have to push it into our list,
-adding it to the list's `card array`, and re-render to display it.
+Now that we have a list, we want to add a card to it. We follow a similar
+process to add a card to the list. First, we have to create the card. The card
+takes in a `cardId`, `cardName`, `description`, and `listId`. Then we have to
+push it into our list, adding it to the list's `cards` array, and re-render to
+display it.
 
 ```javascript
 var card1 = new horello.Card("1", "Finish exercises", "Finish doing memoize.");
@@ -63,11 +66,15 @@ This is how your board should look now.
 We have setup all the logic that takes the board, lists and cards and shows them
 up on the screen so you can focus on getting data back and forth from Trello with
 ajax. Whenever you do a request and get data for cards, follow the same process
-of creating a `new Card` adding them to the list, and so on.
+of creating a `new Card()` adding them to the list, and so on.
 
-Try adding more lists and cards into your console and displaying them to the board.
-Don't forget to push the newly created lists into the board by doing `board.lists.push(LIST-NAME-HERE);` and cards to lists by doing `LIST-NAME-HERE.cards.push(CARD-NAME-HERE);`
-Refresh the board `horello.refresh(board);` every time you add a new card. We added a couple more cards to out board and this is the result we got.
+Try adding more lists and cards into your console and displaying them to the
+board.  Don't forget to push the newly created lists into the board by doing
+`board.lists.push(someList);` and cards to lists by doing
+`someList.cards.push(card)` Refresh the board `horello.refresh(board);` every
+time you add a new card.
+
+Here's our test board we generated using these steps:
 
 ![Test Data](images/capture1.jpeg)
 
@@ -114,12 +121,19 @@ By now, this is how your `config.js` file should look.
   ![Trello Test Board](images/capture9.jpeg)
 
 1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlighted in red in the previous picture)
-1. Add `.json` at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
+1. Add `.json` at the end of that url. (It should look like `https://Trello.com/b/xFsMS0DK/Trello-test.json`.) These are the results you should see:
 
   ![Test Data](images/capture2.jpeg)
-  The output could look a bit different. But the important part is to take the board's id.
 
-1. Copy the id for the board and paste it into `config.js` in `Horello.boardId`.
+  (Your output may look different if you're not using an extension to format
+  JSON.)
+
+1. Copy the id of the board that is listed at the very beginning of the JSON
+   output. For example, the board id below is `cc52060cf01c8040340937e7`:
+
+  ```javascript
+  {"id":"cc52060cf01c8040340937e7",...
+  ```
 
 ## Step 3: Getting familiar with the API
 

@@ -1,0 +1,51 @@
+body {
+    /** Your CSS goes here! **/
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 400;
+      font size: 20px;
+      color: #4d4d4d;
+}
+
+h2 {
+    /** and here (you get the point) **/
+    font-size: 36px;
+}
+
+section {
+  padding-top:80px;
+  padding-bottom:80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.center-paragraph {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 16%;
+  margin-right: 16%;
+}
+
+.text-center {
+  text-align: center;
+  display: inline;
+
+}
+
+.title-project {
+  background-color: blue;
+  float: left;
+  display: inline;
+
+}
+
+.title-sidebar {
+  background-color: red;
+  float: right;
+  position: static;
+  border-left: solid;
+
+}
+
+.project_list{
+    padding: 0 8%;
+}

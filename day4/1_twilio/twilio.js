@@ -54,7 +54,7 @@ twilio.TwilioShoutout.prototype = {
   initialize: function() {
     // YOUR CODE HERE
     this.messageSendButton.on('click', function(){
-
+      this.handleMessageSend();
     })
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method

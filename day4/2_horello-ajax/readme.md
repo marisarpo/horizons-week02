@@ -95,38 +95,31 @@ TODO: Insert capture 5 here.
 
 ## Step 2: Setting up Trello
 
-TODO: DISPLAYING LOCAL DATA>
-
-TODO Why are they settinc up an account, were goint to get data from trello to use it as backend/database.
-Whenever we do the operation locally, we need to push it  to trello.
-
-
-Now we know how to make some list and card objects show up on our screen, we are
-going to try getting the data from the Trello API. To be able to do it, we first
-need to set up our account.
+To be able to use Trello and save your board data to their backend, you need to
+create an account, and get a `KEY` and `TOKEN` for our application. This allows
+Trello to know what boards your app has access to.
 
 1. Head over to http://www.Trello.com and sign-up/log-in to your Trello account.
 1. Navigate to the [Trello
    Developers page](https://developers.Trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of
-   the page. Copy this key and paste it into `config.js` in the appropriate spot:
-   `apiKey`.
-   TODO: ADD PIC of EXACT SPOT.
-1. Generate a token manually by clicking on the `Token` link on that page.
+   the page. This gives you an identifier for your app. Now, Trello knows that key
+   will try to access their backend. Copy this key and paste it into `config.js` in the appropriate spot: `horello.apiKey`.
+1. Generate a token manually by clicking on the `Token` link on that page. This allows
+   Trello to verify that your app is making the request and not someone else.
 1. Click "Allow" on the authentication screen.
-1. Copy this token and paste it into `config.js`.
+1. Copy this token and paste it into `config.js` into `horello.apiToken`.
 
 TODO. PICTURES.
 
 **Creating test data**
 1. Head back to http://www.Trello.com
 1. Create a new board and add some lists and cards to it.
-1. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test`
-1. Add .json at the end of that url. And you will see a result like this on your
-browser. (Note that I have an extension called JSON Formatter that makes JSON) look
-better. Yours could look a bit different.
+1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test`
+1. Add .json at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
 
-![Test Data](images/capture2.jpeg)
+  ![Test Data](images/capture2.jpeg)
+  The output could look a bit different.
 
 1. Copy the id for the board and paste it into `config.js` in `Horello.boardId`.
 

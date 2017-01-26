@@ -40,6 +40,10 @@ function generateCommentDiv(name, comment) {
 $('button.post').on('click', function(e){
   var name = prompt("Enter your name");
   var comment = prompt("Enter your comment");
+
+  // break on empty input
+  if (!name || !comment) return;
+
   var commentDiv = generateCommentDiv(name, comment);
 
   // append to comments list
@@ -50,6 +54,10 @@ $('button.post').on('click', function(e){
 $('div.comments').on('click', '.reply', function(e) {
   var name = prompt("Enter your name");
   var reply = prompt("Enter your reply");
+
+  // break on empty input
+  if (!name || !reply) return;
+
   var commentDiv = generateCommentDiv(name, reply);
 
   $(this).parent().children('.hide-replies').show();
@@ -62,11 +70,30 @@ $('div.comments').on('click', '.hide-replies', function(e) {
   $(this).closest('.comment').children('.replies').hide();
   $(this).hide();
   $(this).parent().children('.show-replies').show();
+
+  // get counter of all children comments (perform recursive depth-first-search)
+  var commentCount = countChildrenComments($(this).closest('.comment')) - 1;
+
+  $(this).closest('.comment').append('<div class="commentCount">' + commentCount + '</div>');
 });
+
+function countChildrenComments(comment) {
+  var curCounter = 0;
+
+  var replies = $(comment).children('.replies').children('.comment');
+
+  for(var i=0; i<replies.length; i++) {
+    curCounter += countChildrenComments(replies[i]);
+  }
+
+  return replies.length ? curCounter + 1 : 1;
+}
 
 // click show replies
 $('div.comments').on('click', '.show-replies', function(e) {
   $(this).closest('.comment').children('.replies').show();
   $(this).hide();
   $(this).parent().children('.hide-replies').show();
+
+  $(this).closest('.comment').children('.commentCount').hide();
 });

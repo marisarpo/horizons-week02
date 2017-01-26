@@ -90,8 +90,10 @@ horello.List.prototype.loadCardData= function() {
     },
     success: function (data2) {
       console.log("Successfully loaded cards for list " + this.id);
+
       this.cards = data2.map(horello.Card.cardFromJSON);
       horello.refresh(board);
+      console.log(this.cards);
     }.bind(this),
     error: function (err) {
       console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));

@@ -12,7 +12,9 @@ backend now, so it can save our changes. If a user deletes a card, we have to
 remove it from our front-end and from the backend too, making a `DELETE` request
 to the API.
 
-TODO describe how they can make changes in Trello and see them here
+By the end of the day, making a change in Trello should update our site and the other way around! Here you can see a side by side capture of both sites. If you add a card on Trello and refresh your site, you should be able to see it in Horello. On this image you can see how data is shared between the two.
+
+![Updating](images/capture10.jpeg)
 
 To get an idea on how the project works, visit the final version of the project [here](http://horizons-school-of-technology.github.io/week02/day4/2_Horello-ajax/solution/index.html).
 
@@ -136,7 +138,7 @@ By now, this is how your `config.js` file should look.
    output. For example, the board id below is `cc52060cf01c8040340937e7`:
 
   ```javascript
-  {"id":"cc52060cf01c8040340937e7",...
+  {"id":"cc52060cf01c8040340937e7" ...}
   ```
 
 ## Exercise 3: Getting familiar with the API
@@ -171,39 +173,42 @@ more.
 
 ## Exercise 4: Read data from the Trello API
 
-### Fetch JSON data from API
-
-Head over to the `GET DATA` section in
-`week02/day4/2_horello-ajax/skeleton/js/data_model.js`.
-
-TODO describe what students are supposed to do
-
-TODO describe how they can verify that what they've done works, screenshots?
-
-- `Horello.List.prototype.getCard`: already implemented.
-- `Horello.Board.prototype.getList`: you have to implement.
-
-If you need help implementing these methods head over to [Trello API
-reference](https://developers.Trello.com/advanced-reference). For more info on how
-the API works.
-
 ### Convert API JSON responses
 
 Head over to the `ADD CARD AND ADD LIST` section in
 `week02/day4/2_horello-ajax/skeleton/js/data_model.js`.
 
-TODO describe what students are supposed to do
+We are going to implement the methods that are used to convert the JSON data you get back from API calls into actual objects on your code. They should do the same thing we did on the `Warmup` section when we created all the objects. For example doing `new horello.List()` should take in data and return the newly created `list` object.
 
-TODO describe how they can verify that what they've done works, screenshots?
+We are going to give you the code for the `horello.Board.boardFromJSON` function to give you an idea on how it should work.
 
-- `horello.Board.boardFromJSON` should give you an idea on how they should work.
-- `horello.List.listFromJSON` You have to implement this one.
-- `horello.Card.cardFromJSON` And this one.
+You have to implement both `horello.List.listFromJSON` and `horello.Card.cardFromJSON` to receive objects from data.
 
-These methods are used to convert the JSON you get from the API into actual objects
-on your code. They should do the same thing we did on the `Warmup` section when
-we created all the objects doing `new horello.List()`. They should take in data
-and return the newly created `list` object.
+### Verifying your work
+To be sure your code works, call both functions on your console this way:
+`horello.List.listFromJSON( {id: 123, name: "My List Name"} );` This one should return a list with the correct attributes.
+Calling `horello.Card.cardFromJSON( {id: 12, name: "My Card Name", description: "This is a desc", idList:"123"} )` on the console should return a card object to the console. The capture below shows both lines of code being called. 
+
+![Verifying 2](images/capture12.jpeg)
+
+### Fetch JSON data from API
+
+Head over to the `GET DATA` section in
+`week02/day4/2_horello-ajax/skeleton/js/data_model.js`.
+
+The first function: `horello.Board.prototype.loadListData` is already implemented and it should give you an idea on how to implement the next one. This one brings an array of lists for your board.
+
+Implement `horello.List.prototype.loadCardData`. This function should make a GET request to get the cards that belong to a list. If we were trying to get the cards for the list with id "123123", our URL for the request would look like this: "list/12312/cards". You can look at the code in the function above for reference. The difference on this one is the success part of the function. When successful this function should convert al the cards it gets from the API and parsing them using `cardFromJSON`. It should also refresh the board using `horello.refresh(board);`
+
+### Verifying your work
+Up to this point, the best way to verify your AJAX code is working is logging the `this.cards` array at the end of the success part of the function to the console. This should log and array of cards that looks like capture below. You may have a different number of cards depending on the cards you created directly on Trello. But it *should* be an array of `Card` objects
+
+![Verifying 1](images/capture11.jpeg)
+
+If you need help implementing these methods head over to [Trello API
+reference](https://developers.Trello.com/advanced-reference). For more info on how
+the API works.
+
 
 ## Exercise 5: Writing data to the Trello API
 
@@ -232,7 +237,7 @@ When you click on save on the edit card modal
 1. Make an AJAX `PUT` request to the `/cards` endpoint to update the card's
    title.
 
-### `horello.Card.prototype.setDescription()` 
+### `horello.Card.prototype.setDescription()`
 
 1. Modify the description of the current card.
 1. Make an AJAX `PUT` request to the `/cards` endpoint to update the card's
@@ -250,7 +255,7 @@ request to create a new `List` on the backend.  On the success callback of this
 function, remember to call `this.loadListData();` so the lists are refreshed
 and your new list shows up on the page.
 
-### `horello.List.prototype.addCard()` 
+### `horello.List.prototype.addCard()`
 
 TODO flesh this out
 

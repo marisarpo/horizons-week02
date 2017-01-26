@@ -60,16 +60,14 @@ This is how your board should look now.
 
 ![Created Cards](images/capture4.jpeg)
 
-Try adding more lists and cards into your console and displaying them to the board.
-Don't forget to push the newly created lists into the board by doing `board.lists.push(list1);` and cards to lists by doing `list1.cards.push(card1);`
-Refresh the board `horello.refresh(board);` every time you add a new card.
-
 We have setup all the logic that takes the board, lists and cards and shows them
 up on the screen so you can focus on getting data back and forth from Trello with
 ajax. Whenever you do a request and get data for cards, follow the same process
 of creating a `new Card` adding them to the list, and so on.
 
-We added a couple more cards to out board and this is the result we got.
+Try adding more lists and cards into your console and displaying them to the board.
+Don't forget to push the newly created lists into the board by doing `board.lists.push(LIST-NAME-HERE);` and cards to lists by doing `LIST-NAME-HERE.cards.push(CARD-NAME-HERE);`
+Refresh the board `horello.refresh(board);` every time you add a new card. We added a couple more cards to out board and this is the result we got.
 
 ![Test Data](images/capture1.jpeg)
 
@@ -83,40 +81,43 @@ says `board = realData()` your code on `index.html` should look like this:
 
 To be able to use Trello and save your board data to their backend, you need to
 create an account, and get a `KEY` and `TOKEN` for our application. This allows
-Trello to know what boards your app has access to.
+Trello to identify your app and know what boards it has access to.
 
-1. Head over to http://www.Trello.com and sign-up/log-in to your Trello account.
+1. Head over to http://www.trello.com and sign-up/log-in to your Trello account.
 1. Navigate to the [Trello
    Developers page](https://developers.Trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of
-   the page. This gives you an identifier for your app. Now, Trello knows that key
-   will try to access their backend. Copy this key and paste it into `config.js` in the appropriate spot: `horello.apiKey`.
+   the page. Copy this key and paste it into `config.js` in the appropriate spot: `horello.apiKey`.
 
   ![API KEY](images/capture6.jpeg)
+   An API key is a way of identifying your app. Every time you make a request, you
+   will have to send it and Trello will know its your app trying to access the backend.
 
-1. Generate a token manually by clicking on the `Token` link on that page. This allows
-   Trello to verify that your app is making the request and not someone else.
+1. Generate a token manually by clicking on the `Token` link on that page. A Token allows
+   Trello to verify that it is really your app is making the request and not someone else.
+   Why is the API KEY not enough? Because the API KEY is public and the TOKEN is private.
 
   ![Getting the token](images/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
 1. Copy this token and paste it into `config.js` into `horello.apiToken`.
 
-By now, this is how your `config.js` file should look like.
+By now, this is how your `config.js` file should look.
 
   ![Config File](images/capture8.jpeg)
 
 **Creating test data**
+
 1. Head back to http://www.Trello.com
 1. Create a new board and add some lists and cards to it.
 
   ![Trello Test Board](images/capture9.jpeg)
 
-1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlited in red in the previous picture)
-1. Add .json at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
+1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlighted in red in the previous picture)
+1. Add `.json` at the end of that url. To make it `https://Trello.com/b/xFsMS0DK/Trello-test.json` And you will see a result like this on your browser.
 
   ![Test Data](images/capture2.jpeg)
-  The output could look a bit different.
+  The output could look a bit different. But the important part is to take the board's id.
 
 1. Copy the id for the board and paste it into `config.js` in `Horello.boardId`.
 
@@ -128,8 +129,8 @@ GET request would look like to get information for a board.
 ```
 $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
       data: {
-        key: "ac960adda2eff64acbbd98e795c025ca",
-        token: "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125",
+        key: "YOUR KEY",
+        token: "YOUR TOKEN",
       },
       success: function(data) { console.log(data) }
     })
@@ -149,15 +150,10 @@ about the board, including its id, name, description and much more.
 }
 ```
 
-You can use the code above as a base for all the requests you are going to make.
-Remember to replace the `TOKEN` and `KEY` when actually using the code.
+Now that you know the basics, let's code! Head on to the `data_model.js` file and implement to the `////GET DATA ////` section.
 
-
-Now let's start to code! Head on to the `data_model.js` file and **implement** the
-following methods using ajax to get the information:
-
-- `Horello.List.prototype.getCard`
-- `Horello.Board.prototype.getList`
+- `Horello.List.prototype.getCard`. Will be provided for you.
+- `Horello.Board.prototype.getList` You will have to implement this one.
 
 The comments on `data_model.js` give you more information on how to do it.
 
@@ -165,46 +161,18 @@ If you need help implementing these methods head over to [Trello API
 reference](https://developers.Trello.com/advanced-reference). For more info on how
 the API works.
 
+### From AJAX to models
 
-### From AJAX to models.
+Head over to the `//// ADD CARD AND ADD LIST ////` section to implement the methods.
 
-**Implement** The following methods. `Horello.Board.boardFromJSON` to get an idea of how they should work.
-
-`Horello.List.listFromJSON`
-`Horello.Card.cardFromJSON`
+- `Horello.Board.boardFromJSON` should give you an idea on how they should work.
+- `Horello.List.listFromJSON` You have to implement this one.
+- `Horello.Card.cardFromJSON` And this one.
 
 These methods are used to convert the JSON you get from the API into actual objects
 on your code. They should do the same thing we did on the `Warmup` section when
 we created all the objects doing `new horello.List()`. They should take in data
 and return the newly created `list` object.
-
-## Step 4: Sanity Check.
-
-This is just a quick review on how things are (or should be) working on the app to get the data from our backend (Trello API) and rendering into the frontend.
-
-If your methods were correctly implemented according to the steps here and on
-`data_model.js`, refreshing your page should show you Horello with all the data
-you had on the real Trello board. If something went wrong along the way, or if you
-want to understand how the data comes from the API and ends up in the page, these
-are the steps your code should be taking.
-
-1. Our `index.html` calls `board.loadData();` This method should:
-    1. Do an ajax call to the API to bring the 'data' for all the lists.
-    1. Call `Horello.List.fromJSON(data)` for each list in the `data`.
-        The method `Horello.List.listFromJSON(data)` should convert and return each list data into a `List` object.
-    1. Push each `List` object into the board's list array -> `board.lists`
-    1. Call `list.loadCards` for each list in the board's list array
-1.  `list.loadCards()` should:
-    1. Bring an array of cards for that list.
-    1. Call `Horello.Card.cardFromJSON` to create Cards from data.
-    1. Push the `Card` objects into the list's card array. For example:
-       `this.cards = data2.map(Horello.Card.fromJSON)`
-    1. Call `Horello.refresh(board);`
-1. When `Horello.refresh(board);` is called, it tells our code to re-render everything
-using the data that is in our models. Every time our model changes, we should call
-this method to update the UI. Head over to Trello.com and edit your board. Refresh
-the Horello page and you should see your changes!
-
 
 ## Step 5: Writing to the API
 
@@ -249,7 +217,8 @@ Remember how on warmup we created our lists by doing `var list1 = new horello.Li
 
 Head over to `renderers`, un-comment the entire file by removing the first and last lines and start rendering!
 
-## SUPER BONUS
+## BONUS-Bonus
+
 You are on your own now. From HTML all the way to the backend you are going to make
 the connections to make the code work. We will give you a couple of hints on how
 you can do this.

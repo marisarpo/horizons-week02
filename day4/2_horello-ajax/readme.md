@@ -78,7 +78,7 @@ board.  Don't forget to push the newly created lists into the board by doing
 `someList.cards.push(card)` Refresh the board `horello.refresh(board);` every
 time you add a new card.
 
-Here's our test board we generated using these steps:
+Here's an example of what you could end up with:
 
 ![Test Data](images/capture1.jpeg)
 
@@ -112,20 +112,22 @@ Trello to identify your app and know what boards it has access to.
   ![Getting the token](images/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
-1. Copy this token and paste it into `config.js` into a property called `horello.apiToken`.
+1. Set your local API token in the `config.js` file. (`horello.apiToken = "PASTE_API_TOKEN_HERE"`)
 
 By now, this is how your `config.js` file should look.
 
   ![Config File](images/capture8.jpeg)
 
 **Creating test data**
+In this section, we start by creating some data manually on Trello. After creating the data, we check that we can retrieve it using AJAX.
 
-1. Head back to http://www.Trello.com
-1. Create a new board and add some lists and cards to it.
+**Generating Data**
+1. Head back to http://www.trello.com
+1. Create a new board and manually add some lists and cards to it.
+1. Copy the URL from your browser. The current url you are on should look something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlighted in red in the following picture)
 
-  ![Trello Test Board](images/capture9.jpeg)
+![Trello Test Board](images/capture9.jpeg)
 
-1. Copy the URL from your browser. The current url you are on should looks something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlighted in red in the previous picture)
 1. Add `.json` at the end of that url. (It should look like `https://Trello.com/b/xFsMS0DK/Trello-test.json`.) These are the results you should see:
 
   ![Test Data](images/capture2.jpeg)
@@ -140,10 +142,12 @@ By now, this is how your `config.js` file should look.
   {"id":"cc52060cf01c8040340937e7" ...}
   ```
 
+  Note: The id for the response in the picture above is "588577bb8423080722cabe8c";
+
 ## Exercise 3: Getting familiar with the API
 
 We are finally ready to get real data from Trello. Open up your console
-and try the following `ajax` request:
+and try the following `ajax` request: (Don't forget to insert your key an token)
 
 ```
 $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {

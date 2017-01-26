@@ -115,22 +115,3 @@ $('.header-logo').click(function() {
     $('body').css('background-color', 'rgb(0,121,191)')
   }
 });
-
-
-var test = function(data) {
-  function run(biggest, arr) {
-    var biggest = arr[0];
-    var remainingArray = arr.slice(1);
-    if (biggest["Population"] < remainingArray[0]["Population"]) {
-      biggest = remainingArray[0];
-    }
-    if (remainingArray.length > 0) {
-      return run(biggest, remainingArray)
-    } else {
-    return biggest
-    }
-      // $("#out").text(biggest["City / Urban area"])
-  }
-  console.log(biggest["Population"])
-  console.log('test')
-}

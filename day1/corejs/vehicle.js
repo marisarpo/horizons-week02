@@ -35,7 +35,7 @@ var jeep = new Vehicle("jeep", 2010, "yellow", allSeasonTires);// =  YOUR CODE H
 
 // This method should be called in the following way:
 // teslaS.changeColor("yellow")
-// jeep.changeColor("blue")
+// jeep.changeColor("yellow")
 // And it should change the object vehicles's color.
 
 // YOUR CODE HERE

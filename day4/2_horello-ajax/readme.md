@@ -182,12 +182,12 @@ We are going to implement the methods that are used to convert the JSON data you
 
 We are going to give you the code for the `horello.Board.boardFromJSON` function to give you an idea on how it should work.
 
-You have to implement both `horello.List.listFromJSON` and `horello.Card.cardFromJSON` to receive objects from data.
+You have to implement both `horello.List.listFromJSON` and `horello.Card.cardFromJSON` to receive objects from data and turn them into List and Card objects.
 
 ### Verifying your work
 To be sure your code works, call both functions on your console this way:
 `horello.List.listFromJSON( {id: 123, name: "My List Name"} );` This one should return a list with the correct attributes.
-Calling `horello.Card.cardFromJSON( {id: 12, name: "My Card Name", description: "This is a desc", idList:"123"} )` on the console should return a card object to the console. The capture below shows both lines of code being called. 
+Calling `horello.Card.cardFromJSON( {id: 12, name: "My Card Name", description: "This is a desc", idList:"123"} )` on the console should return a card object to the console. The capture below shows both lines of code being called.
 
 ![Verifying 2](images/capture12.jpeg)
 

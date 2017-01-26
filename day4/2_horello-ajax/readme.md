@@ -252,18 +252,27 @@ To check your code works click on a card, edit it and save it. Refresh the page.
 
    ![Verifying 3](images/capture13.jpeg)
 
-### `horello.Board.prototype.addList()`
-TODO rewrite this
 
-Whenever a list is added, this function is called.  You should make a POST
-request to create a new `List` on the backend.  On the success callback of this
-function, remember to call `this.loadListData();` so the lists are refreshed
+## Adding Lists and cards
+Now, we are going to implement the functionality to add new lists and cards to your Horello app. Whenever you create a new `list` or `card`, it should be sent to the backend and saved on the Trello API.
+
+### `horello.Board.prototype.addList()`
+
+We are going to give you the code to add a list. This function is called whenever a user clicks on `add list`, gives it a name and saves it. This function makes a POST
+request, sending the new list's data to the backend to create a new `List`. On the success callback of this function, we call `this.loadListData();` so all the lists are refreshed
 and your new list shows up on the page.
 
 ### `horello.List.prototype.addCard()`
 
-TODO flesh this out
-Same concept as above.
+Implement `addCard` to send data to the Trello API and create a new Card. This function is very similar to the one above, but instead makes a POST request to the `/cards` endpoint and sends new data.
+
+Remember to call `this.loadCardData();` after making the request to refresh all the cards on list and show the new card that was added to it.  
+
+### Verifying your work
+To check your code works click on add-card, give it a name and save it. Refresh the page. If the card was created, you are good to go!
+
+   ![Verifying 3](images/capture13.jpeg)
+
 
 ## Exercise 6: Rendering
 

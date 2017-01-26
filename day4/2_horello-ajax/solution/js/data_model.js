@@ -103,7 +103,6 @@ horello.List.prototype.loadCardData= function() {
 
 ///////////////////// ADD CARD AND ADD LIST /////////////////////
 
-
 // This will be your first POST request. This function gets called whenever we
 // click on `addList` on the frontend. Notice that on success, we call `this.loadListData();`
 // We do this to reload all the lists and show the newly added list!

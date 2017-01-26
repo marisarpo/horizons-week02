@@ -94,9 +94,11 @@ Trello to identify your app and know what boards it has access to.
 1. Navigate to the [Trello
    Developers page](https://developers.Trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of
-   the page. Copy this key and paste it into `config.js` in the appropriate spot: `horello.apiKey`.
+   the page. Copy this key and paste it into a file you will create called `config.js` in your js folder. We are not providing the file because we don't want git to track
+   the API credentials for your accounts.
 
   ![API KEY](images/capture6.jpeg)
+
    An API key is a way of identifying your app. Every time you make a request, you
    will have to send it and Trello will know its your app trying to access the backend.
 
@@ -107,7 +109,7 @@ Trello to identify your app and know what boards it has access to.
   ![Getting the token](images/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
-1. Copy this token and paste it into `config.js` into `horello.apiToken`.
+1. Copy this token and paste it into `config.js` into a property called `horello.apiToken`.
 
 By now, this is how your `config.js` file should look.
 

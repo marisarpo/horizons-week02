@@ -1,5 +1,4 @@
-/*
-UNCOMMENT THIS FILE TO START PART 2
+/*  UNCOMMENT THIS FILE TO START PART 2
 
 "use strict";
 window.horello = window.horello || {};
@@ -10,7 +9,6 @@ window.horello = window.horello || {};
 // injected on the page. `this` contains the element you want to render. So, on
 // horello.Card.prototype.render, `this` is a card object from the models that has
 // a name and a description.
-
 
 
 // Let's start by implementing a single card. The output of this function should

@@ -30,6 +30,7 @@ $('.board').on('click', '.add-list-save', function() {
   $('.list-cards').sortable({
     connectWith: ".list-cards"
   }).disableSelection();
+  $this.siblings('input').val('');
 })
 
 
@@ -52,6 +53,7 @@ $('.board').on('click', '.add-card-save', function() {
   cards.append('<div class="card"><span class="card-more"><span class="glyphicon glyphicon-align-left"></span></span><div class="card-body">'+input+'</div></div>');
   var container = $this.closest('.add-card-form-wrapper');
   container.addClass('collapse');
+  $this.siblings('input').val('');
 })
 
 var cardBeingEdited = null;

@@ -2,15 +2,22 @@
 
 window.twilio = {};
 
-// Preface. In this exercise, you're going to be building a Twilio Shoutout Application that communicates with Twilio's API (Application Programming Inerface) over AJAX. You can think of a Web API as an application black-box that you can leverage and interact with using HTTP. If you wanted to get weather data for your city, you could query some weather API and access the data that application generates.
-// In this case, we're going to be using Twilio's device SMS messaging service. We're going to build an application that lets you `shoutout` (one-way message) a Twilio-enabled phone number programmatically. You'll be able to send yourself a text message from your browser (and much more)!
-// You've been provided with a UI skeleton that you can dig into if you'd like, but the major focus of this exercise are the AJAX calls, validation, and of course OOP.
-
 // Exercise 0. Get Twilio credentials
+//
 // Please navigate to https://www.twilio.com, and get a free API Key.
-// You're going to be signing up for the service yourself, and it won't be asking you to pay for anything. Enter your name, phone number, and whatever else they ask you for (within reason - if they're asking for an ssn, call one of us over)
-// You'll need 3 pieces of information to be able to interact with the Twilio API - your `accountId (or SID)`, an `auth token` and your Twilio phone number.
-// Follow the steps listed by Twilio to get familiar with their API console and retrieve your first Twilio phone number!
+//
+// You're going to be signing up for the service yourself, and it won't be
+// asking you to pay for anything. Enter your name, phone number, and whatever
+// else they ask you for (within reason - if they're asking for an ssn, call
+// one of us over)
+//
+// You'll need 3 pieces of information to be able to interact with the Twilio
+// API - your `accountId (or SID)`, an `auth token` and your Twilio phone
+// number.
+//
+// Follow the steps listed by Twilio to get familiar with their API console and
+// retrieve your first Twilio phone number!
+//
 // When you have all this information, please replace them in the variables down there.
 
 twilio.accountId = "ACa865dfa74a8a02d4472c413bd4a47b50";
@@ -37,6 +44,7 @@ twilio.fromNumber = "9789430777";
 // The `handleMessageSend` method is going to act as the callback for the event listener you set up in the initialize() method. It's supposed to make sure all the necessary fields are valid,
 // and if so, make an ajax call to a Twilio API url with our data. Otherwise, it should raise an alert, telling the user (you) that one or both of the input fields are invalid. This is a multipart
 // exercise that requires a few key steps, and we've provided you with a bit of what you need to get you going.
+
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   // Assign properties
@@ -140,14 +148,17 @@ twilio.TwilioShoutout.prototype = {
 
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
+
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the
   // Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
+
 	//
 	// note. here's where `validatePhoneField` and `validateMessageField` come in handy!
 	// note. also `clear`
 	// note. also `sendMessage`
   handleMessageSend: function(evt) {
 		evt.preventDefault();
+
     // only send if both fields are valid
     // YOUR CODE HERE
 

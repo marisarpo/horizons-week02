@@ -39,7 +39,7 @@ list2.cards.push(card1);
 
 This is the result we get from this code:
 
-![Test Data](images/capture1.png) 
+![Test Data](images/capture1.jpeg)
 
 Ready to get the data from the API into our models? Head over to the part in
 `index.html` where `board = dummyData()` is called and comment it out. Uncomment the
@@ -68,7 +68,7 @@ need to set up our account.
 browser. (Note that I have an extension called JSON Formatter that makes JSON) look
 better. Yours could look a bit different.
 
-![Test Data](images/capture2.png)
+![Test Data](images/capture2.jpeg)
 
 1. Copy the id for the board and paste it into `config.js` in `Horello.boardId`.
 

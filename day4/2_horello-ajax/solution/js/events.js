@@ -1,8 +1,10 @@
 "use strict";
 
+// CAUTION: You probably don't need to make changes here for this project!
+
 window.horello = window.horello || {};
 
-horello.mountStatic = function() {
+horello.refreshStatic = function() {
 
   $('.add-list').click(function(e) {
     $('#addList').collapse('toggle');
@@ -22,7 +24,7 @@ horello.mountStatic = function() {
     board.addList(listName);
     $('#addListText').val('');
     $('#addList').collapse('toggle');
-    horello.mount(board);
+    horello.refresh(board);
   });
 
   $('#addListCancel').click(function(e) {
@@ -30,13 +32,14 @@ horello.mountStatic = function() {
   });
 
   $('#cardEdit').on('show.bs.modal', function (e) {
+    console.log("BAMS")
     var button = $(e.relatedTarget);
     var cardId = button.data('card-id');
     var listId = button.data('list-id');
     var list = board.getList(listId);
     var card = list.getCard(cardId);
-    $('#modalText').val(card.getTitle());
-    $('#modalBody').val(card.getDescription());
+    $('#modalText').val(card.title);
+    $('#modalBody').val(card.description);
     $('#modalSave').data('list-id', listId);
     $('#modalSave').data('card-id', cardId);
   });
@@ -53,15 +56,15 @@ horello.mountStatic = function() {
     var cardId = $(e.currentTarget).data('card-id');
     var list = board.getList(listId);
     var card = list.getCard(cardId);
-    card.setTitle(title);
+    card.updateCardTitle(title);
     card.setDescription(desc);
     $('#cardEdit').modal('hide');
-    horello.mount(board);
+    horello.refresh(board);
   });
 };
 
 // This function is called multiple times, to configure dynamic events.
-horello.mount = function (board) {
+horello.refresh = function (board) {
   /*
     Note: we are NOT unbinding event listeners from elements that are
     going away. It looks like this isn't necessary with jquery per
@@ -102,7 +105,7 @@ horello.mount = function (board) {
       // Get the list object
       var list = board.getList(id);
       list.addCard(val);
-      horello.mount(board);
+      horello.refresh(board);
     });
 
     // Cancel

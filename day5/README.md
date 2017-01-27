@@ -1,8 +1,8 @@
 # Facebook Exercise
 
-![Logo](./facebook/images/logo.png)
+<img src="./facebook/images/logo.png" width="200">
 
-**You either change the world or you don't.** *Logo Design Inspired by Zinger*
+**You either change the world or you don't.** *Logo Design Inspired by Zinger.*
 
 At this point, you've learned about JavaScript essentials, HTML and CSS with Bootstrap, DOM manipulation with jQuery, and API usage with AJAX. It's time to put all these skills into action. Ready?
 

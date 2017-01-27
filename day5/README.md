@@ -125,7 +125,7 @@ These instructions are very minimal in nature and should only be used as a guide
   });
   ```
 
-1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in ![localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localstorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localstorage.getItem('token')`.
+1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localstorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localstorage.getItem('token')`.
 
 1. You can now hide this (login/registration) section of the `HTML` and reveal the newsfeed.
 

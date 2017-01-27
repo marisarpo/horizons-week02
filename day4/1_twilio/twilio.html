@@ -18,7 +18,11 @@
 
 	<!-- Our files -->
 	<!-- Uncomment this to test -->
+<<<<<<< HEAD
 	<script type="text/javascript" src="twilio_tests.js"></script>
+=======
+   <script type="text/javascript" src="twilio_tests.js"></script>
+>>>>>>> master
 </head>
 <body class="tw-app">
 	<div class="container">
@@ -33,7 +37,7 @@
 					</div>
 					<ul class="message-list outlined">
 					</ul>
-					<form class="form-inline message-input outlined">
+          <form class="form-inline message-input outlined">
 						<label class="form-group">
 							<input class="message-input-field" type="text" placeholder="Write something..." />
 						</label>
@@ -50,6 +54,7 @@
 			$("#" + targetId).append($(".jasmine_html-reporter"));
 		}
 		setTimeout(function() { injectJasmine("jasmine-reporter")}, 50);
+    $(function() { $('form').on('submit', function() { return false; }) });
 	</script>
 </body>
 

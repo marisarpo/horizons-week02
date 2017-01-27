@@ -1,4 +1,4 @@
-/* DELETE THIS LINE
+
 
 "use strict";
 window.horello = window.horello || {};
@@ -13,14 +13,10 @@ window.horello = window.horello || {};
 
 // Let's start by implementing a single card. The output of this function should
 // be a string containing the following HTML:
-// <div class="card" data-list-id="58891d45d79747a7242eeba9" data-card-id="5889205101223f55bc95b682">
-//   <span class="card-more"></span>
-//   <div class="card-body">asd</div>
-// </div>
+
 
 horello.Card.prototype.render = function() {
-  var cardHtml = "";
-  // YOUR CODE HERE
+  var cardHtml = '<div class="card" data-list-id="58891d45d79747a7242eeba9" data-card-id="5889205101223f55bc95b682"><span class="card-more"></span><div class="card-body">asd</div></div>';
   return cardHtml;
 };
 
@@ -32,32 +28,10 @@ horello.Card.prototype.render = function() {
 // If there were more lists, we would have to render each one of them inside the
 // "list-container"
 
-// <div class="list-container">
-//   <div class="list" id="58891d45d79747a7242eeba9">
-//     <div class="list-header">
-//       <span class="list-title">newList</span>
-//     </div>
-//     <div class="list-cards">
-//       ... cards go here.
-//     </div>
-//     <div class="list-footer">
-//       <button class="add-card" addcardid="58891d45d79747a7242eeba9">Add a card</button>
-//       <div class="collapse" id="addCardForm58891d45d79747a7242eeba9">
-//         <div class="well add-card-form">
-//           <input type="text" class="form-control" placeholder="Card title" id="addCardTitle58891d45d79747a7242eeba9">
-//           <button type="button" class="btn btn-default" id="addCardBtn58891d45d79747a7242eeba9">  Save  </button>
-//           <button type="button" class="btn btn-default">
-//             <span class="glyphicon glyphicon-remove" id="addCardCancelBtn58891d45d79747a7242eeba9"></span>
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-// </div>
+
 
 horello.List.prototype.render = function() {
-  var listHTML = "";
-  // YOUR CODE HERE
+  var listHTML = '<div class="list-container"><div class="list" id="58891d45d79747a7242eeba9"><div class="list-header"><span class="list-title">newList</span></div><div class="list-cards">' + card.render() + '</div><div class="list-footer"><button class="add-card" addcardid="58891d45d79747a7242eeba9">Add a card</button><div class="collapse" id="addCardForm58891d45d79747a7242eeba9"><div class="well add-card-form"><input type="text" class="form-control" placeholder="Card title" id="addCardTitle58891d45d79747a7242eeba9"><button type="button" class="btn btn-default" id="addCardBtn58891d45d79747a7242eeba9">  Save  </button><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove" id="addCardCancelBtn58891d45d79747a7242eeba9"></span></button></div></div></div></div></div>';
   return listHTML;
 }
 
@@ -70,12 +44,10 @@ horello.List.prototype.render = function() {
 // board + all the lists inside + all the cards inside each list.
 
 // This is the HTML for board without lists
-// <div id="board" class="board"> ...lists </div>
+//
 
 horello.Board.prototype.render = function() {
-  var boardHTML = "";
+  var boardHTML = '<div id="board" class="board">'list.render()'</div>';
   // YOUR CODE HERE
   return boardHTML;
 };
-
-DELETE THIS LINE */

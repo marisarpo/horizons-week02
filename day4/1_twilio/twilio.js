@@ -15,11 +15,11 @@ window.twilio = {};
 
 twilio.accountId = "AC28e22cf56acca7099a6319e8074a8ff0";
 twilio.authToken = "49a8c4c7491a62fe29ae318bb464720c";
-twilio.fromNumber = "6233350244";
+twilio.fromNumber = "16024834803";
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   // Assign properties
-  this.apiUrl = "https://api.twilio.com/2010-04-01";
+  this.apiUrl = "https://api.twilio.com/2010-04-01/Accounts/";
   this.accountId = accountId;
   this.authToken = authToken;
   this.fromNumber = fromNumber;
@@ -122,7 +122,8 @@ twilio.TwilioShoutout.prototype = {
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
       var message = new Message(toNumber, messageBody);
-      $('.message-list outlined').append(message.render());
+      console.log(message.render());
+      $('.message-list.outlined').append(message.render());
     };
 
 		// `Call` the Twilio API service with our data
@@ -135,7 +136,7 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: this.apiUrl + this.accountId,
+      url: this.apiUrl + this.accountId + "/Messages",
       // this.accountId = accountId;
       // this.authToken = authToken;
       // this.fromNumber = fromNumber;

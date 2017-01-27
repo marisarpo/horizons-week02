@@ -56,14 +56,14 @@ twilio.TwilioShoutout.prototype = {
   initialize: function() {
     // YOUR CODE HERE
     var self = this;
-    
+
     // self.messageSendButton.click(self.handleMessageSend);
     this.messageSendButton.click(this.handleMessageSend.bind(this));
 
     // this.messageSendButton.click(function(event){
     //   self.handleMessageSend(event);
     // });
-    
+
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -121,7 +121,7 @@ twilio.TwilioShoutout.prototype = {
 
     if( this.validatePhoneField(this.phoneInputField.val()) && this.validateMessageField(this.messageInputField.val()) ){
       console.log("asdf");
-      this.sendMessage(this.phoneInputField.val(), this.messageInputField.val());
+      this.sendMessage('14159372741', this.messageInputField.val());
       return false;
     }
     throw new Error();
@@ -142,12 +142,13 @@ twilio.TwilioShoutout.prototype = {
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
 			// YOUR CODE HERE
-      var msg = new Message(this.fromNumber, messageBody);
+      var msg = new Message(toNumber, messageBody);
        msg.render();
     };
 
 		// `Call` the Twilio API service with our data
     $.ajax({
+
       method: "POST",
 			// Exercise 6.B `url`
 			// Write the url of the POST request you're going to be sending!
@@ -156,14 +157,14 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      
-      url: this.apiUrl+"/Accounts/" + this.accountId + "/SMS/Messages",
+
+      url: this.apiUrl+"/Accounts/" + this.accountId + "/Messages",
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			//
 			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + this.toNumber,
+        "To" : "+" + toNumber,
         "From": "+" + this.fromNumber,
         "Body": messageBody
       },

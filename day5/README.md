@@ -1,6 +1,8 @@
 # Facebook Exercise
 
-<figure style="text-align: center;"><img src="./facebook/images/logo.png" alt="Drawing" style="width: 250px;"/><figcaption>*Logo Design **Inspired by** Zinger*</figcaption></figure><br/>
+![Logo](./facebook/images/logo.png)
+
+**You either change the world or you don't.** *Logo Design Inspired by Zinger*
 
 At this point, you've learned about JavaScript essentials, HTML and CSS with Bootstrap, DOM manipulation with jQuery, and API usage with AJAX. It's time to put all these skills into action. Ready?
 
@@ -65,6 +67,8 @@ These instructions are very minimal in nature and should only be used as a guide
   <!-- CSS files for Bootstrap -->
   <!-- UNCOMMENT IF NEEDED -->
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
   <!-- YOUR CODE HERE -->
@@ -75,6 +79,10 @@ These instructions are very minimal in nature and should only be used as a guide
   src="https://code.jquery.com/jquery-3.1.1.min.js"
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
+
+  <!-- Your script file -->
+  <script type="text/javascript" src="./js/script.js"></script>
+
   <!-- JavaScript files for Bootstrap -->
   <!-- UNCOMMENT IF NEEDED -->
   <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->

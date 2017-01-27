@@ -1,5 +1,3 @@
-/* DELETE THIS LINE
-
 "use strict";
 window.horello = window.horello || {};
 
@@ -21,6 +19,12 @@ window.horello = window.horello || {};
 horello.Card.prototype.render = function() {
   var cardHtml = "";
   // YOUR CODE HERE
+  cardHtml += '<div class="card" data-list-id=' + this.listId +
+    'data-card-id=' + this.id + '>' + '<span class=' + 'card-more' + '></span>' +
+     '<div class="card-body">'+this.title +'</div>' + '</div>';
+
+
+
   return cardHtml;
 };
 
@@ -57,6 +61,28 @@ horello.Card.prototype.render = function() {
 
 horello.List.prototype.render = function() {
   var listHTML = "";
+
+  listHTML += '<div class="list-container">' + '<div class="list" id=' + this.id + '>' +
+      '<div class="list-header">' + '<span class="list-title">newList</span>' +
+      '</div>' + '<div class="list-cards">';
+
+  var cardList = this.cards;
+
+  for(var i=0; i<cardList.length; i++){
+    var html = cardList[i].render();
+    listHTML += html;
+  }
+
+  listHTML += '</div>' + '<div class="list-footer">' + '<button class="add-card"' + 'addcardid=' + this.id +'>' +
+    'Add a card</button>' + '<div class="collapse" id="addCardForm' + this.id +'">' + '<div class="well add-card-form">'+
+    '<input type="text" class="form-control" placeholder="Card title" ' + 'id="addCardTitle'+ this.id + '">' +
+    '<button type="button" class="btn btn-default" id="addCardBtn' + this.id + '">  Save  </button>' +
+    '<button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-remove"'+ 'id="addCardCancelBtn' +
+    this.id + '"></span>' + '</button></div></div></div></div></div>';
+
+
+
+
   // YOUR CODE HERE
   return listHTML;
 }
@@ -75,7 +101,16 @@ horello.List.prototype.render = function() {
 horello.Board.prototype.render = function() {
   var boardHTML = "";
   // YOUR CODE HERE
+  boardHTML += '<div id="board" class="board">';
+
+  var listList = this.lists;
+
+  for(var i=0; i<listList.length; i++){
+    var html = listList[i].render();
+    boardHTML += html;
+  }
+
+  boardHTML += '</div>';
+
   return boardHTML;
 };
-
-DELETE THIS LINE */

@@ -31,12 +31,14 @@ horello.Board.boardFromJSON = function(data) {
 
 // The List constructor takes and id and a name.
 horello.List.listFromJSON = function(data) {
-  // YOUR CODE HERE
+  // console.log(data);
+  return new horello.List(data.id, data.name);
 };
 
 // The Card constructor takes and id, a name, description and id of the list it belongs to.
 horello.Card.cardFromJSON = function(data) {
   // YOUR CODE HERE
+  return new horello.Card(data.id, data.name, data.description, data.idList);
 };
 
 ///////////////////// GET DATA /////////////////////
@@ -80,8 +82,23 @@ horello.Board.prototype.loadListData = function() {
 // after adding them to the array.
 horello.List.prototype.loadCardData= function() {
   // YOUR CODE HERE
-}
+  $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    success: function (data) {
+      console.log("Successfully loaded cards for list " + this.id);
 
+      this.cards = data.map(horello.Card.cardFromJSON);
+      horello.refresh(board);
+      console.log(this.cards);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error loading cards for list " + data.id + ": " + JSON.stringify(err));
+    }
+  });
+}
 ///////////////////// ADD CARD AND ADD LIST /////////////////////
 
 
@@ -114,6 +131,23 @@ horello.Board.prototype.addList = function(listName) {
 
 horello.List.prototype.addCard= function(name, description) {
   // YOUR CODE HERE
+  $.ajax(horello.apiUrl + "/cards/", {
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: name,
+      desc: description,
+      idList: this.id
+    },
+    success: function (data) {
+      console.log("Successfully created card with id " + data.idList + " with name " + name);
+      this.loadCardData();
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating card for board " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
 }
 
 ///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
@@ -144,5 +178,20 @@ horello.Card.prototype.updateCardTitle= function(titleStr) {
 // This code is similar to the one above, but posts to "/cards/cardId", remember
 // to update the descrpiton after doing the request.
 horello.Card.prototype.setDescription=function(description) {
-  // YOUR CODE HERE
+  this.description = description;
+  $.ajax(horello.apiUrl + "/cards/" + this.id, {
+    method: "PUT",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      desc: description
+    },
+    success: function (data) {
+      console.log("Successfully updated title of card " + this.id);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+
 }

@@ -1,4 +1,3 @@
-/* DELETE THIS LINE
 
 "use strict";
 window.horello = window.horello || {};
@@ -19,9 +18,20 @@ window.horello = window.horello || {};
 // </div>
 
 horello.Card.prototype.render = function() {
-  var cardHtml = "";
-  // YOUR CODE HERE
-  return cardHtml;
+  var wrapper = $('<div></div>');
+  var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
+  var cardmore = $('<span class="card-more"></span>');
+  if (this.description) {
+    cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
+  }
+  var cardbody = $('<div class="card-body">'+this.title+'</div>');
+
+  wrapper.append(cardwrapper);
+  cardwrapper.append(cardmore);
+  cardwrapper.append(cardbody);
+  cardbody.append($("<p></p>")).text(this.title);
+
+  return wrapper.html();
 };
 
 
@@ -77,5 +87,3 @@ horello.Board.prototype.render = function() {
   // YOUR CODE HERE
   return boardHTML;
 };
-
-DELETE THIS LINE */

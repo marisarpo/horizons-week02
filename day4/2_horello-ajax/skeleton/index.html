@@ -28,11 +28,10 @@
   }
   </script>
   <script>
-
   $(function () {
     var board;
     board = new horello.Board("My Horello Board");
-    //board = realData()
+    board = realData()
     horello.refresh(board);
     horello.refreshStatic(board);
     window.board = board;
@@ -107,4 +106,3 @@ body {
 
 </div>
 </body>
-</html>

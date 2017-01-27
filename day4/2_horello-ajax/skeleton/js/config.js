@@ -1,7 +1,7 @@
 "use strict";
 window.horello = window.horello || {};
 
-horello.apiKey = "ac960adda2eff64acbbd98e795c025ca";
-horello.apiToken = "4f056833805f0d9f9942665e386fb731be47e335e7b9a32a5abb87e1e2ea8125";
+horello.apiKey = "96ec4f49437593810ef2f47ae2a1fc97";
+horello.apiToken = "291fa71357d14b6a5515ae13cf65e0975a8606349ac7d7ccc09bbbaf032bda8f";
 horello.apiUrl = "https://api.trello.com/1";
-horello.boardId = "588577bb8423080722cabe8c"
+horello.boardId = "588acdc5855ed591f9c93568"

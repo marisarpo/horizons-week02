@@ -117,7 +117,7 @@ Replace the click handler from Part 2 with
 attached to the top the `.comments` div. <br>
 The syntax for delegated event handlers takes a parent element selector (in
 this case `.comments`), an event type (in this case `click`) and a child
-element selector (in this case `.replies`) like so:
+element selector (in this case `.reply`) like so:
 
 ```javascript
 $('PARENT ELEMENT SELECTOR').on('EVENT TYPE', 'CHILD ELEMENT SELECTOR',

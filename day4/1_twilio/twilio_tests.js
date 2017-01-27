@@ -10,11 +10,11 @@ describe("<TwilioMessenger> Class", function() {
 
   describe("you should have gotten your account credentials", function() {
     it("should have your valid accountId", function() {
-      expect(twilio.accountId).not.toBe("YOUR ACCOUNT SID HERE");
+      expect(twilio.accountId).not.toBe("YOUR ACCOUNT ID HERE");
     });
 
     it("should have your valid authToken", function() {
-      expect(twilio.authToken).not.toBe("YOUR AUTHENTICATION TOKEN HERE");
+      expect(twilio.authToken).not.toBe("YOUR AUTH TOKEN HERE");
     });
 
     it("should have your valid twilio phone number", function() {
@@ -67,7 +67,7 @@ describe("<TwilioMessenger> Class", function() {
 
   describe("the `handleMessageSend(evt<Event>)` method", function() {
     beforeAll(function() {
-      app.messageInputField.val("message from Jasmine tes");
+      app.messageInputField.val("message from Jasmine test");
       app.phoneInputField.val(app.fromNumber);
     });
 

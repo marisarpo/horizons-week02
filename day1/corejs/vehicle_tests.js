@@ -17,7 +17,7 @@ describe("Instance creation:", function() {
   });
   it("Instances have the right attributes", function() {
     expect(jeep.model).toEqual("jeep");
-    expect(jeep.color).toEqual("yellow");
+    expect(jeep.color).toEqual("white");
     expect(jeep.year).toEqual(2010);
     expect(jeep.tireType).toEqual(allSeasonTires);
   });
@@ -28,6 +28,7 @@ describe("Adding functions", function() {
     expect(jeep.changeColor).not.toEqual(undefined);
     expect(teslaS.changeColor).not.toEqual(undefined);
     expect(Vehicle.prototype.changeColor).not.toEqual(undefined);
+    expect(jeep.color).toEqual("yellow");
   });
   it("The function whichTires only on the correct object.", function() {
     expect(jeep.whichTires).not.toEqual(undefined);

@@ -40,9 +40,10 @@ The components we want you to build are below. We recommend you approach each on
 
 5. **Comments**: Each post will also need to allow users to Comment on Post objects - comments will also be stored as an array on each Post object and contain the comment contents and information on the commenter.
 
-6. **Bonus: Chat**: See *Using Sockets* for more information on how to implement Chat. You will be adding a chat section to your Facebook site to have a central chat feature for all users on your site.
+6. **Bonus: Relative Date**: Using `https://momentjs.com/` figure out a way to add relative time to all of your posts. So instead of an absolute date a post would have a date relative to the current date (i.e. posted 5 minutes ago).
 
-7. **Bonus: Relative Date**: Using `https://momentjs.com/` figure out a way to add relative time to all of your posts. So instead of an absolute date a post would have a date relative to the current date (i.e. posted 5 minutes ago).
+7. **Double Bonus: Chat**: See *Using Sockets* for more information on how to implement Chat. You will be adding a chat section to your Facebook site to have a central chat feature for all users on your site.
+
 
 Yes, it's a lot - but if Mark Zuckerberg can do it, you can too!
 
@@ -67,6 +68,10 @@ These instructions are very minimal in nature and should only be used as a guide
   <!-- CSS files for Bootstrap -->
   <!-- UNCOMMENT IF NEEDED -->
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+  <!-- UnderscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
   <!-- Your css file -->
   <link rel="stylesheet" href="./css/style.css">
 </head>
@@ -90,13 +95,15 @@ These instructions are very minimal in nature and should only be used as a guide
 </html>
 ```
 
+**Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**
+
 ### Login
 
-1. Write the front-end code the login section of your Facebook site. One way to create the login form is to use the `<form>` element in `HTML` and ask for `email` and `password`.
+1. Write the front-end code the login section of your Facebook site. One way to create the login form is to create `<input>` elements and a `<button>` element with a click handler. When the button is pressed you should use the values in the input elements to populate your `AJAX` request.
 
   ![login](./facebook/images/fb_login.png)
 
-1. Using `AJAX` take the two form elements and `POST` them to the `/users/login` endpoint.
+1. Using `AJAX` take the two input elements and `POST` them to the `/users/login` endpoint.
 `url: https://horizons-facebook.herokuapp.com/api/1.0/users/login`. Refer to the **API Reference** to see what the request/response should look like.
 
   ```javascript
@@ -128,7 +135,7 @@ These instructions are very minimal in nature and should only be used as a guide
 
   ![register](./facebook/images/fb_register.png)
 
-1. Much like login you should create a form like the one above with the four *required* properties, and when the `Register` button is pressed the `AJAX POST request` to `/users/register` should occur (with fname, lname, email, and password).
+1. Much like login you should create a form like the one above with the four *required* properties in `<input>` fields, and when the `Register` button is pressed the `AJAX POST request` to `https://horizons-facebook.herokuapp.com/api/1.0/users/register` should occur (with fname, lname, email, and password).
 
 1. On success the `AJAX` response should contain `{success: true}` (and that's it).
 
@@ -139,6 +146,8 @@ These instructions are very minimal in nature and should only be used as a guide
 1. Once you have tackled the login/register pages, the next step is to retrieve and list posts currently on the database.
 
   ![posts](./facebook/images/fb_feed.png)
+
+1. Using `HTML` and `CSS` create what you want your newsfeed posts/comments/likes to look like. You should do this before you use `AJAX` requests to populate these elements.
 
 1. Refer to the **API Reference** to figure out what a `GET /posts` request/response should look like. You only need to include your `token` in the request header.
 
@@ -168,7 +177,7 @@ These instructions are very minimal in nature and should only be used as a guide
 
 1. We have also learned about `Asynchronous` behaviour, and have been introduced to functions such as `setInterval` and `setTimeout`.
 
-1. Since the `/posts API` endpoint has all of the required information for the newsfeed (i.e. posts & comments & likes) we should constantly update our newsfeed by sending out `AJAX requests` to this endpoint.
+1. Since the `/posts API` endpoint has all of the required information for the newsfeed (i.e. posts & comments & likes) we should periodically update our newsfeed by sending out `AJAX requests` to this endpoint.
 
 1. In order to minimize traffic at that endpoint requests should be submitted at least 30 seconds apart.
 
@@ -363,11 +372,12 @@ If the request goes through successfully the API endpoint should respond with `J
 
 * 500 - `{error: "Failed to save the new post."}` - Call a TA over. There is an issue in saving posts to our database.
 
-### `GET` x Amount of Posts
+### `GET` Post, limit amount 🔒
+`url: https://horizons-facebook.herokuapp.com/api/1.0/posts/:numberOfPosts`
 
 This route returns post objects in the same format as the GET `/posts` request above, but in a way that allows you to select a particular amount of posts from history.
 
-`:x` represents a number that paginates your selection of a group of 10 posts. For example, `/posts/1` will return you the first 10 posts, `/posts/2` will return you the next 10 posts, and `/posts/3` will return you the next 10 posts after that. Posts are sorted by time and higher numbers for `:x` represent posts from longer ago.
+`:numberOfPosts` represents a number that paginates your selection of a group of 10 posts. For example, `/posts/1` will return you the first 10 posts, `/posts/2` will return you the next 10 posts, and `/posts/3` will return you the next 10 posts after that. Posts are sorted by time and higher numbers for `:numberOfPosts` represent posts from longer ago.
 
 Note that if fewer than 10 posts exist, requesting `/posts/2/` will give you back an empty array. The same applies for fewer than 20 posts and `/posts/3` and so on. Any `GET` request for posts from the server will return you a maximum of 10 posts.
 
@@ -513,6 +523,11 @@ Notice the difference in the new response from the `API` once the `/posts/likes/
   }
 }
 ```
+
+### `GET` Logout
+`url: https://horizons-facebook.herokuapp.com/api/1.0/users/logout`
+
+This endpoint allows you to safely logout and destroy the token you received on login. The `AJAX` request url should have the `AUTH_TOKEN` in it (i.e. `https://horizons-facebook.herokuapp.com/api/1.0/users/logout?token=insert-token-here`. If the request is successful, you should get a `{success: true}` response.
 
 ### Using Sockets
 

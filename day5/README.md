@@ -69,8 +69,6 @@ These instructions are very minimal in nature and should only be used as a guide
   <!-- UNCOMMENT IF NEEDED -->
   <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-  <!-- UnderscoreJS Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
   <!-- Your css file -->
   <link rel="stylesheet" href="./css/style.css">
@@ -87,6 +85,8 @@ These instructions are very minimal in nature and should only be used as a guide
 
   <!-- Your script file -->
   <script type="text/javascript" src="./js/script.js"></script>
+  <!-- UnderscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 
   <!-- JavaScript files for Bootstrap -->
   <!-- UNCOMMENT IF NEEDED -->

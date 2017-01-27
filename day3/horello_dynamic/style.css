@@ -15,6 +15,17 @@ header {
     overflow: hidden;
 }
 
+.dropdown{
+  display:flex;
+  justify-content:center;
+  height:100%;
+}
+#colorChange {
+  height:100%;
+  width:85px;
+  background-color:rgba(0,0,0,.15);
+}
+
 .header-logo {
     bottom: 0;
     display: block;

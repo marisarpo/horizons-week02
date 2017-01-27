@@ -1,177 +1,148 @@
 "use strict";
-
 window.horello = window.horello || {};
 
-horello.generateId = function() {
-  var chunk = function() {
-    return Math.floor((1 + Math.random()) * 0x10000)
-      .toString(16)
-      .substring(1);
-  };
-  return chunk() + chunk() + '-' + chunk() + '-' + chunk() + '-' +
-    chunk() + '-' + chunk() + chunk() + chunk();
+///////////////////// CONSTRUCTORS /////////////////////
+
+horello.Board = function (id) {
+  this.id = id;
+  this.lists = [];
 };
-
-// CARD
-
-horello.Card = function(title, desc, listId) {
-  this.id = horello.generateId();
-  this.listId = listId;
-  this.title = title;
-  this.desc = desc;
-};
-
-horello.Card.prototype = {
-  getId: function() {
-    return this.id;
-  },
-
-  getTitle: function() {
-    return this.title;
-  },
-
-  setTitle: function(titleStr) {
-    this.title = titleStr;
-  },
-
-  getDescription: function() {
-    return this.desc;
-  },
-
-  setDescription: function(desc) {
-    this.desc = desc;
-  },
-
-  render: function() {
-    // build wrappers
-    var wrapper = $('<div></div>');
-    var cardwrapper = $('<div class="card" data-list-id="'+this.listId+'" data-card-id="'+this.id+'"></div>');
-    var cardmore = $('<span class="card-more"></span>');
-    if (this.getDescription()) {
-      cardmore.append($('<span class="glyphicon glyphicon-align-left"></span>'));
-    }
-    var cardbody = $('<div class="card-body">'+this.title+'</div>');
-
-    wrapper.append(cardwrapper);
-    cardwrapper.append(cardmore);
-    cardwrapper.append(cardbody);
-    cardbody.append($("<p></p>")).text(this.title);
-
-    return wrapper.html();
-  }
-};
-
-horello.Card.fromJSON = function(data) {
-  // PHASE 1 code here
-};
-
-
-// LIST
-
-horello.List = function(name) {
-  this.id = horello.generateId();
+horello.List = function(id, name) {
+  this.id = id;
   this.name = name;
   this.cards = [];
 };
+horello.Card = function(id, title, description, listId) {
+  this.id = id;
+  this.listId = listId;
+  this.title = title;
+  this.description = description;
+};
 
-horello.List.prototype = {
-  getId: function() {
-    return this.id;
-  },
+///////////////////// STATIC OBJECT CREATORS /////////////////////
 
-  getName: function() {
-    return this.name;
-  },
+// These create objects from data.
+// We are giving you the code for this one. It returns a new board based on the
+// data argument we receive.
+// The Board constructor only takes an id.
+horello.Board.boardFromJSON = function(data) {
+  return new horello.Board(data.id);
+};
 
-  setName: function(name) {
-    this.name = name;
-  },
+// The List constructor takes and id and a name.
+horello.List.listFromJSON = function(data) {
+  // YOUR CODE HERE
+};
 
-  addCard: function(name, desc) {
-    var card = new horello.Card(name, desc, this.getId());
-    this.cards.push(card);
-    return card.getId();
-  },
+// The Card constructor takes and id, a name, description and id of the list it belongs to.
+horello.Card.cardFromJSON = function(data) {
+  // YOUR CODE HERE
+};
 
-  getCard: function(cardId) {
-    var card = this.cards.filter(function(c) {
-      return (c.getId() == cardId);
-    });
-    if (card.length > 0) {
-      return card[0];
-    }
-    return null;
-  },
+///////////////////// GET DATA /////////////////////
 
-  render: function() {
-    // Build wrappers
-    var wrapper = $('<div></div>');
+// Now we are going to get the data for the board's lists and cards.
 
-    var listContainer = $('<div class="list-container"></div>');
-    var listWrapper = $('<div class="list" id="'+this.id+'"></div>');
-    var listHeader = $('<div class="list-header"></div>');
-    var listBody = $('<div class="list-cards"></div>');
-    var listFooter = $('<div class="list-footer"></div>');
+// On this function, we do an ajax request to the /boards/ endpoint of the API.
+// A request to get a board's list looks like this: "/boards/123123/lists", where
+// "123123" is the boardId we got from Trello.
+horello.Board.prototype.loadListData = function() {
+  $.ajax(horello.apiUrl + "/boards/" + this.id + "/lists", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    success: function (listData) {
+      console.log("Successfully loaded lists for board " + this.id);
+      // Notice that we get an array the listData as a response and we are using
+      // listFromJSON to parse every one of the lists and add them into the `this.lists`
+      // array.
+      this.lists = listData.map(horello.List.listFromJSON);
 
-    wrapper.append(listContainer);
-    listContainer.append(listWrapper);
-    listWrapper.append(listHeader);
-    listWrapper.append(listBody);
-    listWrapper.append(listFooter);
-    listHeader.append($('<span class="list-title"></span>').text(this.name));
-    listFooter.append($('<button class="add-card" addCardId="'+this.id+'">Add a card...</button>'));
-    listFooter.append($('\
-      <div class="collapse" id="addCardForm'+this.id+'">\
-      <div class="well add-card-form">\
-      <input type="text" class="form-control" placeholder="Card title" id="addCardTitle'+this.id+'">\
-      <button type="button" class="btn btn-default" id="addCardBtn'+this.id+'">\
-      Save\
-      </button>\
-      <button type="button" class="btn btn-default">\
-      <span class="glyphicon glyphicon-remove" id="addCardCancelBtn'+this.id+'"></span>\
-      </button>\
-      </div>\
-      </div>\
-    '));
-
-    // Build cards in the body
-    listBody.html(this.cards.reduce(function(prev, cur) {
-      return prev + cur.render();
-    }, ""));
-
-    return wrapper.html();
+      // After adding each list to the array, we have to call `list.loadCardData();`
+      // for each one, to get the cards for each list.
+      this.lists.forEach(function (list) {
+        list.loadCardData();
+      });
+    }.bind(this),
+    error: function (err) {
+      conupdateCardTitleor("Error loading lists for board " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
   }
-};
+);
+}
 
-horello.List.fromJSON = function(data) {
-  // PHASE 1 code here
-};
+// This function works similarly to the one above, but using "list/12312/cards"
+// You are on your own now to implement the code that makes the ajax request.
+// On the sucess part of this function, remember map all the cards into `this.cards`,
+// using `horello.Card.cardFromJSON`.
+// Now we have all the data we need. So, now we call `horello.refresh(board);`
+// after adding them to the array.
+horello.List.prototype.loadCardData= function() {
+  // YOUR CODE HERE
+}
+
+///////////////////// ADD CARD AND ADD LIST /////////////////////
 
 
-// BOARD
+// This will be your first POST request. This function gets called whenever we
+// click on `addList` on the frontend. Notice that on success, we call `this.loadListData();`
+// We do this to reload all the lists and show the newly added list!
+// If the request fails and the card is not created, it will not show up.
+horello.Board.prototype.addList = function(listName) {
+  $.ajax(horello.apiUrl + "/lists", {
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: listName,
+      idBoard: this.id,
+      pos: 'bottom'
+    },
+    success: function (data) {
+      console.log("Successfully created list with ID " + data.id + " for board " + this.id);
+      this.loadListData();
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating list for board " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+}
 
-horello.Board = function () {
-  this.lists = [];
-};
+// Implement a similar function as the one above. This one POSTS to the "/cards"
+// endpoint. Remember to call `this.loadCardData()` if the request is  successful.
 
-horello.Board.prototype = {
-  addList: function(listName) {
-    var list = new horello.List(listName);
-    this.lists.push(list);
-    return list.getId();
-  },
+horello.List.prototype.addCard= function(name, description) {
+  // YOUR CODE HERE
+}
 
-  getList: function(listId) {
-    return this.lists.find(function(c) {
-      return (c.getId() == listId);
-    });
-  },
+///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////
 
-  render: function() {
-    var wrapper = $('<div id="board" class="board"></div>');
-    wrapper.html(this.lists.reduce(function(prev, cur) {
-      return prev + cur.render();
-    }, ""));
-    return wrapper;
-  }
-};
+// Updating a card looks very similar to creating one. The only real difference
+// in this case is that we automatically update our UI, when someone edits the
+// card by doing `this.title = titleStr`, instead of doing `this.loadCardData()`.
+// Think about the two approaches and how they differ.
+horello.Card.prototype.updateCardTitle= function(titleStr) {
+  this.title = titleStr;
+  $.ajax(horello.apiUrl + "/cards/" + this.id, {
+    method: "PUT",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: titleStr
+    },
+    success: function (data) {
+      console.log("Successfully updated title of card " + this.id);
+    }.bind(this),
+    error: function (err) {
+      console.error("Error updating title of card " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
+
+},
+
+// This code is similar to the one above, but posts to "/cards/cardId", remember
+// to update the descrpiton after doing the request.
+horello.Card.prototype.setDescription=function(description) {
+  // YOUR CODE HERE
+}

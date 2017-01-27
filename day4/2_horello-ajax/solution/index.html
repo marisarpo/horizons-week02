@@ -4,10 +4,6 @@
   <meta charset="utf-8">
   <title>Horizons - W2D3 - Making Horello Dynamic</title>
 
-  <!-- pace -->
-  <script src="../../../lib/pace.min.js"></script>
-  <link rel="stylesheet" href="../../../lib/pace.css">
-
   <script src="../../../lib/underscore.js"></script>
   <script src="../../../lib/jquery.js"></script>
 
@@ -19,50 +15,60 @@
   <link rel="stylesheet" href="../css/style.css">
   <script src="js/config.js"></script>
   <script src="js/data_model.js"></script>
+  <script src="js/helper_renderers.js"></script>
+  <script src="js/renderers.js"></script>
   <script src="js/events.js"></script>
-  <script>
-    // jQuery document ready shorthand.
-    $(function () {
-      var board = new horello.Board('5758d29570a6a1673ae873bf');
-      horello.mount(board);
-      horello.mountStatic(board);
-      window.board = board;
 
-      // This triggers the initial API call to download all board data.
-      board.loadData();
-    });
+  <script>
+  function realData(){
+    var data = { id: horello.boardId}
+    var board = horello.Board.boardFromJSON(data);
+    board.loadListData();
+    return board;
+  }
+  </script>
+  <script>
+
+  $(function () {
+    var board;
+    board = new horello.Board("My Horello Board");
+    board = realData()
+    horello.refresh(board);
+    horello.refreshStatic(board);
+    window.board = board;
+  });
   </script>
 </head>
 
 <style>
-  body {
-    font-family: Verdana, sans-serif;
-  }
+body {
+  font-family: Verdana, sans-serif;
+}
 </style>
 
 <body>
 
-<header>
-  <a class="header-logo"
-     href="#"><span class="header-logo-default"></span></a>
-</header>
+  <header>
+    <a class="header-logo"
+    href="#"><span class="header-logo-default"></span></a>
+  </header>
 
-<div class="modal fade" id="cardEdit">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">
-          <span>&times;</span>
-        </button>
-        <input type="text" class="form-control" id="modalText">
-      </div>
-      <div class="modal-body">
-        <h5>Description</h5>
+  <div class="modal fade" id="cardEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+          <input type="text" class="form-control" id="modalText">
+        </div>
+        <div class="modal-body">
+          <h5>Description</h5>
           <textarea class="form-control" rows="5" id="modalBody"></textarea>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default"
-                data-dismiss="modal">Close
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default"
+          data-dismiss="modal">Close
         </button>
         <button type="button" class="btn btn-primary" id="modalSave">
           Save changes
@@ -83,21 +89,21 @@
       <div class="collapse" id="addList">
         <div class="well add-card-form">
           <input type="text" class="form-control"
-                 placeholder="List name" id="addListText">
+          placeholder="List name" id="addListText">
           <button type="button"
-                  class="btn btn-default"
-                  id="addListSave">
-            Save
-          </button>
-          <button type="button"
-                  class="btn btn-default"
-                  id="addListCancel">
-            <span class="glyphicon glyphicon-remove"></span>
-          </button>
-        </div>
-      </div>
+          class="btn btn-default"
+          id="addListSave">
+          Save
+        </button>
+        <button type="button"
+        class="btn btn-default"
+        id="addListCancel">
+        <span class="glyphicon glyphicon-remove"></span>
+      </button>
     </div>
   </div>
+</div>
+</div>
 
 </div>
 </body>

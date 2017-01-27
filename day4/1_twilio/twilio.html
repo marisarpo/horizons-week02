@@ -18,7 +18,7 @@
 
 	<!-- Our files -->
 	<!-- Uncomment this to test -->
-	<!-- <script type="text/javascript" src="twilio_tests.js"></script> -->
+	<script type="text/javascript" src="twilio_tests.js"></script>
 </head>
 <body class="tw-app">
 	<div class="container">
@@ -37,7 +37,7 @@
 						<label class="form-group">
 							<input class="message-input-field" type="text" placeholder="Write something..." />
 						</label>
-							<button class="btn message-input-button">Send</button>
+						<button class="btn message-input-button">Send</button>
 					</form>
 				</div>
 			</div>
@@ -46,10 +46,10 @@
 	</div>
 	<script type="text/javascript" src="twilio.js"></script>
 	<script type="text/javascript">
-		function injectJasmine(targetId) {
-			$("#" + targetId).append($(".jasmine_html-reporter"));
-		}
-		setTimeout(function() { injectJasmine("jasmine-reporter")}, 50);
+	function injectJasmine(targetId) {
+		$("#" + targetId).append($(".jasmine_html-reporter"));
+	}
+	setTimeout(function() { injectJasmine("jasmine-reporter")}, 50);
 	</script>
 </body>
 

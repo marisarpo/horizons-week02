@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "ACe526bc0131e8a2847902e48075c1f430";
+twilio.authToken = "035138914bb27389564ade8b257254dd";
+twilio.fromNumber = "14159428248";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -45,6 +45,8 @@ twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   console.log("TwilioMessenger is ready.");
 };
 
+
+
 twilio.TwilioShoutout.prototype = {
   // Exercise 1. `initialize()` method
   // Implement the initialize method. The initialize method is called when the TwilioApp class is instantiated.
@@ -53,6 +55,15 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    var self = this;
+    
+    // self.messageSendButton.click(self.handleMessageSend);
+    this.messageSendButton.click(this.handleMessageSend.bind(this));
+
+    // this.messageSendButton.click(function(event){
+    //   self.handleMessageSend(event);
+    // });
+    
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -62,6 +73,7 @@ twilio.TwilioShoutout.prototype = {
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
     // YOUR CODE HERE
+    $(jqField).val("");
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -71,6 +83,10 @@ twilio.TwilioShoutout.prototype = {
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
     // YOUR CODE HERE
+    var str = $.trim(textStr);
+    if (str)
+      return true;
+    return false;
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
@@ -83,6 +99,11 @@ twilio.TwilioShoutout.prototype = {
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
+    if(this.validateMessageField(phoneStr)){
+     return /^\d+$/.test(phoneStr);
+    }
+    return false;
+
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -95,6 +116,16 @@ twilio.TwilioShoutout.prototype = {
 
     // only send if both fields are valid
     // YOUR CODE HERE
+    console.log(evt);
+    console.log("this", this.phoneInputField.val());
+
+    if( this.validatePhoneField(this.phoneInputField.val()) && this.validateMessageField(this.messageInputField.val()) ){
+      console.log("asdf");
+      this.sendMessage(this.phoneInputField.val(), this.messageInputField.val());
+      return false;
+    }
+    throw new Error();
+
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
   // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.
@@ -111,6 +142,8 @@ twilio.TwilioShoutout.prototype = {
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
 			// YOUR CODE HERE
+      var msg = new Message(this.fromNumber, messageBody);
+       msg.render();
     };
 
 		// `Call` the Twilio API service with our data
@@ -123,15 +156,16 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
+      
+      url: this.apiUrl+"/Accounts/" + this.accountId + "/SMS/Messages",
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			//
 			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
+        "To" : "+" + this.toNumber,
+        "From": "+" + this.fromNumber,
+        "Body": messageBody
       },
 			success: cb,
       headers: {

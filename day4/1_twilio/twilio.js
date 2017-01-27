@@ -53,9 +53,8 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
-    this.messageSendButton.on('click', function(){
-      this.handleMessageSend();
-    })
+    var self = this;
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -65,6 +64,11 @@ twilio.TwilioShoutout.prototype = {
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
     // YOUR CODE HERE
+    $(jqField).val('');
+    // var temp = jqField.stringify();
+    // console.log(typeof jqField)
+
+
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -74,6 +78,11 @@ twilio.TwilioShoutout.prototype = {
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
     // YOUR CODE HERE
+    var te = $.trim(textStr);
+    if(te === "" || !!(te) === false){
+      return false;
+    }
+    return true;
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
@@ -86,6 +95,8 @@ twilio.TwilioShoutout.prototype = {
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
+    var trimmed = $.trim(phoneStr);
+    return (trimmed !== "" && !!(trimmed) !== false && !isNaN(trimmed));
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -94,7 +105,19 @@ twilio.TwilioShoutout.prototype = {
 	// note. also `clear`
 	// note. also `sendMessage`
   handleMessageSend: function(evt) {
-		evt.preventDefault();
+    evt.preventDefault();
+    
+    var toPhone = this.phoneInputField.val();
+    var message = this.messageInputField.val();
+
+		if(this.validatePhoneField(toPhone) && this.validateMessageField(message)){
+      console.log("call send message")
+      this.sendMessage(toPhone, message);
+    }else{
+      throw new Error("dumbass")
+    }
+    this.clearField(this.phoneInputField);
+    this.clearField(this.messageInputField);
 
     // only send if both fields are valid
     // YOUR CODE HERE
@@ -114,6 +137,8 @@ twilio.TwilioShoutout.prototype = {
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
 			// YOUR CODE HERE
+      var newMessage = new Message(this.phoneInputField.val(),this.messageInputField.val());
+
     };
 
 		// `Call` the Twilio API service with our data
@@ -126,15 +151,15 @@ twilio.TwilioShoutout.prototype = {
 			// hint. use string concatenation (addition)!
 			// hint. the 'base' url is provided for you in this.apiUrl
 			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
+      url: 'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/Messages',
 			// Exercise 6.C `data`
 			// Use the variables you have and actually send it to Twilio's services.
 			//
 			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
+        to: this.phoneInputField.val(),
+        from: this.fromNumber,
+        body: this.messageInputField.val()
       },
 			success: cb,
       headers: {

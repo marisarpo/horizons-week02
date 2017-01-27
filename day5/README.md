@@ -51,9 +51,9 @@ These instructions are very minimal in nature and should only be used as a guide
 
 1. Let's create the files required to start making your Facebook Newsfeed:
 
-* `/facebook/index.html`: This will be the main page of your app where you will write all of the necessary `HTML`.
-* `/facebook/css/style.css`: This will be our primary style sheet for the app. You can add more stylesheets if you would like.
-* `/facebook/js/script.js`: We will write all of our `Javascript & jQuery` in here.
+  * `/facebook/index.html`: This will be the main page of your app where you will write all of the necessary `HTML`.
+  * `/facebook/css/style.css`: This will be our primary style sheet for the app. You can add more stylesheets if you would like.
+  * `/facebook/js/script.js`: We will write all of our `Javascript & jQuery` in here.
 
 1. Add starter `HTML` code for your `index.html` file
 
@@ -98,24 +98,24 @@ These instructions are very minimal in nature and should only be used as a guide
 1. Using `AJAX` take the two form elements and `POST` them to the `/users/login` endpoint.
 `url: https://horizons-facebook.herokuapp.com/api/1.0/users/login`. Refer to the **API Reference** to see what the request/response should look like.
 
-```javascript
+  ```javascript
 
-$.ajax('url-goes-here', {
-  method: 'POST',
-  success: function(data) {
-    // data will be the response data that is
-    // returned by the endpoint. use this to
-    // access the token for future authorization.
+  $.ajax('url-goes-here', {
+    method: 'POST',
+    success: function(data) {
+      // data will be the response data that is
+      // returned by the endpoint. use this to
+      // access the token for future authorization.
 
-    // data.response.token will give you access
-    // to the AUTH_TOKEN
-  },
-  data: {
-    email: String,
-    password: String
-  }
-});
-```
+      // data.response.token will give you access
+      // to the AUTH_TOKEN
+    },
+    data: {
+      email: String,
+      password: String
+    }
+  });
+  ```
 
 1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in a local variable as you will need access to it for future requests.
 
@@ -295,22 +295,22 @@ This is an example of a response with one post that has no comments and no likes
 **Schema/Breakdown of `response`:**
 
 * Response is an array of objects representing posts, all of which have:
-	* `_id`:  The ID of the post.
-	* `poster`: An object representing a user, which has:
-		* `id`: The ID of the user/poster.
-		* `name`: The first and last name of the user/poster.
-	* `content`: The text content of the post.
-	* `createdAt`: A date string representing the time the post was posted.
-	* `__v`: You may safely ignore `__v`.
-	* `comments`: An array of objects representing comments, which have:
-		* `poster`: An object representing a user, which has:
-			* `id`: The ID of the user/poster.
-			* `name`: The first and last name of the user/poster.
-		* `content`: The text content of the comment.
-		* `createdAt`: A date string representing the time the comment was posted.
-	* `likes`: An array of objects representing users that have liked the post, all of which have:
-		* `id`: The ID of the user that liked the post.
-		* `name`: The first and last name of the user that liked the post.
+* `_id`:  The ID of the post.
+* `poster`: An object representing a user, which has:
+* `id`: The ID of the user/poster.
+* `name`: The first and last name of the user/poster.
+* `content`: The text content of the post.
+* `createdAt`: A date string representing the time the post was posted.
+* `__v`: You may safely ignore `__v`.
+* `comments`: An array of objects representing comments, which have:
+* `poster`: An object representing a user, which has:
+* `id`: The ID of the user/poster.
+* `name`: The first and last name of the user/poster.
+* `content`: The text content of the comment.
+* `createdAt`: A date string representing the time the comment was posted.
+* `likes`: An array of objects representing users that have liked the post, all of which have:
+* `id`: The ID of the user that liked the post.
+* `name`: The first and last name of the user that liked the post.
 
 Both `comments` and `likes` could be empty arrays!
 
@@ -326,8 +326,8 @@ This route posts a new post to the central Newsfeed. This route takes the follow
 ```javascript
 
 {
-    "token": String, // AUTH_TOKEN
-    "content": String // The text content of the new post.
+  "token": String, // AUTH_TOKEN
+  "content": String // The text content of the new post.
 }
 ```
 
@@ -416,11 +416,11 @@ This route gets all comments of a post by an ID (**of the post**, not the poster
 **Schema/Breakdown of `response`**:
 
 * `response`: An array of objects representing comments, which have:
-	* `poster`: An object representing a user, which has:
-		* `name`: The first and last name of the user/poster.
-    * `id`: The ID of the user/poster.
-	* `content`: The text content of the comment.
-	* `createdAt`: A date string representing the time the comment was posted.
+* `poster`: An object representing a user, which has:
+* `name`: The first and last name of the user/poster.
+* `id`: The ID of the user/poster.
+* `content`: The text content of the comment.
+* `createdAt`: A date string representing the time the comment was posted.
 
 
 Note: This could return an empty array as the `response`! Also note that you may not need this route, as `GET /posts` will already return you the comments associated with each post.

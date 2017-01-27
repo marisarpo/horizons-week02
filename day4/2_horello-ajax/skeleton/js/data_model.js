@@ -32,11 +32,13 @@ horello.Board.boardFromJSON = function(data) {
 // The List constructor takes and id and a name.
 horello.List.listFromJSON = function(data) {
   // YOUR CODE HERE
+  return new horello.List(data.id, data.name)
 };
 
 // The Card constructor takes and id, a name, description and id of the list it belongs to.
 horello.Card.cardFromJSON = function(data) {
   // YOUR CODE HERE
+  return new horello.Card(data.id, data.name, data.description, data.listId)
 };
 
 ///////////////////// GET DATA /////////////////////
@@ -80,6 +82,27 @@ horello.Board.prototype.loadListData = function() {
 // after adding them to the array.
 horello.List.prototype.loadCardData= function() {
   // YOUR CODE HERE
+  $.ajax(horello.apiUrl + "/lists/" + this.id + "/cards", {
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken
+    },
+    success: function (cardData) {
+      console.log("Successfully loaded cards for list " + this.id);
+      // Notice that we get an array the listData as a response and we are using
+      // listFromJSON to parse every one of the lists and add them into the `this.lists`
+      // array.
+      this.cards = cardData.map(horello.Card.cardFromJSON);
+
+      // After adding each list to the array, we have to call `list.loadCardData();`
+      // for each one, to get the cards for each list.
+      horello.refresh(board);
+    }.bind(this),
+    error: function (err) {
+      conupdateCardTitleor("Error loading cards for list " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  }
+);
 }
 
 ///////////////////// ADD CARD AND ADD LIST /////////////////////
@@ -114,6 +137,23 @@ horello.Board.prototype.addList = function(listName) {
 
 horello.List.prototype.addCard= function(name, description) {
   // YOUR CODE HERE
+  $.ajax(horello.apiUrl + "/cards", {
+    method: "POST",
+    data: {
+      key: horello.apiKey,
+      token: horello.apiToken,
+      name: name,
+      idList: this.id,
+      pos: 'bottom'
+    },
+    success: function (data) {
+      console.log("Successfully created card with ID " + data.id + " for list " + this.id);
+      this.loadCardData();
+    }.bind(this),
+    error: function (err) {
+      console.error("Error creating card for list " + this.id + ": " + JSON.stringify(err));
+    }.bind(this)
+  });
 }
 
 ///////////////////// SET TITLE AND DESCRIPTION ON CARDS /////////////////////

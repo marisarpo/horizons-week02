@@ -73,7 +73,7 @@ twilio.TwilioShoutout.prototype = {
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
     // YOUR CODE HERE
-    jqField.val('');
+    $(jqField).val('');
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -99,13 +99,8 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember to take care of both upper and lower case letters!
   // hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
-    if(phoneStr.length === 0 || phoneStr.trim().length === 0){
+    if(phoneStr.length === 0 || phoneStr.trim().length === 0 || isNaN(phoneStr)){
       return false;
-    }
-    for (var i = 0; i < phoneStr.length; i++){
-      if (isNaN(phoneStr[i])){
-        return false;
-      }
     }
     return true;
     // YOUR CODE HERE
@@ -117,12 +112,15 @@ twilio.TwilioShoutout.prototype = {
   // note. also `clear`
   // note. also `sendMessage`
   handleMessageSend: function(evt) {
-    evt.preventDefault();
-    // if (validatePhoneField(this.phoneInputField) && validateMessageField(this.messageInputField)){
-    //   //call the twilio api
-    // } else {
-    //   throw "Invalid fields";
-    // }
+    // evt.preventDefault();
+    if (this.validatePhoneField(this.phoneInputField.val()) && this.validateMessageField(this.messageInputField.val())){
+      //call the twilio api
+      this.sendMessage(this.phoneInputField.val(),this.messageInputField.val());
+    } else {
+      throw "Invalid fields";
+    }
+    this.clearField(this.phoneInputField)
+    this.clearField(this.messageInputField)
     // only send if both fields are valid
     // YOUR CODE HERE
   },
@@ -141,7 +139,8 @@ twilio.TwilioShoutout.prototype = {
     // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
     var cb = function(data) {
       // YOUR CODE HERE
-      var message = new Message (this.phoneInputField, this.messageInputField);
+      var message = new Message (this.phoneInputField.val(), this.messageInputField.val());
+      this.messageList.append(message.render());
 
     };
 
@@ -155,15 +154,16 @@ twilio.TwilioShoutout.prototype = {
       // hint. use string concatenation (addition)!
       // hint. the 'base' url is provided for you in this.apiUrl
       // hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
+      url: this.apiUrl + '/' + this.accountId + '/' + this.accountId + '/Messages',
+      //"YOUR CODE HERE",
       // Exercise 6.C `data`
       // Use the variables you have and actually send it to Twilio's services.
       //
       // note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
       data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
+        "To" : "+" + toNumber,
+        "From": "+" + twilio.fromNumber,
+        "Body": messageBody
       },
       success: cb,
       headers: {

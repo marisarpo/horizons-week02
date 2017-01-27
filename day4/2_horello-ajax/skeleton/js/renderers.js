@@ -1,4 +1,4 @@
-/* DELETE THIS LINE
+
 
 "use strict";
 window.horello = window.horello || {};
@@ -19,8 +19,12 @@ window.horello = window.horello || {};
 // </div>
 
 horello.Card.prototype.render = function() {
-  var cardHtml = "";
+  var cardHtml = '<div class="card" data-list-id="' + this.listId + '" data-card-id="' + this.id + '">' +
+    '<span class="card-more"></span>' +
+     '<div class="card-body">' + this.title + '</div>' +
+  '</div>';
   // YOUR CODE HERE
+  console.log(cardHtml);
   return cardHtml;
 };
 
@@ -55,10 +59,21 @@ horello.Card.prototype.render = function() {
 //   </div>
 // </div>
 
+
+
+
+
+
+
 horello.List.prototype.render = function() {
-  var listHTML = "";
-  // YOUR CODE HERE
-  return listHTML;
+  var htmlTop = '<div class="list-container"> <div class="list" id="' + this.id + '"> <div class="list-header"> <span class="list-title">' + this.name + '</span> </div> <div class="list-cards">';
+  var htmlFooter = '</div> <div class="list-footer"> <button class="add-card" addcardid="' + this.id + '">Add a card</button> <div class="collapse" id="addCardForm' + this.id + '"> <div class="well add-card-form"> <input type="text" class="form-control" placeholder="Card title" id="addCardTitle' + this.id +'"> <button type="button" class="btn btn-default" id="addCardBtn' + this.id + '"> Save </button> <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-remove" id="addCardCancelBtn' + this.id +'"></span> </button> </div> </div> </div> </div> </div>';
+
+  var sandwichDivs = "";
+
+  _.each(this.cards, function(myCard) {sandwichDivs += myCard.render();});
+
+  return htmlTop + sandwichDivs + htmlFooter;
 }
 
 
@@ -73,9 +88,10 @@ horello.List.prototype.render = function() {
 // <div id="board" class="board"> ...lists </div>
 
 horello.Board.prototype.render = function() {
-  var boardHTML = "";
-  // YOUR CODE HERE
+  var boardHTML = '<div id="board" class="board">'
+  _.each(this.lists, function(myList) {boardHTML += myList.render();});
+  boardHTML += '</div>';
+  console.log(boardHTML);
   return boardHTML;
-};
 
-DELETE THIS LINE */
+};

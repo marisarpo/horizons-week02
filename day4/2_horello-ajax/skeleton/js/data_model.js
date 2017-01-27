@@ -33,7 +33,7 @@ horello.Board.boardFromJSON = function(data) {
 horello.List.listFromJSON = function(data) {
   // YOUR CODE HERE
   console.log(data)
-  return new horello.List(data.id,data.name);
+  return new horello.List(data.id, data.name);
 };
 
 // The Card constructor takes and id, a name, description and id of the list it belongs to.
@@ -194,7 +194,7 @@ horello.Card.prototype.setDescription=function(description) {
   // YOUR CODE HERE
   this.title = titleStr;
   this.description = description;
-  $.ajax(horello.apiUrl + "/cards/" + this.id, {
+  $.ajax(horello.apiUrl + "/cards/" + this.id , {
     method: "PUT",
     data: {
       key: horello.apiKey,

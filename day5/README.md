@@ -93,7 +93,8 @@ These instructions are very minimal in nature and should only be used as a guide
 ### Login
 
 1. Write the front-end code the login section of your Facebook site. One way to create the login form is to use the `<form>` element in `HTML` and ask for `email` and `password`.
-![login](./facebook/images/fb_login.png)
+
+  ![login](./facebook/images/fb_login.png)
 
 1. Using `AJAX` take the two form elements and `POST` them to the `/users/login` endpoint.
 `url: https://horizons-facebook.herokuapp.com/api/1.0/users/login`. Refer to the **API Reference** to see what the request/response should look like.
@@ -124,7 +125,8 @@ These instructions are very minimal in nature and should only be used as a guide
 ### Register
 
 1. Add `HTML` to your `index.html` file to build a registration form for new users. A new user **must** have a first name (*fname*), last name (*lname*), email address (*email*), and a password (*password*).
-![register](./facebook/images/fb_register.png)
+
+  ![register](./facebook/images/fb_register.png)
 
 1. Much like login you should create a form like the one above with the four *required* properties, and when the `Register` button is pressed the `AJAX POST request` to `/users/register` should occur (with fname, lname, email, and password).
 
@@ -135,7 +137,8 @@ These instructions are very minimal in nature and should only be used as a guide
 ### List Posts
 
 1. Once you have tackled the login/register pages, the next step is to retrieve and list posts currently on the database.
-![posts](./facebook/images/fb_feed.png)
+
+  ![posts](./facebook/images/fb_feed.png)
 
 1. Refer to the **API Reference** to figure out what a `GET /posts` request/response should look like. You only need to include your `token` in the request header.
 
@@ -145,7 +148,7 @@ These instructions are very minimal in nature and should only be used as a guide
 
 ### Post Posts
 
-![post something](./facebook/images/fb_post.png)
+  ![post something](./facebook/images/fb_post.png)
 
 1. In order to publish posts onto the database you should first create an input box with a submit/post button.
 

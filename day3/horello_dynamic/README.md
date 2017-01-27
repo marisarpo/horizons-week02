@@ -1,12 +1,21 @@
 # Making Horello dynamic
 
-TODO introduction
+Today we're going to make the Horello site we built yesterday
+dynamic using jQuery. This means you will be able to add
+cards, add lists and edit cards just like you can on the
+og Trello. There's a catch though, since our application has
+no backend, all the cards and lists we create will disappear
+when we refresh the page. We will fix that tomorrow!
+
+Here are the parts of this exercise:
 
 1. Add list
 1. Add card
 1. Edit card
-1. **Bonus:** Drag and drop cards
+1. Drag and drop cards
 1. **Bonus:** Delete card by hovering and hitting <kbd>c</kbd>
+1. **Double bonus:** Random theme selector
+1. **Triple bonus:** Theme selector with dropdown
 
 ## Part 1: Add list
 
@@ -158,13 +167,36 @@ When you're done, your app should look like this:
 
 ### Steps
 
-TODO
+1. Create a global variable called `cardBeingEdited` and
+  set it to `null`. We're going to use this to remember
+  which card the user clicked on in order to edit it.
+1. Add a delegated event handler to `.board` that
+  listens to clicks on `.card` elements. This event
+  handler should:
 
-## Bonus: Reorder cards using drag and drop
+  1. Save the currently clicked card (i.e. `this`) in
+    the global variable `cardBeingEdited`.
+  1. Open the card editing modal (i.e. dialog) by finding
+    `#card-edit` via jQuery and calling `.modal()` on it.
+  1. Make sure the text box in the dialog contains the
+    text of the current card being edited. Update the value
+    of `#card-edit-body` using `.val()`, set it to
+    the text of the card that was clicked on.
+    You can get the extract the text contents of 
+    the card by finding the `.card-body` div inside
+    the current `.card`. You will need `$(this).find()`
+    and `.text()`.
+
+
+## Reorder cards using drag and drop
 
 ### Goal
 
-TODO
+Make it possible to reorder and move cards between
+lists by dragging and dropping. We're going to
+use the popular [jQuery UI](https://jqueryui.com/)
+library, that adds useful functionality not contained
+in vanilla jQuery.
 
 When you're done, your app should look like this:
 
@@ -172,8 +204,53 @@ When you're done, your app should look like this:
 
 ### Steps
 
-TODO
+jQuery UI makes it easy to reorder using drag and drop.
+There is a feature called `sortable` that can be 
+added to lists like this:
 
-## Double Bonus: Delete cards using the keyboard
+```javascript
+$('LIST SELECTOR HERE').sortable({
+  // Configuration parameters here
+  });
+```
 
-TODO
+Documentation:
+
+- [jQuery UI Sortable](https://jqueryui.com/sortable/)
+- [Connecting multiple lists](https://jqueryui.com/sortable/#connect-lists)
+
+
+Make sure that:
+
+- You **can not** place a card after the `Add a card...` button
+- You can move newly created cards to any list
+- You can movely cards to and from newly created lists
+
+## Bonus: Delete cards using the keyboard
+
+Make it possible to hover your mouse over one of the cards
+and hit the <kbd>c</kbd> key on your keyboard to delete it.
+
+You will need to:
+
+1. Listen to keyboard events with `keydown`.
+1. Convert numeric keyboard codes to letters with  
+  `String.fromCharCode()`
+1. Find the currently hovered card with the `:hover`
+  pseudoselector.
+1. Remove the `.card` from the page with `.remove()`
+
+## Double Bonus: Theme Selector
+
+Add an easter egg to your Horello page by 
+switching the color scheme of the board hen a user
+clicks on the Horello logo on the top of the page.
+When theming your page, cycle through various colors
+for the top bar, the background, the lists and the cards. 
+Try replacing the background of the board with an image.
+
+## Triple Bonus: Theme Selector Dropdown
+
+Add a dropdown menu next to the Horello logo that
+allows the user to pick one of several themes that
+you built for the Double Bonus.

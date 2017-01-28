@@ -1,29 +1,106 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- CSS files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+  <!-- prath@joinhorizons.com
+  password: password -->
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+</head>
+<body>
+  <!-- YOUR CODE HERE -->
+  <section>
+    <div id = 'login-form'> <!-- need to hide input when logged in -->
+      <input class = 'reset' type = 'text' name = 'email' placeholder = 'email' >
+      <input class = 'reset' type = 'password' name = 'password' placeholder = 'password'>
+      <div id = 'login-button'>
+      </br>
+        <button type = "button" name = "login"> Login </button>
+        <!-- make sure the password characters get changed to dots -->
+        <!-- value: value's actually there (.val() gives you text in the input box)
+        placeholder: just the 'placeholder'/ indicator of what goes in  -->
+      </div>
+    </br>
 
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+    <!-- IMPLEMENTATION FOR LATER -->
+  <!-- <div>
+    <button name='getPosts'>Log Posts</button>
+  </div>
+  </br> -->
+
+  <!-- THIS REGISTER BUTTON REDIRECTS TO REGISTRATION FORM; DOESNT ACTUALLY CREATE ACCOUNT -->
+  <div id = 'register-page'>
+    <button type = "button" name = "register-page">Register-page</button>
+  </div>
+</br>
+</div>
+
+<!-- SHOW LOG OUT BUTTON ON LOG IN PAGE -->
+<div id = 'login-page' class='hide'>
+  <button type = "button" name = "logout">Logout</button>
+
+  <!-- GET POSTS -->
+  <button type = "button" name = "get-posts">Get posts</button>
+</div>
+</br>
+
+
+<!-- THIS IS OUR REGISTRATION -->
+<div id = 'registration-form' class='hide'> <!-- need to hide input when logged in -->
+  <input type = 'text' name = 'firstName' placeholder = 'First Name' >
+  <input type = 'text' name = 'lastName' placeholder = 'Last Name' >
+  <input type = 'text' name = 'emailRegister' placeholder = 'Email' >
+  <input type = 'password' name = 'passwordRegister' placeholder = 'Password'>
+<div id = 'register-button'>
+</br>
+  <button type = "button" name = "register">Register-account</button>
+</div>
+</br>
+<div id = 'loginLink-button'>
+  <button type = "button" name = "loginLink-button">Login</button>
+</div>
+</div>
+</br>
+
+<!-- LOG IN ; ADD THIS LATER -->
+
+<!-- WE NEED TO SHOW POSTS -->
+<div id = 'newsfeed'>
+  <div id = 'makepost' class='hide'>
+    <input type = 'text' name = 'comment' placeholder = 'Write something (;'>
+    <button type = 'button' name = 'postbutton'>Post</button>
+  </div>
+  <p id = 'posts'>
+  </p>
+  <div id = 'reply-button' class='hide'>
+    <input type = 'text' name = 'reply' placeholder = 'clap back'>
+    <button type = 'button' name = 'reply-button'>Reply</button>
+  </div>
+</br>
+  <div id = 'like-button' class='hide'>
+    <button type = 'button' name = 'like-button'>Like</button>
+  </div>
+</div>
+
+
+</section>
+
+<!-- jQuery -->
+<script
+src="https://code.jquery.com/jquery-3.1.1.min.js"
+integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+crossorigin="anonymous"></script>
+<!-- JavaScript files for Bootstrap -->
+<!-- UNCOMMENT IF NEEDED -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+<!-- underscoreJS Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script type="text/javascript" src="./js/script.js"></script>
+</body>
 </html>

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+       <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
@@ -11,7 +13,77 @@
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="row" style="margin-bottom: 20px;" align="center">
+           <div class="col-xs-4"></div>
+           <div class="col-xs-4">
+               <h1>ITS FACEBOOK BITCH</h1>
+           </div>
+           <div class="col-xs-4"></div>
+       </div>
+    <section id = 'loginPage'>
+      <div id ="login-form">
+        <div class = "row">
+          <div class = "col-xs-4"></div>
+          <div class = "col-xs-4">
+            <input type = "text" name = "email" placeholder ="email">
+            <input type = "password" name = "password" placeholder = "password">
+            <button type = "button" name = "login">Login</button>
+          </div>
+          <div class = "col-xs-4"></div>
+      </div>
+
+      <br/>
+
+      <div>
+        <button type = "button" name ="logout">Logout</button>
+      </div>
+
+      <br/>
+      <div>
+        <button name ="getPosts">Log Posts</button>
+      </div>
+
+      <br/>
+
+      <div>
+        <button name ="registration">Go to Registration</button>
+      </div>
+    </section>
+
+    <section id = 'registrationPage'>
+      <div id = "registration-form">
+        <input type = "text" name = "firstName" placeholder="First Name">
+        <input type = "text" name = "lastName" placeholder = "Last Name">
+        <input type = "text" name = "username" placeholder = "Username">
+        <input type = "password" name = "password" placeholder = "Password">
+        <button name = "register">Register</button>
+        <button name = "login">Login</button>
+    </section>
+
+    <section id = 'wall'>
+      <div>
+        <p id = "posts">
+        </p>
+
+        <br/>
+        <br/>
+
+      </div>
+      <div>
+        <h1>Post Posts</h1>
+        <input type = "text" name = "createPost" placeholder="What's on your mind?">
+        <button name = "post">Post</button>
+        <p id = "addedPost">
+        </p>
+
+      </div>
+
+      <div>
+
+
+      </div>
+    </section>
+
 
     <!-- jQuery -->
     <script

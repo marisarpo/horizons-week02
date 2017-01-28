@@ -5,13 +5,108 @@
     <title>Horizons Facebook</title>
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <section>
+
+      <div class="pageHeader">
+        <h1>Welcome to Facebook!</h1>
+        <h2>Please login</h2>
+      </div>
+
+      <div id="login-form">
+        <input type="text" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="password">
+        <button type="button" name="login">Login</button>
+      </div>
+
+
+      <br/>
+      <br/>
+
+      <button type="button" name="registerButt">Register a User</button>
+
+      <br/>
+      <br/>
+
+      <div id="showRegister" class="hide">
+        <input type="text" name="fname" placeholder="First Name">
+        <input type="text" name="lname" placeholder="Last Name">
+        <input type="text" name="regEmail" placeholder="email">
+        <input type="password" name="regPassword" placeholder="password">
+        <br/>
+        <button type="button" name="createUser">Create User</button>
+      </div>
+
+      <br/>
+
+
+
+
+
+      <br/>
+
+      <div>
+        <button type="button" name="logout" class="hide">Logout</button>
+      </div>
+
+      <br/>
+
+      <div>
+        <button name="getPosts" class="hide">Log Posts</button>
+      </div>
+
+      <br/>
+
+      <!-- List of Posts -->
+      <table id="listPosts" class="table table-striped hide">
+        <tr>
+          <th>Comment</th>
+          <th>Name</th>
+          <th>Date Created</th>
+          <th>Like Button</th>
+          <th>Reply</th>
+        </tr>
+      </table>
+
+      <br/>
+      <br/>
+
+      <!--- *********************************************************** -->
+      <h3 class="hide">Publish Post</h3>
+
+      <div id="postBox" class="hide">
+        <input type="text" name="commentField" placeholder="comment...">
+        <br/>
+        <button type="button" name="postComment">Post</button>
+      </div>
+
+      <br/>
+      <br/>
+
+      <address>
+        <strong>Facebook, Inc.</strong><br>
+        1355 Market Street, Suite 900<br>
+        San Francisco, CA 94103<br>
+        <abbr title="Phone">P:</abbr> (111) 111-111
+      </address>
+
+    <address>
+      <strong>Blaise Najafi</strong><br>
+      <a href="mailto:#">blaise@boss.com</a>
+    </address>
+
+
+
+
+
+    </section>
 
     <!-- jQuery -->
     <script

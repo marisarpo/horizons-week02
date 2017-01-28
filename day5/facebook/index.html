@@ -7,11 +7,54 @@
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <section>
+      <div class = "register-frame frame hide">
+        <div class = "register flex">
+          <input type="text" name="first-name" placeholder ="First Name">
+          <input type="text" name="last-name" placeholder ="Last Name">
+          <input type="text" name="email" placeholder ="Email">
+          <input type="password" name="password" placeholder ="Password">
+          <button type="button" id="register" name='register'>Register</button>
+          <a type="text" id="account-exist" name='login-register'>Have an account?</a>
+        </div>
+      </div>
+      <div class = "login-frame frame flex">
+        <div class = "login flex">
+          <input type="text" name="email" placeholder ="Email">
+          <input type="password" name="password" placeholder ="Password">
+          <button type="button" id="login" name='login'>Login</button>
+        </div>
+      </div>
+      <div class = "logout hide">
+        <button name="logout">Logout</button>
+      </div>
+      <div class = "posts-frame frame hide">
+        <div class = "new-post flex">
+          <input type="text" name="new-post" placeholder="Say something">
+          <button id="new-post-button" name="new-button">New Post</button>
+        </div>
+        <div class = "posts flex">
+          <!-- Filled in via POST request -->
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class = "login">
+        <div class = "title-login">
+        </div>
+        <div class = "input-login">
+        </div>
+        <div class = "Submit">
+        </div>
+    </div> -->
+
+
+
+
+
 
     <!-- jQuery -->
     <script
@@ -25,5 +68,6 @@
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+
   </body>
 </html>

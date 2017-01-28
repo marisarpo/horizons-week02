@@ -1,0 +1,136 @@
+html, body {
+  height: 100%;
+  font-family:  "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+
+section {
+  height: 100%;
+}
+
+button {
+  font-family:  "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 200px;
+  margin-top: 10px;
+  /*background*/
+}
+
+button:focus, input:focus {
+  outline:none;
+}
+
+input {
+  font-family:  "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+  border: none;
+  border-bottom: 1px solid grey;
+  text-align: center;
+  padding: 4px 10px;
+}
+
+a {
+  margin-top: 5px;
+  font-size: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+::-webkit-input-placeholder {
+   text-align: center;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-align: center;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-align: center;
+}
+
+:-ms-input-placeholder {
+   text-align: center;
+}
+
+/*HIDE AND FLEX AND FRAME FOR ALL OF THE ELEMENTS*/
+.hide {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.frame {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts-frame {
+  flex-direction: column;
+}
+
+/*REGISTER*/
+.register {
+  height: 150px;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*LOGIN*/
+.login {
+  height: 75px;
+  width: 50%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/*POSTS*/
+.posts {
+  height: 90%;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.post {
+  height: 70px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  justify-content: space-around;
+  align-items: center;
+  /*flex-direction: column;*/
+  width:70%;
+}
+
+.post #poster {
+  font-size: 20px;
+  text-align: left;
+  color: #9BE2FA;
+}
+
+.side-frame {
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.likes-frame {
+
+}
+
+.comments-frame {
+
+}

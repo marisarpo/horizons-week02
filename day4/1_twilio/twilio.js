@@ -126,23 +126,21 @@ twilio.TwilioShoutout.prototype = {
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
 
-    // split by - and joins on ''
-    phoneStr.split('-').join('');
-
     // check if they're number
     if(phoneStr.match(/^\d+$/)){
-      // trim the string
-      var trimmed = $.trim(phoneStr);
-      // check if empty
-      if (trimmed === ""){
-        return false;
-      }
-  		}
       return true;
+    }
+      // trim the string
+    var trimmed = $.trim(phoneStr);
+      // check if empty
+    if (trimmed === ""){
+      return false;
     }
     var nums = '1234567890';
     for (var i = 0; i <= phoneStr.length - 1; i++) {
-      if (nums.indexOf(modStr[i]) === -1) return false;
+      if (nums.indexOf(phoneStr[i]) === -1){
+        return false;
+      }
     }
     return true;
 
@@ -167,7 +165,7 @@ twilio.TwilioShoutout.prototype = {
     var message = this.messageInputField.val();
 
     // if both things are validated
-    if (validatePhoneField(phone) && validateMessageField(message) !== false){
+    if (this.validatePhoneField(phone) && this.validateMessageField(message) !== false){
       // send message
       this.sendMessage(phone, message);
       // clear message
@@ -201,37 +199,36 @@ twilio.TwilioShoutout.prototype = {
 
 		// `Call` the Twilio API service with our data
     $.ajax({
-      method: "POST",
-			// Exercise 6.B `url`
-			// Write the url of the POST request you're going to be sending!
-			// Please examine the API docs for sending messages with Twilio (https://www.twilio.com/docs/api/rest/sending-messages)
-			//
-			// hint. use string concatenation (addition)!
-			// hint. the 'base' url is provided for you in this.apiUrl
-			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
-			// Exercise 6.C `data`
-			// Use the variables you have and actually send it to Twilio's services.
-			//
-			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
-      data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
-      },
-			success: cb,
-      headers: {
-        'Authorization': 'Basic ' + btoa(acctId + ':' + authTok)
-      },
-      error: function(xhr, textStatus, error) {
-        console.log(xhr);
-        console.log(xhr.responseText);
-      }
-    });
-  }
+    method: "POST",
+          // Exercise 6.B `url`
+          // Write the url of the POST request you're going to be sending!
+          // Please examine the API docs for sending messages with Twilio (https://www.twilio.com/docs/api/rest/sending-messages)
+          //
+          // hint. use string concatenation (addition)!
+          // hint. the 'base' url is provided for you in this.apiUrl
+          // hint. your account id is also accessible via this.accountId
+    url: this.apiUrl + "/Accounts/" + this.accountId + "/Messages",
+          // Exercise 6.C `data`
+          // Use the variables you have and actually send it to Twilio's services.
+          //
+          // note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
+    data : {
+      "To" : "+" + toNumber,
+      "From": "+" + this.fromNumber,
+      "Body": messageBody
+    },
+          success: cb,
+    headers: {
+      'Authorization': 'Basic ' + btoa(acctId + ':' + authTok)
+    },
+    error: function(xhr, textStatus, error) {
+      console.log(xhr);
+      console.log(xhr.responseText);
+    }
+  });
+}
 
 };
-
 // [Helper] `Message(sender<String>, body<String>)`
 // This is a helper class that appends your sent message to the DOM.
 var Message = function(sender, body) {

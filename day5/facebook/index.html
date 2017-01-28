@@ -6,13 +6,95 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- prath@joinhorizons.com
+    password -->
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
 
+
+    <section class="login-page">
+      Login
+      <div id="login-form">
+        <input class="login-items" type="text" name="email" placeholder="  Username">
+        <input class="login-items" type="password" name="pass" placeholder="  Password">
+        <button class="login-items" type="button" name="login">Login</button>
+      </div>
+      <!-- <div>
+        <button type="button" name="logout">Logout</button>
+      </div> -->
+      <div>
+        <button class="login-items" type="button" name="toRegis">Go to registration</button>
+      </div>
+    </section>
+
+    <section class="user-regis">
+      New user registration
+      <div id="login-form">
+        <input class="login-items" type="text" name="firstName" placeholder="First Name">
+        <input class="login-items" type="text" name="lastName" placeholder="Last Name">
+        <input class="login-items" type="text" name="username" placeholder="Username">
+        <input class="login-items" type="password" name="makePassword" placeholder="Password">
+        <button class="login-items" type="button" name="regis">Register</button>
+      </div>
+
+      <div>
+        <button class="login-items" type="button" name="toLogin">Login</button>
+      </div>
+    </section>
+
+    <section class="newsfeed">
+      Newsfeed
+      <div id="newsfeed">
+        <button class="nfbutton" type="button" name="getPosts">Get Posts</button>
+        <div class="postcontainer">
+          <div class="post">
+              <h2>Prath</h2>
+              <h6>3:12 PM</h6>
+              <p>Welcome to Horizons Facebook! Hope you enjoy using it.</p>
+            <div class="breakline"></div>
+              <h3>2 Replies, 19 Likes</h3>
+
+              <div class="comments">
+                <h2>Moose</h2>
+                <h6>3:12pm</h6>
+                <p>I love it! Can't wait to show ot it to everyone.</p>
+              </div>
+              <div class="comments">
+                <h2>Moose</h2>
+                <h6>3:12pm</h6>
+                <p>I love it! Can't wait to show ot it to everyone.</p>
+              </div>
+              <div class="comments">
+                <h2>Moose</h2>
+                <h6>3:12pm</h6>
+                <p>I love it! Can't wait to show ot it to everyone.</p>
+              </div>
+
+              <button class="nfbutton" type="button" name="thumbs">
+                 <span class="glyphicon glyphicon-thumbs-up"></span>
+              </button>
+              <button class="nfbutton" type="button" name="reply">Reply</button>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+              </div>
+            </div>
+            <div class="breakline2"></div>
+        </div>
+
+        <div class="postcomment">
+          <input class="postpost" type="text" name="postcontent" placeholder="content...">
+          <button class="nfbutton" type="button" name="toPost">Post</button>
+
+        </div>
+      </div>
+    </section>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -20,7 +102,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

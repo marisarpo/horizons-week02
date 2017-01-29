@@ -50,12 +50,13 @@ $('button[name=getPosts]').click(function(){
     url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts',
     method: 'GET',
     success: function(thread){
-      // console.log(thread);
+      console.log(thread);
       // console.log(thread.response[0].poster.name);
       for (var i = 0; i < thread.response.length; i++){
-          string = string + (thread.response[i].poster.name + "<br>" + thread.response[i].content + "<br>" + thread.response[i].createdAt + "<br>" + thread.response[i].comments + "<br>" + thread.response[i].likes);
+          string = (thread.response[i].poster.name + "<br>" + thread.response[i].content + "<br>" + thread.response[i].createdAt + "<br>" + thread.response[i].comments + "<br>" + thread.response[i].likes);
+          $('#posts').append($('<li id =' + i + '>' + string + '<button name = "like" id =' + thread.response[i]._id + '>like</input></button> <button name = "comment">comment</button> </li>'))
       }
-      $('#posts').html(string);
+      // $('#posts').html(string);
     },
     data: {
       token: localStorage.getItem('token')
@@ -95,11 +96,25 @@ $('button[name=post]').click(function(){
     method: "POST",
     success: function(thread){
       string = (thread.response.poster.name + "<br>" + thread.response.content + "<br>" + thread.response.createdAt + "<br>" + thread.response.comments + "<br>" + thread.response.likes);
-      $('#addedPost').html(string);
+      $('#addedPost').append($('<li id>' + string + '<button name = "like" id =' + thread.response._id+ '>like</button> <button name = "comment">comment</button></li>'));
     },
     data:newPost
   })
 })
 
-
-//
+//like
+$('#wall').on('click','button[name=like]',function(){
+  $.ajax({
+    url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/' + this.id,
+    method: "GET",
+    success: function(thread){
+      console.log("i liked something");
+      var likingPerson = {
+        name: thread.response.poster.name,
+        id: thread.response.poster.id
+      }
+      thread.response.likes.push(likingPerson)
+    },
+    data: {token: localStorage.getItem('token')}
+  })
+})

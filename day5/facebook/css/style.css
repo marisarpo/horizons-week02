@@ -1,0 +1,26 @@
+.hide{
+  display: none;
+}
+/*div{
+  display: flex;
+}*/
+.comment-div{
+  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #8b9dc3;
+}
+.post{
+  border: 2px solid #3b5998;
+
+}
+.reply-like{
+  display:flex;
+}
+button[name='post-reply'],button[name='like']{
+  margin: 5px;
+  width: 80px;
+  height: 30px;
+  background-color: #9daccb;
+  border-radius: 5px;
+
+}

@@ -21,8 +21,8 @@ $('.add-list-save').click(function() {
           <button class="add-card">Add a card...</button>
           <div class="collapse add-card-form-wrapper">
             <div class="well add-card-form">
-              <input type="text" class="form-control" placeholder="Card title">
-              <button type="button" class="btn btn-default add-card-save">Save
+              <input type="text" class="form-control" name='reply-post' placeholder="Card title">
+              <button type="button" class="btn btn-default add-card-save name='add-card-save'">Save
                   </button>
               <button type="button" class="btn btn-default add-card-cancel"><span
                           class="glyphicon glyphicon-remove"></span>

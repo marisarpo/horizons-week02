@@ -1,0 +1,44 @@
+body {
+  background-image: url('https://levels.io/wp-content/uploads/2015/10/maxresdefault-3.jpg');
+  background-position: 20%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+}
+
+.landing-page {
+  display: flex;
+  margin-top: 5%;
+  background-color: transparent;
+  color: white;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-area {
+  background-color: #a5a5a5;
+}
+
+.register-area {
+  padding: 10px 10px;
+}
+
+h1 {
+  font-family: monospace;
+  font-weight: lighter;
+  font-size: 18px;
+}
+
+.posts {
+  font-family: monospace;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+button {
+font-family: Courier;
+font-weight: lighter;
+color:#00f;
+background-color:#ddd
+}

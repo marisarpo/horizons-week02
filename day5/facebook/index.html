@@ -1,29 +1,90 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <!-- CSS files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
 
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+  <script>
+
+  if (localStorage.getItem('token') !== null) {
+    //this.getPosts();
+  }
+
+  </script>
+
+</head>
+<body>
+
+
+
+  <!-- Login page -->
+
+  <div class='landing-page'>
+
+    <img src="images/fb.png" width="60%">
+    <h1>log in here bruh</h1>
+    <br>
+    <div class="login-area" id="login-form">
+      <input type="text" name="email" placeholder="email"></input>
+      <input type ="password" name="password" placeholder="password"></input>
+      <button type="button" name="login" class="login">Login</button>
+      <button type="button" name="register" class="register">Register here</button>
+    </div>
+
+    <!-- Register page -->
+    <div class="register-area" id="registration" style="display:none">
+      <input type="text" name="firstName" placeholder="first name"></input>
+      <input type ="text" name="lastName" placeholder="last name"></input>
+      <br>
+      <input type="text" name="emailR" placeholder="email"></input>
+      <input type ="password" name="passwordR" placeholder="password"></input>
+      <button type="button" name="complete" class="register-click">Click to register</button>
+      <button type="button" name="back-to-register" class="register">Go back to login</button>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- Newsfeed page -->
+  <div class="thread" id="newsfeed">
+    <div class="posts" style="display:none">
+      <div class="post-container">
+        <div class="reactions">
+          <div class="likes"></div>
+          <button type="button" name="like">Like</button>
+          <button type="button" name="reply">Reply</button>
+        </div>
+      </div>
+      <div class="post-comment">
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+  <!-- Your script file -->
+  <script type="text/javascript" src="./js/script.js"></script>
+  <!-- UnderscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+  <!-- JavaScript files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+</body>
 </html>

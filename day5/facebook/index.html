@@ -11,7 +11,27 @@
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id="user-landing">
+      <input placeholder="First name" id="first-name">
+      <input placeholder="Last name" id="last-name">
+      <input placeholder="email" id="login-email">
+      <input placeholder="password" type="password" id="login-password">
+      <button id="login-button">Log in</button>
+      <button id="register-button">Register</button>
+      <button id="goto-registration"> Go to registration</button>
+    </div>
+    <div id="newsfeed">
+      <div><h1>Teh Newsfeed</h1><button type="button" id="post-button">Make a post</button></div>
+    </div>
+    <div id="messageModal" class="modal">
+      <div class="modal-content">
+        <span class="close">x</span>
+        <input id="modalInput" placeholder="message">
+        <button id="send-text">Post message</button>
+      </div>
+    </div>
+    <button id="logout-button">Logout</button>
+    <div id="the-end">Goodbye!</div>
 
     <!-- jQuery -->
     <script

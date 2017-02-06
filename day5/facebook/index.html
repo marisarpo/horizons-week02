@@ -6,12 +6,80 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+    <!-- prath@joinhorizons.com
+    password -->
+
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <section>
+      <div class="loginForm">
+        <h1 class="loginHeading">Login</h1>
+        <input type="text" name ="email" placeholder="Email" class="loginUsername initialInput"></input>
+        <input type="password"  name="password" placeholder="Password" class="loginPassword initialInput"></input>
+        <button type="button" name="login" class="loginButton buttonRed">Login</button>
+        <button type="button" name="toRegistrationPage" class="loginRegistrationButton buttonBlue">Go to registration</button>
+      </div>
+
+      <div style="display:none" class="registrationForm">
+        <h1 class="New user registration">New user registration</h1>
+        <input type="text" name ="firstname" placeholder="First Name" class="registrationFirstName initialInput"></input>
+        <input type="text" name ="lastname" placeholder="Last Name" class="registrationLastName initialInput"></input>
+        <input type="text" name ="emailRegister" placeholder="Email" class="registrationUsername initialInput"></input>
+        <input type="password" name ="passwordRegister" placeholder="Password" class="registrationPassword initialInput"></input>
+        <button type="button" name="register" class="registrationButton buttonRed">Register</button>
+        <button type="button" name="toLogin" class="registrationLoginButton buttonBlue">Login</button>
+      </div>
+
+      <br>
+
+      <div>
+        <button type="button" name="logout">Logout</button>
+      </div>
+
+      <br>
+      <div>
+        <button name="getPosts">Log Posts</button>
+      </div>
+
+      <br>
+      <div class="board">
+
+        <div>
+          <input type="text" name="postInput" class="postInput"></input>
+          <button type="button" name="postButton" class="postButton">Post</button>
+        </div>
+
+        <div class="postContainer">
+          <div class="post">
+            <h2 class="postName">Prath</h2>
+            <h5 class="postTime">Time 3:40</h5>
+            <p class="postContent">I am post</p>
+          </div>
+          <div class="breakLine"></div>
+          <div class="postReplyCountContainer">
+            <h2 class="postReplyCount">2 Replies</h2>
+            <h2 class="postLikeCount">9 Likes</h2>
+          </div>
+          <div class="postComment">
+            <h4 class="commentName">Moose</h4>
+            <h5 class="commentTime">Time 4:50</h5>
+            <p class="commentContent">I am comment</p>
+          </div>
+          <button name="likeButton" class="glyphicon glyphicon-thumbs-up"></button>
+          <button name="replyButton" class="replyButton">Reply</button>
+          <div style="display:none" class="replyContentContainer">
+            <input type="text" name="replyInput" placeholder="Type your comment here..."></input>
+            <button type="button" name="replyButtonConfirm">Confirm</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
 
     <!-- jQuery -->
     <script
@@ -20,7 +88,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

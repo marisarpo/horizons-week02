@@ -1,0 +1,74 @@
+.loginPage {
+
+}
+
+.registrationPage {
+
+}
+
+.initialHeading {
+
+}
+
+.initialInput {
+
+}
+
+.buttonRed {
+
+}
+
+.buttonBlue {
+
+}
+
+.loginHeading {
+
+}
+
+.loginUsername, .loginPassword{
+
+}
+
+.loginButton {
+
+}
+
+.loginRegistrationButton {
+
+}
+
+.registrationFirstName, .registrationLastName, .registrationUsername, .registrationPassword {
+
+}
+
+.registrationButton {
+
+}
+
+.registrationLoginButton {
+
+}
+
+.postContainer {
+  width: 50%;
+  margin: 5px 20px;
+  border: 1px solid black;
+}
+
+.post {
+  margin: 5px 5px;
+}
+
+.postRepliesLikes {
+  margin: 5px 5px;
+}
+
+.postComment {
+  margin: 5px 5px;
+}
+
+.breakLine {
+  width: 90%;
+  border: 1px solid black;
+}

@@ -35,73 +35,57 @@ you'll see how to test individual changes in real time without
 changing your code.
 - Keep the [specs] handy as you'll need them throughout this project.
 
-[specs]: ./SPECIFICATIONS.md
+## Part 1: Title
 
-## Phase 1: Title
+[This][live-01] is what we will be building in Part 1:
+![Screenshot#1](./screenshots/01-title.png)
 
-- [Screenshot][ss-01-a]
-- [Live][live-01]
+We will now walk through the steps required to reproduce the above
+page.
 
-Let's begin by applying some basic styles to text. Make sure you've
-cloned this repository locally, then open the first skeleton
-[html][skel-01-html] and [css][skel-01-css] files in your text editor,
-and open the html document in your web browser. You should see a screen
-that looks like [this][ss-01-a], containing HTML which is completely
-unstyled. Open up the [specs] as well.
+Let's begin by applying some basic styles to text.
 
-Take a close look at the skeleton HTML. There are some fundamental HTML
-tags such as `html`, `head`, `body`, and `meta`. Two stylesheets have
-been included using the `link` tag. Finally, we've defined one `section`
-with some content. (Note that `section` is an HTML5 [semantic tag], and
-that you could have used the non-semantic `div` tag instead here.)
+1. **open [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html) in your browser**:
+you should see an unstyled heading followed by a block of text. After
+each step below be sure to refresh this page to make sure the appropriate
+changes show up.
 
-Take a look at the goal [screenshot][ss-01-b] for this phase and take
-careful note of the differences. See them?
+1. **open the following files**:
 
-- The text is a different font
-- The text is a different size
-- The text is centered
-- The text is a lot more spaced out
-- The color is different (slightly)
+  1. [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
+  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+  includes two stylesheets (you will need to include the remaining stylesheets)
+  1. [`1_horello/skeleton/css/01-title.css`](./skeleton/css/01-title.css):
+  this is where you should write your CSS classes
+  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  of what styles you need to use
 
-Note that, in web development, "slightly different" isn't good enough.
-When we say that our goal is to create a "pixel perfect" clone of the
-design specs, we mean that all of these styles--colors, spacing, fonts,
-etc.--should be identical. Designers and managers are excellent at
-spotting these tiny differences, so you'll have to be on your A game to
-stay ahead of them!
+  **Note** that `section` tag in your `01-title.html` file is
+  an HTML5 [semantic tag], and that you could have used the
+  non-semantic `div` tag here instead.
 
-You may have also noticed that we included another CSS file called
-`00-reset.css`. Every browser comes with certain built-in, default
-styles, so for consistency we want to reset some of these styles to
-start with a clean slate. There are some more sophisticated tools to do
-this, such as [this one][reset-1] and [this one][reset-2], but we'll
-keep it simple for now.
-
-Let's start with typography. Copy the `font-family`, `font-size`, and
-`font-weight` values (use the medium font size) from the [specs] and
-apply them to the CSS `body` selector. Copy the hex code for the
-"default font" color from the specs and add it as a `color` property to
-the `body` selector. Because of the way CSS properties
-_cascade_ down to child elements, these styles will apply, by default,
+1. **add styles to the body**: Use the default properties specified
+in the [specs]. Because of the way CSS properties _cascade_ down
+to child elements, these styles will apply, by default,
 to all of the text in our page.
+	- `font-family`
+	- `font-size` (medium)
+	- `font-weight`
+	- `color` (use default font color)
 
-Next, apply the large font size from the specs to the `h2` selector.
-That takes care of typography. Reload the page in the browser to see
-your changes. The only things left to do are to center the text and to
-adjust the spacing.
+1. **add styles to the `h2` selector**:
+    - `font-size` (large)
 
-In order to center the text, add the `text-align: center` property to
-the `text-center` CSS class selector. Because this is a class selector,
-rather than an HTML element selector, it can be applied anywhere in the
-page (and it's been applied to the paragraph text).
+1. **center the text**:
+    - add the `text-align: center` property to the `text-center` CSS class
+	- apply the `text-center` class to the `<section>` in `01-title.html`
 
-Finally, let's fix the spacing. Start by adding some padding inside of
-each `section` tag: add a `padding` tag to the `section` CSS element
-selector based on the values in the specs. Then, we want to add some
-additional spacing in the form of a margin around the paragraph text.
-Add a `margin` property to the `center-paragraph` CSS class selector
-based on the specs.
+1. **fix the spacing for `<section>`**:
+    - padding (Section padding)
+
+1. **add margins**: add these styles to the `center-paragraph` class
+    - margin (looks at [specs] for vertical and horizontal margin sizes)
+	- add this class to the `<p>` tag in `01-title.html`
 
 Note that spacing can be specified in a variety of ways in CSS. You can
 specify a number followed by "px", which refers to an absolute number of
@@ -109,7 +93,7 @@ pixels. You can also use "em" instead of "px", where "1em" is equal to
 the font size (in pixels) applied to the element. See [the full
 list of CSS units][cssdocs] if you're curious.
 
-Reload again to see your changes. Congrats on finishing Phase 1!
+Reload again to see your changes. Congrats on finishing Part 1!
 
 Supplemental reading (optional):
 - [CSS Units][cssunits]
@@ -117,20 +101,16 @@ Supplemental reading (optional):
 - [CSS Reset][reset-1]
 - [normalize.css][reset-2]
 
-[live-01]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/01-title.html
-[ss-01-a]: ./screenshots/01-start.png
-[ss-01-b]: ./screenshots/01-full.png
-[skel-01-html]: ./skeleton/01-title.html
-[skel-01-css]: ./skeleton/css/01-title.css
+[live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/01-title.html
 [reset-1]: http://meyerweb.com/eric/tools/css/reset/
 [reset-2]: https://necolas.github.io/normalize.css/
 [cssunits]: http://www.w3schools.com/cssref/css_units.asp
 [semantic tag]: http://www.w3schools.com/html/html5_semantic_elements.asp
 
-## Phase 2: Image and button
+## Part 2: Image and button
 
-- [Screenshot][ss-02-a]
-- [Live][live-02]
+[This][live-02] is what we will be building in Part 2:
+![Screenshot#1](./screenshots/02-button.html)
 
 CSS is a very powerful tool, and it can do a lot more than just spacing
 and typography. In fact, it can be used to create some very complex,
@@ -141,7 +121,7 @@ create interactive elements.
 
 Let's finish the first section of the landing page by adding an image
 and a button. Open the phase 2 files (you can close the phase 1 files:
-all of your CSS work will be applied in all future phases!) in your
+all of your CSS work will be applied in all future parts!) in your
 text editor and web browser.
 
 We only need to apply one style to the image: adding a bottom margin,
@@ -202,10 +182,10 @@ Supplemental reading (optional):
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
 [3d game]: http://keithclark.co.uk/labs/css-fps/
-[live-02]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/02-button.html
+[live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/02-button.html
 [ss-02-a]: ./screenshots/02-full.png
 
-## Phase 3: Footer
+## Part 3: Footer
 
 - [Screenshot (full)][ss-03-a]
 - [Screenshot (zoom)][ss-03-b]
@@ -229,7 +209,7 @@ apply to the contents of the `footer`.
 Let's start by fixing the spacing. We need
 to apply the same `padding` property (that's currently applied to the
 `section` tag) to the `footer` as well. The `section` selector has been
-copied to the top of this phase's CSS file. You can apply a set of
+copied to the top of this part's CSS file. You can apply a set of
 properties to multiple selectors by specifying the list selectors
 separated by commas. Replace "`section`" (line 1) with
 "`section, footer`" here
@@ -248,11 +228,11 @@ same selector. Refresh to see your changes and do a backflip! Well done!
 
 [html-03]: ./skeleton/03-footer.html
 [css-03]: ./skeleton/css/03-footer.css
-[live-03]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/03-footer.html
+[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/03-footer.html
 [ss-03-a]: ./screenshots/03-full.png
 [ss-03-b]: ./screenshots/03-footer.png
 
-## Phase 4: Content
+## Part 4: Content
 
 - [Live][live-04]
 - [Screenshot (top)][ss-04-a]
@@ -263,7 +243,7 @@ With those basics in place, let's add another section in between the
 title and the footer with some text and an image. With the scaffolding
 we already have in place, this is going to be easier than you think.
 
-Take a look at the [html][html-04] for this phase, and you'll see that
+Take a look at the [html][html-04] for this part, and you'll see that
 we've added another `section` tag in the middle, with some paragraph
 text and an image. You need to fill in the new `background-dark-blue`
 and `layout-fill-img` CSS class selectors.
@@ -305,7 +285,7 @@ Supplemental reading (optional):
 - [CSS Box Model][box model]
 - [Box Sizing][box sizing]
 
-[live-04]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/04-content.html
+[live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/04-content.html
 [html-04]: ./skeleton/04-content.html
 [css-04]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
@@ -314,13 +294,13 @@ Supplemental reading (optional):
 [ss-04-b]: ./screenshots/04-bottom.png
 [ss-04-c]: ./screenshots/04-full.png
 
-## Phase 5: Float and Clear
+## Part 5: Float and Clear
 
 - [Live][live-05]
 - [Screenshot (full)][ss-05-a]
 - [Screenshot (zoom)][ss-05-b]
 
-In this phase we're going to add another content section, and show you
+In this part we're going to add another content section, and show you
 one way to combine text and images using the `clear` property. In the
 skeleton [html][html-05] file we've added one short new section with an
 image and some more paragraph text, which currently appears below the
@@ -360,13 +340,13 @@ section, so that any float applied to a section is self-contained within
 that section. The easiest way to do that is to add a `clear: both`
 property to the `section` element selector.
 
-Refresh once more and do a cartwheel because you just finished phase
+Refresh once more and do a cartwheel because you just finished part
 five, just one more to go!  🎉
 
 Supplemental reading (optional):
 - [All About Floats]
 
-[live-05]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/05-clear.html
+[live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/05-clear.html
 [html-05]: ./skeleton/05-clear.html
 [css-05]: ./skeleton/css/05-clear.css
 [All About Floats]: https://css-tricks.com/all-about-floats/
@@ -374,14 +354,14 @@ Supplemental reading (optional):
 [ss-05-a]: ./screenshots/05-full.png
 [ss-05-b]: ./screenshots/05-zoom.png
 
-## Phase 6: More advanced layout and images
+## Part 6: More advanced layout and images
 
 - [Screenshot (full)][ss-06-a]
 - [Screenshot (zoom)][ss-06-b]
 - [Screenshot (buttons zoom)][ss-06-c]
 - [Live][live-06]
 
-In this (final!) phase we're going to add a last content section with
+In this (final!) part we're going to add a last content section with
 text, some app store badges (because all real startups have apps,
 right?), a new button, and one more image. We'll use a different set of
 properties to style these buttons and image, and we'll show you how to
@@ -518,9 +498,10 @@ page. You're that much closer to world domination.
 Supplemental reading (optional):
 - [CSS positioning]
 
+[specs]: ./SPECIFICATIONS.md
 [html-06]: ./skeleton/06-advanced.html
 [css-06]: ./skeleton/css/06-advanced.css
-[live-06]: http://horizons-school-of-technology.github.io/week02/day1/5_horello/solution/06-advanced.html
+[live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/06-advanced.html
 [ss-06-a]: ./screenshots/06-full.png
 [ss-06-b]: ./screenshots/06-zoom.png
 [ss-06-c]: ./screenshots/06-buttons.png

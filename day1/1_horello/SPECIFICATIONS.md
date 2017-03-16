@@ -1,6 +1,6 @@
 # Horello Landing Page Specifications
 
-## Color
+## Colors
 
 - Default background: #fff
 - Default font: #4d4d4d
@@ -15,11 +15,14 @@
 - Button (font color): #fff
 - Footer (font color): #999
 
-## Type
+## Default Fonts
 
 - Font family: Helvetica Neue, Arial, sans-serif
 - Font weight: 400
-- Font size: 16px, 20px, 36px
+- Font size:
+  - small: 16px
+  - medium: 20px
+  - large: 36px
 - Button font weight: bold
 
 ## Layout

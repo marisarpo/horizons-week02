@@ -198,46 +198,56 @@ Supplemental reading (optional):
 [This][live-03] is what we will be building in Part 3:
 ![Screenshot#3](./screenshots/03-footer.png)
 
+1. **open [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
+in your browser**. After step below be sure to refresh this page to
+make sure the appropriate changes show up.
+
 As a next step, let's add a straightforward footer to our landing page
 with some catch-all links such as Pricing, Jobs, and Blog, and a
-copyright notice. See the samples for the complete list, and notice the
+copyright notice. See the screenshot for the complete list, and notice the
 formatting: the footer links are evenly spaced, they're underlined,
 they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
 
-Take a look at the skeleton [html][html-03] and [css][css-03] files. The
-footer links
-have been added as links inside an unordered list (`ul`), which is
-currently appearing as a bulleted list. The css file contains a bunch
-of empty "footer" selectors, such as "footer a". This compound selector
-matches all `a` tags _inside a `footer` tag_, so these styles will only
-apply to the contents of the `footer`.
+1. **open the following files**:
 
-Let's start by fixing the spacing. We need
-to apply the same `padding` property (that's currently applied to the
-`section` tag) to the `footer` as well. The `section` selector has been
-copied to the top of this part's CSS file. You can apply a set of
-properties to multiple selectors by specifying the list selectors
-separated by commas. Replace "`section`" (line 1) with
-"`section, footer`" here
-to apply the `padding` property to the `footer` tag selector.
+  1. [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
+  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+  includes pre-populated code for the footer
+  1. [`1_horello/skeleton/css/03-footer.css`](./skeleton/css/03-footer.css):
+  this is where you should write your CSS classes. **NOTE** that this css file
+  contains a bunch of empty "footer" selectors, such as "footer a". This compound
+  selector matches all `a` tags _inside a `footer` tag_, so these styles
+  will only apply to the contents of the `footer`.
+  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  of what styles you need to use
 
-To fix the font size and color, grab the smallest font size, and the
-appropriate color, from the [specs] and add them to the `footer`
-selector. Do the same to set the `footer a` and `footer a:hover` styles.
+1. **fix the spacing for the `footer` selector**:
+    - apply the same `padding` property as `<section>` to `<footer>`: note
+	that You can apply a set of properties to multiple selectors by
+	specifying the list selectors separated by commas(`section, footer: { padding:
+	80px 20px' }`).
 
-Finally, we need to format the list properly. By default, `ul` list
-elements get left padding. To override this, set `padding` to zero on
-the `footer ul` selector. To display the list elements side by side, set
-`display: inline-block` on `footer li`. To space them out, grab the
-spacing value from the specs and add it as a horizontal margin on the
-same selector. Refresh to see your changes and do a backflip! Well done!
+1. **fix the font size and color for `<footer>`**: add following styles to the
+`footer` class in your `03-footer.css` file.
+    - `font-size`: use the smallest font-size
+	- `color`: use the appropriate color (look at [live][live-03] for reference)
 
-[html-03]: ./skeleton/03-footer.html
-[css-03]: ./skeleton/css/03-footer.css
+1. **add styles to `<a>` tags within `<footer>`**: add following styles to
+`footer a` and `footer a:hover` classes.
+    - color (for `footer a`)
+	- color (for `footer a:hover`)
+
+1. **reset `<ul>` padding**: by default `ul` list elements get left padding
+so for `footer ul` set padding to 0
+    - padding
+
+1. **styles for `<li>`**: we want to display the list elements side-by-side
+and spaced out. add styles to `footer li`.
+    - display (make it inline-block)
+	- margin (look at footer link spacing in [specs])
+
 [live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/03-footer.html
-[ss-03-a]: ./screenshots/03-full.png
-[ss-03-b]: ./screenshots/03-footer.png
 
 ## Part 4: Content
 

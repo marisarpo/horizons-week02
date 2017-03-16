@@ -124,66 +124,60 @@ and a button. Open the phase 2 files (you can close the phase 1 files:
 all of your CSS work will be applied in all future parts!) in your
 text editor and web browser.
 
-We only need to apply one style to the image: adding a bottom margin,
-per the [specs]. Go ahead and apply the appropriate `margin` property
-to the `img-title` class selector. We use a class selector here because,
-while we want to add a margin to this particular image, we don't
-necessarily want that style to apply to all images throughout the page
-(as you'll see later).
+1. **add margins to the `<img>`**:
+    - add a bottom margin property to the `img-title` class per the [specs].
+	*note* that we use a class-selector here because, while we want to
+	add a margin to this particular image, we don't	necessarily want that
+	style to apply to all images throughout the page (as you'll see later).
 
-Next we need to add a button. Zoom in on the [screenshot][ss-02-a] and
-pay close attention to a few aspects of
-this button:
+1. **inspect the button**: on the [live][live-02] page for part 2, and
+note the following:
+    - it isn't a solid color, but rather, there's a color
+    gradient applied from top to bottom (the color gets slightly darker
+    towards the bottom)
+    - it has rounded corners, no border, and a slight drop shadow
+    to give it some depth
+    - it has bold white text with padding on all four sides
+    - notice (from the [live version][live-02],
+    since it's not visible in the screenshot) that the button color changes
+    when you move the mouse over it
 
-- it isn't a solid color, but rather, there's a color
-gradient applied from top to bottom (the color gets slightly darker
-towards the bottom)
-- it has rounded corners, no border, and a slight drop shadow
-to give it some depth
-- it has bold white text with padding on all four sides
-- notice (from the [live version][live-02],
-since it's not visible in the screenshot) that the button color changes
-when you move the mouse over it
+1. **style the button**: get the values from the [specs]
+    - `padding` (vertical/horizontal)
+	- `border`
+	- `border-radius` (for rounded corners)
+	- `color`
+	- `font-weight`
+	- `display`: making this `inline-block` ensures that it conforms to the
+	padding of the previous element (they are `inline` by default)
+	- `background`: this will be a color gradient. use the following command
+	(replace the `START` and `END` placeholders with the relevent color
+	hex codes from the [specs]):
+	    ```css
+			background: linear-gradient(to bottom, #START 0, #END 100%);
+		```
+	- `box-shadow`: add the drop shadow to the selector using this format (replacing `COLOR`
+	with the hex code from the [specs]):
+		```css
+			box-shadow: 0 2px 0 #COLOR;
+		```
 
-Let's add these styles one by one. Start with the padding and the
-border. Get the values from the [specs] and add a `padding` property
-to the `button` class selector. Add `border: 0` and a `border-radius`
-property to give it rounded corners.
-
-To style the text, add the properties `font-weight` and `color` to
-match the specs. In order to make the button respect the padding of the
-previous element (the paragraph text), add `display: inline-block`
-(since `a` elements are `inline` by default).
-
-Next let's add the color gradient and the drop shadow. Grab the gradient
-"start" and "end" color values and add them to the selector using this
-format (replacing `START` and `END` with the relevant color hex codes):
-
-```background: linear-gradient(to bottom, #START 0, #END 100%);```
-
-Add the drop shadow to the selector using this format (replacing `COLOR`
-with the hex code from the specs):
-
-```box-shadow: 0 2px 0 #COLOR;```
-
-Almost there! The final step is to add the "hover" color gradient to the
-"hover" pseudo class for the `.button` class. Go ahead and add it, using
-the colors from the specs and the same `linear-gradient` command as
-above. You may need to adjust the `color` property here too. Reload,
-check out your awesome new button, and high five your partner!
+1. **style the button on hover**: add the "hover" color gradient to the
+"hover" pseudo class for the `.button` class.
+    - background: add the gradient for button hover
+	- color: same as without the pseudo selector `:hover`
 
 Supplemental reading (optional):
 - [Shapes of CSS][2d shapes]
 - [Intro to CSS 3D transforms][3d transforms]
 - [Example CSS effect][effects]
-- [CSS FPS][3d game]
+n- [CSS FPS][3d game]
 
 [2d shapes]: https://css-tricks.com/examples/ShapesOfCSS/
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
 [3d game]: http://keithclark.co.uk/labs/css-fps/
 [live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/02-button.html
-[ss-02-a]: ./screenshots/02-full.png
 
 ## Part 3: Footer
 

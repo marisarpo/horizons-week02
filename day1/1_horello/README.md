@@ -198,16 +198,16 @@ Supplemental reading (optional):
 [This][live-03] is what we will be building in Part 3:
 ![Screenshot#3](./screenshots/03-footer.png)
 
-1. **open [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
-in your browser**. After step below be sure to refresh this page to
-make sure the appropriate changes show up.
-
 As a next step, let's add a straightforward footer to our landing page
 with some catch-all links such as Pricing, Jobs, and Blog, and a
 copyright notice. See the screenshot for the complete list, and notice the
 formatting: the footer links are evenly spaced, they're underlined,
 they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
+
+1. **open [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
+in your browser**. After step below be sure to refresh this page to
+make sure the appropriate changes show up.
 
 1. **open the following files**:
 
@@ -251,65 +251,68 @@ and spaced out. add styles to `footer li`.
 
 ## Part 4: Content
 
-- [Live][live-04]
-- [Screenshot (top)][ss-04-a]
-- [Screenshot (bottom)][ss-04-b]
-- [Screenshot (full)][ss-04-c]
+[This][live-04] is what we will be building in Part 4:
+![Screenshot#4](./screenshots/04-content.png)
 
 With those basics in place, let's add another section in between the
 title and the footer with some text and an image. With the scaffolding
 we already have in place, this is going to be easier than you think.
 
-Take a look at the [html][html-04] for this part, and you'll see that
-we've added another `section` tag in the middle, with some paragraph
-text and an image. You need to fill in the new `background-dark-blue`
-and `layout-fill-img` CSS class selectors.
+1. **open [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html)
+in your browser**. After step below be sure to refresh this page to
+make sure the appropriate changes show up.
 
-Grab the font and background colors for this section from the [specs]
-and place these inside the `background-dark-blue` selector.
+1. **open the following files**:
 
-Styling the image will be a little harder. You'll need to use three CSS
-properties here in `layout-fill-img`. Let's walk through them in order.
+  1. [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
+  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+  we've added another `section` tag in the middle, with some paragraph
+  text and an image.
+  1. [`1_horello/skeleton/css/04-content.css`](./skeleton/css/04-content.css):
+  this is where you should write your CSS classes. You need to fill in the
+  new `background-dark-blue`and `layout-fill-img` CSS class selectors.
+  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  of what styles you need to use
 
-1. `padding` - this is used to add extra space _inside_ the element (and
-the border, if there is one). It's often interchangeable with `margin`,
-but unlike using a margin, padding is never collapsed into the margin of
-vertically adjacent elements. Grab the "Content full-width image
-padding" sizes from [specs] and add them as `padding`.
-1. `max-width` - the hardest part of styling images is to get the size
-right. The thing to keep in mind is that, if the size of the browser
-window changes (or if someone views your page on a smaller screen on
-e.g. a mobile device), your image may be shrunk down a great deal. In
-this case, do you want the image to stay the same size? Do you want to
-replace it with a smaller image, or make it disappear entirely? We'll
-cover this topic in more depth tomorrow when we discuss responsive web
-pages. For now, add the property `max-width: 100%`. This has the
-counterintuitive effect of shrinking the image down to fit the browser
-window (100% here refers to the size of the window, not the native image
-size).
-1. `box-sizing` - we have another challenge with the image size. We set
-its width to 100%, but the CSS [box model] _excludes_ margin and padding
-from its width calculation by default. This would be fine if we had no
-margin or padding, but since we have a lot of padding, and we want the
-image to fill 100% of the space _inside the padding_, we need to change
-the box sizing behavior. Add `box-sizing: border-box` to accomplish
-this. (You can read more on [box sizing] here if you're so inclined.)
+1. **style the background**: put styles in the `background-dark-blue` class
+    - color
+	- background-color
+	
+1. **style the image**: put styles in the `layout-fill-image` class
+    - `padding` - this is used to add extra space _inside_ the element (and
+    the border, if there is one). It's often interchangeable with `margin`,
+    but unlike using a margin, padding is never collapsed into the margin of
+    vertically adjacent elements. Grab the "Content full-width image
+    padding" sizes from [specs] and add them as `padding`.
+    - `max-width` - the hardest part of styling images is to get the size
+    right. The thing to keep in mind is that, if the size of the browser
+    window changes (or if someone views your page on a smaller screen on
+    e.g. a mobile device), your image may be shrunk down a great deal. In
+    this case, do you want the image to stay the same size? Do you want to
+    replace it with a smaller image, or make it disappear entirely? We'll
+    cover this topic in more depth tomorrow when we discuss responsive web
+    pages. For now, add the property `max-width: 100%`. This has the
+    counterintuitive effect of shrinking the image down to fit the browser
+    window (100% here refers to the size of the window, not the native image
+    size).
+    - `box-sizing` - we have another challenge with the image size. We set
+    its width to 100%, but the CSS [box model] _excludes_ margin and padding
+    from its width calculation by default. This would be fine if we had no
+    margin or padding, but since we have a lot of padding, and we want the
+    image to fill 100% of the space _inside the padding_, we need to change
+    the box sizing behavior. Add `box-sizing: border-box` to accomplish
+    this. (You can read more on [box sizing] here if you're so inclined.)
 
 Reload one more time to see your lovely, perfectly-sized and spaced
-image with text around it. Booyah! The end is in sight.
+image with text around it.
 
 Supplemental reading (optional):
 - [CSS Box Model][box model]
 - [Box Sizing][box sizing]
 
 [live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/04-content.html
-[html-04]: ./skeleton/04-content.html
-[css-04]: ./skeleton/css/04-footer.css
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
 [box sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
-[ss-04-a]: ./screenshots/04-top.png
-[ss-04-b]: ./screenshots/04-bottom.png
-[ss-04-c]: ./screenshots/04-full.png
 
 ## Part 5: Float and Clear
 

@@ -51,18 +51,17 @@ each step below be sure to refresh this page to make sure the appropriate
 changes show up.
 
 1. **open the following files**:
+    1. [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+	includes two stylesheets (you will need to include the remaining stylesheets)
+	1. [`1_horello/skeleton/css/01-title.css`](./skeleton/css/01-title.css):
+	this is where you should write your CSS classes
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
 
-  1. [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
-  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
-  includes two stylesheets (you will need to include the remaining stylesheets)
-  1. [`1_horello/skeleton/css/01-title.css`](./skeleton/css/01-title.css):
-  this is where you should write your CSS classes
-  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
-  of what styles you need to use
-
-  **Note** that `section` tag in your `01-title.html` file is
-  an HTML5 [semantic tag], and that you could have used the
-  non-semantic `div` tag here instead.
+	**Note** that `section` tag in your `01-title.html` file is
+	an HTML5 [semantic tag], and that you could have used the
+	non-semantic `div` tag here instead.
 
 1. **add styles to the body**: Use the default properties specified
 in the [specs]. Because of the way CSS properties _cascade_ down
@@ -129,14 +128,13 @@ in your browser**. After step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
-
-  1. [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
-  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
-  includes an image followed by a header, some text, and a button.
-  1. [`1_horello/skeleton/css/02-button.css`](./skeleton/css/02-button.css):
-  this is where you should write your CSS classes
-  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
-  of what styles you need to use
+    1. [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+	includes an image followed by a header, some text, and a button.
+	1. [`1_horello/skeleton/css/02-button.css`](./skeleton/css/02-button.css):
+	this is where you should write your CSS classes
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
 
 1. **add margins to the `<img>`**:
     - add a bottom margin property to the `img-title` class per the [specs].
@@ -210,17 +208,16 @@ in your browser**. After step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
-
-  1. [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
-  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
-  includes pre-populated code for the footer
-  1. [`1_horello/skeleton/css/03-footer.css`](./skeleton/css/03-footer.css):
-  this is where you should write your CSS classes. **NOTE** that this css file
-  contains a bunch of empty "footer" selectors, such as "footer a". This compound
-  selector matches all `a` tags _inside a `footer` tag_, so these styles
-  will only apply to the contents of the `footer`.
-  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
-  of what styles you need to use
+    1. [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+	includes pre-populated code for the footer
+	1. [`1_horello/skeleton/css/03-footer.css`](./skeleton/css/03-footer.css):
+	this is where you should write your CSS classes. **NOTE** that this css file
+	contains a bunch of empty "footer" selectors, such as "footer a". This compound
+	selector matches all `a` tags _inside a `footer` tag_, so these styles
+	will only apply to the contents of the `footer`.
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
 
 1. **fix the spacing for the `footer` selector**:
     - apply the same `padding` property as `<section>` to `<footer>`: note
@@ -263,16 +260,15 @@ in your browser**. After step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
-
-  1. [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
-  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
-  we've added another `section` tag in the middle, with some paragraph
-  text and an image.
-  1. [`1_horello/skeleton/css/04-content.css`](./skeleton/css/04-content.css):
-  this is where you should write your CSS classes. You need to fill in the
-  new `background-dark-blue`and `layout-fill-img` CSS class selectors.
-  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
-  of what styles you need to use
+    1. [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+	we've added another `section` tag in the middle, with some paragraph
+	text and an image.
+	1. [`1_horello/skeleton/css/04-content.css`](./skeleton/css/04-content.css):
+	this is where you should write your CSS classes. You need to fill in the
+	new `background-dark-blue`and `layout-fill-img` CSS class selectors.
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
 
 1. **style the background**: put styles in the `background-dark-blue` class
     - color

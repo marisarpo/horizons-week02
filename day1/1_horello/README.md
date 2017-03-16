@@ -21,8 +21,8 @@ add images and interactive elements to the page.
 
 ## A few important details
 
-- You'll be working in the `skeleton` directory. Each phase of the
-project is contained in HTML and CSS files prefixed with the phase
+- You'll be working in the `skeleton` directory. Each part of the
+project is contained in HTML and CSS files prefixed with the part
 number, e.g., `1_top.html`.
 - Study the mockup screenshots closely. Use an app like Preview in OS X
 so that you can easily pan, zoom, and measure things.
@@ -110,19 +110,33 @@ Supplemental reading (optional):
 ## Part 2: Image and button
 
 [This][live-02] is what we will be building in Part 2:
-![Screenshot#1](./screenshots/02-button.html)
+![Screenshot#1](./screenshots/02-button.png)
 
 CSS is a very powerful tool, and it can do a lot more than just spacing
 and typography. In fact, it can be used to create some very complex,
 dynamic elements such as [2d shapes], [3d transforms], and some very
 nifty [effects]. CSS has even been used to create an FPS-style [3d
-game]. In this phase, you'll begin to see some of the power of CSS to
+game]. In this part, you'll begin to see some of the power of CSS to
 create interactive elements.
 
 Let's finish the first section of the landing page by adding an image
-and a button. Open the phase 2 files (you can close the phase 1 files:
+and a button. Open the part 2 files (you can close the part 1 files:
 all of your CSS work will be applied in all future parts!) in your
 text editor and web browser.
+
+1. **open [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html)
+in your browser**. After step below be sure to refresh this page to
+make sure the appropriate changes show up.
+
+1. **open the following files**:
+
+  1. [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
+  some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+  includes an image followed by a header, some text, and a button.
+  1. [`1_horello/skeleton/css/02-button.css`](./skeleton/css/02-button.css):
+  this is where you should write your CSS classes
+  1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  of what styles you need to use
 
 1. **add margins to the `<img>`**:
     - add a bottom margin property to the `img-title` class per the [specs].
@@ -171,7 +185,7 @@ Supplemental reading (optional):
 - [Shapes of CSS][2d shapes]
 - [Intro to CSS 3D transforms][3d transforms]
 - [Example CSS effect][effects]
-n- [CSS FPS][3d game]
+- [CSS FPS][3d game]
 
 [2d shapes]: https://css-tricks.com/examples/ShapesOfCSS/
 [3d transforms]: https://desandro.github.io/3dtransforms/
@@ -181,9 +195,8 @@ n- [CSS FPS][3d game]
 
 ## Part 3: Footer
 
-- [Screenshot (full)][ss-03-a]
-- [Screenshot (zoom)][ss-03-b]
-- [Live][live-03]
+[This][live-03] is what we will be building in Part 3:
+![Screenshot#3](./screenshots/03-footer.png)
 
 As a next step, let's add a straightforward footer to our landing page
 with some catch-all links such as Pricing, Jobs, and Blog, and a

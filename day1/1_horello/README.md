@@ -312,16 +312,45 @@ Supplemental reading (optional):
 
 ## Part 5: Float and Clear
 
-- [Live][live-05]
-- [Screenshot (full)][ss-05-a]
-- [Screenshot (zoom)][ss-05-b]
+[This][live-05] is what we will be building in Part 5:
+![Screenshot#4](./screenshots/05-clear.png)
 
 In this part we're going to add another content section, and show you
-one way to combine text and images using the `clear` property. In the
-skeleton [html][html-05] file we've added one short new section with an
-image and some more paragraph text, which currently appears below the
-image. There'a a single new CSS class selector in the corresponding
-[css][css-05] file called `img-float-left`.
+one way to combine text and images using the `clear` property.
+
+1. **open [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html)
+in your browser**. After step below be sure to refresh this page to
+make sure the appropriate changes show up.
+
+1. **open the following files**:
+    1. [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+	includes one short new section with an image and some more paragraph text.
+	1. [`1_horello/skeleton/css/05-clear.css`](./skeleton/css/05-clear.css):
+	this is where you should write your CSS classes.
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
+
+1. **float the image to the left**: add styles to the `img-float-left` class
+    - float
+	- margin (look at [specs] and add a margin to the right)
+
+1. **clear the float in the `section` CSS class**: this needs to be
+done to fix the layout of the following elements. There
+are lots of ways you could do this, but in case we
+decide to float additional elements on our page, let's add a generic
+clear property in such a way that it resets the style for every page
+section, so that any float applied to a section is self-contained within
+that section. The easiest way to do that is to add a `clear: both`
+property to the `section` element selector
+    - clear
+
+Refresh once more and do a cartwheel because you just finished part
+five, just one more to go!  🎉
+
+### `float` & `clear` description
+
+##### `float`
 
 The `float` property allows text (and other inline elements) to flow
 around an image. The image can be "floated" to the left or to the right
@@ -333,42 +362,18 @@ used to create an entire web page layout with a sidebar, e.g.:
 
 (Image © CSS TRICKS)
 
+##### `clear`
+
 The corresponding `clear` property is used when you have content that
 should appear below the floated element, rather than alongside it, which
 is the default behavior. Read [All About Floats] for a full explanation.
-For our purposes, we're going to float an image to the left of the
-paragraph text, then clear the element that comes after.
-
-You've probably figured out by now from the name of the `img-float-left`
-class what property needs to be added. Add the property to float the
-image to the left, refresh and take a look.
-
-The text has moved up next to the image, but there's currently no
-margin between the two. You could fix this by adding a `margin` or
-`padding` to the image or the text. To keep things simple, go ahead
-and add a margin to the right of the image per the [specs].
-
-The final step is to clear the float to fix the layout of the following
-elements. There are lots of ways you could do this, but in case we
-decide to float additional elements on our page, let's add a generic
-clear property in such a way that it resets the style for every page
-section, so that any float applied to a section is self-contained within
-that section. The easiest way to do that is to add a `clear: both`
-property to the `section` element selector.
-
-Refresh once more and do a cartwheel because you just finished part
-five, just one more to go!  🎉
 
 Supplemental reading (optional):
 - [All About Floats]
 
 [live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/05-clear.html
-[html-05]: ./skeleton/05-clear.html
-[css-05]: ./skeleton/css/05-clear.css
 [All About Floats]: https://css-tricks.com/all-about-floats/
 [sidebar]: https://css-tricks.com/wp-content/csstricks-uploads/web-layout.png
-[ss-05-a]: ./screenshots/05-full.png
-[ss-05-b]: ./screenshots/05-zoom.png
 
 ## Part 6: More advanced layout and images
 

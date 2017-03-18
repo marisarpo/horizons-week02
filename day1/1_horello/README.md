@@ -1,4 +1,4 @@
-# HTML and CSS Intro: Building a landing page
+\0;95;0c# HTML and CSS Intro: Building a landing page
 
 Congratulations on being hired and welcome to the Horello, Inc. team! As
 our latest web development hire, we're relying on you to build the
@@ -124,7 +124,7 @@ all of your CSS work will be applied in all future parts!) in your
 text editor and web browser.
 
 1. **open [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html)
-in your browser**. After step below be sure to refresh this page to
+in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
@@ -204,7 +204,7 @@ they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
 
 1. **open [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
-in your browser**. After step below be sure to refresh this page to
+in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
@@ -232,22 +232,22 @@ make sure the appropriate changes show up.
 
 1. **add styles to `<a>` tags within `<footer>`**: add following styles to
 `footer a` and `footer a:hover` classes.
-    - color (for `footer a`)
-	- color (for `footer a:hover`)
+    - `color` (for `footer a`)
+	- `color` (for `footer a:hover`)
 
 1. **reset `<ul>` padding**: by default `ul` list elements get left padding
 so for `footer ul` set padding to 0
-    - padding
+    - `padding`
 
 1. **styles for `<li>`**: we want to display the list elements side-by-side
 and spaced out. add styles to `footer li`.
-    - display (make it inline-block)
-	- margin (look at footer link spacing in [specs])
+    - `display` (make it inline-block)
+	- `margin` (look at footer link spacing in [specs])
 
 [live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/03-footer.html
 
 ## Part 4: Content
-
+p
 [This][live-04] is what we will be building in Part 4:
 ![Screenshot#4](./screenshots/04-content.png)
 
@@ -256,7 +256,7 @@ title and the footer with some text and an image. With the scaffolding
 we already have in place, this is going to be easier than you think.
 
 1. **open [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html)
-in your browser**. After step below be sure to refresh this page to
+in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
@@ -271,28 +271,15 @@ make sure the appropriate changes show up.
 	of what styles you need to use
 
 1. **style the background**: put styles in the `background-dark-blue` class
-    - color
-	- background-color
+    - `color`
+	- `background-color`
 	
 1. **style the image**: put styles in the `layout-fill-image` class
-    - `padding` - this is used to add extra space _inside_ the element (and
-    the border, if there is one). It's often interchangeable with `margin`,
-    but unlike using a margin, padding is never collapsed into the margin of
-    vertically adjacent elements. Grab the "Content full-width image
-    padding" sizes from [specs] and add them as `padding`.
-    - `max-width` - the hardest part of styling images is to get the size
-    right. The thing to keep in mind is that, if the size of the browser
-    window changes (or if someone views your page on a smaller screen on
-    e.g. a mobile device), your image may be shrunk down a great deal. In
-    this case, do you want the image to stay the same size? Do you want to
-    replace it with a smaller image, or make it disappear entirely? We'll
-    cover this topic in more depth tomorrow when we discuss responsive web
-    pages. For now, add the property `max-width: 100%`. This has the
-    counterintuitive effect of shrinking the image down to fit the browser
-    window (100% here refers to the size of the window, not the native image
-    size).
-    - `box-sizing` - we have another challenge with the image size. We set
-    its width to 100%, but the CSS [box model] _excludes_ margin and padding
+    - `padding`: grab the "Content full-width image padding" sizes
+	from [specs] and add them as `padding`.
+    - `max-width`: give it a width of 100% to fit the browser
+    window
+    - `box-sizing`: by default the CSS [box model] _excludes_ margin and padding
     from its width calculation by default. This would be fine if we had no
     margin or padding, but since we have a lot of padding, and we want the
     image to fill 100% of the space _inside the padding_, we need to change
@@ -319,7 +306,7 @@ In this part we're going to add another content section, and show you
 one way to combine text and images using the `clear` property.
 
 1. **open [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html)
-in your browser**. After step below be sure to refresh this page to
+in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files**:
@@ -360,7 +347,7 @@ used to create an entire web page layout with a sidebar, e.g.:
 
 ![web page layout with sidebar][sidebar]
 
-(Image © CSS TRICKS)
+*(Image © CSS TRICKS)*
 
 ##### `clear`
 
@@ -377,32 +364,39 @@ Supplemental reading (optional):
 
 ## Part 6: More advanced layout and images
 
-- [Screenshot (full)][ss-06-a]
-- [Screenshot (zoom)][ss-06-b]
-- [Screenshot (buttons zoom)][ss-06-c]
-- [Live][live-06]
+[This][live-06] is what we will be building in Part 6:
+![Screenshot#6](./screenshots/06-advanced.png)
 
-In this (final!) part we're going to add a last content section with
-text, some app store badges (because all real startups have apps,
-right?), a new button, and one more image. We'll use a different set of
+In this (final!) part we're going to add a content section with
+text, some app store badges, a new button, and
+one more image. We'll use a different set of
 properties to style these buttons and image, and we'll show you how to
 control horizontal spacing of text and images.
 
-Open up the [html][html-06] and [css][css-06] skeleton files and take a
-look. One final section has been added to the HTML, with several
-images and some more paragraph text. Take a look at the [target
-screenshot][ss-06-a] as well. Our goal is to place the image to the
-right of and slightly above the text, with the app store buttons, and
-an additional text button, perfectly aligned below the text. The text
-should occupy two-thirds of the width.
+1. **open [`1_horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html)
+in your browser**. After each step below be sure to refresh this page to
+make sure the appropriate changes show up.
 
-### Step 1: Text
+1. **open the following files**:
+    1. [`1_horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html): contains
+	everything you've done up till part 5, and an additional section with an
+	image, some text, and a few app store badges
+	1. [`1_horello/skeleton/css/06-advanced.css`](./skeleton/css/06-advanced.css):
+	this is where you should write your CSS classes.
+	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	of what styles you need to use
 
-Let's dive in and make it happen. We'll start with the general
-layout, then style the text, then add the app store buttons, and
-finally we'll correctly position the large image.
+##### Goal:
+Our goal is to place the image to the right of and slightly above the
+text, with the app store buttons, and an additional text button,
+perfectly aligned below the text. The text should occupy
+two-thirds of the width.
 
-Play around with the [live][live-06] version of the page to get a
+Up till Part 6 we've given you a heavily guided set of instructions, but
+for Part 6 y'all should open up the [live][live-06] version and
+inspect it to figure out what styles need to be
+applied. Let's dive in and make it happen! Play
+around with the [live][live-06] version of the page to get a
 sense not just for how this section looks, but for how it behaves when
 you change the width of the browser window. This is one of the great
 challenges of web development: you are by definition developing for a
@@ -411,119 +405,13 @@ resize the section and note the behavior. (This would be a good time
 to learn how to zoom in and out using the Developer Tools's "device
 mode": ⌘⇧M.)
 
-You should have noticed a few important things:
-
-- the text is left-aligned
-- at a "normal" window width (on a laptop or small monitor), the text
-occupies two-thirds of the width
-- the image appears to the right of the text, starting about
-two-thirds of the way across the screen, with a margin between text
-and image
-- as you shrink the width, the text first moves to the left, then
-hits a left margin and spreads vertically instead; the image gets
-smaller and the right part is always cut off
-- as you increase the width, the image on the right first comes fully
-into view, then as you continue to increase the width the text
-section remains centered
-
-Now that you've got a solid grasp of the desired behavior, let's
-begin styling!
-
-First, set the `background-color` property of the
-`background-light-blue` class per the specs. Next, set `max-width` on
-`layout-grid-frame`. Fixing the max width like this allows us to center
-the text section as the width grows. Set `max-width` on the
-`layout-twothirds-left` class selector as well.
-
-Reload in the browser. We now have a content container of the right
-width with text filling the left two-thirds. You won't be able to see
-the container box in the browser since elements are transparent by
-default. This is a good time to make sure you know how to make
-individual HTML elements visible in the browser. Without being able to
-see the precise effects of each of your changes in the browser, you're
-flying blind! You can temporarily set a `background-color` and/or a
-`border` property on the container to make it visible. You can also use
-the powerful Chrome Developer Tools to add temporary styles (these
-aren't saved when the page is reloaded), or to highlight individual
-elements. Make sure you can see the container we're styling clearly.
-
-The container box is still too far to the left. To center it, add
-`margin: 0 auto`. The "0" value sets no vertical margin; the "auto"
-value applies the same horizontal margin to left and right, effectively
-centering the element.
-
-### Step 2: Buttons
-
-With the text properly styled, let's style the buttons on the line
-below. Our goal is to make them the exact same height and align them,
-and obviously to turn the text link into a button. Let's start with
-the text button.
-
-Try to style the button on your own, as we did before. Here's a hint:
-you'll need to use three properties on `outline-link`:
-
-- border
-- border-radius
-- padding
-
-You can go ahead and set color properties, per the specs, on the `a`
-and `a:hover` selectors to set the colors for this button. (Bonus
-question: how would you add styles to only this one button rather
-than applying them to all `a` links throughout the page?)
-
-Next, fix the height of the app store badges using the
-`.app-store-link img` compound selector. Note that you may need to
-play around with the `outline-link` styles to get the text button to
-be the exact same height.
-
-You'll notice that the buttons aren't vertically aligned. To fix
-this, set `display: inline-block` and `vertical-align: top` on all of
-the buttons. Finally, use `margin` to space the buttons out
-horizontally per the spec. Reload and you should see the text and
-buttons appear correctly. The last step is to style the image.
-
-### Step 3: Image
-
-The first important thing to notice about the image layout is that the
-image needs to be positioned to the right and slightly above the text.
-We could float the image to the right, as we did in the previous
-section, but we need to place the image past the right margin of the
-page, and above the section padding. The easiest way to do this is using
-absolute positioning, which allows us to reposition an element _relative
-to a containing block_ (the property value is misleading, as the
-positioning is relative not absolute; `position: relative` instead sets
-the position _relative to the default position for the element itself_).
-
-In order to anchor the absolutely positioned element, we first need
-to mark the containing block using `position: relative`. The
-containing block has the class `layout-grid-frame`, and the block to
-be absolutely positioned has the class `layout-callout-right`. Set
-the `position` properties for these classes, then use the `top` and
-`left` properties on `layout-callout-right` per the [specs] to
-position the image.
-
-Reload the page and take a look. Everything may seem to be laid out
-correctly, but there's still one big issue. Can you find it? Hint:
-try zooming out.
-
-If it's not immediately obvious: your page now has a horizontal
-scrollbar, since the image that we absolutely positioned to the right
-flows off the right edge of the page. There's an easy way to fix
-that, using `overflow: hidden`. See if you can figure out the right
-place to add this property, and why it belongs there.
-
-Reload one last time, and... drumroll please... you did it!
+Once you're done reload one last time, and... drumroll please... you did it!
 Congratulations! You've just finished building your first landing
-page. You're that much closer to world domination.
+page.
 
 Supplemental reading (optional):
 - [CSS positioning]
 
 [specs]: ./SPECIFICATIONS.md
-[html-06]: ./skeleton/06-advanced.html
-[css-06]: ./skeleton/css/06-advanced.css
 [live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/06-advanced.html
-[ss-06-a]: ./screenshots/06-full.png
-[ss-06-b]: ./screenshots/06-zoom.png
-[ss-06-c]: ./screenshots/06-buttons.png
 [CSS positioning]: http://www.w3schools.com/css/css_positioning.asp

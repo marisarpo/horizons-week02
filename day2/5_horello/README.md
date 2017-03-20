@@ -194,45 +194,39 @@ expand/collapse in action!
 
 ## Part 5: Modal
 
+We will use Bootstrap's [Modals] component to create a modal. Since the
+static elements we create aren't tied to any read data model, the
+data on the modal may not match the card you tap on (you goal is to merely
+make the modal appear).
+
+By the end of this part, when you tap a card a perfectly styled
+modal should appear.
+
 Screenshots:
 - [goal][ss-05a]
 
-Now that you've had a taste of interactive elements, we're going to
-enter the major leagues with an even bigger, even more interactive-er
-element, a modal. A modal is a way to temporarily present information,
+#### what is a modal?
+
+A **modal** is a way to temporarily present information,
 or an interactive form, on top of existing content without navigating
 away from that content (this is part of a larger topic called routing
 that you'll explore more in the coming weeks). From an information
 architecture standpoint, the content in the modal is _subordinate to_
 the main content. (Read more about the concept at [Modal window].)
 
-We're going to use the modal component from (you guessed it!) Bootstrap.
-Take a look at Bootstrap's [Modals] component, in particular the sample
-code and live demo. Then look at the behavior on the [live Horello
-page][live]: try tapping on a card, and you'll see a modal appear. This
-modal lets you edit the card title and description (the body of the
-card). Note that, again, the static elements on the page aren't yet tied
-to a real data model, so the data on the modal may not match the data on
-the card you tap on.
+1. **add a modal to the app**: Use Bootstrap's [sample modal code]. You
+can use stick with the default modal styles for now, no need to do
+custom styling. Your modal should contain:
+    - a text input for the card header
+    - another text input for the card description
+1. **refresh to view your changes**: Tap on a card and you should be able to
+see a working modal!
 
-Your turn! Use Bootstrap's [sample modal code] to add a modal to the
-app with a text input for the card header and another for the card
-description. You can use stick with the default modal styles for now,
-no need to do custom styling.
-
-Reload your page to see the working modal. Cool, right? Now you have
-another arrow in your kickass web quiver that you can use to crush
-the next few projects.
+## c'est fini!
 
 Go for a run, have a beer, watch some Game of Thrones, do whatever it
 takes to unwind, then get some sleep because, trust me, you're going to
 need it when you see what comes tomorrow.
-
-Oh, and watch this video because you're awesome and you deserve it:
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=XQ7z57qrZU8
-" target="_blank"><img src="http://img.youtube.com/vi/XQ7z57qrZU8/0.jpg"
-alt="watch me" width="480" height="360" border="10" /></a>
 
 Supplemental reading (optional):
 - [Modal window]

@@ -101,51 +101,40 @@ missing and create a pixel perfect clone of the [live version][live].
 and add the "Add card" button here. Try creating this one using the `button` tag
 (rather than a plain `div` or `span`).
 1. **reload to see your changes**: You should see your first fully-styled
-card!
+list container!
 
 [ss-02a]: ./img/ss-02a.png
 
 ## Part 3: Cards
 
+In this part we're going to style the last core element, the card.
+
 Screenshots:
 - [goal (single card, single list)][ss-03a]
 - [goal (multiple cards, multiple lists)][ss-03b]
 
-In this part we're going to style the last core element, the card.
-Continue filling in the missing styles based on the [specs]. Reload
-and you should see your first card, properly styled, sitting on top
-of your first list.
-
-Next, we're going to add an icon to the card to indicate that the card
-contains more text--check out how this looks on the [live version][live]
-All cards have a title, and some cards have a description as well. For
+1. **add PART 3 styles**: Look for `/** PART 3 CSS here */` and fill in
+the missing styles, based on the [specs].
+1. **reload to see your changes**: You should see your first card, properly
+styled, sitting on top of your first list.
+1. **add an icon**: This will indicate that the card contains more
+text--check out how this looks on the [live version][live]. For
 the cards that contain a description, we need a visual indication since
 the description isn't visible before tapping on the card to open it up.
+    1. look up Bootstrap [glyphicons]
+    1. find the `glyphicon-align-left` icon and add it at the bottom left
+    corner of the card (*use the `.card-more` class to style the element*)
+    1. you'll have to figure out where to put the HTML for the icon on your own
+1. **reload to see your changes**: You should see that your first card and
+list are fully styled.
 
-Bootstrap ships with a handy set of icons, called [glyphicons], that
-we can use throughout our app. Take a look at the list of icons and
-you should see lots that looks familiar: icons for sending mail,
-lists and grids of content, volume, etc. For now we'll stick with
-the icons built in to Bootstrap, but there are many other fantastic
-resources for icons--see a few of our favorites, below.
-
-Find the `glyphicon-align-left` icon and add it at the bottom left
-corner of the card, like in the live version. Use the `.card-more` class
-to style the element. Since you made it this far--by now you're a
-veritable HTML rockstar--you'll have to figure out where to put the HTML
-for the icon on your own.
-
-Take a moment to reload and behold your work thus far. Your first card
-and list are fully styled. Up to this point--and for the rest of
-today--the elements you've added aren't tied to any real data (that will
+Up to this point--and for the rest of today--the elements you've
+added aren't tied to any real data (that will
 change tomorrow when things will really come to life). But we can add
 more hardcoded elements to get a better sense for what our app will look
 like once we've entered more data. Using the list and card elements that
 you've already created, try adding multiple lists and multiple cards
 with varying amounts of data, like you see in the live version.
-
-Think your web app looks awesome? You ain't seen nuthin' yet! Lace up
-your coding shoes because things are about to get a little cray-cray.
 
 - Icon resources (optional):
   - [Glyphicons][glyphicons-orig]

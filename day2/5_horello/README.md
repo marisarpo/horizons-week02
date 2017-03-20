@@ -18,12 +18,15 @@ out the look and feel of the application.
 basic HTML and CSS skeleton, and you'll be filling in all of the
 details. For many of the places you need to add code, you'll find
 comments indicating this, but _not all of these locations are marked._
+
 - We'll be adding interactive elements such as buttons and form fields,
 but we're not going to wire up those elements (i.e., make them
 interactive) until tomorrow, so for now, most of these elements won't
 actually do anything.
+
 - You'll continue working with Bootstrap. This time, the required CSS
 and Javascript libraries have already been included.
+
 - Keep the [specifications][specs] in front of you since you'll need
 it throughout the project.
 
@@ -61,7 +64,7 @@ for each Part should go (in both `index.html` and `style.css`).
 In this part, we're going to complete the basic page styling: body,
 header, and board, and we're going to add the first page element.
 
-Screenshots:
+#### goals (part 1)
 - [start][ss-01a]
 - [goal][ss-01b]
 
@@ -81,6 +84,8 @@ and a button in the middle.
 
 [live]: http://horizons-school-of-technology.github.io/week02/day2/5_horello/solution/index.html
 [flexbox]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+[ss-01a]: ./img/ss-01a.png
+[ss-01b]: ./img/ss-01b.png
 
 Supplemental reading (optional):
 - [A Complete Guide to Flexbox][flexbox]
@@ -90,7 +95,7 @@ Supplemental reading (optional):
 For this project part, you'll be filling in the list-related
 styles in the skeleton CSS file.
 
-Screenshots:
+#### goals (part 2)
 - [goal][ss-02a]
 
 1. **add PART 2 styles**: Look for `/** PART 2 CSS here */` and fill in
@@ -109,7 +114,7 @@ list container!
 
 In this part we're going to style the last core element, the card.
 
-Screenshots:
+#### goals (part 3)
 - [goal (single card, single list)][ss-03a]
 - [goal (multiple cards, multiple lists)][ss-03b]
 
@@ -156,7 +161,7 @@ Let's go ahead and add our first dynamic, interactive element to this
 baby so that it really starts to feel like an app. For now, we're just going
 to style these forms and add the "collapse" action that shows and hides the form.
 
-Screenshots:
+#### goals (part 4)
 - [goal (collapsed)][ss-04a]
 - [goal (expanded)][ss-04b]
 
@@ -202,7 +207,7 @@ make the modal appear).
 By the end of this part, when you tap a card a perfectly styled
 modal should appear.
 
-Screenshots:
+#### goals (part 5)
 - [goal][ss-05a]
 
 #### what is a modal?

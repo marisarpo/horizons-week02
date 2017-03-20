@@ -67,16 +67,16 @@ Screenshots:
 
 **Note**: for all styles make sure to refer to the [specs] as a guide
 
-1. **style the `<body>`**
-1. **style the `<header>`**
+1. **style the `<body>`**: refer to [specs]
+1. **style the `<header>`**: refer to [specs]
 1. **add the "Add a list..." button**: look for the PART 1 comments
 in `skeleton/index.html` and try to figure out which combination of HTML
 tags and CSS classes you need for this element (hint: when in doubt, use a `div`)
-1. **style the `.add-list` and `.add-list:hover` classes**
+1. **style the `.add-list` and `.add-list:hover` classes**: refer to [specs]
 1. **add [flexbox] to your board**: Turn on flexbox for the following...
     - the top-level board (so the lists are displayed next to one another)
     - the list (so the cards are displayed vertically). Make sure that `flex-direction` is set correctly!
-1. **Reload the page to see your changes**: You should see a blue canvas w/a header
+1. **reload the page to see your changes**: You should see a blue canvas w/a header
 and a button in the middle.
 
 [live]: http://horizons-school-of-technology.github.io/week02/day2/5_horello/solution/index.html
@@ -87,25 +87,21 @@ Supplemental reading (optional):
 
 ## Part 2: Lists
 
+For this project part, you'll be filling in the list-related
+styles in the skeleton CSS file.
+
 Screenshots:
 - [goal][ss-02a]
 
-As you can see on the live version, a Horello board consists of one or
-more lists, each of which contains one or more cards. Let's begin
-styling the first core element: the list. For this project part,
-you'll be filling in the list-related styles in the skeleton CSS file.
-Find the relevant CSS selectors and fill in the missing styles, based
-on the [specs]. Note that not every required CSS property is listed
-in the specs. Do your best to figure out what's missing and create a
-pixel perfect clone of the [live version][live].
-
-Then look for the PART 2 comment in the [skeleton HTML] file and add
-the "Add card" button. Try creating this one using the `button` tag
+1. **add PART 2 styles**: Look for `/** PART 2 CSS here */` and fill in
+the missing styles, based on the [specs]. *Note* that not every required
+CSS property is listed in the specs. Do your best to figure out what's
+missing and create a pixel perfect clone of the [live version][live].
+1. **add the "Add card" button**: Look for `<!-- PART 2. Add card button -->`
+and add the "Add card" button here. Try creating this one using the `button` tag
 (rather than a plain `div` or `span`).
-
-Reload to see your changes. Things are starting to take shape aren't
-they? Grab a strong cup of coffee to celebrate because you're going
-to need the caffeine when you see what comes next.
+1. **reload to see your changes**: You should see your first fully-styled
+card!
 
 [ss-02a]: ./img/ss-02a.png
 

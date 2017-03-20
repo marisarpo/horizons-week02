@@ -42,54 +42,44 @@ you final product should look like. Note the following:
 
 Let's open up `skeleton/index.html` and get started!
 
+1. **open [`5_horello/skeleton/index.html`](./skeleton/index.html) in
+your browser**: Your stylesheet, bootstrap, and jQuery have already been
+included for you. Note that there are comments indicating where your code
+for each Part should go (in both `index.html` and `style.css`).
+
+1. **open the following files**:
+    1. [`5_horello/skeleton/index.html`](./skeleton/index.html): contains
+  	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+  	includes Bootstrap, `skeleton/css/style.css`, and jQuery
+  	1. [`5_horello/skeleton/css/style.css`](./skeleton/css/style.css):
+  	this is where you should write your CSS classes
+  	1. [`5_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  	of what styles you need to use
+
 ## Part 1: Board and Flexbox
+
+In this part, we're going to complete the basic page styling: body,
+header, and board, and we're going to add the first page element.
 
 Screenshots:
 - [start][ss-01a]
 - [goal][ss-01b]
 
-Let's get started. Load up the skeleton HTML file in your web browser.
-You should see something that looks like [this][ss-01a]. It's pretty
-sparse: a lovely white canvas for your boundless creativity! In this
-part, we're going to complete the basic page styling: body, header, and
-board, and we're going to add the first page element.
+**Note**: for all styles make sure to refer to the [specs] as a guide
 
-Read the [specs] and add the appropriate CSS properties to the [skeleton
-CSS] file (look for the PART 1 comments). Then look for the PART 1
-tag in the [skeleton HTML] file and add the "Add a list..." button. See
-if you can figure out which combination of HTML tags and CSS classes
-you need for this element. Here's a hint: when in doubt, use a `div`.
+1. **style the `<body>`**
+1. **style the `<header>`**
+1. **add the "Add a list..." button**: look for the PART 1 comments
+in `skeleton/index.html` and try to figure out which combination of HTML
+tags and CSS classes you need for this element (hint: when in doubt, use a `div`)
+1. **style the `.add-list` and `.add-list:hover` classes**
+1. **add [flexbox] to your board**: Turn on flexbox for the following...
+    - the top-level board (so the lists are displayed next to one another)
+    - the list (so the cards are displayed vertically). Make sure that `flex-direction` is set correctly!
+1. **Reload the page to see your changes**: You should see a blue canvas w/a header
+and a button in the middle.
 
-Recall what we learned in lecture this morning about Flexbox (refresh
-your memory by reading
-[this][flexbox]). By default, elements on a web page flow from top to
-bottom. There are a few ways to place things side by side,
-horizontally. You saw two of them yesterday: `float` and `position:
-absolute`. Those work well for one-off, static elements such as
-images and buttons, but they don't lend themselves to large amounts
-of dynamic content such as text or, in our case, lists and cards (by
-"dynamic" we mean that you'll be creating, editing, and deleting
-cards and lists, and moving them around--and you can't absolutely
-position something that moves around!). This is where responsive
-layout tools such as Flexbox come in handy. Flexbox is a more natural
-way to lay out content flexibly and dynamically.
-
-Turning on Flexbox is as easy as adding the `display: flex` property
-to an element. Turn on Flexbox for the top-level board (so the lists
-are displayed next to one another), and for list (so the cards are
-displayed vertically). Make sure that `flex-direction` is set correctly!
-
-Reload the page to see your changes. You should see a lovely blue
-canvas with a header and a button right in the middle (the button
-doesn't do anything yet--as a reminder, we'll be wiring it up
-tomorrow). Pat your partner on the back for your first win and dance
-an Irish jig to let everyone else know how awesome you are.
-
-[ss-01a]: ./img/ss-01a.png
-[ss-01b]: ./img/ss-01b.png
-[skeleton HTML]: ./skeleton/index.html
-[skeleton CSS]: ./skeleton/css/style.css
-[live]: http://horizons-school-of-technology.github.io/week02/day2/horello/solution/index.html
+[live]: http://horizons-school-of-technology.github.io/week02/day2/5_horello/solution/index.html
 [flexbox]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 Supplemental reading (optional):

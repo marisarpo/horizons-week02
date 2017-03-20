@@ -1,6 +1,6 @@
 # Horello Web App Specifications
 
-## Defaults
+## Defaults (Body)
 - background color: rgb(0,121,191)
 - font: Bootstrap default sans-serif
 

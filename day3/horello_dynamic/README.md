@@ -21,7 +21,7 @@ Here are the parts of this exercise:
 
 ### Goal
 
-The goal of this step to be able to add new lists to our board with 
+The goal of this step to be able to add new lists to our board with
 the *Add a list...* button.
 
 When you're done, your app should look like this:
@@ -31,60 +31,60 @@ When you're done, your app should look like this:
 ### Steps
 
 1. When the `.add-list` button is clicked, make the `.add-list-form-wrapper` div
-  visible by removing the `collapse` CSS class from it. `collapse` is a CSS
-  class provided by Bootstrap for easily setting `display: none` on an element.
-  <br>
-  You can remove CSS classes using `$.removeClass()`:
+    visible by removing the `collapse` CSS class from it. `collapse` is a CSS
+    class provided by Bootstrap for easily setting `display: none` on an element.
 
-  ```javascript
-  $('YOUR SELECTOR HERE').removeClass('collapse')
-  ```
+    You can remove CSS classes using `$.removeClass()`:
+
+    ```javascript
+    $('YOUR SELECTOR HERE').removeClass('collapse')
+    ```
 
 1. When the `.add-list-cancel` button is clicked, hide the
-   `.add-list-form-wrapper` div by adding the `collapse` CSS class
-   back to it.
-  <br>
-  You can add CSS classes using
-  [jQuery `.addClass()`](https://api.jquery.com/addclass/):
+    `.add-list-form-wrapper` div by adding the `collapse` CSS class
+    back to it.
 
-  ```javascript
-  $('YOUR SELECTOR HERE').addClass('collapse')
-  ```
+    You can add CSS classes using
+    [jQuery `.addClass()`](https://api.jquery.com/addclass/):
+
+    ```javascript
+    $('YOUR SELECTOR HERE').addClass('collapse')
+    ```
 
 1. When the `.add-list-save` button is clicked:
-  1. Read the user provided *title* from the `input` element inside
-     `.add-list-form-wrapper` using
-     [jQuery `.val()`](https://api.jquery.com/val/).
-  1. Create a list element with the *title* containing no cards and insert it
+    1. Read the user provided *title* from the `input` element inside
+    `.add-list-form-wrapper` using
+    [jQuery `.val()`](https://api.jquery.com/val/).
+    1. Create a list element with the *title* containing no cards and insert it
     before the `.add-list-form-wrapper` elements using
     [jQuery `.before()`](https://api.jquery.com/before/).
-    <br>
-    List HTML should be like:
 
-    ```html
-    <div class="list-container">
-      <div class="list">
-        <div class="list-header">
-          <span class="list-title">LIST TITLE GOES HERE</span>
-        </div>
-        <div class="list-cards"></div>
-        <div class="list-footer">
-          <button class="add-card">Add a card...</button>
-          <div class="collapse add-card-form-wrapper">
-            <div class="well add-card-form">
-              <input type="text" class="form-control" placeholder="Card title">
-              <button type="button" class="btn btn-default add-card-save">
-                Save
-              </button>
-              <button type="button" class="btn btn-default add-card-cancel">
-                <span class="glyphicon glyphicon-remove"></span>
-              </button>
+        List HTML should be like:
+
+        ```html
+        <div class="list-container">
+          <div class="list">
+            <div class="list-header">
+              <span class="list-title">LIST TITLE GOES HERE</span>
+            </div>
+            <div class="list-cards"></div>
+            <div class="list-footer">
+              <button class="add-card">Add a card...</button>
+              <div class="collapse add-card-form-wrapper">
+                <div class="well add-card-form">
+                  <input type="text" class="form-control" placeholder="Card title">
+                  <button type="button" class="btn btn-default add-card-save">
+                    Save
+                  </button>
+                  <button type="button" class="btn btn-default add-card-cancel">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  ```
+        ```
 
 ## Part 2: Add card
 
@@ -100,59 +100,59 @@ When you're done, your app should look like this:
 ### Steps
 
 1. When any `.add-card` button is clicked, find the `.add-card-form-wrapper`
-   element for the **current list** and make it appear by removing the
-   `collapse` CSS class.
-  <br>
-  Just like we did with comment threads we're going to use `$(this)` to find the
-  right element relative to the current button. This time around we'll use
-  [$.siblings()](https://api.jquery.com/siblings/) to jump
-  to the 
-  <br>
-  You can remove CSS classes using
-  [jQuery `.removeClass()`](https://api.jquery.com/removeclass/):
+element for the **current list** and make it appear by removing the
+`collapse` CSS class.
 
-  ```javascript
-  $(this).siblings('YOUR SELECTOR HERE')
+    Just like we did with comment threads we're going to use `$(this)` to find the
+    right element relative to the current button. This time around we'll use
+    [$.siblings()](https://api.jquery.com/siblings/) to jump
+    to the
+
+    You can remove CSS classes using
+    [jQuery `.removeClass()`](https://api.jquery.com/removeclass/):
+
+    ```javascript
+    $(this).siblings('YOUR SELECTOR HERE')
     .removeClass('CSS CLASS TO REMOVE HERE')
-  ```
+    ```
 
 1. When any `.add-card-cancel` button is clicked, hide the
-   `.add-card-form-wrapper` div for the **current list** by adding the
-   `collapse` CSS class back to it.
-  <br>
-  Inspect the page to figure out how to traverse from the `.add-card-cancel`
-  to the `.add-card-form-wrapper`.
-  <br>
-  You can add CSS classes using
-  [jQuery `.addClass()`](https://api.jquery.com/addclass/):
+    `.add-card-form-wrapper` div for the **current list** by adding the
+    `collapse` CSS class back to it.
+
+    Inspect the page to figure out how to traverse from the `.add-card-cancel`
+    to the `.add-card-form-wrapper`.
+
+    You can add CSS classes using
+    [jQuery `.addClass()`](https://api.jquery.com/addclass/):
 1. When the `.add-card-save` button is clicked:
-  1. Read the user provided *card title* from the `input` element inside
+    1. Read the user provided *card title* from the `input` element inside
     the **current** `.add-card-form-wrapper` using
     [jQuery `.val()`](https://api.jquery.com/val/).
-  1. Create a new card element with the *card title* and append it to the
-    **current** `.list-cards` element with
-    [$.append()](http://api.jquery.com/append/)
-    <br>
-    Card HTML should be like:
+    1. Create a new card element with the *card title* and append it to the
+        **current** `.list-cards` element with
+        [$.append()](http://api.jquery.com/append/)
 
-    ```html
-    <div class="card">
-      <span class="card-more">
-        <span class="glyphicon glyphicon-align-left"></span>
-      </span>
-      <div class="card-body">CARD TITLE HERE</div>
-    </div>`
-    ```
-  1. Now that the card has been created, hide the `.add-card-form-wrapper` div
-     for the **current list** by adding the `collapse` CSS class back to it.
+        Card HTML should be like:
+
+        ```html
+        <div class="card">
+          <span class="card-more">
+            <span class="glyphicon glyphicon-align-left"></span>
+          </span>
+          <div class="card-body">CARD TITLE HERE</div>
+        </div>`
+        ```
+      1. Now that the card has been created, hide the `.add-card-form-wrapper` div
+         for the **current list** by adding the `collapse` CSS class back to it.
 1. Make sure all click handlers for `.add-card`, `.add-card-cancel` and
-  `.add-card-save` work for newly created lists. Use event delegates for achieve
-  this goal:
+    `.add-card-save` work for newly created lists. Use event delegates for achieve
+    this goal:
 
-  ```javascript
-  $('.board').on('click', 'TARGET SELECTOR HERE', function() {
-  })
-  ```
+    ```javascript
+    $('.board').on('click', 'TARGET SELECTOR HERE', function() {
+    })
+    ```
 
 ## Part 3: Edit card
 
@@ -182,13 +182,13 @@ When you're done, your app should look like this:
     text of the current card being edited. Update the value
     of `#card-edit-body` using `.val()`, set it to
     the text of the card that was clicked on.
-    You can get the extract the text contents of 
+    You can get the extract the text contents of
     the card by finding the `.card-body` div inside
     the current `.card`. You will need `$(this).find()`
     and `.text()`.
 
 
-## Reorder cards using drag and drop
+## Part 4: Reorder cards using drag and drop
 
 ### Goal
 
@@ -205,7 +205,7 @@ When you're done, your app should look like this:
 ### Steps
 
 jQuery UI makes it easy to reorder using drag and drop.
-There is a feature called `sortable` that can be 
+There is a feature called `sortable` that can be
 added to lists like this:
 
 ```javascript
@@ -226,7 +226,7 @@ Make sure that:
 - You can move newly created cards to any list
 - You can movely cards to and from newly created lists
 
-## Bonus: Delete cards using the keyboard
+## Part 5: Bonus: Delete cards using the keyboard
 
 Make it possible to hover your mouse over one of the cards
 and hit the <kbd>c</kbd> key on your keyboard to delete it.
@@ -240,16 +240,16 @@ You will need to:
   pseudoselector.
 1. Remove the `.card` from the page with `.remove()`
 
-## Double Bonus: Theme Selector
+## Part 6: Double Bonus: Theme Selector
 
-Add an easter egg to your Horello page by 
+Add an easter egg to your Horello page by
 switching the color scheme of the board hen a user
 clicks on the Horello logo on the top of the page.
 When theming your page, cycle through various colors
-for the top bar, the background, the lists and the cards. 
+for the top bar, the background, the lists and the cards.
 Try replacing the background of the board with an image.
 
-## Triple Bonus: Theme Selector Dropdown
+## Part 7: Triple Bonus: Theme Selector Dropdown
 
 Add a dropdown menu next to the Horello logo that
 allows the user to pick one of several themes that

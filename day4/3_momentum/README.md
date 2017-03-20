@@ -8,7 +8,7 @@ At some point, you've probably used, or seen someone use **Momentum** - a popula
 
 Using your skills in AJAX requests, HTML/CSS, JQuery and event handlers, you will be creating your own personal Momentum Dashboard!
 
-## Phase 1 - The Skeleton
+## Part 1 - The Skeleton
 
 Before we do any JavaScript-ing or AJAX requests, let's start with the HTML skeleton that you need to build.
 
@@ -24,13 +24,13 @@ To style this with CSS, we'll be focusing on the following components:
 	* **Temperature**: `<span>` element
 	* ***Icon***: Depending on what you what you use (maybe [fontawesome](http://fontawesome.io/icons/) or [ionicons]())
 	
-## Phase 1 - Wow, You're Pretty, Let's Go On A Date
+## Part 1 - Wow, You're Pretty, Let's Go On A Date
 
-In this phase, we're going to be using the [Unsplash API](https://source.unsplash.com) to pimp out our dashboard background. You should have experience setting an image to be particularly huge and fill a whole screen (sometimes known as a **"hero image"**) from doing that in the Kickstarter clone. We're going to be doing that again here, but pulling the image from an API.
+In this part, we're going to be using the [Unsplash API](https://source.unsplash.com) to pimp out our dashboard background. You should have experience setting an image to be particularly huge and fill a whole screen (sometimes known as a **"hero image"**) from doing that in the Kickstarter clone. We're going to be doing that again here, but pulling the image from an API.
 
 We're also going to learn about a technique using something called a `pseudo-tag` that can be used to improve readability and usage of your web-app. `Pseudo-tags` are a big part of web development and can be used to pull off some particularly tricky things without using extra elements ([everything here](http://a.singlediv.com) was made with a single div).
 
-Your tasks in this phase will be to:
+Your tasks in this part will be to:
 
 1. Create an img tag and style it so that it fills
 2. Improve readability
@@ -139,13 +139,13 @@ Use`Date` objects and `setInterval` to update the text. Remember how to get the 
 
 Your job is to build a `CoreCtrl` object that will fetch the time and render it onto your screen. Do your work in `js/momentum.js`.
 
-By the end of this phase, you'll have an application that gets a random pretty picture every day and also tells you the time of the day. 
+By the end of this part, you'll have an application that gets a random pretty picture every day and also tells you the time of the day. 
 
-## Phase 3 - Is It Going to Rain?
+## Part 3 - Is It Going to Rain?
 
 Next up, we're going to build the weather module of Momentum. We'll use the [Open Weather API](http://openweathermap.org/api) for retrieving weather information and JQuery to update our DOM with the weather information.
 
-In this phase, you will:
+In this part, you will:
 
 + Create a weather controller object that:
 	+ (1) performs AJAX calls for weather data from the API
@@ -171,11 +171,11 @@ It should look something like this (minus the bit about the TODOs):
 
 <sub>But **better** - look at that terrible contrast! Good thing we used that mask.</sub>
 
-By the end of this phase of this phase, you should have a dashboard with a pretty sweet full-screen background image that also tells you the time and current temperature outside.
+By the end of this part of this part, you should have a dashboard with a pretty sweet full-screen background image that also tells you the time and current temperature outside.
 
 [Bonus] Look into using `navigator.geoLocation` to automatically get our position and make the AJAX call. You'll have to use a different URL instead
 
-## Phase 4 - You know they say... "Love is friendship set on fire."
+## Part 4 - You know they say... "Love is friendship set on fire."
 
 Finally, we're going to be adding a quote of the day using the [TheySaidSo API](https://theysaidso.com/api/).
 

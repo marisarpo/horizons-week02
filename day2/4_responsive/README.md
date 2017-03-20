@@ -27,12 +27,12 @@ to see).
 
 - You'll be working in the `skeleton` directory. Unlike yesterday's
 exercise, you'll be writing both HTML and CSS this time. HTML goes in
-the `index.html` file and CSS (for phase 2) goes in `css/media.css`.
+the `index.html` file and CSS (for Part 2) goes in `css/media.css`.
 - By now you should be extremely comfortable with Chrome's Developer
 Tools. If you still have any questions about it, spend some time with
 a TA today. You'll continue to rely heavily upon this tool all week.
 
-## Phase 1: Media query
+## Part 1: Media query
 
 Screenshots:
 - [start][ss-01a]
@@ -42,7 +42,7 @@ While Bootstrap makes responsive web development easier, you can
 build a responsive site without Bootstrap. In fact, Bootstrap's
 responsive system is built on top of a fundamental CSS building block
 called a media query. Let's get started with responsive by adding a
-couple of media queries. In later phases, we'll see how to do
+couple of media queries. In later parts, we'll see how to do
 responsive with Bootstrap.
 
 Simply put, media queries allow us to introduce bits of CSS that only
@@ -127,10 +127,10 @@ Supplemental reading (optional):
 [med]: ./img/med.png
 [small]: ./img/small.png
 
-## Phase 2: Installing Bootstrap
+## Part 2: Installing Bootstrap
 
 This is the first project where you'll be including a third-party
-library. In this phase, you'll add the Bootstrap CSS library and two
+library. In this Part, you'll add the Bootstrap CSS library and two
 of its dependencies: the Bootstrap JS library and the jQuery library.
 Take a moment to read Bootstrap's [Getting Started] section, which
 contains instructions on how to download and install the necessary code.
@@ -145,7 +145,7 @@ much easier). We're going to go with the first, simplest option for now:
 pasting them into your own code.
 
 Open up the [skeleton HTML] file and find the comment that refers to
-"PHASE 2". Copy and paste the [Bootstrap CDN] code here (note that
+"PART 2". Copy and paste the [Bootstrap CDN] code here (note that
 you can leave out the second part, "Optional theme", if you like as
 we won't be using it). We also need to add jQuery as Bootstrap
 depends upon it. Find the "jQuery" code in [Bootstrap template] and
@@ -173,7 +173,7 @@ _after_ Bootstrap.
 Supplemental reading (optional):
 - Bootstrap's [Getting started]
 
-## Phase 3: Horizontal elements
+## Part 3: Horizontal elements
 
 Screenshots:
 - [start][ss-03a]
@@ -220,7 +220,7 @@ the magic of Bootstrap! By properly arranging the elements and
 applying Bootstrap responsive grid classes, the content will
 magically line up.
 
-Find the "PHASE 3" comment in the [skeleton HTML]. Follow these steps
+Find the "PART 3" comment in the [skeleton HTML]. Follow these steps
 to make the buttons responsive:
 
 1. Add a `container-fluid` class at the top level
@@ -241,7 +241,7 @@ Supplemental reading (optional):
 [ss-03b]: ./img/ss-03b.png
 [ss-03c]: ./img/ss-03c.png
 
-## Phase 4: Menu bar
+## Part 4: Menu bar
 
 Screenshots:
 - [goal (medium)][ss-04a]
@@ -250,7 +250,7 @@ Screenshots:
 - [goal (small expanded)][ss-04d]
 - [goal (small expanded zoomed)][ss-04e]
 
-In this final phase, you're going to get a taste of the power of
+In this final Part, you're going to get a taste of the power of
 Bootstrap to help build interactive, responsive user
 interfaces--something we will rely heavily upon over the next few days
 to build a real web app. Take a look at the Bootstrap [Components] to
@@ -260,9 +260,9 @@ top of the landing page. It should look like [this][ss-04a] before
 collapsing (at medium and large size), and like [this][ss-04c] after
 collapsing (at small size).
 
-Again, you won't need to write any CSS for this phase, since Bootstrap's
+Again, you won't need to write any CSS for this Part, since Bootstrap's
 prebuilt classes take care of all the styling you'll need. Look for
-the "PHASE 4" comment in the skeleton HTML file. Based on the sample
+the "PART 4" comment in the skeleton HTML file. Based on the sample
 code in [Navbar], try adding a static navbar with the following
 structure:
 

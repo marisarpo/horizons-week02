@@ -4,14 +4,14 @@ body {
     line-height: 18px;
     height: 100vh;
 
-    /** PHASE 1 CSS here */
+    /** PART 1 CSS here */
 }
 
 header {
     position: relative;
     overflow: hidden;
 
-    /** PHASE 1 CSS here */
+    /** PART 1 CSS here */
 }
 
 .header-logo {
@@ -53,15 +53,15 @@ a {
 }
 
 .add-list {
-    /** PHASE 1 CSS here */
+    /** PART 1 CSS here */
 }
 
 .add-list:hover {
-    /** PHASE 1 CSS here */
+    /** PART 1 CSS here */
 }
 
 .add-list-form {
-    /** PHASE 4 CSS here */
+    /** PART 4 CSS here */
 }
 
 .board {
@@ -70,7 +70,7 @@ a {
     height: calc(100% - 40px);
     padding-bottom: 1em;
 
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 
@@ -84,30 +84,30 @@ a {
     box-sizing: border-box;
     max-height: 100%;
 
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 .list-header {
     display: block;
     position: relative;
 
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 .list-footer {
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 .list-title {
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 .add-card {
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 .add-card:hover {
-    /** PHASE 2 CSS here */
+    /** PART 2 CSS here */
 }
 
 
@@ -116,19 +116,19 @@ a {
 .list-cards {
     min-height: 0;
 
-    /** PHASE 3 CSS here */
+    /** PART 3 CSS here */
 }
 
 .card {
-    /** PHASE 3 CSS here */
+    /** PART 3 CSS here */
 }
 
 .card-body {
-    /** PHASE 3 CSS here */
+    /** PART 3 CSS here */
 }
 
 .card-more {
-    /** PHASE 3 CSS here */
+    /** PART 3 CSS here */
 }
 
-/** PHASE 4 CSS here: add card form */
+/** PART 4 CSS here: add card form */

@@ -33,7 +33,7 @@ it throughout the project.
 
 [specs]: ./SPECIFICATIONS.md
 
-## Phase 1: Board and Flexbox
+## Part 1: Board and Flexbox
 
 Screenshots:
 - [start][ss-01a]
@@ -61,11 +61,11 @@ mindset.
 Let's get started. Load up the skeleton HTML file in your web browser.
 You should see something that looks like [this][ss-01a]. It's pretty
 sparse: a lovely white canvas for your boundless creativity! In this
-phase, we're going to complete the basic page styling: body, header, and
+part, we're going to complete the basic page styling: body, header, and
 board, and we're going to add the first page element.
 
 Read the [specs] and add the appropriate CSS properties to the [skeleton
-CSS] file (look for the PHASE 1 comments). Then look for the PHASE 1
+CSS] file (look for the PART 1 comments). Then look for the PART 1
 tag in the [skeleton HTML] file and add the "Add a list..." button. See
 if you can figure out which combination of HTML tags and CSS classes
 you need for this element. Here's a hint: when in doubt, use a `div`.
@@ -105,21 +105,21 @@ an Irish jig to let everyone else know how awesome you are.
 Supplemental reading (optional):
 - [A Complete Guide to Flexbox][flexbox]
 
-## Phase 2: Lists
+## Part 2: Lists
 
 Screenshots:
 - [goal][ss-02a]
 
 As you can see on the live version, a Horello board consists of one or
 more lists, each of which contains one or more cards. Let's begin
-styling the first core element: the list. For this project phase,
+styling the first core element: the list. For this project part,
 you'll be filling in the list-related styles in the skeleton CSS file.
 Find the relevant CSS selectors and fill in the missing styles, based
 on the [specs]. Note that not every required CSS property is listed
 in the specs. Do your best to figure out what's missing and create a
 pixel perfect clone of the [live version][live].
 
-Then look for the PHASE 2 comment in the [skeleton HTML] file and add
+Then look for the PART 2 comment in the [skeleton HTML] file and add
 the "Add card" button. Try creating this one using the `button` tag
 (rather than a plain `div` or `span`).
 
@@ -129,13 +129,13 @@ to need the caffeine when you see what comes next.
 
 [ss-02a]: ./img/ss-02a.png
 
-## Phase 3: Cards
+## Part 3: Cards
 
 Screenshots:
 - [goal (single card, single list)][ss-03a]
 - [goal (multiple cards, multiple lists)][ss-03b]
 
-In this phase we're going to style the last core element, the card.
+In this part we're going to style the last core element, the card.
 Continue filling in the missing styles based on the [specs]. Reload
 and you should see your first card, properly styled, sitting on top
 of your first list.
@@ -185,7 +185,7 @@ your coding shoes because things are about to get a little cray-cray.
 [ss-03a]: ./img/ss-03a.png
 [ss-03b]: ./img/ss-03b.png
 
-## Phase 4: Collapse
+## Part 4: Collapse
 
 Screenshots:
 - [goal (collapsed)][ss-04a]
@@ -245,7 +245,7 @@ app and world domination!
 [ss-04a]: ./img/ss-04a.png
 [ss-04b]: ./img/ss-04b.png
 
-## Phase 5: Modal
+## Part 5: Modal
 
 Screenshots:
 - [goal][ss-05a]

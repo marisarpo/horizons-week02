@@ -3,11 +3,7 @@
 Believe it or not, by this point you've seen all of the fundamental
 building blocks of the web: HTML, CSS, Javascript, the Chrome
 Developer Tools, and third party libraries. You've got all of the
-tools you need to begin building a real web application. You're
-probably very used to running applications on your mobile phone and
-on your desktop. A web app is exactly the same thing, except that it's
-written using this stack of web technologies and runs in your web
-browser. You're already familiar with web apps such as Gmail.
+tools you need to begin building a real web application.
 
 Today we're going to lay the foundations for the Horello web app. Over
 the next few days, we'll add more sophisticated features such as
@@ -33,30 +29,24 @@ it throughout the project.
 
 [specs]: ./SPECIFICATIONS.md
 
+## Goal
+
+Spend some time getting familiar with the [live version][live]. This is what
+you final product should look like. Note the following:
+- title bar at the top
+- lists of cards
+  - laid out left to right
+  - one or more cards each
+  - button at the bottom titled "Add a card..."
+- last list (at the very right) is a button titled "Add a list..."
+
+Let's open up `skeleton/index.html` and get started!
+
 ## Part 1: Board and Flexbox
 
 Screenshots:
 - [start][ss-01a]
 - [goal][ss-01b]
-
-Let's begin with the basic Horello board layout. Spend some time getting
-familiar with the [live version][live]. We have a title bar at the top
-(currently empty but we'll be adding to it later), and lists, with one
-or more cards each, laid out left to right. Each list has a button at
-the bottom which says "Add a card..." and, all the way on the right,
-there's another button which says "Add a list..."
-
-Pay particular attention to the nouns in the previous paragraph. We
-have a board composed of lists which, in turn, are composed of cards.
-These nouns, and this hierarchical structure, are important for two
-reasons. First, as you've probably guessed by now, we'll build our page
-layout, components, HTML and CSS using this hierarchy. Second, these
-components will form the basis for our app's _data model_ which will
-be introduced in depth tomorrow. One of the most powerful tools we
-have as developers is _abstraction_: the ability to break down complex
-tasks and applications into a managable, hierarchical set of simple
-components. You should approach every engineering task with this
-mindset.
 
 Let's get started. Load up the skeleton HTML file in your web browser.
 You should see something that looks like [this][ss-01a]. It's pretty

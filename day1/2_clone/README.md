@@ -5,7 +5,7 @@ in love with? One that you keep going back to every now and then?
 Well, you're in luck! For this exercise you will use `HTML` and
 `CSS` to make static clones of a landing page of your choosing.
 
-### pick a landing page
+## pick a landing page
 
 There are over a billion websites currently on the internet, so
 choose wisely. Challenge yourself and pick a landing page that
@@ -15,7 +15,7 @@ you would be proud to show off once you're done.
 - must have a navbar
 - should only be one page
 
-### recommendations
+## recommendations
 
 Below are some of our suggestions that meet the criteria and
 look pretty cool. Make sure to open these up in incognito
@@ -27,7 +27,7 @@ mode (just in case you've logged in to the site).
 - [JIRA](https://www.atlassian.com/software/jira)
 - [DuckDuckGo](https://duckduckgo.com/)
 
-### get started
+## get started
 
 We've included starter `HTML` and `CSS` files that you can
 use to kick off your project.

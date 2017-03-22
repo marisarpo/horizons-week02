@@ -14,11 +14,15 @@ to the API.
 
 By the end of the day, making a change in Trello should update our site and the other way around! Here you can see a side by side capture of both sites. If you add a card on Trello and refresh your site, you should be able to see it in Horello. On this image you can see how data is shared between the two.
 
-![Updating](images/capture10.jpeg)
+![Updating](screenshots/capture10.jpeg)
 
 # Section 1
 
 ## Exercise 1: Warmup
+
+You will be given the solution to yesterday's assignment as a starting point.
+[This](./horello.html) is a fully functional version of Trello where your job
+is to implement server connections using AJAX and the Trello API.
 
 To start, we are going to create some data on the page from the console and
 display it onto a Horello board. Open `index.html` and the console.
@@ -47,7 +51,7 @@ horello.refresh(board);
 
 You should see this:
 
-![Created Lists](images/capture3.jpeg)
+![Created Lists](screenshots/capture3.jpeg)
 
 Now that we have a list, we want to add a card to it. We follow a similar
 process to add a card to the list. First, we have to create the card. The card
@@ -63,7 +67,7 @@ horello.refresh(board);
 
 This is how your board should look now.
 
-![Created Cards](images/capture4.jpeg)
+![Created Cards](screenshots/capture4.jpeg)
 
 We have setup all the logic that takes the board, lists and cards and shows them
 up on the screen so you can focus on getting data back and forth from Trello with
@@ -78,12 +82,12 @@ time you add a new card.
 
 Here's an example of what you could end up with:
 
-![Test Data](images/capture1.jpeg)
+![Test Data](screenshots/capture1.jpeg)
 
 Ready to start working? head over to `index.html` and un-comment the line that
 says `board = realData()` your code on `index.html` should look like this:
 
-![Uncomment code](images/capture5.jpeg)
+![Uncomment code](screenshots/capture5.jpeg)
 
 ## Exercise 2: Setting up Trello
 
@@ -98,7 +102,7 @@ Trello to identify your app and know what boards it has access to.
    Copy this key and paste it into
    `week02/day4/2_horello-ajax/skeleton/js/config.js`.
 
-  ![API KEY](images/capture6.jpeg)
+  ![API KEY](screenshots/capture6.jpeg)
 
    An API key is a way of identifying your app. Every time you make a request, you
    will have to send it and Trello will know its your app trying to access the backend.
@@ -107,14 +111,14 @@ Trello to identify your app and know what boards it has access to.
    Trello to verify that it is really your app is making the request and not someone else.
    Why is the API KEY not enough? Because the API KEY is public and the TOKEN is private.
 
-  ![Getting the token](images/capture7.jpeg)
+  ![Getting the token](screenshots/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
 1. Set your local API token in the `config.js` file. (`horello.apiToken = "PASTE_API_TOKEN_HERE"`)
 
 By now, this is how your `config.js` file should look.
 
-  ![Config File](images/capture8.jpeg)
+  ![Config File](screenshots/capture8.jpeg)
 
 **Creating test data**
 In this section, we start by creating some data manually on Trello. After creating the data, we check that we can retrieve it using AJAX.
@@ -124,11 +128,11 @@ In this section, we start by creating some data manually on Trello. After creati
 1. Create a new board and manually add some lists and cards to it.
 1. Copy the URL from your browser. The current url you are on should look something like this `https://Trello.com/b/xFsMS0DK/Trello-test` (The part highlighted in red in the following picture)
 
-![Trello Test Board](images/capture9.jpeg)
+![Trello Test Board](screenshots/capture9.jpeg)
 
 1. Add `.json` at the end of that url. (It should look like `https://Trello.com/b/xFsMS0DK/Trello-test.json`.) These are the results you should see:
 
-  ![Test Data](images/capture2.jpeg)
+  ![Test Data](screenshots/capture2.jpeg)
 
   (Your output may look different if you're not using an extension to format
   JSON.)
@@ -190,7 +194,7 @@ To be sure your code works, call both functions on your console this way:
 `horello.List.listFromJSON( {id: 123, name: "My List Name"} );` This one should return a list with the correct attributes.
 Calling `horello.Card.cardFromJSON( {id: 12, name: "My Card Name", description: "This is a desc", idList:"123"} )` on the console should return a card object to the console. The capture below shows both lines of code being called.
 
-![Verifying 2](images/capture12.jpeg)
+![Verifying 2](screenshots/capture12.jpeg)
 
 ### Fetch JSON data from API
 
@@ -204,7 +208,7 @@ Implement `horello.List.prototype.loadCardData`. This function should make a GET
 ### Verifying your function.
 Log `this.cards` at the end of the success function (The success callback). This should log an array of cards that looks like the capture below. You may have different cards depending on what you created directly on Trello. But it *should* be an array of `Card` objects
 
-![Verifying 1](images/capture11.jpeg)
+![Verifying 1](screenshots/capture11.jpeg)
 
 If you need help implementing these methods head over to [Trello API
 reference](https://developers.Trello.com/advanced-reference). For more info on how
@@ -214,7 +218,7 @@ the API works.
 
 If you load your page and it loads lists and cards, you are good to go! It should contain the same data from your Trello board.
 
-![Verifying 3](images/capture14.jpeg)
+![Verifying 3](screenshots/capture14.jpeg)
 
 ## Exercise 5: Writing data to the Trello API
 
@@ -252,7 +256,7 @@ You are going to implement this function to update the description of the curren
 ### Verifying your work
 To check your code works click on a card, edit it and save it. Refresh the page. If the card was updated, you are good to go!
 
-   ![Verifying 3](images/capture13.jpeg)
+   ![Verifying 3](screenshots/capture13.jpeg)
 
 
 ## Adding Lists and cards
@@ -273,7 +277,7 @@ Remember to call `this.loadCardData();` after making the request to refresh all 
 ### Verifying your work
 To check your code works click on add-card, give it a name and save it. Refresh the page. If the card was created, you are good to go!
 
-   ![Verifying 3](images/capture13.jpeg)
+   ![Verifying 3](screenshots/capture13.jpeg)
 
 
 ## Exercise 6: Rendering
@@ -296,7 +300,7 @@ lines that say `DELETE THIS LINE`. And start implementing your renderers replaci
 ### Verifying your code
 To check if your code works, head over to the page and refresh it. It should like the original Horello we started working on today!
 
-![Verifying 3](images/capture14.jpeg)
+![Verifying 3](screenshots/capture14.jpeg)
 
 ## Bonus: Exercise 7: AJAX Improvements
 

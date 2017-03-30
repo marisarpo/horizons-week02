@@ -6,7 +6,9 @@ landing page for our flagship product, Horello, a shared task manager.
 The rest of our web team is currently on a retreat in Tahiti, but we've
 left these instructions so you should have everything you need to get
 started building your first web page using HTML and CSS. Your task is to
-create a pixel perfect clone of [this page][live-06].
+create a pixel perfect clone of the following image.
+
+![Final Product](./screenshots/06-advanced.png)
 
 As a web developer, you'll be working closely with our designers
 who will give you a set of asset files (images), specifications, and
@@ -37,7 +39,7 @@ changing your code.
 
 ## Part 1: Title
 
-[This][live-01] is what we will be building in Part 1:
+This is what we will be building in Part 1:
 ![Screenshot#1](./screenshots/01-title.png)
 
 We will now walk through the steps required to reproduce the above
@@ -100,7 +102,6 @@ Supplemental reading (optional):
 - [CSS Reset][reset-1]
 - [normalize.css][reset-2]
 
-[live-01]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/01-title.html
 [reset-1]: http://meyerweb.com/eric/tools/css/reset/
 [reset-2]: https://necolas.github.io/normalize.css/
 [cssunits]: http://www.w3schools.com/cssref/css_units.asp
@@ -108,7 +109,7 @@ Supplemental reading (optional):
 
 ## Part 2: Image and button
 
-[This][live-02] is what we will be building in Part 2:
+This is what we will be building in Part 2:
 ![Screenshot#1](./screenshots/02-button.png)
 
 CSS is a very powerful tool, and it can do a lot more than just spacing
@@ -142,7 +143,7 @@ make sure the appropriate changes show up.
 	add a margin to this particular image, we don't	necessarily want that
 	style to apply to all images throughout the page (as you'll see later).
 
-1. **inspect the button**: on the [live][live-02] page for part 2, and
+1. **inspect the button**: look at the button in the screenshot for part 2, and
 note the following:
     - it isn't a solid color, but rather, there's a color
     gradient applied from top to bottom (the color gets slightly darker
@@ -150,9 +151,8 @@ note the following:
     - it has rounded corners, no border, and a slight drop shadow
     to give it some depth
     - it has bold white text with padding on all four sides
-    - notice (from the [live version][live-02],
-    since it's not visible in the screenshot) that the button color changes
-    when you move the mouse over it
+	- the button color should change when you hover your mouse
+	over it (look at specifications)
 
 1. **style the button**: get the values from the [specs]
     - `padding` (vertical/horizontal)
@@ -189,11 +189,10 @@ Supplemental reading (optional):
 [3d transforms]: https://desandro.github.io/3dtransforms/
 [effects]: http://codepen.io/supah/full/dGLLPK/
 [3d game]: http://keithclark.co.uk/labs/css-fps/
-[live-02]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/02-button.html
 
 ## Part 3: Footer
 
-[This][live-03] is what we will be building in Part 3:
+This is what we will be building in Part 3:
 ![Screenshot#3](./screenshots/03-footer.png)
 
 As a next step, let's add a straightforward footer to our landing page
@@ -228,7 +227,7 @@ make sure the appropriate changes show up.
 1. **fix the font size and color for `<footer>`**: add following styles to the
 `footer` class in your `03-footer.css` file.
     - `font-size`: use the smallest font-size
-	- `color`: use the appropriate color (look at [live][live-03] for reference)
+	- `color`: use the appropriate color
 
 1. **add styles to `<a>` tags within `<footer>`**: add following styles to
 `footer a` and `footer a:hover` classes.
@@ -244,11 +243,10 @@ and spaced out. add styles to `footer li`.
     - `display` (make it inline-block)
 	- `margin` (look at footer link spacing in [specs])
 
-[live-03]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/03-footer.html
 
 ## Part 4: Content
-p
-[This][live-04] is what we will be building in Part 4:
+
+This is what we will be building in Part 4:
 ![Screenshot#4](./screenshots/04-content.png)
 
 With those basics in place, let's add another section in between the
@@ -293,13 +291,12 @@ Supplemental reading (optional):
 - [CSS Box Model][box model]
 - [Box Sizing][box sizing]
 
-[live-04]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/04-content.html
 [box model]: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model
 [box sizing]: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
 
 ## Part 5: Float and Clear
 
-[This][live-05] is what we will be building in Part 5:
+This is what we will be building in Part 5:
 ![Screenshot#4](./screenshots/05-clear.png)
 
 In this part we're going to add another content section, and show you
@@ -358,13 +355,12 @@ is the default behavior. Read [All About Floats] for a full explanation.
 Supplemental reading (optional):
 - [All About Floats]
 
-[live-05]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/05-clear.html
 [All About Floats]: https://css-tricks.com/all-about-floats/
 [sidebar]: https://css-tricks.com/wp-content/csstricks-uploads/web-layout.png
 
 ## Part 6: More advanced layout and images
 
-[This][live-06] is what we will be building in Part 6:
+This is what we will be building in Part 6:
 ![Screenshot#6](./screenshots/06-advanced.png)
 
 In this (final!) part we're going to add a content section with

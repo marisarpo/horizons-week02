@@ -52,7 +52,7 @@ you should see an unstyled heading followed by a block of text. After
 each step below be sure to refresh this page to make sure the appropriate
 changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
 	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
 	includes two stylesheets (you will need to include the remaining stylesheets)
@@ -128,7 +128,7 @@ text editor and web browser.
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
 	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
 	includes an image followed by a header, some text, and a button.
@@ -206,7 +206,7 @@ and the color is different when you move your mouse over them (hover).
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
 	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
 	includes pre-populated code for the footer
@@ -257,7 +257,7 @@ we already have in place, this is going to be easier than you think.
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
 	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
 	we've added another `section` tag in the middle, with some paragraph
@@ -306,7 +306,7 @@ one way to combine text and images using the `clear` property.
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html): contains
 	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
 	includes one short new section with an image and some more paragraph text.
@@ -373,7 +373,7 @@ control horizontal spacing of text and images.
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
-1. **open the following files**:
+1. **open the following files in your text editor**:
     1. [`1_horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html): contains
 	everything you've done up till part 5, and an additional section with an
 	image, some text, and a few app store badges

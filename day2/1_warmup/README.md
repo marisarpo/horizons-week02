@@ -40,4 +40,4 @@ Tips:
   browser window wider or smaller to view the page with different screen
   sizes.
 
-[live]: http://horizons-school-of-technology.github.io/week02/day2/1_warmup/solution/index.html
+[live]: http://horizons-school-of-technology.github.io/week02/day2/warmup/solution/index.html

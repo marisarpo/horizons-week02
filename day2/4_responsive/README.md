@@ -286,7 +286,7 @@ including phones.
 
 [Components]: http://getbootstrap.com/components/
 [Navbar]: http://getbootstrap.com/components/#navbar
-[live-04]: http://horizons-school-of-technology.github.io/week02/day2/4_responsive/solution/index.html
+[live-04]: http://horizons-school-of-technology.github.io/week02/day2/responsive/solution/index.html
 [ss-04a]: ./img/ss-04a.png
 [ss-04b]: ./img/ss-04b.png
 [ss-04c]: ./img/ss-04c.png

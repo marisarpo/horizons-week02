@@ -99,7 +99,7 @@ an Irish jig to let everyone else know how awesome you are.
 [ss-01b]: ./img/ss-01b.png
 [skeleton HTML]: ./skeleton/index.html
 [skeleton CSS]: ./skeleton/css/style.css
-[live]: http://horizons-school-of-technology.github.io/week02/day2/5_horello/solution/index.html
+[live]: http://horizons-school-of-technology.github.io/week02/day2/horello/solution/index.html
 [flexbox]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 
 Supplemental reading (optional):

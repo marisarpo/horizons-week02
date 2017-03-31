@@ -271,7 +271,7 @@ make sure the appropriate changes show up.
 1. **style the background**: put styles in the `background-dark-blue` class
     - `color`
 	- `background-color`
-	
+
 1. **style the image**: put styles in the `layout-fill-image` class
     - `padding`: grab the "Content full-width image padding" sizes
 	from [specs] and add them as `padding`.
@@ -409,5 +409,5 @@ Supplemental reading (optional):
 - [CSS positioning]
 
 [specs]: ./SPECIFICATIONS.md
-[live-06]: http://horizons-school-of-technology.github.io/week02/day1/1_horello/solution/06-advanced.html
+[live-06]: http://horizons-school-of-technology.github.io/week02/day1/horello/solution/06-advanced.html
 [CSS positioning]: http://www.w3schools.com/css/css_positioning.asp

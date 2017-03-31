@@ -360,7 +360,7 @@ Supplemental reading (optional):
 
 ## Part 6: More advanced layout and images
 
-This is what we will be building in Part 6:
+[This][live-06] is what we will be building in Part 6:
 ![Screenshot#6](./screenshots/06-advanced.png)
 
 In this (final!) part we're going to add a content section with

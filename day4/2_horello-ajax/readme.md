@@ -111,9 +111,9 @@ Trello to identify your app and know what boards it has access to.
 1. Click "Allow" on the authentication screen.
 1. Set your local API token in the `config.js` file. (`var apiToken = "YOUR API TOKEN HERE";`)
 
-By now, this is how your `config.js` file should look.
+    By now, this is how your `config.js` file should look.
 
-  ![Config File](screenshots/capture8.jpeg)
+    ![Config File](screenshots/capture8.jpeg)
 
 ### Generating Test Data
 
@@ -129,8 +129,7 @@ In this section, we start by creating some data manually on Trello. After creati
 
   ![Test Data](screenshots/capture2.jpeg)
 
-  (Your output may look different if you're not using an extension to format
-  JSON.)
+  If your output looks different we recommend you install a [Chrome Extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) that makes JSON files are easier to read.
 
 1. Copy the id of the board that is listed at the very beginning of the JSON
    output. For example, the board id below is `cc52060cf01c8040340937e7`:
@@ -165,8 +164,8 @@ lists and cards and much more.
 
 ```
 {
-  "cards": Array[],
-  "lists": Array[],
+  "cards": [...],
+  "lists": [...],
   "id": "588577bb8423080722cabe8c",
   "name": "Trello Test",
   "desc": "",

@@ -2,8 +2,7 @@
 
 1. [Day 1](day1/README.md)
     1. CSS Selectors: Complete the CSS Diner
-    1. Week 1 refresher: Constructors and Objects <br>
-       Files: `week02/day1/corejs/vehicle.js` and `week02/day1/corejs/vehicle.html`
+    1. Week 1 refresher: Constructors and Objects
     1. Horello
     1. Clone Any Landing Page
     1. Bonus: CSS Challenge

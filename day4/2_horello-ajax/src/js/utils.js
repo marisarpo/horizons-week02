@@ -101,6 +101,15 @@ function refreshStatic() {
 }
 
 function refresh() {
+  /*
+    Note: we are NOT unbinding event listeners from elements that are
+    going away. It looks like this isn't necessary with jquery per
+    http://stackoverflow.com/questions/10957709/do-i-need-to-unbind-jquery-event-before-remove-element.
+    However, we do remove listeners on elements that stick around so
+    that we don't duplicate listeners (not 100% sure whether this is
+    necessary but let's do it to be safe).
+  */
+
   $('.add-card').each(function (idx) {
     $(this).off();
 

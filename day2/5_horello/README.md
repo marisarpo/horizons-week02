@@ -33,7 +33,7 @@ it throughout the project.
 
 [specs]: ./SPECIFICATIONS.md
 
-## Phase 1: Board and Flexbox
+## Part 1: Board and Flexbox
 
 Screenshots:
 - [start][ss-01a]
@@ -105,7 +105,7 @@ an Irish jig to let everyone else know how awesome you are.
 Supplemental reading (optional):
 - [A Complete Guide to Flexbox][flexbox]
 
-## Phase 2: Lists
+## Part 2: Lists
 
 Screenshots:
 - [goal][ss-02a]
@@ -129,7 +129,7 @@ to need the caffeine when you see what comes next.
 
 [ss-02a]: ./img/ss-02a.png
 
-## Phase 3: Cards
+## Part 3: Cards
 
 Screenshots:
 - [goal (single card, single list)][ss-03a]
@@ -185,7 +185,7 @@ your coding shoes because things are about to get a little cray-cray.
 [ss-03a]: ./img/ss-03a.png
 [ss-03b]: ./img/ss-03b.png
 
-## Phase 4: Collapse
+## Part 4: Collapse
 
 Screenshots:
 - [goal (collapsed)][ss-04a]
@@ -245,7 +245,7 @@ app and world domination!
 [ss-04a]: ./img/ss-04a.png
 [ss-04b]: ./img/ss-04b.png
 
-## Phase 5: Modal
+## Part 5: Modal
 
 Screenshots:
 - [goal][ss-05a]

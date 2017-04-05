@@ -19,7 +19,6 @@ function render() {
       lists: 'all'
     },
     success: function(data) {
-      console.log(data);
       renderBoard(data);
     }
   });

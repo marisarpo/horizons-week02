@@ -229,7 +229,7 @@ see a working modal!
 
 ## c'est fini!
 
-Go for a run, have a beer, watch some Game of Thrones, do whatever it
+Go for a run, watch some Game of Thrones, do whatever it
 takes to unwind, then get some sleep because, trust me, you're going to
 need it when you see what comes tomorrow.
 

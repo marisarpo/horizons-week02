@@ -278,7 +278,7 @@ To check your code works click on add-card, give it a name and save it. Refresh 
 
 ## Exercise 6: Rendering
 
-During the warmup phase we were able to update our page by calling
+During the warmup part we were able to update our page by calling
 
 ```javascript
 horello.refresh(board);

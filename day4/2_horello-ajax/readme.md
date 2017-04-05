@@ -22,50 +22,48 @@ This is a description of all provided functions for this assignment. The only
 one you will need for all parts up till the bonus is `renderBoard(board)`. You
 will need to use the rest of the functions for the Bonus parts.
 
-**Note** that `@params` describes the function parameters (what is passed into a function)
-
-##### `renderBoard(board)`
+### `renderBoard(board)`
 
 Renders a Horello board at `#boardAnchor` in `index.html`.
 
-@params:
-    - `board`: an `Object` that contains the following keys:
-        - `lists`: array of list objects (example of list object below)
-            ```js
-            {
-              closed: true,
-              id: "5885963ac15ad6bf1e892155",
-              idBoard: "588577bb8423080722cabe8c",
-              name: "I just created a new list!",
-              pos: 16383.75,
-              subscribed: false
-            }
-            ```
-        - `cards`: array of card objects (example of card object below)
-            ```js
-            {
-              "id": "588944b18f80bcdc5e06a1c6",
-              "checkItemStates": null,
-              "closed": false,
-              "dateLastActivity": "2017-01-26T00:37:05.858Z",
-              "desc": "Using the Trello API is fun and easy!",
-              "descData": null,
-              "idBoard": "588577bb8423080722cabe8c",
-              "idList": "5885963ac15ad6bf1e892155",
-              "idMembersVoted": [...],
-              "idShort": 23,
-              "idAttachmentCover": null,
-              "manualCoverAttachment": false,
-              "idLabels": [...],
-              "name": "I just created a new card!",
-              "pos": 2,
-              "shortLink": "qDQGAFNh",
-              "badges": {...}
-            }
-            ```
-        - `id`: id of the board
+__Parameters (what the function takes in)__:
+- `board`: an `Object` that contains the following keys:
+    - `lists`: array of list objects (example of list object below)
+        ```js
+        {
+          closed: true,
+          id: "5885963ac15ad6bf1e892155",
+          idBoard: "588577bb8423080722cabe8c",
+          name: "I just created a new list!",
+          pos: 16383.75,
+          subscribed: false
+        }
+        ```
+    - `cards`: array of card objects (example of card object below)
+        ```js
+        {
+          "id": "588944b18f80bcdc5e06a1c6",
+          "checkItemStates": null,
+          "closed": false,
+          "dateLastActivity": "2017-01-26T00:37:05.858Z",
+          "desc": "Using the Trello API is fun and easy!",
+          "descData": null,
+          "idBoard": "588577bb8423080722cabe8c",
+          "idList": "5885963ac15ad6bf1e892155",
+          "idMembersVoted": [...],
+          "idShort": 23,
+          "idAttachmentCover": null,
+          "manualCoverAttachment": false,
+          "idLabels": [...],
+          "name": "I just created a new card!",
+          "pos": 2,
+          "shortLink": "qDQGAFNh",
+          "badges": {...}
+        }
+        ```
+    - `id`: id of the board
 
-##### `refreshStatic()`
+### `refreshStatic()`
 
 Adds event handlers for the following actions:
 
@@ -73,18 +71,18 @@ Adds event handlers for the following actions:
 - editing a card
 - saving a modal
 
-##### `refresh()`
+### `refresh()`
 
 Adds event handlers for the following actions:
 
 - adding a card
 - opening a modal
 
-##### `addCard(card)`
+### `addCard(card)`
 
 Add a card to your Horello board given a card object
 
-##### `addList(list)`
+### `addList(list)`
 
 Add a list to your Horello board given a list object
 
@@ -108,14 +106,14 @@ Trello to identify your app and know what boards it has access to.
    Trello to verify that it is really your app is making the request and not someone else.
    Why is the API KEY not enough? Because the API KEY is public and the TOKEN is private.
 
-    ![Getting the token](screenshots/capture7.jpeg)
+  ![Getting the token](screenshots/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
 1. Set your local API token in the `config.js` file. (`var apiToken = "YOUR API TOKEN HERE";`)
 
 By now, this is how your `config.js` file should look.
 
-    ![Config File](screenshots/capture8.jpeg)
+  ![Config File](screenshots/capture8.jpeg)
 
 ### Generating Test Data
 
@@ -185,19 +183,19 @@ lists and cards and much more.
 In this part we will take the response from the AJAX request and
 use it to render our Horello board.
 
-Head over to the `render()` function in `js/script.js`.
+Head over to the `render()` function in `src/js/script.js`.
 
 Use the AJAX request you constructed in Part 2 and paste it into the `render()`
 function. Then on success you want to take the response data and pass
 this object into the `renderBoard` function.
 
-## Checkpoint
+### Checkpoint
 
 If you load your page and it loads lists and cards, you are good to go! It should contain the same data from your Trello board.
 
 ![Verifying 3](screenshots/capture14.jpeg)
 
-## Part 4: Writing data to the Trello API
+## Part 4: Updating cards in Trello API
 
 Head over to the `createList`, `createCard`, and `updateCard` functions in
 `src/js/events.js`.
@@ -218,13 +216,13 @@ and makes a `PUT` request to the `/cards` endpoint to update the card in Trello
 1. On the `success` callback call the `render()` function to update the
 card on Horello with the new title/description.
 
-### Verifying your work
+#### Verifying your work
 To check your code works click on a card, edit it and save it. Refresh the page. If the card was updated, you are good to go!
 
    ![Verifying 3](screenshots/capture13.jpeg)
 
 
-## Adding Lists and cards
+## Part 5: Adding lists and cards
 Now, we are going to implement the functionality to add new lists and cards to your Horello app. Whenever you create a new `list` or `card`, it should be sent to the backend and saved on the Trello API.
 
 ### `createList()`
@@ -242,7 +240,7 @@ To check your code works click on add-card, give it a name and save it. Refresh 
 
    ![Verifying 3](screenshots/capture13.jpeg)
 
-## Bonus: Part 5: AJAX Improvements
+## Bonus: Part 6: AJAX Improvements
 
 - Rather than passing the authentication information with every single
   request, see if you can simplify this using
@@ -253,7 +251,7 @@ To check your code works click on add-card, give it a name and save it. Refresh 
   the request fails? Does the card show the previous text? Does it show the
   updated one, even if a refresh will return to the original text? and so on.
 
-## Double Bonus: Part 8: UI Improvements
+## Double Bonus: Part 7: UI Improvements
 
 - Delete card. To be able to delete a card, you should follow these steps:
     1. Add an [X] button to the right upper corner of each card.

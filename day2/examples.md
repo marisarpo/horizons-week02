@@ -32,6 +32,30 @@ Tips:
 
 ### [Watch me: Growing & Shrinking](https://vimeo.com/208556243)
 
+1. Display the items in three evenly sized columns, like this:
+
+    Codepen: [http://codepen.io/prath/pen/aJrGgx](http://codepen.io/prath/pen/aJrGgx)
+
+    ![flex-sizing]
+
+1. Change your code in the above codepen for the `.item1` CSS class to make it 5 times as large as `item2`. It should look like:
+
+    ![flex-ratio]
+
 ### [Watch me: Centering](https://vimeo.com/208572816)
 
+Center the three items (vertically and horizontally) inside the container.
+
+Codepen: [http://codepen.io/lockehart/pen/XKmKMP](http://codepen.io/lockehart/pen/XKmKMP)
+
 ### [Watch me: Flexbox inside Flexbox](https://vimeo.com/208581685)
+
+Using the below codepen, recreate the layout from this image using FlexBox:
+
+Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pen/EyVyRM)
+
+![flex]
+
+[flex]: ./images/flex.png
+[flex-sizing]: ./images/flex-sizing.png
+[flex-ratio]: ./images/flex-ratio.png

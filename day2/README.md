@@ -1,5 +1,9 @@
 # Week 2 Day 2 Exercises
 
+## Individual Examples
+
+1. [Media Queries/Flexbox/Bootstrap Examples](./examples.md)
+
 ## Inline Exercises
 
 1. [Warmup: Media Queries](warmup/README.md)

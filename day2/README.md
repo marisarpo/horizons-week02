@@ -4,12 +4,6 @@
 
 1. [Media Queries/Flexbox/Bootstrap Examples](./examples.md)
 
-## Inline Exercises
-
-1. [Warmup: Media Queries](warmup/README.md)
-1. [Flexbox](flexbox/README.md)
-1. [Bootstrap](bootstrap/README.md)
-
 ## Pair Programming Exercises
 
 1. [Flexbox Froggy](http://flexboxfroggy.com/)

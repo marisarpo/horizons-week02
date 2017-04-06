@@ -82,7 +82,7 @@ tags and CSS classes you need for this element (hint: when in doubt, use a `div`
 1. **reload the page to see your changes**: You should see a blue canvas w/a header
 and a button in the middle.
 
-[live]: http://horizons-school-of-technology.github.io/week02/day2/5_horello/solution/index.html
+[live]: http://horizons-school-of-technology.github.io/week02/day2/horello/solution/index.html
 [flexbox]: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 [ss-01a]: ./img/ss-01a.png
 [ss-01b]: ./img/ss-01b.png

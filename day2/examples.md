@@ -59,3 +59,13 @@ Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pe
 [flex]: ./images/flex.png
 [flex-sizing]: ./images/flex-sizing.png
 [flex-ratio]: ./images/flex-ratio.png
+
+## Section 3: [Bootstrap](http://getbootstrap.com/css/)
+
+### [Watch me: Bootstrap Installation & Grid](https://vimeo.com/208747027)
+
+### [Watch me: Responsive Grid](https://vimeo.com/208754060)
+
+### [Watch me: Icons & Buttons](https://vimeo.com/208866726)
+
+### [Watch me: Dropdowns, Navbar, & Modals](https://vimeo.com/209247462)

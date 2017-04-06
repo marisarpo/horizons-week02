@@ -64,8 +64,16 @@ Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pe
 
 ### [Watch me: Bootstrap Installation & Grid](https://vimeo.com/208747027)
 
+The three boxes should be on the same line. Change __ONLY__ the `HTML`.
+
+Codepen: [http://codepen.io/prath/pen/qrGKyN?editors=1010](http://codepen.io/prath/pen/qrGKyN?editors=1010)
+
 ### [Watch me: Responsive Grid](https://vimeo.com/208754060)
+
+Use the Bootstrap responsive grid to change the layout of the page based on the screen size (specifications outlined in the codepen). Change __ONLY__ the `HTML`.
+
+Codepen: [http://codepen.io/prath/pen/NpVzLL?editors=1010](http://codepen.io/prath/pen/NpVzLL?editors=1010)
 
 ### [Watch me: Icons & Buttons](https://vimeo.com/208866726)
 
-### [Watch me: Dropdowns, Navbar, & Modals](https://vimeo.com/209247462)
+### [Watch me: Dropdown, Navbar, & Modals](https://vimeo.com/209247462)

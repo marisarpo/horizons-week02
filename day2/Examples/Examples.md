@@ -74,21 +74,24 @@ Codepen: [http://codepen.io/prath/pen/NpVzLL?editors=1010](http://codepen.io/pra
 
 Go to the __Forms__ section on the Bootstrap website ([https://v4-alpha.getbootstrap.com/components/forms/](https://v4-alpha.getbootstrap.com/components/forms/)), and create a Bootstrap form that looks like the form below.
 
+Work in the `/week02/day2/Examples/bootstrap_form/index.html` file.
+
 ![bootstrap_final]
 
 __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that your state picker is a dropdown.
 
-![bootstrap_date]
-
-![bootstrap_state]
+<center>
+  <div style="display: block">
+    <div style="width: 250px; display: inline-block;">![bootstrap_date]</div>
+    <div style="width: 280px; display: inline-block;">![bootstrap_state]</div>
+  </div>
+</center>
 
 ### [Watch me: Dropdown, Navbar, & Modals](https://vimeo.com/209247462)
 
-
-
-[flex]: ./images/flex.png
-[flex-sizing]: ./images/flex-sizing.png
-[flex-ratio]: ./images/flex-ratio.png
-[bootstrap_final]: ./images/bootstrap_form_final.png
-[bootstrap_date]: ./images/bootstrap_form_date.png
-[bootstrap_state]: ./images/bootstrap_form_state.png
+[flex]: ../images/flex.png
+[flex-sizing]: ../images/flex-sizing.png
+[flex-ratio]: ../images/flex-ratio.png
+[bootstrap_final]: ../images/bootstrap_form_final.png
+[bootstrap_date]: ../images/bootstrap_form_date.png
+[bootstrap_state]: ../images/bootstrap_form_state.png

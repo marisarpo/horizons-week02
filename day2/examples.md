@@ -84,9 +84,9 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 
 ### [Watch me: Dropdown, Navbar, & Modals](https://vimeo.com/209247462)
 
-[flex]: ../images/flex.png
-[flex-sizing]: ../images/flex-sizing.png
-[flex-ratio]: ../images/flex-ratio.png
-[bootstrap_final]: ../images/bootstrap_form_final.png
-[bootstrap_date]: ../images/bootstrap_form_date.png
-[bootstrap_state]: ../images/bootstrap_form_state.png
+[flex]: ./images/flex.png
+[flex-sizing]: ./images/flex-sizing.png
+[flex-ratio]: ./images/flex-ratio.png
+[bootstrap_final]: ./images/bootstrap_form_final.png
+[bootstrap_date]: ./images/bootstrap_form_date.png
+[bootstrap_state]: ./images/bootstrap_form_state.png

@@ -82,8 +82,8 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 
 <center>
   <div style="display: block">
-    <div style="width: 250px; display: inline-block;">![bootstrap_date]</div>
-    <div style="width: 280px; display: inline-block;">![bootstrap_state]</div>
+    <div style="width: 278px; display: inline-block;"><img src="../images/bootstrap_form_state.png"/></div>
+    <div style="width: 250px; display: inline-block;"><img src="../images/bootstrap_form_date.png"/></div>
   </div>
 </center>
 
@@ -93,5 +93,3 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 [flex-sizing]: ../images/flex-sizing.png
 [flex-ratio]: ../images/flex-ratio.png
 [bootstrap_final]: ../images/bootstrap_form_final.png
-[bootstrap_date]: ../images/bootstrap_form_date.png
-[bootstrap_state]: ../images/bootstrap_form_state.png

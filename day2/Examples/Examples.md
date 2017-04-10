@@ -97,8 +97,22 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 
     ![bootstrap_navbar]
 
+1. **Bootstrap Modal**
+
+    Go to [https://v4-alpha.getbootstrap.com/components/modal/](https://v4-alpha.getbootstrap.com/components/modal/) and read about how modals work in Bootstrap. Then create a Login modal like the one below.
+
+    Work in the `/week02/day2/Examples/bootstrap_modal/index.html` file.
+
+    1. Create Login button in the center of the screen
+        ![bootstrap_modal_button]
+
+    1. Create Login modal once button pressed
+        ![bootstrap_modal]
+
 [flex]: ../images/flex.png
 [flex-sizing]: ../images/flex-sizing.png
 [flex-ratio]: ../images/flex-ratio.png
 [bootstrap_final]: ../images/bootstrap_form_final.png
 [bootstrap_navbar]: ../images/bootstrap_navbar.png
+[bootstrap_modal_button]: ../images/bootstrap_modal_button.png
+[bootstrap_modal]: ../images/bootstrap_modal.png

@@ -89,7 +89,16 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 
 ### [Watch me: Dropdown, Navbar, & Modals](https://vimeo.com/209247462)
 
+1. **Bootstrap Navbar**
+
+    Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/components/#navbar) and read about how navbars work in Bootstrap. Then open up [this][http://codepen.io/prath/pen/RpXeXK] codepen and make a navbar similar to the one in the picture below.
+
+    Codepen: [http://codepen.io/prath/pen/RpXeXK](http://codepen.io/prath/pen/RpXeXK)
+
+    ![bootstrap_navbar]
+
 [flex]: ../images/flex.png
 [flex-sizing]: ../images/flex-sizing.png
 [flex-ratio]: ../images/flex-ratio.png
 [bootstrap_final]: ../images/bootstrap_form_final.png
+[bootstrap_navbar]: ../images/bootstrap_navbar.png

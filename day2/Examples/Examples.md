@@ -91,7 +91,7 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
 
 1. **Bootstrap Navbar**
 
-    Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/components/#navbar) and read about how navbars work in Bootstrap. Then open up [this][http://codepen.io/prath/pen/RpXeXK] codepen and make a navbar similar to the one in the picture below.
+    Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/components/#navbar) and read about how navbars work in Bootstrap. Then open up [this](http://codepen.io/prath/pen/RpXeXK) codepen and make a navbar similar to the one in the picture below.
 
     Codepen: [http://codepen.io/prath/pen/RpXeXK](http://codepen.io/prath/pen/RpXeXK)
 

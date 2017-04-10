@@ -11,8 +11,20 @@ $(document).ready(function() {
   refreshStatic();
 });
 
-// Makes an AJAX request to https://api.trello.com/1/boardId and uses
+// Makes an AJAX GET request to https://api.trello.com/1/boardId and uses
 // the response to render the initial Horello board (using renderBoard())
 function render() {
+  // YOUR CODE HERE
+}
+
+function createList(listName) {
+  // YOUR CODE HERE
+}
+
+function createCard(name, listId) {
+  // YOUR CODE HERE
+}
+
+function updateCard(title, desc, cardId) {
   // YOUR CODE HERE
 }

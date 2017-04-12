@@ -192,8 +192,7 @@ __NOTE__ that ALL CAPS are used throughout the sample `HTML` generation code to 
               <button class="add-card" addcardid="LIST ID">Add a card...</button>
               <div class="collapse add-card-form-wrapper" id="addCardForm"+"LIST ID">
                 <div class="well add-card-form">
-                  <input type="text" class="form-control" placeholder=
-                  "Card title" id="addCardTitle"+"LIST ID" />
+                  <input type="text" class="form-control" placeholder="Card title" id="addCardTitle"+"LIST ID" />
                   <button type="button" class="btn btn-default add-card-save" id="addCardBtn"+"LIST ID">Save</button>
                   <button type="button" class="btn btn-default add-card-cancel"><span class="glyphicon glyphicon-remove" id="addCardCancelBtn"+"LIST ID"></span></button>
                 </div>

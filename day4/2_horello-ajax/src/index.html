@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Horizons - W2D4 - Making Horello Dynamic w/AJAX</title>
-  <script src="../../../lib/underscore.js"></script>
-  <script src="../../../lib/jquery.js"></script>
-  <script src="../../../lib/jquery-ui.js"></script>
+  <script src="../../../../lib/underscore.js"></script>
+  <script src="../../../../lib/jquery.js"></script>
+  <script src="../../../../lib/jquery-ui.js"></script>
 
   <!-- Bootstrap stuff -->
-  <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-  <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../../../../lib/bootstrap/css/bootstrap.min.css">
+  <script src="../../../../lib/bootstrap/js/bootstrap.min.js"></script>
 
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css"></link>
@@ -44,32 +44,27 @@
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-  <div class="board">
+<div class="board">
 
-    <!-- The board renders here -->
-    <div id="boardAnchor"></div>
+  <!-- The board renders here -->
+  <div id="boardAnchor"></div>
 
-    <div class="list-container">
-      <div class="add-list-container">
-        <button class="add-list">Add a list...</button>
-        <div class="collapse" id="addList">
-          <div class="well add-card-form">
-            <input type="text" class="form-control"
-            placeholder="List name" id="addListText">
-            <button type="button"
-            class="btn btn-default"
-            id="addListSave">
+  <div class="list-container">
+    <div class="add-list-container">
+      <button class="add-list">Add a list...</button>
+      <div class="collapse" id="addList">
+        <div class="well add-card-form">
+          <input type="text" class="form-control" placeholder="List name" id="addListText">
+          <button type="button" class="btn btn-default" id="addListSave">
             Save
           </button>
-          <button type="button"
-          class="btn btn-default"
-          id="addListCancel">
-          <span class="glyphicon glyphicon-remove"></span>
-        </button>
+          <button type="button" class="btn btn-default" id="addListCancel">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 </div>
 

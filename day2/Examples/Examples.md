@@ -87,27 +87,26 @@ __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that y
   </div>
 </center>
 
-### [Watch me: Dropdown, Navbar, & Modals](https://vimeo.com/209247462)
+### [Watch me: Dropdown & Navbar](https://vimeo.com/209247462)
 
-1. **Bootstrap Navbar**
+Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/components/#navbar) and read about how navbars work in Bootstrap. Then open up [this](http://codepen.io/prath/pen/RpXeXK) codepen and make a navbar similar to the one in the picture below.
 
-    Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/components/#navbar) and read about how navbars work in Bootstrap. Then open up [this](http://codepen.io/prath/pen/RpXeXK) codepen and make a navbar similar to the one in the picture below.
+Codepen: [http://codepen.io/prath/pen/RpXeXK](http://codepen.io/prath/pen/RpXeXK)
 
-    Codepen: [http://codepen.io/prath/pen/RpXeXK](http://codepen.io/prath/pen/RpXeXK)
+![bootstrap_navbar]
 
-    ![bootstrap_navbar]
 
-1. **Bootstrap Modal**
+### [Watch me: Modals](https://vimeo.com/212297915)
 
-    Go to [https://v4-alpha.getbootstrap.com/components/modal/](https://v4-alpha.getbootstrap.com/components/modal/) and read about how modals work in Bootstrap. Then create a Login modal like the one below.
+Go to [https://v4-alpha.getbootstrap.com/components/modal/](https://v4-alpha.getbootstrap.com/components/modal/) and read about how modals work in Bootstrap. Then create a Login modal like the one below.
 
-    Work in the `/week02/day2/Examples/bootstrap_modal/index.html` file.
+Work in the `/week02/day2/Examples/bootstrap_modal/index.html` file.
 
-    1. Create Login button in the center of the screen
-        ![bootstrap_modal_button]
+1. Create Login button in the center of the screen
+    ![bootstrap_modal_button]
 
-    1. Create Login modal once button pressed
-        ![bootstrap_modal]
+1. Create Login modal once button pressed
+    ![bootstrap_modal]
 
 [flex]: ../images/flex.png
 [flex-sizing]: ../images/flex-sizing.png

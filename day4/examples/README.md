@@ -9,4 +9,7 @@
   create a new React Native project for each secion.
 - Ask for help early and often! 🙋
 
-### [Watch me](https://vimeo.com/210894693)
+### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)
+### [Watch me: AJAX Error Handling](https://vimeo.com/210897988)
+### [Watch me: AJAX is Asynchronous](https://vimeo.com/210971431)
+### [Watch me: AJAX APIs and Trello](https://vimeo.com/212287922)

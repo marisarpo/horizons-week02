@@ -88,7 +88,7 @@ Trello to identify your app and know what boards it has access to.
 
 1. Generate a token manually by clicking on the `Token` link on that page. A Token allows Trello to verify that it is really your app is making the request and not someone else. Why is the API KEY not enough? Because the API KEY is public and the TOKEN is private.
 
-  ![Getting the token](screenshots/capture7.jpeg)
+	![Getting the token](screenshots/capture7.jpeg)
 
 1. Click "Allow" on the authentication screen.
 1. Set your local API token in the `config.js` file. (`var apiToken = "YOUR API TOKEN HERE";`)
@@ -109,18 +109,18 @@ In this section, we start by creating some data manually on Trello. After creati
 
 1. Add `.json` at the end of that url. (It should look like `https://Trello.com/b/xFsMS0DK/Trello-test.json`.) These are the results you should see:
 
-  ![Test Data](screenshots/capture2.jpeg)
+	![Test Data](screenshots/capture2.jpeg)
 
-  If your output looks different we recommend you install a [Chrome Extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) that makes JSON files are easier to read.
+	If your output looks different we recommend you install a [Chrome Extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) that makes JSON files are easier to read.
 
 1. Copy the id of the board that is listed at the very beginning of the JSON
    output. For example, the board id below is `cc52060cf01c8040340937e7`:
 
-  ```javascript
-  {"id":"cc52060cf01c8040340937e7" ...}
-  ```
+	```javascript
+	{"id":"cc52060cf01c8040340937e7" ...}
+	```
 
-  Note: The id for the response in the picture above is "588577bb8423080722cabe8c";
+	Note: The id for the response in the picture above is "588577bb8423080722cabe8c";
 
 ## Part 2: Getting familiar with the API
 
@@ -159,8 +159,6 @@ lists and cards and much more.
 
 ## Part 3: Read data from the Trello API
 
-### Convert API JSON responses
-
 In this part we will take the response from the AJAX request and use it to render our Horello board.
 
 Head over to the `render()` function in `src/js/script.js`.
@@ -170,6 +168,8 @@ Use the AJAX request you constructed in Part 2 and paste it into the `render()` 
 ## Part 4: Render the Board
 
 In this part we are going to write three functions:
+
+__NOTE__ that ALL CAPS are used throughout the sample `HTML` generation code to denote variables. For example, a list object has a key called `id`, so __LIST ID__ below would denote `list.id`.
 
 1. __`renderBoard`__ - given a [board object](#board-object) create a board wrapper for your lists and cards.
     1. Let's start with a clean state _every_ time we render a new board. Use the [`.empty()`](http://api.jquery.com/empty/) method to remove everything from `#boardAnchor`.

@@ -1,4 +1,4 @@
-# AJAX Self Directed Examples
+# [AJAX](https://developer.mozilla.org/en-US/docs/AJAX/Getting_Started) Self Directed Examples
 
 - **All videos have the password `horizonites`**
 - Before you jump in
@@ -10,6 +10,27 @@
 - Ask for help early and often! 🙋
 
 ### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)
+
+1. __Poetry Slam:__ In this example you will `GET` a poem from [https://horizons-json-cors.s3.amazonaws.com/poem.txt](https://horizons-json-cors.s3.amazonaws.com/poem.txt). Then you are to calculate the number of words it contains, and add that number to the element where `id="count"`.
+
+    - Files to work on:
+	    - `/week02/day4/examples/ajax/poetry_slam/index.html`: Open this in your favourite web browser to read the instructions and test your solution.
+		- `/week02/day4/examples/ajax/poetry_slam/js/index.js`: This is where you will make an AJAX request.
+		
+1. __Population:__ GET data from [http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json](http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json) and find the city with the highest population. Put that name in the `<h1>` tag with id `out`.
+
+    - File to work on:
+	    - `/week02/day4/examples/ajax/population.html`: Write your JS/jQuery code in the `<script>` tag at the bottom of this file. Open it in your favourite web browser to test your solution.
+
 ### [Watch me: AJAX Error Handling](https://vimeo.com/210897988)
+
+1. __List of Links:__ You will be given a list of links where some of them are broken. Your job is to perform `GET` requests to all of them, and remove the ones that do not work.
+
+    - File to work on:
+	    - `/week02/day4/examples/errors.html`: Open this in your favourite web browser & text editor. Write your code in the `<script>` tags at the bottom of the `HTML` file.
+
 ### [Watch me: AJAX is Asynchronous](https://vimeo.com/210971431)
+
+
+
 ### [Watch me: AJAX APIs and Trello](https://vimeo.com/212287922)

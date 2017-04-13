@@ -38,6 +38,6 @@
 
 ### [Watch me: AJAX APIs and Trello](https://vimeo.com/212287922)
 
-Get started on today's Pair Programming Exercises: [pair-programming]
+Get started on today's Pair Programming Exercises: [Pair Programming Exercises]
 
-[pair-programming]: https://github.com/horizons-school-of-technology/week03/tree/master/day4#pair-programming-exercises
+[Pair Programming Exercises]: https://github.com/horizons-school-of-technology/week03/tree/master/day4#pair-programming-exercises

@@ -31,6 +31,13 @@
 
 ### [Watch me: AJAX is Asynchronous](https://vimeo.com/210971431)
 
+1. __AJAX Async:__ Your job is to GET data from [https://horizons-json-cors.s3.amazonaws.com/products.json](https://horizons-json-cors.s3.amazonaws.com/products.json) which will be an array of urls. You are to subsequently make AJAX requests to those links and retrieve product information. Lastly, the sorted list of products must be put in the `div` with `id="products"`.
 
+    - File to work on:
+	    - `/week02/day4/examples/async.html`: Open this in your favourite web browser & text editor. Write your code in the `<script>` tag at the bottom of the `HTML` file.
 
 ### [Watch me: AJAX APIs and Trello](https://vimeo.com/212287922)
+
+Get started on today's Pair Programming Exercises: [pair-programming]
+
+[pair-programming]: https://github.com/horizons-school-of-technology/week03/tree/master/day4#pair-programming-exercises

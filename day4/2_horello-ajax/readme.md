@@ -275,7 +275,7 @@ To check your code works click on add-card, give it a name and save it. Refresh 
   the request fails? Does the card show the previous text? Does it show the
   updated one, even if a refresh will return to the original text? and so on.
 
-## Double Bonus: Part 7: UI Improvements
+## Double Bonus: Part 8: UI Improvements
 
 - Delete card. To be able to delete a card, you should follow these steps:
     1. Add an [X] button to the right upper corner of each card.

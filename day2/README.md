@@ -2,7 +2,7 @@
 
 ## Individual Examples
 
-1. [Media Queries/Flexbox/Bootstrap Examples](./Examples/README.md)
+1. [Media Queries/Flexbox/Bootstrap Examples](./examples/README.md)
 
 ## Pair Programming Exercises
 

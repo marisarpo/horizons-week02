@@ -48,13 +48,13 @@ Center the three items (vertically and horizontally) inside the container.
 
 Codepen: [http://codepen.io/lockehart/pen/XKmKMP](http://codepen.io/lockehart/pen/XKmKMP)
 
+![centering]
+
 ### [Watch me: Flexbox inside Flexbox](https://vimeo.com/208581685)
 
-Using the below codepen, recreate the layout from this image using FlexBox:
-
-Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pen/EyVyRM)
-
-![flex]
+1. Using the below codepen, recreate the layout from this image using FlexBox:
+    Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pen/EyVyRM)
+    ![flex]
 
 ## Section 3: [Bootstrap](http://getbootstrap.com/css/)
 
@@ -108,6 +108,7 @@ Work in the `/week02/day2/Examples/bootstrap_modal/index.html` file.
 1. Create Login modal once button pressed
     ![bootstrap_modal]
 
+[centering]: ../images/centering.png
 [flex]: ../images/flex.png
 [flex-sizing]: ../images/flex-sizing.png
 [flex-ratio]: ../images/flex-ratio.png

@@ -1,10 +1,8 @@
 # Week 2 Day 2 Exercises
 
-## Inline Exercises
+## Individual Examples
 
-1. [Warmup: Media Queries](warmup/README.md)
-1. [Flexbox](flexbox/README.md)
-1. [Bootstrap](bootstrap/README.md)
+1. [Media Queries/Flexbox/Bootstrap Examples](./examples/README.md)
 
 ## Pair Programming Exercises
 

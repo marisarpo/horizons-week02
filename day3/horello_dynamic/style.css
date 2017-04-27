@@ -206,7 +206,7 @@ a {
 .card-body {
     display: block;
     padding: .5em .5em 2em;
-    font-family: Cabin,Arial,sans-serif;
+    font-family: "Cabin",Arial,sans-serif;
     font-size: 16px;
     line-height: 1.5em;
     position: relative;

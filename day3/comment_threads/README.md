@@ -24,8 +24,7 @@ functions.
 
 ### Steps
 
-1. Add a click handler to the `Post Comment` button. Inside the click handler
-   do:
+1. Add a click handler to the `Post Comment` button. Inside the click handler:
   1. Ask the user to enter an *author* and a *comment* using the
     [`prompt()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
     function.
@@ -98,7 +97,7 @@ functions.
       repliesDiv.append(NEW COMMENT DIV HERE);
     }
     ```
-1. Note how when you try to reply to a newly created comment it doesn't work.
+1. Note that replying to a newly created comment doesnt work.
   Why is that?
 
 ## Part 2: Better reply to a comment
@@ -109,7 +108,7 @@ functions.
 
 ### Step
 
-Now let's fix the issue where it's not possible to respond to newly created
+Now let's fix the issue of not being able to respond to newly created
 comments.
 
 Replace the click handler from Part 2 with
@@ -137,18 +136,18 @@ Your event handler should work the same as before.
 1. Create a delegated event handler attached to the top `.comments` div
   which is waiting for `click` events on the `.hide-replies` button to be
   clicked.<br>
-  When the event handler is trigger, traverse the DOM and find the `.replies`
+  When the event handler is triggered, traverse the DOM and find the `.replies`
   div as you did in *Part 2* but make it disappear with `$.hide()`.
 1. Create a delegated event handler attached to the top `.comments` div
   which is waiting for `click` events on the `.show-replies` button to be
   clicked.<br>
-  When the event handler is trigger, traverse the DOM and find the `.replies`
+  When the event handler is triggered, traverse the DOM and find the `.replies`
   div as you did in *Part 2* but make it appear with `$.show()`.
 
 ## Bonus 1: Better show/hide replies
 
 We should display the *Show/Hide Replies* buttons only when they are useful.
-If replies are already being show, there is no need to display the
+If replies are already being shown, there is no need to display the
 *Show Replies* button. Similarly, if replies are already being hidden then
 there's no need to show the *Hide Replies* button.
 
@@ -168,5 +167,5 @@ there's no need to show the *Hide Replies* button.
 ## Double Bonus: Display count of replies 
 
 When the *Hide Replies* button is used, hide the comments and display the
-total number of commens that have been hidden their place.
+total number of comments that have been hidden in their place.
 

@@ -5,8 +5,7 @@
 - Keep [lesson slides](http://lessons.horizonsbootcamp.com/lessons/week02/day4.html)
   open in your browser. Lesson slides contain code samples and links to
   essential documentation.
-- You can write all your solutions in the same project. You don't need to
-  create a new React Native project for each secion.
+- You can write all your solutions in the same project.
 - Ask for help early and often! 🙋
 
 ### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)

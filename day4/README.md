@@ -1,9 +1,8 @@
 # Week 2, Day 4 Exercises: AJAX, JSON
 
-## Inline Exercises
+## Individual Examples
 
-1. [Inline exercise: AJAX + JSON](http://codepen.io/moose-horizons/pen/XKXmrz?editors=0010)
-1. [Code along: Seting up Twillio](http://codepen.io/moose-horizons/pen/aZdvWa?editors=1010)
+1. [AJAX Examples/Videos](examples/README.md)
 
 ## Pair Programming Exercises
 

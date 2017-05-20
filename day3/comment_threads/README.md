@@ -97,7 +97,7 @@ functions.
       repliesDiv.append(NEW COMMENT DIV HERE);
     }
     ```
-1. Note that replying to a newly created comment doesnt work.
+1. Note that replying to a newly created comment does not work.
   Why is that?
 
 ## Part 2: Better reply to a comment

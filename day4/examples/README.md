@@ -3,6 +3,8 @@
 - **All videos have the password `horizonites`**
 - Ask for help early and often! 🙋
 
+### [Watch me: JSON](https://vimeo.com/209255707)
+
 ### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)
 
 1. __Poetry Slam:__ In this example you will `GET` a poem from [https://horizons-json-cors.s3.amazonaws.com/poem.txt](https://horizons-json-cors.s3.amazonaws.com/poem.txt). Then you are to calculate the number of words it contains, and add that number to the element where `id="count"`.

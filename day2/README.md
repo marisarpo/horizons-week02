@@ -1,6 +1,6 @@
 # Week 2 Day 2 Exercises
 
-## Individual Examples
+## Morning Videos & Individual Exercises
 
 1. [Media Queries/Flexbox/Bootstrap Examples](./examples/README.md)
 

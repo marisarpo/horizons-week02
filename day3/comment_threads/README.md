@@ -25,38 +25,38 @@ functions.
 ### Steps
 
 1. Add a click handler to the `Post Comment` button. Inside the click handler:
-  1. Ask the user to enter an *author* and a *comment* using the
-    [`prompt()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
-    function.
-  1. Create a new `div` element to using the *author* and *comment* the user has
-     provided with the following contents:
 
-    ```html
-    <div class="comment">
-      <div class="author">"AUTHOR NAME HERE" says:</div>
-      <div class="message">COMMENT HERE</div>
-      <div class="controls">
-        <button class="hide-replies btn btn-default">Hide Replies</button>
-        <button class="show-replies btn btn-default">Show Replies</button>
-        <button class="reply btn btn-default">Reply</button>
-      </div>
-      <div class="replies"></div>
-    </div>
-    ```
+    1. Ask the user to enter an *author* and a *comment* using the
+      [`prompt()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
+      function.
+    1. Create a new `div` element to using the *author* and *comment* the user has provided with the following contents:
 
-    Note: you can create elements by giving jQuery a string that contains
-    HTML like:
-    
-    ```javascript
-    $('<div class="some-class">')
-    ```
+        ```html
+        <div class="comment">
+          <div class="author">"AUTHOR NAME HERE" says:</div>
+          <div class="message">COMMENT HERE</div>
+          <div class="controls">
+            <button class="hide-replies btn btn-default">Hide Replies</button>
+            <button class="show-replies btn btn-default">Show Replies</button>
+            <button class="reply btn btn-default">Reply</button>
+          </div>
+          <div class="replies"></div>
+        </div>
+        ```
 
-  1. Append the new comment element to the end of the `div` with the class
-    `comments`:
-    
-    ```javascript
-    $('YOUR SELECTOR HERE').append(newElement)
-    ```
+        Note: you can create elements by giving jQuery a string that contains
+        HTML like:
+
+        ```javascript
+        $('<div class="some-class">')
+        ```
+
+    1. Append the new comment element to the end of the `div` with the class
+      `comments`:
+
+        ```javascript
+        $('YOUR SELECTOR HERE').append(newElement)
+        ```
 
 ## Part 2: Reply to a comment
 
@@ -66,39 +66,42 @@ functions.
 
 ### Steps
 
-1. Add a click handler to every `.reply` button on the page.  Inside the event
-  handler you should:
-  1. Prompt the user for an *author* and a *comment* and create a new comment
-    element like you did in *Part 1*.
-  1. Append the new comment to the `.replies` div inside the current
-    comment.<br>
-    You **can't** just do `$('.replies')`. This would be equivalent to replying
-    too all the comments at once. Which, while fun, is not the behavior we're
-    looking for.<br>
-    Instead we have to start from the current element (the `.reply` button
-    that was clicked) go up to the parent `.comment` div then go back down
-    one level to the `.replies` divs.
-    This process of walking through the DOM is called
-    [DOM traversal](http://api.jquery.com/category/traversing/).
-    <br>
-    To go up and find the parent `.comment` div we're going to use
-    [`$.closest()`](http://api.jquery.com/closest/).
-    To go back down and find the `.replies` div we're going to use
-    [`$.children()`](http://api.jquery.com/children/).
-    <br>
-    Your event hander should look like:
+1. Add a click handler to every `.reply` button on the page.  Inside the event handler you should:
 
-    ```javascript
-    function() {
-      // `this` points to the current `.reply` button that was clicked
-      var $this = $(this);
-      var commentDiv = $this.closest('PARENT SELECTOR HERE');
-      var repliesDiv = commentDiv.children('REPLIES DIV SELECTOR');
-      repliesDiv.append(NEW COMMENT DIV HERE);
-    }
-    ```
-1. Note that replying to a newly created comment does not work.
-  Why is that?
+    1. Prompt the user for an *author* and a *comment* and create a new comment
+      element like you did in *Part 1*.
+
+    1. Append the new comment to the `.replies` div inside the current
+      comment.
+
+          You **can't** just do `$('.replies')`. This would be equivalent to replying
+          too all the comments at once. Which, while fun, is not the behavior we're
+          looking for.
+
+          Instead we have to start from the current element (the `.reply` button
+          that was clicked) go up to the parent `.comment` div then go back down
+          one level to the `.replies` divs.
+          This process of walking through the DOM is called
+          [DOM traversal](http://api.jquery.com/category/traversing/).
+
+          To go up and find the parent `.comment` div we're going to use
+          [`$.closest()`](http://api.jquery.com/closest/).
+          To go back down and find the `.replies` div we're going to use
+          [`$.children()`](http://api.jquery.com/children/).
+
+          Your event hander should look like:
+
+          ```javascript
+          function() {
+            // `this` points to the current `.reply` button that was clicked
+            var $this = $(this);
+            var commentDiv = $this.closest('PARENT SELECTOR HERE');
+            var repliesDiv = commentDiv.children('REPLIES DIV SELECTOR');
+            repliesDiv.append(NEW COMMENT DIV HERE);
+          }
+          ```
+
+1. Note that replying to a newly created comment does not work. Why is that?
 
 ## Part 2: Better reply to a comment
 
@@ -106,7 +109,7 @@ functions.
 
 ![](https://cl.ly/303i0Y3d1637/Screen%20Recording%202016-12-22%20at%2002.47%20PM.gif)
 
-### Step
+### Steps
 
 Now let's fix the issue of not being able to respond to newly created
 comments.
@@ -135,14 +138,15 @@ Your event handler should work the same as before.
 
 1. Create a delegated event handler attached to the top `.comments` div
   which is waiting for `click` events on the `.hide-replies` button to be
-  clicked.<br>
-  When the event handler is triggered, traverse the DOM and find the `.replies`
-  div as you did in *Part 2* but make it disappear with `$.hide()`.
+  clicked.
+
+    When the event handler is triggered, traverse the DOM and find the `.replies` div as you did in *Part 2* but make it disappear with `$.hide()`.
 1. Create a delegated event handler attached to the top `.comments` div
   which is waiting for `click` events on the `.show-replies` button to be
-  clicked.<br>
-  When the event handler is triggered, traverse the DOM and find the `.replies`
-  div as you did in *Part 2* but make it appear with `$.show()`.
+  clicked.
+
+    When the event handler is triggered, traverse the DOM and find the `.replies`
+    div as you did in *Part 2* but make it appear with `$.show()`.
 
 ## Bonus 1: Better show/hide replies
 
@@ -164,8 +168,7 @@ there's no need to show the *Hide Replies* button.
 1. Update your *Hide Replies* click handler to `$.hide()` the current
   *Hide Replies* button and `$.show()` the *Show Replies* button.
 
-## Double Bonus: Display count of replies 
+## Double Bonus: Display count of replies
 
 When the *Hide Replies* button is used, hide the comments and display the
 total number of comments that have been hidden in their place.
-

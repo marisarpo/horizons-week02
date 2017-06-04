@@ -1,6 +1,6 @@
 # Week 2, Day 4 Exercises: AJAX, JSON
 
-## Individual Examples
+## Morning Videos & Individual Exercises
 
 1. [AJAX Examples/Videos](examples/README.md)
 

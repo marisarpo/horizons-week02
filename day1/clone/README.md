@@ -35,6 +35,6 @@ mode (just in case you've logged in to the site).
 We've included starter `HTML` and `CSS` files that you can
 use to kick off your project.
 
-- [2_clone/index.html](./index.html)
-- [2_clone/css/main.css](./css/main.css)
-- [2_clone/images/](./images) _- place your images here_
+- [clone/index.html](./index.html)
+- [clone/css/main.css](./css/main.css)
+- [clone/images/](./images) _- place your images here_

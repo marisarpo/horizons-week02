@@ -47,18 +47,18 @@ page.
 
 Let's begin by applying some basic styles to text.
 
-1. **open [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html) in your browser**:
+1. **open [`horello/skeleton/01-title.html`](./skeleton/01-title.html) in your browser**:
 you should see an unstyled heading followed by a block of text. After
 each step below be sure to refresh this page to make sure the appropriate
 changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
-	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+    1. [`horello/skeleton/01-title.html`](./skeleton/01-title.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta` &
 	includes two stylesheets (you will need to include the remaining stylesheets)
-	1. [`1_horello/skeleton/css/01-title.css`](./skeleton/css/01-title.css):
+	1. [`horello/skeleton/css/01-title.css`](./skeleton/css/01-title.css):
 	this is where you should write your CSS classes
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 	**Note** that `section` tag in your `01-title.html` file is
@@ -124,17 +124,17 @@ and a button. Open the part 2 files (you can close the part 1 files:
 all of your CSS work will be applied in all future parts!) in your
 text editor and web browser.
 
-1. **open [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html)
+1. **open [`horello/skeleton/02-button.html`](./skeleton/02-button.html)
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
-	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+    1. [`horello/skeleton/02-button.html`](./skeleton/02-button.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta` &
 	includes an image followed by a header, some text, and a button.
-	1. [`1_horello/skeleton/css/02-button.css`](./skeleton/css/02-button.css):
+	1. [`horello/skeleton/css/02-button.css`](./skeleton/css/02-button.css):
 	this is where you should write your CSS classes
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 1. **add margins to the `<img>`**:
@@ -165,14 +165,14 @@ note the following:
 	- `background`: this will be a color gradient. use the following command
 	(replace the `START` and `END` placeholders with the relevent color
 	hex codes from the [specs]):
-	    ```css
-			background: linear-gradient(to bottom, #START 0, #END 100%);
-		```
+      ```css
+      background: linear-gradient(to bottom, #START 0, #END 100%);
+      ```
 	- `box-shadow`: add the drop shadow to the selector using this format (replacing `COLOR`
 	with the hex code from the [specs]):
-		```css
-			box-shadow: 0 2px 0 #COLOR;
-		```
+      ```css
+      box-shadow: 0 2px 0 #COLOR;
+      ```
 
 1. **style the button on hover**: add the "hover" color gradient to the
 "hover" pseudo class for the `.button` class.
@@ -202,20 +202,20 @@ formatting: the footer links are evenly spaced, they're underlined,
 they have a different color and font size from the rest of the document,
 and the color is different when you move your mouse over them (hover).
 
-1. **open [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
+1. **open [`horello/skeleton/03-footer.html`](./skeleton/03-footer.html)
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
-	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+    1. [`horello/skeleton/03-footer.html`](./skeleton/03-footer.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta` &
 	includes pre-populated code for the footer
-	1. [`1_horello/skeleton/css/03-footer.css`](./skeleton/css/03-footer.css):
+	1. [`horello/skeleton/css/03-footer.css`](./skeleton/css/03-footer.css):
 	this is where you should write your CSS classes. **NOTE** that this css file
 	contains a bunch of empty "footer" selectors, such as "footer a". This compound
 	selector matches all `a` tags _inside a `footer` tag_, so these styles
 	will only apply to the contents of the `footer`.
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 1. **fix the spacing for the `footer` selector**:
@@ -253,19 +253,19 @@ With those basics in place, let's add another section in between the
 title and the footer with some text and an image. With the scaffolding
 we already have in place, this is going to be easier than you think.
 
-1. **open [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html)
+1. **open [`horello/skeleton/04-content.html`](./skeleton/04-content.html)
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
-	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+    1. [`horello/skeleton/04-content.html`](./skeleton/04-content.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta` &
 	we've added another `section` tag in the middle, with some paragraph
 	text and an image.
-	1. [`1_horello/skeleton/css/04-content.css`](./skeleton/css/04-content.css):
+	1. [`horello/skeleton/css/04-content.css`](./skeleton/css/04-content.css):
 	this is where you should write your CSS classes. You need to fill in the
 	new `background-dark-blue`and `layout-fill-img` CSS class selectors.
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 1. **style the background**: put styles in the `background-dark-blue` class
@@ -302,17 +302,17 @@ This is what we will be building in Part 5:
 In this part we're going to add another content section, and show you
 one way to combine text and images using the `clear` property.
 
-1. **open [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html)
+1. **open [`horello/skeleton/05-clear.html`](./skeleton/05-clear.html)
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/05-clear.html`](./skeleton/05-clear.html): contains
-	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
+    1. [`horello/skeleton/05-clear.html`](./skeleton/05-clear.html): contains
+	some fundamental HTML tags such as `html`, `head`, `body`, and `meta` &
 	includes one short new section with an image and some more paragraph text.
-	1. [`1_horello/skeleton/css/05-clear.css`](./skeleton/css/05-clear.css):
+	1. [`horello/skeleton/css/05-clear.css`](./skeleton/css/05-clear.css):
 	this is where you should write your CSS classes.
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 1. **float the image to the left**: add styles to the `img-float-left` class
@@ -344,7 +344,7 @@ used to create an entire web page layout with a sidebar, e.g.:
 
 ![web page layout with sidebar][sidebar]
 
-*(Image © CSS TRICKS)*
+*(Image &copy; CSS TRICKS)*
 
 ##### `clear`
 
@@ -369,17 +369,17 @@ one more image. We'll use a different set of
 properties to style these buttons and image, and we'll show you how to
 control horizontal spacing of text and images.
 
-1. **open [`1_horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html)
+1. **open [`horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html)
 in your browser**. After each step below be sure to refresh this page to
 make sure the appropriate changes show up.
 
 1. **open the following files in your text editor**:
-    1. [`1_horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html): contains
+    1. [`horello/skeleton/06-advanced.html`](./skeleton/06-advanced.html): contains
 	everything you've done up till part 5, and an additional section with an
 	image, some text, and a few app store badges
-	1. [`1_horello/skeleton/css/06-advanced.css`](./skeleton/css/06-advanced.css):
+	1. [`horello/skeleton/css/06-advanced.css`](./skeleton/css/06-advanced.css):
 	this is where you should write your CSS classes.
-	1. [`1_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
 	of what styles you need to use
 
 ##### Goal:

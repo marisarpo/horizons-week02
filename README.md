@@ -1,6 +1,7 @@
 # Week 2 project files
 
 1. [Day 1](day1/README.md)
+    1. Setup week02 Git repository
     1. CSS Selectors: Complete the CSS Diner
     1. Horello
     1. Clone Any Landing Page

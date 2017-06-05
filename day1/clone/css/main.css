@@ -1,9 +1,164 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background-color: #fff;
     text-align: center;
+}
+
+*{
+border: 0;
+padding: 0;
+margin: 0;
+font-family: "Myriad Pro", Arial, Serif;
 }
 
 .title {
     color: purple;
 }
 
+.horizontal{
+  float:left;
+  color: #fff;
+  text-align: center;
+  font-family: "Myriad Pro", Arial, Serif;
+  font-style: bold;
+  font-size: 16px ;
+  padding: 14px 42px;
+  overflow: hidden;
+}
+
+.horizontal:hover{
+  color: DarkGrey;
+}
+
+.horizontalUL{
+  display:inline-block;
+  vertical-align: middle;
+  list-style-type: none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  background-color: #333;
+}
+
+.main{
+  border:1px solid;
+  border-color: white;
+  background-color: #fafafa;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+h1{
+  padding-bottom: 6px;
+  font-size: 70px;
+  font-style: bold;
+}
+
+h2{
+  padding-bottom: 20px;
+  font-size: 35px;
+  font-weight: 100;
+}
+
+.mainFooter1{
+  background-color: #fafafa;
+  border: 1px solid;
+  border-color: white;
+  padding-top: 25px;
+
+}
+
+.absolute{
+  right:75%;
+  
+}
+
+#special{
+  background-color: #2B2B2B;
+  color: #fff;
+}
+
+.mainFooterTable{
+  width: 100%;
+}
+
+h3{
+  padding-bottom: 6px;
+  font-size: 16px;
+}
+
+h4{
+  font-weight: 200;
+  font-size: 16px;
+}
+
+.footerH1{
+  padding-top: 15px;
+  color:#121212;
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration:none;
+}
+.footerH2:hover{
+  text-decoration:underline;
+}
+
+.footerH2{
+  color:#424242;
+  font-size: 12px;
+  text-decoration:none;
+}
+
+.footer2H2{
+  color:#424242;
+  font-size: 12px;
+  display:inline;
+}
+
+.displayInline{
+  display: inline;
+}
+
+.padding10px{
+  padding-top:5px;
+}
+
+.padding15px{
+  padding-top:15px;
+}
+
+.footerH2:hover{
+  text-decoration: underline;
+}
+
+.footerDIV{
+  text-align: left;
+  display:inline-block;
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.footerUL{
+  list-style:none;
+  padding-right: 60px;
+  overflow: auto;
+}
+
+.footer{
+  background-color: #fafafa;
+  font-family: "Myriad Pro", Arial, Serif;
+}
+
+#specialUL{
+  padding-right: 0px;
+}
+
+#specialFooterList{
+}
+
+.footerUL2{
+}
+
+.borderLine{
+  border-bottom: 1px solid;
+  border-color: grey;
+}

@@ -1,9 +1,42 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
 }
 
-.title {
-    color: purple;
+.duck-heading{
+  border:solid #000;
+  margin:0;
 }
 
+.duck-img{
+  background-image:url(https://duckduckgo.com/assets/logo_homepage.normal.v107.svg);
+  background-repeat: no-repeat;
+  display: block;
+  margin: auto;
+  position: relative;
+  text-align: center;
+  background-size: 250px 200px;
+  background-position:50% 50%;
+  width: 250px;
+  height: 200px;
+}
+.input-bar{
+  width:500px;
+  height:25px;
+}
+
+.search-img{
+  position:absolute;
+  padding-left: 20px;
+  height:30px;
+}
+
+.wrap-home{
+  padding: 1.3em .8em 1em;
+  max-width: 590px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  float: none;
+  width: 70%;
+  vertical-align: baseline;
+}

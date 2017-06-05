@@ -1,1 +1,37 @@
-/* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+  color: #4d4d4d;
+  background-color: #e4f0f6;
+}
+
+.devices-img {
+  float: right;
+}
+
+.paragraph {
+  margin-left: 17%;
+}
+
+.app-buttons {
+  display: inline-block;
+  margin-left: 17%;
+  position: absolute;
+}
+
+.app-buttons a {
+  clear:both;
+  display: inline-block;
+  overflow: auto;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.app-buttons a:nth-child(3) {
+  border: solid #5e98ba;
+  color: #5e98ba;
+  border-radius: 5px;
+}
+
+.app-buttons a:nth-child(3):hover {
+  border: solid #265773;
+  color: #265773;
+}

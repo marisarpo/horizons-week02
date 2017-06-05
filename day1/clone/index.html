@@ -12,6 +12,41 @@
   </head>
 
   <body>
-    <h1 class="title">Hello World</h1>
+    <nav class="nav">
+        <a href="https://gmail.com">Gmail</a>
+        <a href="https://images.google.com">Images</a>
+      </nav>
+    <h1 class="title">
+        <img id = "logo" src = "images/google.gif">
+      </h1>
+      <input id="input">
+      <section>
+          <button id="search">Google Search</button>
+          <button id="feelinglucky">I'm feeling lucky</button>
+      </section>
+      <footer>
+          <section class="left-footer">
+              <a href="https://www.google.com/intl/en/ads/?fg=1">Advertising</a>
+              <a href="https://www.google.com/services/?fg=1">Business</a>
+              <a href="https://www.google.com/intl/en/about.html?fg=1"> About</a>
+          </section>
+          <section class="right-footer">
+              <a href="https://www.google.com/intl/en/policies/privacy/?fg=1">Privacy</a>
+              <a href="https://www.google.com/intl/en/policies/terms/?fg=1">Terms</a>
+              <a href="https://www.google.com/preferences?hl=en">Settings</a>
+          </section>
+      </footer>
+      <script>
+          document.getElementById("search").addEventListener("click", function() {
+              var searchStr = document.getElementById("input").value
+              var reroute= "https://www.google.com/#q=" + searchStr
+              window.location.href = reroute
+          })
+          document.getElementById("feelinglucky").addEventListener("click", function() {
+              var searchStr = document.getElementById("input").value
+              var reroute= "https://www.google.com/#q=" + searchStr + "&btnI"
+              window.location.href = reroute
+          })
+      </script>
   </body>
 </html>

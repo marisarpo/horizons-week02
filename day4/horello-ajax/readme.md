@@ -114,10 +114,10 @@ In this section, we start by creating some data manually on Trello. After creati
 	If your output looks different we recommend you install a [Chrome Extension](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc?hl=en) that makes JSON files are easier to read.
 
 1. Copy the id of the board that is listed at the very beginning of the JSON
-   output. For example, the board id below is `cc52060cf01c8040340937e7`:
+   output. For example, the board id below is `588577bb8423080722cabe8c`:
 
 	```javascript
-	{"id":"cc52060cf01c8040340937e7" ...}
+	{"id":"588577bb8423080722cabe8c" ...}
 	```
 
 	Note: The id for the response in the picture above is "588577bb8423080722cabe8c";

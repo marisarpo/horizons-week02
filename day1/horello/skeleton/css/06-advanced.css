@@ -1,1 +1,43 @@
 /* ADD STYLES FOR PART 6 HERE */
+.img-float-right{
+  float: right;
+  margin-right: 206px;
+  
+  margin-left: 40px;
+  width: 350px;
+  height: 220px;
+}
+
+.background{
+  padding-top: 40px;
+
+  background-color: #e4f0f6;
+}
+
+.last-paragraph{
+  font-size: large;
+  padding-top: 50px;
+  padding-right: 100px;
+  margin-left: 200px;
+  margin-bottom: 20px;
+}
+
+.three-images{
+  margin-left: 200px;
+
+}
+
+.three-images img{
+  height: 54px;
+  margin-right: 25px;
+  vertical-align: middle;
+}
+
+#last{
+  padding: 16px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: #5e98ba;
+  color: #5e98ba;
+
+}

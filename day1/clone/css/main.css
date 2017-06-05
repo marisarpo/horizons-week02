@@ -1,9 +1,7 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+.fixed-nav-bar{
+  height: 60px;
 }
-
-.title {
-    color: purple;
-}
-
+/*
+.body--onboarding{
+  position:static;
+}*/

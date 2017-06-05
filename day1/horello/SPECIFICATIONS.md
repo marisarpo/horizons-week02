@@ -27,7 +27,7 @@
 
 ## Layout
 
-- Section padding: vertical 80px, horizontal 20px
+- Section padding: vertical 80px, horizontal 20px //done
 - Footer padding: same
 - Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
 - Content full-width image padding: vertical 40px, horizontal 60px

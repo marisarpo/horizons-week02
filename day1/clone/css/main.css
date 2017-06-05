@@ -23,6 +23,7 @@ font-family: "Myriad Pro", Arial, Serif;
   font-size: 16px ;
   padding: 14px 42px;
   overflow: hidden;
+  vertical-align: top; 
 }
 
 .horizontal:hover{
@@ -64,12 +65,10 @@ h2{
   border: 1px solid;
   border-color: white;
   padding-top: 25px;
-
 }
 
 .absolute{
-  right:75%;
-  
+  width: 400px;
 }
 
 #special{

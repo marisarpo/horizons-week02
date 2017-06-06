@@ -1,1 +1,47 @@
 /* ADD STYLES FOR PART 6 HERE */
+.pic{
+  float: right;
+  position: relative;
+  top: -60px;
+}
+.foot {
+  background-color: #e4f0f6;
+}
+
+.container{
+  position: relative;
+}
+
+.text{
+  display: block;
+  margin: 1em 0;
+  max-width: 500px;
+  padding-left: 300px;
+}
+
+.button2 {
+  padding:0.6em 1.3em;
+  border-style: solid;
+  border-color: #5E98BA;
+  border-width: 1px;
+  border-radius:0.3em;
+  margin-bottom: 0.8em;
+  color: #5E98BA;
+  display: inline-block;
+  vertical-align: top;
+}
+.button2:hover {
+  color: #265773;
+}
+.image1 {
+  height: 50px;
+}
+
+#pic1{
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+#pic2 {
+  padding-left: 300px;
+}

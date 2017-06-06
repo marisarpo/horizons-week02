@@ -47,6 +47,7 @@ header {
 
 a {
   background-color: transparent;
+  color: black;
 }
 
 
@@ -133,6 +134,9 @@ a {
   background: rgba(16, 16, 16, 0.15);
   color: #333;
   margin: 3px 0px;
+  width: 100%;
+  border: none;
+  outline: none;
 }
 
 .add-card:hover {
@@ -145,20 +149,35 @@ a {
 
 .list-cards {
   min-height: 0;
-
+  overflow-y: overlay;
+  overflow-x: hidden;
+  min-height: 0;
   /** PART 3 CSS here */
 }
 
 .card {
   /** PART 3 CSS here */
+  margin: 0 0 .5em 0;
+  background: white;
+  position: relative;
+  border-radius: 3px;
 }
 
 .card-body {
   /** PART 3 CSS here */
+  display: block;
+  padding: .5em .5em 2em;
+  font-family: Cabin, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5em;
+  position: relative;
 }
 
 .card-more {
   /** PART 3 CSS here */
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
 }
 
 /** PART 4 CSS here: add card form */

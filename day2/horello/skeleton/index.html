@@ -20,6 +20,23 @@
   </header>
 
   <!-- PART 5. Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <div class="board">
     <div class="list-container">
@@ -29,15 +46,29 @@
         </div>
         <div class="list-cards">
           <div class="card">
+
             <div class="card-body">
               Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <a type="button" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-align-left"> </span>
+            </a>
             </div>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-          <button class="add-card">Add a card...</button>
+          <button class="list-button add-card" data-toggle="collapse" href="#addCard1">Add a card...</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="addCard1">
+              <div class="well">
+              <input type="text" placeholder="Card title">
+              <button class="btn btn-default"> Save </button>
+              <button class="btn btn-default"> <span class="glyphicon glyphicon-remove"></span> </button>
+
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,195 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+.image {
+  height: 25px;
 }
 
-.title {
-    color: purple;
+#nav-bar {
+  padding: 15px 0px 30px 20px;
+  align-self: center;
+  position: relative;
+  font-size: medium;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
 }
+
+#Explore {
+  padding-left: 0.5%;
+  padding-right: 2.5%;
+}
+
+#Explore, #Start_a_project, #About_us, #login, #sign_up {
+  padding-bottom: 2.7%;
+}
+
+#Explore:hover, #Start_a_project:hover, #About_us:hover, #login:hover, #sign_up:hover {
+  border-bottom: 3px solid;
+  border-bottom-color: green;
+}
+
+.nav-bar-spacing {
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+#About_us {
+  padding-left: 2.5%;
+  padding-right: 15%;
+}
+
+#search {
+  height: 25px;
+  margin-left: 25%;
+}
+
+.head-photo {
+  background-color: skyblue;
+}
+
+#source_img {
+  height: 85%;
+  width: 85%;
+  padding-left: 7.5%;
+}
+
+#food_picture {
+  float: left;
+  padding-top: 0.5%;
+  padding-left: 7.2%;
+  height: 30%;
+  width: 30%;
+}
+
+.projects {
+  margin-top: 2%;
+}
+
+.project_text {
+  text-align: left;
+  font-size: 18px;
+  padding-left: 7.2%;
+}
+
+.all_food {
+  padding-left: 70%;
+  font-size: 12px;
+}
+
+.project_description {
+  margin-left: 38%;
+  margin-top: 2.1%;
+}
+
+.tiny_text {
+  font-size: 13px;
+}
+
+.gray_text {
+  color: gray;
+}
+
+.darker_gray_text {
+  color: #474b51;
+  margin-top: 4%;
+}
+
+.tiny_picture {
+  width: 2%;
+  height: 2%;
+}
+
+#Shopping_icon {
+  padding-left: 2%;
+}
+
+.green_bar {
+  margin-top: 1%;
+  margin-bottom: 1%;
+  height: 10px;
+  width: 250px;
+  background-color: #0be220;
+  border-radius: 5px;
+}
+
+.statistics {
+  margin-top: 2%;
+  width: 40%;
+}
+
+.funded {
+  width: 2%;
+  display: inline-block;
+} 
+.pledged {
+  width: 2%;
+  display: inline-block;
+  margin-left: 20%;
+}
+.backers {
+  width: 2%;
+  display: inline-block;
+  margin-left: 20%;
+}
+.hours_to_go {
+  width: 16%;
+  display: inline-block;
+  margin-left: 20%;
+}
+
+.categories {
+  font-size: 12px;
+  float: right;
+}
+
+.categories ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+ul {
+  list-style: none
+}
+
+.first-block {
+  max-width: 75vw; 
+  display: inline-block;
+}
+
+.list {
+   max-width: 25vw; 
+   display: inline-block;
+}
+
+.categories li {
+  padding-left: 10%;
+  border-left: 1px solid;
+  border-color: gray;
+}
+
+.categories li:hover {
+  color: green;
+  text-decoration: underline green;
+  border-left-color: green;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

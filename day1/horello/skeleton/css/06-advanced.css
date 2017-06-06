@@ -1,1 +1,35 @@
-/* ADD STYLES FOR PART 6 HERE */
+.float-right {
+  position: absolute;
+  top: -60px;
+  left: 640px;
+  }/* ADD STYLES FOR PART 6 HERE */
+
+.devices {
+  background-color: #e4f0f6;
+}
+
+.all-apps {
+  vertical-align: top;
+  border-color: #0079bf;
+  color: #0079bf;
+  border-style: solid;
+  border-width: 1px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.but{
+  margin: 5px;
+  display: inline-block;
+}
+
+.pic-grid {
+  position: absolute;
+  top: -60px;
+  left: 640;
+}
+
+.all-apps:hover {
+  color: #066088;
+  border-color: #606088;
+}

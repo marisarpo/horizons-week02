@@ -180,4 +180,14 @@ a {
   bottom: 6px;
 }
 
+input {
+  width: 100%;
+}
+
+.myBox {
+  height: 70px;
+  text-align: left;
+  text-align: justify;
+}
+
 /** PART 4 CSS here: add card form */

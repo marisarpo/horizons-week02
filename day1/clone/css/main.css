@@ -19,6 +19,7 @@ body {
   width: 250px;
   height: 200px;
 }
+
 .input-bar{
   width:500px;
   height:25px;
@@ -39,4 +40,23 @@ body {
   float: none;
   width: 70%;
   vertical-align: baseline;
+}
+
+.tag-home{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Arial";
+  color:#756f6d;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+.learn-more{
+  color:#417cdb;
+}
+
+.green-background{
+  background:#58b792;
+  position:relative;
 }

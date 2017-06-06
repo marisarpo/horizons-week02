@@ -1,9 +1,84 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+#duck {
+  width: 250px;
+  height: 200px;
+  padding: 10px 250px;
 }
 
-.title {
-    color: purple;
+.logo_wrapper .search_bar {
+  padding: 1.3em .8em 1em;
+  max-width: 590px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: block;
+  float: none;
+  width: 70%;
 }
 
+
+.logo_wrapper {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  top: 24%;
+  left: 0;
+  right: 0;
+  z-index: 12;
+}
+
+.site_wrapper {
+  background: rgb(247, 247, 247);
+  width: 722px;
+  height: 695px;
+  position: absolute;
+}
+
+.all_slides {
+  text-align: center;
+  background: #222;
+  position: relative;
+  height: 1000px;
+  top: 500px;
+}
+
+.pics {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.first_slide {
+  background: rgb(88, 183, 146);
+}
+
+.sec_slide {
+  background: rgb(245, 163, 57);
+}
+.third_slide {
+  background: rgb(95, 99, 189);
+}
+
+.fourth_slide {
+  background-image: linear-gradient(rgb(135, 206, 245) 60%, rgb(195, 234, 255) 95%);
+}
+
+html, div, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+  position: relative;
+  text-align: center;
+  font-family: "Arial";
+}
+
+div {
+  display: block;
+}

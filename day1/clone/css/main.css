@@ -6,6 +6,37 @@ body {
     color: purple;
 }
 
+a{
+  color: gray
+}
+
+.nav {
+  position: relative;
+  float: right;
+  font-size: 20px;
+  text-decoration: none;
+  text-decoration-line: none;
+  font-weight: lighter;
+}
+
+
+
+.title{
+  padding: 10%
+}
+
+button {
+  border: 1px solid;
+  color: gray;
+  padding: 10px;
+  margin:10px;
+}
+
+input {
+  width: 50%;
+  height: 20px;
+}
+
 footer {
     background-color: rgb(242,242,242);
     position: absolute;

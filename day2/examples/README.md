@@ -90,7 +90,7 @@ Codepen: [http://codepen.io/prath/pen/qrGKyN?editors=1010](http://codepen.io/pra
 
 Use the Bootstrap responsive grid to change the layout of the page based on the screen size (specifications outlined in the codepen). Change __ONLY__ the `HTML`.
 
-Codepen: [http://codepen.io/prath/pen/NpVzLL?editors=1010](http://codepen.io/prath/pen/NpVzLL?editors=1010)
+Codepen: https://codepen.io/moose-horizons/pen/rwVmWv?editors=1100
 
 #### Goals:
 

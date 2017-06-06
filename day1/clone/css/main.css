@@ -1,9 +1,41 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background-color: #f6f9fc;
 }
 
-.title {
-    color: purple;
+
+.navbar {
+  background-color: #fff;
+  height: 90px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
+li {
+  float: left;
+}
+
+.business-button {
+  display: inline-block;
+  border: 1px solid;
+  margin-top: 25px;
+  padding-top: 0.4em;
+  padding-right: 10px;
+  padding-bottom: 0.4em;
+  padding-left: 10px;
+  border-radius: 0.2em;
+  color: grey;
+  margin-left: 25px;
+}
+
+.business-button:hover{
+  color: #57a7f8;
+}
+
+
+.db-image {
+  height: 30px;
+  padding-left: 150px;
+  padding-top: 25px;
+}

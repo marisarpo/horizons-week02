@@ -8,3 +8,11 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+legend{
+	text-align: center;
+}
+
+.description{
+	height:60px;
+}

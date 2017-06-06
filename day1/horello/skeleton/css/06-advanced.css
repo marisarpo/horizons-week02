@@ -1,1 +1,60 @@
-/* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+  overflow: hidden;
+  background:  #e4f0f6;
+  max-width: 100%;
+
+}
+
+.badge {
+  vertical-align: top;
+  margin-top: 0.4em;
+  margin-right: 1em;
+  display: inline-block;
+
+}
+
+.badge img {
+  height:54px;
+}
+
+.layout {
+  position: relative;
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.layout-other {
+  layout: block;
+  max-width: 585px;
+}
+
+.bottom-image {
+  position: absolute;
+  margin-top: -60px;
+  margin-left: 640px;
+}
+
+.bottom-image img{
+  max-width: initial;
+}
+
+.seeAll-link {
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0 0;
+  display: inline-block;
+}
+
+
+
+a {
+  color: #5e98ba;
+}
+
+a:hover {
+  color: #265773;
+}
+
+
+

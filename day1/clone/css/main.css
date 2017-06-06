@@ -1,9 +1,162 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  font-family: Futura, Arial, sans-serif;
+  text-align: center;
 }
 
-.title {
-    color: purple;
+.substring {
+  vertical-align: bottom;
+  color: #9a9a9a;
+  padding-top: 15px;
+  padding-bottom: 200px;
+  font-size: 28px;
+}
+
+.title{
+  color: rgba(0, 0, 0, 0.7);
+  padding-bottom: 20px;
+  font-size: 48px;
+}
+
+.layout-first{
+
+}
+.logo{
+  margin:auto;
+  position: relative;
+  text-align: center;
+  display: block;
+  padding-top: 200px;
+}
+
+.button{
+  padding: 0.6em 1.3em 0.6em 1.3em;
+  border-radius: 0.3em;
+  background: rgba(0, 0, 0, 0.4);
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block;
+
+}
+
+.button:hover{
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.title-mini {
+  font-size: 44px;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 60px;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.substring-mini {
+  font-size: 20px;
+  line-height: 28px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  width: 40%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top:20px;
+  padding-bottom:30px;
+  color: #fff;
+  vertical-align: middle;
+  position: relative;
+}
+
+#final-title{
+  font-size: 44px;
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top: 60px;
+  color: rgb(54, 83, 116);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+#final-sub{
+  font-size: 20px;
+  line-height: 28px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  width: 40%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-top:20px;
+  padding-bottom:30px;
+  color: rgb(54, 83, 116);
+  vertical-align: middle;
+  position: relative;
+}
+
+#final-button{
+  padding: 0.6em 1.3em 0.6em 1.3em;
+  border-radius: 0.3em;
+  background: rgb(54, 83, 116);
+  color: #FFFFFF;
+  font-weight: bold;
+  display: inline-block;
+}
+#final-button:hover {
+  background: rgb(44, 103, 116);
+}
+
+p {
+  padding-top: .25em;
+  padding-bottom: .25em;
+}
+
+.search{
+  display: inline-block;
+  height:60px;
+  width: 700px;
+  font-size: 20px;
+  background-image: url('https://horizons-static.s3.amazonaws.com/search.png') ;
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+.background-first{
+  overflow: auto;
+  color: #9a9a9a;
+  max-height: 100%;
+  max-width: 100%;
+  background: #F7F7F7;
+}
+.background-second{
+  text-align: center;
+  overflow: auto;
+  color: #FFFFFF;
+  max-height: 100%;
+  max-width: 100%;
+  background: #58b792;
+}
+.background-third{
+  overflow: auto;
+  color: #FFFFFF;
+  max-height: 100%;
+  max-width: 100%;
+  background: #f5a339;
+}
+.background-fourth{
+  overflow: auto;
+  color: #FFFFFF;
+  max-height: 100%;
+  max-width: 100%;
+  background: #5f63bd;
+}
+.background-fifth {
+  overflow: auto;
+  color: #FFFFFF;
+  max-height: 100%;
+  max-width: 100%;
+  background: linear-gradient(rgb(135, 206, 245) 60%, rgb(195, 234, 255) 95%)
 }
 

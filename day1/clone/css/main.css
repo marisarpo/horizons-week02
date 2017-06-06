@@ -1,9 +1,77 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
-.title {
-    color: purple;
+
+#banner{
+  margin-top: 20px;
+  margin-left: 20px;
+  vertical-align: bottom;
 }
 
+#subscribe{
+  float: left;
+}
+/*remember to clear*/
+#logo{
+  padding-top: 22px;
+  height: 110px;
+  float: left;
+  margin-left: 100px;
+}
+
+#shop{
+  color: red;
+}
+
+#account{
+  margin-top: 0px;
+  float: right;
+}
+
+#account *{
+  margin-right: 3px;
+  font-family: "Arial";
+
+  font-size: small;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+}
+#categories ul{
+  padding-left: 20px;
+  padding-top: 3px;
+}
+
+#categories * {
+  vertical-align: bottom;
+  margin-right: 8px;
+  clear: both;
+  font-family: "Arial";
+  font-size: small;
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  font-weight: bold;
+}
+
+#search{
+  width: 60px;
+}
+
+.line{
+  margin-top: 4px;
+  margin-bottom: 7px;
+}
+
+#ad{
+  width: 728px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#stories{
+  
+}

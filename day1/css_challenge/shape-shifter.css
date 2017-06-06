@@ -1,0 +1,18 @@
+div {
+    width: 50px;
+    height: 50px;
+    background: red;
+    position :relative;
+    border-radius: 100%;
+    margin: 50px;
+    font-size: 42px;
+    font-family: monospace;
+    animation: plsMove 2s infinite;
+}
+
+/* Standard syntax */
+@keyframes plsMove {
+    0%   {border-radius: 0px;}
+    0%  {transform: rotate(360deg);
+          border-radius: 0px}
+}

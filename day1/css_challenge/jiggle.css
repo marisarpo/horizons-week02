@@ -1,0 +1,28 @@
+div {
+    width: 200px;
+    height: 50px;
+    background: black;
+    position :relative;
+    border-radius: 3px;
+    color: white;
+    text-align: center;
+    margin: 50px;
+    font-size: 42px;
+    font-family: monospace;
+}
+
+div:hover {
+  animation: plsMove 1s 0s;
+  color: #00cccc;
+  background-color: #eeeeff;
+}
+
+/* Standard syntax */
+@keyframes plsMove {
+    0%   {transform: rotate(5deg);}
+    20%  {transform: rotate(-5deg);}
+    40%  {transform: rotate(5deg);}
+    60%  {transform: rotate(-5deg);}
+    80%  {transform: rotate(5deg);
+          transform: scaleX(0.9)}
+}

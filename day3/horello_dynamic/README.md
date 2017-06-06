@@ -105,8 +105,7 @@ element for the **current list** and make it appear by removing the
 
     Just like we did with comment threads we're going to use `$(this)` to find the
     right element relative to the current button. This time around we'll use
-    [$.siblings()](https://api.jquery.com/siblings/) to jump
-    to the
+    [$.siblings()](https://api.jquery.com/siblings/).
 
     You can remove CSS classes using
     [jQuery `.removeClass()`](https://api.jquery.com/removeclass/):

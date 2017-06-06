@@ -1,1 +1,9 @@
 /* ADD STYLES FOR PART 6 HERE */
+.right{
+float:right;
+
+}
+
+#lower-section{
+background-color: #e4f0f6;
+}

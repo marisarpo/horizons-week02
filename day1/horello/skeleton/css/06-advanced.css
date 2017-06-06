@@ -1,1 +1,58 @@
 /* ADD STYLES FOR PART 6 HERE */
+.app-store-badge{
+  height: 54px;
+  margin-top: 0.4em;
+  margin-right: 1em
+}
+
+.devices-img{
+  float: right;
+  margin-left: 64px;
+
+}
+
+.background-dark-blue{
+  padding: 80px 20px 80px 20px;
+}
+
+
+.clear{
+  clear: both;
+}
+
+.light-blue-block{
+  background: #e4f0f6;
+  overflow: auto;
+  margin: auto;
+}
+
+.light-blue-layout{
+  margin: auto;
+  max-width: 1200px;
+}
+
+.app-block{
+  overflow: auto;
+  vertical-align: top;
+}
+
+.see-all-apps{
+  border: 1px solid #0079bf;
+  border-radius: 5px;
+  height: 54px;
+  position:absolute;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: inline-block;
+}
+
+
+.left-text{
+  max-width: 585px;
+  margin-left: 175;
+  margin-right: 175;
+
+}
+.white-box{
+  padding: 80px 20px 80px 20px;
+}

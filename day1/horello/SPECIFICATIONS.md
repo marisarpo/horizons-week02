@@ -29,7 +29,7 @@
 
 - Section padding: vertical 80px, horizontal 20px
 - Footer padding: same
-- Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
+- Centered paragraph text margin: vertical 16px, horizontal .166 each side
 - Content full-width image padding: vertical 40px, horizontal 60px
 - Image margin: bottom 2em
 - Button

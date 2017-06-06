@@ -1,1 +1,29 @@
 /* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+  background-color: #e4f0f6;
+}
+
+.float-text-right {
+  float: right;
+}
+
+.button-width-height img{
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em 0 0;
+  height: 64px;
+}
+
+.see-all-apps-style {
+  border: 1px solid;
+  border-radius: .3em;
+  padding: .8em 1em;
+  margin: .6em 0 0;
+  display: inline-block;
+  color: #5e98ba;
+}
+
+.layout-grid-frame {
+  position: relative
+
+}

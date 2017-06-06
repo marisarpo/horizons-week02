@@ -1,9 +1,44 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
+}
+
+.corgi-bg-container img{
+  max-width: 100%;
+}
+
+.corgifornia-banner {
+  float: left;
 }
 
 .title {
     color: purple;
 }
 
+.corg-bark {
+  background-color: #000;
+  border: 1px solid;
+  padding: 5px;
+}
+
+.corgi-con-info {
+  text-align: left;
+}
+
+.corgi-footer {
+
+  text-align: center;
+  clear: left;
+}
+
+
+
+li {
+  display: inline;
+  padding: 15px;
+}
+
+a {
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}

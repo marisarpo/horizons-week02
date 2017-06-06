@@ -1,0 +1,29 @@
+/* Update the CSS rules here to get this page to look like this https://cl.ly/3h0C1X0a0S0u */
+
+/* YOUR CODE HERE */
+
+
+* {
+  background-color: #F3F0BD;
+}
+
+#heading {
+  font-weight: bold;
+  font-size: 32px;
+  border-bottom: solid #D1CFB2;
+}
+
+.first img {
+  float: left;
+/*   padding-right: 10px; */
+  margin: 0 10px 0 0;
+  clear: both
+}
+
+.first{
+  display: inline-block;
+}
+
+/* .second{
+  display: inline-block;
+} */

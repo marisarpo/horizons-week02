@@ -1,9 +1,35 @@
 body {
-    background: url("../images/porcupine.jpg");
+    /*background: url("../images/porcupine.jpg");*/
+
+    background-color: #f7f7f7;
     text-align: center;
 }
 
-.title {
-    color: purple;
+h2{
+  font-size: 1.25em;
+  color: #9a9a9a;
+  vertical-align: baseline;
 }
 
+.title {
+    color: black;
+    font-family: helvetica;
+    font-weight: 200;
+    font-size: 36px;
+}
+
+.logo{
+  padding-top: 160px;
+
+}
+
+input[type=text] {
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-weight: normal;
+  color: #333;
+
+  width: 30em;
+  height: 2.54545em;
+
+}

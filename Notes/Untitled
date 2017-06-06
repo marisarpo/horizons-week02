@@ -1,0 +1,12 @@
+6-6
+
+To center elements in CSS:
+
+'margin: 0 auto' for blocks
+
+'text-align: center' for text
+
+flex-box: intelligently organizes boxes so that they appear on the same line
+
+align-items: center
+justify-content: center

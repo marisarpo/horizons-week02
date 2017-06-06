@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript tutorial zone!!</title>
+  <style>
+  #green {
+    color: green;
+  }
+
+  h1 {
+    color: red;
+    margin: 10px;
+    border: 1px solid black;
+    padding: 20px;
+  }
+
+  a {
+    display: inline-block;
+  }
+
+  .italic {
+    font-style: italic;
+  }
+
+  .overview {
+    color: blue;
+    font-style: normal;
+  }
+
+  h1:hover {
+    background-color: skyblue;
+  }
+
+  .testimonial img {
+    height: 60px;
+    float: left;
+  }
+
+  .testimonial p {
+    margin: 0;
+  }
+
+  .testimonial .author {
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .testimonial {
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+    float: left;
+    border-radius: 5px;
+  }
+
+  h1, .author {
+    color: red;
+  }
+
+  .header {
+    background-color: #FC5A5F;
+    color: white;
+    overflow: auto;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .clear {
+    clear: both;
+  }
+
+  footer {
+    background-color: gray;
+  }
+
+  .parent {
+    position: relative;
+    overflow: auto;
+  }
+
+  .parent nav {
+    background-color: skyblue;
+    position: absolute;
+    height: 100%;
+    width: 25%;
+  }
+
+  .main {
+
+  }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="header-item">
+      <p>Moose's JavaScript Tutorial Emporium</p>
+    </div>
+  </div>
+
+  <div class="parent">
+    <nav>
+      <h2>Course materials</h2>
+      <div class="nav-item">Async</div>
+      <div class="nav-item">Closures</div>
+    </nav>
+    <div class="main">
+
+      <h1>Welcome to Moose's JavaScript Tutorial Zone!</h1>
+      Hello I'm <span class="italic">Moose</span>
+      <a href="http://www.joinhorizons.com">
+        <img src="https://horizons-static.s3.amazonaws.com/moose.jpeg" height="50" alt="">
+      </a>
+      and here you will find my JavaScript tutorials
+
+      <h1 id="green" class="overview italic" style="color: pink">Course overview</h1>
+
+      <div class="testimonial">
+        <img src="https://horizons-static.s3.amazonaws.com/syed.png" alt="">
+        <p class="author">Syed</p>
+        <p>"These tutorials are pretty good!"</p>
+        <div class="clear"></div>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://horizons-static.s3.amazonaws.com/allie.jpeg" alt="">
+        <p class="author">Allie</p>
+        <p>"Moose asked me to write this review"</p>
+        <div class="clear"></div>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://horizons-static.s3.amazonaws.com/allie.jpeg" alt="">
+        <p class="author">Allie</p>
+        <p>"Moose asked me to write this review"</p>
+        <div class="clear"></div>
+      </div>
+
+      <div class="testimonial">
+        <img src="https://horizons-static.s3.amazonaws.com/allie.jpeg" alt="">
+        <p class="author">Allie</p>
+        <p>"Moose asked me to write this review"</p>
+        <div class="clear"></div>
+      </div>
+
+      <div class="clear"></div>
+    </div>
+
+  </div>
+  <footer>&copy; Moose 2017</footer>
+
+</body>
+</html>

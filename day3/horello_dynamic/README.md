@@ -97,6 +97,13 @@ When you're done, your app should look like this:
 
 ![](https://cl.ly/2s1W2M2I1Y0t/Screen%20Recording%202017-01-08%20at%2009.46%20PM.gif)
 
+Note: Make sure all click handlers for `.add-card`, `.add-card-cancel` and `.add-card-save` work for newly created lists. Use event delegates for achieve this goal:
+
+```javascript
+$('.board').on('click', 'TARGET SELECTOR HERE', function() {
+})
+```
+
 ### Steps
 
 1. When any `.add-card` button is clicked, find the `.add-card-form-wrapper`
@@ -144,14 +151,6 @@ element for the **current list** and make it appear by removing the
         ```
       1. Now that the card has been created, hide the `.add-card-form-wrapper` div
          for the **current list** by adding the `collapse` CSS class back to it.
-1. Make sure all click handlers for `.add-card`, `.add-card-cancel` and
-    `.add-card-save` work for newly created lists. Use event delegates for achieve
-    this goal:
-
-    ```javascript
-    $('.board').on('click', 'TARGET SELECTOR HERE', function() {
-    })
-    ```
 
 ## Part 3: Edit card
 

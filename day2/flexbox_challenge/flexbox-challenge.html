@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<div class="board">
+	<div class="top">
+		<div class="d nav">nav
+		</div>
+		<div class="d article">article
+		</div>
+		<div class="d aside">aside
+		</div>
+	</div>
+	<div class="d footer">footer
+	</div>
+</div>
+
+  
+
+<style>
+	.d {
+		border: 5px solid rgb(142,142,142);
+		border-radius: 1em;
+		padding: 5px;
+	}
+	.board {
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		background-color: rgb(142,142,142);
+		height: 600px;
+		color: black;
+		font: sans-serif;
+		font-size: 16px;
+		border: 5px solid rgb(142,142,142);
+
+	}
+
+	.top {
+		flex: 7;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.article {
+		flex: 5;
+		order: -1;
+		background-color: rgb(217,217,120);
+
+	}
+	.nav, .aside {
+		flex: 1;
+		background-color: rgb(197,197,255);
+	}
+
+	.footer {
+		flex: 1;
+		background-color: rgb(255, 236, 175);
+
+	}
+
+	@media(min-width: 450px) {
+		.top {
+			flex: 4;
+			flex-direction: row;
+		}
+
+		.nav, .aside {
+			flex: 1;
+		}
+
+		.article {
+			order: 0;
+			flex: 4;
+		}
+	}
+</style>

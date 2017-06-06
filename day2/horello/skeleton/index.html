@@ -20,6 +20,29 @@
   </header>
 
   <!-- PART 5. Modal -->
+<div id="aID" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="#DominateAllTheHouses">
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="descripInput" class="control-label">Description</label>
+          <textarea class="form-control" rows="4" id="descripInput" placeholder="Card body goes here"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
   <div class="board">
     <div class="list-container">
@@ -29,21 +52,39 @@
         </div>
         <div class="list-cards">
           <div class="card">
-            <div class="card-body">
+            <div class="card-body" data-toggle="modal" data-target="#aID">
               Today we will #DominateAllTheHouses
             </div>
+            <span class="card-more glyphicon glyphicon-align-left"> </span>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button type="button" class="btn btn-secondary add-card" data-target="#addFormCollapse"  aria-expanded="false" aria-controls="addFormCollapse" data-toggle="collapse">Add a card...</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="addFormCollapse">
+            <form class="well form-horizontal HERE2" id="addFormCollapse" action=" " method="post">
+              <div class="form-group HERE">
+                  <input type="text" class="form-control" id="titleInput" placeholder="Card title">
+                  <button type="button" class="btn btn-default BTNHERE" id="button1">Save</button>
+                  <button type="button" class="btn btn-default BTNHERE" id="button2">
+                    <span class="glyphicon glyphicon-remove"> </span>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="add-list">Add a list... </div>
+      </div>
+    </div>
 
   </div>
 

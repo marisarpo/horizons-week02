@@ -1,0 +1,43 @@
+body {
+ margin-top: 40px;
+ background-color: black;
+}
+.shifter {
+ width: 0;
+ height: 0;
+ margin: auto;
+ position: relative;
+ border-style: solid;
+ animation: keys 2s ease-in infinite;
+}
+@keyframes keys {
+ 0%, 15%{
+   transform: rotate(-90deg);
+   border-color: transparent transparent #1eb287 transparent;
+   border-width: 0 0 40px 0;
+   border-radius: 0;
+   width: 40px;
+ }
+ 33.3%, 50% {
+   transform: rotate(0deg);
+   border-color: transparent transparent #178ac7 transparent;
+   border-width: 0 20px 35px 20px;
+   border-radius: 0;
+   width: 0;
+   height: 0;
+ }
+ 66.6%, 85% {
+   transform: rotate(90deg);
+   border-color: #d25e51;
+   border-width:  20px;
+   border-radius: 20px;
+   width: 0;
+ }
+ 100% {
+   transform: rotate(180deg);
+   border-color: #1eb287;
+   border-width: 20px;
+   border-radius: 0;
+   width: 0;
+ }
+}

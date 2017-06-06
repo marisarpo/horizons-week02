@@ -1,9 +1,14 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: rbg(247,247,247);
+    background-origin: padding-box;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-size: auto;
+    
 }
 
 .title {
     color: purple;
 }
-

@@ -2,3 +2,16 @@
 
 section {
 }
+
+@media(min-width: 650px){
+  section{
+    padding: 40px 20px;
+  }
+
+}
+
+@media(min-width: 900px){
+  section{
+    padding: 80px 20px;
+  }
+}

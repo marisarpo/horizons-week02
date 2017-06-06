@@ -33,10 +33,10 @@
 - Content full-width image padding: vertical 40px, horizontal 60px
 - Image margin: bottom 2em
 - Button
- - Padding vertical: 0.6em
- - Padding horizontal: 1.3em
- - Border radius: 0.3em
- - Margin bottom: 0.8em
+  - Padding vertical: 0.6em
+  - Padding horizontal: 1.3em
+  - Border radius: 0.3em
+  - Margin bottom: 0.8em
 - Footer link spacing: 7px
 - Margin between left image and text: 40px
 - Max width: 890px

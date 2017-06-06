@@ -1,1 +1,44 @@
 /* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+  background-color: #e4f0f6;
+}
+
+#download {
+  max-width: 67%;
+  margin: 0 auto;
+}
+
+div#devices-img {
+  float: right;
+  height: 50%;
+}
+
+#download-body {
+  max-width: 50%;
+  align-content: center;
+}
+
+#see-apps-button {
+  color: #5e98ba;
+  border: 1px solid #5e98ba;
+  border-radius: 0.3em;
+  padding: 0.7em 1em;
+  margin-top: 0.4em;
+  display: inline-block;
+}
+
+#see-apps-button:hover {
+  color: #265773;
+  border: 1px solid #265773;
+}
+
+.app-store-link {
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em;
+  padding: 0;
+}
+
+#app-store-buttons a img {
+  height: 54px;
+}

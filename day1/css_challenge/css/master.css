@@ -1,0 +1,94 @@
+#dot {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+	width: 20px;
+	height: 20px;
+	background: black;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+  border: 2px solid black;
+
+  animation: anim 5s ease-in infinite;
+}
+
+#text {
+  font-size:32px;
+  font-weight:bold;
+  animation: text-anim 1s infinite;
+
+  -webkit-user-select: none; /* Chrome/Safari */
+-moz-user-select: none; /* Firefox */
+-ms-user-select: none; /* IE10+ */
+}
+
+
+@keyframes text-anim {
+  0%, 100% { color: red; }
+  10% { color: orange; }
+  20% { color: yellow; }
+  30% { color: lightgreen; }
+  40% { color: lightblue; }
+  50% { color: blue; }
+  60% { color: darkblue; }
+  70% { color: indigo; }
+  80% { color: purple; }
+  90% { color: maroon; }
+}
+
+@keyframes anim {
+  0%, 100% {
+    background: red;
+    top: 20px;
+    left: 20px;
+  }
+
+  10% {
+    background: orange;
+    top: 100px;
+    left: 40px;
+  }
+  20% {
+    background: yellow;
+    top: 45px;
+    left: 140px;
+  }
+  30% {
+    background: lightgreen;
+    top: 2px;
+    left: 20px;
+  }
+  40% {
+    background: lightblue;
+    top: 100px;
+    left: 210px;
+  }
+  50% {
+    background: blue;
+    top: 50px;
+    left: 10px;
+  }
+  60% {
+    background: darkblue;
+    top: 45px;
+    left: 200px;
+  }
+  70% {
+    background: indigo;
+    top: 90px;
+    left: 140px;
+  }
+  80% {
+    background: purple;
+    top: 50px;
+    left: 10px;
+  }
+  90% {
+    background: maroon;
+    top: 200px;
+    left: 140px;
+  }
+
+}

@@ -1,9 +1,61 @@
+
 body {
-    background: url("../images/porcupine.jpg");
+    background: url("https://cdn.lyft.com/brochure/homepage-hero-poster.8ec795d5.jpg");
     text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.title {
-    color: purple;
+nav img{
+  width: 50px;
+  float: left;
+  margin: 2em
 }
 
+nav ul{
+  float: right;
+  list-style-type:none;
+  margin: 2em
+}
+
+nav li{
+  float: left;
+  color: white;
+  font-size: 18px;
+  margin-left: 1em;
+  padding: 0.5em
+}
+
+nav li:hover{
+  color: #fc3ae2
+}
+
+#login{
+  border: 1px solid white;
+  border-radius: 0.3em;
+  padding: 0.5em
+}
+
+.section1{
+  position:relative;
+}
+
+.box{
+  display: inline-block;
+  position: absolute;
+  right: 0px;
+  top:120px;
+  height: 400px;
+  width: 450px;
+  color: purple;
+  background-color: white;
+}
+
+.box h1{
+  text-align: left;
+  margin: 40px 0 0 40px 
+}
+
+.box p{
+  text-align: left;
+  margin-left: 40px
+}

@@ -8,3 +8,8 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.billing-heading {
+	text-align: center;
+	padding-bottom: 10px;
+}

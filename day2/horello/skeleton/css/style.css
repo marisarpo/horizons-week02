@@ -1,10 +1,24 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
+@media(min-width: 650px){
+  body, header {
+    padding: 40px 20px;
+  }
+}
+
+@media(min-width: 900px){
+  body, header {
+    padding: 80px 20px;
+  }
+}
+
 body {
   line-height: 18px;
   height: 100vh;
 
   /** PART 1 CSS here */
+  padding: 0px 20px;
+
 }
 
 header {
@@ -12,6 +26,7 @@ header {
   overflow: hidden;
 
   /** PART 1 CSS here */
+  padding: 0px 20px;
 }
 
 .header-logo {

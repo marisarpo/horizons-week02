@@ -1,9 +1,57 @@
+* { margin: 0;
+ 	padding: 20; 
+ 	box-sizing: border-box;
+}
+
+
+html {
+   margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+}
 body {
-    background: url("../images/porcupine.jpg");
+    /*background: url("../images/porcupine.jpg");*/
     text-align: center;
+    height:100%;
+    width:100%;
 }
 
 .title {
     color: purple;
 }
 
+section {
+	background-color: lightblue;
+	width: 100%;
+	height:100%;
+}
+
+button {
+	color: white;
+	background-color: lightslategrey;
+}
+
+.page1{
+	background-color: white;
+}
+
+.page2{
+	background-color: aquamarine;
+
+}
+
+.page3{
+	background-color: orange;
+
+}
+
+.page4{
+	background-color: mediumpurple;
+
+}
+
+.page5{
+    background: lightblue; 
+    /*background: linear-gradient(to bottom, blue 0, red 100%);*/
+}

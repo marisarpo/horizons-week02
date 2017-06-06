@@ -1,1 +1,54 @@
 /* ADD STYLES FOR PART 6 HERE */
+.home-devices {
+  float: right;
+  padding-right: 200px;
+  padding-left: 75px;
+  top: 60px;
+}
+
+.extra-content {
+  background-color: #E4F0F6;
+  width: 100%;
+  padding: 40px 0px 150px 40px;
+  position: relative;
+}
+
+.move-to-right {
+  padding-left: 350px;
+  padding-top: 50px;
+}
+
+.app-button {
+  padding: 0.6em 1.3em 0.6em 1.3em;
+  position: absolute;
+  border-radius: 0.3em;
+  color: #5e98ba;
+  font-weight: bold;
+  display: inline-block;
+  border: 1px solid;
+  margin-left: 5px;
+  float: left;
+  margin-top: 6px;
+}
+
+.app-button:hover {
+  color: #265773;
+}
+
+#app-store-badge {
+  margin-top: 0.4em;
+  margin-right: 0.1em;
+  float: left;
+  padding-bottom: 5px;
+}
+
+#google-play {
+  padding-top: 5px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#google-play img {
+  height: 42px; 
+}

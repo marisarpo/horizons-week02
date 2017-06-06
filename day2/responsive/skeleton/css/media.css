@@ -1,4 +1,16 @@
 /* Your CSS goes here! */
 
 section {
+  padding: 0 20px;
+}
+@media (min-width: 650px)and (max-width:900px) {
+  secion{
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  secion {
+    padding: 80px 20px;
+  }
 }

@@ -6,12 +6,30 @@
 
     <title>Horizons</title>
     <meta name="description" content="My favorite landing page">
-    <meta name="author" content="horizons">
+    <meta name="author" content="DuckDuckGo">
 
     <link rel="stylesheet" href="css/main.css">
   </head>
 
   <body>
-    <h1 class="title">Hello World</h1>
+    <div id="logo">
+      <img src="./images/logo_homepage.normal.v107.png" alt="Learn More">
+    </div>
+    <div class="search-wrap--home">
+      <form id="search_form_homepage" class="search  search--home  js-search-form" name="x" method="POST" action="/html">
+        <input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" name="q" tabindex="1" value="">
+        <input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
+        <input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
+        <div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
+      </form>
+    </div>
+    <div class="tag-home">
+      <div class="tag-home__wrapper">
+        <div class="tag-home__item">
+          The search engine that doesn't track you.
+          <span class="hide--screen-xs"><a href="/about" class="tag-home__link">Learn More</a>.</span>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

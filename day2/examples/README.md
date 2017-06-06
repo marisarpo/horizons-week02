@@ -2,6 +2,9 @@
 
 - **All videos have the password `horizonites`**
 - Ask for help early and often! 🙋
+- Your solution should match the screenshots labeled **"Goal"**
+
+---
 
 ## Section 1: [Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)
 
@@ -13,6 +16,7 @@ use media queries so that the three elements are laid out responsively as per th
 Check out the [live, working version][live].
 
 Tips:
+
 - Fill in the empty media queries in the CSS section.
 - You can achieve this entirely using CSS and media queries, you don't
   need to modify the HTML.
@@ -22,19 +26,24 @@ Tips:
 
 [live]: http://horizons-school-of-technology.github.io/week02/day2/warmup/solution/index.html
 
+---
+
 ## Section 2: [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 ### [Watch me: Growing & Shrinking](https://vimeo.com/208556243)
 
 1. Display the items in three evenly sized columns, like this:
 
+    [**Goal**][flex-sizing]
+
     Codepen: [http://codepen.io/prath/pen/aJrGgx](http://codepen.io/prath/pen/aJrGgx)
 
-    ![flex-sizing]
 
 1. Change your code in the above codepen for the `.item1` CSS class to make it 5 times as large as `item2`. It should look like:
 
-    ![flex-ratio]
+    [**Goal**][flex-ratio]
+
+---
 
 ### [Watch me: Centering](https://vimeo.com/208572816)
 
@@ -42,21 +51,28 @@ Center the three items (vertically and horizontally) inside the container.
 
 Codepen: [http://codepen.io/lockehart/pen/XKmKMP](http://codepen.io/lockehart/pen/XKmKMP)
 
-![centering]
+[**Goal**][centering]
+
+---
 
 ### [Watch me: Flexbox inside Flexbox](https://vimeo.com/208581685)
 
+Consult this [reference on `justify-content`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/#article-header-id-6)
+for these exercises.
+
 1. Using the below codepen, recreate the layout from this image using Flexbox:
 
-	Codepen: [http://codepen.io/prath/pen/Vbabgz](http://codepen.io/prath/pen/Vbabgz)
+    Codepen: [http://codepen.io/prath/pen/Vbabgz](http://codepen.io/prath/pen/Vbabgz)
 
-	![flexInFlex_easy]
+    [**Goal**][flexInFlex_easy]
 
 1. Using the below codepen, recreate the layout from this image using FlexBox:
 
-	Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pen/EyVyRM)
+    Codepen: [http://codepen.io/lockehart/pen/EyVyRM](http://codepen.io/lockehart/pen/EyVyRM)
 
-    ![flex]
+    [**Goal**][flex]
+
+---
 
 ## Section 3: [Bootstrap](http://getbootstrap.com/css/)
 
@@ -66,7 +82,9 @@ The three boxes should be on the same line. Change __ONLY__ the `HTML`.
 
 Codepen: [http://codepen.io/prath/pen/qrGKyN?editors=1010](http://codepen.io/prath/pen/qrGKyN?editors=1010)
 
-![bootstrap_grid_easy]
+[**Goal**][bootstrap_grid_easy]
+
+---
 
 ### [Watch me: Responsive Grid](https://vimeo.com/208754060)
 
@@ -76,17 +94,11 @@ Codepen: [http://codepen.io/prath/pen/NpVzLL?editors=1010](http://codepen.io/pra
 
 #### Goals:
 
-##### Large Screens
+1. [Large Screens][bootstrap-resp-lg]
+1. [Medium Screens][bootstrap-resp-md]
+1. [Small Screens][bootstrap-resp-sm]
 
-![bootstrap-resp-lg]
-
-##### Medium Screens
-
-![bootstrap-resp-md]
-
-##### Small Screens
-
-![bootstrap-resp-sm]
+---
 
 ### [Watch me: Icons & Buttons](https://vimeo.com/208866726)
 
@@ -94,16 +106,14 @@ Go to the __Forms__ section on the Bootstrap website ([http://getbootstrap.com/c
 
 Work in the `/week02/day2/Examples/bootstrap_form/index.html` file.
 
-![bootstrap_final]
+[**Goal**][bootstrap_final]
 
 __Note:__ Make sure that your _Date of Birth_ field is a date picker, and that your state picker is a dropdown.
 
-<center>
-  <div style="display: block">
-    <div style="width: 278px; display: inline-block;"><img src="../images/bootstrap_form_state.png"/></div>
-    <div style="width: 250px; display: inline-block;"><img src="../images/bootstrap_form_date.png"/></div>
-  </div>
-</center>
+- [Goal: state picker detail](../images/bootstrap_form_state.png)
+- [Goal: date picker detail](../images/bootstrap_form_date.png)
+
+---
 
 ### [Watch me: Dropdown & Navbar](https://vimeo.com/209247462)
 
@@ -111,8 +121,9 @@ Go to [https://getbootstrap.com/components/#navbar](https://getbootstrap.com/com
 
 Codepen: [http://codepen.io/prath/pen/RpXeXK](http://codepen.io/prath/pen/RpXeXK)
 
-![bootstrap_navbar]
+[**Goal**][bootstrap_navbar]
 
+---
 
 ### [Watch me: Modals](https://vimeo.com/212297915)
 
@@ -121,10 +132,12 @@ Go to [http://getbootstrap.com/javascript/#modals](http://getbootstrap.com/javas
 Work in the `/week02/day2/Examples/bootstrap_modal/index.html` file.
 
 1. Create Login button in the center of the screen
-    ![bootstrap_modal_button]
+
+    [**Goal**][bootstrap_modal_button]
 
 1. Create Login modal once button pressed
-    ![bootstrap_modal]
+
+    [**Goal**][bootstrap_modal]
 
 [centering]: ../images/centering.png
 [flex]: ../images/flex.png

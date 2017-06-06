@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Amanda's first web page</title>
+    <meta name="author" content="Amanda">
+	<meta name="description" content="First HTML doc">
+	<!-- CSS style elements: -->
+	<style>
+		h1 { 
+			color: red; 
+			margin: 10;
+			border: 1px solid black;
+			padding: 5px;
+			height: 45px;
+		}
+		h1:hover {
+			background-color = skyblue;
+		}
+		.overview {
+			color: blue;
+			font-style : normal;
+			font: "Helvetica";
+		}
+		.italic {
+			font-style: italic;
+		}
+		/* uncommment this to put red border around all elements
+		* {
+			border: 1px solid red !important;
+		}*/
+		/* changing a height will not change its height bc a type of elements inline
+			unless put the display: inline-block; line */
+		a {
+			height: 100px;
+			display: inline-block;
+		}
+		/* refernce type img within testimonial */
+		.testimonial img {
+			height: 75px;
+		}
+		/* change elements type p and class author inside testimonal */
+		.testimonial p.author {
+			font-style: italic;		
+			font-weight: bold;
+			position: center;	
+		}
+		h1, .author {
+			color: #00a8a8;
+		}
+		.header {
+			background-color: #00a8a8;
+			color: white;
+			margin: 0;
+			padding: 0;
+			overflow: auto;
+			font-weight: bold;
+			text-align: left;
+			font-size: 20px;
+		}
+		.testimonial p {
+			margin: 0;
+		}
+		.testimonial img {
+			float: left;
+			padding: 10px;
+		}
+		.testimonial {
+			border: 1px solid black;
+			padding: 10px;
+			margin: 5px;
+			float: left;
+			border-radius: 5px;
+		}
+		.clear {
+			clear: both;
+		}
+		footer {
+			background-color: black;
+			color: white;
+		}
+		.parent {
+			position: relative;
+			overflow: auto;
+		}
+		div {
+			display: block;
+		}
+		.parent nav {
+			background-color: #ccffa3;
+			position: absolute;
+			height: 100%;
+			width: 25%;
+		}
+		.main {
+			margin: 26%;
+		}
+		.header-item {
+			border: 1px solid black;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		.header-item * {
+			float: left;
+			display: inline-block;
+			height: 20px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			vertical-align: midle;
+		}
+		.header-item-right {
+			float: right;
+		}
+		* {
+			box-sizing: border-box;
+		}
+	</style>
+	<!-- put java script in html by putting script tag: -->
+	<script>
+	console.log("I am writing JS again!");
+	</script>
+
+</head>
+<body>
+	<div class="header">
+		<div class="header-item">
+			<p>
+	      	Amanda's JavaScript Tutorial Emporium
+	    	</p>
+	  	</div>
+	  	<div class="header-item">
+	  		<p>Search</p>
+	  		<img src="https://horizons-static.s3.amazonaws.com/search.png" alt="" height=15px/>
+  			<input type="text" placeholder="Search" />
+  		</div>
+
+  		<div class="header-item header-item-right">
+	  		<p>Login</p>
+  		</div>
+
+	</div>
+
+	<div class="parent">
+		<nav>
+			<h2>Course Materials</h2>
+			<div class="nav-item">Async</div>
+			<div class="nav-item">Closures</div>
+		</nav>
+	
+		<div class="main">
+		 	<h1>My first HTML webpage</h1>
+		 	Hello, I'm <span class="italic">Amanda</span>
+		 	<a href="http://www.joinhorizons.com">
+		 		<img src="https://vetstreet.brightspotcdn.com/dims4/default/d742db0/2147483647/thumbnail/645x380/quality/90/?url=https%3A%2F%2Fvetstreet-brightspot.s3.amazonaws.com%2F98%2Fd98250a0d311e0a2380050568d634f%2Ffile%2FGolden-Retriever-3-645mk062411.jpg" height=75px alt="">
+		 	</a>
+		 	and here you will find my JS stuff.
+		 	<h1 class="overview">Course overview</h1>
+		 	<h1 class="overview italic">Course overview in italics</h1>
+
+		 	<div class="testimonial">
+		 		<img src="https://s-media-cache-ak0.pinimg.com/736x/f5/f7/f2/f5f7f2b5504b10314f5b066084617a5f.jpg" alt="">
+		 		<p class="author">Puppy</p>
+		 		<p>"These tutorials are pretty good!"</p> 
+		 		<div class="clear"></div>
+			</div>
+
+		 	<div class="testimonial">
+		 		<img src="https://animalso.com/wp-content/uploads/2017/01/golden-retriever-puppies_5.jpg" alt="">
+		 		<p class="author">Puppy2</p>
+		 		<p>"These tutorials are alright."</p> 
+		 		<div class="clear"></div>
+		 	</div>
+
+		 	<div class="clear"></div>
+		</div>
+	</div>
+
+ 	<footer>&copy; Amanda 2017 </footer>
+</body>
+</html>

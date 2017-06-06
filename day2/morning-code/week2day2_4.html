@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<div class="myBox">
+  <div class="myItem item1"><div class="box"></div></div>
+  <div class="myItem item2"><div class="box"></div></div>
+  <div class="myItem item3"><div class="box"></div></div>
+</div>
+<style> 
+	body {
+	  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	}
+
+	.myBox {
+	  height: 300px;
+	  background-color: #FCF8E3;
+	  border: 1px solid #EEDC7D;
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between;
+	}
+
+	.box {
+	  background-color: red;
+	  width: 50px;
+	  height: 100%;
+	}
+
+	.myItem {
+	  margin: 5px;
+	  width: 20%;
+	  height: 50px;
+	  padding: 6px;
+	  -webkit-border-radius: 3px;
+	  background-color: #3A87AD;
+	  color: white;
+	  display: flex;
+	}
+
+	.item1 {
+	  justify-content: flex-start;
+	}
+	.item2 {
+	  justify-content: center;
+	}
+	.item3 {
+	  justify-content: flex-end;
+	}
+</style>

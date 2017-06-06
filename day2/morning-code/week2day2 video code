@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<!-- week 2 day 2 video code responses -->
+
+
+<p>The challenge: use media queries to change how these three elements are
+  laid out as the screen size changes
+</p>
+<ul>
+  <li>On large displays (>= 900px width), they should all be laid out in a
+    row.</li>
+  <li>On medium displays (>= 650px width), two should be on the first row,
+    one below on its own line.</li>
+  <li>On small displays (< 650px width), the three should stack.</li>
+</ul>
+<div class="elem first">First</div>
+<div class="elem second">Second</div>
+<div class="elem third">Third</div>
+
+<style>
+	body {
+	  text-align: center;
+	}
+
+	.elem {
+	  padding: 15px 50px;
+	  margin: 10px;
+	  border: 2px solid black;
+	  text-align: center;
+	  background-color: #ff6666;
+	}
+
+	@media (min-width: 650px) {
+	  .first {
+	    display: inline-block;
+	  }
+	  .second {
+	    display: inline-block;
+	  }
+	}
+
+	@media (min-width: 900px) {
+	  .third {
+	    display: inline-block;
+	  }
+	}
+</style>

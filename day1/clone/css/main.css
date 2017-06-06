@@ -1,9 +1,152 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background-color: #f7f7f7;
     text-align: center;
+    font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+    color: #333;
+}
+
+.top {
+  height: 515px;
+}
+
+.top p {
+  color:grey;
+  font-size: 1.1em;
+}
+
+.top a {
+  color: #218EDE;
+  text-decoration: none;
+}
+.top a:hover {
+  text-decoration: underline;
+}
+.one {
+  background-color: #58b792;
+  background-image: url("https://duckduckgo.com/assets/onboarding/bathroomguy/1-monster-b.png");
+}
+.two {
+  background-color: #f5a339;
+  background-image: url("https://duckduckgo.com/assets/onboarding/bathroomguy/2-ghost-b.png");
+}
+.three {
+  background-color: #5f63bd;
+  background-image: url("https://duckduckgo.com/assets/onboarding/bathroomguy/3-bathtub-b.png");
+
+}
+
+.footer {
+  background: #87cef5;
+  background-image: url("https://duckduckgo.com/assets/onboarding/bathroomguy/4-alpinist-b.png");
+}
+.content {
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: 50%;
+  display: block;
+  padding: 125px;
+
+}
+
+.content .text {
+  color: #FFF;
+  margin-top: -60px;
+  display: inline-block;
+}
+
+.content .text h1 {
+  font-size: 2.5em;
+  width: 80%;
+  margin: auto;
+
+}
+
+.content .text p {
+  font-size: 1.2em;
+  width: 60%;
+  margin: auto;
+  padding-top: 2%;
+}
+
+.button {
+  background-color: rgba(50,50,50,0.5); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top:25px;
+  font-weight: 500;
+}
+
+.button:hover {
+  background-color: rgba(50,50,50,0.8)
 }
 
 .title {
     color: purple;
 }
 
+#logo {
+  width: 250px;
+}
+
+
+#search_bar {
+  width:469px;
+  height:50px ;
+  font-size: 1.15em;
+  position: relative;
+  margin-right: 60px;
+}
+#icon {
+  background-color: white;
+  color: grey;
+  height: 24px;
+  position: absolute;
+  padding: 15px 15px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  left:835px;
+}
+
+#icon:hover {
+  background-color: green;
+  color: white;
+}
+
+header {
+  margin-top: 200px;
+
+}
+
+.scroll_icon {
+  width: 7%;
+  position: absolute;
+  top: 600px;
+  left: 600px;
+  z-index: 1;
+
+}
+
+.arrow_down {
+  margin-top: 145px;
+  position: absolute;
+  left: 631px;
+  z-index: 3;
+  color: black;
+}
+
+
+.content {
+  height: 350px;
+  width: 1130px;
+
+}
+
+.section1 {
+  background-image: url("https://duckduckgo.com/assets/onboarding/bathroomguy/1-monster-b.png");
+  background-color: blue;
+}

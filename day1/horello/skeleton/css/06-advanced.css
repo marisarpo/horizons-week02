@@ -1,1 +1,33 @@
-/* ADD STYLES FOR PART 6 HERE */
+.app {
+  float: right;
+  display: inline-block;
+  margin-right: 10%
+
+  }/* ADD STYLES FOR PART 6 HERE */
+
+.apptext {
+  width: 66%;
+  padding-left: 25%;
+  padding-top: 5% ;
+  padding-right: 5%;
+}
+
+.seeall img{
+  height: 40px;
+vertical-align: baseline;
+display: inline-block;
+}
+
+.seeall {
+  color: #0079bf;
+  border: solid 1px #0079bf;
+  padding: 10px;
+  border-radius: 5px;
+  height: 40px;
+  margin: 5px;
+}
+
+.buttons {
+  height: 40px;
+  margin: 5px;
+}

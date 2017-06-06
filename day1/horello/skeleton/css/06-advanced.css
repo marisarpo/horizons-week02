@@ -1,1 +1,23 @@
 /* ADD STYLES FOR PART 6 HERE */
+.light-blue{
+    background-color: #e4f0f6;
+}
+
+#ipads{
+    float: right;
+    margin: 0;
+}
+
+#icons{
+    display: inline-block;
+    align-items: center;
+}
+
+#mybutton{
+    color: #0079bf;
+    border: 1px;
+    border-radius: 5px;
+    padding: 11px;
+    border-style: solid;
+}
+

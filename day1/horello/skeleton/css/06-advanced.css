@@ -1,1 +1,43 @@
+.bottom {
+  background-color: #e4f0f6;
+}
+
+.bottom p {
+  font-size: 20px;
+  margin: 0px 70px 25px 70px;
+
+}
+
+.bottom a img{
+  height: 55px;
+  padding-right: 15px;
+}
+
+
+
+.button-2 {
+  padding: 0.6em 1.3em .6em 1.3em;
+  border-radius: 0.3em;
+  margin-bottom: 0.8em;
+  border: 1px;
+  border-style: solid;
+  color: #5e98bb;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.button-2:hover{
+  -webkit-animation: bounce 1s;
+  animation: pulse 1s;
+
+}
+
 /* ADD STYLES FOR PART 6 HERE */
+.img-float-right {
+  float: right;
+}
+
+footer{
+  font-size: 20px;
+}

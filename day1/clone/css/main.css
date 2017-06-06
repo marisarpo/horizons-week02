@@ -1,9 +1,95 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background: #0d9ed3;
+}
+
+hr {
+  background-color: black;
 }
 
 .title {
-    color: purple;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 80px;
+    text-align: center;
 }
 
+.title-2 {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+.scroll-img {
+  height: 50px;
+  margin-left: 590px;
+  transition: transform 1s;
+
+}
+
+.scroll-img:hover {
+  transform: scale(1.2)
+}
+
+.center {
+    margin-left: 390px;
+}
+
+.logo {
+  height: 100px;
+}
+
+.skew {
+  transition: transform 1s;
+}
+.skew:hover {
+  transform: rotate(360deg);
+}
+
+div.jhilani {
+  background-image: url('../images/nohand.png');
+  height: 450px;
+  width: 250px;
+}
+
+
+/*transformations below*/
+
+
+.container {
+  margin: 100px;
+}
+
+.circle, .circle0, .circle1, .circle2, .circle3, .circle4, .circle5 {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  margin: 10px;
+}
+.container:hover .circle, .container:hover .circle0, .container:hover .circle1, .container:hover .circle2, .container:hover .circle3, .container:hover .circle4, .container:hover .circle5 {
+  transform: translateX(800px);
+}
+
+.circle0 {
+  transition: all 2.5s linear;
+}
+
+.circle1 {
+  transition: all 2.5s ease;
+}
+
+.circle2 {
+  transition: all 2.5s ease-in;
+}
+
+.circle3 {
+  transition: all 2.5s ease-out;
+}
+
+.circle4 {
+  transition: all 2.5s ease-in-out;
+}
+
+.circle5 {
+  transition: all 2.5s cubic-bezier(0, 1, 0.98, 0);
+}

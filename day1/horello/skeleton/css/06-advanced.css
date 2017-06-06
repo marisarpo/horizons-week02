@@ -1,1 +1,35 @@
-/* ADD STYLES FOR PART 6 HERE */
+.apps-img {
+    margin-left: 60px;
+    margin-right: 60px;
+    float: right;
+    position: relative;
+    top: -30px;
+}
+
+.background-lightblue{
+    background-color: #e4f0f6;
+    overflow: auto;
+    position: relative;
+}
+
+.fix-this{
+    width: 890px;
+    margin-left: 300px;
+}
+
+.app-buttons {
+    height: 54px;
+    margin: 0.4em 1em 0.4em 0em;
+    vertical-align: middle;
+}
+
+.See-all-button {
+    border: 0.1em solid #0079bf;
+    border-radius: 5px;
+    color: #0079bf;
+    font-weight: bold;
+    padding: .6em 1.3em .6em 1.3em;
+    display: inline-block;
+    margin: 0.4em 1em 0.4em 0em;
+    vertical-align: middle;
+}

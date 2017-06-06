@@ -1,8 +1,18 @@
 .img-title {
+    margin: 0px 0px .8em 0px;
 }
 
 .button {
+    padding: .6em 1.3em .6em 1.3em;
+    color: #fff;
+    border: .3em;
+    border-radius: 5px;
+    background: linear-gradient(#61bd4f, #5aac44);
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 0 #3f6f21;
 }
 
 .button:hover {
+    background: linear-gradient(#5aac44, #519839);
 }

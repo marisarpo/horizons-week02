@@ -1,9 +1,70 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  background: url("../images/dash");
+  text-align: center;
+  font-family: Arial;
+}
+
+.image1 {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
 }
 
 .title {
-    color: purple;
+    display: inline-block;
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
+
+.left {
+    float: left;
+    margin-left: 50px;
+}
+
+.right {
+    float: right;
+    margin-right: 75px;
+}
+
+.projects {
+    float: left;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.see-all {
+    float: left;
+    margin-left: 800px;
+    margin-top: 10px;
+}
+
+.sections *{
+    margin: 5px;    
+}
+
+.sections {
+    float: right;
+    text-align: left;
+    margin-right: 50px;
+}
+
+.sections *:hover,.left:hover,.right:hover,.see-all:hover {
+    color: green;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.image2 {
+    float: left;
+    max-width: 35%;
+    margin-left: 50px;
+}
+
+.sketch-workshop {
+    /*float: right;*/
+    text-align: left;
+    margin-top: 50px;
+}

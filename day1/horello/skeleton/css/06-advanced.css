@@ -1,1 +1,59 @@
 /* ADD STYLES FOR PART 6 HERE */
+.home-img {
+  max-width: initial;
+  position: absolut
+}
+
+.apple-section {
+  background-color: #e4f0f6;
+  padding: 80px 20px 80px 20px;
+  overflow: hidden;
+}
+
+.apple-section p {
+  display: block;
+  -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+.layout-twothirds-left {
+  max-width: 585px;
+}
+
+.layout-grid-frame {
+  display: block;
+  position: relative;
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+.layout-callout-right {
+  position: absolute;
+    top: -60px;
+    left: 640px;
+}
+
+.app-store-link {
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em 0 0;
+  padding: 0;
+}
+
+.app-store-link img {
+  height: 54px;
+}
+
+.outline-link {
+  border: 1px solid;
+    border-radius: 0.3em;
+    padding: .7em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+}
+
+a {
+    color: #5e98ba;
+}

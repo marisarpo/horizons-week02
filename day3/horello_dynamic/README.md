@@ -168,22 +168,27 @@ When you're done, your app should look like this:
 1. Create a global variable called `cardBeingEdited` and
   set it to `null`. We're going to use this to remember
   which card the user clicked on in order to edit it.
+  
 1. Add a delegated event handler to `.board` that
   listens to clicks on `.card` elements. This event
   handler should:
 
-  1. Save the currently clicked card (i.e. `this`) in
-    the global variable `cardBeingEdited`.
-  1. Open the card editing modal (i.e. dialog) by finding
-    `#card-edit` via jQuery and calling `.modal()` on it.
-  1. Make sure the text box in the dialog contains the
-    text of the current card being edited. Update the value
-    of `#card-edit-body` using `.val()`, set it to
-    the text of the card that was clicked on.
-    You can get the extract the text contents of
-    the card by finding the `.card-body` div inside
-    the current `.card`. You will need `$(this).find()`
-    and `.text()`.
+      1. Save the currently clicked card (i.e. `this`) in
+        the global variable `cardBeingEdited`.
+        
+      1. Open the card editing modal (i.e. dialog) by finding
+        `#card-edit` via jQuery and calling `.modal()` on it.
+        
+      1. Make sure the text box in the dialog contains the
+        text of the current card being edited. Update the value
+        of `#card-edit-body` using `.val()`, set it to
+        the text of the card that was clicked on.
+        You can get the extract the text contents of
+        the card by finding the `.card-body` div inside
+        the current `.card`. You will need `$(this).find()`
+        and `.text()`.
+
+1. Make the save button in the modal change the text on the `cardBeingEdited` and dismiss the modal.
 
 
 ## Part 4: Reorder cards using drag and drop

@@ -1,8 +1,48 @@
+body {
+    /** Your CSS goes here! **/
+  font-family: "Helvetica Neue", Arial, sans-serif
+  font-weight: 400;
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+h2 {
+    /** and here (you get the point) **/
+    font-size: 36px;
+}
+
+section {
+  text-align: center;
+  padding-top: 30px;
+}
+
+.center-paragraph {
+  margin: 1em 16%;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .img-title {
+  margin-bottom: 0.8em;
 }
 
 .button {
+  padding: 0.6em 1.3em;
+  border;
+  border-radius: 0.3em;
+  font-weight: bold;
+  background-color:#3f6f21;
+  color: #fff;
+  display: inline-block;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  box-shadow: 0 2px 0 #3f6f21;
+
 }
 
 .button:hover {
+  background: linear-gradient(to bottom, #5aac44 0, #61bd4f 100%);
+  color: #fff;
+
 }

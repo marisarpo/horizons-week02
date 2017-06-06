@@ -16,6 +16,7 @@ section {
     overflow: hidden;
 }
 
+
 .section-wrapper {
     max-width: 540px;
     margin: 0 auto;
@@ -161,4 +162,18 @@ h2 {
 
 .button {
     margin-bottom: 20px;
+}
+section{padding: 0px 20px;}
+
+@media (min-width:650px) {
+  section{
+    padding: 40px 20px ;
+
+  }
+}
+@media (min-width:900px) {
+  section{
+    padding: 80px 20px ;
+
+  }
 }

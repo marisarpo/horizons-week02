@@ -1,1 +1,37 @@
 /* ADD STYLES FOR PART 6 HERE */
+.app-store{
+  background-color: #e4f0f6;
+  max-width: 100%;
+}
+
+.app-store img{
+  float:left;
+  height: 54px;
+  margin-right:10px;
+}
+
+.app-store #see-all{
+  color: #0079bf;
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  /*margin: .4em 0 0;*/
+  display: inline-block;
+  float: left;
+}
+
+.app-store p{
+  display: block;
+  padding: 0 100px 0 100px;
+}
+
+.app-store #devices{
+  position: absolute;
+  bottom: 10px;
+  left: 1000px;
+  width: 461px;
+  height: 248px;
+}
+
+.app-store p{
+}

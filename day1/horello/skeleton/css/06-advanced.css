@@ -1,1 +1,28 @@
 /* ADD STYLES FOR PART 6 HERE */
+#home-device{
+  float:right;
+  width: 350px;
+  margin-left: 3em
+}
+
+#bottom{
+  padding-left: 4em;
+  background-color: lightblue;
+}
+
+
+.footerIcon{
+  vertical-align: middle;
+  margin: 10px 30px 10px 0;
+  display: inline-block;
+}
+
+.footerIcon img{
+  height:40px
+}
+
+#link {
+  border: 1px solid blue;
+  border-radius: 0.3em;
+  padding:0.5em
+}

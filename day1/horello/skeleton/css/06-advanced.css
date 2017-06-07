@@ -1,1 +1,39 @@
-/* ADD STYLES FOR PART 6 HERE */
+.one img {
+	position: absolute;
+    top: 40.1px;
+    left: 60.18%;
+}
+
+.section-light-blue {
+	position: relative;
+	background: #e4f0f6;
+	height: 200px;
+}
+
+.two {
+	float: left;
+	width: 570px;
+	margin-left: 26.3%;
+}
+
+#three {
+	position: relative;
+	top: 6px;
+	border: 1px #5e98ba solid;
+	border-radius: 0.3em; 
+	color: #5e98ba;
+	padding: .7em 1em;
+    box-sizing: border-box;
+}
+
+.buttons * {
+	margin-right: 10.2px;
+	margin-top: 8px;
+    height: 54px;
+    vertical-align: middle;
+}
+
+#three:hover {
+	border-color: #265773;
+	color: #265773;
+}

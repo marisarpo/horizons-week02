@@ -1,9 +1,190 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: white;
     text-align: center;
+    font-family: sans-serif;
+
 }
 
 .title {
     color: purple;
 }
+#nav {
+  background: #0D82C5;
+  height: 100px;
+  width: 100%;
+}
+#nav img {
+  width:170px;
+  float:left;
+  padding: 25px;
+}
 
+.log-in {
+  padding: 0.6em 1.3em;
+  border-radius: 0.3em;
+  background: #005b8f;
+  color: #fff;
+  display: inline-block;
+  box-shadow: 0 2px 0 #3f6f21;
+  position: absolute;
+  margin: 15px;
+  right: 150px;
+
+
+}
+.button {
+    padding: 0.6em 1.3em;
+    border-radius: 0.3em;
+    background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 0 #3f6f21;
+    margin: 30px;
+}
+.button-nav {
+    padding: 0.6em 1.3em;
+    border-radius: 0.3em;
+    background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+    color: #fff;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 0 #3f6f21;
+    margin: 15px;
+    position: absolute;
+    right: 30px;
+}
+
+
+.landing-container {
+  color: white;
+}
+.nav-container {
+  height: 100px;
+  width: 100%;
+}
+
+.home-container {
+    background: url(https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/d84b3c6b1f07d701acb1a153002f7e6a/usecases-bg.jpg) center left / cover no-repeat #0079bf;
+    height: 500px;
+}
+#home {
+  width: 750px;
+  margin: 0 auto;
+  color: white;
+  padding: 50px;
+}
+#home-header {
+  font-size: 42px;
+  font-weight: bold;
+  padding: 55px 25px 25px 25px;
+}
+#home-text {
+  font-size: 24px;
+  padding: 10px;
+  font-weight: lighter;
+}
+
+#login-text {
+  padding: 10px;
+  font-weight: lighter;
+  font-size: 20px;
+}
+#login-text a {
+  margin: 0 auto;
+  color: #ddedf7;
+}
+#login-text a:hover {
+  color: #fff;
+}
+.board-container {
+  background-color: #315989;
+  height: 1015px;
+  position: relative;
+}
+.board-header {
+  padding: 100px 0 60px 0;
+  width: 750px;
+  font-size: 24px;
+  font-weight: lighter;
+  margin: 0 auto;
+}
+
+.board-img img {
+  margin: 0 auto;
+}
+.board-overlay {
+  height: 270px;
+  opacity: 0.9;
+  background-color: #26446f;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: block;
+  font-size: 24px;
+  font-weight: lighter;
+}
+#ot {
+  width: 750px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+.info-container {
+  height: 1115px;
+  background: linear-gradient(to bottom, #ffab4a 0, #f06e47 100%);
+}
+.info-header {
+  padding: 150px 0 30px 0;
+  width: 750px;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+.info-text {
+  margin: 0 auto;
+  width: 750px;
+  font-size: 26px;
+  font-weight: lighter;
+  padding-bottom: 30px;
+}
+
+.work-container {
+  height: 600px;
+  background-color: #eb5a46;
+  position: relative;
+}
+.work-header {
+  padding: 150px 0 30px 170px;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+}
+.work-text {
+  width: 560px;
+  font-size: 24px;
+  font-weight: lighter;
+  padding-left: 170px;
+  padding-bottom: 30px;
+  text-align: left;
+}
+.work-button {
+  padding: 0.6em 1.3em;
+  border-radius: 0.3em;
+  background: #df7c6f;
+  color: #fff;
+  box-shadow: 0 2px 0 #3f6f21;
+  margin: 30px;
+  left: 170px;
+  margin: 20px;
+  margin-left: 170px;
+  width: 170px;
+  float: left;
+}
+.work-img img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 650px;
+  border-radius: 3px;
+}

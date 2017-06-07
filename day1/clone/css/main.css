@@ -1,9 +1,68 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+body{
+  margin : 0 auto;
 }
 
-.title {
-    color: purple;
+.section1{
+  background-color: #f7f7f7;
 }
 
+.section1-top{
+  display: block;
+  text-align: right;
+  margin: 0 10px 0 0;
+}
+
+.section1-top img{
+  height : 33px;
+  margin: 30px auto 40px auto;
+}
+
+.section1-center{
+  position: relative;
+  text-align: center;
+  display: block;
+  margin : 0 auto;
+}
+
+.duck-logo{
+  display: block;
+  text-align: center;
+  margin: 0px 5px 0 0px;
+}
+
+.section1-center img{
+  margin-top: 40px;
+  width : 250px;
+}
+
+#search-txt{
+ font-size:14pt;
+ height:37px;
+ width:450px;
+}
+
+.section1-search-bar img{
+  width : 30px;
+  vertical-align: text-bottom;
+}
+
+.section1-subtext{
+  margin : 20px;
+  font-family : "Arial", arial, sans-serif;
+  font-size: 18px;
+  color : gray;
+}
+
+.section1-bottom{
+
+}
+
+
+
+.section2{
+
+}
+
+.clear{
+  clear.both;
+}

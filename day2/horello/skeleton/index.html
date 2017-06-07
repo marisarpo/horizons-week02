@@ -31,19 +31,35 @@
           <div class="card">
             <div class="card-body">
               Today we will #DominateAllTheHouses
+              <span class="glyphicon glyphicon-align-left card-more"></span>
             </div>
           </div>
         </div>
         <div class="list-footer">
-          <!-- PART 2. Add card button -->
 
+          <button class="btn add-card" data-toggle="collapse" data-target="#collapseTest">Add a card</button>
+          <div class="collapse" id="collapseTest">
+            <div class="well well-sm">
+              <div class = "form-group add-card-form">
+                <input type="text" class="form-control" placeholder="Card title">
+                <div class="add-card-form-buttons">
+                  <button class="btn btn-default"> Save </button>
+                  <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-remove"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- PART 4. Collapse -->
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div class = "add-list-container">
+      <div class="btn btn-primary add-list">Add a list...</div>
+    </div>
 
   </div>
 

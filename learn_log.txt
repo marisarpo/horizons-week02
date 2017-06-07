@@ -1,0 +1,43 @@
+/// Learn Log
+---------------------------------------------
+
+JS interval stuff
+setTimeout
+setInterval
+clearInterval
+
+Always back up your `this`
+
+
+/// Media query
+
+@media (condition) {
+	CSS selector {
+		property
+	}
+}
+
+/// Flexbox
+
+container {
+	dispaly: flex;
+}
+
+.item {
+	flex: number;
+	// flex-grow: 1;
+	// flex-shrink: 1;
+	// flex-basis: 0;
+	// can be thought of as some sort of ratio
+}
+
+/// Flex Properties
+
+justify-content: flex-start/flex-end/center/space-between/space-around // align along main axis;
+align-items: flex-start/flex-end/center/stretch/baseline // align along cross axis;
+flex-direction: *default*/column;
+
+/// USING BOOTSTRAP
+some default classes
+container/container-fluid
+col-SIZE-NUMBER (SIZE xs/sm/md/lg)(number out of 12)

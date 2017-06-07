@@ -1,0 +1,27 @@
+.section2 {
+	height: 710px;
+	background: #58b792;
+	text-align: center;
+  position: relative;
+  vertical-align: baseline;
+}
+
+.section2-text {
+	width: 80%;
+	max-width: 700px;
+	margin: 0 auto;
+	color: #fff;
+	text-shadow: 0 0 0 0.1;
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+}
+
+.section2-text h1 {
+	display: inline-block;
+
+}
+
+.section2-img {
+	vertical-align: baseline;
+}

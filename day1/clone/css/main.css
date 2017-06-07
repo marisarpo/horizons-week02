@@ -1,9 +1,46 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    margin: 0;
 }
 
 .title {
     color: purple;
 }
+
+.section1 {
+	background-color: #f7f7f7;
+}
+
+.section1-top {
+	margin: 0 10px 0 0;
+}
+
+.section1-top img {
+	float: right;
+	height: 28px;
+	margin: 20px 5px 0 0;
+}
+
+.section1-centre {
+	text-align: center;
+}
+
+.section1-centre img {
+	width: 250px;
+}
+
+#duckduckgo-logo {
+
+}
+
+#
+
+.section1-bottom {
+
+}
+
+.clear {
+  clear: both;
+}
+
+
 

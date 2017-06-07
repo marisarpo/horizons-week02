@@ -23,3 +23,8 @@ footer li {
     display: inline-block;
     margin: 0 7px;
 }
+
+.resizedTextbox {
+  display: block;
+  height: 10px;
+}

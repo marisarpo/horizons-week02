@@ -1,1 +1,15 @@
-/* ADD STYLES FOR PART 6 HERE */
+.img-float-left{
+  float:left;
+}
+
+.img-float-right{
+  float:right;
+}
+
+.background-light-blue{
+  background-color: #E4F0F6;
+}
+
+.center-paragraph{
+
+}

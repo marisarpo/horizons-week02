@@ -1,9 +1,35 @@
+*{
+  background-color: white
+  }
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
 }
-
 .title {
-    color: purple;
+    color: black;
+    font-family: "Times New Roman", Times, serif;
+    line-height: 10px
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+
+}

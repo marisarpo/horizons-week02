@@ -1,1 +1,40 @@
-/* ADD STYLES FOR PART 6 HERE */
+
+body {
+	overflow-x: hidden;
+}
+.bottom {
+	padding-top: 50px;
+	background-color: #e4f0f6;
+}
+
+.app-image {
+	display: inline-block;
+	float: right;
+	margin: -35px;
+}
+
+.bottom p {
+	width: 48%;
+	margin: 30px 0 0 175px;
+}
+
+.app-badges {
+	display: inline-block;
+	height: 54px;
+	margin: 0.4em 1em 0 0;
+}
+.see-badge {
+	vertical-align: 20px;
+	display: inline-block;
+	border: 1px solid #5E98BA;
+	border-radius: 5px;
+	color: #5E98BA;
+	padding: 12px 15px;
+	margin-bottom: 40px;
+	clear: both;
+}
+
+.see-badge:hover {
+	border: 1px solid #2C78AB;
+	color: #2C78AB;
+}

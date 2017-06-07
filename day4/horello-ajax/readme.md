@@ -125,8 +125,8 @@ In this section, we start by creating some data manually on Trello. After creati
 ## Part 2: Getting familiar with the API
 
 We are finally ready to get real data from Trello. Open up your console
-and try the following `ajax` request: (Don't forget to insert your key,
-token and boardId in the corresponding places)
+while on your trello board page and try the following `ajax` request: (Don't 
+forget to insert your key, token and boardId in the corresponding places)
 
 ```
 $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {

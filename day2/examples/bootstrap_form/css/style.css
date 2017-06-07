@@ -8,3 +8,27 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+.title{
+	text-align: center;
+	font-size: 24px;
+	/*border: 10px solid black;*/
+}
+.position{
+	/*display: flex;*/
+	/*justify-content: space-around;*/
+	border:1px solid black;
+	width: 500px;
+}
+.text{
+	text-align: center;
+}
+.bar{
+	/*flex:5;*/
+}
+.label{
+	/*flex:1;*/
+	color:black;
+	text-align: center;
+	border: 1px solid red;
+	justify-content: center;
+}

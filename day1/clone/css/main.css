@@ -1,9 +1,24 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
-}
 
-.title {
-    color: purple;
+#header {
+  width: 100%;
+  margin: 0px;
+  color: #708090;
+  background: #D67A29;
+  font: 2em 'Myriad Pro', 'Gill Sans', 'Gill Sans MT', 'Calibri', sans-serif;
+  height: 1.5em;
+  z-index: 1000;
 }
-
+.shadow {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 100;
+}
+.button{
+  margin-right: auto;
+  color: 	#708090;
+  border: 1px solid;
+  display: inline-block;
+  text-align: right;
+  background-color: white;
+}

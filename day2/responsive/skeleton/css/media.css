@@ -1,4 +1,15 @@
 /* Your CSS goes here! */
 
+/*default section padding is 0 vertical, 20px horizontal
+for a screen width greater than or equal to 650px, use 40px vertical, 20px horizontal padding
+for a screen width greater than or equal to 900px, use 80px vertical, 20px horizontal padding*/
+
 section {
+  padding: 0px 20px 0px 20px;
+}
+@media (min-width 650px) {
+  padding: 40px 20px 40px 20px;
+}
+@media (min-width 900px) {
+  padding: 80px 20px 80px 20px;
 }

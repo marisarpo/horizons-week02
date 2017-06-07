@@ -114,7 +114,7 @@ functions.
 Now let's fix the issue of not being able to respond to newly created
 comments.
 
-Replace the click handler from Part 2.a with
+Use the same format as the click handler from Part 2.a with
 [a delegated event handler](http://api.jquery.com/on/#on-events-selector-data-handler)
 attached to the top the `.comments` div. <br>
 The syntax for delegated event handlers takes a parent element selector (in

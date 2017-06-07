@@ -1,1 +1,53 @@
 /* ADD STYLES FOR PART 6 HERE */
+section:last-of-type img {
+  float: right;
+}
+
+section:last-of-type {
+  background-color: #e4f0f6;
+}
+
+.button2 {
+  padding: 1.1em 1.3em 1.1em 1.3em;
+  border-radius: 0.3em;
+  border: 1px solid #4682B4;
+  color: #4682B4;
+  display: inline-block;
+  height: 60px;
+  width: 165px;
+  box-sizing: border-box;
+  font-size: large;
+  vertical-align: top;
+}
+
+.button2:hover {
+  color: #191970;
+  border: 1px solid #191970;
+}
+
+section:last-of-type a {
+  display: inline-block;
+  margin: 10px;
+  font-size: 19px;
+}
+
+section:last-of-type a img {
+  height: 60px;
+  box-sizing: border-box;
+  clear: both;
+}
+
+section:last-of-type p:first-of-type {
+  font-size: 21px;
+  margin: 20px 80px 20px 80px;
+  color: #555;
+  width: 550px;
+}
+
+section:last-of-type div:last-of-type {
+  width: 1200px;
+}
+
+.left_marg {
+  margin-left: 60px;
+}

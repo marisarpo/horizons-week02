@@ -1,9 +1,107 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background-color: #f7f7f7;
     text-align: center;
 }
 
-.title {
-    color: purple;
+.first-section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 }
 
+
+.outer {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%,28%);
+
+}
+
+.logo {
+
+}
+
+.search-bar {
+  padding: 1.3em 0.8em 1em;
+}
+
+.search-term {
+  height: 43px;
+  width: 575px;
+  border-radius: 3px;
+  font-size: 1.14em;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.06);
+  padding-left: 0.75em;
+}
+
+.submit {
+  height: 43px;
+  width: 43px;
+  float: right;
+  position: absolute;
+  left: 90%;
+  top: 52%;
+  background-color:  #fff;
+  border: 0px none;
+}
+
+.submit:hover {
+  background-color: #58b792;
+}
+
+.text1 {
+  color: #9a9a9a;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.bottom-img {
+  margin-top: 30px;
+  height: 65px;
+}
+
+.second-section {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  top: 0%;
+  background-color: #58b792;
+
+}
+
+.section2img {
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  height: 45%;
+  width: 56%;
+}
+
+.heading1 {
+  color: #ffffff;
+  margin-top: 40px
+  text-align: center;
+  font-size: 40px;
+}
+
+.text2 {
+  color: #ffffff;
+  font-size: 23px;
+}
+
+.add-to-chrome {
+  color:#ffffff;
+  height: 50px;
+  width: 300px;
+  margin-top: 25px;
+  padding: 12px 16px;
+  border: none;
+  background-color: rgba(0,0,0,0.4);
+  font-size: 18px;
+  border-radius: 3px;
+
+}

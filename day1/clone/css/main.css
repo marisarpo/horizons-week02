@@ -1,9 +1,76 @@
+element.style {
+    overflow: visible;
+    height: initial;
+}
+#app {
+  position: relative;
+}
+application.scss:286
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    font-family: Raleway,Helvetica,sans-serif;
+}
+bootstrap.min.css:14
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
 }
 
-.title {
-    color: purple;
+div.splash #section1, div.splash #section2, div.splash #section3, div.splash .fp-tableCell {
+    height: auto!important;
+    position: relative;
+}
+splash.vue:46
+div.splash .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+bootstrap.min.css:14
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
 }
 
+bootstrap.min.css:14
+body {
+    margin: 0;
+}
+bootstrap.min.css:14
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+user agent stylesheet
+body {
+    display: block;
+    margin: 8px;
+}
+Inherited from html.fp-enabled
+bootstrap.min.css:14
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+bootstrap.min.css:14
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+Pseudo ::before element
+bootstrap.min.css:14
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+Pseudo ::after element
+bootstrap.min.css:14
+*:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}

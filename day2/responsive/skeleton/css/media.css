@@ -1,4 +1,15 @@
 /* Your CSS goes here! */
 
-section {
-}
+/*section {*/
+  @media (min-width: 650px) {
+    .text-center {
+      padding: 40px 20px
+    }
+  }
+
+  @media (min-width: 900px) {
+    .text-center {
+      padding: 80px 20px
+    }
+  }
+/*}*/

@@ -1,0 +1,13 @@
+6-7
+
+jQuery uses CSS selectors
+
+$ ('selector') grabs all DOM nodes that match selector
+
+$('<div>') creates elements, $('div') grabs elements
+
+jQuery works on the DOM (document object model)
+
+$(document).ready(callback): put your code in the callback
+
+$(window).on('load', callback)

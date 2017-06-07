@@ -1,9 +1,31 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background-color: #F7f7f7;
     text-align: center;
+    font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
 }
 
 .title {
     color: purple;
 }
 
+page1 {
+  background-color: #58B792;
+}
+
+.searchbar {
+  font-size: 1.14em;
+  background-color: #fff;
+  width: 100%;
+  padding: 15px 20px;
+  height: 2.8em;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.06);
+  box-sizing: border-box;
+}
+.searchline {
+  color: #9a9a9a;
+  margin: .4em auto;
+}
+.learnmore {
+  display: inline;
+}

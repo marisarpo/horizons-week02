@@ -8,3 +8,20 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.text {
+	text-align: center;
+	font-size: medium;
+	font-family: sans-serif;
+}
+
+.ask {
+ 
+ margin-left: 150px;
+ display: inline;
+}
+
+
+.form-horizontal {
+	justify-content: center;
+}

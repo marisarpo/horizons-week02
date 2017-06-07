@@ -1,0 +1,46 @@
+body {
+  font-family: Cambria, sans-serif;
+  line-height: 1.6;
+}
+
+.headname {
+  font-weight: bold;
+  font-size: 25px;
+
+}
+.container {
+  display: flex;
+  width:100%;
+
+}
+.bar {
+  display: flex;
+  flex-direction: column;
+}
+.middle {
+  background-color: yellow;
+  flex-grow: 1;
+}
+
+.article {
+  padding: .7em;
+}
+
+.top {
+  height:100px;
+  width:150px;
+  background-color: grey;
+}
+
+footer{
+  height: 50px;
+  background-color: purple;
+  width: 100%;
+  align-self: flex-end;
+}
+
+@media (max-width:700px) {
+  .bar {
+    display: block;
+  }
+}

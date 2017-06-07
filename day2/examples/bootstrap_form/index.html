@@ -17,10 +17,16 @@
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
       <!-- YOUR CODE HERE -->
       <div class="form-group">
+        <div class="col-xs-offset-5">
+          <h3>Billing Information</h3>
+        </div>
+      </div>
+
+      <div class="form-group">
         <label for="username" class="col-sm-4 control-label">Username</label>
         <div class="col-xs-4">
           <div class="input-group">
-            <div class="input-group-addon glyphicon glyphicon-ok"></div>
+            <div class="input-group-addon glyphicon glyphicon-user"></div>
             <input type="text" class="form-control" id="username" placeholder="Username">
           </div>
         </div>
@@ -30,7 +36,7 @@
         <label for="password" class="col-sm-4 control-label">Password</label>
         <div class="col-xs-4">
           <div class="input-group">
-            <div class="input-group-addon glyphicon glyphicon-ok"></div>
+            <div class="input-group-addon glyphicon glyphicon-user"></div>
             <input type="text" class="form-control" id="password" placeholder="Password">
           </div>
         </div>
@@ -40,7 +46,7 @@
         <label for="dob" class="col-sm-4 control-label">Date of Birth</label>
         <div class="col-xs-4">
           <div class="input-group">
-            <div class="input-group-addon glyphicon glyphicon-ok"></div>
+            <div class="input-group-addon glyphicon glyphicon-earphone"></div>
             <input type="text" class="form-control" id="dob" placeholder="yyyy-mm-dd">
           </div>
         </div>
@@ -51,7 +57,7 @@
         <label for="zip" class="col-sm-4 control-label">Zip Code</label>
         <div class="col-xs-4">
           <div class="input-group">
-            <div class="input-group-addon glyphicon glyphicon-ok"></div>
+            <div class="input-group-addon glyphicon glyphicon-home"></div>
             <input type="text" class="form-control" id="zip" placeholder="Zip Code">
           </div>
         </div>
@@ -61,7 +67,7 @@
         <label for="state" class="col-sm-4 control-label">State</label>
         <div class="col-xs-4">
           <div class="input-group">
-            <span class="input-group-addon glyphicon glyphicon-ok"></span>
+            <span class="input-group-addon glyphicon glyphicon-list"></span>
             <select class="selectpicker form-control" id="state">
               <option value="default">Please select your state</option>
               <option value="AK">Alaska</option>
@@ -121,7 +127,66 @@
         </div>
       </div>
 
-      
+      <div class="form-group">
+        <label for="payment" class="col-sm-4 control-label">Payment Type</label>
+        <div class="col-xs-4">
+          <div class="radio">
+            <label>
+              <input type="radio">Visa
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio">Mastercard
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="card" class="col-sm-4 control-label">Card#</label>
+        <div class="col-xs-4">
+          <div class="input-group">
+            <div class="input-group-addon glyphicon glyphicon-credit-card"></div>
+            <input type="text" class="form-control" id="card" placeholder="0000 0000 0000 0000">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-sm-4 control-label">Expiry</label>
+        <div class="col-xs-2">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="MM/YYYY">
+          </div>
+        </div>
+        <label class="col-sm-1 control-label">CVC</label>
+        <div class="col-xs-1">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="000">
+          </div>
+        </div
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="text" class="col-sm-4 control-label">Project Description</label>
+      <div class="col-xs-4">
+        <div class="input-group">
+          <div class="input-group-addon glyphicon glyphicon-pencil"></div>
+          <textarea class="form-control" name="comment" placeholder="Project Description"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label"></label>
+      <div class="col-xs-4">
+        <button class="btn btn-warning" type="button" name="button">Send <span class="glyphicon glyphicon-send"></span></button>
+      </div>
+    </div>
+
+
 
     </form>
   </div>

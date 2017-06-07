@@ -252,7 +252,7 @@ Screenshots:
 
 In this final Part, you're going to get a taste of the power of
 Bootstrap to help build interactive, responsive user
-interfaces--something we will rely heavily upon over the next few days
+interfaces &mdash; something we will rely heavily upon over the next few days
 to build a real web app. Take a look at the Bootstrap [Components] to
 get an idea for the sort of components you get out of the box with
 Bootstrap. Your task is to add a nav bar with a drop-down menu to the

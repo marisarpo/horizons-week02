@@ -20,6 +20,24 @@
   </header>
 
   <!-- PART 5. Modal -->
+<div class="modal fade" tabindex="-1" role="dialog" id="cardEdit">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <input type="text" class="form-control" value="#DominateAllTheHouses">
+      </div>
+      <div class="modal-body">
+        <h5>Description</h5>
+        <textarea class="form-control" rows="5">Card body goes here</textarea>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <div class="board">
     <div class="list-container">
@@ -28,24 +46,44 @@
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
+          <div class="card" data-target="#cardEdit" data-toggle="modal">
             <div class="card-body">
               Today we will #DominateAllTheHouses
+            </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left"></span>
             </div>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
+          <button type="button" class="btn btn-default list-button add-card" data-toggle="collapse" data-target="#addCard1">Add a card</button>
 
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="addCard1">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" id="addCard" placeholder="Add Card">
+              <button type="button" class="btn btn-default">Save</button>
+              <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
-
+    <div class="list-container">
+      <div class="add-list-container">
+        <button class="add-list" data-toggle="collapse" href="#addList">Add a list...</button>
+        <div class="collapse" id="addList">
+          <div class="well add-card-form">
+          <input type="text" class="form-control" id="addList" placeholder="List Name">
+            <button type="button" class="btn btn-default">Save</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
 </body>
 </html>

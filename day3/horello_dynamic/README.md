@@ -90,12 +90,19 @@ When you're done, your app should look like this:
 
 ### Goal
 
-The goal Part to is t o be able to add new cards to each list with the *Add
+The goal of Part 2 is to be able to add new cards to each list with the *Add
 a card...* buttons.
 
 When you're done, your app should look like this:
 
 ![](https://cl.ly/2s1W2M2I1Y0t/Screen%20Recording%202017-01-08%20at%2009.46%20PM.gif)
+
+Note: Make sure all click handlers for `.add-card`, `.add-card-cancel` and `.add-card-save` work for newly created lists. Use event delegates for achieve this goal:
+
+```javascript
+$('.board').on('click', 'TARGET SELECTOR HERE', function() {
+})
+```
 
 ### Steps
 
@@ -105,8 +112,7 @@ element for the **current list** and make it appear by removing the
 
     Just like we did with comment threads we're going to use `$(this)` to find the
     right element relative to the current button. This time around we'll use
-    [$.siblings()](https://api.jquery.com/siblings/) to jump
-    to the
+    [$.siblings()](https://api.jquery.com/siblings/).
 
     You can remove CSS classes using
     [jQuery `.removeClass()`](https://api.jquery.com/removeclass/):
@@ -145,14 +151,6 @@ element for the **current list** and make it appear by removing the
         ```
       1. Now that the card has been created, hide the `.add-card-form-wrapper` div
          for the **current list** by adding the `collapse` CSS class back to it.
-1. Make sure all click handlers for `.add-card`, `.add-card-cancel` and
-    `.add-card-save` work for newly created lists. Use event delegates for achieve
-    this goal:
-
-    ```javascript
-    $('.board').on('click', 'TARGET SELECTOR HERE', function() {
-    })
-    ```
 
 ## Part 3: Edit card
 
@@ -170,22 +168,27 @@ When you're done, your app should look like this:
 1. Create a global variable called `cardBeingEdited` and
   set it to `null`. We're going to use this to remember
   which card the user clicked on in order to edit it.
+  
 1. Add a delegated event handler to `.board` that
   listens to clicks on `.card` elements. This event
   handler should:
 
-  1. Save the currently clicked card (i.e. `this`) in
-    the global variable `cardBeingEdited`.
-  1. Open the card editing modal (i.e. dialog) by finding
-    `#card-edit` via jQuery and calling `.modal()` on it.
-  1. Make sure the text box in the dialog contains the
-    text of the current card being edited. Update the value
-    of `#card-edit-body` using `.val()`, set it to
-    the text of the card that was clicked on.
-    You can get the extract the text contents of
-    the card by finding the `.card-body` div inside
-    the current `.card`. You will need `$(this).find()`
-    and `.text()`.
+      1. Save the currently clicked card (i.e. `this`) in
+        the global variable `cardBeingEdited`.
+        
+      1. Open the card editing modal (i.e. dialog) by finding
+        `#card-edit` via jQuery and calling `.modal()` on it.
+        
+      1. Make sure the text box in the dialog contains the
+        text of the current card being edited. Update the value
+        of `#card-edit-body` using `.val()`, set it to
+        the text of the card that was clicked on.
+        You can get the extract the text contents of
+        the card by finding the `.card-body` div inside
+        the current `.card`. You will need `$(this).find()`
+        and `.text()`.
+
+1. Make the save button in the modal change the text on the `cardBeingEdited` and dismiss the modal.
 
 
 ## Part 4: Reorder cards using drag and drop

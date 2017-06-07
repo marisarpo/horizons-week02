@@ -6,3 +6,12 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+h3 {
+	text-align: center;
+	padding-top: 30px;
+}
+
+.login {
+	text-align: center;
+}

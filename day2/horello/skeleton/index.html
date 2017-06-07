@@ -46,11 +46,18 @@
 
   <div class="board">
     <div class="list-container">
+      <div class="col-xs-4">
       <div class="list">
         <div class="list-header">
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
+          <div class="card">
+            <div class="card-body" data-toggle="modal" data-target="#aID">
+              Today we will #DominateAllTheHouses
+            </div>
+            <span class="card-more glyphicon glyphicon-align-left"> </span>
+          </div>
           <div class="card">
             <div class="card-body" data-toggle="modal" data-target="#aID">
               Today we will #DominateAllTheHouses
@@ -70,12 +77,48 @@
                   <button type="button" class="btn btn-default BTNHERE" id="button2">
                     <span class="glyphicon glyphicon-remove"> </span>
                   </button>
-                </div>
               </div>
             </form>
-
           </div>
         </div>
+      </div>
+      </div>
+      <div class="col-xs-4s">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">House List</span>
+        </div>
+      <div class="list-cards">
+        <div class="card">
+          <div class="card-body" data-toggle="modal" data-target="#aID">
+            Today we will #DominateAllTheHouses
+          </div>
+          <span class="card-more glyphicon glyphicon-align-left"> </span>
+        </div>
+        <div class="card">
+          <div class="card-body" data-toggle="modal" data-target="#aID">
+            Today we will #DominateAllTheHouses
+          </div>
+          <span class="card-more glyphicon glyphicon-align-left"> </span>
+        </div>
+      </div>
+      <div class="list-footer">
+        <!-- PART 2. Add card button -->
+        <button type="button" class="btn btn-secondary add-card" data-target="#addFormCollapse"  aria-expanded="false" aria-controls="addFormCollapse" data-toggle="collapse">Add a card...</button>
+        <!-- PART 4. Collapse -->
+        <div class="collapse" id="addFormCollapse">
+          <form class="well form-horizontal HERE2" id="addFormCollapse" action=" " method="post">
+            <div class="form-group HERE">
+                <input type="text" class="form-control" id="titleInput" placeholder="Card title">
+                <button type="button" class="btn btn-default BTNHERE" id="button1">Save</button>
+                <button type="button" class="btn btn-default BTNHERE" id="button2">
+                  <span class="glyphicon glyphicon-remove"> </span>
+                </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: url(/assets/img/icons/atlassian-logo-and-text.svg);
     text-align: center;
 }
 
@@ -7,3 +7,23 @@ body {
     color: purple;
 }
 
+.header-item{
+	color: #fff ;
+	display:inline-block;
+	font-size: 20px;
+	font-family: Helvetica;
+	display: inline-block;
+	padding: 1% 1% 1% 1%;
+}
+
+.header-item:hover{
+	color: #4295f4;
+}
+
+.header{
+	background-color: #1D4F83;
+}
+
+logo{
+	padding: ;
+}

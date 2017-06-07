@@ -1,1 +1,39 @@
 /* ADD STYLES FOR PART 6 HERE */
+.last1 img{
+	float: right;
+	padding: 40px 0%  100px 5%;
+
+}
+.last {
+	background-color: #e4f0f6;
+	padding: 80px 0%  100px 11%;
+	font-size: 20px
+	
+}
+
+.pre{
+	
+	padding: 0.6em 1em 0.6em 1em;
+	border-radius: 0.3em;
+	color: #6998af;
+	border: 1px solid #6998af;
+	display:inline-block;
+	
+}
+
+.pre:hover {
+	color: #0079bf;
+}
+
+.wee {
+	display: inline-block;
+}
+
+.wee1{
+	display: inline-block;
+}
+
+.clear{
+	clear: both;
+}
+

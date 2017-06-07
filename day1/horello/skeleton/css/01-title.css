@@ -1,16 +1,25 @@
 body {
     /** Your CSS goes here! **/
+    font-family: Arial;
+    font-size: medium;
+    color: #56595e;
 }
 
 h2 {
+	font-size:30px;
+	color:#56595e;
     /** and here (you get the point) **/
 }
 
 section {
+	padding: 80px 20px;
 }
 
 .center-paragraph {
+	margin: 1em 16.7% 1em 16.7%;
 }
 
 .text-center {
+	text-align: center;
+	padding: 20px;
 }

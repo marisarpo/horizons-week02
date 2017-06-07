@@ -11,9 +11,32 @@ body {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 20px 0px;
     clear: both;
     overflow: hidden;
+}
+@media(min-width: 650px){
+  section{
+    padding-top: 40px;
+    padding-bottom:40px;
+    padding-left:20px;
+    padding-right:20px;
+    clear: both;
+    overflow: hidden;
+
+  }
+
+}
+
+@media(min-width:900px){
+  section{
+    padding-top:80px;
+    padding-bottom:80px;
+    padding-left:20px;
+    padding-right:20px;
+    clear: both;
+    overflow: hidden;
+  }
 }
 
 .section-wrapper {

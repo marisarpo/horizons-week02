@@ -1,9 +1,74 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+  display:block;
+  height: 100%;
+  min-height:100%;
+  padding:0;
+  margin:8px;
+  overflow: hidden;
+  line-height: 1.6;
+
+
+  text-align: center;
 }
 
 .title {
     color: purple;
 }
 
+html{
+  background-color: #f7f7f7;
+  overflow:hidden;
+}
+
+.logo-wrap--home {
+
+    position: relative;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: .8em;
+    margin-top: -1.25em;
+    padding-top: 20px;
+    padding-right: 16px;
+}
+
+.searchbar{
+  color: #333;
+  position:relative;
+  opacity: 1;
+  width: 50em;
+  height: 2.545em;
+  border-radius: 0.1em;
+  margin:0em 0em 0em 0em;
+  display: block;
+  box-shadow: 0 2px 0 #D9D9D9;
+  margin: auto;
+  margin-bottom: 0.5em;
+  padding-top: 20px;
+  padding-right: 16px;
+
+
+}
+
+button: hover{
+  color: #ffff;
+
+}
+
+
+.text1{
+  display: inline-block;
+  margin-right: 4px;
+
+  color: #9a9a9a;
+
+}
+
+.learnmore{
+  vertical-align:center-paragraph;
+
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}

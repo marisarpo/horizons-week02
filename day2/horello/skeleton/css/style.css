@@ -3,14 +3,18 @@
 body {
   line-height: 18px;
   height: 100vh;
-
+  background-color: rgb(0,121,191);
+  /*font-family:"sans-serif";*/
   /** PART 1 CSS here */
 }
 
 header {
   position: relative;
   overflow: hidden;
-
+  padding: 5px;
+  height: 40px;
+  /*opacity: 0.15;*/
+  background-color: #04517d
   /** PART 1 CSS here */
 }
 
@@ -53,6 +57,15 @@ a {
 }
 
 .add-list {
+  background-color: #0067a3;
+ color: #fff;
+  height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px ;
+  width: 280px;
+  padding: 7px;
+  text-align: left;
+
   /** PART 1 CSS here */
 }
 
@@ -67,9 +80,9 @@ a {
 .board {
   overflow-x: auto;
   overflow-y: hidden;
-  height: calc(100% - 40px);
+  /*height: calc(100% - 40px);*/
   padding-bottom: 1em;
-
+  display: flex;
   /** PART 2 CSS here */
 }
 
@@ -78,11 +91,19 @@ a {
 
 .list-container {
   height: 100%;
+  display: flex;
 }
 
 .list {
   box-sizing: border-box;
   max-height: 100%;
+  padding: 0.5em;
+  margin: 5px 5px;
+  border-radius: 3px;
+width: 270px;
+background-color: #e2e4e6;
+display: flex;
+flex-direction: column;
 
   /** PART 2 CSS here */
 }
@@ -90,12 +111,16 @@ a {
 .list-header {
   display: block;
   position: relative;
-
+  margin: 0 0 .5em 0;
+  color: black;
+  font-weight: 700
   /** PART 2 CSS here */
 }
 
 .list-footer {
   /** PART 2 CSS here */
+  display: flex;
+  flex-direction: column;
 }
 
 .list-title {
@@ -103,7 +128,13 @@ a {
 }
 
 .add-card {
-  /** PART 2 CSS here */
+  height: 40px;
+border-radius: 4px;
+text-align: left;
+background-color: rgb(16, 16, 16, 0.15);
+color: #333;
+margin: 3px 0;
+flex:1;
 }
 
 .add-card:hover {
@@ -120,15 +151,33 @@ a {
 }
 
 .card {
+  margin: 0 0 .5em 0;
+  background-color: white;
+  border-radius: 3px
   /** PART 3 CSS here */
 }
 
 .card-body {
-  /** PART 3 CSS here */
+  padding: .5em 2em .5em .5em;
+  font-family: "Cabin", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em
+    /** PART 3 CSS here */
 }
 
 .card-more {
+  padding: 0em 2em .5em .5em;
   /** PART 3 CSS here */
+}
+
+.btn2{
+  background-color: white;
+  margin: 2px
+}
+
+.title{
+  display: block;
+
 }
 
 /** PART 4 CSS here: add card form */

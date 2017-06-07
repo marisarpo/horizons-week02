@@ -1,9 +1,19 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background-color: #ffffff
+
+}
+
+.menu {
+  float: left;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  color: #696b74;
+  font-family: Arial;
+  font-weight: normal;
+  font-size: 10px;
 }
 
 .title {
-    color: purple;
-}
 
+}

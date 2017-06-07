@@ -2,8 +2,17 @@
 
 html, body {
 	height: 100%;
+	display: flex;
 }
-
+legend {
+	text-align: center;
+}
+.caption {
+	text-align: right;
+}
+.input {
+	flex: 1;
+}
 .container, .well{
 	height: 100%;
 	margin-bottom: 0;

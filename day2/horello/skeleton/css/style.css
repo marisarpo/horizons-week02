@@ -116,8 +116,7 @@ a {
   width: 270px;
   background-color: #e2e4e6;
   flex-direction: column;
-  flex:1;
-  flex-grow: 1;
+  flex:0;
 
 }
 
@@ -211,5 +210,5 @@ a {
 }
 
 .modal-body{
-  
+
 }

@@ -5,6 +5,8 @@ body {
   height: 100vh;
 
   /** PART 1 CSS here */
+  background-color: rgb(0,121,191);
+  font-family: "sans-serif";
 }
 
 header {
@@ -12,6 +14,10 @@ header {
   overflow: hidden;
 
   /** PART 1 CSS here */
+  padding: 5px;
+  height: 40px;
+  background-color: #04517d;
+  opacity: .8;
 }
 
 .header-logo {
@@ -54,10 +60,21 @@ a {
 
 .add-list {
   /** PART 1 CSS here */
+
+  background-color: #04517d;
+  opacity: .8;
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px;
+  width: 280px;
+  padding: 7px;
+  text-align: left;
 }
 
 .add-list:hover {
   /** PART 1 CSS here */
+  opacity: 1;
 }
 
 .add-list-form {
@@ -71,6 +88,8 @@ a {
   padding-bottom: 1em;
 
   /** PART 2 CSS here */
+  display: flex;
+
 }
 
 
@@ -85,6 +104,10 @@ a {
   max-height: 100%;
 
   /** PART 2 CSS here */
+  background-color: #e2e4e6;
+  border-radius: 2px;
+  padding: 7px;
+  margin: 5px;
 }
 
 .list-header {
@@ -92,22 +115,33 @@ a {
   position: relative;
 
   /** PART 2 CSS here */
+
 }
 
 .list-footer {
   /** PART 2 CSS here */
+  display: flex;
+  flex-direction: column;
 }
 
 .list-title {
   /** PART 2 CSS here */
+  font-weight: bold;
 }
 
 .add-card {
   /** PART 2 CSS here */
+  flex: 1;
+  background-color: #c2c4c6;
+  border-radius: 7px;
+  text-align: left;
+  margin-bottom: 7px;
+
 }
 
 .add-card:hover {
   /** PART 2 CSS here */
+
 }
 
 
@@ -125,10 +159,60 @@ a {
 
 .card-body {
   /** PART 3 CSS here */
+  padding-top: 4px;
+  background-color: white;
+  margin-bottom: .5em;
+  border-radius: 3px;
+  padding: .5em .5em;
+
+  font-family: "Cabin";
+  font-size: 16px;
+  line-height: 1.5em;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-more {
   /** PART 3 CSS here */
+
 }
 
 /** PART 4 CSS here: add card form */
+#collapse-data{
+
+}
+
+.well-style{
+  background-color: white;
+  padding: 6px;
+  padding-left: 12px;
+  height: 35px;
+}
+
+.two_buts{
+  flex: 1;
+  display: flex;
+  : flex-start;
+}
+
+.save{
+  background-color: white;
+  border-width: 1px;
+  height: 35px;
+  border-radius: 5px;
+  text-align: left;
+  margin-left: 0px;
+}
+
+.ex{
+  background-color: white;
+  border-radius: 5px;
+  height: 35px;
+  border-width: 1px;
+  text-align: left;
+  margin-left: 3px;
+
+}
+.well{
+  margin-bottom: 0;
+}

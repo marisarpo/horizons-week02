@@ -15,8 +15,7 @@
 </head>
 <body>
   <header>
-    <a class="header-logo"
-    href="#"><span class="header-logo-default"></span></a>
+    <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
   </header>
 
   <!-- PART 5. Modal -->
@@ -31,19 +30,40 @@
           <div class="card">
             <div class="card-body">
               Today we will #DominateAllTheHouses
+              <div>
+                <span class="glyphicon glyphicon-align-left card-more"></span>
+              </div>
             </div>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button class="btn btn-default add-card" type="button" data-toggle="collapse" data-target="#col">Add a card...</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="col">
+            <div class="well">
+              <input type="text" class="form-control" placeholder="Card Title"></input>
+              <button type="button" class="btn btn-default" style="margin: 3px;">Save</button>
+              <button type="button" class="btn btn-default" style="margin: 3px;"><span class="glyphicon glyphicon-remove"></span></button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div class="add-list">
+      Add a list...
+      <button class="btn btn-default add-card" type="button" data-toggle="collapse" data-target="#addlist">Add a list...</button>
+      <!-- PART 4. Collapse -->
+      <div class="collapse" id="addlist">
+        <div class="well">
+          <input type="text" class="form-control" placeholder="Card Title"></input>
+          <button type="button" class="btn btn-default" style="margin: 3px;">Save</button>
+          <button type="button" class="btn btn-default" style="margin: 3px;"><span class="glyphicon glyphicon-remove"></span></button>
+        </div>
+      </div>
+    </div>
 
   </div>
 

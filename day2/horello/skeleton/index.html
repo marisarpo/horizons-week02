@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +14,33 @@
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
 <body>
   <header>
-    <a class="header-logo"
-    href="#"><span class="header-logo-default"></span></a>
+    <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
   </header>
 
   <!-- PART 5. Modal -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="modell">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Modal title</h4>
+          </div>
+          <div class="modal-body">
+            <p>One fine body&hellip;</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
   <div class="board">
     <div class="list-container">
@@ -27,25 +48,44 @@
         <div class="list-header">
           <span class="list-title">House List</span>
         </div>
-        <div class="list-cards">
+        <div class="list-cards"  data-toggle="modal" data-target="#modell">
           <div class="card">
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
+            <span class="glyphicon glyphicon-align-left card-more"></span>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button class="add-card collapsed" data-toggle="collapse" data-target="#newCard">Add a Card...</button>
           <!-- PART 4. Collapse -->
+          <form id="newCard" class="collapse">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Card Title">
+              <button type="button">Save</button>
+              <button type="button" class="glyphicon glyphicon-remove"></button>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div>
+      <button type="button" class="add-list text-left collapsed" data-toggle="collapse" data-target="#newList">Add a List...</button>
+      <form id="newList" class="collapse">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="List Title">
+          <button type="button">Save</button>
+          <button type="button" class="glyphicon glyphicon-remove"></button>
+        </div>
+      </form>
+    </div>
 
   </div>
 
 </body>
+
 </html>

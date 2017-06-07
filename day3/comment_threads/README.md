@@ -29,7 +29,7 @@ functions.
     1. Ask the user to enter an *author* and a *comment* using the
       [`prompt()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
       function.
-    1. Create a new `div` element to using the *author* and *comment* the user has provided with the following contents:
+    1. Create a new `div` element by using the *author* and *comment* the user has provided with the following contents:
 
         ```html
         <div class="comment">

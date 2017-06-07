@@ -1,9 +1,40 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: url("../images/Vogue.jpg");
     text-align: center;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+}
+body, html {
+  margin: 0;
+  padding: 0;
 }
 
 .title {
-    color: purple;
+    color: Violet;
 }
-
+.heading-term{
+  background-color: Violet;
+  color: white;
+  overflow:auto;
+}
+/*footer{
+  background-color: grey;
+}*/
+*{
+  box-sizing: border-box;
+}
+.control-panel-title{
+  padding: 15px;
+  font-size: 17px;
+  color: #666671;
+  background: #eee;
+}
+div {
+  display: block;
+}
+.test p{
+  margin: 0;
+}
+p {
+  font-style: italic;
+}

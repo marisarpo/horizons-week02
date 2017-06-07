@@ -1,1 +1,22 @@
 /* ADD STYLES FOR PART 6 HERE */
+.layout-callout-right {
+    position: absolute;
+    top: -60px;
+    left: 640px;
+}
+.layout-grid-frame {
+    position: relative;
+    max-width: 890px;
+    margin: 0 auto;
+}
+.background-light-blue {
+  background-color: #e4f0f6;
+  overflow: hidden;
+}
+
+.layout-callout-right img{
+  max-width: initial;
+}
+.layout-twothirds-left{
+  max-width: 585px;
+}

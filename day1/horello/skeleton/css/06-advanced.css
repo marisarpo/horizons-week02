@@ -1,4 +1,5 @@
 /* ADD STYLES FOR PART 6 HERE */
+<<<<<<< HEAD
 .home-img {
   max-width: initial;
   position: absolut
@@ -24,10 +25,19 @@
 
 .layout-grid-frame {
   display: block;
+=======
+.lower-content {
+  background-color: #e4f0f6;
+  padding: 80px 20px 80px 20px;
+}
+
+.lower-content-div {
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
   position: relative;
   max-width: 890px;
   margin: 0 auto;
 }
+<<<<<<< HEAD
 
 .layout-callout-right {
   position: absolute;
@@ -56,4 +66,44 @@
 
 a {
     color: #5e98ba;
+=======
+.lower-content-left {
+  max-width: 585px;
+  display: block;
+}
+.content-image {
+  position: absolute;
+  top: -60px;
+  left: 640px;
+}
+
+.content-text {
+  display: block;
+  max-width: 585px;
+}
+
+.small-image {
+  margin-top: 0.4em;
+  margin-right: 1em;
+  vertical-align: top;
+  display: inline-block;
+}
+
+#Apple-image {
+  height: 54px;
+}
+
+#Google-image {
+  height: 54px;
+}
+
+#see-all {
+  border: 1px solid;
+  border-radius: 0.3em;
+  height: 54px;
+  box-sizing: border-box;
+  margin: .4em 0 0;
+  padding: .7em 1em;
+  color: #5e98ba;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }

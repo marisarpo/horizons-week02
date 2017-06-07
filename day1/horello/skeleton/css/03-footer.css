@@ -3,6 +3,7 @@ section {
 }
 
 footer {
+<<<<<<< HEAD
   padding: 80px 20px;
   font-size: 16px;
   color: #999;
@@ -23,4 +24,26 @@ footer ul {
 footer li {
   display: inline-block;
   margin: 7px;
+=======
+    padding: 80px 20px;
+    font-size: 16px;
+    color: #999;
+}
+
+footer a {
+    color: #89888a;
+}
+
+footer a:hover {
+    color: #525152;
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    display: inline-block;
+    margin: 7px;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }

@@ -1,0 +1,55 @@
+.searchbar {
+  padding: 4px 14px;
+  border-radius: 2rem;
+  position: relative;
+  margin-top: 10px;
+  border: 1px solid gray;
+}
+
+a img {
+  height: 35px;
+  margin-top: 0;
+}
+
+.p1 {
+  border: 2px solid black;
+  text-align: center;
+  display: flex;
+  height: 1000px;
+  flex-direction: column;
+
+}
+
+.column {
+  margin-top: 5px;
+  display:flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.column:hover {
+  opacity: .1 !important;
+  z-index: -1;
+}
+
+.column.clown {
+  Background: url("Pics/Clown.jpeg");
+  Background-size:contain;
+  background-repeat: no-repeat;
+}
+
+.column.white {
+  Background: url("Pics/White-house.jpeg");
+  Background-size:contain;
+  background-repeat: no-repeat;
+}
+
+p{
+z-index: -1;
+
+}
+p.hover {
+  z-index: 10 !important;
+  font-weight: 1000;
+  opacity: 1;
+}

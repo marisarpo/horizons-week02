@@ -1,6 +1,11 @@
 .background-dark-blue {
+<<<<<<< HEAD
   background-color: #0079bf;
   color: #fff;
+=======
+  color: #fff;
+  background-color: #0079bf
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }
 
 .layout-fill-img {
@@ -10,6 +15,7 @@
 }
 
 .center-paragraph {
+<<<<<<< HEAD
     margin: 1em 16%;
 }
 
@@ -19,4 +25,7 @@ p {
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
+=======
+  margin: 1em 16%;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }

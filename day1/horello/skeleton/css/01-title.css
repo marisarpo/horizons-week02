@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     Font-family: Helvetica Neue, Arial, sans-serif;
     Font-size: 20px;
@@ -14,6 +15,24 @@ section {
   Padding-right: 20px;
   Padding-bottom: 80px;
   Padding-left: 20px;
+=======
+body { /** Your CSS goes here! **/
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #4d4d4d;
+  background-color: #fff;
+}
+
+h2 {
+    /** and here (you get the point) **/
+    font-size: 36px;
+    text-align: center;
+}
+
+section {
+  padding: 80px 20px 80px 20px;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }
 
 .center-paragraph {
@@ -21,5 +40,9 @@ section {
 }
 
 .text-center {
+<<<<<<< HEAD
   text-align: center
+=======
+  text-align: center;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }

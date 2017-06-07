@@ -1,6 +1,10 @@
 .img-float-left {
   float: left;
   margin-right: 40px;
+<<<<<<< HEAD
+=======
+  margin-bottom: 2em;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }
 
 section {

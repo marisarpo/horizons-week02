@@ -1,9 +1,14 @@
 .img-title {
+<<<<<<< HEAD
   margin-bottom: 2em
+=======
+  margin-bottom: 0.8em;
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
 }
 
 .button {
   padding: 0.6em 1.3em 0.6em 1.3em;
+<<<<<<< HEAD
   border: 0;
   border-radius: 0.3em;
   background: linear-gradient(to bottom, #61bd4f, #5aac44);
@@ -15,5 +20,19 @@
 
 .button:hover {
   background: linear-gradient(to bottom, #5aac44,#519839);
+=======
+  border-radius: 0.3em;
+  border: 0;
+  margin-bottom: 0.8em;
+  color: #fff;
+  background: linear-gradient(#61bd4f, #5aac44);
+  font-weight: bold;
+  display: inline-block;
+  box-shadow: 0 2px 0 #3f6f21;
+}
+
+.button:hover {
+  background: linear-gradient(#5aac44, #519839);
+>>>>>>> bf9dbd6001e57a0a9857a50cc700a370906b1368
   color: #fff;
 }

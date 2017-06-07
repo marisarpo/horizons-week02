@@ -1,5 +1,9 @@
 .img-float-left {
+  float: left;
+  margin-bottom: 2em;
+  margin-right: 40px;
 }
 
 section {
+  clear: both;
 }

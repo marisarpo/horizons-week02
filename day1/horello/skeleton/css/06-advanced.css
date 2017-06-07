@@ -1,1 +1,23 @@
 /* ADD STYLES FOR PART 6 HERE */
+.AppStore {
+  background-color: #e4f0f6;
+  padding: 100px 20%;
+  margin-top: 100px;
+}
+
+.apps {
+  float: right;
+  box-sizing: border-box;
+  width: 400px;
+}
+
+.buttonapp {
+  padding: 0.6em 1.3em;
+  border: solid;
+  border-color: #0079bf;
+  border-radius: 0.3em;
+  color: #0079bf;
+  margin-top: 0.4em;
+  margin-right: 1em;
+  display: inline-block;
+}

@@ -1,9 +1,155 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  font-family: sans-serif;
+  text-align: center;
+  height: 400%;
+  position: absolute;
+  width: 100%;
+}
+.Homepage {
+  text-align: center;
+  height: 20%;
+  margin-top: 130px;
+
+}
+.center-paragraph {
+  color: #9a9a9a;
+}
+.Searchbar {
+
+}
+form {
+  margin-left: 650px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    height: 2.8em;
+    width: 650px;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.06);
+    padding-left: .75em;
+    padding-right: 6.5em;
+}
+input {
+  -webkit-tap-highlight-color: transparent;
+    font-size: 1.1em;
+    font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+    font-weight: normal;
+    color: #333;
+    display: block;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 0;
+    height: 2.54545em;
+    z-index: 1;
+    position: relative;
+    top: -1px;
+  }
+button {
+  -webkit-border-radius: 0;
+    border-radius: 0 2px 2px 0;
+    min-width: 26px;
+    color: #999;
+    font-size: 1.25em;
+    padding: 0 .64em;
+    height: 110%;
+    min-height: 1.8em;
+    margin-top: -1px;
+    margin-bottom: -1px;
+    margin-right: -3px;
+    line-height: 1.5;
+    background-color: transparent;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    -webkit-font-smoothing: subpixel-antialiased;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.search-button {
+  width: 20px;
 }
 
-.title {
-    color: purple;
+.GreenPage {
+  background-color: #58b792;
+  height: 20%;
+  position: relative;
+  margin: 0;
+}
+.TextG {
+  color: #fff;
+  padding-top: 80px;
+}
+.img-green {
+  width: 900px;
+  margin-top: 117px;
 }
 
+.OrangePage {
+  background-color: #f5a339;
+  position: relative;
+  height: 20%;
+  margin: 0;
+  overflow: hidden;
+}
+.TextO {
+  color: #fff;
+  padding-top: 80px;
+}
+.img-orange {
+  width: 900px;
+  margin-top: 108px;
+}
+
+.PurplePage {
+  background-color: #5f63bd;
+  position: relative;
+  height: 20%;
+  margin: 0;
+  overflow: hidden;
+}
+.TextP {
+  color: #fff;
+  padding-top: 80px;
+}
+.img-purple {
+  width: 900px;
+  margin-top: 148px;
+}
+.BluePage {
+  background: linear-gradient(to bottom, #87cef5 60%,#c3eaff 95%);
+  position: relative;
+  height: 20%;
+  margin: 0;
+  overflow: hidden;
+}
+.TextB {
+  color: #fff;
+  padding-top: 80px;
+}
+.img-blue {
+  width: 900px;
+  margin-top: 118px;
+}
+
+.Button {
+  margin-top: 25px;
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fff;
+  background: rgba(0,0,0,0.4) !important;
+  border: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 3px;
+}

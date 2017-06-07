@@ -5,4 +5,9 @@ html, body {
 .container, .well{
 	height: 100%;
 	margin-bottom: 0;
+	text-align: center;
+}
+.form-group {
+	position: relative;
+	text-align: center;
 }

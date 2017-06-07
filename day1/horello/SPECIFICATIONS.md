@@ -20,9 +20,9 @@
 - Font family: Helvetica Neue, Arial, sans-serif
 - Font weight: 400
 - Font size:
-  - small: 16px
-  - medium: 20px
-  - large: 36px
+    - small: 16px
+    - medium: 20px
+    - large: 36px
 - Button font weight: bold
 
 ## Layout
@@ -33,16 +33,17 @@
 - Content full-width image padding: vertical 40px, horizontal 60px
 - Image margin: bottom 2em
 - Button
- - Padding vertical: 0.6em
- - Padding horizontal: 1.3em
- - Border radius: 0.3em
- - Margin bottom: 0.8em
+    - Padding vertical: 0.6em
+    - Padding horizontal: 1.3em
+    - Border radius: 0.3em
+    - Margin bottom: 0.8em
+    - Border: 0
 - Footer link spacing: 7px
 - Margin between left image and text: 40px
 - Max width: 890px
 - Left text max width: 585px
 - Right image
-  - Shift top: 60px up
-  - From left: 640px
+    - Shift top: 60px up
+    - From left: 640px
 - App store badge height: 54px
 - App store button margin: top 0.4em, right 1em

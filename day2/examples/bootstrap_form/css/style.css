@@ -8,3 +8,17 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+
+.title {
+	font-size: 20px;
+	text-align: center;
+}
+
+.form-group {
+	text-align: right;
+}
+
+.input-group {
+	text-align: left;
+}

@@ -8,3 +8,20 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+    text-align: right;
+}
+
+.formhorizonal {
+	display: flex;
+	justify-content: center;
+}
+
+.input-group {
+	height: 30px;
+}

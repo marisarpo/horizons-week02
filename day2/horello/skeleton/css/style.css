@@ -3,6 +3,8 @@
 body {
   line-height: 18px;
   height: 100vh;
+  background-color: rgb(0, 121, 191);
+  font-family: sans-serif;
 
   /** PART 1 CSS here */
 }
@@ -10,7 +12,10 @@ body {
 header {
   position: relative;
   overflow: hidden;
-
+  padding: 5px;
+  height: 40px;
+  opacity: 0.15;
+  background-color: #0000FF;
   /** PART 1 CSS here */
 }
 
@@ -54,6 +59,15 @@ a {
 
 .add-list {
   /** PART 1 CSS here */
+background-color: #005FA2;
+color: #fff;
+min-height: 30px;
+border-radius: 3px;
+margin: 5px;
+width: 280px;
+padding: 7px;
+border-style: none;
+text-align: left;
 }
 
 .add-list:hover {
@@ -69,7 +83,7 @@ a {
   overflow-y: hidden;
   height: calc(100% - 40px);
   padding-bottom: 1em;
-
+  display:flex;
   /** PART 2 CSS here */
 }
 
@@ -82,8 +96,9 @@ a {
 
 .list {
   box-sizing: border-box;
-  max-height: 100%;
-
+  max-height: 100;
+  display: flex;
+  flex-direction: column;
   /** PART 2 CSS here */
 }
 

@@ -1,1 +1,68 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+
+.bottom-section {
+  background-color: #e4f0f6;
+}
+
+.layout-grid-frame {
+  /*position: relative;
+  max-width: 890px;
+  margin:0;*/
+  margin-left: 20%;
+}
+
+.devices-image {
+  float: right;
+  position: relative;
+  top: -25px;
+}
+
+.bottom-paragraph {
+  max-width: 585px;
+}
+
+.app-store-link{
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em 0 0;
+  padding: 0;
+}
+
+.app-store-logo{
+  height: 54px;
+}
+
+.google-play-link{
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em 0 0;
+  padding: 0;
+}
+
+.google-play-logo{
+  height: 54px;
+}
+
+.see-apps-button{
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0;
+  display: inline-block;
+  color: #5e98ba;
+}
+
+section {
+  clear: both;
+}
+
+
+
+/* last text is not working to set the paragraph elements correctly */
+/*.last-text {
+  font-family: "Helvetica Neue",Arial,sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #4d4d4d;
+}*/

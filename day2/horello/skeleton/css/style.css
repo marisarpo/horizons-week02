@@ -3,6 +3,9 @@
 body {
   line-height: 18px;
   height: 100vh;
+  background-color: rgb(0,121,191);
+  font-family: Bootstrap default sans-serif;
+
 
   /** PART 1 CSS here */
 }
@@ -10,7 +13,13 @@ body {
 header {
   position: relative;
   overflow: hidden;
+  padding: 5px;
+  height: 40px;
+  /*fix later*/
+  /*opacity: 0.05;*/
+  background-color: pink;
 
+  /*background-color: pink;*/
   /** PART 1 CSS here */
 }
 
@@ -50,6 +59,7 @@ a {
 
 .add-list-container {
   padding: 5px;
+
 }
 
 .add-list {
@@ -78,13 +88,16 @@ a {
 
 .list-container {
   height: 100%;
+  /*background-color: white;
+  width: 150px;*/
+
 }
 
 .list {
   box-sizing: border-box;
   max-height: 100%;
-
   /** PART 2 CSS here */
+  /*background-color: white;*/
 }
 
 .list-header {

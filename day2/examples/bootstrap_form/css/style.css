@@ -8,3 +8,15 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.center-text {
+	text-align: center;
+}
+
+.spacer-top {
+	margin-top: 40px;
+}
+
+.spacer-bottom {
+	margin-bottom: 20px;
+}

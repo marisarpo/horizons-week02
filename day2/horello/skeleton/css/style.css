@@ -14,7 +14,7 @@ header {
   overflow: hidden;
   padding: 5px;
   height: 40px;
-  alpha(opacity: 0.15);
+  background: rgba(0,0,0, 0.15);
 }
 
 .header-logo {
@@ -108,9 +108,7 @@ a {
 .list-header {
   display: block;
   position: relative;
-  padding-bottom: 10px;
-  /** PART 2 CSS here */
-  margin: 0 0 0 0.5em;
+  margin-bottom: 0.5em;
   color: black;
   font-weight: 700;
   position: relative;

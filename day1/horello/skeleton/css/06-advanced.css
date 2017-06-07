@@ -1,1 +1,39 @@
 /* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+  background-color: #e4f0f6;
+  padding-left: 200px;
+}
+
+.float-image-right {
+  float:right;
+  padding-bottom: 0px;
+}
+
+.make-app{
+  display: inline-block;
+  vertical-align: top;
+  border: 1px solid;
+  border-radius: 0.4em;
+  padding: 0.55em 1em;
+  margin: 0.5em;
+}
+
+.app-link{
+  vertical-align: top;
+  display:inline-block;
+  margin: 0.5em;
+  padding: 0;
+}
+
+.left-text{
+  max-width: 585px;
+  margin-right:640px;
+}
+
+a{
+  color:#5e98ba;
+}
+
+a:hover{
+  color:#265773;
+}

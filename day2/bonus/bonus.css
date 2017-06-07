@@ -1,0 +1,58 @@
+.container{
+  display: flex;
+  width: 700px;
+  height: 400px;
+  flex-direction: column;
+  background: grey;
+}
+
+.d{
+border:4px solid grey;
+border-radius: 6px;
+}
+
+.d1{
+display: flex;
+flex-direction: row;
+flex: 8;
+}
+.d2{
+flex: 2;
+display: flex;
+
+
+}
+.nav{
+  background-color: purple;
+  flex: 1;
+}
+.article{
+  background-color: yellow;
+  flex: 5;
+
+}
+.aside{
+  background: purple;
+  flex: 1;
+
+}
+.footer{
+  background: orange;
+flex: 1;
+}
+
+@media (max-width:650px) {
+  .container{
+    width: 600px;
+    }
+  
+  .d1{
+    flex-direction: column;
+    flex: 20;
+  }
+  .article{
+    order: -1;
+    flex: 8;
+  }
+
+}

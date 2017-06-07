@@ -1,1 +1,30 @@
 /* ADD STYLES FOR PART 6 HERE */
+#id{
+  font-weight: normal;
+  font-size: 20px;
+  height: 248px;
+  width: 461px;
+  display: inline;
+  max-width: none;
+
+}
+#lowerText{
+  display: block;
+  font-size: 13.33333;
+  font-weight: normal;
+  font-family: Helvetica Neue, Arial, sans-serif;
+}
+.background-light-blue{
+  background-color: #e4f0f6;
+  clear:both;
+  display: block;
+}
+
+.outline-link{
+  color:#5e98ba;
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: 0.7em 1em 0.7em 1em;
+  margin: 0.4em;
+  display: inline-block;
+}

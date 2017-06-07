@@ -6,7 +6,7 @@ body {
 
   /** PART 1 CSS here */
   background: rgb(0, 121, 191);
-  font-family: "Bootstrap", default sans-serif;
+  font-family: "Bootstrap", default, sans-serif;
 }
 
 header {
@@ -16,7 +16,7 @@ header {
   /** PART 1 CSS here */
   padding: 5px;
   height: 40px;
-  opacity: 0.15;
+  background: rgba(0,0,0,0.15);
 }
 
 
@@ -56,10 +56,13 @@ a {
 
 .add-list-container {
   padding: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .add-list {
   /** PART 1 CSS here */
+  background: rgba(0, 0, 0, 0.12);
   color: #fff;
   border-radius: 0.3px;
   margin: 5px;
@@ -67,10 +70,12 @@ a {
   min-height: 30px;
   padding: 7px;
   text-align: left;
+  border: 0;
 }
 
 .add-list:hover {
   /** PART 1 CSS here */
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .add-list-form {
@@ -133,17 +138,22 @@ a {
   height: 40px;
   border-radius: 4px;
   text-align: left;
-  background: rgb(16, 16, 16);
+  background: rgba(16, 16, 16, 0.15);
   color: #333;
   margin: 3px 0;
   flex: 1;
-  /*TODO opacity*/
+  border: 0;
 }
 
 .add-card:hover {
   /** PART 2 CSS here */
-  background: rgb(96, 96,96);
+  background: rgba(96, 96,96, 0.15);
   /*TODO opacity*/
+}
+
+.add-card-form {
+    padding: 5px;
+    margin-bottom: 0;
 }
 
 
@@ -166,7 +176,7 @@ a {
 .card-body {
   /** PART 3 CSS here */
   padding: 0.5em 0.5em 2em 0.5em;
-  font-family: "Cabin", Arial, default sans-serif;
+  font-family: "Cabin", Arial, default, sans-serif;
   font-size: 16px;
   line-height: 1.5em;
 }

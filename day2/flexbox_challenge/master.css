@@ -1,0 +1,43 @@
+.page {
+  background-color: lightgrey;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+div {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.content {
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+}
+
+.article {
+  background-color: yellowgreen;
+  flex: 5;
+}
+
+.nav, .aside {
+  background-color: violet;
+  flex: 1;
+}
+
+.footer {
+  background-color: lightyellow;
+  flex: 1;
+}
+
+@media (max-width: 400px) {
+  .content {
+    flex-direction: column;
+  }
+  .article {
+    order: -1;
+  }
+}

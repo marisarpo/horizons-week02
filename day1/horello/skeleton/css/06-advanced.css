@@ -1,1 +1,40 @@
 /* ADD STYLES FOR PART 6 HERE */
+.class{
+  display: inline-block;
+}
+center a{
+  display: inline-block;
+  margin: 0 auto;
+}
+#see-all-apps{
+  border: 1px #0079bf solid;
+  padding: 0.6em 1.3em;
+  border-radius: 0.3em;
+  color: #0079bf;
+  vertical-align: top;
+}
+#see-all-apps:hover{
+  color: #265773;
+  border: 1px #265773 solid;
+}
+
+.frame{
+  margin: 0 10%;
+}
+
+.right-img{
+  float: right;
+}
+
+.left-paragraph{
+  position: relative;
+  max-width: 585px;
+}
+
+section.appstore{
+  background-color: rgb(229,240,246);
+}
+
+.clear{
+  clear: both;
+}

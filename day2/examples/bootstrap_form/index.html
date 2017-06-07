@@ -16,6 +16,117 @@
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
       <!-- YOUR CODE HERE -->
+      <h1 style="text-align:center">Billing Information</h1>
+
+      <!-- Username -->
+      <div class="form-group form-inline">
+        <label for="username" class="col-xs-1 col-xs-offset-3">Username</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+          <input type="text" class="form-control" id="username" placeholder="Username">
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="form-group form-inline">
+        <label for="password" class="col-xs-1 col-xs-offset-3">Password</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+          <input type="text" class="form-control" id="password" placeholder="Password">
+        </div>
+      </div>
+
+      <!-- Date of birth -->
+      <div class="form-group form-inline">
+        <label for="date-of-birth" class="col-xs-1 col-xs-offset-3">Date of birth</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
+          <input type="date" class="form-control" id="date-of-birth" placeholder="Date of birth">
+        </div>
+      </div>
+
+      <!-- Zip code -->
+      <div class="form-group form-inline">
+        <label for="zip-code" class="col-xs-1 col-xs-offset-3">Zip code</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+          <input type="number" class="form-control" id="zip-code" placeholder="Zip code">
+        </div>
+      </div>
+
+      <!-- State -->
+      <div class="form-group form-inline">
+        <label for="state" class="col-xs-1 col-xs-offset-3">State</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-th-list"></span></div>
+          <select class="form-control">
+            <option>Please select your state</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Zip code -->
+      <div class="form-group form-inline">
+        <label for="payment-type" class="col-xs-1 col-xs-offset-3">Payment Type</label>
+
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Visa
+          </label>
+        </div>
+        <br>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Mastercard
+          </label>
+        </div>
+
+      </div>
+
+      <!-- Card # -->
+      <div class="form-group form-inline">
+        <label for="card-number" class="col-xs-1 col-xs-offset-3">Card #</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></div>
+          <input type="number" class="form-control" id="card-number" placeholder="0000 0000 0000 0000">
+        </div>
+      </div>
+
+      <!-- Expiry -->
+      <div class="form-group form-inline">
+        <label for="card-number" class="col-xs-3 col-xs-offset-3">Expiry
+        <div class="input-group">
+          <input type="number" class="form-control" id="expiry" placeholder="MM/YYYY">
+        </div>
+        </label>
+      <!-- </div> -->
+
+      <!-- CVC -->
+      <!-- <div class="form-group form-inline"> -->
+        <label for="card-number" class="col-xs-3">CVC
+        <div class="input-group">
+          <input type="number" class="form-control" id="cvc" placeholder="000">
+        </div>
+        </label>
+      </div>
+
+      <!-- Project Description -->
+      <div class="form-group form-inline">
+        <label for="card-number" class="col-xs-1 col-xs-offset-3">Project Description</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></div>
+          <input type="number" class="form-control" id="project-description" placeholder="Project Description">
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-warning col-xs-offset-4">Send <span class="glyphicon glyphicon-send"></span></button>
+      </div>
     </form>
   </div>
 </div><!-- /.container -->

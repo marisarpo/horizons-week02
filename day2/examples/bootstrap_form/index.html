@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
   <meta charset="UTF-8">
   <title>Bootstrap Form Exercise</title>
@@ -14,14 +15,40 @@
 <body>
   <div class="container">
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal" action=" " method="post" id="contact_form">
       <!-- YOUR CODE HERE -->
+      <label class="control-label col-sm-2 col-offset-1">Billing Information</label>
+      <div class="input-group col-sm-8">
+        <label>Username</label>
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <input type="username" class="form-control" id="exampleInputUsername1" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      </div>
+       <div class="form-group">
+        <label for="exampleInputDateOfBirth1">Date of Birth</label>
+        <input type="date" class="form-control" id="exampleInputDateOfBirth1" placeholder="yyyy-mm-dd">
+      </div>
+       <div class="form-group">
+        <label for="exampleInputZipCode1">Zip Code</label>
+        <input type="zip-code" class="form-control" id="exampleInputZipCode1" placeholder="Zip Code">
+      </div>
+       <div class="form-group">
+        <label for="exampleInputPassword1">State</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Please select your state">
+      </div>
     </form>
   </div>
-</div><!-- /.container -->
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+  </div>
+  <!-- /.container -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 
 
 </body>
+
 </html>

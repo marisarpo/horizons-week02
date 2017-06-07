@@ -1,1 +1,47 @@
 /* ADD STYLES FOR PART 6 HERE */
+#bottom {
+    background-color: #e4f0f6;
+    align-items: center;
+}
+
+#grid {
+    position: relative;
+    margin: 0 auto;
+    max-width: 890px;
+    box-sizing: border-box;
+}
+
+#right {
+    position: absolute;
+    top: -60px;
+    left: 640px;
+}
+
+#left {
+    display: block;
+    max-width: 585px;
+}
+
+.buttons {
+    display: inline-block;
+    vertical-align: top;
+    margin: .4em 1em 0 0;
+    padding: 0;
+}
+
+.buttons img {
+    height: 54px;
+}
+
+#app {
+    display: inline-block;
+    color: #5e98ba;
+    border: 1px solid;
+    border-radius: .3em;
+    padding: .7em 1em;
+    margin: .4em 0;
+}
+
+#app:hover {
+    color:#265773;
+}

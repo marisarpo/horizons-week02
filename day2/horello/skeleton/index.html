@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,11 +14,17 @@
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
 <body>
-  <header>
+  <section class="nav-bar">
+    <div id="header1">
+      <img src="../img/title.png"></img>
+    </div>
+  </section>
+  <!--<header>
     <a class="header-logo"
     href="#"><span class="header-logo-default"></span></a>
-  </header>
+  </header>-->
 
   <!-- PART 5. Modal -->
 
@@ -28,24 +35,134 @@
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
-            <div class="card-body">
-              Today we will #DominateAllTheHouses
+          <div type="button" class="card" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <input type="text" class="form-control" id="recipient-name" value = "TITTLLLE">
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="form-group">
+                        <label for="message-text" class="control-label">Description</label>
+                        <textarea class="form-control" id="message-text">Card body goes here
+
+                        </textarea>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <div class="card-body">
+              Up to this point--and for the rest of today--the elements you've added aren't tied to any real data (that will change tomorrow
+              when things will really come to life). But we can add more hardcoded elements to get a better sense for what
+              our app will look like once we've entered more data. Using the list and card elements that you've already created,
+              try adding multiple lists and multiple cards with varying amounts of data, like you see in the live version.
+              Up to this point--and for the rest of today--the elements you've added aren't tied to any real data (that will
+              change tomorrow when things will really come to life). But we can add more hardcoded elements to get a better
+              sense for what our app will look like once we've entered more data. Using the list and card elements that you've
+              already created, try adding multiple lists and multiple cards with varying amounts of data, like you see in
+              the live version. Up to this point--and for the rest of today--the elements you've added aren't tied to any
+              real data (that will change tomorrow when things will really come to life). But we can add more hardcoded elements
+              to get a better sense for what our app will look like once we've entered more data. Using the list and card
+              elements that you've already created, try adding multiple lists and multiple cards with varying amounts of
+              data, like you see in the live version. Up to this point--and for the rest of today--the elements you've added
+              aren't tied to any real data (that will change tomorrow when things will really come to life). But we can add
+              more hardcoded elements to get a better sense for what our app will look like once we've entered more data.
+              Using the list and card elements that you've already created, try adding multiple lists and multiple cards
+              with varying amounts of data, like you see in the live version. Up to this point--and for the rest of today--the
+              elements you've added aren't tied to any real data (that will change tomorrow when things will really come
+              to life). But we can add more hardcoded elements to get a better sense for what our app will look like once
+              we've entered more data. Using the list and card elements that you've already created, try adding multiple
+              lists and multiple cards with varying amounts of data, like you see in the live version.
+            </div>
+            <span class="card-body glyphicon glyphicon-align-left"></span>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <div>
+            <button class="add-card">
+        Add a card...
+      </button>
+          </div>
           <!-- PART 4. Collapse -->
         </div>
       </div>
+
     </div>
 
     <!-- PART 1. Add list button -->
 
 
-  </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <span class="card-body glyphicon glyphicon-align-left"></span>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+            <span class="card-body glyphicon glyphicon-align-left"></span>
+          </div>
+
+        </div>
+        <div class="list-footer">
+          <!-- PART 2. Add card button -->
+          <!--<div>
+            <button class="add-card">
+        Add a card...
+      </button>
+          </div>-->
+
+
+          <button class="add-card" role="button" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            Add a card...
+          </button>
+          <div class="collapse" id="collapseExample">
+            <div class="well">
+              <div class="form-group">
+                <input type="text" class="form-control" id="exampleInputName2" placeholder="Card title">
+              </div>
+              <div class="bottom-buttons">
+                <a class="btn btn-default" href="#" role="button">Save</a>
+                <a class="btn btn-default glyphicon glyphicon-remove" href="#" role="button"></a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- PART 4. Collapse -->
+        </div>
+      </div>
+
+    </div>
+
+
+    <div>
+      <button class="add-list">
+        Add a list...
+      </button>
+    </div>
 
 </body>
+
 </html>

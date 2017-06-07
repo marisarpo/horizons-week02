@@ -27,23 +27,41 @@
         <div class="list-header">
           <span class="list-title">House List</span>
         </div>
+
         <div class="list-cards">
           <div class="card">
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left"></span>
+            </div>
           </div>
+
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button class="add-card" type="button" data-toggle="collapse" data-target="#addCardCollapse" aria-expanded="false">Add a card</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="addCardCollapse" aria-expanded="false">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" placeholder="Card title">
+              <button class="btn btn-default" type="button" >Save</button>
+              <button class="btn btn-default" type="button">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </div>
+          </div>
         </div>
+        <!-- <a id="addCardCollapse">hey hey</a> -->
       </div>
+
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div class="add-list-container">
+      <button class="button add-list">Add a list...</button>
+    </div>
 
   </div>
 

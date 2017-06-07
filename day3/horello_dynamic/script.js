@@ -66,7 +66,6 @@ $('.board').on('click','.card',function() {
 })
 
 $('.card-edit-save').on('click',function() {
-  $('#card-edit-body').val()
   cardBeingEdited.find('.card-body').text($('#card-edit-body').val());
   $('#card-edit').modal('toggle');
 })

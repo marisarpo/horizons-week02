@@ -19,16 +19,88 @@
     href="#"><span class="header-logo-default"></span></a>
   </header>
 
-  <!-- PART 5. Modal -->
+  <div class="modal fade" id="cardEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <input type="text" class="save-format" value="#DominateAllTheHouses">
+        </div>
+        <div class="modal-body">
+          <p>Description</p>
+          <textarea type="text" class="description-input save-format">Card Body goes here</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
   <div class="board">
     <div class="list-container">
       <div class="list">
         <div class="list-header">
-          <span class="list-title">House List</span>
+          <span class="list-title">Some List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
+          <div class="card" data-toggle="modal"
+               data-target="#cardEdit">
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left"></span>
+            </div>
+            <div class="card-body">
+              <p>Leverage agile frameworks to provide a robust
+              synopsis for high level overviews. Iterative
+              approaches to corporate strategy foster
+              collaborative thinking to further the overall
+              value proposition. Organically grow the holistic
+              world view of disruptive innovation via
+              workplace diversity and empowerment.</p>
+
+              <p>Bring to the table win-win survival strategies
+              to ensure proactive domination. At the end of
+              the day, going forward, a new normal that has
+              evolved from generation X is on the runway
+              heading towards a streamlined cloud solution.
+              User generated content in real-time will have
+              multiple touchpoints for offshoring.</p>
+
+              <p>Capitalise on low hanging fruit to identify a
+              ballpark value added activity to beta test.
+              Override the digital divide with additional
+              clickthroughs from DevOps. Nanotechnology
+              immersion along the information highway will
+              close the loop on focusing solely on the bottom
+              line.</p>
+            </div>
+          </div>
+        </div>
+        <div class="list-footer">
+          <button type="button" class="add-card" data-toggle="collapse" href=#addCard1>Add card...</button>
+          <div class="collapse" id="addCard1">
+            <div class="save-collapse">
+              <input type="text" class="save-format form-control" placeholder="Card title">
+              <button type="button" class="btn btn-default"> Save
+              </button>
+              <span class="glyphicon glyphicon-remove btn btn-default"></span>
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards">
+          <div class="card" data-toggle="modal"
+               data-target="#cardEdit">
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left"></span>
+            </div>
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
@@ -36,13 +108,59 @@
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
-          <!-- PART 4. Collapse -->
+          <button type="button" class="add-card" data-toggle="collapse" href=#addCard2>Add card...</button>
+          <div class="collapse" id="addCard2">
+            <div class="save-collapse">
+              <input type="text" class="save-format form-control" placeholder="Card title">
+              <button type="button" class="btn btn-default"> Save
+              </button>
+              <span class="glyphicon glyphicon-remove btn btn-default"></span>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards">
+          <div class="card" data-toggle="modal"
+               data-target="#cardEdit">
+            <div class="card-more">
+              <span class="glyphicon glyphicon-align-left"></span>
+            </div>
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+            </div>
+          </div>
+        </div>
+        <div class="list-footer">
+          <!-- PART 2. Add card button -->
+          <button type="button" class="add-card" data-toggle="collapse" href=#addCard3>Add card...</button>
+          <div class="collapse" id="addCard3">
+            <div class="save-collapse">
+              <input type="text" class="save-format form-control" placeholder="Card title">
+              <button type="button" class="btn btn-default"> Save
+              </button>
+              <span class="glyphicon glyphicon-remove btn btn-default"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <button type="button" class="add-list" data-toggle="collapse" href=#SaveList>Add List...</button>
+      <div class="collapse" id="SaveList">
+        <div class="save-collapse">
+          <input type="text" class="save-format form-control" placeholder="List name">
+          <button type="button" class="btn btn-default"> Save </button>
+          <span class="glyphicon glyphicon-remove btn btn-default"></span>
         </div>
       </div>
     </div>
 
-    <!-- PART 1. Add list button -->
 
 
   </div>

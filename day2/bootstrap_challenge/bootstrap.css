@@ -1,0 +1,37 @@
+.image {
+  height: 40px;
+  padding-top: 10px;
+  margin-left: 100px;
+}
+
+.blog {
+  margin-left: 50px;
+}
+
+.form-control {
+  margin-top: 10px;
+  margin-left: 350px;
+  width: 200px;
+  border-radius: 15px;
+}
+
+.base {
+  background-color: red;
+  height: 700px;
+}
+
+.background {
+  background-color: blue;
+}
+
+.column {
+  background-color: black;
+  height: 700px;
+  border: 1px solid white;
+}
+
+.test {
+  background-color: orange;
+  height: 50px;
+  border: 1px solid black;
+}

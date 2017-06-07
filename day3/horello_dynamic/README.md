@@ -90,7 +90,7 @@ When you're done, your app should look like this:
 
 ### Goal
 
-The goal Part to is t o be able to add new cards to each list with the *Add
+The goal of Part 2 is to be able to add new cards to each list with the *Add
 a card...* buttons.
 
 When you're done, your app should look like this:
@@ -151,6 +151,7 @@ element for the **current list** and make it appear by removing the
 
     ```javascript
     $('.board').on('click', 'TARGET SELECTOR HERE', function() {
+        ...
     })
     ```
 

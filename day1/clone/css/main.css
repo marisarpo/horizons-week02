@@ -1,9 +1,191 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  margin: 0px;
+  font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
 }
 
-.title {
-    color: purple;
+  /* The navigation bar */
+  .navbar {
+      overflow: hidden;
+      background-color: #DADFE1;
+      position: fixed; /* Set the navbar to fixed position */
+      top: 0; /* Position the navbar at the top of the page */
+      width: 100%; /* Full width */
+      z-index: 10000;
+  }
+
+  /* Links inside the navbar */
+  .navbar a {
+      float: left;
+      display: inline-block;
+      color: #6C7A89;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+  }
+    .navbar a:hover {
+      color: #BFBFBF;
+    }
+
+
+
+h1{
+  font-size: 40px;
+  color:#fff;
+  display: block;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 10%;
+}
+p{
+  font-size: 20px;
+  color:#fff;
+  max-width: 45%;
+  max-height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#logo{
+  margin-top: 20%;
+}
+.search{
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 500px;
+}
+input{
+  -webkit-tap-highlight-color: transparent;
+font-size: 1.1em;
+font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
+font-weight: normal;
+color: #333;
+display: block;
+width: 100%;
+background: none;
+outline: none;
+border: none;
+padding: 0;
+height: 2.54545em;
+z-index: 1;
+position: relative;
+top: -1px;
 }
 
+button{
+
+}
+
+form{
+      padding-right: 3.5em;
+      border-radius: 3px;
+display: block;
+position: relative;
+height: 2.8em;
+background-color: #fff;
+border: 1px solid rgba(0,0,0,0.15);
+box-shadow: 0 2px 3px rgba(0,0,0,0.06);
+padding-left: .75em;
+}
+.graphic{
+  position: absolute;
+  height: 45%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content{
+  text-align: center;
+  height: 400%;
+  width: 100%;
+  position: absolute;
+}
+.landing-page{
+  margin:0px;
+  position: relative;
+  height: 25%;
+}
+.green{
+  margin-bottom:-30px;
+  background-color: #58b792;
+  position: relative;
+  height: 25%;
+  clear:none;
+}
+.green button{
+  margin-top: 25px;
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fff;
+  background: rgba(0,0,0,0.4) !important;
+  border: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 3px;
+}
+.orange{
+  margin-bottom:-30px;
+  background: #f5a339;
+  position: relative;
+  height: 25%;
+}
+.orange button{
+  margin-top: 25px;
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fff;
+  background: rgba(0,0,0,0.4) !important;
+  border: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 3px;
+}
+.purple{
+  margin-bottom:-30px;
+  background: #5f63bd;
+  position: relative;
+  height: 25%;
+}
+.purple button{
+  margin-top: 25px;
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fff;
+  background: rgba(0,0,0,0.4) !important;
+  border: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 3px;
+}
+.blue{
+  margin-bottom:-30px;
+  background: linear-gradient(to bottom, #87cef5 60%,#c3eaff 95%);
+  position: relative;
+  height: 25%;
+}
+.blue button{
+  margin-top: 25px;
+  color: inherit;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 100%;
+  color: #fff;
+  background: rgba(0,0,0,0.4) !important;
+  border: none;
+  font-size: 18px;
+  display: inline-block;
+  border-radius: 3px;
+}

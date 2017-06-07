@@ -1,1 +1,25 @@
 /* ADD STYLES FOR PART 6 HERE */
+.apps{
+  background-color:  #e4f0f6;
+  padding: 100px 20%;
+}
+.flat{
+  float: right;
+  box-sizing:border-box;
+}
+.flat img{
+  width: 400px;
+}
+
+.but {
+  border: solid;
+  border-color: #0079bf;
+  color: #0079bf;
+  padding:0.6em 1.3em;
+  border-radius: 0.3em;
+  font-weight: 400;
+  display: inline-block;
+}
+
+.but:hover {
+}

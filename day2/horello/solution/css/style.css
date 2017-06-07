@@ -160,7 +160,7 @@ a {
 }
 
 .card-more {
-    position: absolute;
+    position: relative;
     left: 6px;
     bottom: 6px;
 }

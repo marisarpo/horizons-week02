@@ -58,7 +58,7 @@ functions.
         $('YOUR SELECTOR HERE').append(newElement)
         ```
 
-## Part 2: Reply to a comment
+## Part 2.a: Reply to a comment
 
 ### Goal
 
@@ -103,7 +103,7 @@ functions.
 
 1. Note that replying to a newly created comment does not work. Why is that?
 
-## Part 2: Better reply to a comment
+## Part 2.b: Better reply to a comment
 
 ### Goal
 
@@ -114,7 +114,7 @@ functions.
 Now let's fix the issue of not being able to respond to newly created
 comments.
 
-Replace the click handler from Part 2 with
+Replace the click handler from Part 2.a with
 [a delegated event handler](http://api.jquery.com/on/#on-events-selector-data-handler)
 attached to the top the `.comments` div. <br>
 The syntax for delegated event handlers takes a parent element selector (in

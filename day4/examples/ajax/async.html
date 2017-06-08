@@ -25,7 +25,57 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+var test = [["Raspberry Pi", "$33.53"],[]]
+var listItems = []
+
+      $.ajax({
+        //AJAX GOES WITHIN THE FIRST URL
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(resp) {
+        //TAKE EACH OF THE ELEMENTS WITHIN THE URL
+          resp.forEach(function(element) {
+            console.log(element.url)
+            //USE THESE IN AJAX AGAIN TO FIND ELEMENTS
+            $.ajax({
+              url: element.url,
+              success: function(resp2) {
+              //PUT THE ELEMENTS INTO AN ARRAY
+              var arr = []
+              arr.push(resp2.name)
+              arr.push((resp2.priceCents)/100)
+              //PUT THIS ARRAY INTO THE MASTER ARRAY
+              listItems.push(arr)
+              //IF AJAX HAS GONE THROUGH ALL THE ITEMS
+              if(listItems.length === resp.length){
+                  //SORT ARRAY SMALLEST TO LARGEST
+                  for(i=0; i<listItems; i++) {
+
+                  }
+
+                $("#products").replaceWith('<ul class=newList ></ul>')
+
+                  for(var i=0; i<listItems.length; i++) {
+                    $(".newList").append(`<li>`+ listItems[i][0] + ", $" + listItems[i][1] + `</li>`)
+
+
+                  }
+
+              }
+
+              }
+            })
+          })
+        }
+      })
+
+    // $("#products").replaceWith(`<ul>
+    //     <li>`+ test[0][0] + ", " + test[0][1]  +`</li>
+    //     <li>Tea</li>
+    //     <li>Milk</li>
+    //   </ul>`)
+
+
     </script>
   </body>
 </html>

@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC172b7dbf1f09f1bfffb4afb3bddc3454";
+twilio.authToken = "bd5a1e2d36e6f1f945e2457b9d646c8b";
+twilio.fromNumber = "+12156077612";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -52,7 +52,13 @@ twilio.TwilioShoutout.prototype = {
 	//
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
-    // YOUR CODE HERE
+    var $this = $("this")
+    console.log($this)
+
+    (this.messageSendButton).on("click", function(){
+      this.handleMessageSend;
+    })
+
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.

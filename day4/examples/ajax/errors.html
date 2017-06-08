@@ -21,7 +21,51 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+    // console.log($("#products"))
+    // console.log($("#links").children())
+
+    $("#links").children().each(function(){
+        var tag = $(this);
+
+      $.ajax({
+
+      url: tag.text(),
+        success: function(resp) {
+          console.log('yup')
+        },
+        error: function(err) {
+          tag.remove()
+        }
+
+
+        })
+      })
+
+
+    // console.log($($("#links").children()[0]).text())
+//
+// $.ajax({
+// url: ($("#products").text()),
+//   success: function(resp) {
+//     console.log('yup')
+//   },
+//   error: function(err) {
+//     console.log('nope')
+//   }
+// })
+//
+// $.ajax({
+// url: ($("#members").text()),
+//   success: function(resp) {
+//     console.log('yup')
+//   },
+//   error: function(err) {
+//     $("#members")
+//   }
+// })
+
+
     </script>
   </body>
 </html>

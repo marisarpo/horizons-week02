@@ -25,7 +25,39 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+
+        largestCountry = null
+        arrayPop = []
+
+        for (var i = 0; i<resp.length; i++){
+        arrayPop.push(resp[i].Population)
+        }
+
+        var max = function(x,y) {
+          if (y>x) {
+            return y
+          }
+          else {
+            return x
+          }
+        }
+
+        var highest = arrayPop.reduce(max, arrayPop[0])
+        var indexOfHighest = null
+
+        for (var i = 0; i<arrayPop.length; i++){
+        if(arrayPop[i] === highest ) {
+          indexOfHighest = i
+          }
+        }
+
+        var cityWithBiggest = resp[indexOfHighest]["City / Urban area"]
+
+        $("#out").text(cityWithBiggest)
+
+        }
       });
     </script>
   </body>

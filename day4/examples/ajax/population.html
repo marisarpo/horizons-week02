@@ -25,7 +25,14 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          var cities = resp;
+          var largest = cities.reduce(function(a, b) {
+            return a.population > b.population ? a : b;
+          }, 0);
+          $('#out').text(largest.Country);
+        }
       });
     </script>
   </body>

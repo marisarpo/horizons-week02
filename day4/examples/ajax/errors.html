@@ -22,6 +22,18 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      // for all links
+      for(let i = 0; i < 5; i++) {
+        $.ajax({
+          url: $('#links').children().eq(i).text(),
+          success: function(response) {
+
+          },
+          error: function(response) {
+            $('#links').children().eq(i).remove();
+          }
+        });
+      }
     </script>
   </body>
 </html>

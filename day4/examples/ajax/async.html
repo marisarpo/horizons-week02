@@ -24,8 +24,43 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script>
       // YOUR CODE HERE
+      $('#products').append('<ul></ul>');
+      var unsortedProducts = [];
+      var calls = [];
+      calls[0] = $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(response) {
+
+          for (let i = 0; i < response.length; i++) {
+            calls[i + 1] = $.ajax({
+              url: response[i].url,
+              success: function(r) {
+                console.log(r);
+                var index = _.sortedIndex(unsortedProducts, r, 'priceCents');
+                unsortedProducts.splice(index, 0, r);
+
+                $('#products ul li').remove();
+                for (let i = 0; i < unsortedProducts.length; i++) {
+                  $('#products ul').append('<li>' + unsortedProducts[i].name + ', $' + unsortedProducts[i].priceCents / 100 + '</li>');
+                }
+
+
+                //unsortedProducts.push(r);
+              },
+              error: function(r) {
+
+              }
+            })
+          }
+          console.log(response);
+        },
+        error: function(response) {
+
+        }
+      });
     </script>
   </body>
 </html>

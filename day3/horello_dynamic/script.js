@@ -92,5 +92,20 @@ $('.header-logo').on('click',function() {
     return color;
   }
   $('body').css("background-color",getRandomColor());
+})
 
+$('.color-change').on('click',function() {
+  var rgb = prompt("Enter the rgb split with comma(between 0 and 255)");
+  var rgbArr = rgb.split(',')
+  for (var i=0; i<rgbArr.length;i++) {
+    if (rgbArr[i] > 255 || rgbArr[i]<0) {
+      alert("out of range");
+      return;
+    } else if (rgbArr.length !==3) {
+      alert("doesn't fit rgb");
+      return;
+    }
+  }
+  var rgbState = "rgb(" + rgbArr[0] +','+rgbArr[1]+',' + rgbArr[2] + ")";
+  $('body').css("background-color",rgbState);
 })

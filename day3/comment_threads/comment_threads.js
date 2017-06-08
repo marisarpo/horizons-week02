@@ -3,7 +3,6 @@
 // This file contains JavaScript that will run on your page.
 // YOUR CODE HERE
 $('.post').on('click',function(){
-  console.log("post")
   var name = prompt("Enter your name");
   var comment = prompt("Enter your comment");
   var newDiv = $('<div class="comment">' +

@@ -1,1 +1,43 @@
+.greenbox {
+  background-color: #e4f0f6;
+  clear: both;
+}
+.image {
+  float: right;
+  margin-top: -60px;
+  margin-bottom: 640px;
+}
+#paragraph{
+  text-align: left;
+  font-size: 15px;
+  margin-right: 20px;
+
+}
+.appsstore{
+  float: right;
+  margin: 0.4em 1em 0em 0em;
+  padding: 0em;
+  vertical-align: middle;
+  display: inline-block;
+
+}
+#apps a {
+  vertical-align: middle;
+}
+.outline-link{
+  border-color: red;
+  margin-top: -20px;
+  color: purple;
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .5em .7em;
+  margin: .4em 0em;
+  display: inline-block;
+  color: #5e98ba;
+
+}
+.greenbox > div {
+  margin-left: 300px;
+}
+
 /* ADD STYLES FOR PART 6 HERE */

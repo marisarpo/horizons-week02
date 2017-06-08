@@ -22,11 +22,43 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+// YOUR CODE HERE
 
-      $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
-      });
-    </script>
+$.ajax({
+  url: ‘http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+    success: function(resp) {
+      $(‘body’).append($(‘<pre>‘).text(resp))
+      // console.log(typeof resp);
+      var r1 = Object.values(Object.values(resp));
+      // console.log(r1)
+    var maxPop = 0;
+      var maxIndex;
+    var arr = []
+    for (var i = 0; i < r1.length; i ++){
+      var population = r1[i].Population;
+      if(population > maxPop){
+        maxPop = population;
+        maxIndex = i;
+      }
+
+   }
+   var r2 = Object.values(r1[maxIndex]);
+
+   // console.log(r1[maxIndex])
+    var maxCity = r2[0]
+    // console.log(arr);
+    console.log(maxCity);
+    // Object.values(resp)
+
+
+ $(‘#out’).text(maxCity)
+  }
+});
+
+
+</script>
   </body>
+
+
+
 </html>

@@ -21,7 +21,25 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var lis = $('#links li');
+      var urls = [];
+      for (var i = 0; i < lis.length; i++) {
+        urls.push($(lis[i]).text());
+      }
+
+      $.each(urls, function(i,u){ 
+           $.ajax(u, 
+            {
+              error: function () {
+                for (var j = 0; j < lis.length; j++) {
+                  if ($(lis[j]).text() === u) {
+                    $(lis[j]).remove()
+                  }
+                }
+              }
+            }
+           );
+      });
     </script>
   </body>
 </html>

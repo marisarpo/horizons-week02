@@ -5,6 +5,7 @@ body {
     background-color: rgb(0,121,191);
     line-height: 18px;
     height: 100vh;
+
 }
 
 header {
@@ -13,6 +14,31 @@ header {
     height: 40px;
     position: relative;
     overflow: hidden;
+}
+
+.bg1 {
+    background-color: pink;
+}
+
+.bg2 {
+    background-color: orange;
+}
+
+.he1 {
+    background-color: red;
+}
+
+.he2 {
+    background-color: yellow;
+}
+
+.plzfloat {
+    /*background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Ssc2003-06c.jpg/1200px-Ssc2003-06c.jpg");*/
+    height: 2000px;
+    widght: 2000px;
+    top:-500px;
+    left:-500px;
+    position:absolute;
 }
 
 .header-logo {
@@ -80,6 +106,9 @@ a {
     overflow-y: hidden;
     height: calc(100% - 40px);
     padding-bottom: 1em;
+    top: 50;
+    left: 50;
+    position:absolute;
 }
 
 /*

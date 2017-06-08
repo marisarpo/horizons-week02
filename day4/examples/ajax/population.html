@@ -23,10 +23,24 @@
 
     <script>
       // YOUR CODE HERE
+      var cityCount = 0;
+      var city;
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
-      });
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          for(var i=0; i<resp.length; i++) {
+            if(resp[i].Population >cityCount) {
+              cityCount = resp[i].Population;
+              city = resp[i];
+
+            }
+          }
+          var parseCity = JSON.parse('"City / Urban area"');
+          var final = JSON.parse(JSON.stringify(city));
+          $("h1").text(final[parseCity]);
+        }
+      })
     </script>
   </body>
 </html>

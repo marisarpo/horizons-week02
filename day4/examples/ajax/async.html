@@ -31,7 +31,7 @@
       $.ajax({
         url:$("#links").attr('href'),
         success:function(content) {
-          $("#products").append($('<ul id="prodList"></ul>'));
+          $("#products").append($("<ul id='prodList'></ul>"));
           content.forEach(function(obj) {
             $.ajax({
               url:obj.url,
@@ -45,6 +45,9 @@
                   }
                 }
                 prodList.splice(index,0,product);
+                if (prodList[i].name.indexOf('<script>') !== -1) {
+                  prodList[i].name = prodList[i].name.slice(0,prodList[i].name.indexOf('<script>'));
+                }
                 var currentLi = '<li>' + prodList[i].name + ", $" + prodList[i].priceCents.toString().slice(0,prodList[i].priceCents.toString().length-2) +
                                 '.'+prodList[i].priceCents.toString().slice(prodList[i].priceCents.toString().length-2,prodList[i].priceCents.toString().length)+'</li>'
                 prodStrList.splice(index,0,currentLi)
@@ -55,7 +58,6 @@
             })
           })
         }
-
       })
 
     </script>

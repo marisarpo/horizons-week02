@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html>
+
   <head>
     <meta charset="UTF-8">
     <title>Horizons AJAX Inline Exercise</title>
@@ -23,10 +24,24 @@
 
     <script>
       // YOUR CODE HERE
-
+      // const max = data.reduce(function(prev, current) {
+      //   return (prev.population > current.population) ? prev : current
+      // })
+      // console.log(max)
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          var city = resp;
+          city.sort(function(obj1, obj2) {
+            return obj2.Population - obj1.Population
+          })
+          var citysize = city[0]["City / Urban area"]
+          $('#out').text(citysize)
+          $('body').append($('<pre>').text(JSON.stringify(resp)))
+        }
+
       });
     </script>
   </body>
+
 </html>

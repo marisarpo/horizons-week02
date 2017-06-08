@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html>
+
   <head>
     <meta charset="UTF-8">
     <title>Horizons AJAX ERRORS Examples</title>
@@ -22,6 +23,53 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(resp) {
+          console.log('Nice')
+        },
+        error: function(err) {
+          console.log('bad')
+          $('#products').text('bad link')
+        },
+      })
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/members.txt',
+        success: function(resp) {
+          console.log('Nice')
+        },
+        error: function(err) {
+          $('#members').text('bad link')
+        },
+      })
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+        success: function(resp) {
+          console.log('Nice')
+        },
+        error: function(err) {
+          $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').text('bad link')
+        },
+      })
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+        success: function(resp) {
+          console.log('Nice')
+        },
+        error: function(err) {
+          $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').text('bad link')
+        },
+      })
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/poem.txt',
+        success: function(resp) {
+          console.log('Nice')
+        },
+        error: function(err) {
+          $('#poem').text('bad link')
+        },
+      })
     </script>
   </body>
+
 </html>

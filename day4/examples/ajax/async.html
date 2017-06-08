@@ -26,6 +26,62 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+         url:"https://horizons-json-cors.s3.amazonaws.com/products.json",
+         
+         success: function(data){
+            var arr = [];
+            for(var i = 0; i<data.length;i++){
+              arr.push(data[i]['url'])
+            } //create an arr of ['url','url',...]
+
+            var arrProducts = [];
+
+            for(var i=0;i<arr.length;i++){
+              (function(i){
+                $.ajax({
+                  url: arr[i],
+                  success: function(obj){
+                      var product = [obj.name, " $"+obj.priceCents/100];
+                      $('#products').remove();
+                     
+                      arrProducts.push(product);
+                      
+                      if(i===arr.length-1){
+
+                        // console.log(arrProducts[0][0]);
+
+                        var sortedArr = arrProducts.sort(function(a,b){
+                          a[1].substring
+                          if(a[1]<b[1]){
+                            return -1;
+                            parseFloat
+                          }      
+                          return 1;
+                        });     
+                        console.log(sortedArr)
+                      }
+                      
+                      // for
+                       // $('body p').eq(1).after($('<li>').text(arrProducts[i]));
+                      // for(var i = 0;i<arr.length;i++){
+                      //   $('body p').eq(1).after($('<li>').text(sortedArr[i]));
+                      // }
+
+                      // console.log(arrObj);
+                  }
+                })   //INNER AJAX       
+              })(i);             
+            }
+
+         }
+     
+      })//OUTER AJAX
+
+      // $('body p').eq(1).sort(function(a,b){
+      //   return a-b;
+      // })
+
     </script>
   </body>
 </html>

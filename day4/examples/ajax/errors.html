@@ -20,8 +20,38 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+
     <script>
-      // YOUR CODE HERE
+
+      $('li').each(function(){
+        var thisli = $(this);
+        var urlstring = $(this).text();
+
+        $.ajax({
+          url: urlstring,
+          
+          error: function(err){     
+            thisli.remove();
+          }
+        })
+
+      });
     </script>
+     <!--  // YOUR CODE HERE
+      // $ajax({
+      //   $('li').each(function(){
+      //   success: function(resp) {
+      //     alert("This link works!")
+      //   }
+      //   error: function(err) {
+      //     alert("This link does not work!")
+      //     $('#links').remove($('li'))
+      //     console.log('hello')
+      //   }
+      //   }
+      // })
+    </script> -->
   </body>
 </html>
+
+

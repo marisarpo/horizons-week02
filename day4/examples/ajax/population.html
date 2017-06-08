@@ -25,8 +25,46 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          $('body').append($('<pre>').text(resp))
+          // console.log(typeof resp);
+          var r1 = Object.values(Object.values(resp));
+          // console.log(r1)
+          var maxPop = 0;
+          var maxIndex;
+          var arr = []
+          for (var i = 0; i < r1.length; i ++){
+            var population = r1[i].Population;
+            if(population > maxPop){
+              maxPop = population;
+              maxIndex = i;
+            }
+          
+          }  
+          var r2 = Object.values(r1[maxIndex]);
+
+          // console.log(r1[maxIndex])
+          var maxCity = r2[0]
+          // console.log(arr);
+          console.log(maxCity);
+          // Object.values(resp)
+
+
+        $('#out').text(maxCity)
+        }
       });
     </script>
   </body>
 </html>
+
+<!-- 1. store resp within an array of objects -->
+<!-- 2. look/filter by property of population key -->
+<!-- 3. look for corresponding max population value -->
+<!-- 4. Within the same object that 3. is contained, find the city property value -->
+<!-- 5. Return the value found in 4. to the #out -->
+
+
+
+
+

@@ -25,7 +25,41 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+
+    $.ajax({
+      url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      success: function(resp) {
+          var product_url_arr = Array.from(resp);
+          for (var i = 0; i < product_url_arr.length; i++) {
+            $.ajax({
+              url: product_url_arr[i]['url'],
+              success: function(objectTags) {
+                console.log('hi');
+              }
+            })
+          }
+
+            
+        }
+      })
+
       // YOUR CODE HERE
     </script>
   </body>
+
+<!-- use ajax on given starting url -->
+<!-- upon success, create array with the urls from first url -->
+<!-- Using for loop, use ajax on each of the urls from second url -->
+<!-- Upon success, find way to "grab/store" of name value & priceCents value converted into dollars -->
+<!-- Sort the "saved" name values and converted priceCents values according to the latter -->
+
+<!-- Display at the text area asked for -->
+
+
+
+
+
+
+
+
 </html>

@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC96d309a88f0b356e0afb6adbb34f4cc0";
+twilio.authToken = "33407d76d023d0fef904387b3ca6f7ea";
+twilio.fromNumber = "+18326484375";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -52,7 +52,10 @@ twilio.TwilioShoutout.prototype = {
 	//
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.bind('click', function(){
+      'this.handleMessageSend';
+    })
+    event.preventDefault();
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -70,7 +73,11 @@ twilio.TwilioShoutout.prototype = {
   //
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    if (textStr.length !== 0 && textStr !== " ") {
+      return true;
+    }
+  return false;
+   
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
@@ -82,7 +89,10 @@ twilio.TwilioShoutout.prototype = {
 	// hint. remember to take care of both upper and lower case letters!
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if (phoneStr.length === 10 && typeof phoneStr === 'number') {
+      return true;
+    }
+    return false;
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";

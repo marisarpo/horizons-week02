@@ -135,6 +135,8 @@ footer li {
     margin: 5.6px 0 0;
     display: inline-block;
     line-height: 20px;
+    position: relative;
+    left: -15px;
 }
 
 a {

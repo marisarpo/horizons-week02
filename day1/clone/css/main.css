@@ -1,9 +1,78 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    color: #161616;
+    display: block;
+    font-family: "Open Sans","Franklin Gothic Medium",Calibri,Arial,HelveticaNeue-Light,sans-serif;
+    font-size: 1.6rem;
+    /*<!-- -webkit-font-smoothing: antialiased;-->*/
+    line-height: 2.2rem;
+    overflow-x: hidden;
 }
 
-.title {
-    color: purple;
+*, :after, :before {
+    box-sizing: inherit;
 }
 
+.eas-svg-defs {
+    height: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    -webkit-transform: translate(-10000px,-10000px);
+    transform: translate(-10000px,-10000px);
+    visibility: hidden;
+    width: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+.eas-nav {
+    color: #000;
+    font-family: "Open Sans Condensed","Franklin Gothic Medium Cond","Arial Narrow",HelveticaNeue-Light,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    opacity: 1;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 50;
+}
+
+.fb_reset {
+    background: none;
+    border: 0;
+    border-spacing: 0;
+    color: #000;
+    cursor: auto;
+    direction: ltr;
+    font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+    font-size: 11px;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1;
+    margin: 0;
+    overflow: visible;
+    padding: 0;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-transform: none;
+    visibility: visible;
+    white-space: normal;
+    word-spacing: normal;
+}
+
+.container-inner, .container-outer {
+    position: relative;
+    width: 100%;
+}

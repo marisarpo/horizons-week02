@@ -5,6 +5,8 @@ body {
   height: 100vh;
 
   /** PART 1 CSS here */
+  background: rgb(0,121,191);
+  font-family: sans-serif;
 }
 
 header {
@@ -12,6 +14,9 @@ header {
   overflow: hidden;
 
   /** PART 1 CSS here */
+  padding: 5px;
+  height: 40px;
+  opacity: 0.15;
 }
 
 .header-logo {
@@ -54,10 +59,23 @@ a {
 
 .add-list {
   /** PART 1 CSS here */
+  background: rgba(0,0,0,.72);
+  color: #fff;
+  border: 0;
+  text-align: left;
+  height: auto;
+  min-height: 30px;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  width: 280px;
+  padding: 7px;
+  opacity: 0.12;
 }
 
 .add-list:hover {
   /** PART 1 CSS here */
+  background:  rgb(96, 96, 96,.99);
+  opacity: 0.15;
 }
 
 .add-list-form {
@@ -69,8 +87,9 @@ a {
   overflow-y: hidden;
   height: calc(100% - 40px);
   padding-bottom: 1em;
-
   /** PART 2 CSS here */
+  display: flex;
+
 }
 
 
@@ -83,8 +102,14 @@ a {
 .list {
   box-sizing: border-box;
   max-height: 100%;
+  display: flex;
 
   /** PART 2 CSS here */
+  padding: 0.5em;
+  margin: 5px;
+  border-radius: 3px;
+  width: 270px;
+  background: #e2e4e6;
 }
 
 .list-header {
@@ -92,10 +117,14 @@ a {
   position: relative;
 
   /** PART 2 CSS here */
+  margin: 0 0 .5em 0;
+  font-weight: 700;
+  color: black;
 }
 
 .list-footer {
   /** PART 2 CSS here */
+  font-weight: 500;
 }
 
 .list-title {
@@ -104,10 +133,17 @@ a {
 
 .add-card {
   /** PART 2 CSS here */
+  height: 40px;
+  border-radius: 4px;
+  text-align: left;
+  background: rgb(16, 16, 16, 0.15);
+  color: #333;
+  margin: 3px 0 3px 0;
 }
 
 .add-card:hover {
   /** PART 2 CSS here */
+  background: rgb(96, 96, 96, 0.15);
 }
 
 
@@ -121,10 +157,18 @@ a {
 
 .card {
   /** PART 3 CSS here */
+  margin: 0 0 .5em 0;
+  background: white;
+  border-radius: 3px;
+
 }
 
 .card-body {
   /** PART 3 CSS here */
+  padding: .5em .5em 2em .5em;
+  font-family: Cabin Arial default sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 .card-more {

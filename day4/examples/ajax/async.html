@@ -25,7 +25,48 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      // Get the links from the products page
+      var firstPageLink;
+
+      $.each($('a'), function(index, value){
+        if($(value).text() === "these products"){
+          firstPageLink = $(value).attr('href');
+        }
+      });
+
+      //console.log(firstPageLink);
+      var sortedObjs = [];
+      $.ajax({
+        url: firstPageLink,
+        success: function(response){
+          // Append the ul before we start
+          $('#products').append('<ul></ul>');
+          // 2nd ajax call!
+          $.each(response, function(index, obj){
+            $.ajax({
+              url: obj['url'],
+              success: function(response2){
+
+                sortedObjs.push(response2);
+                sortedObjs.sort(function(a, b) {
+                  return b['priceCents'] - a['priceCents']
+                });
+              },
+            })
+
+            // FIX THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            $('#products ul').append('<li>' + '</li>')
+
+
+          })
+        },
+        error: function(err){
+          console.log("Error: on line 41!", err);
+        }
+      })
+
+
+
     </script>
   </body>
 </html>

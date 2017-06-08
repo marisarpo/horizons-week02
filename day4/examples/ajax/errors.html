@@ -20,8 +20,27 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script>
       // YOUR CODE HERE
+      // Remove the broken AJAX links
+
+      // Get all the link IDS!
+      var links = $('#links').children();
+
+
+      // For each link, make an ajax call and if its a broken link, remove it from the page
+      $.each(links, function(index, item){
+        $.ajax({
+          url: $(item).text(),
+          error: function(err) {
+            console.log('ERROR', err);
+            $(item).remove();
+          }
+        })
+      })
+
+
     </script>
   </body>
 </html>

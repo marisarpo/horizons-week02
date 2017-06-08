@@ -15,6 +15,23 @@ header {
     overflow: hidden;
 }
 
+.bg1 {
+    background-color: pink;
+}
+
+.bg2 {
+    background-color: orange;
+}
+
+.he1 {
+    background-color: red;
+}
+
+.he2 {
+    background-color: yellow;
+}
+
+
 .header-logo {
     bottom: 0;
     display: block;
@@ -81,6 +98,13 @@ a {
     height: calc(100% - 40px);
     padding-bottom: 1em;
 }
+
+/*.board {
+    width:80%;
+    height:200px;
+    display:block;
+    background:transparent url(https://www.nasa.gov/sites/default/files/m101.jpg) repeat-x top left;
+}*/
 
 /*
   Required to make list vertical scroll work properly.

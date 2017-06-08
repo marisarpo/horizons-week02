@@ -22,6 +22,68 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+
+      // var ul=document.getElementById("links");
+      // var listArray=ul.getElementsByTagName('li');
+
+      var linkObjs=$('#links').children();
+      var objVals=Object.values(linkObjs)
+      // console.log(objVals);
+
+
+      $.each(linkObjs, function(index, value){
+        // console.log(value);
+        console.log($(this).text());
+
+        // $(this) refers to li tag
+
+
+
+      })
+      // for (var i = 0; i < objVals.length; i++) {
+      //   // console.log(objVals[i]);
+      //   // $(objVals[i])
+      //   // console.log($(objVals[0]).text());
+      //   var val=$(objVals[i]).text();
+      //
+      //     $.ajax({
+      //       url: val,
+      //       success: function(resp){
+      //         // console.log(resp);
+      //       },
+      //       error: function(err){
+      //         console.log(i)
+      //
+      //         objVals[i].text("");
+      //         $(objVals[i]).remove();
+      //       }
+      //     })
+      // console.log(Object.values(linkObjs)[i]);
+    // }
+
+
+
+
+
+
+
+      // console.log(listArray);
+      // console.log(String($('listArray[1]').text()))
+      // for (var i = 0; i < listArray.length; i++) {
+      //   listArray[i]
+      //
+      //   $.ajax({
+      //     url: $('listArray[i]').text()).stringify,
+      //     success: function(resp){
+      //       console.log(resp);
+      //     },
+      //     error: function(err){
+      //
+      //
+      //     })
+      // }
+
+
     </script>
   </body>
 </html>

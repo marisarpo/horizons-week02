@@ -20,13 +20,87 @@
       <li>Display the name of the city in the h1 tag at the top, it has the id <code>"out"</code>.</li>
     </ol>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script>
       // YOUR CODE HERE
 
+
+      // $.ajax({
+      //   url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+      //   success: function(resp){
+      //     var maxpop=0;
+      //     var city="";
+      //     resp.forEach(function(element){
+      //       // console.log(element);
+      //       if(element['Population']>maxpop){
+      //         // console.log(element['Population']);
+      //         maxpop=element['Population'];
+      //         // console.log(maxpop);
+      //         city=element['City / Urban area'];
+      //         console.log(city);
+      //       }
+      //       $('#out').text(city);
+      //     })
+      //   }
+      //   //pull content
+      // });
+
+      // $.ajax({
+      //   url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+      //   success: function(resp){
+      //
+      //     var populations=_.max(resp, (function(element){
+      //       console.log(element.Population)
+      //       return element.Population;
+      //     }))
+      //
+      //     $('#out').text(populations['City / Urban area']);
+      //
+      //
+      //   }
+      //   //pull content
+      // });
+
+      // $.ajax({
+      //   url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+      //   success: function(resp){
+      //     $('#out').text(
+      //         _.max(resp, (function(element){return element.Population;}))
+      //         ['City / Urban area'])
+      //   }
+      // });
+
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          $('#out').text((_.sortBy(resp, 'Population')[resp.length-1])['City / Urban area'])
+        }
       });
+
+
+
+
+
+
+
+      // (PULLED CONTENT ARRAY).map(function(city){
+      //   if(cities.Populationas>maxpop){
+      //     // maxpop=city["Population"]
+          // city=city["City / Urban area"]
+          // return {population: city.population,
+          // THIS IS HOW YOU COULD MAP AND RETURN  AN OBJECT FROM THE MAP
+
+          //to get a key from a value
+            // -no quick way--objects designed to get value from keys
+            // so would just want to have 2 parts to the object
+
+
+      //underscore has max function
+
+
+
+
+
     </script>
   </body>
 </html>

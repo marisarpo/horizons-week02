@@ -182,3 +182,8 @@ a {
 .add-card-form input {
     margin-bottom: 5px;
 }
+
+.ui-state-highlight {
+  height: 40px;
+  line-height: 256px;
+}

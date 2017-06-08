@@ -24,8 +24,54 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
       // YOUR CODE HERE
+      $('#products').text("");
+      $('#products').append('<ul></ul>');
+      // var ready = false;
+      var productArray = [];
+      var requestArray = [];
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(urlArr){
+          // console.log(urlArr);
+          // var productArray = [];
+          for(var i=0;i<urlArr.length; i++){
+            // var requestName = "request"
+            var request = $.ajax({
+              url: urlArr[i]["url"],
+              success: function(resp){
+                productArray.push(resp);
+                var sortedProducts = _.sortBy(productArray,'priceCents');
+                $('#products ul li').remove();
+                for(var i=0; i<sortedProducts.length; i++){
+                  var itemname = sortedProducts[i]["name"];
+                  var price = sortedProducts[i]["priceCents"]/100.0;
+                  $('#products ul').append("<li>"+itemname+",$"+price+"</li>");
+                }
+              }
+            })
+            // requestArray.push(request);
+          }
+
+          console.log("outer is done");
+        }
+      })
+
+      // $.when.apply($,requestArray).then( function(){
+      //   console.log("hi");
+      //   var sortedProducts = _.sortBy(productArray,'priceCents');
+      //   // console.log(sortedProducts);
+      //   for(var i=0; i<sortedProducts.length; i++){
+      //     var itemname = sortedProducts[i]["name"];
+      //     var price = sortedProducts[i]["priceCents"]/100.0;
+      //     $('#products ul').append("<li>"+itemname+",$"+price+"</li>");
+      //   }
+      //
+      // });
+
+
     </script>
   </body>
 </html>

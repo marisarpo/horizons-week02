@@ -199,5 +199,6 @@ a {
 #myModalInput {
   height: 100px;
   margin-top: 5%;
+  text-align: start; 
  
 }

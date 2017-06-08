@@ -23,6 +23,26 @@
 
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          var popArray = [];
+          for (var i = 0; i <resp.length; i++){
+            popArray.push(resp[i]["Population"]);
+            }
+            var maxPop = popArray.reduce(function(a,b){
+              if (a>b){
+                return a;
+              }
+              return b;
+            })
+            var index = popArray.indexOf(maxPop);
+            var cityName = resp[index]["City / Urban area"]
+            $("#out").text(cityName);
+          }
+        })
+
+
 
       $.ajax({
         url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'

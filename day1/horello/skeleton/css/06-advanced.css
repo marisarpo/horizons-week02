@@ -1,1 +1,46 @@
-/* ADD STYLES FOR PART 6 HERE */
+.hold-all {
+  max-width:  890px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.send-right{
+  position: absolute;
+  top: -60px;
+  left: 640px;
+}
+
+.devices{
+  background-color: #e4f0f6;
+}
+
+.text-devices{
+  max-width: 585px;
+}
+
+.linky{
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0;
+  display: inline-block;
+}
+
+.linky:hover{
+  color: #000;
+}
+
+.prev{
+  display: inline-block;
+  vertical-align: top;
+  margin: .4em 1em 0 0;
+  padding: 0;
+}
+
+.prev img {
+  height: 54px;
+}
+
+a{
+      color: #5e98ba;
+}

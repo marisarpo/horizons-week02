@@ -1,9 +1,173 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+.top{
+  position: fixed;
+  background: #ffffff;
+  top:0px;
+  left: 0px;
+  width: 100%;
+  max-height: 80px;
+  border-bottom: 1px gray solid;
+  padding-left: 10%;
+  padding-right: 10%;
+  opacity: 1;
 }
 
-.title {
-    color: purple;
+.heads{
+  display: inline-block;
+  font-size: 15px;
+  margin: 10px 10px 10px 10px;
+  vertical-align: middle;
+  color: gray;
 }
 
+#gusto{
+  height: 40px;
+}
+
+.bttns{
+  height: 30px;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 14px;
+  padding: 5px 16px;
+}
+
+#signin{
+  position: relative;
+  left: 320px;
+  background-color: #f8f8f8;
+  border-color: #ededee;
+  color: gray;
+}
+
+#freetrial{
+  position: relative;
+  left: 310px;
+  background-color: #ec4847;
+  border-color: #ec4847;
+  color: #fff;
+}
+
+.login{
+  position: relative;
+  background-image: url("/Users/michaeleberle/horizons/week02/day1/clone/images/gusto-background.jpg");
+  background-size: cover;
+  z-index: -1;
+  height: 750px;
+}
+
+.signup{
+  position: absolute;
+  left: 10%;
+  top: 20%;
+  background-color: #ffffff;
+  height: 450px;
+  width: 400px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+#payroll{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 90%;
+  font-weight: 500;
+  font-family: "graphik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;;
+  font-size: 1.953em;
+  color:#3b3c41
+}
+
+#tech{
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  line-height: 20px;
+  font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #878990;
+}
+
+.fillout{
+  position: absolute;
+  top: 150px;
+  left: 20px;
+}
+
+.fillout .field{
+  height: 20px;
+  width: 340px;
+  border-radius: 3px;
+  border: 1px solid #e1e1e3;
+  box-shadow: none;
+  height: 42px;
+  margin-bottom: 10px;
+  color: #3b3c41;
+  padding-left: 15px;
+}
+
+#freetrial2{
+  position: absolute;
+  top: 350px;
+  left: 100px;
+  width: 200px;
+  background-color: #ec4847;
+  border-color: #ec4847;
+  color: #fff;
+}
+
+.below{
+  position: absolute;
+  height: 20px;
+  width: 400px;
+  left: 10%;
+  top: 600px;
+  background: #f8f8f8;;
+  color: #3b3c41;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  vertical-align: 0px;
+  text-align: center;
+  font-size: 95%;
+  font-family: "proxima-nova", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.below a{
+  color: #25D6C9
+}
+
+{
+  width: 100%;
+  text-align: center;
+  position: relative;
+  margin-top: 45vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px 3px hsla(0, 0%, 0%, .6);
+  width: 5em;
+  padding: 1em;
+  color: hsla(255, 255%, 255%, 1);
+  text-align: center;
+  text-shadow: 0 2px 0 hsla(0, 0%, 0%, .25);
+  font: 400 1.5em /1 'Raleway', sans-serif;
+  letter-spacing: 4px;
+  background: hsla(155, 95%, 35%, 1);
+  cursor: pointer;
+}
+
+.anim {
+  animation: jiggle 2s ease-in infinite;
+}
+
+@keyframes jiggle {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+
+}

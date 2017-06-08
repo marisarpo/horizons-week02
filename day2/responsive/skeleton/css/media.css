@@ -1,4 +1,24 @@
-/* Your CSS goes here! */
-
 section {
+  padding: 0px 20px 0px 20px;
+}
+
+.outline-link{
+  width: 130px;
+  font-size: 99%;
+}
+
+.container-fluid{
+  padding-left: 10%;
+}
+
+@media (min-width: 650px) {
+  section{
+    padding: 40px 20px 40px 20px;
+  }
+}
+
+@media (min-width: 900px){
+  section{
+    padding: 80px 20px 80px 20px;
+  }
 }

@@ -25,7 +25,6 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
       var prodList = [];
       var prodStrList = [];
       $.ajax({
@@ -57,8 +56,32 @@
               }
             })
           })
-        }
+        } //setInterval!!!!!
       })
+      // var prodList = [];
+      // var number = 0;
+      // var totalNumber;
+      // $.ajax({
+      //   url:$("#links").attr('href'),
+      //   success:function(content) {
+      //     $("#products").append($("<ul id='prodList'></ul>"));
+      //     totalNumber = content.length;
+      //     content.forEach(function(obj) {
+      //       $.ajax({
+      //         url:obj.url,
+      //         success:function(product) {
+      //           if (prodList.indexOf(product) === -1) {
+      //             prodList.push(product);
+      //             number++;
+      //           }
+      //
+      //           }
+      //         })
+      //       })
+      //       setInterval(function() {
+      //         console.log("yes");
+      //         console.log(prodList)
+      //       },totalNumber === number)
 
     </script>
   </body>

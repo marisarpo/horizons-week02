@@ -39,16 +39,35 @@ TwilioApp.prototype = {
 
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
+    event.preventDefault();
+
+    var self = this;
     var phone = this.phoneInputField.val();
     var msg = this.messageInputField.val();
 
     if (this.validateMessageField(msg) && this.validatePhoneField(phone)) {
-      console.log("authenticated. sending message...")
-      this.sendMessage(phone, msg);
+      $.ajax({
+        url: 'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',
+        success: function(x) {
+          console.log('Message sent', x);
+          self.displayMessage(phone, msg);
+        },
+        error: function(e) {
+          alert("Cannot connect to server.");
+          console.log(e);
+        },
+        method: 'POST',
+        data: {
+          From: '+' + this.fromNumber,
+          To: '+' + phone,
+          Body: msg
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        }
+      });
     } else {
-      console.log("not authenticated");
+      alert("Invalid phone number/message.");
     }
   },
   displayMessage: function(sender, message) {

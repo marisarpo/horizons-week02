@@ -1,0 +1,9 @@
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+.red {
+    width: 100%;
+    height: 500px;
+}

@@ -1,0 +1,53 @@
+<!-- Week2 Day2 -->
+
+<!-- Bootstrap Grid -->
+<p>The following elements should all be in a row</p>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">"
+
+<div class="container-fluid">
+  <div class="col-xs-4 elem">First</div>
+  <div class="col-xs-4 elem">Second</div>
+  <div class="col-xs-4 elem">Third</div>
+</div>
+
+<!-- Responsive Grid -->
+<p>The challenge: use the
+  <a href="https://getbootstrap.com/css/#grid-offsetting">Bootstrap grid</a>
+  to change the layout of the page based on the screen size.
+</p>
+<ul>
+  <li>On large displays (>= 900px width), they should all be laid out in a
+    row.</li>
+  <li>On medium displays (>= 650px width), two should be on the first row,
+    one below on its own line.</li>
+  <li>On small displays (< 650px width), the three should stack.</li>
+</ul>
+
+<div class="container-fluid">
+  <div class="col-lg-4 col-md-6  col-sm-12 elem">First</div>
+  <div class="col-lg-4 col-md-6  col-sm-12 elem">Second</div>
+  <div class="col-lg-4 col-md-6  col-sm-12 elem">Third</div>
+</div>
+
+
+<!-- NavBar -->
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"> 
+   <ul class="nav navbar-nav col-xs-4">
+        <li><a href='#'>Home</a><li>
+        <li><a href='#'>About</a><li>
+   </ul>
+  <ul class="nav navbar-nav col-xs-4">
+        <li><a href='#'>Horizons</a><li>
+   </ul>
+   <ul class="nav navbar-nav col-xs-4">
+        <li><a href='#'>Email</a><li>
+        <li><a href='#'>Alumni</a><li>
+        <li><a href='#'>Contact</a><li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More <span class="caret"></span></a>
+          <ul class="dropdown-menu" style=" text-align: center;">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Sign Up</a></li>
+          </ul>
+</div>
+

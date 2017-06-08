@@ -1,0 +1,65 @@
+div {
+  text-align: center;
+  border: 1px solid gray;
+  
+}
+
+.all {
+  justify-content: center; 
+/*   flex-direction: row; */
+}
+
+.c1 {
+  justify-content: center;
+  flex-direction: row;
+  height: 100px;
+  width: 200px;
+  display: flex;
+
+    
+}
+
+.c2 {
+  height: 100px;
+  width: 200px;
+  display: flex;
+  text-align: center;
+}
+
+.d {
+ text-align: center;
+  justify-content: center;
+}
+
+
+.d2 {
+  flex:1;
+  background-color: green;
+
+}
+
+.d3 {
+flex:1;
+  background-color: yellow;
+}
+
+.d4a {
+flex:1;
+  background-color: blue;
+ 
+}
+
+.d4b {
+flex:1;
+  background-color: blue;
+ 
+}
+
+@media (min-width = 700px){
+  c1{
+    flex-direction: column;
+  }
+  .d4a{
+    order:-1;
+  }
+}

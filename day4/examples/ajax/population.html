@@ -25,7 +25,26 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        dataType: "json",
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          // $('body').append('<pre>'+JSON.stringify(resp)+'</pre>');
+// start HERE
+        var data = resp
+
+        var sortVal = function(arr) {
+  // YOUR CODE HERE
+          return arr.sort(function(a,b){return a.Population-b.Population})
+        };
+
+        var x = sortVal(resp)
+
+        // console.log()
+
+      $('h1#out').before().text(Object.values(x[x.length-1])[0])
+
+
+        }
       });
     </script>
   </body>

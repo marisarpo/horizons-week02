@@ -15,6 +15,20 @@ header {
     overflow: hidden;
 }
 
+.body1 {
+    background-color: red;
+    line-height: 18px;
+    height: 100vh;
+}
+
+.header1 {
+    background: green;
+    padding: 5px;
+    height: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
 .header-logo {
     bottom: 0;
     display: block;

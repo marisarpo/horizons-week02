@@ -1,1 +1,22 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+.txtBx{
+	border: 1px solid #0079bf;
+	border-radius: 0.3em;
+	color: #0079bf;
+	margin: 0.4em 0 0;
+	padding: 0.7em 1em;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.txtBx2{
+	height: 54px;
+	margin: 0.4em 0 0;
+
+	display: inline-block;
+}
+.clear{
+	clear:both;
+}
+

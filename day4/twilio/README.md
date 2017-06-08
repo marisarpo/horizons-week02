@@ -24,19 +24,27 @@ this.fromNumber = "YOUR TWILIO NUMBER HERE";
 
 ## Part 1. Implement the `initialize` method
 
-Update `this.initialize` and add a click handler to the
+1. Update `this.initialize` and add a click handler to the
 `this.messageSendButton` element that calls `this.handleMessageSend`.
 `this.initialize` is called when the app is started inside the `TwilioApp`
 constructor.
+1. Update `this.handleMessageSend` and prevent the default behavior for the
+click `event`.
+1. When you click send, you should see a test message.
 
 <details><summary>
 Hint
 </summary><p>
 
-Remember that `this` doesn't work inside callbacks (like event handlers)
-use `.bind()` or create a variable inside the closure.
+`this` inside event handlers points to the current element but we don't want
+that. Use `.bind()` to ensure that `this` inside the event handler points to the
+current instance of `TwilioApp`.
 
 </p></details>
+
+#### End goal:
+
+![](https://cl.ly/3D0w3a330B10/Screen%20Recording%202017-06-07%20at%2011.34%20PM.gif)
 
 ## Part 2. Implement the `validateMessageField` method
 
@@ -51,7 +59,7 @@ i.e. `"           "`
 Hint
 </summary><p>
 
-`$.trim()` might be useful
+[`$.trim()`](https://api.jquery.com/jQuery.trim/) might be useful.
 
 </p></details>
 
@@ -63,11 +71,13 @@ if the given string passes these conditions:
 1. The string contains only numbers
 
     **Good:** 123
+
     **Bad:** 1-2
 
 1. The string contains exactly 10 digits
 
     **Good:** 14155005000
+
     **Bad:** 4155005000
 
 ## Part 4. Implement the `handleMessageSend` method
@@ -75,7 +85,6 @@ if the given string passes these conditions:
 The `handleMessageSend` method is called when the user clicks the `Send` button.
 Follow these steps to send an SMS via the Twilio API:
 
-1. Prevent the default behavior for the click `event`.
 1. Get the contents of the `messageInputField` and `phoneInputField`
 1. Validate the message using `this.validateMessageField()` and the phone number using
 `this.validatePhoneField()`.
@@ -91,6 +100,8 @@ Follow these steps to send an SMS via the Twilio API:
     1. If the AJAX request fails, notify the user using the browser built-in
     [`alert()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
     function.
+
+**Note:** In Twilio trial you can only send messages to your own phone number.
 
 #### End goal:
 

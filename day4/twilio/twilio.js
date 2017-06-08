@@ -35,6 +35,8 @@ TwilioApp.prototype = {
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
+    // REMOVE THE NEXT LINE, IT'S FOR TEST
+    this.displayMessage('9999999999', 'Testing testing!');
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

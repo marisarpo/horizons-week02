@@ -25,7 +25,19 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var start = `<div id="products"><ul>`;
+      var end = `</ul></div>`;
+      $.ajax({url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+              success: function(response) {
+                for (var i = 0; i < response.length; i++) {
+                  $.ajax({url: response[i].url,
+                          success: function() {
+                            end += `<li>${response[i].url.name},${response[i].url.priceCents}</li>`;
+                          }});
+                }
+                ("#products").replaceWith(start+end)
+              }})
+
     </script>
   </body>
 </html>

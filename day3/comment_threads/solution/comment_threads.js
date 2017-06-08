@@ -1,8 +1,8 @@
 "use strict";
 
 $('.post').click(function() {
-  $('.comments').append(promptForComment());
-});
+  $('.comments').append(promptForComment())
+}
 
 function promptForComment() {
   var author = prompt('Enter your name');

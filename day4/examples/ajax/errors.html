@@ -22,6 +22,22 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      // $('#links').find('https://horizons-json-cors.s3.amazonaws.com/products.json');
+      var links = ['https://horizons-json-cors.s3.amazonaws.com/products.json',
+'https://horizons-json-cors.s3.amazonaws.com/members.txt',
+'https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+'https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+'https://horizons-json-cors.s3.amazonaws.com/poem.txt']
+// $('#link').children()
+      $.each(links, function(index, val){
+        $.ajax({
+          url: val,
+          error: function(err) {
+            $('li').eq(index).remove();
+          }
+        })
+      }
+    )
     </script>
   </body>
 </html>

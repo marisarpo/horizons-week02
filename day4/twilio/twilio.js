@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = 'AC2fb533be8ced8dfda88b3cc8fa91cbc3';
+twilio.authToken = '010cc36672e04b17a868fe756d82c248';
+twilio.fromNumber = '1579990047';
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -53,6 +53,15 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    this.messageSendButton.on('click', this.handleMessageSend, function(event){
+      this.initialize();
+      event.preventDefault();
+    })
+    // this.messageSendButton.on('click', this.handleMessageSend.bind(this))
+    // this.handleMessageSend.on('click', function (event) {
+    //   event.preventDefault();
+    // })
+
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -62,6 +71,8 @@ twilio.TwilioShoutout.prototype = {
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
     // YOUR CODE HERE
+    jqField.val('')
+
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -71,7 +82,12 @@ twilio.TwilioShoutout.prototype = {
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
     // YOUR CODE HERE
-  },
+    if($.trim(textStr) != ''){
+    if(isNaN($.trim(textStr)) === false && $.trim(textStr).length === 10) {
+      return true;
+    } else {return false;}
+  } else {return false;}
+},
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
   // (1) The field should not have any non-numeric characters ('201-123-4321' is bad)

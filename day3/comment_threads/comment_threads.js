@@ -29,13 +29,27 @@ function commentInfo(author, comment, reply) {
   controls.append($('<button class="show-replies btn btn-default">Show Replies</button>'));
   controls.append($('<button class="reply btn btn-default">Reply</button>'));
   comment.append(controls);
-  comment.append($(<div class="replies">).append(reply));
+  comment.append($('<div class="replies">').append(reply));
   return comment;
 }
 
 $('.comment').on('click', '.reply', function() {
-  var $this = $(this);
-  var reply = $this.closest('.comment').children('.replies')
+  // alert('hey')
+  var reply = $(this).closest('.comment').children('.replies')
   reply.show();
   reply.append(promptInfo());
+})
+
+
+$('.comment').on('click', '.hide-replies', function() {
+  // alert('hey')
+  var hidereply = $(this).closest('.comment').children('.replies')
+  hidereply.hide();
+})
+
+
+$('.comment').on('click', '.show-replies', function() {
+  var showreply = $(this).closest('.comment').children('.replies');
+  showreply.show();
+  // reply.append(promptInfo());
 })

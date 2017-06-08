@@ -25,8 +25,25 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp)
+        {
+          // $('body').append($('<pre>').text(resp))
+          // console.log(resp);
+          var largestpopulation = 0
+          resp.forEach(function(obj){
+            // var popu = 0;
+            if (obj["Population"] > largestpopulation) {
+              largestpopulation = obj["Population"];
+            }
+          })
+
+          $('#out').text(largestpopulation);
+
+        }
       });
+
+
     </script>
   </body>
 </html>

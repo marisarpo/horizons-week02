@@ -17,7 +17,7 @@
     <div id="products">REPLACE me with the sorted list of products! My <code>id is "products"</code>.</div>
 
     <h2>Example output</h2>
-    <ul>
+    <ul id="LIST">
       <li>Raspberry Pi, $33.53</li>
       <li>Amazon Echo, $179.99</li>
       <li>DJI Phantom 3, $416.59</li>
@@ -26,6 +26,78 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      //input newproducts list
+      $('#products').append('<ul id="newProducts"></ul>');
+
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(resp) {
+          //iterate through links on page
+          for (var i=0; i<resp.length; i++) {
+            var prod = null;
+            var price = null;
+            var length = 0;
+            var index = i;
+            var $ul = $('#newProducts');
+
+            //get values from link
+            $.ajax({
+              url: resp[i].url ,
+              success: function(product) {
+                prod = product.name;
+                price = product.priceCents;
+
+                callbackFun(prod, price);
+              }
+            })//close ajax
+
+            function callbackFun (prod, price) {
+              var length = $ul.children().length;
+              var newprice = priceToString(price);
+              price = priceToUse(newprice);
+
+
+              if (length === 0) {
+                $('#newProducts').append("<li>"+prod+", $"+newprice+"</li>");
+
+              } else {
+                //iterate through ul and find place for this prod
+                for (var j=0; j<length; j++){
+
+                  var listLi = $('#newProducts li').eq(j);
+                  var text = listLi.text();
+                  var priceCheck = parseInt(text.substring(text.indexOf('$')+1, text.length));
+
+                  if (price < priceCheck) {
+                    listLi.before("<li>"+prod+", $"+newprice+"</li>");
+
+                  } else if (j===length-1) {
+                    $ul.append("<li>"+prod+", $"+newprice+"</li>")
+                  }
+                }
+
+              }
+            } //close function
+
+            function priceToString (price) {
+              var decimal = price.toString();
+              decimal = decimal.slice(decimal.length-2, decimal.length)
+              var newprice = price.toString();
+              newprice = newprice.slice(0, newprice.length-2)
+              newprice = newprice+'.'+decimal;
+              return newprice;
+            };
+
+            function priceToUse (price) {
+              return parseInt(price.toString().slice(0, price.toString().indexOf('.')));
+            };
+            
+          } //close for loop
+        } //close success
+      }) //close ajax
     </script>
   </body>
 </html>
+
+
+

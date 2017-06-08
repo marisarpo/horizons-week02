@@ -182,3 +182,34 @@ a {
 .add-card-form input {
     margin-bottom: 5px;
 }
+
+.gradient {
+    background-color: none;
+    background-image: none;
+    background: linear-gradient(teal, aqua, blue);
+
+}
+.image1 {
+    background-image: url("https://apod.nasa.gov/apod/image/0802/atlas_cern_big.jpg");
+    background-size: cover;
+    background-color: none;
+}
+.images2 {
+    background-image: url("https://i.ytimg.com/vi/lt0WQ8JzLz4/maxresdefault.jpg");
+    background-size: cover;
+    background-color: none;
+}
+.image3 {
+    background-image: url("https://wallpapershome.com/images/wallpapers/earth-7251x4018-planet-space-10121.jpg");
+    background-size: cover;
+    background-color: none;
+}
+.image4 {
+    background-image: url("http://ocean.nationalgeographic.com/u/TvyamNb-BivtNwpvn7Sct0VFDulyAfA9wBcU0gVHVnqC5ghqXjggeitqtJ-1ZIZ1rmCgor42TXOteIQU/");
+    background-size: cover;
+    background-color: none;
+}
+.red {
+    background-color: red;
+    background-image: none;
+}

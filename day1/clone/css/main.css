@@ -7,14 +7,39 @@ body {
     color: purple;
 }
 input {
-                width:100%;
-                margin:50px auto;
+                width:30%;
 
-                margin:500px auto
-                padding: 100px, 100px, 100px,100px
+                height:30px;
+
+                margin:40 auto;
+                margin-bottom:60px;
+                padding: 500px, 100px,
 }
-.search {
-                padding:8px 15px;
-                background:rgba(50, 50, 50, 0.2);
-                border:0px solid #dbdbdb;
+#content{
+  position: absolute;
+      margin: auto;
+      width: 100%;
+      top: 24%;
+      left: 0;
+      right: 0;
+      z-index: 12;
+}
+
+#content-second {
+  height: 400%;
+width: 100%;
+position: absolute;
+top: 100%;
+}
+
+#content-second img {
+  height: 64px;
+    width: 80px;
+    top: -110px;
+    left: 50%;
+    margin: 0 0 50px -40px;
+    position: absolute;
+    z-index: 11;
+    cursor: pointer;
+    display: inline;
 }

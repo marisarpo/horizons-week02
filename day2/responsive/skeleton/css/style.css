@@ -11,9 +11,21 @@ body {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 0 20px;
     clear: both;
     overflow: hidden;
+}
+
+@media (min-width: 650px) {
+  section {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  section {
+    padding: 80px 20px;
+  }
 }
 
 .section-wrapper {
@@ -49,7 +61,7 @@ section {
     color: #fff;
 }
 
-section, footer {
+footer {
     padding: 80px 20px;
 }
 

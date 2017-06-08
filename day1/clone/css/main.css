@@ -1,9 +1,99 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  font-family: helvetica neue;
+
 }
 
-.title {
-    color: purple;
+h1 {
+  font-size: 2em;
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.1em;
+}
+
+ul {
+  list-style-type: none;
+
+}
+
+.first3 a {
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: normal;
+  color: #004DCF;
+  display: inline-block;
+  padding: 0 2em 0 0;
+  float: left;
+
+}
+
+.last2 a {
+  text-decoration: none;
+  margin: 0;
+  font-size: .9em;
+  font-weight: normal;
+  color: #004DCF;
+  display: inline-block;
+  margin: 0 2em 0 0;
+  float: right;
+}
+
+
+li a:hover {
+  color: #0058FF;
+  text-decoration: underline;
+}
+
+li a:nth-child(4) {
+  font-size: 1em;
+  padding: 0.3em 0.8em 0.3em 0.8em
+  border: 0.1em solid #FFAC00;
+  color: #162A4E;
+
+}
+
+p {
+  font-size: 0.85em;
+}
+
+.logo {
+  float: left;
+}
+
+.logo * {
+  padding: 0;
+
+}
+
+
+
+.logo1 {
+  margin 0;
+
+}
+.logo2 {
+  height: 2.5em;
+  margin: 0 2em 0 0;
+
+}
+
+.navbar {
+  padding: 2em 5% 3em 5%;
+  clear: both;
+}
+
+
+.navbar * {
+  vertical-align: bottom;
+  display: inline-block;
+  float: left;
+
+}
+
+.body1 {
+  background-color: #eee
+}

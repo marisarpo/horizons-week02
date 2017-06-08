@@ -13,9 +13,106 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <h1>Billing Information</h1>
+      <div class="form-group">
+      <label for="username" class="control-label col-sm-2 col-offset-1">Username</label>
+      <div class="input-group col-sm-8">
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <input class="form-control" id="username" name="username" type="text" placeholder="Username">
+      </div>
+    </div>
+      <div class="form-group">
+      <label for="password" class="control-label col-sm-2 col-offset-1">Password</label>
+      <div class="input-group col-sm-8">
+        <div class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </div>
+        <input class="form-control" id="password" name="password" type="password" placeholder="Password">
+      </div>
+    </div>
+    <div class="form-group">
+    <label for="password" class="control-label col-sm-2 col-offset-1">Date of Birth</label>
+    <div class="input-group col-sm-8">
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-phone"></span>
+      </div>
+      <input class="form-control" id="DOB" name="DOB" type="date" placeholder="yyyy-mm-dd">
+    </div>
+  </div>
+  <div class="form-group">
+  <label for="password" class="control-label col-sm-2 col-offset-1">Zip Code</label>
+  <div class="input-group col-sm-8">
+    <div class="input-group-addon">
+      <span class="glyphicon glyphicon-home"></span>
+    </div>
+    <input class="form-control" id="ZIP" name="ZIP" type="number" placeholder="Zip Code">
+  </div>
+</div>
+<div class="form-group">
+<label for="password" class="control-label col-sm-2 col-offset-1">State</label>
+<div class="input-group col-sm-8">
+  <div class="input-group-addon">
+    <span class="glyphicon glyphicon-list"></span>
+  </div>
+  <select class="form-control" id="State" placeholder="State">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
+</select>
+</div>
+</div>
+<div class ="form-group">
+  <label for="Payment" class="control-label col-sm-2 col-offset-1">Payment Method</label>
+  <div class="radio">
+  <label>
+    <input type="radio" name="Payment" id="Payment" value="Visa" checked>
+    Visa
+  </label>
+  <label>
+    <input type="radio" name="Payment" id="Payment2" value="MasterCard">
+    MasterCard
+  </label>
+</div>
+</div>
+<div class="form-group">
+<label for="card number" class="control-label col-sm-2 col-offset-1">Card #</label>
+<div class="input-group col-sm-8">
+  <div class="input-group-addon">
+    <span class="glyphicon glyphicon-credit-card"></span>
+  </div>
+  <input class="form-control" id="Card" name="Card" type="password" placeholder="0000 0000 0000 0000">
+</div>
+</div>
+
+<div class="form-group">
+<label for="Expiry" class="control-label col-sm-2 col-offset-1">Expiry Date</label>
+<div class="input-group col-sm-3">
+  <input class="form-control" id="Expiry" name="Expiry" type="type" placeholder="MM/YY">
+</div>
+</div>
+<div class="form-group">
+<label for="Expiry" class="control-label col-sm-2 col-offset-1">Expiry Date</label>
+<div class="input-group col-sm-3">
+  <input class="form-control" id="Expiry" name="Expiry" type="type" placeholder="MM/YY">
+</div>
+</div>
+
+<div class="form-group">
+<label for="Desc" class="control-label col-sm-2 col-offset-1">Product Description</label>
+<div class="input-group col-sm-8">
+  <div class="input-group-addon">
+    <span class="glyphicon glyphicon-pencil"></span>
+  </div>
+  <textarea class="form-control" rows="5" id="comment"></textarea>
+</div>
+</div>
+<div>
+<button type="submit" class="btn btn-warning">Submit <span class="glyphicon glyphicon-send"></span></button>
+</div>
     </form>
   </div>
 </div><!-- /.container -->

@@ -7,12 +7,32 @@ body {
     height: 100vh;
 }
 
+.header-style1 {
+  background-color: rgb(0,121,191);
+
+
+}
+
+.header-style2{
+  background-color: red;
+
+}
+
+.header-style3{
+  background-color: yellow;
+
+}
+
+.header-style4{
+  background-color: green;
+}
+
 header {
     background: rgba(0,0,0,.15);
     padding: 5px;
     height: 40px;
     position: relative;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 .header-logo {

@@ -13,7 +13,7 @@
 
     <ul id="links">
       <li id="products">https://horizons-json-cors.s3.amazonaws.com/products.json</li>
-      <li id="members">https://horizons-json-cors.s3.amazonaws.com/members.txt</li>
+      <li id="members">https://horizons-json-cors.s3.amazonaws.com/members.txt</li> //issue
       <li id="JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF">https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json</li>
       <li id="oUfx3vNy2C6l8dzki84Tp2e3cds3">https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json</li>
       <li id="poem">https://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
@@ -21,7 +21,24 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    var listItems = $('#links li');
+    listItems.each(function(idx, li) {
+      console.log(idx);
+      console.log($(li).html())
+    $.ajax({
+        url: $(li).html(),
+        success:function (data) {
+          console.log('Success, accessed data');
+        },
+        error: function (err) {
+          console.log('Error, something went wrong');
+          // alert ('Somthing went wrong');
+          $(li).remove()
+        }
+    });
+  });
+
+
     </script>
   </body>
 </html>

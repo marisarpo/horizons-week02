@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC57789425ebbbc784e54b8e9e4b496d76";
+twilio.authToken = "f1fc4f8587acf009a7d7d0d6581bf26f";
+twilio.fromNumber = "+18562427310";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -52,7 +52,7 @@ twilio.TwilioShoutout.prototype = {
 	//
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on("click", this.handleMessageSend);
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -61,7 +61,7 @@ twilio.TwilioShoutout.prototype = {
   // hint. what does it mean to `clear` a field? Set it to an empty string.
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
-    // YOUR CODE HERE
+    jqField.val("");
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -70,7 +70,7 @@ twilio.TwilioShoutout.prototype = {
   //
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return !(textStr.trim() === "");
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
@@ -82,7 +82,18 @@ twilio.TwilioShoutout.prototype = {
 	// hint. remember to take care of both upper and lower case letters!
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if (!this.validateMessageField(phoneStr)) {
+      return false;
+    }
+    console.log(phoneStr);
+    phoneStr = phoneStr.trim();
+    console.log(phoneStr);
+    for (var i = 0; i < phoneStr.length; i++) {
+      if (Number(phoneStr[i]) + "" === "NaN") {
+        return false;
+      }
+    }
+    return true;
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -92,9 +103,18 @@ twilio.TwilioShoutout.prototype = {
 	// note. also `sendMessage`
   handleMessageSend: function(evt) {
 		evt.preventDefault();
-
+    console.log(this);
     // only send if both fields are valid
-    // YOUR CODE HERE
+    var messageInputField = this.messageInputField;
+    console.log(messageInputField);
+    var phoneInputField = this.phoneInputField;
+    if (this.validateMessageField(messageInputField) && this.validatePhoneField(phoneInputField)) {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          this.displayMessage();
+        }
+      });
+    }
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
   // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.

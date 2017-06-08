@@ -25,7 +25,73 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    $.ajax({
+      url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+      success: function(resp) {
+        var list = [];
+        $.ajax({
+          url: resp[0]["url"],
+          success: function(subresp) {
+            list.push(subresp["name"]);
+            list.push(subresp["priceCents"]);
+          }
+        })
+        $.ajax({
+          url: resp[1]["url"],
+          success: function(subresp) {
+            list.push(subresp["name"]);
+            list.push(subresp["priceCents"]);
+          }
+        })
+        $.ajax({
+          url: resp[2]["url"],
+          success: function(subresp) {
+            list.push(subresp["name"]);
+            list.push(subresp["priceCents"]);
+
+            var largestp = Number(list[1]);
+            var largest = list[0];
+            var smallestp = Number(list[1]);
+            var smallest = list[0];
+            var justTheName = list[2].split("<script>");
+            list[2] = justTheName[0];
+            if (Number(list[3]) > largestp) {
+              console.log(Number(list[3]));
+              largestp = Number(list[3]);
+              largest = list[2];
+            }
+            if (Number(list[3]) < smallestp) {
+              console.log(Number(list[3]));
+              smallestp = Number(list[3]);
+              smallest = list[2];
+            }
+            if (Number(list[5]) > largestp) {
+              console.log(Number(list[5]));
+              largestp = Number(list[5]);
+              smallest = list[4];
+            }
+            if (Number(list[5]) < smallestp) {
+              console.log(Number(list[5]));
+              smallestp = Number(list[5]);
+              smallest = list[4];
+            }
+            var middle;
+            var middlep;
+            for (var i = 0; i < 6; i+=2) {
+              if (list[i] !== smallest && list[i] !== largest) {
+                middle = list[i];
+                middlep = list[i + 1];
+              }
+            }
+            $("#products").empty();
+            $("#products").append("<ol></ol>");
+            $("#products ol").append("<li>" + smallest + ", " + smallestp + "</li>");
+            $("#products ol").append("<li>" + middle + ", " + middlep + "</li>");
+            $("#products ol").append("<li>" + largest + ", " + largestp + "</li>");
+          }
+        })
+      }
+    })
     </script>
   </body>
 </html>

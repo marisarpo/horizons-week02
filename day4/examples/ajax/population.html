@@ -23,9 +23,22 @@
 
     <script>
       // YOUR CODE HERE
+      function findHighest(conArr) {
+        var highestCity = conArr[0];
+        for (var i=0; i<conArr.length;i++) {
+          if (highestCity.Population < conArr[i].Population) {
+            highestCity = conArr[i];
+          }
+        }
+        return highestCity;
+      }
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(content) {
+          var highestCity = findHighest(content);
+          $('#out').append($('<pre>')).text(highestCity['City / Urban area']);
+        }
       });
     </script>
   </body>

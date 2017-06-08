@@ -157,6 +157,9 @@ a {
     cursor: pointer;
 }
 
+.list-card: hover {
+    border: 1px solid black;
+}
 .card-body {
     display: block;
     padding: .5em .5em 2em;
@@ -181,4 +184,15 @@ a {
 
 .add-card-form input {
     margin-bottom: 5px;
+}
+
+.red {
+    background: red;
+}
+
+.black {
+    background: black;
+}
+.white {
+    background: white;
 }

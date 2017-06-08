@@ -21,7 +21,49 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    $(document).ready(function(){
+      // $('#links').on('click','li', function(){
+      //   $.ajax({
+      //     url:$(this).text(),
+      //     // type: 'text',
+      //     // method: 'get',
+      //     success: function(res){
+      //       console.log('success!');
+      //     },
+      //     error: function(e) {
+      //       $(this).remove();
+      //     }.bind(this)
+      //     // error: $(this).remove()
+      //   });
+      // })
+
+
+      var myLinks = $('#links').children();
+          console.log(myLinks);
+          $.each(myLinks,function(index,val){
+            $.ajax({
+              url:$(val).text(),
+              error:function(err){
+              $(val).remove();
+              }
+            })
+          })
+
+    })
+    // $.ajax({
+    //   // url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+    //   url:$('#links'). ,
+    //   type: 'text',
+    //   method: 'get'
+    //   success: function(res){
+    //     console.log('success!');
+    //   },
+    //   error: function(e) {
+    //     // $('#links').
+    //     console.log('error!');
+    //   }
+    // });
     </script>
+
   </body>
 </html>

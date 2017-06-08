@@ -42,6 +42,14 @@ header {
     position: absolute;
 }
 
+.logo-button{
+  border: 0;
+  background: rgba(0,0,0,0);
+  height:1px;
+  width:1px;
+
+}
+
 a {
     background-color: transparent;
 }
@@ -68,6 +76,10 @@ a {
 
 .add-list:hover {
     background: rgba(0,0,0,.20);
+}
+
+.card:hover{
+
 }
 
 .add-list-form {
@@ -156,6 +168,7 @@ a {
     border-radius: 3px;
     cursor: pointer;
 }
+
 
 .card-body {
     display: block;

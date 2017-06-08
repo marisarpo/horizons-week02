@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "ACa797f4d78e64abc0c8f760ad492b9291";
+  this.authToken = "ee57133998b3ba6f19cb7ac6b5cb18b2";
+  this.fromNumber = "+16313874080";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,7 +22,9 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', function(){
+      this.handleMessageSend();
+    })
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {

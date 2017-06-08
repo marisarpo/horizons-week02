@@ -1,9 +1,103 @@
-body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+/*TOP HEADER*/
+
+.titleheading {
+  font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 45px;
 }
 
-.title {
-    color: purple;
+.header{
+  position: absolute;
+  height: 70px;
+  width: 1440px;
 }
 
+.header img.logo {
+  height: 46px;
+  padding-left: 180px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+}
+
+div.topheading {
+  float: right;
+  padding-right: 100px;
+  padding-top: 25px;
+}
+
+div.topheading a {
+  padding: 10px;
+  text-decoration:none;
+  color: #003e5b;
+  font-weight: bold;
+  font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
+}
+
+/*CENTRE BANNER IMAGE + TEXT*/
+.container {
+  z-index: -1;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 80px;
+  bottom: 0;
+  overflow: hidden;
+  height: 420px;
+}
+
+.vid  {
+  position: absolute;
+  width: 100%;
+  top: 85%;
+  transform: translateY(-50%);
+}
+
+.innerbanner {
+  height: 272px;
+  width: 850px;
+  padding-top: 180px;
+  padding-left: 295px;
+}
+
+.centreheading {
+  font-family: 'Roboto', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 45px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 20px;
+}
+
+.centretext {
+  font-family: 'Roboto Condensed', Helvetica, Arial, Lucida, sans-serif;
+  font-size: 19px;
+  color: #373737;
+  text-align: center;
+}
+
+.bannerbuttons {
+  padding-top: 30px;
+  text-align: center;
+}
+
+div.bannerbuttons a {
+  border-radius: 0.3em;
+  padding: 8px;
+  text-decoration:none;
+  font-weight: bold;
+  font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
+  font-size: 20px;
+}
+
+a#try {
+margin-right: 5px;
+color: white;
+background: #4cc88d;
+padding: 10px 20px 10px 20px;
+}
+
+a#watch {
+  border: solid #27aefb;
+  color: #27aefb;
+  height: 40px;
+  width: 100px;
+}

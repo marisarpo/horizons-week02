@@ -22,29 +22,192 @@
   <!-- PART 5. Modal -->
 
   <div class="board">
+    <!-- CONTAINER 1 -->
     <div class="list-container">
       <div class="list">
         <div class="list-header">
-          <span class="list-title">House List</span>
+          <span class="list-title">Duck Story</span>
         </div>
+        <!-- LIST 1 -->
         <div class="list-cards">
-          <div class="card">
+          <!-- CARD 1 -->
+          <div class="card" data-toggle="modal" data-target="#myModal">
             <div class="card-body">
-              Today we will #DominateAllTheHouses
+            An adorable little duckling is trying to befriend another “duck,” but he is oblivious to the fact that his potential pal is actually a cat. Though resistant and stubborn at first, the cat soon realizes labels don’t matter in the least–and before you know it, meowing and quacking are one and the same.
+              <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
             </div>
           </div>
+          <!-- CARD 1 END -->
         </div>
         <div class="list-footer">
-          <!-- PART 2. Add card button -->
-
-          <!-- PART 4. Collapse -->
+          <button class="add-card btn" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapseExample">
+            Add a card...
+          </button>
+          <div class="collapse" id="collapse1">
+          <!-- INSIDE THE ADD A CARD -->
+                <div class="input-group cardTitle">
+                  <input type="text" class="form-control" placeholder="Card title">
+              </div><!-- /.col-lg-6 -->
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                <!-- END OF ADD A CARD -->
+          </div><!-- /.row -->
         </div>
       </div>
+      </div>
     </div>
+    <!-- CONTAINER 1 END-->
+
+<!-- CONTAINER 2 -->
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Grocery List</span>
+        </div>
+        <!-- LIST 1 -->
+        <div class="list-cards">
+          <!-- CARD 1 -->
+          <div class="card" data-toggle="modal" data-target="#myModal">
+            <div class="card-body">
+              Milk
+              <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+            </div>
+          </div>
+            <!-- CARD 1 END -->
+          <!-- CARD 2 -->
+          <div class="card" data-toggle="modal" data-target="#myModal">
+            <div class="card-body">
+              Cereal
+              <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+            </div>
+          </div>
+          <!-- CARD 3 END -->
+          <div class="card" data-toggle="modal" data-target="#myModal">
+            <div class="card-body">
+            Strawberries
+              <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+            </div>
+          </div>
+          <!-- CARD 4 END -->
+          <div class="card" data-toggle="modal" data-target="#myModal">
+            <div class="card-body">
+            Beer
+              <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+            </div>
+          </div>
+          <!-- CARD 4 END -->
+        </div>
+        <div class="list-footer">
+          <button class="add-card btn" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapseExample">
+            Add a card...
+          </button>
+          <div class="collapse" id="collapse2">
+          <!-- INSIDE THE ADD A CARD -->
+                <div class="input-group cardTitle">
+                  <input type="text" class="form-control" placeholder="Card title">
+              </div><!-- /.col-lg-6 -->
+            <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                <!-- END OF ADD A CARD -->
+          </div><!-- /.row -->
+        </div>
+      </div>
+      </div>
+    </div>
+  <!-- CONTAINER 2 END-->
+
+  <!-- CONTAINER 3 -->
+      <div class="list-container">
+        <div class="list">
+          <div class="list-header">
+            <span class="list-title">Trump's Plan</span>
+          </div>
+          <!-- LIST 1 -->
+          <div class="list-cards">
+            <!-- CARD 1 -->
+            <div class="card" data-toggle="modal" data-target="#myModal">
+              <div class="card-body">
+                Confeve some shit
+                <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+              </div>
+            </div>
+              <!-- CARD 1 END -->
+            <!-- CARD 2 -->
+            <div class="card" data-toggle="modal" data-target="#myModal">
+              <div class="card-body">
+                Beat China
+                <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+              </div>
+            </div>
+            <!-- CARD 3 END -->
+            <div class="card" data-toggle="modal" data-target="#myModal">
+              <div class="card-body">
+              Invade Canada
+                <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+              </div>
+            </div>
+            <!-- CARD 4 END -->
+            <div class="card" data-toggle="modal" data-target="#myModal">
+              <div class="card-body">
+              Grab em by the beaver
+                <p  class="card-more"><span class="glyphicon glyphicon-align-left"></span> </p>
+              </div>
+            </div>
+            <!-- CARD 4 END -->
+          </div>
+
+          <div class="list-footer">
+            <button class="add-card btn" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapseExample">
+              Add a card...
+            </button>
+            <div class="collapse" id="collapse3">
+            <!-- INSIDE THE ADD A CARD -->
+                  <div class="input-group cardTitle">
+                    <input type="text" class="form-control" placeholder="Card title">
+                </div><!-- /.col-lg-6 -->
+              <div class="btn-group" role="group" aria-label="...">
+                  <button type="button" class="btn btn-default">Save</button>
+                  <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+                  <!-- END OF ADD A CARD -->
+            </div><!-- /.row -->
+          </div>
+        </div>
+
+
+        </div>
+      </div>
+    <!-- CONTAINER 3 END-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="cardTitle" style="padding-top: 5px">
+          <input type="text" class="form-control" value="Grab em by the beaver">
+      </div><!-- /.col-lg-6 -->
+      </div>
+      <div class="modal-body">
+        <span class="list-title">Description</span>
+        <div class="input-group width" style="padding-top: 5px">
+          <input type="text" class="form-control modalBod" placeholder="Card body goes here">
+      </div><!-- /.col-lg-6 -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- PART 1. Add list button -->
-
-
+<div class="list-container">
+  <a class="add-list">Add a list...</a>
   </div>
 
 </body>

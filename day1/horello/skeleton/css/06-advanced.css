@@ -1,1 +1,37 @@
 /* ADD STYLES FOR PART 6 HERE */
+.appbuttons img{
+padding: 11px;
+  height: 54px;
+  display: inline;
+
+
+}
+
+.randommachines{
+  float:right;
+  display: inline;
+}
+
+.lastbackground{
+  background-color: #E4F0F6;
+  padding: 100px 50px 200px 50px;
+  max-width: 100%;
+  align-items: center;
+}
+
+.spbutton{
+  padding: 0.4em 1em 0em 0em;
+  border: solid 1px;
+  border-radius: 0.3em;
+  display:inline-block;
+  height: 54px;
+}
+
+.spbutton:hover{
+  color: #265773
+}
+
+.spacing{
+  align-items: center;
+  max-width: 75%;
+}

@@ -1,9 +1,8 @@
-// import jquery.parallaxify.js as parallaxify from '/parallaxify-master/'
 
 "use strict";
 $(document).ready(function () {
 
-// $('.board').parallaxify();
+$('.demo').parallaxify();
 
 var card_being_edited = null;
 
@@ -79,7 +78,5 @@ $('.header-logo-default').on('click', function () {
     }
 
 })
-
-
 
 });

@@ -6,10 +6,6 @@ $(document).ready(function() {
   render();
 });
 
-function render() {
-  // YOUR CODE HERE
-}
-
 function createList(listName) {
   // YOUR CODE HERE
 }
@@ -19,6 +15,10 @@ function createCard(name, listId) {
 }
 
 function updateCard(title, desc, cardId) {
+  // YOUR CODE HERE
+}
+
+function render() {
   // YOUR CODE HERE
 }
 

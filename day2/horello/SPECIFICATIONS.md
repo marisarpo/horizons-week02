@@ -34,7 +34,8 @@ display: flex;
   - font color: #333
   - margin: 3px vertical, 0 horizontal
   - Hover:
-    - background: rgb(96, 96, 96), alpha 0.15
+    - background: rgb(96,
+      96, 96), alpha 0.15
  - Header
     - margin: .5em bottom, 0 others
     - font color: black

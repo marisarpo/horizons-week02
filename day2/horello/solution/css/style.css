@@ -124,6 +124,7 @@ a {
 }
 
 .add-card {
+    display: flex;
     width: 100%;
     border: none;
     outline: none;

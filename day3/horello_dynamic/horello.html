@@ -7,6 +7,7 @@
     <script src="../../lib/jquery.js"></script>
     <script src="../../lib/jquery-ui.js"></script>
 
+
     <!-- Bootstrap stuff -->
     <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
     <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
@@ -19,6 +20,16 @@
       <a class="header-logo" href="#">
         <span class="header-logo-default"></span>
       </a>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown button
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+    </div>
     </header>
 
     <div class="modal fade" id="card-edit">
@@ -37,7 +48,7 @@
             <button type="button" class="btn btn-default card-edit-cancel" data-dismiss="modal">
               Cancel
             </button>
-            <button type="button" class="btn btn-primary card-edit-save">
+            <button type="button" class="btn btn-primary card-edit-save" data-dismiss="modal">
               Save changes
             </button>
           </div>
@@ -200,5 +211,6 @@
 
     </div>
     <script src="script.js"></script>
+    
   </body>
 </html>

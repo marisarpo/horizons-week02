@@ -21,7 +21,20 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+     
+    var urls = $('li')
+
+    //console.log("#" + urls[0].id)
+
+      $.ajax({
+      url: $("#" + urls[3].id).text(),
+      error: function(err){
+        $("#" + urls[3].id).remove();
+      }
+      })
+    
+
     </script>
   </body>
 </html>

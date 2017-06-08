@@ -87,11 +87,29 @@ $(".modal").on('click',".card-edit-save",function(event){
 });
 
 //Part 4
-// $('.board').on('click','.card',function(){
-//     $("").sortable();
-//     $("").disableSelection();
-// });
  $('.list-cards').sortable({
    connectWith:'.list-cards'
  });
+
+ //Part 5
+ $('.card').hover(function(event){
+   $(this).toggleClass('removal');
+
+ });
+
+ $(document).on('keydown',function(event){
+   if(event.which === 67){
+     $('.removal').remove();
+   }
+ });
+
+ // Part 6
+ $(".header-logo").on('click', function(event){
+  //  var r = Math.floor(Math.random(0,257));
+  //  var g = Math.floor(Math.random(0,257));
+  //  var b = Math.floor(Math.random(0,257));
+
+
+   $("body").css("background-color","red");
+ })
 });

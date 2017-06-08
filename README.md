@@ -17,7 +17,8 @@
     1. Making Horello dynamic
     1. Bonus: jQuery challenges
 1. [Day 4](day4/README.md)
-    1. Twilio
+    1. Twilio Setup
+    1. Twilio Messenger
     1. Horello AJAX
     1. Bonus: Momentum
 1. [Day 5](day5/README.md)

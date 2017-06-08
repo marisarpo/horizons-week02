@@ -21,7 +21,35 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    $('#links li').each(function() {
+        var u = $(this).text()
+        var i = this.id
+        $.ajax({
+            url: u,
+            error: function(e) {
+                $('#' + i).remove()
+            }
+        })
+    });
+
+    // var success = []
+    // var failure = []
+    // for (var i=0; i < arr.length; i++) {
+    //     var u = arr[i]
+    //     console.log(u)
+    //     $.ajax({
+    //       url: u,
+    //       success: function(resp) {
+    //           success.push(u)
+    //       },
+    //       error: function(err) {
+    //           failure.push(u)
+    //       }
+    //       });
+    // }
+    // // console.log(success)
+    // // console.log(failure)
+
     </script>
   </body>
 </html>

@@ -21,7 +21,40 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+
+    var listItems = $('links li');
+    listItems.each(function(idx, li) {
+      $.ajax({
+        url: $(li).html(),
+        success: function(data) {
+          console.log('Success, accessed data');
+        },
+        error: function(err) {
+          console.log('Error, Something went wrong');
+          $(li).remove()
+        }
+    })
+
+      url: '#links li',
+      success: function () {
+        for (var i = 0; i < $("li").length; i++) {
+          debugger;
+          if($("ul li:nth-child(i)") === true) {
+            console.log("Link Works")
+          } else {
+            error: function() {
+              alert("link doesn't work");
+                $("ul li:nth-child(i)").remove()
+          }
+        }
+      },
+
+
+
+
+
+    });
     </script>
   </body>
 </html>

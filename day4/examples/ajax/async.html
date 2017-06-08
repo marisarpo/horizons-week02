@@ -25,7 +25,23 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+    var listItems = $('ul li');
+    listItems.each(function(idx, li) {
+    $.ajax({
+      url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      success: function(data) {
+        $.ajax({
+          url: 'data.url',
+          success: function(d) {
+            $('#products').text(d.name)
+
+          }
+      })
+      },
+
+    })
+    });
     </script>
   </body>
 </html>

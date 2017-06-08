@@ -22,6 +22,30 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+    // for (var i=0;i<5;i++) {
+    //   $.ajax ({
+    //     url: $('ul').children().eq(i).text(),
+    //     success: function(right) {
+    //       console.log('done');
+    //
+    //     },
+    //     error: function (err) {
+    //       console.log("value of i: " + i);
+    //       $('ul').children().eq(i).remove();
+    //     }
+    //   })
+    // };
+ $('ul').children().each(function() {
+      var sel = $(this);
+      $.ajax ({
+       url: sel.text(),
+       error: function (err) {
+         sel.remove();
+       }
+ })
+ });
+
+
     </script>
   </body>
 </html>

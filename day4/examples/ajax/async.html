@@ -22,10 +22,39 @@
       <li>Amazon Echo, $179.99</li>
       <li>DJI Phantom 3, $416.59</li>
     </ul>
-
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var arr=[];
+      $(document).ready(function(){
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success:function(res){
+          $.ajax({
+            url:res[0].url,
+            success:function(nice) {
+             arr.push(nice);
+             $.ajax({
+               url:res[1].url,
+               success:function(nice) {
+                arr.push(nice);
+                $.ajax({
+                  url:res[2].url,
+                  success:function(nice) {
+                   arr.push(nice);
+                   arr= _.sortBy(arr,'priceCents');
+                   console.log(arr);
+                   $('#products').text('');
+                   for(var i=0;i<3;i++) {
+                     $('#products').append("<li>"+arr[i].name+arr[i].priceCents);
+                   }
+            } });
+          }});
+        } });
+
+      }})});
+
     </script>
   </body>
 </html>

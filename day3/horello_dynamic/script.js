@@ -1,16 +1,18 @@
 "use strict";
 
 // YOUR JAVASCRIPT CODE GOES HERE
-// $('.add-list-container').on('click', 'button', function() {
-//   $(this).children('.collapse').removeClass('collapse');
-// })
+// $(document).ready(callback)
 var cardBeingEdited = null;
 
-$('.add-list').on('click', function() {
-
-  $(this).closest('.add-list-container').children('.collapse').removeClass('collapse');
-
+$('.add-list-container').on('click', 'button', function() {
+  $(this).siblings('.collapse').removeClass('collapse');
 })
+
+// $('.add-list').on('click', function() {
+//
+//   $(this).closest('.add-list-container').children('.collapse').removeClass('collapse');
+//
+// })
 
 $('.add-list-cancel').on('click', function() {
 
@@ -119,5 +121,5 @@ $('.card-edit-save').on('click', function() {
 })
 
 $('.list-cards').sortable({
-  connectWith: ".list-cards"
+  connectWith: ".list-cards" /// question
 }).disableSelection();

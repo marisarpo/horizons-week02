@@ -21,7 +21,29 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+
+      var links = $("#links").children();
+      var errorIDs = []
+      for (var i = 0; i < links.length; i++) {
+        $.ajax({
+          url: links.eq(i).text(),
+          error: function(e) {
+            console.log("Something wrong");
+            console.log(links.eq(i))
+            errorIDs.push(links.eq(i));
+            //console.log(links.eq(i).attr("id"))
+            //$("#" + links.eq(i).attr("id")).remove();
+          } 
+        });  
+      }
+      console.log(errorIDs);
+      $.each(links, function(
+
+
+        ))
+
+
     </script>
   </body>
 </html>

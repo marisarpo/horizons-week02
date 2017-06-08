@@ -25,7 +25,27 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    $('#products').val('')
+    // set the products id to equal 0
+
+    $.ajax({
+      url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      success: function (linkList){
+        for (var i=0; i<linkList.length; i++){
+          $.ajax({
+            url: linkList[i]['url'],
+            success: function(productLink){
+            var dollarPrice = "$" + parseFloat(productLink['priceCents'])/100
+            console.log(dollarPrice);
+            var output = $('<li>').text(productLink['name'] + "," + dollarPrice)
+            $('#products').append(output)
+            $('#products').sort();
+            }
+          })
+        }
+      }
+    })
+
     </script>
   </body>
 </html>

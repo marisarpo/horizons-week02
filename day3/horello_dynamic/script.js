@@ -74,7 +74,6 @@ $(document).ready(function () {
     $('.modal').modal('hide');
   });
 
-
   $('.list-cards').sortable({
       connectWith: '.list-cards'
   })

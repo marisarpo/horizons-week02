@@ -125,6 +125,10 @@ function changeColor(){
   var g = String(getRandomInt(0,255))
   var b = String(getRandomInt(0,255))
   $('header').css('background-color' , 'rgb('+ r +','+ g +','+ b +')')
+  var r = String(getRandomInt(0,255))
+  var g = String(getRandomInt(0,255))
+  var b = String(getRandomInt(0,255))
+  $('body').css('color' , 'rgb('+ r +','+ g +','+ b +')')
 }
 
 setInterval(changeColor, 5000);

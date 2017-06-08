@@ -21,7 +21,18 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      $(document).ready(function() {
+        $("li").each(function() {
+          var self = $(this);
+          $.ajax({
+            url:$(this).text(),
+            error: function() {
+              self.remove();
+            }
+          })
+        });
+      });
+      
     </script>
   </body>
 </html>

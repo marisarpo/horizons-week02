@@ -25,7 +25,15 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          var page = JSON.stringify(resp);
+
+          var tokyo = resp[7]["City / Urban area"];
+          
+          $('code').text(tokyo);
+
+        }
       });
     </script>
   </body>

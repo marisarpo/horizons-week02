@@ -22,10 +22,28 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+      var maxPop = function(array){
+        var population = array[0].Population;
+        var city = array[0]["City / Urban area"]
+        for(var i = 1; i< array.length ; i++){
+            var tempPop = array[i].Population;
+            var tempCity = array[i]["City / Urban area"]
+            if(tempPop > population){
+              population = tempPop;
+              city = tempCity;
+            }
+        }
+        return [city,population]
+      }
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        type:'GET',
+        success:function(response){
+          console.log('h')
+          var max = maxPop(response);
+          $('#out').text(max[0]);
+        }
       });
     </script>
   </body>

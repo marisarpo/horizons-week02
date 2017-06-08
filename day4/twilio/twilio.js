@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC78adcdf1d728a9e862c1b4bcc5693572";
+  this.authToken = "d57dbc877fe86e97d3275d380c557078";
+  this.fromNumber = "+13213926926";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -16,27 +16,74 @@ function TwilioApp() {
   // Set up the event handlers
   this.initialize();
 
-  console.log("TwilioApp is ready.");
 }
+
+
+
 
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this))
+
   },
+
+  clear: function($this) {
+    //moves up to parent and then searches for any 'input' children/grandchildren
+    $this.parent().find('input').val('');
+
+  },
+
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    var str = "";
+    var textStr = "hello"
+    for (var i = 0; i < textStr.length; i++) {
+      if(textStr[i] !== " "){
+        str += textStr[i]
+      }
+    }
+    return str.length > 0;
+
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    var acceptableNums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+    if(phoneStr.length !== 10) {
+      return false;
+    }
+
+    for (var i = 0; i < phoneStr.length; i++) {
+      if(acceptableNums.indexOf(phoneStr[i]) === -1) {
+        return false;
+      }
+    }
+
+    return true;
+
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    var message = this.messageInputField.val();
+    var number = this.phoneInputField.val();
+    if(this.validatePhoneField(number) && this.validateMessageField(message)) {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          this.displayMessage(message);
+        },
+        // method: 'POST',
+        // data: {
+        //   From: fromNumber,
+        //   To: toNumber,
+        //   Body: 'Congratulations your Twillio account is working!'
+        // },
+        // headers: {
+        //   "Authorization": "Basic " + btoa(account + ":" + token)
+        // }
+      });
+    }
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
@@ -49,3 +96,8 @@ TwilioApp.prototype = {
 };
 
 window.twilio = new TwilioApp();
+$('.message-clear-button').on('click', function() {
+  var $this = $(this);
+  twilio.clear($this);
+  event.preventDefault();
+});

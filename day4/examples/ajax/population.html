@@ -22,11 +22,26 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+    function doggo(objJSON) {
+      var max = objJSON[0].Population;
+      var city = objJSON[0]["City / Urban area"];
+      for (var i = 1; i < objJSON.length; i++) {
+          if (objJSON[i].Population > max) {
+            max = objJSON[i].Population;
+            city = objJSON[i]["City / Urban area"];
+          }
+
+      }
+      return city;
+      }
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(ret) {
+          $('#out').text(doggo(ret));
+        }
       });
+
     </script>
   </body>
 </html>

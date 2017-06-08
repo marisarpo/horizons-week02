@@ -25,6 +25,86 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+    $.ajax({
+      url:'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      success:function(product) {
+        console.log("products are ", product);
+        $('#products').empty().append('<ul>'+'</ul>');
+        var productObj = {};
+        var priceArr = [];
+        $.each(product, function(index, val) {
+          $.ajax({
+            url: val.url,
+            success: function(res) {
+              // console.log("The product is", res.name);
+              // console.log("the price is $", res.priceCents/100);
+              productObj[res.priceCents]=res.name;
+              priceArr.push(res.priceCents);
+              // console.log("The results are", res);
+              // $.each(product, function(index, val) {
+              if (priceArr.length === product.length) {
+                priceArr.sort(function(a, b) {
+                  return a - b;
+                });
+                for (var i=0; i<priceArr.length; i++) {
+                  $('#products ul').append('<li>'+productObj[priceArr[i]]+","+" $"+priceArr[i]/100+'</li>');
+                }
+
+              }
+
+            }
+          })
+        })
+      }
+    })
+
+
+
+
+
+
+
+
+
+
+
+//     $.ajax({
+//       url:'https://horizons-json-cors.s3.amazonaws.com/products.json',
+//       success: function(resp){
+//           var array1 = [];
+//         $.each(resp,function(index,val){
+//
+//           $.ajax({
+//             url:val.url,
+//             success:function(a){
+//               var name=a.name;
+//               var price=a.priceCents/100;
+//               array1.push([name,price]);
+//               array1.sort(function(a,b){
+//                 var lowest = array1[0];
+//                 var lowestPrice = array1[0][1];
+//                 for(var i=0;i<array1.length;i++){
+//                   if(array1[i][1]<lowestPrice){
+//                     lowest=array1[i];
+//                     lowestPrice=array1[i][1];
+//                   }
+//                 }
+//                 console.log(array1);
+//
+//
+//               })
+//
+//
+//             }
+//
+//
+//           })
+//
+//
+//         })
+//       }
+//
+// })
       // YOUR CODE HERE
     </script>
   </body>

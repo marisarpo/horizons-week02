@@ -1,74 +1,108 @@
-# Pair Programming Exercise: Twillio ShoutOut
+# Pair Programming Exercise: Twilio Messenger
 
 ## Introduction
 
-In this exercise, you're going to be building a Twilio Shoutout Application that
-communicates with Twilio's API (Application Programming Inerface) over AJAX.
+In this exercise, we're going to build an app that can send text messages using
+Twilio's API (Application Programming Inerface). The application will send
+messages to our Twilio-enabled phone number programmatically.
 
-In this case, we're going to be using Twilio's device SMS messaging service.
-We're going to build an application that lets you `shoutout` (one-way message) a
-Twilio-enabled phone number programmatically. You'll be able to send yourself a
-text message from your browser (and much more)!
+You've been provided with a static HTML interface. Your task is to write
+JavaScript to turn this into a dynamic application.
 
-You've been provided with a UI skeleton that you can dig into if you'd like, but
-the major focus of this exercise are the AJAX calls and validation.
+To get started open `week02/day4/twilio/twilio.js` in your editor and
+`week02/day4/twilio/twilio.html` in your browser.
 
-Open the files `week02/day4/1_twilio/twilio.js` and
-`week02/day4/1_twilio/twilio.html`.
+## Part 0. Get Twilio credentials
 
-## Exercise 0. Get Twilio credentials
-
-Please navigate to https:www.twilio.com, and get a free API Key.
-
-You're going to be signing up for the service yourself, and it won't be
-asking you to pay for anything. Enter your name, phone number, and whatever
-else they ask you for (within reason - if they're asking for an ssn, call
-one of us over)
-
-You'll need 3 pieces of information to be able to interact with the Twilio
-API - your `accountId (or SID)`, an `auth token` and your Twilio phone
-number.
-
-When you have all this information, update `twilio.js`:
+Add your Twilio credentials from the previous exercise to `twilio.js`:
 
 ```javascript
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+this.accountId = "YOUR ACCOUNT ID HERE";
+this.authToken = "YOUR AUTH TOKEN HERE";
+this.fromNumber = "YOUR TWILIO NUMBER HERE";
 ```
 
-## Exercise 1. Implement the `initialize` method
+## Part 1. Implement the `initialize` method
 
-When the TwilioShoutout class is constructed, it calls its `initialize()` method.
-That method should set up event listener(s) that will allow you to capture and
-send data from your web UI. More information is provided at the method.
+1. Update `this.initialize` and add a click handler to the
+`this.messageSendButton` element that calls `this.handleMessageSend`.
+`this.initialize` is called when the app is started inside the `TwilioApp`
+constructor.
+1. Update `this.handleMessageSend` and prevent the default behavior for the
+click `event`.
+1. When you click send, you should see a test message.
 
-## Exercise 2. Implement the `clear` method
+<details><summary>
+Hint
+</summary><p>
 
-There are going to be two input fields in the application you're building, and
-it would be nice to have some function to clear their values.
+`this` inside event handlers points to the current element but we don't want
+that. Use `.bind()` to ensure that `this` inside the event handler points to the
+current instance of `TwilioApp`.
 
-## Exercise 3. Implement the `validateMessageField` method
+</p></details>
 
-TwilioShoutout has a `validateMessageField` method that needs to be implemented.
-The function takes a string and returns true or false based on whether the
-string is a valid message or not. More information is provided at the method.
+#### End goal:
 
-## Exercise 4. Implement the `validatePhoneField` method
+![](https://cl.ly/3D0w3a330B10/Screen%20Recording%202017-06-07%20at%2011.34%20PM.gif)
 
-TwilioShoutout has a `validatePhoneField` method that needs to be implemented.
-The function takes a string and returns true or false based on whether the
-string is a valid phone number or not. Validating phone numbers can be extremely
-hard, so we're going to be using the simple no-parentheses, non-hyphenated phone
-number format, including international code. I.E. +1 (201) - 705 - 1234 becomes
-12017051234. More information is provided at the method.
+## Part 2. Implement the `validateMessageField` method
 
-## Exercise 5. Implement the `handleMessageSend` method
+Write a function that validates the message input field. It should return true
+if the given string passes these conditions:
 
-The `handleMessageSend` method is going to act as the callback for the event
-listener you set up in the initialize() method. It's supposed to make sure all
-the necessary fields are valid, and if so, make an ajax call to a Twilio API url
-with our data. Otherwise, it should raise an alert, telling the user (you) that
-one or both of the input fields are invalid. This is a multipart exercise that
-requires a few key steps, and we've provided you with a bit of what you need to
-get you going.
+1. The string should not be a empty string i.e. `""`
+1. The string should not be an 'blank' string  containing only spaces
+i.e. `"           "`
+
+<details><summary >
+Hint
+</summary><p>
+
+[`$.trim()`](https://api.jquery.com/jQuery.trim/) might be useful.
+
+</p></details>
+
+## Part 3. Implement the `validatePhoneField` method
+
+Write a function that validates the phone input field. It should return true
+if the given string passes these conditions:
+
+1. The string contains only numbers
+
+    **Good:** 123
+
+    **Bad:** 1-2
+
+1. The string contains exactly 11 digits
+
+    **Good:** 14155005000
+
+    **Bad:** 4155005000
+
+## Part 4. Implement the `handleMessageSend` method
+
+The `handleMessageSend` method is called when the user clicks the `Send` button.
+Follow these steps to send an SMS via the Twilio API:
+
+1. Get the contents of the `messageInputField` and `phoneInputField`
+1. Validate the message using `this.validateMessageField()` and the phone number using
+`this.validatePhoneField()`.
+1. If both fields are valid, make an AJAX request to Twilio to send a message.
+
+    Use the AJAX request from
+    [the previous exercise](https://codepen.io/moose-horizons/pen/aZdvWa?editors=1010)
+    and update the from/to phone numbers, account id, token, and the message
+    body.
+
+    1. If the AJAX request succeeds, use `this.displayMessage()` display the
+    sent message to the user and clear the contents of `messageInputField`.
+    1. If the AJAX request fails, notify the user using the browser built-in
+    [`alert()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert)
+    function.
+
+**Note:** In Twilio trial you can only send messages to your own phone number.
+
+#### End goal:
+
+![](https://cl.ly/3J230H00320X/Screen%20Recording%202017-06-07%20at%2011.11%20PM.gif)

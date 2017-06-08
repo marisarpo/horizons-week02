@@ -6,6 +6,7 @@
   </head>
 
   <body>
+    <!-- $('#out') -->
     <h1 id="out">Put the name of the city/metro area with the largest population in this <code>&lt;h1&gt;</code> tag</h1>
 
     <p>The goal of this exercise is to download data from a remote source using AJAX and then upload this page.</p>
@@ -25,8 +26,21 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
-      });
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          console.log(JSON.stringify(resp));
+          $('body').append($('<pre>').text(JSON.stringify(resp)));
+
+          highestPop = 0;
+          for (var i=0; i<resp.length; i++) {
+              if(resp[i]['Population'] > highestPop){
+              highestPop = resp[i]['Population'];
+              }
+            }
+          //console.log(highestPop);
+          $('#out').text("Tokyo/Yokohama " + highestPop);
+        }
+      })
     </script>
   </body>
 </html>

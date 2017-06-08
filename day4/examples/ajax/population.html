@@ -6,7 +6,7 @@
   </head>
 
   <body>
-    <h1 id="out">Put the name of the city/metro area with the largest population in this <code>&lt;h1&gt;</code> tag</h1>
+    <h1 id="out"> <code>&lt;&gt;</code> </h1>
 
     <p>The goal of this exercise is to download data from a remote source using AJAX and then upload this page.</p>
 
@@ -24,8 +24,37 @@
     <script>
       // YOUR CODE HERE
 
-      $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+      $.ajax ({
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(cities) {
+          //console.log("HI");
+          // console.log(cities);
+          var population = [];
+          var highest = 0;
+          var object;
+          var highestCityPopulation;
+          for (var i =0; i < 10; i++) {
+            population.push(cities[i].Population);
+
+          }
+          for (var i =0; i< population.length +1; i++) {
+            if (population[i] > highest) {
+              highest = population[i];
+            }
+          }
+          for (var i =0; i < 10; i++) {
+            object = cities[i];
+            for (var key in object) {
+              if (object[key] === highest) {
+                highestCityPopulation = object['City / Urban area'];
+              }
+            }
+          }
+          $('#out').append(highestCityPopulation);
+
+
+
+        }
       });
     </script>
   </body>

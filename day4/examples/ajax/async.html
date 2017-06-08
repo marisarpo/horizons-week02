@@ -26,6 +26,81 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      //ajax is async
+
+      var ul = $('<ul id="newul"> </ul');
+      $('#products').html(ul);
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(priceURL){
+          var newArr=[];
+
+
+          $.each(priceURL, function(index, val){ //loop through array of objects
+            // alert(val) ;
+            $.each(val, function(key, value){
+              // alert(value);
+              $.ajax({
+                url: (value),
+                success: function(r)   {
+                  newArr.push([r['name'], (r['priceCents'] / 100)]);
+                  // console.log(newArr);
+                  newArr.sort(function(a,b){
+                    if (a[1] < b[1]) {
+                      return -1;
+                    }
+                    if (a[1] > b[1]) {
+                      return 1;
+                    }
+                    return 0;
+                  });
+                  if (newArr.length === priceURL.length) {
+                    for (var i = 0; i < newArr.length; i++) {
+                      $('#newul').append($('<li>' + newArr[i] + '</li>'));
+                    }
+
+                  }
+
+
+
+
+
+                }
+              })
+              })
+
+              // $.ajax({
+              //   url:$(value).text(),
+              //   success: function(r) {
+              //     // console.log("the price is " + r['priceCents'] );
+              //   }
+              // })
+
+          })
+        }
+      })
+
+
+      // $.ajax({
+      //   url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      //   success: function(priceURL) { //priceURL is an object within an array
+      //
+      //     var url1 = priceURL[0].url;
+      //     var url2 = priceURL[1].url;
+      //     var url3 = priceURL[2].url;
+      //     console.log("Price url 1 is" + url1);
+      //     console.log("Price url 2 is" + url2);
+      //     console.log("Price url 3 is" + url3);
+      //
+      //     $.ajax({
+      //       url: url1,
+      //       success: function(r){
+      //         console.log("the price is " + r['priceCents'] );
+      //       }
+      //     })
+      //   }
+      //
+      // })
     </script>
   </body>
 </html>

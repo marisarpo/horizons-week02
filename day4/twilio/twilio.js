@@ -24,7 +24,7 @@ TwilioApp.prototype = {
   initialize: function() {
     // YOUR CODE HERE
     this.messageSendButton.on('click', function(){
-      
+
     })
   },
   // Part 2. `validateMessageField(textStr<String>)` method

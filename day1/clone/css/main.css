@@ -1,9 +1,99 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
+    font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+    background-color: #fafafa
 }
 
 .title {
     color: purple;
 }
 
+.header{
+font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+background-color: rgba(0,0,0,0.8);
+position: absolute;
+top: 0;
+right: 0;
+left: 0;
+z-index: 9999;
+display: block;
+margin: 10;
+width: 100%;
+min-width: 1024px;
+height: 48px;
+max-height: 70px;
+}
+
+.header a{
+  color: #fff;
+  text-decoration: none;
+  font-style: normal;
+  font-size: .8em;
+}
+
+.header a:hover{
+  color: #BCBCBC;
+  transition-duration: 1s;
+}
+
+.header li{
+  display: inline-block;
+  margin-top: -10px;
+  margin-right: 90px;
+
+}
+
+.icon-pear{
+  height: 20px;
+}
+
+.search{
+  height: 20px;
+}
+
+.cart{
+  height: 20px;
+}
+
+#top-text{
+  margin-top: 40px;
+  font-size: 70px;
+  display: inline-block;
+}
+
+#macOS{
+  font-weight: bold;
+  display: inline-block;
+}
+
+#high-sierra{
+  padding-left: 15px;
+  display: inline-block;
+}
+
+#subtitle{
+  font-size: 33px;
+  position: relative;
+  top: -90px
+}
+
+.mac-pic{
+  height: 330px;
+}
+
+.macpic{
+  position: relative;
+  top: -100px
+}
+
+#bottom-bar {
+  height: 90px;
+  width: 100%;
+  position: relative;
+  top: -50px;
+}
+
+#slider{
+  float: up;
+  height: 70px;
+}

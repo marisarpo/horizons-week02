@@ -1,19 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
-
 body {
   line-height: 18px;
   height: 100vh;
-
-  /** PART 1 CSS here */
+  background-color: rgb(0,121,191);
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
-
 header {
   position: relative;
   overflow: hidden;
-
-  /** PART 1 CSS here */
+  padding: 5px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.15);
 }
-
 .header-logo {
   bottom: 0;
   display: block;
@@ -28,7 +26,6 @@ header {
   opacity: 0.5;
   transition: opacity ease-in 85ms;
 }
-
 .header-logo-default {
   background-image: url(../../img/title.png);
   background-position: top right;
@@ -40,95 +37,128 @@ header {
   width: 5pc;
   position: absolute;
 }
-
 a {
   background-color: transparent;
 }
-
-
 /* BOARD */
-
 .add-list-container {
   padding: 5px;
 }
-
 .add-list {
-  /** PART 1 CSS here */
+  background-color: rgba(0,0,0,0.12);
+  border-radius: 3px;
+  border: 0px;
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px;
+  width: 280px;
+  padding: 7px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #fff;
 }
 
 .add-list:hover {
-  /** PART 1 CSS here */
+  background-color: rgba(16, 16, 16, 0.15);
 }
-
 .add-list-form {
   /** PART 4 CSS here */
 }
-
 .board {
+  display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   height: calc(100% - 40px);
   padding-bottom: 1em;
-
   /** PART 2 CSS here */
 }
-
-
 /* LISTS */
-
 .list-container {
   height: 100%;
+  flex-direction: column;
+  display: flex;
 }
-
 .list {
   box-sizing: border-box;
   max-height: 100%;
-
-  /** PART 2 CSS here */
+  flex-direction: column;
+  display: flex;
+  background-color: #e2e4e6;
+  padding: 0.5em;
+  margin: 5px;
+  width: 270px;
+  border-radius: 3px;
 }
-
 .list-header {
   display: block;
   position: relative;
+  margin-bottom: 0.5em;
+  color: black;
+  font-weight: 700;
+}
 
-  /** PART 2 CSS here */
+.list-cards {
+    overflow-y: overlay;
+    overflow-x: hidden;
+    min-height: 0;
 }
 
 .list-footer {
-  /** PART 2 CSS here */
+  font-weight: 500;
 }
-
 .list-title {
-  /** PART 2 CSS here */
+  left: 0;
 }
-
 .add-card {
-  /** PART 2 CSS here */
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  text-align: left;
+  background-color: rgba(16, 16, 16, 0.15);
+  color: #333;
+  margin: 3px 0 3px 0;
 }
-
 .add-card:hover {
-  /** PART 2 CSS here */
+  background-color: rgb(96, 96, 96, 0.15);
 }
-
-
 /* CARDS */
-
 .list-cards {
   min-height: 0;
-
-  /** PART 3 CSS here */
 }
-
 .card {
-  /** PART 3 CSS here */
+    margin: 0 0 .5em;
+    background: white;
+    position: relative;
+    border-radius: 3px;
 }
 
 .card-body {
-  /** PART 3 CSS here */
+    display: block;
+    padding: .5em .5em 2em;
+    font-family: Cabin,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    position: relative;
+    transition: 0.5s all;
 }
 
 .card-more {
-  /** PART 3 CSS here */
+    position: absolute;
+    left: 6px;
+    bottom: 6px;
+}
+
+.add-card-form {
+    padding: 5px;
+    margin-bottom: 0;
+}
+
+.add-card-form input {
+    margin-bottom: 5px;
 }
 
 /** PART 4 CSS here: add card form */

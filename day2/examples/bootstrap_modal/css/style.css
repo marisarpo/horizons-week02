@@ -6,3 +6,8 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.text{
+	font-size: 30px;
+	font-weight: bold;
+}

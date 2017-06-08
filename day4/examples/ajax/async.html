@@ -26,6 +26,66 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(resp){
+
+          var product_url_arr = resp;
+          var product_arr = [];
+
+          // console.log(product_arr[0].url,product_arr[1].url);
+          for(var i = 0; i < product_url_arr.length; i++){
+            $.ajax({
+              url: product_url_arr[i].url,
+              success: function(resp2){
+                //console.log(resp2);
+                if(product_arr.length === 0){
+                  product_arr.push(  [  resp2['name'] , resp2['priceCents']   ]   );
+                }else if(product_arr.length === 1){
+                  if(resp2['priceCents'] < product_arr[0][1]){
+                    product_arr.unshift(   [  resp2['name'] , resp2['priceCents']   ]   );
+                  }else{
+                    product_arr.push([  resp2['name'] , resp2['priceCents']   ]);
+                  }
+                }else{
+                  if(resp2['priceCents'] < product_arr[0][1]){
+                    product_arr.unshift(   [  resp2['name'] , resp2['priceCents']   ]   );
+                  }else if(resp2['priceCents'] < product_arr[1][1]){
+                    product_arr.splice(1,0, [  resp2['name'] , resp2['priceCents']   ]);
+                  }else{
+                    product_arr.push([  resp2['name'] , resp2['priceCents']   ]);
+                  }
+                }
+                if(product_arr.length === 3){
+                  console.log(product_arr);
+                  $('#products').replaceWith('<ul><li>'+ product_arr[0][0]
+                      +'</li><li>'+ product_arr[1][0]+ '</li><li>'+ product_arr[2][0] + '</li></ul>');
+                }
+
+              }
+            })
+          }
+
+
+
+
+          //var order = []; // array stores product_arr index number sorted cheapest - priciest
+          // order.push(0);
+          // if(product)
+
+        },
+        failure: function(){
+          console.log("error connecting to product list");
+        }
+      })
+
+
+
+
+
+
+
     </script>
   </body>
 </html>

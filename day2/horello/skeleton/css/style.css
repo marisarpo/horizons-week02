@@ -61,24 +61,29 @@ a {
 .add-list {
   /** PART 1 CSS here */
 
-  background-color: #04517d;
-  opacity: .8;
-  color: #fff;
-  min-height: 30px;
-  border-radius: 3px;
-  margin: 5px 5px;
-  width: 280px;
-  padding: 7px;
-  text-align: left;
+  background-color: rgba(0,0,0,.12) ;
+    color: white;
+    min-height: 30px;
+    border-radius: 3px;
+    margin: 5px 5px 5px 5px;
+    width: 280px;
+    /*padding: 7px;*/
+    padding-top: 5px;
+    padding-left: 5px;
+    outline: 0;
+    border: none;
+    text-align: left;
 }
 
 .add-list:hover {
   /** PART 1 CSS here */
-  opacity: 1;
+
+  background-color: rgba(0,0,0,.20);
 }
 
 .add-list-form {
   /** PART 4 CSS here */
+
 }
 
 .board {
@@ -144,6 +149,11 @@ a {
 
 }
 
+.add-list-form{
+  padding: 5px;
+  margin-bottom: 0px;
+}
+
 
 /* CARDS */
 
@@ -180,6 +190,10 @@ a {
 /** PART 4 CSS here: add card form */
 #collapse-data{
 
+}
+
+.collapse1{
+  height: 0px;
 }
 
 .well-style{

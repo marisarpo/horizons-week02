@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = 'AC7b297a74ac75633c303eec50ef7f8f78';
+twilio.authToken = '19134bafcdfd5a35631368a9ae2a9627';
+twilio.fromNumber = "+12156072905";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -53,6 +53,10 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    //console.log(this);
+    this.messageSendButton.on("click", function(){
+      this.handleMessageSend().bind(this);
+    });
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -91,10 +95,14 @@ twilio.TwilioShoutout.prototype = {
 	// note. also `clear`
 	// note. also `sendMessage`
   handleMessageSend: function(evt) {
-		evt.preventDefault();
 
     // only send if both fields are valid
     // YOUR CODE HERE
+    if(evt === "click"){
+      console.log('hi')
+    }else{
+      evt.preventDefault();
+    }
   },
   // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
   // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.

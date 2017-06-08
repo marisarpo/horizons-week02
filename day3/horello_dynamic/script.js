@@ -41,6 +41,10 @@ $('.add-list-save').on("click",function(){
 </div>`)
 
 currentContainer.before(newList);
+$('.list-cards').sortable({
+  connectWith: ".list-cards"
+
+  });
 
 });
 
@@ -73,6 +77,10 @@ $('.board').on('click','.add-card-save',function(){
 var currListFooter=$this.closest('.list-footer');
 var currList=currListFooter.siblings('.list-cards')
 currList.append(newCard);
+$('.list-cards').sortable({
+  connectWith: ".list-cards"
+
+  });
 
 });
 
@@ -96,9 +104,17 @@ $('#card-edit').on('click','.card-edit-save', function() {
 
 $('.list-cards').sortable({
   connectWith: ".list-cards"
-  // Configuration parameters here
+
   });
 
+$(document).keydown(function(event){
+
+  if(event.which===67){
+    var hoveredCard = $('.board').find('.card:hover')
+    hoveredCard.remove();
+  }
+
+})
 
 
 })

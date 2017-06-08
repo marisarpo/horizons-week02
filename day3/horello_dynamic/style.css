@@ -5,6 +5,7 @@ body {
     background-color: rgb(0,121,191);
     line-height: 18px;
     height: 100vh;
+    font-family: "Bootstrap default", sans-serif
 }
 
 header {

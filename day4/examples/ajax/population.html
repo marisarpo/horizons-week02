@@ -22,7 +22,24 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+    $.ajax({
+      url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+      success: function(resp) {
+        var max= -Infinity;
+        var cityName="Portsmouth";
+        resp.forEach(function(city) {
+          debugger;
+          if(city.Population>max) {
+          max=city.Population;
+          cityName=city["City / Urban area"];
+        }
+          else {
+            return;
+          }
+        })
+        $('#out').text(cityName);
+    }
+    })// YOUR CODE HERE
 
       $.ajax({
         url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'

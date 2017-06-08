@@ -1,9 +1,47 @@
 body {
-    background: url("../images/porcupine.jpg");
+    margin: 0;
+    padding: 0;
+    
+}
+nav{
+    background: #262525;
+    color: #fff;   
+    border: 0;
     text-align: center;
+    min-width: 900px;
+    width: 100%;
+    font-size: .8em;
+    font-weight: 100;
+    
+}
+nav ul{
+    border:0;
+}
+nav ul li{
+   display: inline-block;
+vertical-align: middle;
+   padding: 3px 3%;
+   font-family: Arial, Helvetica, sans-serif;
+    
+   
 }
 
-.title {
-    color: purple;
+nav ul li:hover{
+    color: #999999;
+    
+}
+nav ul li.apple:hover{
+    background: transparent src ='apple-icon-grey.png' no-repeat;
+    
+}
+#floating-div {
+    width: 95%;
+    padding: 5px 0; 
+    margin: 0 auto;
+    //background: #888;
+    max-width: 1200px;
+  
+    
+    
 }
 

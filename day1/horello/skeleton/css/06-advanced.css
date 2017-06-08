@@ -1,1 +1,43 @@
-/* ADD STYLES FOR PART 6 HERE */
+.floatRt{
+    float:right;
+    margin-bottom: 60px;
+    
+}
+.devices{
+    background: #e4f0f6;
+    padding-right: 50px;
+    padding-left: 50px;
+    
+   
+}
+.devices p{
+    max-width: 585px; 
+    
+}
+.devices p a{
+    margin: 0 10px 0 0;
+}
+.button2{
+    background: #fff;
+    display: inline-block;
+    
+    color: #7191ba;
+    padding: 0.5em .8em; 
+    vertical-align: top;
+}
+
+
+
+.button2:hover {
+    background: #1d477c;
+    color: #fff;
+    padding: 0.5em .8em; 
+}
+.clear{
+    clear:both;
+}
+.verticle-align{
+    display: inline-block;
+    vertical-align: top;
+}
+

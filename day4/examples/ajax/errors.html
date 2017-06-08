@@ -22,6 +22,56 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(){
+          console.log("First url works");
+        },
+        error: function(){
+          console.log("First url fails and is removed");
+          $("#products").remove();
+        }
+      })
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/members.txt",
+        success: function(){
+          console.log("Second url works");
+        },
+        error: function(){
+          console.log("Second url fails and is removed");
+          $("#members").remove();
+        }
+      })
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json",
+        success: function(){
+          console.log("Third url works");
+        },
+        error: function(){
+          console.log("Third url fails and is removed");
+          $("#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF").remove();
+        }
+      })
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json",
+        success: function(){
+          console.log("Fourth url works");
+        },
+        error: function(){
+          console.log("Fourth url fails and is removed");
+          $("#oUfx3vNy2C6l8dzki84Tp2e3cds3").remove();
+        }
+      })
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/poem.txt",
+        success: function(){
+          console.log("Fifth url works");
+        },
+        error: function(){
+          console.log("Fifth url fails and is removed");
+          $("#poem").remove();
+        }
+      })
     </script>
   </body>
 </html>

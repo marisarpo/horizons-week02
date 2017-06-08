@@ -1,9 +1,55 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: #fff;
     text-align: center;
 }
 
 .title {
-    color: purple;
+    color: white;
 }
 
+
+.global-header{
+	background-color:#0079bf;;
+    left: 0;
+    padding: 1em .75em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.global-header-mod-left{
+	float:left;
+}
+
+.global-header-mod-right{
+	float: right;
+	font-weight: .8em;
+}
+
+.logo{
+	height: 100%;
+	display: block;
+    float: left;
+    height: 2em;
+    margin-right: .75em;
+}
+
+
+a.global-header-section-button{
+	background-color: rgba(0,0,0,0.15);
+	box-shadow: 0 2px 0 rgba(0,0,0,0.3);
+	border-radius: .4em;
+	box-shadow: #cdd2d4;
+	color: #fff;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 1.1em;
+	margin: .25em;
+	padding: .7em 1.3em;
+	vertical-align: top;
+}
+
+a.visited{
+	color: green;
+}

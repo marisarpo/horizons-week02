@@ -1,4 +1,19 @@
 /* Your CSS goes here! */
+@media (max-width: 650px){
+    section{
+       	padding: 0px 20px;
 
-section {
+    }
+}
+ /* min-max vs just min-min */
+@media (min-width: 650px) and (max-width: 900px){
+    section{
+       	padding: 40px 20px;
+    }
+}
+
+@media (min-width: 900px){
+    section{
+    	padding: 80px 20px;
+    }
 }

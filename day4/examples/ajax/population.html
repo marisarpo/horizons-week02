@@ -21,11 +21,20 @@
     </ol>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+
     <script>
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          console.log(resp);
+          var city = (_.max(resp, function(city) { return city.Population; }))['City / Urban area'];
+          console.log(city);
+          $('#out').text(JSON.stringify(city));
+
+        }
       });
     </script>
   </body>

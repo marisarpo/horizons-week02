@@ -24,8 +24,40 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script>
-      // YOUR CODE HERE
+      //ajax first link
+      // call each link individual from each object in object array
+      //add retrieved info to array
+      // order by price
+      //diplay in ordered list name, price with dollar sign
+      var prodArr = [];
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(links) {
+          links.forEach(function(obj) {
+            $.ajax({
+              url: obj.url,
+              success: function(product) {
+                prodArr.push(product);
+
+
+                prodArr = _.sortBy(prodArr, function(product) {
+                   return product.priceCents;
+                })
+                $('#products').empty();
+
+                prodArr.forEach(function(prodObj){
+                  $('#products').append('<li>' + prodObj.name + ",  $" + prodObj.priceCents/100 + '</li>')
+                })
+
+              }
+            })
+          })
+
+        }
+      })
+
     </script>
   </body>
 </html>

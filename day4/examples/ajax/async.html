@@ -29,13 +29,12 @@
       // YOUR CODE HERE
       $('#products').append('<ul></ul>');
       var unsortedProducts = [];
-      var calls = [];
-      calls[0] = $.ajax({
+      $.ajax({
         url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
         success: function(response) {
 
           for (let i = 0; i < response.length; i++) {
-            calls[i + 1] = $.ajax({
+            $.ajax({
               url: response[i].url,
               success: function(r) {
                 console.log(r);

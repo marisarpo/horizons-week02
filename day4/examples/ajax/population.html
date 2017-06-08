@@ -25,7 +25,17 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          var cityArr = resp;
+          cityArr.sort(function(obj1, obj2){
+            return obj2.Population - obj1.Population;
+          })
+          var targetCity = cityArr[0];
+          var targetName = targetCity["City / Urban area"];
+          $('#out').text(targetName);
+          //$('body').append($('<pre>').text(JSON.stringify(resp)));
+        }
       });
     </script>
   </body>

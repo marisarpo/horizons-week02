@@ -22,6 +22,18 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var items = $('li');
+      console.log(items);
+      for(var i = 0; i < items.length; i++){
+        (function (){var temp = i;
+        $.ajax({
+          url: items.eq(temp).text(),
+          error: function(err){
+            console.log(temp);
+            items[temp].remove();
+          }
+        })})();
+      }
     </script>
   </body>
 </html>

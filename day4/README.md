@@ -6,6 +6,7 @@
 
 ## Pair Programming Exercises
 
-1. [Twilio](twilio/README.md)
+1. [Twilio Setup](https://codepen.io/moose-horizons/pen/aZdvWa?editors=1010)
+1. [Twilio Messenger](twilio/README.md)
 1. [Horello AJAX](horello-ajax/readme.md)
 1. [Bonus: Momentum](momentum/README.md)

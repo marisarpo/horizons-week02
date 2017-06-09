@@ -1,0 +1,36 @@
+html, body {
+	height: 100%;
+  width:100%;
+  margin:auto;
+}
+
+.container, .well{
+  display:flex;
+	height: 100%;
+  width: 100%
+	margin-bottom: 0;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+.well{
+  padding: 150px 19px;;
+}
+
+h1{
+	text-align: center;
+  letter-spacing: 2px;
+  font-style: oblique;
+}
+.btn {
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:48%;
+
+}
+.register_link{
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px;
+}

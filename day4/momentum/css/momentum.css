@@ -1,0 +1,15 @@
+.temperature{
+  position: absolute;
+  top:0px;
+  right:0px;
+}
+
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper {
+	...
+}
+
+/* selector for the actual image - use this to control img dimensions*/
+.bg-wrapper > img {
+	...
+}

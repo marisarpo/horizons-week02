@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "'ACd12ea90676fe37590e35bc84704eda60'";
+twilio.authToken = "940e123b16bda53dc8dbc771971c6da5";
+twilio.fromNumber = "+12019891563";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -39,7 +39,9 @@ twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   this.messageSendButton = $(".message-input-button");
 
   // Set up the event handlers
-  this.initialize();
+  this.initialize(){
+
+  };
 
   // Notify user
   console.log("TwilioMessenger is ready.");

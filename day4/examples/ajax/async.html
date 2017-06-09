@@ -28,29 +28,56 @@
       // YOUR CODE HERE
       var arr = [];
       $.ajax({
-        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
-        success: function(first){
+        url: 'http://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(prime){
             $.ajax({
-              url: first.url,
-              success: function(second){
+              url: prime[0].url,
+              success: function(data){
                 $.ajax({
-                  url: second.url;
-                  sucess: function(third)
+                  url: prime[1].url,
+                  success: function(data1){
+                    $.ajax({
+                      url: prime[2].url,
+                      success: function(data2){
+                        arr.push(data2);
+                        arr.push(data1);
+                        arr.push(data);
+                        console.log(arr);
+                        arr.sort(function(a, b) {
+                          return a.priceCents - b.priceCents;
+                            });
+                            console.log(arr);
+                            var ul = $('<ul>');
+                            arr.forEach(function(obj){
+                              ul.append(`<li>${obj.name} ${obj.priceCents}</li>`)
+                            })
 
-                })
-              }
+
+                             $("#products").empty();
+                             $("#products").append(ul);
+                            //
+                            // $("ul").replaceWith(arr[priceCents]);
+
+
+                        }
+                      })
+                    }
+                  })
+
+                }
+
             })
 
         }
 
 
 
-        }
-
-
-
-
       })
+
+
+
+
+
 
 
     </script>

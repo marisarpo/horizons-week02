@@ -21,24 +21,48 @@ function TwilioApp() {
 
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
+
   initialize: function() {
-    this.messageSendButton.on('click', function(){
-      this.handleMessageSend.bind(this);
-    })
+
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this))
+
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    if($.trim(textStr) !== ""){
+      return true;
+    }
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if (JSON.parse(phoneStr).length === 10){
+      return true;
+    }
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
     // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    var message = this.messageInputField.val()
+    var phone = this.phoneInputField.val();
+    if (validateMessageField(message) && validatePhoneField(phone)){
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+  success: function(x) {
+    $('h1').text("Congrats! You're set up!");
+    console.log('Message sent', x);
+  },
+  method: 'POST',
+  data: {
+    From: this.fromNumber,
+    To: this.fromNumber,
+    Body: 'Congratulations your Twillio account is working!'
+  },
+  headers: {
+    "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+  }
+});
+    }
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

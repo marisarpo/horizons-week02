@@ -26,29 +26,34 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
 
-    var arr = [];
+
     $.ajax({
       url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
       success: function(resp) {
-        $(resp).each (function () {
-          var site = $(this);
-          //console.log(site[0]["url"]);
+        var arr = [];
+        resp.forEach(function(urlObject) {
           $.ajax({
-             url: site[0]["url"],
-             success: function(r) {
-               var price = r["priceCents"];
-               arr.push(r["name"] + ', $' + price/100);
+             url: urlObject.url,
+             success: function(resp2) {
+               //var price = r["priceCents"];
+               //arr.push(r["name"] + ', $' + price/100);
+               arr.push(resp2);
+               console.log(arr);
+               if(arr.length === response.length) {
+                 //sort here
+                 
+               }
+
+
              },
              error: function(err) {
                console.log('Error!', err);
              }
           })
         })
+
       }
     })
-
-    console.log(arr);
-
 
 
 

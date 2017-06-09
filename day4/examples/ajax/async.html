@@ -26,6 +26,44 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(linkArray) {
+            var productArray = [];
+            var finalArray = [];
+            $.ajax({
+              url:linkArray[0].url,
+              success: function(link0) {
+                productArray.push(link0);
+                $.ajax({
+                  url:linkArray[1].url,
+                  success: function(link1) {
+                    productArray.push(link1);
+                    $.ajax({
+                      url:linkArray[2].url,
+                      success: function(link2) {
+                        productArray.push(link2);
+                        productArray.forEach(function(productObject) {
+                          productArray.sort(function(a,b){
+                            return a['priceCents'] - b['priceCents'];
+                          });
+                          var listLoc = '<ul>'
+                          for (var i = 0; i < productArray.length; i++) {
+                            listLoc += '<li>' + productArray[i]['name'] +
+                            ", $" + productArray[i]['priceCents']/100 + '</li>'
+                          }
+                          listLoc += "</ul>"
+                          $('#products').replaceWith(listLoc);
+                          // console.log(listLoc);
+                        });
+                      }
+                    });
+                  }
+                });
+              }
+            });
+          }
+        });
     </script>
   </body>
 </html>

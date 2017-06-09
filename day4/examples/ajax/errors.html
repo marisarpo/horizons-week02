@@ -22,6 +22,59 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      // Products
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(err) {
+          $('#products').remove();
+        }
+      });
+
+      // Members
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/members.txt',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(err) {
+          $('#members').remove();
+        }
+      });
+
+      JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(err) {
+          $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').remove();
+        }
+      });
+
+      // oUfx3vNy2C6l8dzki84Tp2e3cds3
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(err) {
+          $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').remove();
+        }
+      });
+      // Poem
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/poem.txt',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(err) {
+          $('#poem').remove();
+        }
+      });
     </script>
   </body>
 </html>

@@ -24,8 +24,32 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
-      // YOUR CODE HERE
+      var arr = [];
+      $.ajax({
+        url: $('a').eq(1).attr('href'),
+        success: function(data){
+          _.forEach(data, function(link){
+            $.ajax({
+              url: link.url,
+              success: function(productData){
+                //$('#products').after('<li>' + productData.priceCents + '</li>');
+                arr.push(JSON.parse(JSON.stringify(productData)));
+              }
+            });
+          });
+          console.log(arr);
+          console.log('here',arr[1])
+          // arr = _.sortBy(arr, function(item){
+          //   return item['priceCents'];
+          // });
+        },
+        error: function(err){
+          console.log(err);
+        }
+      });
+
     </script>
   </body>
 </html>

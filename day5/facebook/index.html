@@ -5,14 +5,106 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
+
+
+
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="login-button">
+      <button type="button" id="login" data-toggle='modal' data-target='#login-form'>Login</button>
+    </div>
+    <div class="registration-button">
+      <button type="button" id="register" data-toggle='modal' data-target='#register-form'>Register</button>
+    </div>
+
+    <div class="modal fade" id="register-form">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Register</h2>
+          </div>
+          <div class="modal-body">
+            <div class="register-form-input">
+            <a><input type="text" class="form-control" id="firstname" placeholder="First name"></a>
+            <a><input type="text" class="form-control" id="lastname" placeholder="Last name"></a>
+            <a><input type="email" class="form-control" id="email" placeholder="Email"></a>
+            <a><input type="text" class="form-control" id="password" placeholder="Password"></a>
+          </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="register-save">
+            Register!
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!--.modal-->
+
+  <div class="modal fade" id="login-form">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Login</h2>
+        </div>
+        <div class="modal-body">
+          <div class="login-form-input">
+          <a><input type="email" class="form-control" id="email" placeholder="Email"></a>
+          <a><input type="text" class="form-control" id="password" placeholder="Password"></a>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="login-save">
+          Login :D
+        </button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!--.modal-->
+
+<div class="modal fade" id="reply-form">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Comment</h2>
+      </div>
+      <div class="modal-body">
+        <div class="reply-form-input">
+        <textarea class='reply-content' rows='3'></textarea>
+      </div>
+      </div>
+      <div class="modal-footer">
+      <button type="button" class="btn btn-primary" id="reply-save">
+        Post
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class='post-box'>
+ <div class='post'>
+   <div class='name'>Name</div>
+   <div class='content'>Content</div>
+   <div class='post-footer'>
+    <button type='button' class='Like'>Like</button>
+      <a id='number-likes'>0</a>
+    <button type='button' class='Reply'>Reply</button>
+  </div>
+  <div class='replies'>
+
+  </div>
+ </div>
+ </div>
+
+ <div class='create-post'>
+  <h2>New post</h2>
+    <textarea class='post-content' rows='3'></textarea>
+    <button type='button' id='submit-post'>Submit</button>
+  </div>
 
     <!-- jQuery -->
     <script
@@ -21,7 +113,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

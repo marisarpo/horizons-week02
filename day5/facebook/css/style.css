@@ -1,0 +1,14 @@
+.register-form-input{
+  display:flex;
+  flex-direction: column;
+}
+
+.post {
+  height: 100px;
+  width: 200px;
+  border: 1px solid black;
+}
+
+.replies{
+  margin-left: 20px;
+}

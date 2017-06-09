@@ -25,7 +25,32 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          //var rawInfo = $("<pre>").text(resp);
+          //$("body").append(rawInfo);
+          //var infoString = JSON.stringify(rawInfo[0]);
+          //console.log(resp);
+          var largestPop = resp[0].Population;
+          var popCity = resp[0];
+          for (var i = 0; i < resp.length; i++) {
+            if(resp[i].Population>=largestPop){
+              largestPop = resp[i].Population;
+              popCity = resp[i];
+            }
+          }
+
+          var parsed = JSON.parse('"City / Urban area"');
+          var almost = JSON.stringify(popCity);
+          var again = JSON.parse(almost)
+
+
+          console.log(parsed);
+          //console.log(almost);
+          console.log(again);
+          console.log(again[parsed]);
+          $("#out").text(again[parsed]);
+        }
       });
     </script>
   </body>

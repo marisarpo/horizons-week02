@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "ACadd0b5c99339d8a8cd30978a4a348463";
+  this.authToken = "77fa71f1d931d459d747016d6db4a19e";
+  this.fromNumber = "+17328205356";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,53 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on("click", function(event){
+      event.preventDefault();
+      this.handleMessageSend(event);
+    }.bind(this));
+
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    var trimStr = textStr.trim();
+    if(trimStr === ""){
+      return false;
+    }
+    return true;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if(phoneStr.match(/[0-9]{10}/)){
+      return true;
+    }
+    return false;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    var phoneNum = this.phoneInputField.val();
+    var msg = this.messageInputField.val();
+    if(this.validatePhoneField(phoneNum) && this.validateMessageField(msg)){
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',
+      { method: 'POST',
+        data: {
+            From: this.fromNumber,
+            To: "+1" + phoneNum,
+            Body: msg
+          },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        success: function(){
+          this.displayMessage(this.fromNumber, msg);
+          this.messageInputField.val("");
+        }.bind(this),
+
+        error: function(e){
+          console.log(e);
+        }
+      });
+
+    }
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

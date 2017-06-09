@@ -25,7 +25,20 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          // resp is a list of objects
+            function cmp(a,b){
+              return b.Population - a.Population;
+            }
+            resp.sort(cmp);
+            var cityObj = resp[0];
+            var cityName = cityObj["City / Urban area"];
+
+            //use jQuery
+            $("#out").text(cityName);
+
+        }
       });
     </script>
   </body>

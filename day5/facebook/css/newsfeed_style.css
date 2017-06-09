@@ -1,0 +1,39 @@
+/*style sheet for newsfeed page*/
+
+.newsfeed-container {
+
+}
+
+.new-post-container {
+
+}
+
+.posts-list-container {
+
+}
+
+.post {
+	border:	solid black 1px;
+	max-width: 300px;
+	padding: 0.5em;
+}
+
+.post-header {
+	padding: 0 0.5em;
+}
+
+.post-content {
+	padding: 0 0.5em 1em 0.5em;
+}
+
+.post-comments-container {
+	padding: 0 0.5em;
+}
+
+.likes-container {
+	font-weight: bold;
+}
+
+.post-footer {
+	padding: 0 0.5em;
+}

@@ -4,6 +4,10 @@ html, body {
   margin:auto;
 }
 
+.divider {
+  background-color: black;
+  height: 1.5px;
+}
 .container, .well{
   display:flex;
 	height: 100%;

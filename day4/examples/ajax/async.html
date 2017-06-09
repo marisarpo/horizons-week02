@@ -26,6 +26,25 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax ({  //request gets sent out
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(response) {
+          var emptyArr = [];
+          response.forEach(function(urlObject) {
+          $.ajax ({
+            url: urlObject.url,
+            success: function (response2) {
+              emptyArr.push(response2);    //second call inside success that can only run once success of first ajax occurs
+              console.log(emptyArr);
+              if (emptyArr.length === response.length) { //guarantee run only when everything there. one sorting method to get things as getting them.
+                //sort here
+              }
+            }
+            })
+          })
+        }
+      })
+      console.log('Hey');
     </script>
   </body>
 </html>

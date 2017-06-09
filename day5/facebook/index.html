@@ -8,10 +8,11 @@
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/newsfeed_style.css">
   </head>
   <body>
-    <!-- LOGIN PAGE -->
-    <div class="login-container">
+  <!-- LOGIN PAGE -->
+    <div class="login-container" style="display:none;">
       <form class="well form-horizontal" action=" " method="post"  id="login_form">
         <h1>Login</h1>
         <div class="form-group">
@@ -42,7 +43,7 @@
     </div>
 
   <!-- REGISTRATION PAGE -->
-    <div class='registration-container' style='display:none'>
+    <div class='registration-container' style='display:none;'>
         <form class="well form-horizontal" action=" " method="post"  id="registration_form">
           <h2>Register</h2>
           <div class='form-group'>
@@ -80,16 +81,55 @@
           </div>
         </form>
     </div>
-    <!-- jQuery -->
+
+  <!-- NEWSFEED PAGE -->
+    <div class='newsfeed-container'>
+
+    <!-- NEW POST -->
+      <div class='new-post-container container'>
+        <div>POST NEW SHIT HERE</div>
+      </div>
+
+    <!-- POSTS LIST -->
+      <div class='posts-list-container container'>
+      <!-- POST FOR JQUERY -->
+        <div class='post'>
+          <div class='post-header'>
+            <h4 style="margin:0; font-weight: 700;">USERNAME</h4>
+            <h4 style="margin:0; font-style: italic; font-size: 0.7em;">TIMESTAMP</h4>
+          </div>
+          <div class='post-content'>SAMPLE CONTENT</div>
+          <div class='divider'></div>
+          <div class='post-comments-container'>
+            <div class='likes-container'>
+              <p>
+                <span>0</span>
+                <span>Replies,</span>
+                <span>0</span>
+                <span>Likes</span>
+              </p>
+            </div>
+            <div class='post-comments'>COMMENTS</div>
+          </div>
+          <div class='post-footer'>
+            <button class='like-button'>LIKE</button>
+            <button class='reply-button'>Reply</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <!-- JavaScript files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
-    <!-- underscoreJS Library -->
+  <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
   </body>

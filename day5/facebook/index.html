@@ -12,7 +12,7 @@
   </head>
   <body>
   <!-- LOGIN PAGE -->
-    <div class="login-container" style="display:none;">
+    <div class="login-container">
       <form class="well form-horizontal" action=" " method="post"  id="login_form">
         <h1>Login</h1>
         <div class="form-group">
@@ -83,7 +83,7 @@
     </div>
 
   <!-- NEWSFEED PAGE -->
-    <div class='newsfeed-container'>
+    <div class='newsfeed-container' style="display:none;">
 
     <!-- NEW POST -->
       <div class='new-post-container container'>
@@ -118,7 +118,11 @@
         </div>
 
       </div>
+      <button type="button" class="btn btn-primary btn-block refresh">
+        <span>Refresh Newsfeed</span>
+      </button>
     </div>
+
 
   <!-- jQuery -->
     <script

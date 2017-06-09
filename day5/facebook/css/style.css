@@ -7,20 +7,26 @@ html, body {
 .container, .well{
   display:flex;
 	height: 100%;
-  width: 100%
+  width: 100%;
 	margin-bottom: 0;
   justify-content: center;
   align-content: center;
   flex-direction: column;
 }
 .well{
-  padding: 150px 19px;;
+  padding: 150px 19px;
 }
 
 h1{
 	text-align: center;
   letter-spacing: 2px;
   font-style: oblique;
+}
+h2{
+  text-align: center;
+  letter-spacing: 2px;
+  font-style: oblique;
+  padding-bottom: 19px;
 }
 .btn {
   padding: 10px 20px;
@@ -30,7 +36,16 @@ h1{
 
 }
 .register_link{
+  position:fixed;
+  bottom:0;
+  width:100%;
   text-align: center;
   vertical-align: middle;
   line-height: 90px;
+}
+.reg-buttons{
+  padding: 10px 20px;
+  font-size: 20px;
+  border-radius: 10px;
+  width:48%;
 }

@@ -125,8 +125,8 @@ In this section, we start by creating some data manually on Trello. After creati
 ## Part 2: Getting familiar with the API
 
 We are finally ready to get real data from Trello. Open up your console
-and try the following `ajax` request: (Don't forget to insert your key,
-token and boardId in the corresponding places)
+while on your trello board page and try the following `ajax` request: (Don't 
+forget to insert your key, token and boardId in the corresponding places)
 
 ```
 $.ajax('https://api.Trello.com/1/boards/YOURBOARDIDHERE', {
@@ -183,24 +183,25 @@ __NOTE__ that ALL CAPS are used throughout the sample `HTML` generation code to 
     1. Generate the following `HTML` string to create a list (given a [List Object](#list-object))
 	    ```html
 		<div class="list-container">
-          <div class="list" data-list-id="LIST ID" id="LIST ID">
+          <div class="list" data-list-id="LISTIDHERE" id="LISTIDHERE">
             <div class="list-header">
               <span class="list-title">test123</span>
             </div>
             <div class="list-cards"></div>
             <div class="list-footer">
-              <button class="add-card" addcardid="LIST ID">Add a card...</button>
-              <div class="collapse add-card-form-wrapper" id="addCardForm"+"LIST ID">
+              <button class="add-card" addcardid="LISTIDHERE">Add a card...</button>
+              <div class="collapse add-card-form-wrapper" id="addCardFormLISTIDHERE">
                 <div class="well add-card-form">
-                  <input type="text" class="form-control" placeholder="Card title" id="addCardTitle"+"LIST ID" />
-                  <button type="button" class="btn btn-default add-card-save" id="addCardBtn"+"LIST ID">Save</button>
-                  <button type="button" class="btn btn-default add-card-cancel"><span class="glyphicon glyphicon-remove" id="addCardCancelBtn"+"LIST ID"></span></button>
+                  <input type="text" class="form-control" placeholder="Card title" id="addCardTitleLISTIDHERE" />
+                  <button type="button" class="btn btn-default add-card-save" id="addCardBtnLISTIDHERE">Save</button>
+                  <button type="button" class="btn btn-default add-card-cancel"><span class="glyphicon glyphicon-remove" id="addCardCancelBtnLISTIDHERE"></span></button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 	    ```
+        * Note: Replace all `LISTIDHERE` with your list's id
     1. Append the generated `HTML` to your board.
 1. __`renderCard`__ - given a [card object](#card-object) create a card using `HTML`.
     1. Generate the following `HTML` string to create a card (given a [Card Object](#card-object))

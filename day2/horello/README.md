@@ -45,18 +45,18 @@ you final product should look like. Note the following:
 
 Let's open up `skeleton/index.html` and get started!
 
-1. **open [`5_horello/skeleton/index.html`](./skeleton/index.html) in
+1. **open [`horello/skeleton/index.html`](./skeleton/index.html) in
 your browser**: Your stylesheet, bootstrap, and jQuery have already been
 included for you. Note that there are comments indicating where your code
 for each Part should go (in both `index.html` and `style.css`).
 
 1. **open the following files**:
-    1. [`5_horello/skeleton/index.html`](./skeleton/index.html): contains
+    1. [`horello/skeleton/index.html`](./skeleton/index.html): contains
   	some fundamental HTML tags such as `html`, `head`, `body`, and `meta`&
   	includes Bootstrap, `skeleton/css/style.css`, and jQuery
-  	1. [`5_horello/skeleton/css/style.css`](./skeleton/css/style.css):
+  	1. [`horello/skeleton/css/style.css`](./skeleton/css/style.css):
   	this is where you should write your CSS classes
-  	1. [`5_horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
+  	1. [`horello/SPECIFICATIONS.md`](./SPECIFICATIONS.md): an overview
   	of what styles you need to use
 
 ## Part 1: Board and Flexbox
@@ -146,12 +146,14 @@ with varying amounts of data, like you see in the live version.
   - [fontawesome]
   - Google's [material] icon set
   - [the noun project]
+  - [feather]
 
-[glyphicons]: http://getbootstrap.com/components/#glyphicons
+[glyphicons]: https://getbootstrap.com/components/#glyphicons
 [fontawesome]: http://fontawesome.io/
 [material]: http://materializecss.com/icons.html
 [glyphicons-orig]: http://glyphicons.com/
 [the noun project]: https://thenounproject.com/
+[feather]: https://feathericons.com/
 [ss-03a]: ./img/ss-03a.png
 [ss-03b]: ./img/ss-03b.png
 
@@ -189,11 +191,11 @@ on your own creating the HTML and styles to add these forms, but here are a few 
 1. **refresh to view your changes**: reload and tap the buttons to see the
 expand/collapse in action!
 
-[Collapse]: http://getbootstrap.com/javascript/#collapse
-[Usage]: http://getbootstrap.com/javascript/#collapse-usage
-[Well]: http://getbootstrap.com/components/#wells
-[Forms]: http://getbootstrap.com/css/#forms
-[Glyphicon Examples]: http://getbootstrap.com/components/#glyphicons-examples
+[Collapse]: https://getbootstrap.com/javascript/#collapse
+[Usage]: https://getbootstrap.com/javascript/#collapse-usage
+[Well]: https://getbootstrap.com/components/#wells
+[Forms]: https://getbootstrap.com/css/#forms
+[Glyphicon Examples]: https://getbootstrap.com/components/#glyphicons-examples
 [ss-04a]: ./img/ss-04a.png
 [ss-04b]: ./img/ss-04b.png
 
@@ -237,6 +239,6 @@ Supplemental reading (optional):
 - [Modal window]
 
 [Modal window]: https://en.wikipedia.org/wiki/Modal_window
-[Modals]: http://getbootstrap.com/javascript/#modals
-[sample modal code]: http://getbootstrap.com/javascript/#modals-examples
+[Modals]: https://getbootstrap.com/javascript/#modals
+[sample modal code]: https://getbootstrap.com/javascript/#modals-examples
 [ss-05a]: ./img/ss-05a.png

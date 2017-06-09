@@ -1,0 +1,52 @@
+.centered-items{
+  margin-top: 20%;
+  text-align: center;
+  font-weight: 500;
+  color: white;
+
+
+}
+
+.container-fluid p{
+  margin-top: 70px;
+  /*margin: 70px 0 20px;*/
+}
+
+.weather {
+
+  /*margin-right: 10%;
+  margin-top: 10%;*/
+  margin-left: 90%;
+  color:white;
+
+}
+
+.time{
+  color: white;
+  font-family: Helvetica;
+  font-size: 192px;
+}
+
+.bg-wrapper{
+
+}
+
+.bg-wrapper::before{
+  content: "";
+  position: absolute;
+  width:100%;
+  height: 100%;
+  background: rgba(0,0,0,.25);
+}
+
+.bg-wrapper>img{
+  /*z-index: -1;*/
+  /*display:*/
+  /*object-fit: fill;*/
+  width:100%;
+  height:100%;
+  /*display: inline-block;*/
+  position:absolute;
+  z-index: -1;
+
+}

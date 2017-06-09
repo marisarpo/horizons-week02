@@ -26,7 +26,7 @@
 			core.updateTime();
 			core.render();
 		},1000);
-		
+
 		// I only want to fetch and update the weather once every ten minutes
 		setInterval(function() {
 			core.updateWeather();
@@ -35,6 +35,20 @@
 	</script>
 </head>
 <body>
+
+	<div class="bg-wrapper">
+		<img src="https://source.unsplash.com/daily/" />
+	</div>
+	<span class='weather'>temperature</span>
+	<div class= "container-fluid">
+		<!-- <div class = "row col-md-3 col-md-offset-10"> -->
+		<!-- </div> -->
+		<div class="row centered-items">
+			<h1 class = "time col-md-4 col-md-offset-4">  </h1>
+			<h3 class="col-md-4 col-md-offset-4"> Good evening, Pam </h3>
+			<p class = "col-md-4 col-md-offset-4" > think of a quote </p>
+		</div>
+	</div>
 	<!-- YOUR HTML IN HERE -->
 </body>
 </html>

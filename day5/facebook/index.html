@@ -5,15 +5,127 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <button type="submit" id = "logout-button" class="btn btn-default">GET ME OUTTA HERE</button>
 
+    <br></br>
+
+    <button type="submit" id = "get-comments-button" class="btn btn-default">Water they sayin' these days?</button>
+
+    <br></br>
+
+    <button type="submit" id = "like-button" class="btn btn-default">Like</button>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="comment">Comment</label>
+        <input type="text" class="form-control" id="comment" placeholder="What's good?">
+      </div>
+
+      <button type="submit" id = "comment-button" class="btn btn-default">Comment</button>
+
+    </form>
+
+    <br></br><br></br>
+    <button id = "get-posts-button" type="submit" class="btn btn-default">Get Posts</button>
+
+    <form class="form-inline">
+      <div class="form-group">
+        <label for="post">Post</label>
+        <input type="text" class="form-control" id="post" placeholder="What's good?">
+      </div>
+      <button id = "post-button" type="submit" class="btn btn-default">Post</button>
+    </form>
+
+    <!-- <div class = "post-container">
+        <h3>Sample Name</h3>
+        <p>This is so cool!</p>
+    </div> -->
+
+
+    <!-- Login Form -->
+    <div class = "login-container">
+      <form id = "login" class="form-inline">
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputEmail3">Email address</label>
+          <input type="email" class="form-control" id="loginEmail" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="exampleInputPassword3">Password</label>
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div>
+          <button type="submit" id = "login-button" class="btn btn-default">Sign up</button>
+      </form>
+    </div>
+
+    <!-- Registration Form -->
+    <div class = "register-container">
+
+      <h1> WELCOME TO FACEBOOK PLEASE GIVE ME ALL YOUR INFO<br></br></h1>
+      <form id="signup" class="form-horizontal">
+        <div class="form-group">
+          <label for="first-name" class="col-sm-2 control-label">First Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="first-name" name="fname" placeholder="First Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="last-name" class="col-sm-2 control-label">Last Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="last-name" name="lname" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input-email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="input-email" name="email" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="input-password" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="input-password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="last-name" class="col-sm-2 control-label">Credit Card Number</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Credit Card #">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="last-name" class="col-sm-2 control-label">Social Security Number</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="111-11-1111">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" id= "sign-up" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class = "post-container">
+        <h3>Sample Name</h3>
+        <p>This is so cool!</p>
+        <br></br>
+        <h4>Comments</h4>
+        <p>YEAHHHH</p>
+    </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -21,7 +133,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

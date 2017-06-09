@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Horizons AJAX Async Example</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js">
   </head>
 
   <body>
@@ -23,9 +24,53 @@
       <li>DJI Phantom 3, $416.59</li>
     </ul>
 
+
+
+
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var products = [];
+
+      $('#products').text('');
+
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(resp) {
+          resp.forEach(function(value,key) {
+            var link = value["url"];
+            $.ajax({
+              url: link,
+              success: function(inner) {
+                products.push(inner);
+                if (products.length === resp.length) {
+                  products.sort(function(obj1, obj2) {
+                    if (obj1["priceCents"] > obj2["priceCents"]) {
+                      return 1;
+                    }
+                    else {
+                      return -1;
+                    }
+                  });
+                  console.log(products);
+                  $('#products').append('<ul id="product-list"></ul>');
+                  products.forEach(function(value) {
+                    var name = value["name"];
+                    var price = value["priceCents"] / 100;
+                    $('#product-list').before($('<li>').text(name + " $" + price));
+                  })
+                }
+              }
+            })
+          })
+        }
+      })
+
+      
+
+
+
+
     </script>
   </body>
 </html>

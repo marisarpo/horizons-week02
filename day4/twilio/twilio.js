@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC14ef6dafeb35d3b1123f3d76dc6620b8";
+  this.authToken = "b0cccaad14dacd0ba544007d09dba30a";
+  this.fromNumber = "+18563473805";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,49 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', function(event) {
+      event.preventDefault();
+      this.handleMessageSend();
+    }.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return (textStr !== "" && (textStr.trim(" ").length !== 0));
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    return (Number.isInteger(parseInt(phoneStr))&&
+            phoneStr.length === 10 && 
+            !(phoneStr.includes(".")) &&
+            !(phoneStr.includes("-")));
+    // (/^\d+$.test()) checks string if valid number
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    if (this.validateMessageField(this.messageInputField.val()) &&
+        this.validatePhoneField(this.phoneInputField.val())) {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          console.log("HERE");
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: this.phoneInputField.val(),
+          Body: this.messageInputField.val()
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        error: function(err) {
+          alert("Error: cannot reach server.");
+        }
+      });
+      this.displayMessage(this.phoneInputField.val(), this.messageInputField.val());
+      this.messageInputField.val("");
+    }
+
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

@@ -25,7 +25,18 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          var biggestPopCity = resp.reduce(function(city1, city2) {
+            if (city1["Population"] > city2["Population"]) {
+              return city1;
+            }
+            else {
+              return city2;
+            }
+          })
+          $('#out').text(biggestPopCity["City / Urban area"]);
+        }
       });
     </script>
   </body>

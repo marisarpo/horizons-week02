@@ -9,7 +9,7 @@ momentum.Core = function() {
   this.quoteStr = "";
   this.weatherStr = 64;
   
-  this.timeEl = $("YOUR SELECTOR HERE");
+  this.timeEl = $("#time");
   this.quoteEl = $("YOUR SELECTOR HERE");
 	this.weatherEl = $("YOUR SELECTOR HERE");
   
@@ -27,6 +27,17 @@ momentum.Core.prototype = {
 	// hint. check out the `Date` object! Use `getHours` and `getMinutes`.
   setTime: function() {
 		// YOUR CODE HERE
+		var d = new Date();
+		var hour = d.getHours().toString();
+		var min = d.getMinutes();
+		if (min < 9) {
+			min = "0" + d.getMinutes().toString();
+		}
+		else {
+			min = d.getMinutes().toString();
+		}
+		this.timeStr = hour + ":" + min;
+		console.log(this.timeStr);
   },
 	// `setQuote` method
 	// This method should set the `quoteStr` property of the momentum core. This method will be used as the callback for quoteCtrl's `fetchQuote` function.
@@ -72,5 +83,7 @@ momentum.Core.prototype = {
 	// ex. this.timeStr will be rendered on to the screen using this.timeEl.text(this.timeStr);
   render: function() {
 		// YOUR CODE HERE
+		this.setTime();
+		this.timeEl.text(this.timeStr);
   }
 };

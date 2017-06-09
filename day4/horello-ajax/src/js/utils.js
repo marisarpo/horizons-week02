@@ -2,6 +2,17 @@
 // handlers/event listeners to the .board class
 // in order to make Horello reactive
 function setEventListeners() {
+  $('.board').on('click', '.delete-card', function(e) {
+    e.stopPropagation();
+    var cardId = ($(this).closest('.card').data('cardId'));
+    deleteCard(cardId);
+  });
+  // $('.board').on('click', '.delete-list', function(e) {
+  //   var listId = $(this).closest('.list').data('listId');
+  //   console.log(listId);
+  //   deleteList(listId);
+  // });
+
   $('.board').on('click', '.add-list', function(e) {
     $('#addList').collapse('toggle');
   });

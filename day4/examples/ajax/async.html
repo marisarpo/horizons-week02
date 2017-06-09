@@ -27,63 +27,81 @@
     <script>
       // YOUR CODE HERE
       var linkToLinks = $('.links').attr('href');
-      var products = [];
-
+      var counter = 0;
 
       $.ajax({
         url: linkToLinks,
-        success: function(links) {
-          var index = 0;
-          $.ajax({
-            url: links[index]["url"],
-            success: function(product){
-              products.push({
-                name: product["name"],
-                price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
-              })
-              index++;
-              $.ajax({
-                url: links[index]["url"],
-                success: function(product){
-                  products.push({
-                    name: product["name"],
-                    price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
+        success: function (prodURL) {
+          var products = [];
+          prodURL.forEach(function(urlObject, index){
+            $.ajax({
+              url: urlObject["url"],
+              success: function (resp) {
+                products.push(resp);
+                if(products.length === prodURL.length){
+                  products.sort(function(a,b){
+                    return a.priceCents-b.priceCents;
                   })
-                  index++;
-                  $.ajax({
-                    url: links[index]["url"],
-                    success: function(product){
-                      products.push({
-                        name: product["name"],
-                        price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
-                      })
-                      products.sort(function(a, b){
-                        return a["price"]-b["price"];
-                      });
-                      var prodListLoc = '<ul>'
-                      for (var i = 0; i < products.length; i++) {
-                        prodListLoc += '<li>' + products[i]["name"] + ', $' + products[i]["price"] + '</li>'
-                      }
-                      prodListLoc += '</ul>'
-                      $('#products').replaceWith(prodListLoc);
-                    }
-                  })
+                  var prodListLoc = '<ul>'
+                  for (var i = 0; i < products.length; i++) {
+                    prodListLoc += `<li>${products[i]["name"]}, $${products[i]["priceCents"]/100}</li>`
+                  }
+                  prodListLoc += '</ul>'
+                  $('#products').replaceWith(prodListLoc);
                 }
-              })
-            }
+              }
+            })
           })
-
-
-
-
-
-
-
-
-
         }
 
       })
+
+
+      // $.ajax({
+      //   url: linkToLinks,
+      //   success: function(links) {
+      //     var index = 0;
+      //     $.ajax({
+      //       url: links[index]["url"],
+      //       success: function(product){
+      //         products.push({
+      //           name: product["name"],
+      //           price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
+      //         })
+      //         index++;
+      //         $.ajax({
+      //           url: links[index]["url"],
+      //           success: function(product){
+      //             products.push({
+      //               name: product["name"],
+      //               price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
+      //             })
+      //             index++;
+      //             $.ajax({
+      //               url: links[index]["url"],
+      //               success: function(product){
+      //                 products.push({
+      //                   name: product["name"],
+      //                   price: Math.floor(product["priceCents"]/100) + (product["priceCents"]%100)/100
+      //                 })
+      //                 products.sort(function(a, b){
+      //                   return a["price"]-b["price"];
+      //                 });
+      //                 var prodListLoc = '<ul>'
+      //                 for (var i = 0; i < products.length; i++) {
+      //                   prodListLoc += '<li>' + products[i]["name"] + ', $' + products[i]["price"] + '</li>'
+      //                 }
+      //                 prodListLoc += '</ul>'
+      //                 $('#products').replaceWith(prodListLoc);
+      //               }
+      //             })
+      //           }
+      //         })
+      //       }
+      //    })
+        // }
+
+      // })
 
 
 

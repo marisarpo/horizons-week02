@@ -6,7 +6,6 @@ function TwilioApp() {
   this.accountId = "AC0ccb3d26d83d1e236024c9b70d9efcfc";
   this.authToken = "a69aab99e9834be73ed508e1ac1cecb6";
   this.fromNumber = '+15092608221';
-  this.toNumber = '+15099644566';
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -39,8 +38,9 @@ TwilioApp.prototype = {
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
-    var phoneInt = parseInt(phoneStr);
-    if (phoneStr.length !== 10) {
+    var phoneNum = phoneStr.slice(1,phoneStr.length);
+    var phoneInt = parseInt(phoneNum);
+    if (phoneNum.length !== 11) {
       return false;
     } else if (isNaN(phoneInt)) {
       return false;
@@ -51,16 +51,20 @@ TwilioApp.prototype = {
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
-    var phoneNum = this.phoneInputField.val();
+    var phoneNum = '+'
+    phoneNum += this.phoneInputField.val();
     var messCon = this.messageInputField.val();
     console.log(this.validatePhoneField(phoneNum));
     console.log(this.validateMessageField(messCon));
     event.preventDefault();
+    var self = this;
     if (this.validatePhoneField(phoneNum) && this.validateMessageField(messCon)) {
+      console.log(this.accountId)
+      console.log(this.fromNumber)
       $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
-        success: function(x) {
-          this.displayMessage(phoneNum, messCon);
-          this.messageInputField.empty();
+        success: function() {
+          self.displayMessage(phoneNum.slice(1,phoneNum.length), messCon);
+          self.messageInputField.val("");
         },
         error: function(x) {
           alert("error");
@@ -68,17 +72,16 @@ TwilioApp.prototype = {
         method: 'POST',
         data: {
           From: this.fromNumber,
-          To: this.toNumber,
-          Body: 'Congratulations your Twillio account is working!'
+          To: phoneNum,
+          Body: messCon
         },
         headers: {
-          "Authorization": "Basic " + btoa(this.accountID + ":" + this.authToken)
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
         }
       });
     }
 
   },
-
 
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

@@ -1,7 +1,7 @@
 "use strict";
 /* eslint-env jquery */
 
-<<<<<<< HEAD
+
 window.twilio = {};
 
 // Exercise 0. Get Twilio credentials
@@ -46,25 +46,67 @@ TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
     // YOUR CODE HERE
-    //console.log(this);
-    this.messageSendButton.on("click", function(){
-      this.handleMessageSend().bind(this);
-    });
+
+    $(this.messageSendButton).on("click", this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
     // YOUR CODE HERE
+    if($.trim(textStr) === ''){
+      return false;
+    }else{
+      return true;
+    }
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
+    if(phoneStr.length !== 10){
+      return false;
+    }else{
+      if($.isNumeric(phoneStr) === false){
+        return false;
+      }else{
+        return true;
+      }
+    }
   },
 
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    var self = this;
+
+    var msg = $(".message-input-field").val();
+    var phone = $(".phone-input-field").val();
+
+    //this refers to the current twilio application
+
+    if(this.validateMessageField(msg) && this.validatePhoneField(phone)){
+
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(resp) {
+          //$('h1').text("Congrats! You're set up!");
+          //console.log(self);
+          self.displayMessage(msg);
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: phone,
+          Body: msg
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        error: function(err){
+          alert("failure!!!");
+        }
+      });
+
+    }
+
+    event.preventDefault();
 
   },
   displayMessage: function(sender, message) {

@@ -2,23 +2,21 @@
 // for the Horello AJAX (DAY 4) exercise.
 
 $(document).ready(function() {
-  setEventListeners();
-  render();
-
   $.ajaxSetup({
     data: {
       key: apiKey,
       token: apiToken
     }
   });
+
+  setEventListeners();
+  render();
   setInterval(render, 30000);
 });
 
 function createList(listName) {
   $.ajax('https://api.Trello.com/1/lists/', {
     data: {
-      key: apiKey,
-      token: apiToken,
       name: listName,
       idBoard: boardId
     },
@@ -30,8 +28,6 @@ function createList(listName) {
 function createCard(name, listId) {
   $.ajax('https://api.Trello.com/1/cards', {
     data: {
-      key: apiKey,
-      token: apiToken,
       name: name,
       idList: listId
     },
@@ -43,8 +39,6 @@ function createCard(name, listId) {
 function updateCard(title, desc, cardId) {
   $.ajax('https://api.Trello.com/1/cards/' + cardId, {
     data: {
-      key: apiKey,
-      token: apiToken,
       name: title,
       desc: desc
     },
@@ -55,14 +49,12 @@ function updateCard(title, desc, cardId) {
 
 function render() {
   $.ajax('https://api.Trello.com/1/boards/' + boardId, {
-  data: {
-    key: apiKey,
-    token: apiToken,
-    cards: 'all',
-    lists: 'all'
-  },
-  success: function(data) { renderBoard(data); }
-});
+    data: {
+      cards: 'all',
+      lists: 'all'
+    },
+    success: function(data) { renderBoard(data); }
+  });
 }
 
 function renderBoard(board) {

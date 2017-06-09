@@ -27,14 +27,32 @@
       // var listArray=ul.getElementsByTagName('li');
 
       var linkObjs=$('#links').children();
-      var objVals=Object.values(linkObjs)
+      // var objVals=Object.values(linkObjs)
       // console.log(objVals);
-
+      console.log(linkObjs[0]);
 
       $.each(linkObjs, function(index, value){
         // console.log(value);
-        console.log($(this).text());
 
+              //THIS IS VALUE
+        // console.log($(this).text());
+        // console.log(this);
+        // console.log(typeof this);
+        // console.log($(this));
+        // console.log(typeof $(this));
+        var self=$(this);
+
+        $.ajax({
+          url: self.text(),
+          // success: function(resp){
+          //   // console.log(resp);
+          // },
+          error: function(err){
+            // debugger;
+            self.hide()
+
+          }
+        })
         // $(this) refers to li tag
 
 
@@ -46,18 +64,18 @@
       //   // console.log($(objVals[0]).text());
       //   var val=$(objVals[i]).text();
       //
-      //     $.ajax({
-      //       url: val,
-      //       success: function(resp){
-      //         // console.log(resp);
-      //       },
-      //       error: function(err){
-      //         console.log(i)
-      //
-      //         objVals[i].text("");
-      //         $(objVals[i]).remove();
-      //       }
-      //     })
+          // $.ajax({
+          //   url: val,
+          //   success: function(resp){
+          //     // console.log(resp);
+          //   },
+          //   error: function(err){
+          //     console.log(i)
+          //
+          //     objVals[i].text("");
+          //     $(objVals[i]).remove();
+          //   }
+          // })
       // console.log(Object.values(linkObjs)[i]);
     // }
 

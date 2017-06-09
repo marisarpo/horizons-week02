@@ -10,15 +10,63 @@ $(document).ready(function() {
 });
 
 function createList(listName) {
-  // YOUR CODE HERE
+  $.ajax({
+    url: "https://api.trello.com/1/lists",
+    method: "POST",
+    data: {
+      key: "33db3ab23ca942380ba2410e3fd9c6af",
+      token: "a79ba806fca6cccf10b114372826cec4c3cef4c33f2974e93a268089da1d1275",
+      name: listName,
+      idBoard: boardId,
+      pos: 'bottom'
+    },
+    success: function() {
+      render()
+    },
+    error: function(error) {
+      console.log("somethin went wrong", error);
+    }
+  })
 }
 
+
 function createCard(name, listId) {
-  // YOUR CODE HERE
+  $.ajax({
+    url: "https://api.trello.com/1/cards",
+    method: "POST",
+    data: {
+      key: "33db3ab23ca942380ba2410e3fd9c6af",
+      token: "a79ba806fca6cccf10b114372826cec4c3cef4c33f2974e93a268089da1d1275",
+      name: name,
+      pos: "bottom",
+      idList: listId
+    },
+    success: function() {
+      render()
+    },
+    error: function(error) {
+      console.log("somethin went wrong", error);
+    }
+  })
 }
 
 function updateCard(title, desc, cardId) {
-  // YOUR CODE HERE
+  $.ajax({
+    url: "https://api.trello.com/1/cards/" + cardId,
+    method: "PUT",
+    data: {
+      key: "33db3ab23ca942380ba2410e3fd9c6af",
+      token: "a79ba806fca6cccf10b114372826cec4c3cef4c33f2974e93a268089da1d1275",
+      name: title,
+      desc: desc,
+    },
+    success: function() {
+      render()
+    },
+    error: function(error) {
+      console.log("somethin went wrong", error);
+    }
+  })
 }
 
 
@@ -40,7 +88,6 @@ function render() {
 
 
 function renderBoard(board) {
-  console.log(board);
   $("#boardAnchor").empty();
   $("#boardAnchor").append('<div id="'+boardId+'" class="board"></div>');
   for(var list of board.lists) {

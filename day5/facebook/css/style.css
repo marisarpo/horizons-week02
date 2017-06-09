@@ -1,0 +1,32 @@
+.header {
+  font-size: 48px;
+  background: skyblue;
+  text-align: center;
+}
+.button-text {
+  text-align: center;
+}
+
+.button-padding {
+  margin-top: 5px;
+  margin-bottom: 50px;
+}
+
+.body {
+  background: blue;
+}
+.card {
+  border: 1px solid black;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.replies {
+  border-top: 1px solid green;
+}
+
+#logout {
+  position: absolute;
+  left: 90%;
+  top: 3%;
+}

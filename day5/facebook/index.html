@@ -6,12 +6,117 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+  <!-- LOGIN PAGE -->
+  <div id="login-page" class="container-fluid">
+    <!-- LOGIN HEADER -->
+    <div class="row">
+      <div class="header">
+        Login
+      </div>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form>
+      <!-- USERNAME INPUT -->
+      <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+          <input type="username" class="form-control" id="usernameInput1" aria-describedby="loginUsername" placeholder="username">
+        </div>
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+          <input type="password" class="form-control" id="passwordInput1" aria-describedby="loginPassword" placeholder="password">
+        </div>
+      </div>
+    </form>
+
+      <!-- LOGIN BUTTON -->
+      <div class="col-xs-4 col-xs-offset-4 button-padding">
+        <button id="login-button" class="btn default-btn btn-block"><span class="button-text">Login</span></button>
+      </div>
+
+    <!-- REGISTER BUTTON -->
+    <div class="col-xs-4 col-xs-offset-4 button-padding">
+        <button id="go-to-register-button" class="btn default-btn btn-block"><span class="button-text">Register Here</span></button>
+    </div>
+
+  </div>
+
+  <!-- REGISTRATION PAGE -->
+   <div id="registration-page" class="container-fluid">
+    <!-- REGISTRATION HEADER -->
+    <div class="row">
+      <div class="header">
+        Register
+      </div>
+    </div>
+
+    <!-- REGISTRATION FORM -->
+    <form>
+      <!-- FIRSTNAME INPUT -->
+      <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+          <input type="first-name" class="form-control" id="first-name-input" aria-describedby="register-first-name" placeholder="First name">
+        </div>
+      </div>
+
+      <!-- LASTNAME INPUT -->
+      <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+         <input type="last-name" class="form-control" id="last-name-input" aria-describedby="register-last-name" placeholder="Last name">
+        </div>
+      </div>
+
+    <!-- USERNAME INPUT -->
+    <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+         <input type="username" class="form-control" id="usernameInput2" aria-describedby="registerUsername" placeholder="username">
+        </div>
+      </div>
+
+      <!-- PASSWORD INPUT -->
+      <div class="row col-xs-4 col-xs-offset-4">
+        <div class="form-group">
+         <input type="password" class="form-control" id="passwordInput2" aria-describedby="registerPassword" placeholder="password">
+        </div>
+      </div>
+    </form>
+
+    <!-- REGISTER BUTTON -->
+    <div class="col-xs-4 col-xs-offset-4 button-padding">
+        <button id="register-button" class="btn default-btn btn-block"><span class="button-text">Register</span></button>
+    </div>
+
+    <!-- LOGIN BUTTON -->
+    <div class="col-xs-4 col-xs-offset-4 button-padding">
+      <button id="go-to-login-button" class="btn default-btn btn-block"><span class="button-text">Login Here</span></button>
+    </div>
+
+  </div>
+
+  <!-- MAIN PAGE -->
+      <!-- HEADER -->
+
+
+        <!-- LOGOUT BUTTON -->
+
+        <!-- BODY -->
+          <!-- NEW POST INPUT / BUTTON -->
+
+          <!-- CURRENT POSTS -->
+              <!-- NAME -->
+              <!-- POST -->
+              <!-- LIKES -->
+              <!-- REPLIES -->
+              <!-- LIKE BUTTON -->
+              <!-- REPLY BUTTON -->
+
 
     <!-- jQuery -->
     <script
@@ -20,7 +125,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+ <!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

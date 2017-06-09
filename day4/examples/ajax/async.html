@@ -26,6 +26,44 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      //firday material
+      $.ajax({
+         url:"https://horizons-json-cors.s3.amazonaws.com/products.json",
+         
+         success: function(response){
+             $.ajax({  
+  //this is nested in the success of first ajax, so won't run unless the first success
+             var emptyArr = [];
+             response.forEach(function(urlObject){
+               $.ajax({
+                 url: urlObject.url,
+                 success:function(response2){
+                    emptyArr.push(response2);
+                    if(emptyArr.length === responese.length){
+
+
+                    }
+                 }
+               })
+             })
+
+
+               url: response[0].url,
+               success:function(response2){
+                  
+               }
+
+             })
+
+         }
+       })
+
+      console.log("Hey") 
+      //this is printed out bef first ajax finish because ajax is asynx
+
+
+
+      //my own attemp
       $.ajax({
          url:"https://horizons-json-cors.s3.amazonaws.com/products.json",
          

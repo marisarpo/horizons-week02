@@ -20,8 +20,25 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
       // YOUR CODE HERE
+      var a=$('#links').children();
+      //console.log(a[0].innerHTML);
+      _.forEach(a,function(item){
+        $.ajax({
+            url:$(item).text(),
+            success:function(resp){
+
+            },
+            error:function(err){
+              //console.log(i);
+              console.log(item)
+              $(item).remove();
+            }
+        })
+      })
+
     </script>
   </body>
 </html>

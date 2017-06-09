@@ -24,8 +24,29 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
       // YOUR CODE HERE
+      var array=[];
+      $.ajax({
+        url:'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success:function(resp){
+        _.forEach(resp,function(item){
+          $.ajax({
+            url:item.url,
+            success:function(resp1){
+              array.push(resp1);
+            }
+          })
+        })
+      }
+    })
+    $(document).ajaxStop(function() {
+        var ar=_.sortBy(array,'priceCents');
+        for (var i = 0; i < ar.length; i++) {
+            $("#products").append(`<li>${ar[i].name} -- $${ar[i].priceCents / 100}</li>`);
+       }
+    });
     </script>
   </body>
 </html>

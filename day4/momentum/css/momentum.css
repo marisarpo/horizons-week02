@@ -1,0 +1,50 @@
+#weather{
+  position:absolute;
+   top:5%;
+   right:5%;
+   color: white;
+}
+#main{
+  position: absolute;
+  width: 300px;
+  height: 200px;
+  z-index: 15;
+  top: 50%;
+  left: 40%;
+  margin: -100px 0 0 -150px;
+  /*background: red;*/
+  color: white;
+  font-family: : Helvetica;
+  //font-size: 92px;
+}
+
+h1{
+  color: white;
+  font-family: : Helvetica;
+  font-size: 192px;
+}
+
+.bg-wrapper > img {
+  position: absolute;
+  z-index: -1;
+	width: 100%;
+}
+.bg-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+vertical-align: middle;
+}
+.time{
+color: white;
+text-align: center;
+font-size: 6.0em;
+opacity: 0.85;
+}
+
+.temp{
+color: white;
+text-align: center;
+}

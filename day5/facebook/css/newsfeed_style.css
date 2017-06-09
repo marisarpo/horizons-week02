@@ -3,7 +3,14 @@
 .newsfeed-page-container {
 }
 
+.navbar-default {
+	background-color: pink;
+	border: 0;
+}
 
+.navbar {
+	border-radius: 0;
+}
 
 .newsfeed-container {
 	width: auto;

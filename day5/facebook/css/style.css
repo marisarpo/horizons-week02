@@ -1,0 +1,29 @@
+.hidden {
+  display:none
+}
+
+.newsfeed{
+  background-color: lightBlue;
+  margin: 10px
+}
+
+.post{
+  background-color: white;
+  border-radius: 2px;
+  border: none;
+  margin: 4px;
+}
+
+.mainContent{
+  margin: 3px;
+  border: 1px grey;
+  border-radius: 2px; 
+}
+
+i{
+  font-style: italic;
+}
+
+p{
+  font-size: 12px
+}

@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC7348e3a6af8063cc21cc7677c0af0599";
+  this.authToken = "3a8e24aa5b52d1825934f0a634f244ae";
+  this.fromNumber = "+14159918353";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,53 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    console.log("part 1");
+    $(this.messageSendButton).on('click',this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    console.log("part 2");
+    if(($.trim(textStr)).length === 0){
+      return false;
+    }
+    return true;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    console.log("part 3");
+    if(typeof JSON.parse(phoneStr) === 'number' && phoneStr.length === 10){
+      return true;
+    }
+    return false;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    console.log("part 4");
+    var message = this.messageInputField.val();
+    var phone = this.phoneInputField.val();
+    var myThis = this;
+    if(this.validateMessageField(message) && this.validatePhoneField(phone)){
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          console.log(this);
+          myThis.displayMessage(myThis.fromNumber, message);
+        },
+        error: function(e){
+          alert("Problem sending message");
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: phone,
+          Body: message
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        }
+      });
+    }
+    // this.displayMessage('9999999999', 'Testing testing!');
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

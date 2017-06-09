@@ -6,12 +6,41 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id="loginDiv">
+      <h1>Login!</h1>
+      <form>
+        <div class ="form-group" id="loginFormDiv">
+          <input type="text" placeholder="Username" class="form-control" id="usernameLogin">
+          <input type="password" placeholder="Password" class="form-control" id="passwordLogin">
+          <button type="button" id="submitLogin" class="btn btn-default">Login</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="registerButtonDiv">
+      <button type="button" id="registerButton" class="btn btn-default">Register</button>
+    </div>
+
+    <div id="registrationDiv" class="hidden">
+      <h1>Register!</h1>
+      <form>
+        <div class="form-group" id="registrationFormDiv">
+          <input type="text" placeholder="First Name" class="form-control" id="firstName">
+          <input type="text" placeholder="Last Name" class="form-control" id="lastName">
+          <input type="text" placeholder="Username" class="form-control" id="usernameSignUp">
+          <input type="password" placeholder="Password" class="form-control" id="passwordSignup">
+          <button type="button" id="submitSignUp" class="btn btn-default">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="newsfeed" class="hidden newsfeed">
+
+    </div>
 
     <!-- jQuery -->
     <script
@@ -20,7 +49,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

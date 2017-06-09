@@ -47,7 +47,7 @@
 }
 
 .sender::before {
-  content: "@+";
+  content: "@";
 }
 
 .sender::after {

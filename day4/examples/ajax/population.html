@@ -25,7 +25,18 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          var max = 0;
+          var city = null;
+          resp.forEach(function(a){
+            if(a.Population > max){
+              max = a["Population"];
+              city = a["City / Urban area"]
+            }
+          })
+          $('#out').text(city);
+        }
       });
     </script>
   </body>

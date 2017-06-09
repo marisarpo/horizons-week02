@@ -77,11 +77,15 @@ momentum.Core.prototype = {
     }
     console.log("icon: ",this.weatherIcon);
     $('#icon').addClass(this.weatherIcon);
+
+    if (descrip.indexOf("scattered") >= 0) {
+      $('#icon').addClass("glyphicon glyphicon-certificate");
+    }
   },
   setGreeting: function() {
     var hrs = (new Date()).getHours();
     var addon = "Morning";
-    console.log(hrs);
+    //console.log(hrs);
     if (hrs > 11)
       addon = "Afternoon"
     if (hrs > 16)

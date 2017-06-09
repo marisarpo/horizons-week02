@@ -48,8 +48,39 @@ h1 {
   justify-content: center;
   height: 100%;
 }
+
 /*
-position - absolute
-width and height - full-screen
-background - black, 15-25% opacity (up to you)
+@keyframes moose2 {
+  0% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: blue;
+  }
+}
+@keyframes moose {
+  0% {
+    background-color: yellow;
+  }
+  20% {
+    background-color: blue;
+  }
+  100% {
+    background-color: yellow;
+  }
+}
+
+.parent {
+  display: flex;
+}
+
+.elem {
+  animation-iteration-count: infinite;
+  animation-name: moose;
+  animation-duration: 4s;
+  height: 300px;
+  width: 300px;
+  border: 2px solid black;
+}
+
 */

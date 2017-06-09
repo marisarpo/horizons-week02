@@ -74,7 +74,7 @@ if the given string passes these conditions:
 
     **Bad:** 1-2
 
-1. The string contains exactly 10 digits
+1. The string contains exactly 11 digits
 
     **Good:** 14155005000
 

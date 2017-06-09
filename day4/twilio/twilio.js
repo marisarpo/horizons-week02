@@ -43,7 +43,20 @@ TwilioApp.prototype = {
     // YOUR CODE HERE
     event.preventDefault();
     // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    // this.displayMessage('9999999999', 'Testing testing!');
+
+    var thisApp = this;
+    var messageInput = thisApp.messageInputField.val();
+    var phoneInput = thisApp.phoneInputField.val();
+
+    if (thisApp.validateMessageField(messageInput) &&
+        thisApp.validatePhoneField(phoneInput)) {
+      thisApp.displayMessage(phoneInput, messageInput);
+      thisApp.messageInputField.val("");
+    } else {
+      alert("Invalid fields.");
+    }
+
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

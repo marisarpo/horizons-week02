@@ -30,7 +30,7 @@ That's all. Move fast and break things! *
 
 The components we want you to build are below. We recommend you approach each one as a step building off the other, but you may take the components in any order you'd like. Keep in mind that many of these components rely on your implementation of registering and authenticating a user.
 
-1. **Registration**: You will need to allow a user to fill out a form to register with email, password, first and last name, and birthday.
+1. **Registration**: You will need to allow a user to fill out a form to register with email, password, first and last name.
 
 2. **Login**: You will need to present existing users with a login that authenticates with email and password. Upon successful login, our server will return you a token to pass into subsequent requests.
 

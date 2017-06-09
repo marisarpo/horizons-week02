@@ -29,7 +29,7 @@ $('.submit').on('click',function(){
 
         clear();
         $('.login-container').hide();
-        $('.newsfeed-container').show();
+        $('.newsfeed-page-container').show();
         // data.response.token will give you access
         // to the AUTH_TOKEN
       },
@@ -125,23 +125,58 @@ function updatedPostData(data){
                   <div class='divider'></div>
                   <div class='post-comments-container'>
                     <div class='likes-container'>
-                      <p>
+                      <p style='margin:0;'>
                         <span>${comments.length}</span>
                         <span>Replies,</span>
                         <span>${likes.length}</span>
                         <span>Likes</span>
                       </p>
                     </div>
-                    <div class='post-comments'>COMMENTS</div>
-                  </div>
+                    <div class='post-comments'>`
+      // var commentish = `<div class='comment'>
+      //                   <div class='comment-header'>
+      //                     <span>COMMENT USERNAME:</span>
+      //                     <span style="font-style: italic; font-size: 0.7em;">COMMENT TIMESTAMP</span>
+      //                   </div>
+      //                   <div class='comment-content'>COMMENT CONTENT</div>
+      //                 </div>
+      //               </div>`
+    var footer = `</div>
                   <div class='post-footer'>
-                    <button class='like-button'>LIKE</button>
+                    <button class='like-button'><span class="glyphicon glyphicon-thumbs-up"></span></button>
                     <button class='reply-button'>Reply</button>
                   </div>
                 </div>`
-    $('.new-post-container').append(text);
+    var comment = addComments(comments);
+    var finalText = text+comment+footer;
+    $('.posts-list-container').append(finalText);
+    console.log(comments);
   })
-  console.log('refreshed');
+
+}
+
+function addComments(comments){
+  var newComments = '';
+  console.log('in comments');
+  if (comments.length === 0){
+    return '';
+  }else{
+    comments.forEach(function(item){
+      console.log(item.poster.name);
+      var comment = `<div class='post-comments'>
+                    <div class='comment'>
+                      <div class='comment-header'>
+                        <span>${item.poster.name + ': '}</span>
+                        <span style="font-style: italic; font-size: 0.7em;">${item.createdAt}</span>
+                      </div>
+                      <div class='comment-content'>${item.content}</div>
+                    </div>
+                  </div>`
+      newComments = newComments + comment;
+    })
+    //console.log(comments);
+    return newComments;
+  }
 }
 
 $('.refresh').on('click',function(){
@@ -152,3 +187,7 @@ $('.refresh').on('click',function(){
     updatePosts();
   }
 })
+$('.newsfeed-container').on('click','.reply-button'){
+
+
+}

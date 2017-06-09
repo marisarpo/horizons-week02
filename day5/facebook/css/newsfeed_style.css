@@ -1,11 +1,32 @@
 /*style sheet for newsfeed page*/
 
-.newsfeed-container {
+.newsfeed-page-container {
+}
 
+
+
+.newsfeed-container {
+	width: auto;
+	max-width: 350px;
 }
 
 .new-post-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
 
+	margin: 1em 0;
+}
+
+.new-post-container textarea {
+	width: 100%;
+	border: solid black 1px;
+}
+
+.new-post-container button {
+	margin-left: 0.3em;
+	border-radius: 0.3em;
+	border: 0;
 }
 
 .posts-list-container {
@@ -14,8 +35,8 @@
 
 .post {
 	border:	solid black 1px;
-	max-width: 300px;
 	padding: 0.5em;
+	margin-bottom: 1em;
 }
 
 .post-header {
@@ -30,10 +51,24 @@
 	padding: 0 0.5em;
 }
 
+.comment {
+	font-size: 0.9em;
+}
+
 .likes-container {
 	font-weight: bold;
 }
 
 .post-footer {
-	padding: 0 0.5em;
+	padding: 0 0;
+	font-weight: bold;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.like-button, .reply-button {
+	padding: 0.2em 1.5em;
+	margin: 0 0 0 0.5em;
+	border-radius: 0.3em;
+	border: 0;
 }

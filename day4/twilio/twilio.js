@@ -19,27 +19,74 @@ function TwilioApp() {
   console.log("TwilioApp is ready.");
 }
 
+
+
+
+
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    this.messageSendButton.on("click", function() {
-      this.handleMessageSend()
-    }).bind(this)
+    this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
+
+
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return !!$.trim(textStr)
   },
+
+
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if(phoneStr.length !== 11) {
+      return false
+    }
+    for(var i = 0; i<11; i++) {
+      var el = parseInt(phoneStr.substring(i,i+1))
+      if(!$.isNumeric(el)) {
+        return false
+      }
+    }
+    return true
   },
+
+
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    var message = this.messageInputField.val();
+    var phone = this.phoneInputField.val();
+    if(this.validatePhoneField(phone) && this.validateMessageField(message)) {
+      var that = this
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + that.accountId + '/SMS/Messages', {
+        success: function(dat) {
+          var incomingMessage = $(dat).find("Body").text().substring(37)
+          var incomingSender = $(dat).find("From").text().substring(1)
+          that.displayMessage(incomingSender, incomingMessage);
+          that.messageInputField.val("")
+        },
+        error: function(err){
+          alert(error)
+        },
+        method: "post",
+        data: {
+          From: that.fromNumber,
+          To: phone,
+          Body: message
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(that.accountId + ":" + that.authToken)
+        }
+
+
+
+
+      })
+    }
   },
+
+
+
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
     var senderElem = $('<span></span>').addClass('sender').text(sender);

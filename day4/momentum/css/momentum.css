@@ -1,0 +1,46 @@
+div{
+}
+
+.center{
+  position:absolute;
+  width:50%;
+  height:50%;
+  left:50%;
+  top:50%;
+  margin-left:-200px;
+  margin-top:-150px;
+  color: #fff;
+}
+.clock{
+  color:white;
+  font-style: Helvetica;
+  font-size: 192px;
+
+}
+.weather-widget{
+  position:absolute;
+  top:0;
+  right:0;
+  color:#fff;
+}
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper::before {
+  content: "";
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+}
+.bg-wrapper{
+
+}
+
+/* selector for the actual image - use this to control img dimensions*/
+.bg-wrapper > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

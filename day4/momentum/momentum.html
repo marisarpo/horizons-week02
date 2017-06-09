@@ -22,19 +22,29 @@
 
 		core.start();
 		// I want to run the time update and rendering every second
+		//core.setTime();
 		setInterval(function() {
 			core.updateTime();
 			core.render();
 		},1000);
-		
+
 		// I only want to fetch and update the weather once every ten minutes
 		setInterval(function() {
 			core.updateWeather();
-		}, 1000*60*10);
+		}, 1000*10*60);
 	});
 	</script>
 </head>
 <body>
-	<!-- YOUR HTML IN HERE -->
+	<div class="bg-wrapper">
+		<img src="https://source.unsplash.com/daily/" />
+	</div>
+	<div class="center">
+		<h1 class='clock'>TIME</h1>
+		<h3 class='greeting'>SALUTATION</h3>
+		<p class='quote'>QUOTE</p>
+	</div>
+	<div class="weather-widget">
+		<span class="temp glyphicon glyphicon-cloud">Tempature</span>
 </body>
 </html>

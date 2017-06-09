@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC7b12fba269fb8cbc8bd1ebb1d4f5ed1e";
+  this.authToken = "105427eaa507ced9e216988c0284b1a3";
+  this.fromNumber = "+17275925884";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,57 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    var updatedString = textStr.trim();
+    if (updatedString.length === 0){
+      return false;
+    }
+    return true;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    var isnum = /^\d+$/.test(phoneStr);
+    if (isnum){
+      if (phoneStr.length===10){
+        return true;
+      }
+    }
+    return false;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    //this.displayMessage('9999999999', 'Testing testing!');
+    console.log(this);
+    var twilio = this;
+    var message = this.messageInputField.val();
+    var phone = this.phoneInputField.val();
+    //console.log(message.val());
+    if (this.validatePhoneField(phone) && this.validateMessageField(message)){
+      $.ajax(
+        'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',{
+          success: function(x) {
+            twilio.displayMessage(phone, message);
+            twilio.messageInputField.val("");
+          },
+          method: 'POST',
+          data: {
+            From: this.fromNumber,
+            To: phone,
+            Body: message
+          },
+          headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+          },
+          error: function(err){
+            alert('ERROR', err);
+          }
+      })
+    }
+
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
@@ -45,6 +81,7 @@ TwilioApp.prototype = {
     listElem.append(senderElem);
     listElem.append(bodyElem);
     this.messageList.append(listElem);
+
   }
 };
 

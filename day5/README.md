@@ -50,52 +50,13 @@ Yes, it's a lot - but if Mark Zuckerberg can do it, you can too!
 ## Instructions
 These instructions are very minimal in nature and should only be used as a guide to creating your Facebook newsfeed **(they should not be followed religiously as the final app should be your own creation)**. Additionally, the *pictures* throughout this guide are merely visual aids to help you understand and visualize each step, so **do not** imitate the designs used for the images.
 
-1. Let's create the files required to start making your Facebook Newsfeed:
+You are provided with the following files to start making your Facebook Newsfeed:
 
   * `/facebook/index.html`: This will be the main page of your app where you will write all of the necessary `HTML`.
   * `/facebook/css/style.css`: This will be our primary style sheet for the app. You can add more stylesheets if you would like.
   * `/facebook/js/script.js`: We will write all of our `Javascript & jQuery` in here.
 
-1. Add starter `HTML` code for your `index.html` file
-
-```HTML
-
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Horizons Facebook</title>
-  <!-- CSS files for Bootstrap -->
-  <!-- UNCOMMENT IF NEEDED -->
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
-
-  <!-- Your css file -->
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  <!-- YOUR CODE HERE -->
-  Hello, World!
-
-  <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-
-  <!-- Your script file -->
-  <script type="text/javascript" src="./js/script.js"></script>
-  <!-- UnderscoreJS Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
-  <!-- JavaScript files for Bootstrap -->
-  <!-- UNCOMMENT IF NEEDED -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-</body>
-</html>
-```
-
-**Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**
+**Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**.
 
 ### Login
 

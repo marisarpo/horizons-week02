@@ -29,7 +29,6 @@ TwilioApp.prototype = {
   validateMessageField: function(textStr) {
     textStr = textStr.trim();
     if (textStr === "" ) {
-      console.log("fails because "+textStr);
       return false;
     }
     return true;
@@ -39,7 +38,6 @@ TwilioApp.prototype = {
     if (parseInt(phoneStr) && phoneStr.indexOf('-') < 0 && phoneStr.length === 10) {
       return true;
     }
-    console.log("fails because "+phoneStr);
     return false;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
@@ -47,9 +45,7 @@ TwilioApp.prototype = {
     event.preventDefault();
 
     var message = this.messageInputField.val();
-    console.log("message: "+message);
     var phone = this.phoneInputField.val();
-    console.log("phone: "+phone)
     if (! this.validateMessageField(message)) {
       alert("message");
     }
@@ -57,12 +53,30 @@ TwilioApp.prototype = {
       alert("phone");
     }
 
-    if (this.validateMessageField(message) && this.validatePhoneField(phone)) {
-      this.displayMessage(phone, message);
-      this.messageInputField.val("");
-    } else {
-      alert("request failed");
-    }
+    // this.displayMessage('1'+phone, message);
+    var self = this;
+    // this.messageInputField.val("");
+    $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          self.displayMessage("1"+phone,message);
+          self.messageInputField.val("");
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: "1"+phone,
+          Body: message
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        error: function(err){
+          alert("you have FAILED");
+        }
+      });
+
+
+
 
     // REMOVE THE NEXT LINE, IT'S FOR TEST
     // this.displayMessage('9999999999', 'Testing testing!');

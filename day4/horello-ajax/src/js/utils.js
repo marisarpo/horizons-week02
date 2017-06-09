@@ -83,4 +83,14 @@ function setEventListeners() {
     e.stopPropagation();
     $('#cardEdit').modal('toggle', $(this));
   });
+
+  $(".board").on("click", ".deleteButton", function(event) {
+    deleteCard($(this).closest(".card").attr("id"));
+    return false;
+  });
+
+  // $(".board").on("click", ".deleteList", function(event) {
+  //   deleteList($(this).closest(".list").attr("id"));
+  //   return false;
+  // });
 }

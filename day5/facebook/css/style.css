@@ -1,0 +1,26 @@
+.navbar {
+  background: grey;
+}
+
+.log-button {
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 5px;
+  background: #ffcccc;
+  border: 1px solid black;
+}
+
+.reg-button {
+  margin-top: 30px;
+  height: 30px;
+  border-radius: 5px;
+  box-shadow: 0px;
+  background: #ccccff;
+  border: 1px solid black;
+  width: 60%;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+}

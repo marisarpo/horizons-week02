@@ -1,7 +1,6 @@
 "use strict";
 /* eslint-env jquery */
 
-<<<<<<< HEAD
 window.twilio = {};
 
 // Exercise 0. Get Twilio credentials
@@ -45,13 +44,14 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    this.messageSendButton.on("click", this.handleMessageSend);
+    this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
   clearField: function(jqField) {
     jqField.val("");
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
+    //console.log(textStr);
     return !(textStr.trim() === "");
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
@@ -59,9 +59,9 @@ TwilioApp.prototype = {
     if (!this.validateMessageField(phoneStr)) {
       return false;
     }
-    console.log(phoneStr);
+    //console.log(phoneStr);
     phoneStr = phoneStr.trim();
-    console.log(phoneStr);
+    //console.log(phoneStr);
     for (var i = 0; i < phoneStr.length; i++) {
       if (Number(phoneStr[i]) + "" === "NaN") {
         return false;
@@ -77,17 +77,28 @@ TwilioApp.prototype = {
 	// note. also `sendMessage`
   handleMessageSend: function(evt) {
 		evt.preventDefault();
-    console.log(this);
+    //console.log(this);
     // only send if both fields are valid
-    var messageInputField = this.messageInputField;
-    console.log(messageInputField);
-    var phoneInputField = this.phoneInputField;
-    if (this.validateMessageField(messageInputField) && this.validatePhoneField(phoneInputField)) {
+    var message = $('.message-input-field').val();
+    var phone = $('.phone-input-field').val();
+    //console.log(messageInputField);
+    var self = this;
+    if (this.validateMessageField(message) && this.validatePhoneField(phone)) {
       $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
-        success: function(x) {
-          this.displayMessage();
-        }
-      });
+          success: function(x) {
+            self.clearField($('.message-input-field'));
+            self.displayMessage(phone, message);
+          },
+          method: 'POST',
+          data: {
+            From: this.fromNumber,
+            To: phone,
+            Body: message
+          },
+          headers: {
+            "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+          }
+        });
     }
   },
   displayMessage: function(sender, message) {

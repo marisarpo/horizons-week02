@@ -22,10 +22,11 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    $(this.messengerSendButton).on('click',function(event){
-      return self.handleMessageSend(event)
+    var self = this;
+    this.messageSendButton.on('click',function(event){
+       self.handleMessageSend(event)
     })
-  }.bind(),
+  },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
   //
@@ -33,7 +34,8 @@ TwilioApp.prototype = {
   // hint. what does it mean to `clear` a field? Set it to an empty string.
   // hint. user .val() to get (and set) the value of an input object!
   clearField: function(jqField) {
-    // YOUR CODE HERE
+    console.log('here')
+    jqField.val("")
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
@@ -41,23 +43,46 @@ TwilioApp.prototype = {
   // (2) The field should not be an 'empty' string ("           ")
   //
 	// hint. $.trim() is useful
-    // YOUR CODE HERE
-  },
+
   // Part 2. `validateMessageField(textStr<String>)` method
 
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    if($.trim(textStr) === ""){
+    }
+    else {
+      return true; //i.e. message is valid
+    }
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if(phoneStr.length !== 10 || parseInt(phoneStr)=== NaN){
+    }
+    else {return true;} // i.e phone number is valid
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
-  },
+    event.preventDefault()
+    var self= this;
+    if(this.validateMessageField(this.messageInputField.val()) &&
+      this.validatePhoneField(this.phoneInputField.val())){
+          $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+       success: function(x) {
+         self.displayMessage(self.phoneInputField.val(),self.messageInputField.val())
+       },
+       method: 'POST',
+       data: {
+         From: this.fromNumber,
+         To: '9175433323',
+         Body: this.messageInputField.val()
+       },
+       headers: {
+         "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+       }
+     });
+    }
+    }
+  ,
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
     var senderElem = $('<span></span>').addClass('sender').text(sender);

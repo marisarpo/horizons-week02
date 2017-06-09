@@ -35,11 +35,16 @@
           $.ajax({
             url: linkList[i]['url'],
             success: function(productLink){
-            var dollarPrice = "$" + parseFloat(productLink['priceCents'])/100
-            console.log(dollarPrice);
+            var dollarPrice = " $" + parseFloat(productLink['priceCents'])/100
+
             var output = $('<li>').text(productLink['name'] + "," + dollarPrice)
-            $('#products').append(output)
-            $('#products').sort();
+
+            $("#products").replaceWith('<ul class=newList ></ul>')
+
+            $('.newList').append(output)
+
+             $('ul.newList').find('li').parent().prependTo('ul.newList')
+            // $('#products').sort();
             }
           })
         }

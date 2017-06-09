@@ -20,13 +20,42 @@
       <li>Display the name of the city in the h1 tag at the top, it has the id <code>"out"</code>.</li>
     </ol>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+
+
 
     <script>
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+
+          var populations = _.max(resp, function(city){
+            return city['Population'];
+          });
+          console.log(populations);
+          var maxPopCity = Object.values(populations)[0];
+
+          $('#out').text(maxPopCity);
+
+          // var newArray = _.each(resp, function(obj){
+          //   _.max(, function(stooge){ return stooge.age; });
+          //   })
+        }
+          // console.log(populations);
+          //
+          // console.log(typeof resp);
+          // console.log(_.chain(resp)
+          //   .pairs()
+          //   .sortBy(1)
+          //   .last()
+          //   .value()[2]);
+          // console.log(_.mapObject())
+          // $('body').append($('<pre>').text(resp));
       });
+
+
     </script>
   </body>
 </html>

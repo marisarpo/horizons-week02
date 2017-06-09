@@ -12,16 +12,45 @@
     <p>Given the following list of urls you need to use AJAX to remove the ones that are broken.</p>
 
     <ul id="links">
-      <li id="products">https://horizons-json-cors.s3.amazonaws.com/products.json</li>
-      <li id="members">https://horizons-json-cors.s3.amazonaws.com/members.txt</li>
-      <li id="JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF">https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json</li>
-      <li id="oUfx3vNy2C6l8dzki84Tp2e3cds3">https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json</li>
-      <li id="poem">https://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
+      <li id="products">http://horizons-json-cors.s3.amazonaws.com/products.json</li>
+      <li id="members">http://horizons-json-cors.s3.amazonaws.com/members.txt</li>
+      <li id="JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF">http://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json</li>
+      <li id="oUfx3vNy2C6l8dzki84Tp2e3cds3">http://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json</li>
+      <li id="poem">http://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var linkObjs = $('#links').children();
+
+      var objValues = Object(linkObjs);
+
+      for(var i = 0; i < objValues.length; i++){
+        // var objValues = Object.values(linkObjs)[i]
+        var newURL = $(objValues[i]).text();
+
+        $.ajax({
+          url: newURL,
+
+          error: function(err){
+            console.log(err);
+            $(":contains(newURL)")
+
+            $(":contains('Hello')")
+            var containsString = "\':contains('" + newURL + "')'";
+            // console.log(containsString);
+            $(":contains('" + newURL + "')").remove();
+          }
+        })
+
+      }
+
+      // linkObjs.forEach(function(things){
+      // console.log(things)
+      // })
+
+      // console.log($('#links').children()[0]);
     </script>
   </body>
 </html>

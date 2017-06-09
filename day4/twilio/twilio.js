@@ -1,36 +1,10 @@
 "use strict";
 
-window.twilio = {};
-
-// Exercise 0. Get Twilio credentials
-//
-// Please navigate to https://www.twilio.com, and get a free API Key.
-//
-// You're going to be signing up for the service yourself, and it won't be
-// asking you to pay for anything. Enter your name, phone number, and whatever
-// else they ask you for (within reason - if they're asking for an ssn, call
-// one of us over)
-//
-// You'll need 3 pieces of information to be able to interact with the Twilio
-// API - your `accountId (or SID)`, an `auth token` and your Twilio phone
-// number.
-//
-// Follow the steps listed by Twilio to get familiar with their API console and
-// retrieve your first Twilio phone number!
-//
-// When you have all this information, please replace them in the variables down there.
-
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
-
-
-twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
-  // Assign properties
-  this.apiUrl = "https://api.twilio.com/2010-04-01";
-  this.accountId = accountId;
-  this.authToken = authToken;
-  this.fromNumber = fromNumber;
+function TwilioApp() {
+  // Part 0. Get Twilio credentials
+  this.accountId = "AC990fb012f902f1d159288dfdb29d4b75";
+  this.authToken = "6967e56b96a88f18e3e29da67b3f6343";
+  this.fromNumber = "+16012025248";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -53,6 +27,11 @@ twilio.TwilioShoutout.prototype = {
   // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
   initialize: function() {
     // YOUR CODE HERE
+    this.messageSendButton.on('click', function(event){
+      event.preventDefault();
+
+      this.handleMessageSend();
+    }.bind(this));
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
   // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
@@ -71,6 +50,10 @@ twilio.TwilioShoutout.prototype = {
 	// hint. $.trim() is useful
   validateMessageField: function(textStr) {
     // YOUR CODE HERE
+    if ($.trim(textStr) !== ""){
+      return true;
+    }
+    return false;
   },
   // Exercise 4. `validatePhoneField(phoneStr<String>)` method
   // Write a function that validates the message input field. It should return true if the `validatePhoneField` passes these conditions:
@@ -83,6 +66,10 @@ twilio.TwilioShoutout.prototype = {
 	// hint. .charAt might be useful, see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt
   validatePhoneField: function(phoneStr) {
     // YOUR CODE HERE
+    if( (phoneStr.length === 10) && (parseInt(phoneStr) == phoneStr)){
+      return true;
+    }
+    return false;
   },
 	// Exercise 5. `handleMessageSend(evt<Event>)` method
 	// Write a method that will check the validity of the phone and message fields, and if they're both valid, calls the Twilio API with our data so that it can send a text to your phone. If not, it should throw an error "Invalid fields";
@@ -95,69 +82,35 @@ twilio.TwilioShoutout.prototype = {
 
     // only send if both fields are valid
     // YOUR CODE HERE
+    // REMOVE THE NEXT LINE, IT'S FOR TEST
+    // this.displayMessage('9999999999', 'Testing');
+    if (this.validateMessageField(this.messageInputField.val()) && this.validatePhoneField(this.phoneInputField.val())){
+        var self = this;
+        $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+          success: function(x) {
+            // $('h1').text("Congrats! You're set up!");
+            // console.log('Message sent', x);
+            self.displayMessage(self.fromNumber, self.messageInputField.val());
+          },
+
+          error: function(err){
+            alert(err);
+          },
+
+          method: 'POST',
+          data: {
+            From: this.fromNumber,
+            To: this.phoneInputField.val(),
+            Body: this.messageInputField.val(),
+          },
+          headers: {
+            "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+          }
+        });
+    }
   },
-  // Exercise 6. `sendMessage(toNumber<String>, messageBody<String>)` method
-  // Write a function that POSTS to the Twilio Messages REST Api with a destination number `toNumber` and message `messageBody`.
-  //
-  // hint. see https://api.jquery.com/jquery.post/
-  // hint. see https://www.twilio.com/docs/api/rest
-  sendMessage: function(toNumber, messageBody) {
-		// It might be easier to access these variables like this
-    var acctId = this.accountId;
-    var authTok = this.authToken;
-    var messageList = this.messageList;
 
-		// Exercise 6.A `callback`
-    // This callback should create a new Message object and generate a JQuery object using its render() method. It should append the gnerated JQuery object to the DOM messageList.
-    var cb = function(data) {
-			// YOUR CODE HERE
-    };
-
-		// `Call` the Twilio API service with our data
-    $.ajax({
-      method: "POST",
-			// Exercise 6.B `url`
-			// Write the url of the POST request you're going to be sending!
-			// Please examine the API docs for sending messages with Twilio (https://www.twilio.com/docs/api/rest/sending-messages)
-			//
-			// hint. use string concatenation (addition)!
-			// hint. the 'base' url is provided for you in this.apiUrl
-			// hint. your account id is also accessible via this.accountId
-      url: "YOUR CODE HERE",
-			// Exercise 6.C `data`
-			// Use the variables you have and actually send it to Twilio's services.
-			//
-			// note. see the Twilio docs (https://www.twilio.com/docs/api/rest/sending-messages) for more details about these fields you're sending.
-      data : {
-        "To" : "+" + "YOUR CODE HERE",
-        "From": "+" + "YOUR CODE HERE",
-        "Body": "YOUR CODE HERE"
-      },
-			success: cb,
-      headers: {
-        'Authorization': 'Basic ' + btoa(acctId + ':' + authTok)
-      },
-      error: function(xhr, textStatus, error) {
-        console.log(xhr);
-        console.log(xhr.responseText);
-      }
-    });
-  }
-
-};
-
-// [Helper] `Message(sender<String>, body<String>)`
-// This is a helper class that appends your sent message to the DOM.
-var Message = function(sender, body) {
-  this.sender = sender; // NOTE: THIS IS JUST THE NUMBER YOU ARE SENDING A TEXT TOO
-  this.body = body;
-};
-
-// [Helper] `render`
-// This part actually does the work.
-// It returns a jQuery object that encloses span and p tags that encapsulate the sender and body properties, respectively.
-Message.prototype = {
-  render: function() {
+  displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
     var sender = $('<span></span>').addClass('sender').text(this.sender);
     var body = $('<p></p>').text(this.body);

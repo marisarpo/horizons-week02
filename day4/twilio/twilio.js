@@ -35,14 +35,23 @@ TwilioApp.prototype = {
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    return !!(phoneStr.length === 10 && phoneStr.match(/[0-9]{10}));
+    return !!(phoneStr.length === 10 && !isNaN(parseInt(phoneStr)));
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
     // REMOVE THE NEXT LINE, IT'S FOR TEST
     event.preventDefault();
-    this.displayMessage('9999999999', 'Testing testing!');
+    var thisApp = this;
+    var messageInput = thisApp.messageInputField.val();
+    var phoneInput = thisApp.phoneInputField.val();
+    if (thisApp.validatePhoneField(phoneInput) && thisApp.validateMessageField(messageInput)) {
+      this.displayMessage(phoneInput, messageInput);
+      thisApp.messageInputField.val("");
+    } else {
+      alert("Improper input!");
+    }
+    
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = 'ACc6ea79951b74698f9dad4830d77ceb90'; //this = TwilioApp
+  this.authToken = '84a68145991d52330e46bc8b10d01f43';
+  this.fromNumber = "+14243638586";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,22 +22,55 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this))
     // YOUR CODE HERE
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    if($.trim(textStr) === ''){
+      return false;
+    }
+    else{
+      true;
+    }
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    if(phoneStr.length === 11 && !isNaN(Number(phoneStr))){
+      return true;
+    }
+    else{
+      return false;
+    }
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
-  },
+    var myMessage = this.messageInputField.val();
+    var phoneNumber = this.phoneInputField.val();
+    var self = this;
+    if(this.validateMessageField(message) && 
+      this.validatePhoneField(phoneNumber)){
+
+      $.ajax({
+      url: 'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', 
+      success: function(x) {
+      console.log('Message sent', x);
+      self.displayMessage(phoneNumber, myMessage);
+      },
+      method: 'POST',
+      data: {
+        From: this.fromNumber,
+        To: phoneNumber,
+        Body: myMessage
+      },
+    headers: {
+      "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+    }
+  });
+    // event.preventDefault(); //want this to mean twilio app
+  }
+},
+
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
     var senderElem = $('<span></span>').addClass('sender').text(sender);

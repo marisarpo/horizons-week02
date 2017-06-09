@@ -25,29 +25,34 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+      //AJAX 1
       $.ajax({
         url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        //success 1
         success: function(data){
-          linkArr = [];
-          for (var i = 0; i < data.length; i++) {
-            linkArr.push(data[i]["url"])
+          $('#products').append('<ul>');
+            arr = []
+            for (var i = 0; i < data.length; i++) {
+            data.forEach(function(urlObj){
+              //AJAX 2
+              $.ajax({
+                url: urlObj.url,
+                //success 2
+                success: function(response) {
+                  arr.push(response)
+                  //when all obj are in the array, sort!
+                  if(arr.length === data.length){
+                    arr.sort(function(a, b){
+                    return (a.priceCents - b.priceCents);
+                    }).forEach(function(obj) {
+                    $('ul').append('<li>' + obj.name + ", " + '$' + (obj.priceCents/100) + '</li>')
+                    })
+                  }
+                }
+              })
+
+            })
           }
-            $.ajax({
-              url: elt,
-              success: function(obj) {
-              var sortArr = [];
-              linkArr.forEach(function(elt) {
-              sortArr.push({"name": obj["name"], "priceCents": obj["priceCents"]});
-              })
-              $('#products').append('<ul>')
-              sortArr.sort(function(a, b){
-              return a.priceCents-b.priceCents
-              }).forEach(function(obj) {
-              $('ul').append('<li>' + obj.name + ", " + '$' + obj.price/100 + '</li>')
-              })
-            }
-          })
-        
         }
       })
   

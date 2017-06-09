@@ -19,22 +19,38 @@
 	$(function() {
 		// create a new momentum core
 		var core = new momentum.Core();
-
+  console.log(core);
 		core.start();
+		console.log();
 		// I want to run the time update and rendering every second
 		setInterval(function() {
 			core.updateTime();
 			core.render();
 		},1000);
-		
+
 		// I only want to fetch and update the weather once every ten minutes
 		setInterval(function() {
 			core.updateWeather();
 		}, 1000*60*10);
 	});
+
+
 	</script>
 </head>
 <body>
+	<div class="bg-wrapper">
+		<img src="https://source.unsplash.com/daily/" />
+		<div id="widget" class="col-md-2 col-md-offset-10">
+			<span class="temp">
+				Temperature
+			</span>
+		</div>
+		<div class="info col-md-4 col-md-offset-4">
+			<h1 class="time">7:09</h1>
+			<h3 class="salutation">Good evning, Benjamin.</h3>
+			<p class="quote">Logic will get you from A to B. Imagination will take you everywhere.</p>
+		</div>
+	</div>
 	<!-- YOUR HTML IN HERE -->
 </body>
 </html>

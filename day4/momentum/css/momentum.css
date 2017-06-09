@@ -1,0 +1,52 @@
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper {
+
+}
+
+/* selector for the actual image - use this to control img dimensions*/
+.bg-wrapper > img {
+  position: absolute;
+  z-index: -1;
+	width: 100%;
+}
+
+.bg-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25);
+vertical-align: middle;
+}
+
+.time{
+color: white;
+text-align: center;
+font-size: 6.0em;
+opacity: 0.85;
+}
+.salutation{
+color: white;
+text-align: center;
+font-size: 2.5em;
+opacity: 0.8;
+}
+.quote{
+color: white;
+opacity: 0.8;
+text-align: center;
+font-size: 1em;
+font-weight: 600;
+}
+.temp{
+color: white;
+text-align: center;
+}
+.info{
+  top: 50vh;
+  transform: translateY(-50%);
+
+}
+body, html {
+    height: 100%;
+}

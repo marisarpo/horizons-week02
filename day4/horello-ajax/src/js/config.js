@@ -1,4 +1,4 @@
-var apiKey = "YOUR API KEY HERE";
-var apiToken = "YOUR API TOKEN HERE";
+var apiKey = "b7fc51a8b60bd1d01c9d23d434211634";
+var apiToken = "011499f7d5dc33683dac38427ca1fe9716a10b50ba925de20a28860c15cc1466";
 var apiUrl = "https://api.trello.com/1";
-var boardId = "YOUR BOARD ID HERE";
+var boardId = "5939becbba3de9b0274f527d";

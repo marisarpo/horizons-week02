@@ -22,10 +22,17 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+      // YOUR CODE HER
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          resp.sort(function(a,b) {
+            return b["Population"] - a["Population"];
+          })
+          var city = resp[0]["City / Urban area"];
+          $("#out").text(city);
+        }
       });
     </script>
   </body>

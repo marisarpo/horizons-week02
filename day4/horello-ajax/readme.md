@@ -79,7 +79,7 @@ Trello to identify your app and know what boards it has access to.
 1. Head over to http://www.trello.com and sign-up/log-in to your Trello account.
 1. Navigate to the [Trello Developers Page](https://developers.Trello.com/get-started/start-building).
 1. Click the `Get your Application Key` button in the first section of the page. Copy this key and paste it into
-   `week02/day4/2_horello-ajax/skeleton/js/config.js`.
+   `week02/day4/horello-ajax/js/config.js`.
 
 	  ![API KEY](screenshots/capture6.jpeg)
 

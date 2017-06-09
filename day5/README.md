@@ -44,8 +44,19 @@ The components we want you to build are below. We recommend you approach each on
 
 7. **Double Bonus: Chat**: See *Using Sockets* for more information on how to implement Chat. You will be adding a chat section to your Facebook site to have a central chat feature for all users on your site.
 
-
 Yes, it's a lot - but if Mark Zuckerberg can do it, you can too!
+
+## API Reference
+
+The link below shows the live server specifications for accessing our "Facebook" API. All routes marked by a lock symbol (🔒) require you to pass in the token that you receive upon successful login. This token changes across users and sessions! Store it for authenticating each request as necessary.
+
+⚠️ All requests with a 🔒 next to the title require authentication.
+
+### Documentation
+
+Reference: [https://horizons-facebook.herokuapp.com](https://horizons-facebook.herokuapp.com)
+
+![api_documentation.png](api_documentation.png)
 
 ## Instructions
 These instructions are very minimal in nature and should only be used as a guide to creating your Facebook newsfeed **(they should not be followed religiously as the final app should be your own creation)**. Additionally, the *pictures* throughout this guide are merely visual aids to help you understand and visualize each step, so **do not** imitate the designs used for the images.
@@ -57,6 +68,18 @@ You are provided with the following files to start making your Facebook Newsfeed
   * `/facebook/js/script.js`: We will write all of our `Javascript & jQuery` in here.
 
 **Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**.
+
+### Register
+
+1. Add `HTML` to your `index.html` file to build a registration form for new users. A new user **must** have a first name (*fname*), last name (*lname*), email address (*email*), and a password (*password*).
+
+  ![register](./facebook/images/fb_register.png)
+
+1. Much like login you should create a form like the one above with the four *required* properties in `<input>` fields, and when the `Register` button is pressed the `AJAX POST request` to `https://horizons-facebook.herokuapp.com/api/1.0/users/register` should occur (with fname, lname, email, and password).
+
+1. On success the `AJAX` response should contain `{success: true}` (and that's it).
+
+1. Now the Login section should reveal itself while the Register section should hide the form.
 
 ### Login
 
@@ -86,21 +109,9 @@ You are provided with the following files to start making your Facebook Newsfeed
   });
   ```
 
-1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localstorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localstorage.getItem('token')`.
+1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localStorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localStorage.getItem('token')`.
 
 1. You can now hide this (login/registration) section of the `HTML` and reveal the newsfeed.
-
-### Register
-
-1. Add `HTML` to your `index.html` file to build a registration form for new users. A new user **must** have a first name (*fname*), last name (*lname*), email address (*email*), and a password (*password*).
-
-  ![register](./facebook/images/fb_register.png)
-
-1. Much like login you should create a form like the one above with the four *required* properties in `<input>` fields, and when the `Register` button is pressed the `AJAX POST request` to `https://horizons-facebook.herokuapp.com/api/1.0/users/register` should occur (with fname, lname, email, and password).
-
-1. On success the `AJAX` response should contain `{success: true}` (and that's it).
-
-1. Now the Login section should reveal itself while the Register section should hide the form.
 
 ### List Posts
 
@@ -146,17 +157,7 @@ You are provided with the following files to start making your Facebook Newsfeed
 
 1. When ending the session be sure to *logout*. The `/users/logout` takes in your AUTH_TOKEN as parameters and (if successful) responds with `{"success": true}`.
 
-# API Reference
-
-The link below shows the live server specifications for accessing our "Facebook" API. All routes marked by a lock symbol (🔒) require you to pass in the token that you receive upon successful login. This token changes across users and sessions! Store it for authenticating each request as necessary.
-
-⚠️ All requests with a 🔒 next to the title require authentication.
-
-### Documentation
-
-Reference: [https://horizons-facebook.herokuapp.com](https://horizons-facebook.herokuapp.com)
-
-![api_documentation.png](api_documentation.png)
+## Double Bonus: Chat
 
 ### Using Sockets
 

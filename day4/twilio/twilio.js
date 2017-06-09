@@ -5,7 +5,7 @@ function TwilioApp() {
   // Part 0. Get Twilio credentials
   this.accountId = "AC3947ec2ef1171ab88c745780b9dc2d8b";
   this.authToken = "9c0d49c2eb7eb1a84b385c54a17522db";
-  this.fromNumber = "+15076077870";
+  this.fromNumber = "15076077870";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -42,27 +42,25 @@ TwilioApp.prototype = {
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
     // YOUR CODE HERE
-    var message = this.messageInputField.val();
-    var number = this.phoneInputField.val();
-    console.log('m valid:' , this.validateMessageField(message));
-    console.log('num valid: ', this.validatePhoneField(number))
-    if (this.validateMessageField(message) && this.validatePhoneField(number)) {
-      console.log('passed if');
-      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + accounId + '/SMS/Messages', {
+    var self = this;
+    var message = self.messageInputField.val();
+    var number = self.phoneInputField.val();
+    if (self.validateMessageField(message) && self.validatePhoneField(number)) {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + self.accountId + '/SMS/Messages', {
         success: function(x) {
-          this.displayMessage(this.fromNumber, message);
+          self.displayMessage(self.fromNumber, message);
         },
         error: function(x) {
           alert('message failed');
         },
         method: 'POST',
         data: {
-          From: this.fromNumber,
+          From: self.fromNumber,
           To: number,
           Body: message
         },
         headers: {
-          "Authorization": "Basic " + btoa(accountId + ":" + authToken)
+          "Authorization": "Basic " + btoa(self.accountId + ":" + self.authToken)
         }
       });
     }

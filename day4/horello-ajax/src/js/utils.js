@@ -79,8 +79,18 @@ function setEventListeners() {
     $(this).closest('.add-card-form-wrapper').addClass('collapse');
   });
 
+  $('.board').on('click', '.card .close-button', function(e) {
+    console.log("dddddd");
+    e.stopPropagation();
+    console.log("hello");
+    var cardId = $(e.currentTarget).parent().data('card-id');
+    removeCard(cardId);
+  });
+
   $('.board').on('click', '.card', function (e) {
     e.stopPropagation();
     $('#cardEdit').modal('toggle', $(this));
   });
+
+
 }

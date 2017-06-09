@@ -46,8 +46,7 @@ hr {
   transform: rotate(360deg);
 }
 
-div.jhilani {
-  background-image: url('../images/nohand.png');
+.jhilani {
   height: 450px;
   width: 250px;
 }

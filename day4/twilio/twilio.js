@@ -70,19 +70,23 @@ TwilioApp.prototype = {
     var number = this.phoneInputField.val();
     if(this.validatePhoneField(number) && this.validateMessageField(message)) {
       $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
-        success: function(x) {
-          this.displayMessage(message);
+        success: function(){
+            this.displayMessage(number, message);
+            this.messageInputField.val('')
+        }.bind(this),
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: number,
+          Body: message
         },
-        // method: 'POST',
-        // data: {
-        //   From: fromNumber,
-        //   To: toNumber,
-        //   Body: 'Congratulations your Twillio account is working!'
-        // },
-        // headers: {
-        //   "Authorization": "Basic " + btoa(account + ":" + token)
-        // }
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        }
       });
+    }
+    else {
+      console.log('yo');
     }
   },
   displayMessage: function(sender, message) {

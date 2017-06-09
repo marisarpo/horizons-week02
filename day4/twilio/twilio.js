@@ -16,7 +16,7 @@ function TwilioApp() {
   // Set up the event handlers
   this.initialize();
 
-  console.log("TwilioApp is ready.");
+  console.log("TwilioApp is ready!!!!");
 }
 
 TwilioApp.prototype = {
@@ -24,28 +24,54 @@ TwilioApp.prototype = {
   initialize: function() {
     // Save the context of 'this'
     var self = this;
-
-    // Set up handler for the send button
-    self.messageSendButton.on('click', function(e){
-
-      self.handleMessageSend(e);
-    });
+    self.messageSendButton.on('click', self.handleMessageSend.bind(self));
 
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    var newTxtStr = $.trim(textStr);
+    return newTxtStr !== "";
+
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    $.each(phoneStr.split(""), function(index, item){
+      if(typeof item !== 'number'){
+        return false;
+      }
+    })
+    return true;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    console.log("Pressed send button!")
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+
+    // Get the contents of the msgInput and phoneInput
+    if(this.validateMessageField(this.messageInputField.val())
+      && this.validatePhoneField(this.phoneInputField.val())) {
+
+      // Ajax request to twilio
+      $.ajax({
+        url: 'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',
+        success: function(x) {
+          this.displayMessage(this.fromNumber, this.messageInputField.val());
+        }.bind(this),
+        error: function(err){
+          console.log(err)
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: this.phoneInputField.val(),
+          Body: this.messageInputField.val()
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+      });
+    }
+
+
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
@@ -55,6 +81,7 @@ TwilioApp.prototype = {
     listElem.append(bodyElem);
     this.messageList.append(listElem);
   }
+
 };
 
 window.twilio = new TwilioApp();

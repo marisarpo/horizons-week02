@@ -23,10 +23,26 @@
 
     <script>
       // YOUR CODE HERE
+      function name (list){
+
+          list.sort(function(a,b){
+            return a.Population - b.Population;
+          })
+          return list[list.length-1]['City / Urban area'];
+
+
+      }
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+            console.log(Array.isArray(resp));
+            var cityName = name(resp);
+
+            $('#out').text(cityName);
+        }
       });
+
     </script>
   </body>
 </html>

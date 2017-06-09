@@ -6,8 +6,8 @@ $.ajax({
   success: function(resp) {
     var number = counting(resp);
     $('#count').text(number);
-    // $('body').append($('<p>').text(resp));
-    console.log(newString);
+    $('body').append($('<p>').text(resp));
+    // console.log(newString);
   }
 })
 

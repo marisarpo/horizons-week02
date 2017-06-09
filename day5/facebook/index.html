@@ -12,7 +12,7 @@
   </head>
   <body>
   <!-- LOGIN PAGE -->
-    <div class="login-container">
+    <div class="login-container" style="display:none;">
       <form class="well form-horizontal" action=" " method="post"  id="login_form">
         <h1>Login</h1>
         <div class="form-group">
@@ -83,46 +83,62 @@
     </div>
 
   <!-- NEWSFEED PAGE -->
-    <div class='newsfeed-container' style="display:none;">
+    <div class='newsfeed-page-container'>
 
-    <!-- NEW POST -->
-      <div class='new-post-container container'>
-        <div>POST NEW SHIT HERE</div>
-      </div>
-
-    <!-- POSTS LIST -->
-      <div class='posts-list-container container'>
-      <!-- POST FOR JQUERY -->
-        <div class='post'>
-          <div class='post-header'>
-            <h4 style="margin:0; font-weight: 700;">USERNAME</h4>
-            <h4 style="margin:0; font-style: italic; font-size: 0.7em;">TIMESTAMP</h4>
-          </div>
-          <div class='post-content'>SAMPLE CONTENT</div>
-          <div class='divider'></div>
-          <div class='post-comments-container'>
-            <div class='likes-container'>
-              <p>
-                <span>0</span>
-                <span>Replies,</span>
-                <span>0</span>
-                <span>Likes</span>
-              </p>
-            </div>
-            <div class='post-comments'>COMMENTS</div>
-          </div>
-          <div class='post-footer'>
-            <button class='like-button'>LIKE</button>
-            <button class='reply-button'>Reply</button>
+    <!-- NEWSFEED PAGE HEADER -->
+      <div class='navbar navbar-default'>
+        <div class='container-fluid'>
+          <div class="navbar-header">
+            
           </div>
         </div>
-
       </div>
-      <button type="button" class="btn btn-primary btn-block refresh">
-        <span>Refresh Newsfeed</span>
-      </button>
-    </div>
 
+    <!-- FEED SECTION -->
+      <div class='newsfeed-container'>
+      <!-- NEW POST -->
+        <div class='new-post-container container'>
+          <textarea placeholder="Content..."></textarea>
+          <button>Post</button>
+        </div>
+      <!-- POSTS LIST -->
+        <div class='posts-list-container container'>
+        <!-- POST FOR JQUERY -->
+          <div class='post'>
+            <div class='post-header'>
+              <h4 style="margin:0; font-weight: 700;">USERNAME</h4>
+              <h4 style="margin:0; font-style: italic; font-size: 0.7em;">TIMESTAMP</h4>
+            </div>
+            <div class='post-content'>SAMPLE CONTENT</div>
+            <div class='divider'></div>
+            <div class='post-comments-container'>
+              <div class='likes-container'>
+                <p style='margin:0;'>
+                  <span>0</span>
+                  <span>Replies,</span>
+                  <span>0</span>
+                  <span>Likes</span>
+                </p>
+              </div>
+              <div class='post-comments'>
+              <!-- COMMENT FOR JQUERY -->
+                <div class='comment'>
+                  <div class='comment-header'>
+                    <span>COMMENT USERNAME:</span>
+                    <span style="font-style: italic; font-size: 0.7em;">COMMENT TIMESTAMP</span>
+                  </div>
+                  <div class='comment-content'>COMMENT CONTENT</div>
+                </div><!-- COMMENT FOR JQUERY -->
+              </div>
+            </div>
+            <div class='post-footer'>
+              <button class='like-button'><span class="glyphicon glyphicon-thumbs-up"></span></button>
+              <button class='reply-button'>Reply</button>
+            </div>
+          </div><!-- POST FOR JQUERY -->
+        </div><!-- POSTS LIST -->
+      </div><!-- FEED SECTION -->
+    </div>
 
   <!-- jQuery -->
     <script

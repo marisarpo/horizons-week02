@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <!-- CSS files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+</head>
+<body>
+  <!-- YOUR CODE HERE -->
+  <header>
+    HORIZONS facebook
+    <span class="intpic">
+      <img src="./images/logo.png" style="width:50px;height:50px;margin-right:20px;" alt="">
+    </span>
+  </header>
+
+  <div class="logincontent">
+    <div class="login line">
+      <div class="username ">
+        email
+        <input class="username input" id='us' type="text" name="" value="" placeholder="username">
+      </div>
+      <div class="password">
+        password
+        <input class="password input" id='ps' type="text" name="" value="" placeholder="password">
+      </div>
+      <button class="btn signin" type="button" name="button">Sign in</button>
+      <p class="intpic">
+        <img src="./images/internet.jpg" alt="">
+      </p>
+    </div>
+
+    <div class="createaccount">
+      <div class="boldwords">
+        OR? Create your account now!
+      </div>
+      <div class="newacc">
+        <div class="username ">
+          email
+          <input class="username input" id='newus' type="text" name="" value="" placeholder="username">
+        </div>
+        <div class="password">
+          password
+          <input class="password input" id='newps' type="text" name="" value="" placeholder="password">
+        </div>
+        <div class="username ">
+          Last name
+          <input class="lname input" type="text" name="" value="" placeholder="LN">
+        </div>
+        <div class="password">
+          First name
+          <input class="fname input" type="text" name="" value="" placeholder="FN">
+        </div>
+        <button class="btn signup" type="button" name="button">Sign up</button>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="feed">
+
+  </div>
 
     <!-- jQuery -->
     <script
@@ -20,10 +72,11 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>

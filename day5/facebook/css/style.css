@@ -1,0 +1,72 @@
+body {
+  font-family: Gill Sans Extrabold, sans-serif;
+  background-color: #5EB28B;
+  color:white;
+}
+
+header {
+  width: 100%;
+  text-align: left;
+  padding-left: 2em;
+  font-size: 50px;
+  font-weight: bold;
+  border-bottom: 3px solid black;
+  height: 10%;
+  background: #466368;
+  background: -webkit-linear-gradient(#648880, #293f50);
+  color: white;
+}
+
+#us {
+  margin-left: 28px;
+}
+.feed{
+  height:90%;
+  overflow: scroll;
+}
+.post {
+  border-radius: 3px;
+  border: 2px solid black;
+  margin: 3px 10%;
+}
+
+.boldwords {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.6em;
+}
+
+.username, .password, .fname, .lname {
+  padding-left: 80px;
+}
+
+.createaccount {
+  width: 25em;
+  display: flex;
+  justify-content: center;
+  margin-left: 10em;
+}
+.space {
+  margin: 0 4px;
+}
+
+.btn {
+  margin-left: 20%;
+}
+
+.signup {
+  margin-left: 45%;
+  margin-top: 15px;
+}
+.input {
+  border-radius: 2px;
+  margin-bottom: .4em;
+}
+
+.intpic {
+  float: right;
+}
+.line {
+  margin: 1em 1em;
+}

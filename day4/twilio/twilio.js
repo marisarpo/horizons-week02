@@ -22,11 +22,12 @@ TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
     // YOUR CODE HERE
+    var self = this;
        this.messageSendButton.click(function(event){
        event.preventDefault();
-       this.handleMessageSend(event);
-    }.bind(this));
-  },
+       self.handleMessageSend(event);
+    }
+  }
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
     if(textStr.trim()===''){

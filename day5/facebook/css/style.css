@@ -1,0 +1,45 @@
+/*.login-page{
+  display:block;
+}*/
+
+.registrate-header, .login-header{
+  text-align: center;
+  font-size: 80px;
+}
+
+.logout{
+  float:right;
+}
+
+.login-body{
+  margin-left: 30%;
+  border:0;
+  width
+  padding:0;
+}
+
+.comment-container{
+  border:solid black 3px;
+  margin:5px;
+  padding:30px 10px;
+  width:80%;
+  display:block;
+}
+
+.origin-post{
+  border-bottom: dotted brown 2px;
+}
+
+.name{
+  font-family:fantasy;
+  font-size:20px;
+}
+
+.post-comment{
+  width:80%;
+}
+
+.input-group, #post-input{
+  width:80%;
+  height:50px;
+}

@@ -52,9 +52,9 @@ $(".loginBt").on('click', function(event){
     $.ajax({
       url: baseUrl + "users/login",
       method: 'POST',
-      success: function(response) {
-        userId = response.id;
-        userToken = response.token;
+      success: function(resp) {
+        userId = resp.response.id;
+        userToken = resp.response.token;
         toMainPage();
       },
       data: {
@@ -98,5 +98,48 @@ function toLoginPage(){
 
 function toMainPage(){
   $('.login-container').remove();
+  $('.container').append('<div class="view-container"></div>')
+  refreshData()
+  setInterval(refreshData, 1000);
+
 }
+
+function refreshData(){
+  console.log("refreshed!");
+  $.ajax({
+    url: baseUrl + "posts/:page",
+    data: {
+      token: userToken
+    },
+    success: function(resp) {
+      render(resp);
+    }
+  })
+}
+
+function render(resp){
+  // Structure
+  console.log(resp)
+  $('.view-container').empty()
+  var htmlStruct;
+  for(var i = 0; i < resp.response.length; i++){
+    //var date = new Date(resp.response[i].createdAt);
+    htmlStruct = `
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class="comment-container" style = "border-style: double;">
+            <label class = "card-header">
+          ${resp.response[i].content}
+            </label>
+            <div class = "date">
+          ${resp.response[i].createdAt}
+            </div>
+          </div>
+        </div>
+      </div>`
+      $('.view-container').append(htmlStruct)
+  }
+}
+
+
 })

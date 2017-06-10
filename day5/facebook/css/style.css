@@ -1,0 +1,38 @@
+.login-column, .register-column {
+  height: 700px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-container{
+  border: 1px solid black;
+}
+
+.post-header-body, .comment {
+  border-bottom: 1px solid black;
+}
+
+.post-footer-footer{
+  display: flex;
+}
+
+.make-post {
+  display: flex;
+  justify-content: center;
+  height: 100px;
+}
+
+.make-post button {
+  flex: .3;
+}
+
+.like-status {
+  background-color: blue;
+}
+
+#logout {
+  flex:1;
+}

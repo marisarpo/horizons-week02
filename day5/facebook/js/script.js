@@ -105,7 +105,6 @@ function toMainPage(){
 }
 
 function refreshData(){
-  console.log("refreshed!");
   $.ajax({
     url: baseUrl + "posts/:page",
     data: {
@@ -123,23 +122,36 @@ function render(resp){
   $('.view-container').empty()
   var htmlStruct;
   for(var i = 0; i < resp.response.length; i++){
-    //var date = new Date(resp.response[i].createdAt);
+    var date = new Date(resp.response[i].createdAt);
     htmlStruct = `
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
           <div class="comment-container" style = "border-style: double;">
-            <label class = "card-header">
+          <legend>
+            <h1>
+            ${resp.response[i].poster.name}
+            </h1>
+            <label class = "card-content">
           ${resp.response[i].content}
             </label>
             <div class = "date">
-          ${resp.response[i].createdAt}
+          ${date}
+            </div>
+            </legend>
+            <div class = "comment-section">
             </div>
           </div>
         </div>
       </div>`
       $('.view-container').append(htmlStruct)
+      renderComments(resp.response[i])
   }
 }
+
+function renderComments(card){
+
+}
+
 
 
 })

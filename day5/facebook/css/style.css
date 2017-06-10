@@ -1,0 +1,20 @@
+.header {
+  font-size: 48px;
+  background: skyblue;
+  text-align: center;
+}
+
+#register-button {
+}
+
+.button-text {
+  text-align: center;
+}
+
+.button-padding {
+  margin-left: 50px;
+}
+
+.button {
+  width: 200px !important;
+}

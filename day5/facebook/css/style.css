@@ -24,3 +24,37 @@
   display: flex;
   justify-content: center;
 }
+
+.message-board {
+  display: flex;
+  justify-content: center;
+}
+
+.post-text {
+  padding: 20px;
+  height: 200px;
+  background: #eeeeee;
+  border: 1px solid black;
+  margin-top: 40px;
+}
+
+
+.reply-text {
+  height: 200px;
+  background: #eeeeee;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.new-post-input {
+  width: 80%;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 50px;
+}
+
+.new-post-button {
+  width: 15%;
+  border-radius: 5px;
+  height: 40px;
+}

@@ -1,0 +1,24 @@
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+.registratonContaineral{
+
+}
+.message-input-field {
+  box-sizing: border-box;
+  outline: 0;
+  width: 75%;
+}
+
+@media (min-width: 650px)and (max-width:900px) {
+  secion{
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  secion {
+    padding: 80px 40px;
+  }
+}

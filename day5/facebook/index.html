@@ -3,15 +3,123 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
-    <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Your css file -->
+    <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!--Image Container-->
+    <div class="imgcontainer">
+      <img src="./images/logo.png" alt="Avatar" class="avatar">
+    </div>
+    <
+    <!--Login Container-->
+    <form class="registratonContaineral">
+
+      <!--FirstName Container-->
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="firstname"></label>
+        <div class="col-sm-3">
+          <input class = 'firstname-input-field' type="nameFirst" id="firstname" placeholder="First name">
+        </div>
+      </div>
+      <!--LastName Container-->
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="lastname"></label>
+        <div class="col-sm-3">
+          <input type="nameLast" class="lastname-input-field" id="lastname" placeholder="Last name">
+        </div>
+      </div>
+
+
+
+      <!--Username Container-->
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="username"></label>
+        <div class="col-sm-3">
+          <input type="nameUser" class="username-input-field" id="username" placeholder="Username">
+        </div>
+      </div>
+
+      <!--Password Container-->
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="pwd"></label>
+        <div class="col-sm-3">
+          <input type="password" class="password-input-field" id="pwd" placeholder="password">
+        </div>
+      </div>
+
+      <!--Login Button Container-->
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-12">
+          <button type="login" class="login-btn-default">Login</button>
+        </div>
+      </div>
+
+      <!--Registration Button Container-->
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-12">
+          <button type="login" class="registration-btn-default">Registration</button>
+        </div>
+      </div>
+
+      <!--Logout Button Container-->
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-12">
+          <button type="logout" class="logout-btn-default">?Logout?</button>
+        </div>
+      </div>
+
+    </form>
+
+        </fieldset>
+    </div>
+
+
+    <!--List Posts Starts Here -->
+    <div class="container">
+      <div class="col-xs-10">
+        <div class="comments">
+
+          <div class="comment" }>
+            <div class="author"></div>
+            <div class="message"></div>
+            <div class="time"></div>
+            <div class="controls">
+              <button class="reply-btn-btn-default">Reply</button>
+              <button class="like-btn-btn-dafult">
+                <span class="like-button glyphicon glyphicon-thumbs-up"></span>
+              </button>
+              <button class="heart-btn-btn-dafult">
+                <span class="heart-button glyphicon glyphicon-heart-empty"></span>
+              </button>
+            </div>
+            <div class='counts'>
+              <div class="replies-count">0 Replies"</div>
+              <div class="likes-count">2 Likes"</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- POST POSTS -->
+    <div class="post-posts">
+      <form class="form-inline message-input">
+        <label class="form-group">
+          <input class="message-input-field" type="text" placeholder="Write something..." >
+
+
+        </label>
+          <button class="post-btn">Post</button>
+      </form>
+  </div>
+
 
     <!-- jQuery -->
     <script
@@ -20,7 +128,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

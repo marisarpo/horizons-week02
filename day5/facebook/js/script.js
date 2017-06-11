@@ -147,6 +147,15 @@ function render(resp){
       $('.view-container').append(htmlStruct)
       renderComments(resp.response[i])
   }
+  var postStruct = `   <div class="row">
+       <div class="col-xs-10 col-xs-offset-1">
+         <div class="post-button">
+           <input class="postFld"  type="text" placeholder="POST">
+            <button type="submit"  class="postBtn">Post</button>
+        </div>
+       </div>
+     </div>`;
+    $('.view-container').append(postStruct)
 }
 
 function renderComments(card){

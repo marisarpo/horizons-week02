@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  $('.feed').hide();
-
+  $('.posts').hide();
   $('.signup').click(function(){
     $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/users/register',
     {
@@ -22,8 +21,6 @@ $(document).ready(function() {
     });
   });
 
-  var id;
-  var token;
   var posterName;
   var signinBool=false;
 
@@ -36,8 +33,8 @@ $(document).ready(function() {
         password:$('#ps').val()
       },
       success :function (res) {
-        id = res.response.id;
-        token =res.response.token;
+        localStorage.setItem('id',res.response.id);
+        localStorage.setItem('token',res.response.token);
         // put posterName here
         $('.logincontent').hide();
         showNews();
@@ -55,7 +52,7 @@ $(document).ready(function() {
       {
         method:'GET',
         data: {
-          token: token,
+          token: localStorage.getItem('token'),
         },
         success: function(res){
           longArrObj=res.response;
@@ -67,24 +64,24 @@ $(document).ready(function() {
 
     function getpost(arr) {
       $('.feed').empty();
-      $('.feed').append("<button type='button' class='logout' name='button'>Logout!</button>");
       for(var i=0;i<arr.length;i++) {
         var postID = arr[i]._id;
         var post = arr[i];
         var numComments = post.comments.length;
         var numLikes = post.likes.length;
         var comments='';
+        var postDate = new Date(post.createdAt);
         post.comments.forEach(function(comment) {
-          var commentDate=new Date(comment.createdAt).toISOString();
+          var commentDate=new Date(comment.createdAt);
           comments=comments+`<div>
-           <span class="space">${comment.poster.name}:</span>
+           <span class="space">Author: ${comment.poster.name}:</span>
            ${comment.content}<span class="space" style='font-weight:bold'>Posted at:${commentDate}</span></div>`;
         });
         var newcode = `
         <div id="${postID}" class=post>
         <div class=content>
         <h3>${post.poster.name}</h3>
-        <p>${post.createdAt}</p>
+        <p>${postDate}</p>
         <p>${post.content}</p>
         </div>
         <button  class="like">Like</button>
@@ -96,13 +93,14 @@ $(document).ready(function() {
         </div>`;
         $('.feed').append(newcode);
       }
-      var newPostCode = `<div class="newPost">
-      <textarea name="name" id='newPostContent' rows="8" cols="80" placeholder="What's on your mind?"></textarea>
-      <button type="button" id='newPostbtn' name="button">Post</button>
-      </div>`;
-      $('.feed').append(newPostCode);
-      $('.feed').show();
+      // var newPostCode = `<div class="newPost">
+      // <textarea name="name" id='newPostContent' rows="8" cols="80" placeholder="What's on your mind?"></textarea>
+      // <button type="button" id='newPostbtn' name="button">Post</button>
+      // </div>`;
+      // $('.feed').append(newPostCode);
+      $('.posts').show();
     }
+
      var longArrObj2;
     $('body').on('mouseover','.whoLike',function() {
       var postId = $(this).closest('.post').attr('id');
@@ -110,7 +108,7 @@ $(document).ready(function() {
       {
         method:'GET',
         data: {
-          token: token,
+          token: localStorage.getItem('token'),
         },
         success: function(res){
           longArrObj2=res.response;
@@ -134,16 +132,17 @@ $(document).ready(function() {
    $(this).children().empty();
 });
 
-    $('.feed').on('click','#newPostbtn',function(event){
+    $('.posts').on('click','#newPostbtn',function(event){
       $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/posts',
       {
         method:'POST',
         data:{
-          token:token,
+          token:localStorage.getItem('token'),
           content:$('#newPostContent').val()
         },
         success: function(res){
           showNews();
+          $('textarea').val('');
         }
       })
     });
@@ -154,7 +153,7 @@ $(document).ready(function() {
       {
         method:'GET',
         data:{
-          token:token
+          token:localStorage.getItem('token')
         },
         success:function(){
           showNews();
@@ -169,7 +168,7 @@ $(document).ready(function() {
     {
       method:'POST',
       data:{
-        token:token,
+        token:localStorage.getItem('token'),
         content:$(this).siblings('input').val(),
       },
       success:function(){
@@ -179,19 +178,39 @@ $(document).ready(function() {
   )
 });
 
-    $('.feed').on('click','.logout',function(){
+$('.posts').on('click','.logout',function(){
   $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/users/logout',
   {
     method:'GET',
     data:{
-      token:token
+      token:localStorage.getItem('token')
     },
     success:function(){
-      $('.feed').hide();
+      $('.posts').hide();
       $('.logincontent').show();
       signinBool=false;
+      $('#us').val('');
+      $('#ps').val('');
     }
   });
 });
+
+$('.posts').on('click','.chat',function(){
+  var socket = io.connect('https://horizons-facebook.herokuapp.com/');
+  socket.emit('authentication', {'token': localStorage.getItem('token') });
+  socket.on('authenticated', function (data) {
+    console.log(data);});
+  socket.emit('message','testing');
+  socket.on('message',function(data){
+    console.log(data);
+  })
+
+  });
+// io.on('connection', function (socket) {
+//   socket.emit('news', { hello: 'world' });
+//   socket.on('my other event', function (data) {
+//     console.log(data);
+//   });
+// });
 
 });

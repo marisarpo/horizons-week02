@@ -163,12 +163,21 @@ You are provided with the following files to start making your Facebook Newsfeed
 
 Read this when you are working on your Chat component! Implementing Chat will require you to use a protocol you have not used before: WebSockets. WebSockets is a realtime, event-driven protocol that allows us to create applications like chat that are extremely responsive. We will interface with WebSockets using a client library called [Socket.IO](http://socket.io) - import their library to your page with the following line:
 
-**NOTE:** Learning to use the Sockets library will be an exercise in reading documentation and determining how to use it successfully.
+`<script src="https://horizons-facebook.herokuapp.com/socket.io/socket.io.js"></script>`
 
-`<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>`
+**NOTE:** Learning to use the socket.io library will be an exercise in reading documentation and determining how to use it successfully.
 
-Our Sockets server lives on port 3000 of the base API URL, which means it can be accessed at https://horizons-facebook.herokuapp.com/socket.io.
+We can connect to our socket.io server by doing the following:
 
-Upon connecting successfully to the Sockets server, please emit a new `authentication` event in the following format: `{token: AUTH_TOKEN}`. You have 5 seconds after connecting to the Sockets server to present your authorization token you received upon login, or you will be disconnected from the server. If you successfully authenticate, you will receive the `authenticated` event and will be ready to begin sending messages.
+```
+var socket = io.connect('https://horizons-facebook.herokuapp.com/');
+```
 
-All new messages are sent by emitting the `message` (send the message you are sending in plain text, without an object); if you are authorized, our Sockets server will broadcast the new message in the following form: `{username: *username*, message: *the message*}`.
+Upon connecting successfully to the socket.io server, please emit a new `authentication` event in the following format: `{ token: AUTH_TOKEN }`.
+
+```javascript
+socket.emit('authentication', {'token': localStorage.getItem('token') });
+```
+You have 5 seconds after connecting to the socket.io server to present your authorization token you received upon login, or you will be disconnected from the server. If you successfully authenticate, you will receive the `authenticated` event through the `on()` method and will be ready to begin sending messages.
+
+All new messages are sent by emitting the `message` (send the message you are sending in plain text, without an object); if you are authorized, our socket.io server will broadcast the new message in the following form: `{username: *username*, message: *the message*}`.

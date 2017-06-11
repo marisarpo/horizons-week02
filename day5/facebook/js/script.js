@@ -1,13 +1,30 @@
-$('.register-page').hide();
-$('.newsfeed').hide();
-$('.logout').hide();
+if (localStorage.getItem('token')) {
+  refreshPage();
+  $('.register-page').hide();
+  $('.login-page').hide();
+} else {
+  $('.register-page').hide();
+  $('.newsfeed').hide();
+  $('.logout').hide();
+}
 
 $('body').on('click','.likeButton',function() {
-  var post = $(this).parent('.buttonGroup').siblings('.origin-post');
+  var post = $(this).closest('.buttonGroup').siblings('.origin-post');
+  var button = $(this);
   $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/'+ post['0'].id, {
     method:"GET",
     success: function(data) {
-      refreshPage();
+      var likeName = "";
+      data.response.likes.forEach( function(person) {
+        likeName +=  person.name + ",";
+      })
+      likeName = likeName.substring(0,likeName.length-1)
+      var hoverBox= `<div class="popup" style="display: block">${likeName}</div>`;
+      button.parent().append($(hoverBox));
+      setTimeout(function(){
+                  $('div').remove('.popup');
+                  refreshPage();
+                },2000);
     },
     data: {
       token: localStorage.getItem('token')
@@ -41,6 +58,7 @@ function refreshPage() {
   $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/posts/:page', {
     method: "GET",
     success: function(posts) {
+      console.log("in")
       var responseArr = posts.response;
       $('.newsfeed').find($('.comment-container')).remove();
       responseArr.forEach(function(res) {
@@ -51,7 +69,9 @@ function refreshPage() {
                                 <ul class="comment">${res.content}</ul>
                               </div>
                               <div class="pull-right buttonGroup">
-                                <button class="likeButton">like ${res.likes.length}</button>
+                                <div class="likeButtonGroup">
+                                  <button class="likeButton">like ${res.likes.length}</button>
+                                </div>
                                 <button class="replyButton">reply</button>
                               </div>
                             </div>`)
@@ -121,6 +141,10 @@ $('#goRegisterButton').on('click',function() {
 $('#post-button').on('click',function() {
   $.ajax('https://horizons-facebook.herokuapp.com/api/1.0/posts', {
     method:"POST",
+    success: function(data) {
+      refreshPage();
+      $('#post-input').val("");
+    },
     data:{
       content:$('#post-input').val(),
       token: localStorage.getItem('token')
@@ -135,6 +159,10 @@ $('#logout-button').on('click',function() {
       $('.login-page').show();
       $('.newsfeed').hide();
       $('.logout').hide();
+      $('#userName').val("");
+      $('#userName2').val("");
+      $('#password').val("");
+      $('#password2').val("");
       localStorage.clear();
     },
     data:{
@@ -147,3 +175,34 @@ $('#goLoginButton').on('click',function() {
   $('.register-page').hide();
   $('.login-page').show();
 });
+
+$('#chatButton').on('click',function() {
+  var socket = io.connect('https://horizons-facebook.herokuapp.com/');
+  console.log("chat")
+  console.log(socket)
+  socket.emit('authentication', { 'token': localStorage.getItem('token') });
+  socket.on('authenticated', function (data) {
+    console.log(data)
+  });
+  socket.on('message',function(data) {
+    console.log(data)
+  })
+  socket.emit('message','hello');
+  console.log(socket)
+})
+
+// var socket = io.connect('https://horizons-facebook.herokuapp.com/socket.io');
+// //var io = require('https://horizons-facebook.herokuapp.com/socket.io')(3000);
+// socket.emit('authentication', { token: localStorage.getItem('token') });
+
+// io.on('connection', function (socket) {
+//   io.emit('authentication', { token: localStorage.getItem('token') });
+//
+//   socket.on('private message', function (from, msg) {
+//     console.log('I received a private message by ', from, ' saying ', msg);
+//   });
+//
+//   socket.on('disconnect', function () {
+//     io.emit('user disconnected');
+//   });
+// });

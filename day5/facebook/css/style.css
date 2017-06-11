@@ -1,0 +1,14 @@
+body {
+  background-color: orange;
+}
+
+.container {
+  margin: 0 auto;
+
+}
+
+.comment-container {
+  border-style: double;
+  max-width: 60%;
+  
+}

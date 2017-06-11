@@ -1,3 +1,27 @@
 .form-title{
   text-align: center;
 }
+
+.comment-container{
+  background-color: rgb(100 , 150, 255);
+}
+.comment{
+  background-color: rgb(100, 255, 100);
+}
+.comment-header{
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+.date{
+  color: white;
+}
+h1{
+  position: relative;
+  margin: 0;
+  padding: 0
+}
+.black-line{
+  height: 3px;
+  background-color: grey;
+}

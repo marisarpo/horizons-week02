@@ -118,7 +118,6 @@ function refreshData(){
 
 function render(resp){
   // Structure
-  console.log(resp)
   $('.view-container').empty()
   var htmlStruct;
   for(var i = 0; i < resp.response.length; i++){
@@ -127,17 +126,19 @@ function render(resp){
       <div class="row">
         <div class="col-xs-10 col-xs-offset-1">
           <div class="comment-container" style = "border-style: double;">
-          <legend>
+          <div class = "post-container">
             <h1>
             ${resp.response[i].poster.name}
             </h1>
-            <label class = "card-content">
+            <div class = "comment-header">
           ${resp.response[i].content}
-            </label>
+            </div>
             <div class = "date">
           ${date}
             </div>
-            </legend>
+            </div>
+            <div class = "black-line">
+            </div>
             <div class = "comment-section">
             </div>
           </div>
@@ -149,8 +150,19 @@ function render(resp){
 }
 
 function renderComments(card){
+for(var i = 0; i < card.comments.length; i++){
+  console.log(card.comments[i].content)
+  $('.comment-container').append(`<div class="comment">
+    <div class="comment-header">
+      ${card.comments[i].content}
+    </div>
+    <div class="date">
+    ${new Date(card.comments[i].createdAt)}
+    </div>
+  </div>`)
+  }
 
-}
+ }
 
 
 

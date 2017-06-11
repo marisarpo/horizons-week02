@@ -1,0 +1,81 @@
+h1{
+  text-align: center;
+}
+
+body{
+  background-color: #e9ebee;
+}
+
+.news-container{
+  background-color: #3b5998;
+}
+
+.login-container{
+  text-align: center;
+}
+
+.input{
+  height: 40px;
+  margin: 10px;
+  width: 200px;
+}
+
+.btn{
+  height: 40px;
+  margin: 10px;
+  width: 200px;
+}
+
+.like,.reply{
+  padding: 0px;
+  height: 20px;
+  width: 100px;
+  display: inline;
+}
+
+.num-likes,.num-replies{
+  display: inline;
+}
+
+#NewsFeed-Page{
+  text-align: center;
+}
+
+.post-container{
+  background-color: #ffffff;
+  padding: 10px;
+  border: 1px solid;
+  margin: 4px;
+}
+
+.author{
+  display: block;
+  font-weight: bold;
+}
+
+.message{
+  display: inline;
+}
+
+.time-created{
+  display: block;
+}
+
+.comment{
+  display: inline-block;
+  text-align: left;
+}
+
+.comment-author{
+  display: inline-block;
+}
+
+
+.comments-container{
+  padding-left: 150px;
+  text-align: left;
+}
+
+/*.comment-container{
+  border: 10px;
+}*/

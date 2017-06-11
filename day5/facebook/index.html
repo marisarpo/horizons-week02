@@ -3,28 +3,101 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    
 
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+
+  </head>
+  <body>
+    <!-- YOUR CODE HERE -->
+
+
+
+
+
+
+
+    <!-- LOG IN CODE HERE -->
+    <div id = "Login-Page">
+      <h1>Login</h1>
+
+      <form id = "loginform" class = "col-xs-2 col-xs-offset-5">
+        <input class = "input" id = "user-log-text" placeholder="Username"></input>
+        <input class = "input" id = "pass-log-text" placeholder= "Password"></input>
+        <button class = "btn" id = "log">Login</button>
+        <button class = "btn" id = "goto-reg">Go to registration</button>
+      </form>
+    </div>
+
+
+
+  <!-- REGISTRATION CODE HERE -->
+  <div id = "Registration-Page">
+    <h1>New user registration</h1>
+
+    <form id="registerform" class = "regist-container col-xs-2 col-xs-offset-5">
+      <input class = "input" id = "first-reg-text" placeholder="First Name"></input>
+      <input class = "input" id = "last-reg-text" placeholder="Last Name"></input>
+      <input class = "input" id = "user-reg-text" placeholder="Usermame"></input>
+      <input class = "input" id = "pass-reg-text" placeholder= "Password"></input>
+      <button class = "btn" id = "regist">Register</button>
+      <button class = "btn" id = "goto-log">Login</button>
+    </form>
+  </div>
+
+
+  <!-- NEWS FEED DESIGN HERE -->
+  <div id = "NewsFeed-Page">
+    <form id = "postform" class = ""col-xs-2 col-xs-offset-5"">
+      <input class = "input" id = "Post-content" placeholder="Content..."></input>
+      <button class = "btn" id = "Post">Post</button>
+    </form>
+    <div class = "news-container col-xs-8 col-xs-offset-2">
+
+      <!-- im not updating this really anymore. it all exists in script -->
+      <!-- <div class = "post-container">
+        <div class = "post-header">
+          <div class = "author">AUTHOR</div>
+          <div class = "time-created">TIME CREATED</div>
+        </div>
+        <div class = "post-content">
+          <div class = "message">message goes here</div>
+        </div>
+        <div class = "post-footer">
+          <div class = "num-likes">0 Likes</div>
+          <div class = "num-replies">0 Replies</div>
+          <button class = "btn like">Like</button>
+          <button class = "btn reply">Reply</button>
+          <div class = "comments-container">
+            <div class = "comment-container">
+              <div class = "comment">COMMENT 1</div>
+              <div class = "comment-author">AUTHOR COMMENT 1</div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+
+
+    </div>
+  </div>
+
+
+
+
+
   </body>
 </html>

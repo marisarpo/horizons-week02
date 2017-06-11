@@ -6,12 +6,127 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Facebook</a>
+      <div class="navbar-form navbar-right">
+        <button  class="btn btn-default logout-button hide">Logout</button>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <section class="newsfeed hide">
+      <h1 class="row title text-center"> News Feed! </h1>
+      <div class="card">
+        <div class="card-block">
+          <strong class="card-title">Your New Post: </strong>
+          <div class="user-input">
+          <input class="new-message" placeholder="your new post here..."></input>
+          <button class="btn btn-success post-button">Enter</button>
+          </div>
+        </div>
+      </div>
+        <!-- <div class="card-block">
+          <strong class="card-title">User</strong>
+          <h6 class="card-subtitle mb-2 text-muted">date, time etc.</h6>
+          <p class="card-text">Some text that users post.</p>
+          <p >99 <button class="btn btn-success">Like</button></p>
+          <p class="col-xs-offset-6">99
+            <button class="btn btn-primary">Show Replies</button>
+          </p>
+          <div class="replies">
+            <div class="user-input">
+            <input class="reply-message" placeholder="your reply here..."></input>
+            <button class="btn btn-success">Enter</button>
+            </div>
+            <div class="reply">
+              <strong>User</strong>
+              <p >Some text that users post.</p>
+            </div>
+            <div class="reply">
+              <strong>User</strong>
+              <p>Some text that users post.</p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+
+    <section class="container">
+
+      <form class="login">
+        <div class="form-group row">
+          <h1 > Login </h1>
+        </div>
+        <div class="form-group row">
+          <label for="?" class="col-xs-1 col-form-label">Email</label>
+          <div class="col-xs-2">
+            <input class="form-control" type="text" id="username"></input>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="?" class="col-xs-1 col-form-label">Password</label>
+          <div class="col-xs-2">
+            <input class="form-control" type="text" id="password"></input>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="login-button">Login</button>
+        <button class="btn btn-primary" id="go-to-register">Register New Account</button>
+      </form>
+
+
+    <form class="registration hide">
+      <div class="form-group row">
+        <h1 > New User Registration </h1>
+      </div>
+      <div class="form-group row">
+        <label for="?" class="col-xs-1 col-form-label">FirstName</label>
+        <div class="col-xs-2">
+          <input class="form-control" type="text" id="firstname"></input>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="?" class="col-xs-1 col-form-label">LastName</label>
+        <div class="col-xs-2">
+          <input class="form-control" type="text" id="lastname"></input>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="?" class="col-xs-1 col-form-label">Email</label>
+        <div class="col-xs-2">
+          <input class="form-control" type="text" id="new-username"></input>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="?" class="col-xs-1 col-form-label">Password</label>
+        <div class="col-xs-2">
+          <input class="form-control" type="text" id="new-password"></input>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="register-button">Register</button>
+      <button class="btn btn-primary" id="go-to-login">Go to Login</button>
+      </form>
+<!--
+      <div class="login">
+        <span class="title"> Login </span>
+        <input id="username" type="text"> Email </input>
+        <input id="password" type="text"> Password </input>
+        <button id="login-button"> Login </button>
+        <button id="go-to-registration"> Go to registration </button>
+      </div> -->
+
+    </section>
 
     <!-- jQuery -->
     <script
@@ -20,7 +135,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

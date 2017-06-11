@@ -1,0 +1,82 @@
+.hide{
+  display: none;
+}
+
+
+.card{
+  display: block;
+}
+
+.newsfeed{
+  position: relative;
+  width: 30%;
+  left:35em;
+  top: 2em;
+  display: flex;
+  background: WhiteSmoke;
+  flex-direction: column;
+}
+
+.title{
+  display: block;
+  justify-content: center;
+}
+
+.card-block{
+  display: block;
+  border-radius: 10%;
+  border-style: double;
+  border-color: black;
+  margin: 2em;
+  padding: 2em;
+  background: white;
+}
+
+
+.container{
+  position: absolute;
+  left:35em;
+  top: 6em;
+}
+
+.replies{
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+  flex-direction: column;
+}
+
+.reply{
+  display: block;
+  padding: 3px;
+  margin: 2px;
+  border-style:dotted;
+  border-color: grey;
+  border-radius: 3px;
+  margin-bottom: 4px;
+  padding-left: 5px;
+}
+
+#reply-message{
+  display: block;
+  padding: 0px;
+  margin: 0px;
+  border-style:double;
+  border-color: grey;
+  margin-bottom: 4px;
+}
+
+.user-input{
+  display:flex;
+  flex-direction: row;
+  padding: 2px;
+  justify-content: space-between;
+}
+
+.like-box{
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: space-between;
+  align-items: center;
+  width: 5em;
+}

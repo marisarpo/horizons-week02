@@ -1,0 +1,24 @@
+body{
+  margin: 0;
+}
+.container{
+  background-color: blue;
+  height: 100px;;
+}
+
+.item-side{
+  background-color: green;
+}
+
+.item-middle{
+  background-color: red;
+  flex: 4;
+}
+.container-body{
+  display: flex;
+  height: 400px;
+}
+
+.item-side{
+  flex: 1;
+}

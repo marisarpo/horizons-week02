@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+h2{
+  text-align: center;
+  font-size: 575%;
+  color: #4A4444;
+  text-transform: uppercase;
+  letter-spacing: 1%;
+  margin: 45% 0;
+}
+
+h1{
+  text-align: center;
+  font-size: 400%;
+  color: #E5E5E5;
+  text-transform: uppercase;
+  letter-spacing: 1%;
+}
+
+/*---start parallax---*/
+.parallax{
+  background: url("mountain.jpg") repeat fixed 100%;
+}
+.parallax-inner{
+  padding: 10% 0;
+}
+
+
+/*---end parallax---*/

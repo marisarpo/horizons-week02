@@ -26,7 +26,20 @@ h1{
   background-color: grey;
 }
 
-/*.post-field-container{
+.post-button-container{
   border-style: double;
-  height: 40px;
-}*/
+}
+.postFld{
+  height: 55px;
+  width: 70%;
+  background-color: rgb(255, 195, 195);
+  border: none;
+  margin: 5px 2px;
+  text-align: center;
+}
+.postBtn{
+  height: 55px;
+  width: 25%;
+  background-color: rgb(244, 84, 84);
+  /*border: none;*/
+}

@@ -4,26 +4,56 @@
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
     <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
-
-    <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
-    <!-- underscoreJS Library -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+    <div class='title'>Facebook Dude</div>
+
+    <!-- login -->
+    <div class="logger">
+          <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+              <div class="panel panel-info">
+                  <div class="panel-heading">
+                      <div class="panel-title">Login</div>
+                      <div style="float:right; font-size: 85%; position: relative; top:-10px"><a id="register" href='#'>Register</a></div>
+                  </div>
+                  <div class="panel-body" >
+                      <form method="post" action=".">
+                          <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                          <form  class="form-horizontal" method="post" >
+                              <input type='hidden' name='csrfmiddlewaretoken' value='XFe2rTYl9WOpV8U6X5CfbIuOZOELJ97S' />
+                              <div id="div_id_email" class="form-group required">
+                                  <div class="controls col-md-8 ">
+                                      <input class="input-md  textinput textInput form-control" id="email" maxlength="30" name="email" placeholder="email" style="margin-bottom: 10px" type="text" />
+                                  </div>
+                              </div>
+                              <div id="div_id_password1" class="form-group required">
+                                  <div class="controls col-md-8 ">
+                                      <input class="input-md textinput textInput form-control" id="password1" name="password1" placeholder="password" style="margin-bottom: 10px" type="password" />
+                                  </div>
+                              </div>
+                              <div class="form-group">
+                                  <div class="aab controls col-md-4 "></div>
+                                  <div class="controls col-md-8 ">
+                                      <input type="submit" name="Login" value="Login" class="btn btn-primary btn btn-info" id="login" />
+                                  </div>
+                              </div>
+                          </form>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+
+
   </body>
 </html>

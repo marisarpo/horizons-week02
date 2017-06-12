@@ -27,15 +27,28 @@
     <script>
       var start = `<div id="products"><ul>`;
       var end = `</ul></div>`;
+      //for loops don't work apparently....you can't really count on the order
+      // $.ajax({url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      //         success: function(response) {
+      //           console.log(response);
+      //           for (var i = 0; i < response.length; i++) {
+      //             $.ajax({url: response[i].url,
+      //                     success: function(response) {
+      //                       console.log(response);
+      //                       end += `<li>${response[i].url.name},${response[i].url.priceCents}</li>`;
+      //                     }});
+      //           }
+      //           ("#products").replaceWith(start+end);
+      //         }})
+      // it is gonna run each code once clicked no matter what, don't need the for loop
       $.ajax({url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
               success: function(response) {
-                for (var i = 0; i < response.length; i++) {
-                  $.ajax({url: response[i].url,
-                          success: function() {
+                  $.ajax({url: response[0].url,
+                          success: function(response) {
                             end += `<li>${response[i].url.name},${response[i].url.priceCents}</li>`;
                           }});
                 }
-                ("#products").replaceWith(start+end)
+                ("#products").replaceWith(start+end);
               }})
 
     </script>

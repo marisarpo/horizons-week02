@@ -1,31 +1,44 @@
-var times = [ {start: 0, end: 500}, {start: 0, end: 200}, {start: 200, end: 500}, {start: 600, end: 700} ];
+var times = [{
+  start: 30,
+  end: 150
+}, {
+  start: 540,
+  end: 600
+}, {
+  start: 560,
+  end: 620
+}, {
+  start: 610,
+  end: 670
+}];
+times = times.sort(function (a, b) {
+  a.start - b.start
+});
 
-times = times.sort(function(a,b){ a.start - b.start });
-
+console.log(times)
 
 // first make collision buckets
 var buckets = {}
 
-
 var bucketCount = 0;
 var lastEnd = 0;
-for(var i = 0; i < times.length-1; i++){
-	// debugger;
-	var j = 1;
-	
-	buckets[bucketCount] = buckets[bucketCount] || [];
-	if(times[i].start > lastEnd){
-		bucketCount++;
-	}
-	if(buckets[bucketCount] == -1){
-		buckets[bucketCount].push(times[i]);
-	}
-
-	var nextTime = times[i+j];
-	var jump = false;
-	while(nextTime.start < times[i].end){
-		buckets[bucketCount].push(nextTime);
-		nextTime = times[i + (++j)]
-	}
-	lastEnd = times[i].end;
+for (var i = 0; i < times.length; i++) {
+  // debugger;
+  console.log("time start", times[i].start);
+  if (times[i].start < lastEnd) {
+    console.log("im in");
+    console.log("first colosion", times[i], "with", times[i - 1]);
+    times[i].collision = 1;
+    times[i - 1].collision = 1;
+  }
+  lastEnd = times[i].end;
+  console.log("time end", lastEnd);
 }
+
+console.log(bucketCount);
+
+console.log(buckets);
+window.layOutDay = function () {
+  console.log(times);
+}
+window.layOutDay();

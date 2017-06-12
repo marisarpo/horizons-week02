@@ -3,16 +3,102 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
+    <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Your css file -->
-    <link rel="stylesheet" href="./css/style.css">
   </head>
+
+
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <!-- REGISTER FORM -->
+    <form class="form-horizontal" id="registerform">
+
+      <h1 class="header">Create Account/Sign-up</h1>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="firstname">First Name:</label>
+        <div class="col-sm-10">
+          <input type="firstname" class="form-control" id="firstname" placeholder="Enter first name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="lastname">Last Name:</label>
+        <div class="col-sm-10">
+          <input type="lastname" class="form-control" id="lastname" placeholder="Enter last name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password">
+        </div>
+      </div>
+      <!-- <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+          </div>
+        </div>
+      </div> -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="submitbutton btn btn-default">Submit</button>
+        </div>
+      </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="login" class="already btn btn-default">I already have an account!</button>
+          </div>
+      </div>
+    </form>
+
+
+<!-- LOGIN FORM -->
+    <form class="form-horizontal" id="loginForm">
+
+      <h1 class="header">Login-in</h1>
+
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email2" placeholder="Enter email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="pwd2" placeholder="Enter password">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="login" class="loginbutton btn btn-default">Login</button>
+        </div>
+      </div>
+    </form>
+
+ <!--  POST-->
+ <div class="container">
+      <textarea rows="4" cols="50" id="post_content">
+      Share your thoughts!
+      </textarea>
+    <button class="btn" id='postButton'>Post!</button>
+    <div id = "postcontainer"></div>
+ </div>
+
+
+
+
+
 
     <!-- jQuery -->
     <script

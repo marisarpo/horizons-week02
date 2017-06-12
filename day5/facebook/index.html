@@ -6,21 +6,149 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!-- login -->
+    <div class="container-fluid loginPage">
+      <form class="form-horizontal" action=" " method="post"  id="login_form">
+        <div class="row">
+          <p class="title">Login</p>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="username" placeholder="Username" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="password" placeholder="Password" />
+          </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-success" id="loginFirst">Login</button>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-primary">Go to registration</button>
+        </div>
+      </form>
+    </div>
 
+
+    <!-- registration -->
+    <div class="container-fluid registrationPage" style="display:none;">
+      <form class="form-horizontal" action=" " method="post"  id="login_form">
+        <div class="row">
+          <p class="title">New user registration</p>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="firstName" placeholder="First name" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="lastName" placeholder="Last name" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="regusername" placeholder="Username" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-xs-2">
+              <input type="text" class="form-control" id="regpassword" placeholder="Password" />
+          </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-info">Register</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="modal fade" id="cardEdit">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Reply</h5>
+            <textarea class="form-control" rows="5" id="modalBody"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success"
+            data-dismiss="modal">Close
+          </button>
+          <button type="button" class="btn btn-success replyModal" id="modalSave">
+            Reply
+          </button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+    </div>
+
+
+   <!-- navbar -->
+   <div class='main'>
+      <nav class="navbar navbar-default navBar">
+        <div class="navBarMargin">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#"id="newsFeedTitle">Kingdom of Jokers</a>
+          </div>
+        </div>
+          <ul class="nav navbar-nav navMain">
+            <li><a href="#">Home</a></li>
+            <li><input id="postComment" placeholder="Post comment">
+            <button type="button" class="btn btn-warning" id="postButton">Post</button></li>
+            <li><a href="#" id= "logout">Logout</a></li>
+          </ul>
+      </nav>
+
+
+      <!-- newsFeed -->
+        <div class="container-fluid feed">
+          <div class="row">
+            <div class="newsFeedPost">
+              <div class="postBox">
+                <div class="postName"><p id="postName">Test</p></div>
+                <div class="postTime"><p id="postTime">1/2/4</p></div>
+                <div class="comment"><p id="comment">example</p></div>
+                <div class="footer">
+                  <span class="numLikes">0 likes</span>
+                  <span class="numReplies">0 replies</span>
+                  <button type="button" class="btn btn-danger" id="like"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                  <button type="button" class="btn btn-danger" id="reply">Reply</button>
+                </div>
+                <div class="replies">
+                  <div class="replyName"><p id="replyName">Testreply</p></div>
+                  <div class="replyTime"><p id="replyTime">1/2/4</p></div>
+                  <div class="reply"><p id="reply">reply</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
+    <!-- <script>$('.newsFeedPost').on('click', function(){
+      console.log('hi')
+      $('#cardEdit').modal('toggle', $('#reply'));
+    })
+    </script> -->
+
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

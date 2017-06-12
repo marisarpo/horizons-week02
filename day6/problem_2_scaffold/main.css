@@ -1,0 +1,55 @@
+.twitterLogo{
+  width: 150px;
+  height: 50px;
+}
+
+body{
+  background-color: #4099FF;
+}
+
+.navBar{
+  padding-left: 0;
+  display: flex;
+}
+
+.searchBox{
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border-style: outset;
+}
+
+
+.hideClass{
+  display: none;
+}
+
+.container{
+  border: 3px;
+  background-color: #F0F8FF;
+  border-radius: 3px;
+  width: 350px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#modalBody{
+  width: 320px;
+}
+
+#textTweet{
+  width: 300px;
+}
+
+.david{
+  padding-left: 15px;
+  padding-bottom: 20px;
+}
+
+.footer{
+  display: inline;
+}
+
+p{
+  display: inline;
+}

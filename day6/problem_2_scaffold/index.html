@@ -1,4 +1,4 @@
-<html>
+	<html>
 
 <head>
 	<meta charset="utf-8">
@@ -11,13 +11,56 @@
 </head>
 
 
+<!-- navbar -->
 <body>
+	<div class="row">
+		<nav class="navbar navbar-default container-fluid navBar">
+			<div class="navBarMargin">
+				<div class="navbar-header">
+					<img src="twitter-logo.png" class="twitterLogo">
+				</div>
+			</div>
+				<ul class="nav navbar-nav navMain col-xs-8">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Discover</a></li>
+					<li><a href="#">Me</a></li>
+				</ul>
+				<input id="searchBox" placeholder="Search" class="searchBox">
+		</nav>
+	</div>
 
+<div class="container col-xs-4 col-xs-offset-4 searchBar">
+	<div class="row">
+		<div class="search col-xs-5">
+			<div data-toggle="collapse" data-target="#collapsedTweet" class="uncollapsedText">
+				<input id="textTweet" placeholder="Post comment" data-role="collapsible">
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="collapsedTweet" class="collapse">
+	<div class="container col-xs-4 col-xs-offset-4">
+		<div class="david row">
+			<textarea class="form-control" rows="3" id="modalBody"></textarea>
+		</div>
+		<div class="row footer">
+			<p class="nums">0</p>
+			<p class="footerText">Tweets</p>
+			<p class="nums">19,000</p>
+			<p class="footerText">Following</p>
+			<p class="nums">9,000</p>
+			<p class="footerText">Followers</p>
+		</div>
+	</div>
+</div>
 
 </body>
 
 
-<script src="main.js"></script>	
+
+<script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
 
 </html>

@@ -2,7 +2,7 @@
   background: grey;
 }
 
-.log-button {
+.log-button-public {
   margin-top: 30px;
   height: 30px;
   border-radius: 5px;
@@ -57,4 +57,38 @@
   width: 15%;
   border-radius: 5px;
   height: 40px;
+}
+
+.logout {
+  margin-top: 50px;
+}
+
+#log-form {
+  height: 450px;
+}
+
+.log-out-button {
+  height: 30px;
+  border-radius: 5px;
+  background: #ccccff;
+  border: 1px solid black;
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+}
+
+.new-post-input {
+  height: 40px;
+  border: 1px solid black;
+}
+
+.new-post-button {
+  height: 40px;
+  border: 1px solid black;
+}
+
+.willReply {
+  width: 450px;
 }

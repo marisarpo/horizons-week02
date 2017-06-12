@@ -12,12 +12,48 @@
 
 
 <body>
-
+	<div class="nav">
+		<ul class="nav-left">
+			<li><img src="tweet.jpg" /></li>
+  		<li><a href="default.asp">Home</a></li>
+  		<li><a href="news.asp">Discover</a></li>
+  		<li><a href="contact.asp">Me</a></li>
+		</ul>
+		<ul class="nav-right">
+  		<input id="nav-search" placeholder="Search..."></input>
+		</ul>
+	</div>
+	<div id = "board">
+		<div id="col-1"> </div>
+		<div id="col-2">
+			<div id="new-post-outer-1">
+				<textarea rows="1" cols="26" name="reply" class="new-post-input" placeholder="Enter tweet here..."></textarea>
+				<div id ="new-post-text">
+					<div id ="stats">
+						<p class="num" id="num-tweets"> 0 </p>
+						<p class="stat-text"> TWEETS </p>
+						<p class="num" id="num-following"> 0 </p>
+						<p class="stat-text"> FOLLOWING </p>
+						<p class="num" id="num-followers"> 0 </p>
+						<p class="stat-text"> FOLLOWERS </p>
+					</div>
+					<div id="right-side-text">
+						<div id="word-count"> 0 </div>
+						<button id="submit-button"> submit </button>
+					</div>
+				</div>
+			</div>
+			<div id="new-post-outer-2">
+				<textarea rows="1" cols="26" name="reply" class="new-post-input" placeholder="Enter tweet here..."></textarea>
+			</div>
+		</div>
+		<div id="col-3"> </div>
+	</div>
 
 </body>
 
 
-<script src="main.js"></script>	
+<script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
 
 </html>

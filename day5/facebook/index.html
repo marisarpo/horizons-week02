@@ -32,17 +32,19 @@
       </div>
     </div>
 
-    <div class="login">
-    <div class="container-fluid">
 
-      <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <div class="container-fluid">
+      <div class = "row">
+        <div class = "col-xs-12">
+      <div class="login">
+      <form class="well form-horizontal" action=" " method="post"  id="log-form">
         <!-- YOUR CODE HERE -->
         <fieldset>
           <legend style="text-align:center;"> Login </legend>
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
+                <div class="input-group col-xs-6">
                   <input type="text" class="form-control username" id="log-username" placeholder="Username">
                 </div>
               </div>
@@ -51,8 +53,8 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
-                  <input type="text" class="form-control password" id="log-password" placeholder="Password">
+                <div class="input-group col-xs-6">
+                  <input type="password" class="form-control password" id="log-password" placeholder="Password">
                 </div>
               </div>
           </div>
@@ -60,14 +62,14 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <button class= "col-xs-4 log-button"> Login </button>
+                <button class= "col-xs-6 log-button-public log-button"> Login </button>
             </div>
           </div>
         </div>
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <button class= "reg-button col-xs-4 col-sm-3 col-md-2"> Go to registration </button>
+                <button class= "reg-button col-xs-4 go-to-reg"> Go to registration </button>
             </div>
           </div>
         </div>
@@ -76,17 +78,16 @@
     </div>
   </div>
 
-  <div class="register">
-    <div class="container-fluid">
-
-      <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+    <div class = "col-xs-12">
+    <div class="register">
+      <form class="well form-horizontal" action=" " method="post"  id="log-form">
         <!-- YOUR CODE HERE -->
         <fieldset>
           <legend style="text-align:center;"> New user registration </legend>
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
+                <div class="input-group col-xs-6">
                   <input type="text" class="form-control username" id="username" placeholder="Username">
                 </div>
               </div>
@@ -95,8 +96,8 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
-                  <input type="text" class="form-control password" id="password" placeholder="Password">
+                <div class="input-group col-xs-6">
+                  <input type="password" class="form-control password" id="password" placeholder="Password">
                 </div>
               </div>
           </div>
@@ -104,7 +105,7 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
+                <div class="input-group col-xs-6">
                   <input type="text" class="form-control first-name" id="first" placeholder="First name">
                 </div>
               </div>
@@ -113,7 +114,7 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <div class="input-group col-xs-4">
+                <div class="input-group col-xs-6">
                   <input type="text" class="form-control last-name" id="last" placeholder="Last name">
                 </div>
               </div>
@@ -122,48 +123,57 @@
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <button id = "register" class= "col-xs-4 reg-button"> Register </button>
+                <button id = "register" class= "col-xs-6 reg-button"> Register </button>
             </div>
           </div>
         </div>
         <div class= "row">
           <div class = "col-xs-12">
             <div class="form-group">
-                <button class= "log-button col-xs-4 col-sm-3 col-md-2"> Login </button>
+                <button class= "log-button-public col-xs-4 reg-log-button"> Login </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      </form>
+  </div>
+</div>
+</div>
+</div>
+
+  <div class="container-fluid">
+    <div class="row message-board">
+      <div class="col-xs-4 message-col">
+        
+      </div>
+    </div>
+  </div>
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="test">
+      <div class="col-xs-5 logout">
+
+      <form class="well form-horizontal" action=" " method="post"  id="logout-form">
+        <!-- YOUR CODE HERE -->
+        <fieldset>
+          <legend style="text-align:center;"> Logout </legend>
+        <div class= "row">
+          <div class = "col-xs-12">
+            <div class="form-group">
+                <button class= "log-out-button col-xs-4 col-sm-3 col-md-2"> Logout </button>
             </div>
           </div>
         </div>
       </fieldset>
       </form>
     </div>
+    </div>
+    </div>
   </div>
 
 
-    <div class="container-fluid">
-      <div class="row message-board">
-        <div class="col-xs-4 message-col">
-        </div>
-      </div>
-    </div>
-
-    <div class="logout">
-      <div class="container-fluid">
-
-        <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-          <!-- YOUR CODE HERE -->
-          <fieldset>
-            <legend style="text-align:center;"> Logout </legend>
-          <div class= "row">
-            <div class = "col-xs-12">
-              <div class="form-group">
-                  <button class= "log-out-button col-xs-4 col-sm-3 col-md-2"> Logout </button>
-              </div>
-            </div>
-          </div>
-        </fieldset>
-        </form>
-      </div>
-    </div>
     <!-- YOUR CODE HERE -->
 
     <!-- jQuery -->

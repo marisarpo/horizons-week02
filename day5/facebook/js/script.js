@@ -1,10 +1,25 @@
 $(document).ready(function() {
   $(".logout").css("display","none");
+  $(".login").css("display","none");
+  // $(".register").css("display","none");
+  if (localStorage.getItem("token") + "" !== "null") {
+    //$(".reg-log-button").trigger("click");
+  }
+
+  $(".reg-log-button").on("click", function(event) {
+    event.preventDefault();
+    $(".login").css("display","");
+    $(".register").css("display","none");
+  })
+  $(".go-to-reg").on("click", function(event) {
+    event.preventDefault();
+    $(".register").css("display","");
+    $(".login").css("display","none");
+  })
   var loginstuff = $(".login").html();
   $(".log-button").on("click", function(event) {
     $(".login").css("display","none");
     $(".register").css("display","none");
-    $(".logout").css("display","");
     event.preventDefault();
     var username = $("#log-username").val();
     var password = $("#log-password").val();
@@ -17,13 +32,11 @@ $(document).ready(function() {
       success: function(data) {
         localStorage.setItem('token', data.response.token);
         // hide the login screen
-        var socket = io.connect('https://horizons-facebook.herokuapp.com/socket.io');
-        socket.on('connect', function(){
-          socket.emit('authentication', {token: localStorage.getItem("token")});
-          socket.on('authenticated', function() {
-            // use the socket as usual
-          });
-        });
+        // var socket = io.connect('https://horizons-facebook.herokuapp.com/socket.io');
+        // socket.emit('authentication', {token: localStorage.getItem("token")});
+        // socket.on('authenticated', function() {
+        //   console.log("here");
+        // });
         $.ajax({
           url: "https://horizons-facebook.herokuapp.com/api/1.0/posts",
           data: {
@@ -32,8 +45,10 @@ $(document).ready(function() {
           method: 'GET',
           success : function(data) {
             $(".message-col").append(
-              `<input type="text" placeholder="Content..." class="new-post-input"> </input>
-              <button class="new-post-button"> Post </button>`
+              `<div class="new-com">
+                <input type="text" placeholder="Content..." class="new-post-input"> </input>
+                <button class="new-post-button"> Post </button>
+              </div>`
             );
             console.log(data);
             for (var i = 0; i < data["response"].length; i++) {
@@ -192,6 +207,7 @@ $(document).ready(function() {
               })
               console.log(postID);
             })
+            $(".logout").css("display","");
           },
           error : function(err) {
             console.log("error", err);

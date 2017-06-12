@@ -6,12 +6,78 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <!-- <div class = 'header'>
+      <div id = 'img1' class = 'header'><img src = 'facebook.png'/></div>
+      <div id = 'form1' class = 'header'> Email or Phone<br>
+      <input placeholder="email" type='mail' name = 'name' /> <br>
+      <input type = 'checkbox' /> keep me logged in </div>
+    </div> -->
+    <!--post posts -->
+    <div class = 'postposts'>
+      <label for="exampleInputPassword1">Type a post:</label>
+      <input type="postpost" class="form-control" id="postbox" placeholder="Content...">
+      <button type="postBt" id = "postBtn" class="btn btn-default">Post</button>
+    </div>
+    <!-- REGISTER PAGE -->
+  <div class = 'registration'>
+    <h1>New User Registration</h1>
+    <form>
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="name" class="form-control" id="firstName" placeholder="first name">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="name" class="form-control" id="lastName" placeholder="last name">
+    </div>
+    <div class="form-group">
+      <label for="username">Email:</label>
+      <input type="uname" class="form-control" id="emailReg" placeholder="email address">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password:</label>
+      <input type="password" class="form-control" id="passwordReg" placeholder="password">
+    </div>
+    <button type="register" id = "registerReg" class="btn btn-default">Register</button>
+    <button type="login" id = "logininsideReg" class="btn btn-default">Login</button>
+    </form>
+  </div>
+
+  <!-- LOGIN PAGE -->
+  <div class = 'loginPg'>
+    <form>
+    <div class="form-group">
+      <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+        <h1 class="logintxt col-md-offset-4 inputGroupContainer">Login</h1>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input name="address" id = 'emailLog' placeholder="Email Address" class="form-control" type="text">
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+        <input type="password" id = 'passwordLog' placeholder="Password" class="form-control" type="text">
+      </div>
+    </div>
+    </div>
+  <div class="col-md-4 col-md-offset-5 inputGroupContainer">
+    <button type="login" id = "loginLog" class="btn btn-default">Login</button>
+    <button type="register" id = "registerinsideLog" class="btn btn-default">Go to registration</button>
+  </div>
+    </form>
+  </div>
+
+  <!-- POSTS -->
+  <div class = 'allPosts'></div>
+
 
     <!-- jQuery -->
     <script

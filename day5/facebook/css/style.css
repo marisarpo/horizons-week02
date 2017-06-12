@@ -1,0 +1,112 @@
+
+header{
+  background-color: rgb(59, 89, 152);
+  height: 85px;
+  width: 100%;
+  vertical-align: bottom;
+}
+
+#logo{
+  width: 40px;
+}
+
+.header-text{
+  height: 100%;
+  color: white;
+  font-family: "Times New Roman" sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  display: inline;
+}
+
+body{
+  background-color: rgb(233,235,238);
+}
+
+
+.section-header{
+  font-size: 30px;
+  color: rgb(5, 5, 5);
+  font-weight: 500;
+}
+
+.section-subtitle{
+  display: block;
+  margin: 5px;
+  font-size: 24px;
+
+  color: rgb(5, 5, 5);
+}
+
+
+.fb-post{
+  border: 1px solid white;
+  background-color: white;
+  box-sizing: border-box;
+  margin-top:10px;
+}
+
+.fb-post .content{
+  padding: 12px 12px 0;
+  border-bottom:1px solid #dddddd;
+  margin: 10px;
+}
+
+.post-comment
+{
+  background-color: rgba(233,235,238,0.2);
+  padding-left:5vh;
+padding-top: 1vh;
+padding-bottom: 5vh;
+padding-right: 1.5vh;
+}
+
+.new-fb-post{
+  margin-top:2vh;
+  border: 1px solid white;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+#abhi{
+  width: 200px;
+}
+
+#darwish{
+  width: 200px;
+}
+
+#registration{
+  margin-top: 25px;
+}
+
+#login{
+  margin-top: 200px;
+}
+
+#registration-form{
+  height: 15px;
+}
+
+#amazing-pictures{
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+#connect-prop{
+  margin-top: 50px;
+}
+
+#header-name{
+  color: rgb(221,223,226);
+  margin-top : 10px;
+}
+
+#log-out-button{
+  color: rgb(95,102,115);
+  background-color: rgb(221,223,226);
+}
+
+.clear{
+  clear:both;
+}

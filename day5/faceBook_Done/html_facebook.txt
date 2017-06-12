@@ -1,0 +1,125 @@
+```<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Horizons Facebook</title>
+    <!-- CSS files for Bootstrap -->
+    <!-- UNCOMMENT IF NEEDED -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Your css file -->
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <!-- YOUR CODE HERE -->
+    <header class = "container-fluid">
+      <div class="col-xs-offset-2 col-xs-8">
+        <img id="logo" src="/Users/prateekagarwal/Desktop/Horizons/week02/day5/facebook/images/logo.png" alt=""></img>
+        <div class="header-text">
+          Horizons Facebook
+        </div>
+      </div>
+      <div id="header-name"></div>
+    </header>
+
+    <div class="container-fluid" id="login-registration">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+            <div class="col-xs-7">
+              <div class="section-header col-xs-offset-2 col-xs-7" id="connect-prop">
+                Connect with your friends and the world around you on Horizons Facebook.
+              </div>
+              <div class ="col-xs-offset-2 col-xs-4" id="amazing-pictures">
+                <div> And now, a word from our amazing users... </div>
+                <div class = "row">
+                  <img src="/Users/prateekagarwal/Desktop/Horizons/week02/day5/facebook/images/abhi_fitness.jpg" id="abhi"></img>
+                  <label for="#abhi"> display: flex; </label>
+                  <img src="/Users/prateekagarwal/Desktop/Horizons/week02/day5/facebook/images/darwish.png" id="darwish"></img>
+                  <label for="#darwish"> "No, I went to Northwestern" </label>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-5" >
+              <div class="section-header"id="registration">
+                New to HF?
+              </div>
+              <div class="section-subtitle">
+                Sign Up!
+              </div>
+              <!-- FORM STUFF HERE -->
+              <div class="form-group" id="registration-form">
+                <div class="col-xs-4" id="register-names">
+                  <input type="text" class="form-control" id="register-first-name" placeholder="First Name">
+                  <input type="text" class="form-control" id="register-last-name" placeholder="Last Name">
+                  <a href='https://www.youtube.com/watch?v=otCpCn0l4Wo'>
+                    <input type="text" class="form-control" id="birthday-egg" placeholder="Birthday">
+                  </a>
+                  <a href='https://www.youtube.com/watch?v=HYvYGsDBgeU'>
+                    <input type="text" class="form-control" id="ssn-egg" placeholder="Address">
+                  </a>
+                  <a href='https://www.youtube.com/watch?v=g-sgw9bPV4A'>
+                    <input type="text" class="form-control" id="disabledInput" placeholder="Phone Number">
+                  </a>
+                </div>
+                <input type="text" class"form-control" id="register-username" placeholder="Username (email)" >
+                <input type="text" class"form-control" id="register-password" placeholder="Password">
+                <button class="btn btn-default" id="register-button"> Register! </button>
+              </div>
+              <div class="section-header" id="login">
+                Already a Horizons Facebook user?
+              </div>
+              <div class="section-subtitle">
+                Log In!
+              </div>
+              <!-- Log In Form -->
+              <div class="form-group form-horizontal" id="log-in-form">
+                <input type="text" class"form-control" id="log-in-username" placeholder="Username (email)" >
+                <input type="text" class"form-control" id="log-in-password" placeholder="Password">
+                <button class="btn btn-default" id="log-in-button"> Log In </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="container-fluid" id="newsfeed">
+      <div class="main-box col-md-4 col-md-offset-4">
+        <div class="main-posts"></div>
+        <div class="new-fb-post">
+        <div class="content">
+          <h3> Post post</h3>
+        </div>
+        <div class="post-comment">
+
+          <div class="comment-content-newpost">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Comment" style="height:20vh;">
+              <span class="input-group-btn">
+                <button class="post-btn btn btn-default" type="button">Post</button>
+              </span>
+            </div><!-- /input-group -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <!-- JavaScript files for Bootstrap -->
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+    <!-- underscoreJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+  </body>
+</html>
+```

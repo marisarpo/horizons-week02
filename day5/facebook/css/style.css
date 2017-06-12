@@ -1,0 +1,48 @@
+body {
+  background-color: #AECAFF;
+  height: 1000px;
+}
+
+#colorscheme {
+background-color: #AECAFF;
+}
+
+.form-horizontal {
+  padding-top: 100px;
+  padding-right: 100px;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 50px
+}
+
+#postcontainer {
+  width: 100%;
+  background-color: #AECAFF;
+}
+
+#inputcontainer {
+  padding-right: 200px;
+}
+
+#post {
+  margin: 20px;
+  padding: 10px 30px;
+}
+
+#postbutton {
+}
+
+#jaybook {
+  padding-left: 100px;
+}
+
+#comments {
+  padding: 10px;
+  width: 970px;
+}
+
+#replyinput {
+  width: 300px;
+}

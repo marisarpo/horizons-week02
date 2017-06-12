@@ -12,37 +12,39 @@
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    <button type="submit" id = "logout-button" class="btn btn-default">GET ME OUTTA HERE</button>
+    <div class = "page-container">
+      <button type="submit" id = "logout-button" class="btn btn-default">GET ME OUTTA HERE</button>
 
-    <br></br>
+      <br></br>
 
-    <button type="submit" id = "get-comments-button" class="btn btn-default">Water they sayin' these days?</button>
+      <button type="submit" id = "get-comments-button" class="btn btn-default">Water they sayin' these days?</button>
 
-    <br></br>
+      <br></br>
 
-    <button type="submit" id = "like-button" class="btn btn-default">Like</button>
+      <button type="submit" id = "like-button" class="btn btn-default">Like</button>
 
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="comment">Comment</label>
-        <input type="text" class="form-control" id="comment" placeholder="What's good?">
-      </div>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="comment">Comment</label>
+          <input type="text" class="form-control" id="comment" placeholder="What's good?">
+        </div>
 
-      <button type="submit" id = "comment-button" class="btn btn-default">Comment</button>
+        <button type="submit" id = "comment-button" class="btn btn-default">Comment</button>
 
-    </form>
+      </form>
 
-    <br></br><br></br>
-    <button id = "get-posts-button" type="submit" class="btn btn-default">Get Posts</button>
+      <br></br><br></br>
+      <button id = "get-posts-button" type="submit" class="btn btn-default">Get Posts</button>
 
-    <form class="form-inline">
-      <div class="form-group">
-        <label for="post">Post</label>
-        <input type="text" class="form-control" id="post" placeholder="What's good?">
-      </div>
-      <button id = "post-button" type="submit" class="btn btn-default">Post</button>
-    </form>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="post">Post</label>
+          <input type="text" class="form-control" id="post" placeholder="What's good?">
+        </div>
+        <button id = "post-button" type="submit" class="btn btn-default">Post</button>
+      </form>
 
+    </div>
     <!-- <div class = "post-container">
         <h3>Sample Name</h3>
         <p>This is so cool!</p>
@@ -50,8 +52,12 @@
 
 
     <!-- Login Form -->
+
+
     <div class = "login-container">
+      <br><br>
       <form id = "login" class="form-inline">
+        <h1 class = "threeDtext"> WELCOME TO FAKEBOX </h1>
         <div class="form-group">
           <label class="sr-only" for="exampleInputEmail3">Email address</label>
           <input type="email" class="form-control" id="loginEmail" placeholder="Email">
@@ -65,14 +71,15 @@
             <input type="checkbox"> Remember me
           </label>
         </div>
-          <button type="submit" id = "login-button" class="btn btn-default">Sign up</button>
+          <button type="submit" id = "login-button" class="btn btn-default">Log In</button>
+          <button type="submit" id = "sign-up-button" class="btn btn-default">Sign Up</button>
       </form>
     </div>
 
     <!-- Registration Form -->
     <div class = "register-container">
 
-      <h1> WELCOME TO FACEBOOK PLEASE GIVE ME ALL YOUR INFO<br></br></h1>
+      <h1 class = "welcome"> WELCOME TO FAKEBOX&trade;, PLEASE GIVE ME ALL YOUR INFO<br></br></h1>
       <form id="signup" class="form-horizontal">
         <div class="form-group">
           <label for="first-name" class="col-sm-2 control-label">First Name</label>
@@ -97,6 +104,16 @@
           <div class="col-sm-10">
             <input type="password" class="form-control" id="input-password" name="password" placeholder="Password">
           </div>
+        </div>
+        <div class="form-group">
+
+          <label for="input-password" class="col-sm-2 control-label">Why do you want to make an account?</label>
+            <select name="Account">
+                <option value="volvo">Select</option>
+                <option value="saab">I want to stalk people</option>
+                <option value="fiat">I need affirmation in my life</option>
+                <option value="audi">I don't know</option>
+            </select>
         </div>
         <div class="form-group">
           <label for="last-name" class="col-sm-2 control-label">Credit Card Number</label>

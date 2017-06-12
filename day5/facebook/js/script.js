@@ -4,15 +4,28 @@ $(document).ready(function() {
   //
   // $('.login-container').hide();
   //
-  // $('.register-container').show();
+  // $('body *').hide();
+  // $('.page-container, .register-container, .post-container').addClass('hidden');
+  // $('.login-container').removeClass('hidden');
+  //
+  // $('.register-container').removeClass('hidden');
+
+  $('.register-container').hide();
+  $('.page-container').hide();
+  $('.post-container').hide();
 
 });
 
+$('#sign-up-button').on('click', function(e){
+  // $('.login-container').addClass('hidden');
+  // $('.login-container').addClass('hidden');
+  // $('.register-container').removeClass('hidden');
+  e.preventDefault();
 
-var apiURL = 'https://horizons-facebook.herokuapp.com/api/1.0/users/login'
-
-
-// Sign Up
+  $('.login-container').hide();
+  $('.register-container').show();
+})
+// Sign Up End
 $('#sign-up').on('click', function(e){
   e.preventDefault();
     $.ajax({
@@ -28,10 +41,12 @@ $('#sign-up').on('click', function(e){
       success: function(resp) {
         console.log(resp);
         $('.register-container').hide()
+        $('.login-container').show()
       },
 
       error: function(err) {
         console.log("Error", err);
+        alert('Did not enter specified fields. Ha. Silly mortal.')
       }
     })
 })
@@ -56,8 +71,7 @@ $('#login-button').on('click', function(e){
       success: function(resp) {
         console.log(resp);
         $('.login-container').hide();
-        $('.register-container').hide();
-
+        $('.page-container').show();
         localStorage.setItem('token', resp.response.token)
 
         // console.log(localStorage.getItem('token'));
@@ -65,6 +79,7 @@ $('#login-button').on('click', function(e){
 
       error: function(err) {
         console.log("Error", err);
+        alert('Did not enter specified fields. Ha. Silly mortal.')
       }
     })
 })
@@ -129,12 +144,16 @@ $('#get-posts-button').on('click', function(e){
 
         var postWrapper = '';
 
+        $('.post-container').empty();
+
         resp.response.forEach(function(post){
           postContent = post.content;
+          postName = post.poster.name;
           postWrapper = `<div class = "post-container">
-              <h3>Sample Name</h3>
+              <h3>${postName}</h3>
               <p>${postContent}</p>
           </div>`;
+
           $('body').append(postWrapper);
         })
       },
@@ -247,42 +266,42 @@ $('#get-comments-button').on('click', function(e){
 })
 
 
-setInterval(function(){
-  $.ajax({
-    type: "GET",
-    url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/1',
-    // data: {
-    //   fname: $('#first-name').val(),
-    //   lname: $('#last-name').val(),
-    //   email: $('#input-email').val(),
-    //   password: $('#input-password').val()
-    // },
-    data: {
-      token: localStorage.getItem('token')
-    },
-
-    success: function(resp) {
-      console.log(resp);
-
-      var postContent = '';
-
-      var postWrapper = '';
-
-      resp.response.forEach(function(post){
-        postContent = post.content;
-        postWrapper = `<div class = "post-container">
-            <h3>Sample Name</h3>
-            <p>${postContent}</p>
-        </div>`;
-        $('body').append(postWrapper);
-      })
-    },
-
-    error: function(err) {
-      console.log("Error", err);
-    }
-  })
-}, 30000)
+// setInterval(function(){
+//   $.ajax({
+//     type: "GET",
+//     url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/1',
+//     // data: {
+//     //   fname: $('#first-name').val(),
+//     //   lname: $('#last-name').val(),
+//     //   email: $('#input-email').val(),
+//     //   password: $('#input-password').val()
+//     // },
+//     data: {
+//       token: localStorage.getItem('token')
+//     },
+//
+//     success: function(resp) {
+//       console.log(resp);
+//
+//       var postContent = '';
+//
+//       var postWrapper = '';
+//
+//       resp.response.forEach(function(post){
+//         postContent = post.content;
+//         postWrapper = `<div class = "post-container">
+//             <h3>Sample Name</h3>
+//             <p>${postContent}</p>
+//         </div>`;
+//         $('body').append(postWrapper);
+//       })
+//     },
+//
+//     error: function(err) {
+//       console.log("Error", err);
+//     }
+//   })
+// }, 30000)
 
 //Logout button
 

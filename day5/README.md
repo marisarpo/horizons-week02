@@ -30,7 +30,7 @@ That's all. Move fast and break things! *
 
 The components we want you to build are below. We recommend you approach each one as a step building off the other, but you may take the components in any order you'd like. Keep in mind that many of these components rely on your implementation of registering and authenticating a user.
 
-1. **Registration**: You will need to allow a user to fill out a form to register with email, password, first and last name, and birthday.
+1. **Registration**: You will need to allow a user to fill out a form to register with email, password, first and last name.
 
 2. **Login**: You will need to present existing users with a login that authenticates with email and password. Upon successful login, our server will return you a token to pass into subsequent requests.
 
@@ -44,58 +44,42 @@ The components we want you to build are below. We recommend you approach each on
 
 7. **Double Bonus: Chat**: See *Using Sockets* for more information on how to implement Chat. You will be adding a chat section to your Facebook site to have a central chat feature for all users on your site.
 
-
 Yes, it's a lot - but if Mark Zuckerberg can do it, you can too!
+
+## API Reference
+
+The link below shows the live server specifications for accessing our "Facebook" API. All routes marked by a lock symbol (🔒) require you to pass in the token that you receive upon successful login. This token changes across users and sessions! Store it for authenticating each request as necessary.
+
+⚠️ All requests with a 🔒 next to the title require authentication.
+
+### Documentation
+
+Reference: [https://horizons-facebook.herokuapp.com](https://horizons-facebook.herokuapp.com)
+
+![api_documentation.png](api_documentation.png)
 
 ## Instructions
 These instructions are very minimal in nature and should only be used as a guide to creating your Facebook newsfeed **(they should not be followed religiously as the final app should be your own creation)**. Additionally, the *pictures* throughout this guide are merely visual aids to help you understand and visualize each step, so **do not** imitate the designs used for the images.
 
-1. Let's create the files required to start making your Facebook Newsfeed:
+You are provided with the following files to start making your Facebook Newsfeed:
 
   * `/facebook/index.html`: This will be the main page of your app where you will write all of the necessary `HTML`.
   * `/facebook/css/style.css`: This will be our primary style sheet for the app. You can add more stylesheets if you would like.
   * `/facebook/js/script.js`: We will write all of our `Javascript & jQuery` in here.
 
-1. Add starter `HTML` code for your `index.html` file
+**Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**.
 
-```HTML
+### Register
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Horizons Facebook</title>
-  <!-- CSS files for Bootstrap -->
-  <!-- UNCOMMENT IF NEEDED -->
-  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+1. Add `HTML` to your `index.html` file to build a registration form for new users. A new user **must** have a first name (*fname*), last name (*lname*), email address (*email*), and a password (*password*).
 
+  ![register](./facebook/images/fb_register.png)
 
-  <!-- Your css file -->
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  <!-- YOUR CODE HERE -->
-  Hello, World!
+1. Much like login you should create a form like the one above with the four *required* properties in `<input>` fields, and when the `Register` button is pressed the `AJAX POST request` to `https://horizons-facebook.herokuapp.com/api/1.0/users/register` should occur (with fname, lname, email, and password).
 
-  <!-- jQuery -->
-  <script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+1. On success the `AJAX` response should contain `{success: true}` (and that's it).
 
-  <!-- Your script file -->
-  <script type="text/javascript" src="./js/script.js"></script>
-  <!-- UnderscoreJS Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-
-  <!-- JavaScript files for Bootstrap -->
-  <!-- UNCOMMENT IF NEEDED -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-</body>
-</html>
-```
-
-**Note** that the Bootstrap libraries are commented out in the `index.html` file. If you would like to use Bootstrap you should uncomment the lines after **UNCOMMENT IF NEEDED**
+1. Now the Login section should reveal itself while the Register section should hide the form.
 
 ### Login
 
@@ -125,21 +109,9 @@ These instructions are very minimal in nature and should only be used as a guide
   });
   ```
 
-1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localstorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localstorage.getItem('token')`.
+1. If all goes well you will get back a `JSON` response that looks something like: `{success: true, response: {id: USER_ID, token: AUTH_TOKEN}}`. You should store the `AUTH_TOKEN` in [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Storage/LocalStorage) using `localStorage.setItem('token', data.response.token)`. The token can be accessed at a later time using `localStorage.getItem('token')`.
 
 1. You can now hide this (login/registration) section of the `HTML` and reveal the newsfeed.
-
-### Register
-
-1. Add `HTML` to your `index.html` file to build a registration form for new users. A new user **must** have a first name (*fname*), last name (*lname*), email address (*email*), and a password (*password*).
-
-  ![register](./facebook/images/fb_register.png)
-
-1. Much like login you should create a form like the one above with the four *required* properties in `<input>` fields, and when the `Register` button is pressed the `AJAX POST request` to `https://horizons-facebook.herokuapp.com/api/1.0/users/register` should occur (with fname, lname, email, and password).
-
-1. On success the `AJAX` response should contain `{success: true}` (and that's it).
-
-1. Now the Login section should reveal itself while the Register section should hide the form.
 
 ### List Posts
 
@@ -185,28 +157,27 @@ These instructions are very minimal in nature and should only be used as a guide
 
 1. When ending the session be sure to *logout*. The `/users/logout` takes in your AUTH_TOKEN as parameters and (if successful) responds with `{"success": true}`.
 
-# API Reference
-
-The link below shows the live server specifications for accessing our "Facebook" API. All routes marked by a lock symbol (🔒) require you to pass in the token that you receive upon successful login. This token changes across users and sessions! Store it for authenticating each request as necessary.
-
-⚠️ All requests with a 🔒 next to the title require authentication.
-
-### Documentation
-
-Reference: [https://horizons-facebook.herokuapp.com](https://horizons-facebook.herokuapp.com)
-
-![api_documentation.png](api_documentation.png)
+## Double Bonus: Chat
 
 ### Using Sockets
 
 Read this when you are working on your Chat component! Implementing Chat will require you to use a protocol you have not used before: WebSockets. WebSockets is a realtime, event-driven protocol that allows us to create applications like chat that are extremely responsive. We will interface with WebSockets using a client library called [Socket.IO](http://socket.io) - import their library to your page with the following line:
 
-**NOTE:** Learning to use the Sockets library will be an exercise in reading documentation and determining how to use it successfully.
+`<script src="https://horizons-facebook.herokuapp.com/socket.io/socket.io.js"></script>`
 
-`<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.2/socket.io.js"></script>`
+**NOTE:** Learning to use the socket.io library will be an exercise in reading documentation and determining how to use it successfully.
 
-Our Sockets server lives on port 3000 of the base API URL, which means it can be accessed at https://horizons-facebook.herokuapp.com/socket.io.
+We can connect to our socket.io server by doing the following:
 
-Upon connecting successfully to the Sockets server, please emit a new `authentication` event in the following format: `{token: AUTH_TOKEN}`. You have 5 seconds after connecting to the Sockets server to present your authorization token you received upon login, or you will be disconnected from the server. If you successfully authenticate, you will receive the `authenticated` event and will be ready to begin sending messages.
+```
+var socket = io.connect('https://horizons-facebook.herokuapp.com/');
+```
 
-All new messages are sent by emitting the `message` (send the message you are sending in plain text, without an object); if you are authorized, our Sockets server will broadcast the new message in the following form: `{username: *username*, message: *the message*}`.
+Upon connecting successfully to the socket.io server, please emit a new `authentication` event in the following format: `{ token: AUTH_TOKEN }`.
+
+```javascript
+socket.emit('authentication', {'token': localStorage.getItem('token') });
+```
+You have 5 seconds after connecting to the socket.io server to present your authorization token you received upon login, or you will be disconnected from the server. If you successfully authenticate, you will receive the `authenticated` event through the `on()` method and will be ready to begin sending messages.
+
+All new messages are sent by emitting the `message` (send the message you are sending in plain text, without an object); if you are authorized, our socket.io server will broadcast the new message in the following form: `{username: *username*, message: *the message*}`.

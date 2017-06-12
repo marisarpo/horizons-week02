@@ -9,6 +9,7 @@ $(document).ready(function() {
 // })
 var apiUrl = 'https://horizons-facebook.herokuapp.com/api/1.0'
 var refreshCount = 0;
+var updating = false;
 $('.submit').on('click',function(){
   var $inputs = $('#login_form :input');
   var user = $inputs[0].value
@@ -149,7 +150,12 @@ function updatedPostData(data){
                 </div>`
     var comment = addComments(comments);
     var finalText = text+comment+footer;
-    $('.posts-list-container').append(finalText);
+    if (updating){
+      updating = false;
+      $('.posts-list-container').find('.post').before(finalText);
+    }else{
+      $('.posts-list-container').append(finalText);
+    }
     console.log(comments);
   })
 
@@ -187,7 +193,29 @@ $('.refresh').on('click',function(){
     updatePosts();
   }
 })
-$('.newsfeed-container').on('click','.reply-button'){
+$('.newsfeed-container').on('click','#post_btn', function(){
+  var contents = $(this).prev().val();
+  var tokenize = localStorage.getItem('token');
+  var poster;
+  $.ajax(apiUrl+ '/posts',{
+    method: 'POST',
+    data:{
+      token:tokenize,
+      content:contents
+    },
+    success: function(data){
+      poster = data.response.poster.name;
+      updating =true;
+      updatedPostData([data.response]);
+    }
+  })
 
-
-}
+})
+$('.newsfeed-container').on('click','.reply-button',function(){
+  console.log($(this).closest('.post').attr('id'));
+  // $.ajax(apiUrl+'/posts/comments/'+post_id,{
+  //
+  //
+  //
+  // })
+})

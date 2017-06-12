@@ -5,14 +5,68 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <!-- Main Feed -->
+    <div style="display:none;" class="main-feed-page">
+      <form class="post-form">
+        <input type="text" name="post" id="post-box" placeholder='Content...'></input>
+        <button type="button" id="post-button" class="btn btn-primary">Post</button>
+      </form>
+      <div class="main-feed">
+
+      </div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Login Page -->
+    <div class="login-page">
+      <div class="login-main">
+        <h1 class="welcome">Welcome to HorizonsBook.</h1>
+        <h2 class=>Login:</h2>
+        <form id="login-form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" id="login-username-input" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="login-password-input" placeholder="Password">
+          </div>
+          <button id="login-button" type="submit" class="btn btn-default">Login</button>
+          <button class="btn btn-primary" id="register-button">Make an Account</button>
+        </form>
+      </div>
+    </div>
+    <!-- Register Page -->
+    <div style="display:none" class="register-page">
+      <div class="register-main">
+        <h1 class="welcome">Welcome to HorizonsBook.</h1>
+        <h2 class=>Login:</h2>
+        <form id="register-form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="fname" id="first-name-input" placeholder="First name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="lname" id="last-name-input" placeholder="Last name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="email" id="register-username-input" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" id="register-password-input" placeholder="Password">
+          </div>
+          <button id="register-submit-button" type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script

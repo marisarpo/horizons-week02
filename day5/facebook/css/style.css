@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.login-page, .register-page {
+    position: absolute;
+    height: 100vh;
+    width: 100vw ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px #ddd solid;
+}
+.login-main, .register-main {
+    border: 1px #ddd solid;
+    padding: 40px;
+    margin-bottom: 10vh;
+    color: white;
+    background-color: #FF585B;
+}
+.login-page button, .register-page button {
+    margin-right: 5px;
+}
+.login-page input, .register-input {
+    width: 100%;
+}
+
+.register-main {
+    background-color: #3B5998;
+}
+
+.main-feed-page {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.main-feed {
+    height: 100%;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 40px;
+}
+.post {
+    border: 1px solid #ddd;
+}
+.poster {
+    margin-bottom: 0;
+}
+.post-time {
+    font-style: italic;
+    margin-top: 4px;
+    font-size: 12px;
+    border-bottom: 1px #ddd solid;
+    padding-bottom: 4px;
+}
+.post-main-info {
+    border: 1px solid green;
+}
+.reaction-buttons {
+    border: 1px solid blue;
+}
+.nums {
+    border: 1px solid red;
+}
+.reply {
+    position: relative;
+}
+.replier {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.reply-time {
+    font-size: 12px;
+    margin-top: 0;
+}
+.reply-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.replies {
+    border-left: 1px solid black;
+    border-radius: 0 0 0 10px;
+    margin-left: 20px;
+    padding: 0 0 8px 12px;
+
+}

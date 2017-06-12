@@ -1,3 +1,4 @@
+console.log(localStorage.getItem('token'))
 if (localStorage.getItem('token')) {
   refreshPage();
   $('.register-page').hide();
@@ -190,19 +191,3 @@ $('#chatButton').on('click',function() {
   socket.emit('message','hello');
   console.log(socket)
 })
-
-// var socket = io.connect('https://horizons-facebook.herokuapp.com/socket.io');
-// //var io = require('https://horizons-facebook.herokuapp.com/socket.io')(3000);
-// socket.emit('authentication', { token: localStorage.getItem('token') });
-
-// io.on('connection', function (socket) {
-//   io.emit('authentication', { token: localStorage.getItem('token') });
-//
-//   socket.on('private message', function (from, msg) {
-//     console.log('I received a private message by ', from, ' saying ', msg);
-//   });
-//
-//   socket.on('disconnect', function () {
-//     io.emit('user disconnected');
-//   });
-// });

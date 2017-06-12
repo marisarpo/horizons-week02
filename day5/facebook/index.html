@@ -5,14 +5,87 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="login">
+      <h1> Login </h1>
+      <div><input class="username" type="text" placeholder = "Username"></div>
+      <div><input class="password" type="text" placeholder = "Password"></div>
+      <div><button class="login">Login</button></div>
+      <div><button class="register">Register</button></div>
+    </div>
+
+    <div class="registration">
+      <h1> New user registration </h1>
+      <div><input class="firstname" type="text" placeholder = "First name"></div>
+      <div><input class="lastname" type="text" placeholder = "Last name"></div>
+      <div><input class="username" type="text" placeholder = "Username"></div>
+      <div><input class="password" type="text" placeholder = "Password"></div>
+      <div><button class="register">Register</button></div>
+      <div><button class="gologin">Already have an accout? Login!</button></div>
+    </div>
+
+    <div class="newsfeed">
+      <h1>My Newsfeed Wall</h1>
+      <div class="post-posts">
+        <div class="postbox">
+          <textarea placeholder="New posts?"></textarea>
+        </div>
+        <div class="sendpost">
+          <button type="button" name="button">POST</button>
+        </div>
+      </div>
+
+      <!-- the list of existing posts -->
+      <div class="cards">
+        <!-- this is the first card -->
+        <div class="card fake" >
+          <div class="card-name">
+            <h3>Chenhui</h3>
+          </div>
+          <div class="card-time">
+            <span>5:20 PM 09/06/2017</span>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              Welcome to my new Facebook page!
+            </div>
+          </div>
+          <div class="card-interaction">
+            <span class="number replies">0</span>Replies,
+            <span class="number likes">0</span>Likes
+            <button class = "glyphicon glyphicon-thumbs-up"></button>
+            <button class = "replies">Replies</button>
+          </div>
+        </div>
+        <!-- this is the second card -->
+        <div class="card fake">
+          <div class="card-name">
+            <h3>Danny</h3>
+          </div>
+          <div class="card-time">
+            <span>15:23 PM 10/06/2017</span>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              What weekend plans do you have? Stanford or Berkley?
+            </div>
+          </div>
+          <div class="card-interaction">
+            <span class="number replies">3</span>Replies,
+            <span class="number likes">20</span>Likes
+            <button class = "glyphicon glyphicon-thumbs-up"></button>
+            <button class = "replies">Replies</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script
@@ -21,7 +94,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

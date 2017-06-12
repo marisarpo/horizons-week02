@@ -1,0 +1,28 @@
+.news-feed-container {
+}
+
+.NF-container{
+
+}
+
+.post{
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  width: 30%;
+
+
+}
+
+.reply {
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  width: 100%;
+  margin: 7px 0px;
+}
+
+#post-button{
+}

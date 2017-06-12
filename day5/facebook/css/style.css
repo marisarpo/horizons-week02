@@ -1,0 +1,25 @@
+body {
+  background-color: blue;
+  height: 1000px;
+}
+
+.form-horizontal {
+  padding-top: 100px;
+  padding-right: 100px;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 50px
+}
+
+#postcontainer {
+  width: 100%;
+  background-color: #AECAFF;
+}
+
+#post {
+  margin: 20px;
+  padding: 10px 30px;
+
+}

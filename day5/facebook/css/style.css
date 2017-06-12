@@ -1,0 +1,42 @@
+.input{
+  /*border:1px solid black;*/
+  display:flex;
+  flex-direction:column;
+
+  align-items:  center;
+  width: 500px;
+
+}
+.mainBoard{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  /*height: 500px;*/
+  /*border:1px solid red;*/
+
+}
+.board{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.head{
+  text-align: center;
+}
+.title{
+  margin-bottom: 80px;
+  text-align: center;
+}
+.register{
+  margin-top: 80px;
+}
+.button{
+  /*width: 200px;*/
+}
+.boardBody{
+  /*border:1px solid black;*/
+}
+#listbody {
+  border:1px solid black;
+}

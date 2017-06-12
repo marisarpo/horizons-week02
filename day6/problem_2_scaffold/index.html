@@ -13,11 +13,34 @@
 
 <body>
 
+	<div id = "feed" class = "col-xs-6 col-xs-offset-3">
+		<form id = "make-post-form" class = "col-xs-12">
+			<div id = "make-post-header" class = "col-xs-12">
+				<input id = "make-tweet" placeholder="Enter tweet..."></input>
+			</div>
+			<div id = "make-post-footer"  class = "collapse">
+				<div id = "tweet-count"><b>0</b> TWEETS</div>
+				<div id = "following-count"><b>3</b> FOLLOWING</div>
+				<div id = "follower-count"><b>2</b> FOLOWERS</div>
+				<button id = "submit" class = "pull-right">submit</button>
+			</div>
+		</form>
+		<div id = "tweets-container" class = "col-xs-12">
+			<div class = "tweet-container col-xs-12">
+				<div class = "image-container">
+					<img class = "profile-img" src = "kanye.jpeg"></img>
+				</div>
+				<div class = "content"></div>
+				<div class = "footer"></div>
+			</div>
+
+		</div>
+	</div>
 
 </body>
 
 
-<script src="main.js"></script>	
+<script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
 
 </html>

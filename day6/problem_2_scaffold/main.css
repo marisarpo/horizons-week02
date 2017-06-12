@@ -1,0 +1,72 @@
+body{
+  background-color: #3498db;
+}
+
+#feed{
+  height: 100%;
+}
+
+#make-post-form{
+  margin: 0px;
+  /*height: 9%;*/
+  margin-top: 30px;
+}
+
+#tweets-container{
+  height: 65%;
+  padding: 0px;
+}
+
+#make-post-form,.tweet-container{
+  background-color: #ebeff1;
+  border-radius: 7px;
+}
+
+.tweet-container{
+  margin-top: 20px;
+  height: 20%;
+}
+
+.profile-img{
+  height: 60px;
+  width: 50px;
+  border-radius: 3px;
+}
+
+.image-container{
+  height: 60px;
+  width: 50px;
+  padding-top: 10px;
+
+}
+
+#make-post-header{
+  padding: 0px;
+}
+
+#make-tweet{
+  width: 100%;
+  margin-top: 10px;
+  height: 35px;
+  border-radius: 4px;
+  border: 0px;
+  margin-bottom: 10px;
+}
+
+#submit{
+  /*margin-top: 8px;
+  margin-bottom: 8px;*/
+  border-radius: 3px;
+  border: 0px;
+  color: white;
+  background-color: #e74c3c;
+}
+
+#tweet-count,#following-count,#follower-count,#submit{
+  display: inline;
+}
+
+#make-post-footer{
+  margin-top: 60px;
+  margin-bottom: 10px;
+}

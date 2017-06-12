@@ -6,12 +6,51 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id="login" class="container text-center">
+      <div>
+        <h1>Login</h1>
+        <input id="username" class="form-control" type="text" placeholder="Username">
+        <input id="password" class="form-control" type="password" placeholder="Password">
+        <button id="login-btn" class="btn btn-danger">Login</button>
+      </div>
+        <button id="go-to-reg" class="btn btn-primary">Go to registration</button>
+    </div>
+
+    <div id="registration" class="container text-center">
+      <div>
+        <h1>New User Registration</h1>
+        <input id="firstname" class="form-control" type="text" placeholder="First Name">
+        <input id="lastname" class="form-control" type="text" placeholder="Last Name">
+        <input id="username" class="form-control" type="email" placeholder="Username">
+        <input id="password" class="form-control" type="password" placeholder="Password">
+        <button id="register-btn" class="btn btn-danger">Register</button>
+      </div>
+        <button id="go-to-login" class="btn btn-primary">Login</button>
+    </div>
+
+    <div id="newsfeed" class="container">
+      <h1 class="text-center">Welcome to Newsfeed!</h1>
+      <div id="create-post" class="col-sm-8 col-sm-offset-2">
+        <form class="form-inline">
+          <div class="form-group">
+            <input id="post-content" type="text-area" class="form-control" placeholder="How are you feeling today?">
+            <button id="post-content-btn" class="btn btn-primary">Post</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="posts" class="container">
+
+      </div>
+    </div>
+
+
+
 
     <!-- jQuery -->
     <script
@@ -20,7 +59,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

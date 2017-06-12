@@ -1,0 +1,14 @@
+.post {
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+#create-post {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#post-comment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

@@ -22,6 +22,24 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var links = []
+      $('#links').find('li').each(function(){links.push([this.id, $(this).text()])})
+      console.log(links)
+
+      for (i in links) {
+        $.ajax({
+          url: links[i][1],
+          success: function(resp) {
+            console.log('SUCCESS!')
+          },
+          error: function(err) {
+            console.log('ERROR', err)
+            var linkId = "#" + links[i][0]
+            $(linkId).remove();
+          }
+        })
+      }
+
     </script>
   </body>
 </html>

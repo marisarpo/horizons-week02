@@ -1,0 +1,47 @@
+.login-title-container, .newsfeed-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-inputs{
+  display: flex;
+  justify-content: center;
+  min-height: 240px;
+}
+
+.login-inputs{
+  display: flex;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.input-group {
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.login-page{
+  min-height: 400px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register, .login-button {
+  background-color: red;
+}
+
+.comments{
+  border: 3px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -6,12 +6,79 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+<div id= "register-hider">
+    <div class = "login-title-container">
+      <h1 class = "login-title">New user registration</h1>
+    </div>
+    <div class = "login-page">
+    <div class = "register-inputs">
+      <div class="input-container ">
+        <div>
+          <input type="text" class="form-control fname" placeholder="First name"></input>
+        </div>
+        <div>
+          <input type= "text" class = "form-control lname" placeholder="Last name"></input>
+        </div>
+        <div>
+          <input type= "text" class = "form-control email " placeholder="Email"></input>
+        </div>
+        <div>
+          <input type= "text" class = "form-control password" placeholder="Password"></input>
+        </div>
+        <button type="button" class="btn btn-classic register">Register</button>
+        <button type="button" class="btn btn-standard log-in"> Log in</button>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<div id = "login-hider">
+    <div class = "login-title-container">
+        <h1 class = "login-title">Login</h1>
+      </div>
+      <div class = "login-page">
+      <div class = "login-inputs">
+        <div class="input-container ">
+          <div>
+            <input type="text" class="form-control theEmail" placeholder="Email"></input>
+          </div>
+          <div>
+            <input type= "text" class = "form-control thePassword" placeholder="Password"></input>
+          </div>
+          <button type="button" class="btn btn-classic login-button">Sign in</button>
+          <button type="button" class="btn btn-standard">Go to registration</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id= "newsfeed">
+  <div class = "newsfeed-title-container">
+    <h1> Newsfeed</h1>
+  </div>
+  <div class = "comments">
+    <div class = "comment">
+      <div class = "name">Name </div>
+      <div class = "time"> time </div>
+      <div class = "text"> comment</div>
+      <div class = "likes"> likes </div>
+      <div class = "controls">
+        <button type = "button" class="btn btn-xs btn-primary"><span class="glyphicon glyphicon-thumbs-up"></span> Like </a>
+        <button type = "button" class="btn btn-xs btn-default">Reply</a>
+        </div>
+      <div class = "replies">
+        <div class = "comment">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- jQuery -->
     <script

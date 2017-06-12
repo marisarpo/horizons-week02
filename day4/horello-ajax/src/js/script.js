@@ -27,18 +27,23 @@ function render() {
       cards: 'all',
       lists: 'all'
     },
-    success: function(resp) {
-      renderBoard(resp);
+    success: function(data) {
+      renderBoard(data);
     }
   });
 }
 
 function renderBoard(board) {
   // YOUR CODE HERE
+  $('#boardAnchor').empty();
+  $('#boardAnchor').append(`<div id="${boardId}" class="board"></div>`);
+
+
 }
 
 function renderList(list) {
   // YOUR CODE HERE
+  
 }
 
 function renderCard(card) {

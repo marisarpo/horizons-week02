@@ -1,0 +1,52 @@
+
+.registration-container {
+  display: none;
+  text-align: center;
+}
+
+.newsfeed-container{
+  background-color: light-blue;
+}
+
+.post{
+  border: solid black 2px;
+}
+.registration-title {
+    font-size: 40px;
+    padding: 40px;
+}
+
+.registration-container input {
+    padding: 5px;
+    border-radius: 5px;
+    margin:  10px;
+}
+
+.registration-container button {
+    margin: 5px;
+    width: 100px;
+}
+
+.login-container {
+    text-align: center;
+}
+
+.login-title {
+    font-size: 40px;
+    padding: 40px;
+}
+
+.login-container input {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.login-container button {
+    margin: 10px;
+    width: 200px;
+}
+
+input.passwordField {
+    margin-bottom: 20px;
+}

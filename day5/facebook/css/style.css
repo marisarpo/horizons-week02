@@ -1,0 +1,38 @@
+#username, #password {
+	border-radius: 3px;
+}
+.time {
+	font-style: italic; 
+	font-size: 10px;
+}
+.thread {
+	border: 1px solid black;
+	border-radius: 3px;
+	padding:10px 60px 10px 60px;
+	margin-bottom: 20px;
+}
+.post {
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
+}
+.replies {
+	padding-top: 10px;
+}
+#status-box {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+#text-area{
+	display: inline;
+	padding-right: 6px;
+}
+#status{
+	border-radius: 3px;
+	width: 90%;
+}
+.clear {
+	clear: both;
+}
+.reply-form {
+	display: block !important;
+}

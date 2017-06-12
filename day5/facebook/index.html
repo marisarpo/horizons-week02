@@ -5,14 +5,150 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+  <div class="container">
+    <div class="well form-horizontal">
+      <div class="row">
+        <div class="login">
+          <h1 class="col-sm-12 text-center">Login</h1>
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="username" id="username" class="form-control" placeholder="Username">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="password" id="password" class="form-control" placeholder="Password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-info" id="login-btn">Login</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary" id="reg-btn-go">Go to registration</button>
+            </div>
+          </div>
+
+        </div> <!-- closes login--> 
+
+        <div class="register">
+          <h1 class="col-sm-12 text-center">Register</h1>
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="text" id="fname" class="form-control" placeholder="First name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="text" id="lname" class="form-control" placeholder="Last name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="text" id="username-reg" class="form-control" placeholder="Username">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-4 input-group">
+              <input type="password" id="password-reg" class="form-control" placeholder="Password">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-primary" id="reg-btn">Register</button>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-info" id="login-btn-go">Go back to login</button>
+            </div>
+          </div>
+
+        </div> <!-- closes register -->
+      </div> <!-- closes row -->
+    </div> <!-- closes well -->
+    <div class="main">
+      <form class="form-inline" id="status-box">
+          <div class="form-group" id="text-area">
+            <textarea id="status" class="form-control" rows="5" placeholder="yo wassup wyd"></textarea>
+          </div>
+          <button type="submit" class="btn btn-info" id="post-btn">Post</button>  
+          <div class="clear"></div>  
+      </form>
+
+        <!-- <div class="form-group">
+          <div class="col-sm-2 col-sm-offset-8 input-group">
+            
+        </div>  -->
+      <!-- <! closes status   -->
+
+      <div class="posts">
+        <div class="thread">
+          <div class="post">
+            <h3 class="author">ME</h3>
+            <div class="time">3:12:00PM</div>
+            <div class="post-body">Welcome to Horizons!</div>
+          </div> <!-- closes post -->
+
+          <div class="replies"> 
+            <div class="reply">
+              <div class="time">3:12:00PM</div>
+              <div class="reply-body">Moose: I love it!</div>
+            </div>
+            <div class="reply">
+              <div class="time">3:12:00PM</div>
+              <div class="reply-body">Abhi: Same!</div>
+            </div>
+          </div>  <!-- --><!-- closes replies --> 
+          <div class="footer">
+            <h5 class="stats">2 replies, 19 likes</h5>
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-info like-btn">
+                Like <span class="glyphicon glyphicon-thumbs-up"></span>
+              </button>
+              <button type="button" class="btn btn-info add-reply">
+              Reply <span class="glyphicon glyphicon-send"></span>
+              </button>
+            </div>
+
+            <div class="collapse reply-wrapper">
+              <div class="well reply-form">
+                <input type="text" class="form-control reply-text"
+                                   placeholder="Type a reply">
+                <button type="button" class="btn btn-default post-reply">
+                  Post a comments
+                </button>
+              </div>
+            </div>
+
+          </div>  <!-- closes footer -->
+        </div> <!-- closes thread -->
+      </div> <!-- closes container -->
+      <div class="page-footer col-sm-12 text-center">
+        <button type="button" class="btn btn-info more">More posts</button>
+      </div>
+    </div> <!-- closes main -->
+  </div> <!-- closes container -->
+
+
+          
 
     <!-- jQuery -->
     <script

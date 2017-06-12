@@ -5,15 +5,52 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id = 'loginPage'>
 
+    <h2>Login</h2>
+
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="username" placeholder="username">
+        <input type="password" class="form-control" id="password" placeholder="password">
+        <button type="button" class="btn btn-primary" id='login'>Login </button>
+        <button type="button" class="btn btn-primary"id='goRegistration'>Go to registration </button>
+
+      </div>
+    </form>
+  </div>
+
+  <div id = 'registrationPage'>
+    <h2>New User Registration</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" class="form-control" id="fname" placeholder="Firstname">
+        <input type="text" class="form-control" id="lname" placeholder="Lastname">
+        <input type="text" class="form-control" id="username2" placeholder="Username">
+        <input type="password" class="form-control" id="password2" placeholder="Password">
+      </div>
+
+      <button type="button" class="btn btn-primary" id='register'>Registration </button>
+
+    </form>
+  </div>
+
+    <form id='postPost'>
+      <div class="form-group">
+        <input type="text" class="form-control" id="post" placeholder="what's on your mind right now">
+      <button type="button" class="btn btn-primary" id='postBtn'>Post </button>
+    </div>
+    </form>
+
+  <div id='feed'></div>
+  
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"

@@ -1,0 +1,20 @@
+body{
+  padding: 30px
+}
+
+
+.commentBox {
+    padding:10px;
+    border-bottom:1px dotted #bbb;
+}
+.detailBox {
+    width:320px;
+    border-radius: 5px;
+    padding: 10px;
+    border:1px solid #bbb;
+    margin: 0.5em
+}
+.actionBox{
+  padding:10px;
+  margin-top: 0.5em;
+}

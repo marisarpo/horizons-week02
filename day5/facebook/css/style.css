@@ -1,0 +1,76 @@
+.container {
+  margin: 50px 200px;
+  /*width: 45%;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+  /*float: left*/
+}
+
+#registration_form {
+  width: 70%;
+  /*float: left;*/
+}
+
+#login_form {
+  width: 70%;
+  /*float: left;*/
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+
+.author {
+  font-weight: bold;
+}
+
+.entry {
+  border-left: 5px solid skyblue;
+  border-radius: 0 0 0 10px;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+#listposts {
+  /*float: left;*/
+}
+.post {
+  /*width: 50%;*/
+  border-radius: 5px;
+  margin-left: 40px;
+  margin-right: 40px;
+  clear: both;
+}
+.time {
+  margin-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+
+.message {
+  border-bottom: 1px solid black;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+.like {
+  border-radius: 5px;
+}
+
+.like :hover {
+  background-color: skyblue;
+}
+
+.liked {
+  background-color: skyblue;
+}
+
+.replycount {
+  float: left;
+}
+
+.replyinput {
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}

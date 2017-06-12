@@ -6,12 +6,204 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!-- Hello, World! -->
+    <div class="container col-sm-offset-2 col-md-offset-2 col-sm-offset-2" id="registrationPage">
+
+      <form class="well form-horizontal" action=" " method="post"  id="registration_form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend style="text-align: center;">New User registration</legend>
+
+          <!-- Text input Firstname-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  name="first_name" placeholder="First name" class="form-control" id="firstname"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input Lastname-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  name="first_name" placeholder="Last name" class="form-control" id="lastname"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input Username-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input  name="first_name" placeholder="Username" class="form-control" id="usernameregistration"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input Password-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                <input  name="first_name" placeholder="Password" class="form-control" id="passwordregistration"  type="password">
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Login-->
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <button type="button" class="btn btn-warning col-md-5 col-md-offset-4" id="register">Register</button>
+            </div>
+          </div>
+          <!-- Button Registration-->
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <button type="button" class="btn btn-info col-md-7 col-md-offset-3" id="gotologin">Go to login</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="container col-sm-offset-2 col-md-offset-2 col-lg-offset-2" id="loginPage">
+
+      <form class="well form-horizontal" action=" " method="post"  id="login_form">
+        <fieldset>
+
+          <!-- Form Name -->
+          <legend style="text-align: center;">Login</legend>
+
+          <!-- Text input Username-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input  name="first_name" placeholder="Username" class="form-control" id="username"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input Password-->
+
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+                <input  name="first_name" placeholder="Password" class="form-control" id="password"  type="password">
+              </div>
+            </div>
+          </div>
+
+          <!-- Button Login-->
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <button type="button" class="btn btn-success col-md-5 col-md-offset-4"  id="login">Login</button>
+            </div>
+          </div>
+          <!-- Button Registration-->
+          <div class="form-group">
+            <label class="col-sm-4 col-md-4 col-lg-4 control-label"></label>
+            <div class="col-sm-4 col-md-4 col-lg-4 inputGroupContainer">
+              <button type="button" class="btn btn-info col-sm-9 col-sm-offset-2 col-md-9 col-md-offset-2 col-lg-9 col-lg-offset-2"  id="gotoregistration">Go to registration</button>
+            </div>
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <div class="container posts">
+      <div class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="listposts">
+        <!-- <div class="entry">
+          <div class="author"><span class="glyphicon glyphicon-user"></span> Darwish</div>
+          <div class="time">3:12PM 1/20/2017</div>
+          <div class="message">What does 'this' do inside a click handler?</div>
+          <div class="replycount"><span>?</span> replies</div>
+          <div class="likecount col-md-offset-2"><span>?</span> likes</div>
+          <div class="controls">
+            <button class="hide-replies btn btn-default">Hide Replies</button>
+            <button class="show-replies btn btn-default">Show Replies</button>
+            <button class="reply btn btn-default">Reply</button>
+            <button class="like btn-btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+          </div>
+          <div class="replies"> -->
+            <!-- <div class="entry">
+              <div class="author"><span class="glyphicon glyphicon-user"></span> Moose</div>
+              <div class="time">3:12PM 1/20/2017</div>
+              <div class="message">It points to the element that was clicked</div>
+              <div class="controls">
+                <button class="hide-replies btn btn-default">Hide Replies</button>
+                <button class="show-replies btn btn-default">Show Replies</button>
+                <button class="reply btn btn-default">Reply</button>
+                <button class="like btn-btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+              </div>
+              <div class="replies">
+                <div class="entry">
+                  <div class="author"><span class="glyphicon glyphicon-user"></span> Darwish</div>
+                  <div class="time">3:12PM 1/20/2017</div>
+                  <div class="message">I don't get it</div>
+                  <div class="controls">
+                    <button class="hide-replies btn btn-default">Hide Replies</button>
+                    <button class="show-replies btn btn-default">Show Replies</button>
+                    <button class="reply btn btn-default">Reply</button>
+                    <button class="like btn-btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                  </div>
+                  <div class="replies">
+                    <div class="entry">
+                      <div class="author"><span class="glyphicon glyphicon-user"></span> Ricky</div>
+                      <div class="time">3:12PM 1/20/2017</div>
+                      <div class="message">Imagine you added the same click handler to 5 different buttons. When the click handler is called, how can you tell which button was clicked? "this" is the answer!</div>
+                      <div class="controls">
+                        <button class="hide-replies btn btn-default">Hide Replies</button>
+                        <button class="show-replies btn btn-default">Show Replies</button>
+                        <button type="submit" class="reply btn btn-default">Reply</button>
+                        <button class="like btn-btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                      </div>
+                      <input  name="reply" placeholder=" Your reply" class="replyinput" type="text">
+                      <div class="replies"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+      <div class="input-group post col-sm-3 col-sm-offset-4 col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4">
+        <div class="input-group-addon">
+          <button type="submit" class="btn btn-default">Post <span class="glyphicon glyphicon-pencil"></span></button>
+          <textarea class="form-control" rows:"3" id="projectDescription" placeholder="Comment"></textarea>
+        </div>
+        <!-- <textarea class="form-control" rows:"3" id="projectDescription" placeholder="Comment"></textarea> -->
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script
@@ -20,7 +212,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

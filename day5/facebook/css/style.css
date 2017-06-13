@@ -1,0 +1,65 @@
+ .loginPage {
+   display: flex;
+   justify-content: center;
+   background-image: url('/Users/jamietomlinson/Desktop/julia\ dabbing.jpg')
+ }
+
+ #signUpLog {
+   margin-top: 100px;
+ }
+
+
+ #loginForm {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+#emailLog {
+  margin-top: 100px;
+  border-radius: 10px;
+}
+
+#passwordLog {
+  border-radius: 10px;
+}
+
+.newsFeed {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+.status-container {
+  border-style: solid;
+}
+.replies-container {
+  border-style: solid;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  margin-bottom: 50px;
+}
+
+#likeBar {
+  padding-left: 275px;
+}
+
+.replyInfo {
+  display: flex;
+}
+
+#replyName {
+  margin-right: 10px;
+}
+
+.input-group1{
+    display: flex;
+}
+
+#postPosts{
+    width: 500px;
+}

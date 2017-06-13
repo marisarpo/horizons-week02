@@ -1,0 +1,29 @@
+/* selector for the wrapper - use this for positioning?*/
+.bg-wrapper {
+
+}
+
+.bg-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0, 0.25);
+}
+
+/* selector for the actual image - use this to control img dimensions*/
+.bg-wrapper > img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+}
+
+body {
+  font-family: "Helvetica";
+  color: white;
+}
+
+#time {
+    font-size: 192px;
+}

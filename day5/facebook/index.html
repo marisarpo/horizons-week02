@@ -6,12 +6,114 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div  class="container-fluid ">
+      <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <a class="navbar-brand" href="#">HoMaN</a>
+
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Friends</a>
+      </li>
+    </ul>
+    <div class="search">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <div class="logout">
+        <button class="btn btn-default login" id="logout">Logout</button>
+      </div>
+    </form>
+  </div>
+
+</nav>
+
+      <div class="login-screen hidden" id="login-screen">
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 col-md-offset-4 col-md-4">
+            <div class="login input-screen">
+              <div class="login-header"><h1>Login</h1></div>
+              <div class="form-group">
+                <input type="text" name="username" id="username-login" placeholder="Username">
+              </div>
+              <div class="form-group">
+              <input type="password" name="password" id="password-login" placeholder="Password">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-offset-1 col-sm-10 col-md-offset-5 col-md-2">
+            <div class="login-buttons">
+              <div class="button">
+                <button class="btn btn-default login" id="login-lpage">Login</button>
+              </div>
+              <div class="button">
+                <button class="btn btn-default register"id="register-lpage">Register</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="registration-screen ">
+        <div class="row">
+            <div class="col-sm-offset-1 col-sm-10 col-md-offset-4 col-md-4">
+              <div class="registration input-screen" id="registration-screen">
+                <div class="registration-header"><h1>Register SVP</h1></div>
+                <div class="form-group">
+                  <div class="registration-container">
+                    <input class="registration-input" type="text" placeholder="First Name" id="first-name-registration">
+                    <input class="registration-input" type="text" placeholder="Last Name" id="last-name-registration">
+                    <input class="registration-input" type="text" placeholder="Username" id="username-registration">
+                    <input class="registration-input" type="password" placeholder="Password" id="password-registration" value="">
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-sm-offset-1 col-sm-10 col-md-5">
+                    <div class="registration-buttons">
+                      <div class="button">
+                        <button class="btn btn-default register" id="register-rpage">Register</button>
+                      </div>
+                      <div class="button">
+                        <button class="btn btn-default login" id="login-rpage">Login</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-screen hidden" id="home-screen">
+      <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+            <div class="post-post">
+              <div class="form-group">
+                <input class="post-input" type="text" placeholder="Wasgood?" id="post-content">
+              </div>
+                <div class="button">
+                  <button class="btn btn-default register" id="post-btn">$Post$</button>
+              </div>
+            </div>
+            <div class="board">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 
     <!-- jQuery -->
     <script
@@ -20,7 +122,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

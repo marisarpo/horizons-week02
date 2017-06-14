@@ -1,0 +1,113 @@
+.red {
+  color: rgb(180,33,33);
+}
+
+.post-btn button{
+  margin: 20px;
+  background: rgba(0,30,87,0.6);
+}
+
+.post p {
+  padding-left: 20px;
+
+}
+
+.login {
+
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.registration{
+
+}
+
+.input-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-input {
+  margin: 10px;
+  border-radius: 3px;
+  border: 1px solid grey;
+}
+
+.registration-buttons {
+    width: 170px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.post-btn {
+  display: flex;
+  justify-content: center;
+  height: 60px;
+}
+
+.post {
+  border: 1px solid grey;
+  border-radius: 3px;
+}
+
+.post-writing {
+  padding: 7px;
+}
+
+.post-post {
+  margin: 10px;
+  border: 1px solid grey;
+  border-radius: 3px;
+  display: flex;
+  /*justify-content: center;*/
+  align-items: center;
+  flex-direction: column;
+}
+
+.post-input {
+  padding: 10px;
+  margin: 10px;
+  width: 330px;
+}
+
+#post-btn {
+  margin:10px;
+}
+
+.nav-item {
+  margin-top: 0px;
+  margin: 20px;
+  padding: 10px;
+}
+
+.navbar {
+  margin-top: 18px;
+}
+
+.navbar-brand {
+  margin-top: 5px;
+}
+
+.mr-auto {
+  height: 100px;
+  display: flex;
+}
+
+.search {
+  margin-top: 20px;
+}
+
+.form-inline{
+  display: flex;
+  justify-content: flex-end;
+}

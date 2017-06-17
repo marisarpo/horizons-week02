@@ -1,30 +1,178 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <!-- CSS files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Your css file -->
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- YOUR CODE HERE -->
+  <header>
+    <img class="[ img-circle pull-left ]" src="images/logo.png" alt="Mouse0270" height=40px width=40px />Horizons Facebook
+    <button id="logout">LOUGOUT</button>
+  </header>
+  <div class="container">
+    <div class="registration">
+      <div class="reg-title">New User Registration</div>
+      <form>
+        <input class="Firstname" placeholder="Firstname"><br>
+        <input class="Lastname" placeholder="Lastname"><br>
+        <input class="Username" placeholder="Username"><br>
+        <input class="Password" placeholder="Password"><br>
+        <button id="reg-button">Register</button></br>
+        <button class="login-button">Login</button>
+      </form>
+    </div>
+  </div>
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+  <div class="container login-container">
+    <div class="login">
+      <div class="login-title">Login</div>
+      <form>
+        <input class="Username2" placeholder="Username"><br>
+        <input class="Password2" placeholder="Password"><br>
+        <button class="login-button" id="acLog">Login</button></br>
+        <button>Go to Registration</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div class="container post-container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Update Status</h1>
+        <form action="" method="POST">
+          <div class="form-group">
+            <textarea rows="2" class="form-control" name="description" id="posttext" ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary" id='postbutton'>
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container" id='posts'>
+    <div class="row">
+      <!-- <div class="[ col-xs-12 col-sm-12 ]">
+        <div class="[ panel panel-default ] panel-google-plus">
+          <div class="dropdown">
+            <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+              <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+            </span>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="panel-google-plus-tags">
+            <ul>
+              <li>#Millennials</li>
+              <li>#Generation</li>
+            </ul>
+          </div>
+          <div class="panel-heading">
+            <img class="[ img-circle pull-left ]" src="images/logo.png" alt="Mouse0270" height=40px width=40px />
+            <h3>Kevin Spacey</h3>
+            <h5><span>Jun 07, 2017</span> </h5>
+          </div>
+          <div class="panel-body">
+            <p>Do people born in 2000 get to choose if they are Generation Y or Generation Z? How do you decide what generation you want to belong to?</p>
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="[ btn btn-default ]">22 Likes</button>
+            <button type="button" class="[ btn btn-default ]">
+              <span class="[ glyphicon glyphicon-share-alt ]"></span>
+            </button>
+            <div class="input-placeholder">Add a comment...</div>
+          </div>
+          <div class="panel-google-plus-comment">
+            <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
+            <div class="panel-google-plus-textarea">
+              <textarea rows="4"></textarea>
+              <button type="submit" class="[ btn btn-success disabled ]">Post comment</button>
+              <button type="reset" class="[ btn btn-default ]">Cancel</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="[ col-xs-12 col-sm-12 ]">
+        <div class="[ panel panel-default ] panel-google-plus">
+          <div class="dropdown">
+            <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+              <span class="[ glyphicon glyphicon-chevron-down ]"></span>
+            </span>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+              <li role="presentation" class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="panel-google-plus-tags">
+            <ul>
+              <li>#Horizons</li>
+            </ul>
+          </div>
+          <div class="panel-heading">
+            <img class="[ img-circle pull-left ]" src="images/logo.png" alt="Mouse0270" height=40px width=40px />
+            <h3>Ou Wang</h3>
+            <h5><span>Jun 09, 2017</span> </h5>
+          </div>
+          <div class="panel-body">
+            <p>Go Horizons!</p>
+          </div>
+          <div class="panel-footer">
+            <button type="button" class="[ btn btn-default ]">2 Likes</button>
+            <button type="button" class="[ btn btn-default ]">
+              <span class="[ glyphicon glyphicon-share-alt ]"></span>
+            </button>
+            <div class="input-placeholder">Add a comment...</div>
+          </div>
+          <div class="panel-google-plus-comment">
+            <img class="img-circle" src="https://lh3.googleusercontent.com/uFp_tsTJboUY7kue5XAsGA=s46" alt="User Image" />
+            <div class="panel-google-plus-textarea">
+              <textarea rows="4"></textarea>
+              <button type="submit" class="[ btn btn-success disabled ]">Post comment</button>
+              <button type="reset" class="[ btn btn-default ]">Cancel</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+
+
+  <!-- jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <!-- JavaScript files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+  <!-- underscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
 </html>

@@ -1,1 +1,43 @@
-/* ADD STYLES FOR PART 6 HERE */
+.finalSection{
+  background-color: #e4f0f6;
+  padding: 0;
+  clear: both;
+}
+
+.section{
+  padding-bottom: 5%;
+}
+
+.picture{
+  float: right;
+  margin-top: 2%;
+}
+
+.twoThirds{
+  box-sizing: border-box;
+  font-size: 16px;
+  padding-top: 8%;
+  margin-left: 20%;
+  margin-right: 40%;
+}
+
+.appStore{
+  margin-top: 3%;
+  margin-left: 20%;
+  padding: 5px;
+  display: inline-block;
+}
+
+.play{
+  padding: 7px;
+  display: inline-block;
+}
+
+.all{
+  color: #86d4fe;
+  font-size: 16px;
+  padding: 8px;
+  margin-bottom: 60px;
+  border: 1px solid;
+  border-radius: 5px;
+}

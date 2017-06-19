@@ -30,6 +30,8 @@ and Javascript libraries have already been included.
 - Keep the [specifications][specs] in front of you since you'll need
 it throughout the project.
 
+- **DISCLAIMER: You don't have to follow the instructions explicitly AND use Google as a resource for CSS questions**
+
 [specs]: ./SPECIFICATIONS.md
 
 ## Goal

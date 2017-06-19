@@ -58,7 +58,7 @@ alter the page layout above or below a certain threshold, e.g.:
 
 <sub>(Image Copyright w3schools.com)</sub>
 
-Open up the [skeleton HTML] file in your web browser and text editor.
+Open up the [skeleton HTML](skeleton/index.html) file in your web browser and text editor.
 Try shrinking the browser window down to the width of a mobile phone
 and see how the page currently responds. Notice how the padding
 around each of the page sections--which looks fine at large

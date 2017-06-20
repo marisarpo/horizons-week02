@@ -13,9 +13,110 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      
+      <h1><center><small>Billing Information</small></h1>
+
+      <div class="form-group">
+        <label for="Username" class="col-xs-4 control-label">Username</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-user"></div>
+          <input type="text" class="form-control" id="Username" placeholder="Username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Password" class="col-xs-4 control-label">Password</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-user"></div>
+          <input type="text" class="form-control" id="Password" placeholder="Password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="DateOfBirth" class="col-xs-4 control-label">Date of Birth</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-off"></div>
+          <input type="date" class="form-control" id="DateOfBirth" placeholder="yyyy-mm-dd">
+        </div>
+      </div>  
+
+      <div class="form-group">
+        <label for="ZipCode" class="col-xs-4 control-label">Zip Code</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-home"></div>
+          <input type="text" class="form-control" id="ZipCode" placeholder="Zip Code">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="State" class="col-xs-4 control-label">State</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-list"></div>
+            <select class="form-control" id="State">
+              <option>Please select your state</option>
+              <option>California</option>
+              <option>Connecticut</option>
+              <option>Nevada</option>
+              <option>Tennessee</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="PaymentType" class="col-xs-4 control-label">Payment Type</label>
+        <div class="input-group">
+          <div class="radio">
+            <label>
+              <input type="radio">
+              Visa
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio">
+              Mastercard
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Card#" class="col-xs-4 control-label">Card #</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-credit-card"></div>
+          <input type="text" class="form-control" id="Card#" placeholder="0000 0000 0000 0000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="Expiry" class="col-xs-4 control-label">Expiry</label>
+        <div class="col-xs-3">
+          <input type="text" class="form-control" id="Expiry" placeholder="MM/YYYY">
+        </div>
+        <label for="CVC" class="col-xs-1 control-label">CVC</label>
+        <div class="col-xs-1">
+          <input type="text" class="form-control" id="CVC" placeholder="000">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="ProjectDescription" class="col-xs-4 control-label">Project Description</label>
+        <div class="input-group col-xs-5">
+          <div class="input-group-addon glyphicon glyphicon-pencil"></div>
+          <textarea class="form-control" id="ProjectDescription" rows="3" placeholder="Project Description">
+          </textarea>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-success col-xs-offset-4">
+          Send
+          <span class="glyphicon glyphicon-send"</span>
+        </button>
+      </div>
+    
+      </div>
     </form>
   </div>
 </div><!-- /.container -->

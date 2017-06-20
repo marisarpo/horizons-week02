@@ -1,9 +1,21 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background-color: gray;
+    padding: 0;
+    margin: 0;
     text-align: center;
 }
 
-.title {
-    color: purple;
+.bluebar{
+	color: #1d2129;
+	background-color: #3b5998;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin: 0px;
+	direction: ldr;
+	display: block;
+	font-family: Helvetica Neue, Arial, sans-serif;
+	font-size: 12px;
+	height: 83px;
+	line-height: 16.08px;
+	width: 661px;
 }
-

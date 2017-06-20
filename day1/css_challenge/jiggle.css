@@ -1,0 +1,37 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:700);
+
+body {
+  background-color: black;
+  text-align: center;
+  color: white
+}
+
+p { 
+  position: relative;
+  margin-top: 40vh;
+}
+
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 2px 2px #000000;
+  display: inline-block;
+  font-size: 20px;
+  letter-spacing: 5px;
+}
+
+.anim {
+  animation: jiggle 2s ease-in infinite;
+}
+
+@keyframes jiggle {
+  25%, 40%, 50% { transform: scale(1.0, 1.0) }
+  30%, 42% { transform: scale(1.1, 0.9) }
+  33%, 44% { transform: scale(0.9, 1.1) translate(0, -5px) }
+  37%, 46% { transform: scale(1.0, 1.0) translate(0, -3px) }
+}

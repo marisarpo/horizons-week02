@@ -16,11 +16,42 @@
 
 <body>
   <div class="container">
+    <center><h1>Login to Horizons</h1>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+      Login
+    </button>
+
+    <div class="modal fade" id="myModal" role="dialog" tabindex="-1" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content col-xs-offset-2 col-xs-8">
+          <div class="modal-header">
+
+            <div class="form-group">
+              <h2 class="modal-title">Login</h2>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon glyphicon glyphicon-user"></div>
+                <input type="text" class="form-control" id="Username" placeholder="Username">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="input-group">
+                <div class="input-group-addon glyphicon glyphicon-user"></div>
+                <input type="text" class="form-control" id="Password" placeholder="Password">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- /.container -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>
-
 
 </body>
 </html>

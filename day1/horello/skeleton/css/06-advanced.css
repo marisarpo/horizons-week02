@@ -1,1 +1,45 @@
 /* ADD STYLES FOR PART 6 HERE */
+.final-stage {
+	background-color: #e4f0f6;
+	overflow: hidden;
+}
+div {
+	display: block;
+}
+.layout-grid-frame {
+	position: relative;
+    max-width: 890px;
+    margin: 0 auto;
+}
+.layout-callout-right {
+	position: absolute;
+	top: -60px;
+	left: 640px;
+	max-width: initial;
+}
+
+.layout-twothirds-left {
+	margin-left: 250px;
+	max-width: 585px; 
+}
+.outline-link {
+    border: 1px solid;
+    border-radius: 0.3em;
+    padding: .7em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+}
+
+a {
+	color: #5e98ba;
+}
+.app-store-link {
+    display: inline-block;
+    vertical-align: top;
+    margin: .4em 1em 0 0;
+    padding: 0;
+   
+}
+.app-store-link img {
+	height: 54px; 
+}

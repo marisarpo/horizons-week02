@@ -2,6 +2,20 @@ body {
     text-align: center;
 }
 
+footer{
+  font-family: arial;
+  margin-top: 100%;
+  text-align: left;
+}
+
+footer p{
+  display: inline-block;
+  vertical-align: text-top;
+  text-align: left;
+  font-size: 18px;
+  padding-right: 5%;
+}
+
 .title {
     color: purple;
 }

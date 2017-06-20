@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
   <meta charset="UTF-8">
   <title>Bootstrap Form Exercise</title>
@@ -13,15 +14,164 @@
 
 <body>
   <div class="container">
+    <div class="row">
+      <form class="form-horizontal">
+        <h1 class="col-xs-offset-5">Billing Information</h1>
+        <!--Username-->
+        <div class="form-group">
+          <label for="inputUsername" class="col-sm-4 control-label">Username</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="email" class="form-control" id="inputUsername" placeholder="Username">
+          </div>
+        </div>
+        <!--Password-->
+        <div class="form-group">
+          <label for="inputPassword" class="col-sm-4 control-label">Password</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <!--DOB-->
+        <div class="form-group">
+          <label for="inputDOB" class="col-sm-4 control-label">Date of Birth</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+            <input type="date" class="form-control" id="inputDOB" placeholder="yyyy-mm-dd">
+          </div>
+        </div>
+        <!--Zip Code-->
+        <div class="form-group">
+          <label for="inputZipCode" class="col-sm-4 control-label">Zip Code</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input type="text" class="form-control" id="inputZipCode" placeholder="Zip Code">
+          </div>
+        </div>
+        <!--State-->
+        <div class="form-group">
+          <label for="inputState" class="col-sm-4 control-label">State</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
+            <select class="form-control">
+              <option>Please Select Your State</option>
+              <option>Alabama</option>
+	            <option>Alaska</option>
+            	<option>Arizona</option>
+            	<option>Arkansas</option>
+            	<option>California</option>
+            	<option>Colorado</option>
+            	<option>Connecticut</option>
+            	<option>Delaware</option>
+            	<option>District Of Columbia</option>
+            	<option>Florida</option>
+            	<option>Georgia</option>
+            	<option>Hawaii</option>
+            	<option>Idaho</option>
+            	<option>Illinois</option>
+            	<option>Indiana</option>
+            	<option>Iowa</option>
+            	<option>Kansas</option>
+            	<option>Kentucky</option>
+            	<option>Louisiana</option>
+            	<option>Maine</option>
+            	<option>Maryland</option>
+            	<option>Massachusetts</option>
+            	<option>Michigan</option>
+            	<option>Minnesota</option>
+            	<option>Mississippi</option>
+            	<option>Missouri</option>
+            	<option>Montana</option>
+            	<option>Nebraska</option>
+            	<option>Nevada</option>
+            	<option>New Hampshire</option>
+            	<option>New Jersey</option>
+            	<option>New Mexico</option>
+            	<option>New York</option>
+            	<option>North Carolina</option>
+            	<option>North Dakota</option>
+            	<option>Ohio</option>
+            	<option>Oklahoma</option>
+            	<option>Oregon</option>
+            	<option>Pennsylvania</option>
+            	<option>Rhode Island</option>
+            	<option>South Carolina</option>
+            	<option>South Dakota</option>
+            	<option>Tennessee</option>
+            	<option>Texas</option>
+            	<option>Utah</option>
+            	<option>Vermont</option>
+            	<option>Virginia</option>
+            	<option>Washington</option>
+            	<option>West Virginia</option>
+            	<option>Wisconsin</option>
+            	<option>Wyoming</option>
+            </select>
+          </div>
+        </div>
+        <!--Card Type-->
+        <div class="form-group">
+          <label for="inputPayment" class="col-sm-4 control-label">Payment Type</label>
+          <div class="col-sm-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Visa
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                Mastercard
+              </label>
+            </div>
+          </div>
+        </div>
+        <!--Card Number-->
+        <div class="form-group">
+          <label for="inputCardNumber" class="col-sm-4 control-label">Card #</label>
+          <div class="col-sm-5 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+            <input type="text" class="form-control" id="inputCardNumber" placeholder="0000 0000 0000 0000">
+          </div>
+        </div>
+        <!--Expiration Number-->
+        <label for="inputExpiration" class="col-sm-4 control-label">Expiration</label>
+        <div class="inputGroupContainer col-sm-2" style="padding:0;">
+          <div class="input-group">
+            <input type="expiration" class="form-control" id="inputExpiration" placeholder="MM/YYYY">
+          </div>
+        </div>
+        <label for="inputCVC" class="col-sm-2 control-label">CVC</label>
+        <div class="inputGroupContainer col-sm-1" style="padding-right:0;">
+          <div class="input-group">
+            <input type="CVC" class="form-control" id="inputCVC" placeholder="000">
+          </div>
+        </div>
+    </div>
+    <!--Project Description-->
+    <div class="form-group">
+      <label for="inputDescription" class="col-sm-4 control-label">Project Description</label>
+      <div class="col-sm-5 input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+        <textarea type="projectDescription" class="form-control" id="inputDescription" placeholder="Project Description" rows="3"></textarea>
+      </div>
+    </div>
 
-    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+    <button type="button" class="btn btn-warning col-xs-offset-4">Send
+          <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+        </button>
     </form>
   </div>
-</div><!-- /.container -->
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+  </div>
+  </div>
+  <!-- /.container -->
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
 
+  </nav>
 
 </body>
+
 </html>

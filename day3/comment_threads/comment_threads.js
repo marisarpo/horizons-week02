@@ -1,7 +1,7 @@
 "use strict";
 
 // This file contains JavaScript that will run on your page.
-
+//hides the show button
 $('.show-replies').hide();
 
 //creates a function that will creates and fill the divs
@@ -11,36 +11,16 @@ var createComment = function() {
   var commentString = prompt('Enter your comment');
 
   //creates the new divs
-  var commentDiv = $('<div class="comment">');
-  var authorDiv = $('<div class="author">');
-  var messageDiv = $('<div class="message">');
-  var controlsDiv = $('<div class="controls">');
-  var repliesDiv = $('<div class="replies">');
-
-  //creates new buttons
-  var hideRepliesButton = $('<button class="hide-replies btn btn-default">');
-  var showRepliesButton = $('<button class="show-replies btn btn-default">');
-  var replyButton = $('<button class="reply btn btn-default">');
-
-  //fills the divs with text
-  authorDiv.text('"' + nameString + '" says:');
-  messageDiv.text(commentString);
-
-  //fills the buttons with text
-  hideRepliesButton.text('Hide Replies');
-  showRepliesButton.text('Show Replies');
-  replyButton.text('Reply');
-
-  //appends the divs to the comment div
-  commentDiv.append(authorDiv);
-  commentDiv.append(messageDiv);
-  commentDiv.append(controlsDiv);
-  commentDiv.append(repliesDiv);
-
-  //appends the buttons to the controlsDiv
-  controlsDiv.append(hideRepliesButton);
-  controlsDiv.append(showRepliesButton);
-  controlsDiv.append(replyButton);
+  var commentDiv = `<div class="comment">
+  <div class="author">"${nameString}" says:</div>
+  <div class="message">${commentString}</div>
+  <div class="controls">
+      <button class="hide-replies btn btn-default">Hide Replies</button>
+      <button class="show-replies btn btn-default">Show Replies</button>
+      <button class="reply btn btn-default">Reply</button>
+    </div>
+    <div class="replies"></div>
+  </div>`
 
   return commentDiv;
 }
@@ -50,8 +30,9 @@ $('.post').on('click', function() {
   //invokes and catches the return value of the create comment method
   var commentDiv = createComment();
 
-  //adds the new post
+  //adds the new post and hides the show button
   $('div .comments').append(commentDiv)
+  $('.show-replies').hide();
 })
 
 //reply button event handler
@@ -59,10 +40,15 @@ $('.comments').on('click', '.reply', function() {
   //invokes and catches the return value of the create comment method
   var appendedCommentDiv = createComment();
 
+  //find the comment that called hide replies
   var $this = $(this);
   var commentDiv = $this.closest('.comment');
   var repliesDiv = commentDiv.children('.replies');
   repliesDiv.append(appendedCommentDiv);
+
+  //hides the show button
+  $('.show-replies').hide();
+
 })
 
 //hide button event handler

@@ -16,6 +16,47 @@
 
 <body>
   <div class="container">
+    <center>
+      <h1>Login to Horizons</h1>
+      <button class="btn btn-primary" data-toggle="modal" data-target=".login">Login</button>
+    </center>
+
+    <div class="modal fade login" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <center><h4 class="modal-title">Login</h4></center>
+          </div>
+          <div class="modal-body">
+            <form class="form-horizontal" action=" " method="post"  id="contact_form">
+              <div class="form-group row">
+                <label for="username" class="control-label col-sm-4">Username</label>
+                <div class="col-sm-5">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="password" class="control-label col-sm-4">Password</label>
+                <div class="col-sm-5">
+                  <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></div>
+                    <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
   </div><!-- /.container -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,13 +14,30 @@
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
 <body>
   <header>
-    <a class="header-logo"
-    href="#"><span class="header-logo-default"></span></a>
+    <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
   </header>
 
-  <!-- PART 5. Modal -->
+  <div class="modal fade" id="cardEdit">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true"></span></button>
+          <input type="text" class="form-control" value="Today we will #DominateAllTheHouses">
+        </div>
+        <div class="modal-body">
+          <h5>Description</h5>
+          <textarea class="form-control" rows="5" placeholder="Card body goes here"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="board">
     <div class="list-container">
@@ -28,7 +46,9 @@
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
+          <div class="card" data-toggle="modal" data-target="#cardEdit">
+            <span class="card-more">
+            <span class="glyphicon glyphicon-align-left"></span></span>
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
@@ -36,16 +56,40 @@
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
-          <!-- PART 4. Collapse -->
+          <button class="add-card" type="button" data-toggle="collapse" data-target="#collapseCard">Add a card</button>
+          <div class="collapse" id="collapseCard">
+            <div class="well add-card-form">
+              <div class="form-group" style="padding:0px; margin-bottom:0px">
+                <input type="text" class="form-control" placeholder="Card Name">
+              </div>
+              <div class="form-group" style="padding:0px; margin-bottom:0px">
+                <button type="button" class="btn btn-default">Save</button>
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div class="add-list-container">
+      <button class="add-list" type="button" data-toggle="collapse" data-target="#collapseList">Add a list...</button>
+      <div class="collapse" id="collapseList">
+        <div class="well add-list-form">
+          <div class="form-group" style="padding:0px; margin-bottom:0px">
+            <input type="text" class="form-control" placeholder="List Name">
+          </div>
+          <div class="form-group" style="padding:0px; margin-bottom:0px">
+            <button type="button" class="btn btn-default">Save</button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
 </body>
+
 </html>

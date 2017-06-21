@@ -62,13 +62,15 @@ $('.comments').on('click', '.hide-replies', function() {
   repliesDiv.hide();
   showButton.show();
   hideButton.hide();
-  if (count > 0) {
-    if (count > 1)
-      alert('You hid ' + count + ' comments.');
-    else {
-      alert('You hid ' + count + ' comment.');
+  setTimeout(function() {
+    if (count > 0) {
+      if (count > 1)
+        alert('You hid ' + count + ' comments.');
+      else {
+        alert('You hid ' + count + ' comment.');
+      }
     }
-  }
+  }, 10);
 });
 
 $('.comments').on('click', '.show-replies', function() {

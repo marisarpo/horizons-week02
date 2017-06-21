@@ -9,31 +9,16 @@ var createComment = function() {
   var nameString = prompt('Enter your name');
   var commentString = prompt('Enter your comment');
 
-  var commentDiv = $('<div class="comment">');
-  var authorDiv = $('<div class="author">');
-  var messageDiv = $('<div class="message">');
-  var controlsDiv = $('<div class="controls">');
-  var repliesDiv = $('<div class="replies">');
-
-  var hideReplyBtn = $('<button class="hide-replies btn btn-default">');
-  var showReplyBtn = $('<button class="show-replies btn btn-default">');
-  var replyBtn = $('<button class="reply btn btn-default">');
-
-  hideReplyBtn.text('Hide Replies');
-  showReplyBtn.text('Show Replies');
-  replyBtn.text('Reply');
-
-  authorDiv.text('"' + nameString + '" says:');
-  messageDiv.text(commentString);
-
-  commentDiv.append(authorDiv);
-  commentDiv.append(messageDiv);
-  commentDiv.append(controlsDiv);
-  commentDiv.append(repliesDiv);
-
-  controlsDiv.append(hideReplyBtn);
-  controlsDiv.append(showReplyBtn);
-  controlsDiv.append(replyBtn);
+  var commentDiv = `<div class="comment">
+                      <div class="author">"${nameString}" says:</div>
+                      <div class="message">${commentString}</div>
+                      <div class="controls">
+                        <button class="hide-replies btn btn-default">Hide Replies</button>
+                        <button class="show-replies btn btn-default">Show Replies</button>
+                        <button class="reply btn btn-default">Reply</button>
+                      </div>
+                        <div class="replies"></div>
+                      </div>`;
 
   return commentDiv;
 }
@@ -41,6 +26,7 @@ var createComment = function() {
 $('.post').on('click', function() {
   var commentDiv = createComment();
   $('div .comments').append(commentDiv);
+  $('.show-replies').hide();
 });
 
 $('.comments').on('click', '.reply', function() {
@@ -49,6 +35,7 @@ $('.comments').on('click', '.reply', function() {
   var commentDiv = $this.closest('.comment');
   var repliesDiv = commentDiv.children('.replies');
   repliesDiv.append(appendedCommentDiv);
+  $('.show-replies').hide();
 });
 
 $('.comments').on('click', '.hide-replies', function() {

@@ -66,12 +66,12 @@ function renderList(list) {
                           </div>
                         </div>
                       </div>`;
-  $('.board').append($(listWrapper));
+  $('#boardAnchor .board').append($(listWrapper));
 }
 
 function renderCard(card) {
   // YOUR CODE HERE
-  var cardWrapper = ` <div id="${card.id}" class="card" data-card-desc="${card.description}" data-card-name="${card.name}" data-list-id="${card.idList}" data-card-id="${card.id}">
+  var cardWrapper = ` <div id="${card.id}" class="card" data-card-desc="${card.desc}" data-card-name="${card.name}" data-list-id="${card.idList}" data-card-id="${card.id}">
                         <div class="card-body">
                           ${card.name}
                         </div>

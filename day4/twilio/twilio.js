@@ -20,9 +20,9 @@ window.twilio = {};
 //
 // When you have all this information, please replace them in the variables down there.
 
-twilio.accountId = "YOUR ACCOUNT ID HERE";
-twilio.authToken = "YOUR AUTH TOKEN HERE";
-twilio.fromNumber = "YOUR TWILIO NUMBER HERE";
+twilio.accountId = "AC3cd28f6e4c140cd3c397b81d420a531b";
+twilio.authToken = "3b7c5ceb000716aa8d74193fbad0a076";
+twilio.fromNumber = "+19712386045";
 
 
 twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
@@ -39,23 +39,30 @@ twilio.TwilioShoutout = function(accountId, authToken, fromNumber) {
   this.messageSendButton = $(".message-input-button");
 
   // Set up the event handlers
-  this.initialize();
-
-  // Notify user
-  console.log("TwilioMessenger is ready.");
+  this.initialize()
+  console.log("TwilioMessenger is ready.")
 };
 
-twilio.TwilioShoutout.prototype = {
+
+twilio.TwilioShoutout.prototype = {//F2start
   // Exercise 1. `initialize()` method
-  // Implement the initialize method. The initialize method is called when the TwilioApp class is instantiated.
-  // It should set up a click handler for `messageSendButton`, and fire `this.handleMessageSend` .
+  // Implement the initialize method. The initialize method is called when the
+  //TwilioApp class is instantiated.
+  // It should set up a click handler for `messageSendButton`,
+  //and fire `this.handleMessageSend` .
 	//
-  // hint. remember about context and maybe .bind()? you should, you'll run into some problems if you don't use the right context.
+  // hint. remember about context and maybe .bind()? you should, you'll run
+  //into some problems if you don't use the right context.
   initialize: function() {
-    // YOUR CODE HERE
+    var thisthis=$(this);
+    $('#send').on('click',function(){
+      thisthis.handleMessageSend()// Notify user
+
+   })// YOUR CODE HERE
   },
   // Exercise 2. `clearField(jqField<JQuery Element>)` method
-  // Write a function that takes a JQuery input fields and clears the text inside it. It should not return anything.
+  // Write a function that takes a JQuery input fields and clears the text
+  //inside it. It should not return anything.
   //
 	// hint. use $.trim(), see https://api.jquery.com/jQuery.trim/
   // hint. what does it mean to `clear` a field? Set it to an empty string.
@@ -64,7 +71,8 @@ twilio.TwilioShoutout.prototype = {
     // YOUR CODE HERE
   },
   // Exercise 3. `validateMessageField(textStr<String>)` method
-  // Write a function that validates the message input field. It should return true if the `validateMessageField` passes these conditions:
+  // Write a function that validates the message input field. It should
+  //return true if the `validateMessageField` passes these conditions:
   // (1) The field should not be a blank string ("")
   // (2) The field should not be an 'empty' string ("           ")
   //

@@ -1,9 +1,12 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
 }
 
 .title {
     color: purple;
+    float:left;
 }
 
+.navbar{
+  float: right;
+}

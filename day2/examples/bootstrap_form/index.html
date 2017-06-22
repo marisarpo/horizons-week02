@@ -13,9 +13,123 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+<!-- copy -->
+<h1><center>Billing Information</h1>
+  <!-- username -->
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Username</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+          <span class="input-group-addon"><h class="glyphicon glyphicon-user" aria-hidden="true"></h></span>
+       <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+     </div>
+    </div>
+  </div>
+<!-- password -->
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Password</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+       <span class="input-group-addon"><h class="glyphicon glyphicon-user" aria-hidden="true"></h></span>
+       <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+     </div>
+    </div>
+  </div>
+<!-- date of birth -->
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Date of Birth</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+       <span class="input-group-addon"><h class="glyphicon glyphicon-pencil" aria-hidden="true"></h></span>
+       <input class="form-control" id="date" type="date" placeholder="yyyy-mm-dd" aria-describedby="basic-addon1" >
+     </div>
+    </div>
+  </div>
+<!-- zip-->
+<div class="form-group">
+  <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Zip Code</label>
+  <div class="col-sm-6">
+    <div class="input-group">
+     <span class="input-group-addon"><h class="glyphicon glyphicon-home"></h></span>
+     <input type="text" class="form-control" placeholder="Zip Code">
+   </div>
+  </div>
+</div>
+  <!-- state -->
+ <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">State</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+       <span class="input-group-addon"><h class="glyphicon glyphicon-list" aria-hidden="true"></h></span>
+       <select class="dropdown form-control" placeholder="Please select your state" aria-describedby="basic-addon1">
+         <option>1</option>
+         <option>2</option>
+         <option>3</option>
+         <option>4</option>
+         <option>5</option>
+       </select>
+
+     </div>
+    </div>
+  </div>
+<!-- payment -->
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 col-sm-offset-1 control-label">Payment Type</label>
+    <div class="col-sm-6">
+      <label class="radio-inline col-sm-10">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Visa </input>
+      </label>
+      <label class="radio-inline col-sm-10" style="margin-left:0px">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> MasterCard </input>
+      </label>
+    </div>
+  </div>
+<!-- card-->
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Card #</label>
+    <div class="col-sm-6">
+      <div class="input-group">
+       <span class="input-group-addon"><h class="glyphicon glyphicon-home"></h></span>
+       <input type="text" class="form-control" placeholder="0000 0000 0000 0000">
+     </div>
+    </div>
+  </div>
+<!-- expiry cvc-->
+  <div class="form-group">
+    <label for="inputEmail3" class="col-sm-2 col-sm-offset-1 control-label">Expiry</label>
+    <div class="col-sm-3">
+      <div class="input-group">
+       <span class="input-group-addon"><h class="glyphicon glyphicon-home"></h></span>
+       <input type="text" class="form-control" placeholder="MM/YYYY">
+     </div>
+    </div>
+    <label for="inputEmail3" class="col-sm-1 control-label">CVC</label>
+    <div class="col-sm-2 ">
+      <div class="input-group">
+       <input type="text" class="form-control" placeholder="000">
+     </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Visa
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- send button -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Send</button>
+    </div>
+  </div>
+<!-- paste -->
     </form>
   </div>
 </div><!-- /.container -->

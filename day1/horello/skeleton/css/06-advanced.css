@@ -1,1 +1,44 @@
-/* ADD STYLES FOR PART 6 HERE */
+.devices{
+  margin: auto;
+  float: right;
+  }/* ADD STYLES FOR PART 6 HERE */
+
+.background{
+  background-color: #e4f0f6;
+ overflow: hidden;
+}
+
+section {
+    clear: both;
+}
+
+.device{
+  background: lightblue;
+}
+
+.devices{
+    max-width: initial;
+    height: auto;
+}
+
+.seeall{
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0;
+  display: inline-block;
+}
+
+a {
+    color: #5e98ba;
+}
+
+.layoutframe{
+  position: relative;
+  max-width: 890px;
+  margin: 0 auto
+}
+
+div {
+    display: block;
+}

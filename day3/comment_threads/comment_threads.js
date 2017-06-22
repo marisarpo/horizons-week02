@@ -70,10 +70,3 @@ $('.comments').on('click', '.replies-view', function() {
 
   }
 })
-
-/*$('.comments').on('click', '.show-replies', function() {
-  var $this = $(this);
-  var commentDiv = $this.closest('.comment');
-  var repliesDiv = commentDiv.children('.replies');
-  $(repliesDiv).show();
-})*/

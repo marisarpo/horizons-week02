@@ -28,23 +28,66 @@
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
+          <div class="card" data-toggle="modal" data-target= "#modalid">
             <div class="card-body">
               Today we will #DominateAllTheHouses
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+            </div>
+          <div class="modal fade" id="modalid" >
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  hello
+                </div>
+              </div>
             </div>
           </div>
         </div>
         <div class="list-footer">
+          <div class= "column">
           <!-- PART 2. Add card button -->
-
           <!-- PART 4. Collapse -->
+<!--           <button class="btn btn-primary add-card" type="button" data-toggle="collapse" data-target="#cardTitle" aria-expanded="false" aria-controls="cardTitle">
+              Add card
+            </button>
+            <div class="collapse" id="cardTitle">
+              <div class="well"> -->
+                  <!-- <button class="btn btn-default" type="button">
+                    Save
+                  </button>
+                  <button class="btn btn-default" type="button">
+                    <span class="glyphicon glyphicon-remove" type="button">
+                  </button> -->
+                  <button class="list-button add-card"
+                        data-toggle="collapse"
+                        href="#addCard1">Add a card...
+                  </button>
+                <div class="collapse" id="addCard1">
+                    <div class="well add-card-form">
+                        <input type="text" class="form-control"
+                               placeholder="Card title">
+                        <button type="button" class="btn btn-default">
+                            Save
+                        </button>
+                        <button type="button"
+                                class="btn btn-default"><span
+                                class="glyphicon glyphicon-remove"></span>
+                        </button>
+                    </div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
-
+    <div class="flexbox">
+      <div class="add-list-container">
+          <button type = "button" class = "add-list">
+            Add a list...
+        </button>
+    </div>
+    </div>
   </div>
 
 </body>

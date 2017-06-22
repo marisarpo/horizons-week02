@@ -1,8 +1,18 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    
 }
 
+.logo_homepage, .header__logo, {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin: auto;
+    display: block;
+    position: relative;
+    text-align: center;
+    color: transparent;
+    text-indent: -9999px;
+    font-size: 0px;
+}
 .title {
     color: purple;
 }

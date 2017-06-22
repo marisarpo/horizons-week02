@@ -83,4 +83,16 @@ function setEventListeners() {
     e.stopPropagation();
     $('#cardEdit').modal('toggle', $(this));
   });
+
+  $('.board').on('click', '.delete-card', function(e) {
+    e.stopPropagation();
+    var cardId = $(this).parent().attr('data-card-id');
+    deleteCard(cardId);
+  })
+
+  $('.board').on('click', '.remove-list', function(e) {
+    e.stopPropagation();
+    var listId = $(this).parent().parent().attr('data-list-id');
+    archiveList(listId);
+  })
 }

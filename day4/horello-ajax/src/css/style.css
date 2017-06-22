@@ -159,7 +159,7 @@ a {
 
 .card-body {
     display: block;
-    padding: .5em .5em 2em;
+    padding: .1em .5em 2em;
     font-family: Cabin,Arial,sans-serif;
     font-size: 16px;
     line-height: 1.5em;
@@ -181,4 +181,14 @@ a {
 
 .add-card-form input {
     margin-bottom: 5px;
+}
+
+.delete-card {
+  margin-left: 240px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.list-header .glyphicon-remove {
+  float:right;
 }

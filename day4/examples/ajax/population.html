@@ -13,7 +13,7 @@
     <p>jQuery is already loaded on this page. You should use it.</p>
 
     <ol>
-      <li>Write you solution in the <code>script</code> tags at the bottom of this file (<code>/week02/day4/examples/ajax/population.html</code>).</li>
+      <li>Write your solution in the <code>script</code> tags at the bottom of this file (<code>/week02/day4/examples/ajax/population.html</code>).</li>
       <li>Open <a href="http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json">http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json</a> to check out what our data looks like.</li>
       <li>Load this data on this page using <code>$.ajax()</code>.</li>
       <li>Find out which city is the largest by population.</li>
@@ -23,9 +23,14 @@
 
     <script>
       // YOUR CODE HERE
-
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          resp.sort(function(a, b) {
+            return a["Population"] - b["Population"];
+          })
+          $('#out').text(resp[resp.length - 1][ "City / Urban area"]);
+        }
       });
     </script>
   </body>

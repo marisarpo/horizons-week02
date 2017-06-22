@@ -26,6 +26,42 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $('#products').html('<ul><ul>');
+      $.ajax({
+        url:"https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(resp) {
+        //  console.log(resp);
+          var objs = [];
+          for (var i = 0; i < resp.length; i++) {
+            $.ajax({
+              url: resp[i]['url'],
+              success: function(resp) {
+                var name = '';
+                var price = 0;
+                if (resp['name'].indexOf('<') !== -1) {
+                  name = resp['name'].substring(0, resp['name'].indexOf('<'));
+                } else {
+                  name = resp['name'];
+                }
+                price = resp['priceCents']/100;
+                if (objs.length === 0) {
+                  $('#products').append(`<li id='${resp.id}'>${name}, $${price}</li>`);
+                  console.log('first: ' + resp['name']);
+                } else {
+                  if (resp['priceCents'] > objs[objs.length - 1]['priceCents']) {
+                    console.log("first if: " + resp['name']);
+                    $('#' + objs[objs.length - 1].id).after(`<li id='${resp.id}'>${name}, $${price}</li>`);
+                  } else {
+                    console.log("second if: " + resp['name']);
+                    $('#' + objs[objs.length - 1].id).before(`<li id='${resp.id}'>${name}, $${price}</li>`);
+                  }
+                }
+                objs.push(resp);
+              }
+            })
+          }
+        }
+      })
     </script>
   </body>
 </html>

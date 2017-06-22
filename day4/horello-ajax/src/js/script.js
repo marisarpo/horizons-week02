@@ -2,28 +2,66 @@
 // for the Horello AJAX (DAY 4) exercise.
 
 $(document).ready(function() {
+  $.ajaxSetup({
+    data: {
+      key: apiKey,
+      token: apiToken
+    },
+    error: function(err) {
+      alert('Something went wrong! See console for more details.');
+      console.log(err);
+    }
+  });
   setEventListeners();
   render();
+  setInterval(render, 30000);
 });
 
 function createList(listName) {
-  // YOUR CODE HERE
+  $.ajax(`https://api.Trello.com/1/lists`, {
+    method: 'POST',
+    data: {
+      name: listName,
+      idBoard: boardId
+    },
+    success: function(resp) {
+      render();
+    }
+  });
 }
 
 function createCard(name, listId) {
   // YOUR CODE HERE
+  $.ajax(`https://api.Trello.com/1/cards`, {
+    method: 'POST',
+    data: {
+      name: name,
+      idList: listId
+    },
+    success: function(resp) {
+      render();
+    }
+  });
 }
 
 function updateCard(title, desc, cardId) {
   // YOUR CODE HERE
+  $.ajax(`https://api.Trello.com/1/cards/${cardId}`, {
+    method: 'PUT',
+    data: {
+      name: title,
+      desc: desc
+    },
+    success: function(resp) {
+      render();
+    }
+  });
 }
 
 function render() {
   // YOUR CODE HERE
   $.ajax(`https://api.Trello.com/1/boards/${boardId}`, {
     data: {
-      key: apiKey,
-      token: apiToken,
       cards: 'all',
       lists: 'all'
     },
@@ -37,7 +75,6 @@ function renderBoard(board) {
   // YOUR CODE HERE
   $('#boardAnchor').empty();
   $('#boardAnchor').append(`<div id="${boardId}" class="board"></div>`);
-  debugger;
   board.lists.forEach(function(listObj) {
     renderList(listObj);
   });
@@ -76,5 +113,6 @@ function renderCard(card) {
                           ${card.name}
                         </div>
                       </div>`;
-  // $('.list-cards').append();
+
+  $(`#${card.idList} .list-cards`).append(cardWrapper);
 }

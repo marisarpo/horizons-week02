@@ -58,7 +58,7 @@ alter the page layout above or below a certain threshold, e.g.:
 
 <sub>(Image Copyright w3schools.com)</sub>
 
-Open up the [skeleton HTML] file in your web browser and text editor.
+Open up the [skeleton HTML](skeleton/index.html) file in your web browser and text editor.
 Try shrinking the browser window down to the width of a mobile phone
 and see how the page currently responds. Notice how the padding
 around each of the page sections--which looks fine at large
@@ -252,7 +252,7 @@ Screenshots:
 
 In this final Part, you're going to get a taste of the power of
 Bootstrap to help build interactive, responsive user
-interfaces--something we will rely heavily upon over the next few days
+interfaces &mdash; something we will rely heavily upon over the next few days
 to build a real web app. Take a look at the Bootstrap [Components] to
 get an idea for the sort of components you get out of the box with
 Bootstrap. Your task is to add a nav bar with a drop-down menu to the

@@ -19,15 +19,54 @@ function updateCard(title, desc, cardId) {
 }
 
 function render() {
-  // YOUR CODE HERE
+  $.ajax({
+    url: 'https://api.Trello.com/1/boards/594c2435392aa6a9d15b1767',
+    data: {
+      key: "3ec5bad17c0bf2ca9edb87f62320c55f",
+      token: "a966bc0660195e8f714ecd7d8fe238bfc7c3e358ae27d544caf0fd6d75bac983",
+      cards: 'all',
+      lists: 'all'
+    },
+    success: function(data) {
+      renderBoard(data);
+    }
+  });
 }
 
 function renderBoard(board) {
-  // YOUR CODE HERE
+  $('#boardAnchor').empty();
+  $('#boardAnchor').append($(`<div id="${boardId}" class="board"></div>`))
+
+  board.lists.forEach(function(listObj) {
+    renderList(listObj);
+  })
+
+  board.cards.forEach(function(cardObj) {
+    renderCard(cardObj);
+  })
 }
 
 function renderList(list) {
-  // YOUR CODE HERE
+  console.log('555');
+  var listWrapper = $(`<div class="list-container">
+      <div class="list" data-list-id="${list.id}" id="${list.id}">
+        <div class="list-header">
+          <span class="list-title">${list.name}</span>
+        </div>
+        <div class="list-cards"></div>
+        <div class="list-footer">
+          <button class="add-card" addcardid="${list.id}">Add a card...</button>
+          <div class="collapse add-card-form-wrapper" id="addCardForm${list.id}">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" placeholder="Card title" id="addCardTitle${list.id}" />
+              <button type="button" class="btn btn-default add-card-save" id="addCardBtn${list.id}">Save</button>
+              <button type="button" class="btn btn-default add-card-cancel"><span class="glyphicon glyphicon-remove" id="addCardCancelBtn${list.id}"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`)
+  $('.board').append(listWrapper);
 }
 
 function renderCard(card) {

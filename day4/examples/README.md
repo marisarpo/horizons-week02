@@ -36,4 +36,4 @@
 
 Get started on today's Pair Programming Exercises: [Pair Programming Exercises]
 
-[Pair Programming Exercises]: https://github.com/horizons-school-of-technology/week03/tree/master/day4#pair-programming-exercises
+[Pair Programming Exercises]: https://github.com/horizons-school-of-technology/week02/tree/master/day4#pair-programming-exercises

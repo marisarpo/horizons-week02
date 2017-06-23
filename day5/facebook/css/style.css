@@ -1,0 +1,26 @@
+.control-label {
+  font-size: 16px;
+}
+
+.container, .well, .form-horizontal {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.container {
+  padding: 0;
+}
+
+#login-form {
+  display: none;
+}
+
+.goto-button {
+  width: 50%;
+  align-self: center;
+}
+
+html, body {
+  height: 100%;
+}

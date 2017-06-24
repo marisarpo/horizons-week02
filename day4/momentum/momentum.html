@@ -21,11 +21,14 @@
 		var core = new momentum.Core();
 
 		core.start();
+
+		
 		// I want to run the time update and rendering every second
 		setInterval(function() {
 			core.updateTime();
 			core.render();
 		},1000);
+
 		// I only want to fetch and update the weather once every ten minutes
 		setInterval(function() {
 			core.updateWeather();
@@ -37,7 +40,7 @@
 	<!-- YOUR HTML IN HERE -->
 	<div class="bg-wrapper">
 		<h1></h1>
-		<h2></h2>
+		<h2 id="weather"></h2>
 	</div>
 
 </body>

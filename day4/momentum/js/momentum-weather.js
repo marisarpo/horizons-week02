@@ -15,15 +15,17 @@ momentum.WeatherCtrl.prototype = {
 	//
 	// hint. look into $.ajax here: http://api.jquery.com/jquery.ajax/
 	// hint. read through the documentation for the OpenWeatherAPI.
+
   fetchWeather: function(cb) {
 		// YOUR CODE HERE
+
     $.ajax({
       url: this.apiUrl,
       success: function(resp) {
         var tempKelvin = resp['main']['temp'];
-        alert(tempKelvin);
-        cb(tempKelvin *(9/5) -459.67);
+        //alert("http://api.openweathermap.org/data/2.5/weather?" + "lat=" + lat + "&lon=" + lon + "&APPID=" + this.apiKey);
+        cb(Math.round(tempKelvin *(9/5) -459.67) + String.fromCharCode(176));
       }
     })
   }
-};
+}

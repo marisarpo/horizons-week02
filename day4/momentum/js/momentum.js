@@ -31,6 +31,9 @@ momentum.Core.prototype = {
     var timeNow = new Date();
     var hours = timeNow.getHours();
     var minutes = timeNow.getMinutes();
+    if (/^\d$/.test(minutes)) {
+      minutes = "0" + minutes;
+    }
     this.timeStr = hours + ":" + minutes;
   },
 	// `setQuote` method
@@ -47,8 +50,7 @@ momentum.Core.prototype = {
 	// hint. figure out what kind of response the weatherData is going to be, and see how you might be able to access the quote of the day from that.
   setWeather: function(weatherData) {
 		// YOUR CODE HERE
-    console.log(weatherData);
-    $('.bg-wrapper h2').text(weatherData);
+    $('.bg-wrapper #weather').text(weatherData);
   },
 	// `updateTime` method
 	// This function should call setTime() so that this.timeStr is updated.
@@ -63,7 +65,7 @@ momentum.Core.prototype = {
 	// note. you might run into scoping issues again. You should know how to solve them by now, using .call, .apply, or .bind.
   updateWeather: function() {
 		// YOUR CODE HERE
-    weatherCtrl.fetchWeather(this.setWeather);
+    this.weatherCtrl.fetchWeather(this.setWeather);
   },
 	// `updateQuote` method
 	// This function should call quoteCtrl.fetchQuote and pass in this.setQuote as the callback.
@@ -76,6 +78,9 @@ momentum.Core.prototype = {
 	// This method will call some of the `update...` methods. This function will be called when the page has finished loading, so that Momentum can start off with the more up-to-date data.
 	start: function() {
 		// YOUR CODE HERE
+
+    this.updateTime();
+    this.updateWeather();
 	},
 	// `render` method
 	// This method should "render" the time, quote and weather strings on your page by replacing the text value of your elements with their respective properties.

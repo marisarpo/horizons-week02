@@ -7,6 +7,15 @@
   position: absolute;
 }
 
+.bg-wrapper h2 {
+  color: white;
+  font-family: Helvetica;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  right: 30px;
+}
+
 .bg-wrapper {
   content: "";
   position: absolute;

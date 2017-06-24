@@ -2,7 +2,7 @@
   font-size: 16px;
 }
 
-.container, .well, .form-horizontal {
+.container, .well, .form-horizontal, #newsfeed {
   height: 100%;
   width: 100%;
   margin-bottom: 0;
@@ -12,7 +12,7 @@
   padding: 0;
 }
 
-#login-form {
+#login-form, #newsfeed {
   display: none;
 }
 

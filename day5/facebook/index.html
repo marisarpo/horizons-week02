@@ -5,14 +5,62 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+      <div class = 'container' id= "RegContainer">
+        <div id = "registrationpage">
+        <h1 align = "center"> New user registration</h1>
+
+        <form align= 'center' class = 'col-xs-12'>
+
+          <div id="row1">
+            <input type = 'text' value = "First name" class= 'row'>
+          </div>
+          <div id = 'row2'>
+            <input type = 'text' value = "Last name" class = 'row'>
+          </div>
+          <div id= 'row3'>
+            <input type = 'text' value = "Username" class = 'row'>
+          </div>
+          <div id = 'row4'>
+            <input type = 'text' value = "Password" class = 'row'>
+          </div>
+          <div id = 'row5'>
+            <button type = 'button' id = 'RegisterButton' class= 'row'>Register</button>
+          </div>
+          <div id = 'row6'>
+            <button type = 'button' class= 'LoginButton' id = 'RegLoginButton'>Login</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <div class = 'container' id = "LoginContainer">
+    <h1 align = 'center'> Login page</h1>
+    <form align = 'center' class = 'col-xs-12'>
+        <div id = 'LoginRow1'>
+          <input type = 'text' value = "Username" class = 'LoginRow'>
+        </div>
+        <div id = "LoginRow2">
+          <input type = 'text' value="Password" class='LoginRow'>
+        </div>
+        <div >
+          <button id = "LoginButton1" type = 'button' class = 'LoginButton'>Login Here</button>
+        </div>
+        <div>
+          <button id= "BringToReg" type = "button" class = 'RegisterButton'>Register</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
 
     <!-- jQuery -->
     <script

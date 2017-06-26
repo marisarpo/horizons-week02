@@ -1,0 +1,17 @@
+#RegisterButton {
+  background-color: pink;
+}
+.LoginButton {
+  background-color: skyblue;
+  margin-top: 20px;
+}
+form {
+  margin-top: 150px;
+}
+.row{
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 33%;
+}

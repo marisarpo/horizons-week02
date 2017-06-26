@@ -25,8 +25,60 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
-      });
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          $('ol').append(JSON.stringify(resp))
+
+        }})
+        $.ajax({
+          url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+          success: function(resp){
+          var Array1 = resp
+          console.log(resp)
+          var numArr = [];
+          resp.forEach(function(element){
+            for( var key in element){
+            if(element[key] > 1000000){
+              numArr.push(element[key])
+            }}});
+          console.log(numArr)
+          var mathmaxarr = function getMathMax(arr){
+            return Math.max.apply(null, arr);
+          };
+          console.log(mathmaxarr(numArr))
+          resp.forEach(function(element){
+            for(var key in element){
+              console.log(key, element[key], mathmaxarr(numArr), element[key] === mathmaxarr(numArr));
+              if(element[key] === mathmaxarr(numArr)){
+                console.log(element[key])
+                $('h1').html(element['City / Urban area'])
+              }
+            }
+          })
+          // if(mathmaxarr(numArr) === 17400000){
+          //   $('h1').html('Mexico City')
+          // }
+          // if(mathmaxarr(numArr) === 16425000){
+          //   $('h1').html('Osaka/Kobe/Kyoto')
+          // }
+          // if(mathmaxarr(numArr) === 14750000){
+          //   $('h1').html('Manila')
+          // }
+          // if(mathmaxarr(numArr) === 14350000){
+          //   $('h1').html('Mumbai')
+          // }
+          // if(mathmaxarr(numArr) === 17800000){
+          //   $('h1').html('New York Metro')
+          // }
+          // if(mathmaxarr(numArr) === 17700000){
+          //   $('h1').html('Sao Paulo')
+          // }
+          // if(mathmaxarr(numArr) === 17400000){
+          //   $('h1').html('Mexico City')
+          // }
+          }
+
+     });
     </script>
   </body>
 </html>

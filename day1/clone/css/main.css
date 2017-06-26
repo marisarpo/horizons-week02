@@ -1,9 +1,26 @@
-body {
-    background: url("../images/porcupine.jpg");
+.positionReference {
+  position: relative;
+
+}
+
+
+
+.headline-center {
+    background-color: beige;
     text-align: center;
 }
-
-.title {
-    color: purple;
+.header-box {
+  border: 2px solid black;
+  background-color: beige;
+  display: block;
+  position: absolute;
+  height: 20%;
+  width: 100%;
 }
+h1 {
+    color: red;
+    text-align: center;
+    background-color: beige;
+    top:40%;
 
+}

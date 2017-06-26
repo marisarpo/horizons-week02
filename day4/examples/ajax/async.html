@@ -26,6 +26,51 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var innerObjArr = [];
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(products){
+          console.log('products are', products);
+          $.ajax({
+            url: products[0]['url'],
+            success: function(firstproduct) {
+              console.log(firstproduct)
+              innerObjArr.push(firstproduct)
+              $.ajax({
+                url: products[1]['url'],
+                success: function(secondproduct){
+                  console.log(secondproduct)
+                  innerObjArr.push(secondproduct)
+                  $.ajax({
+                    url: products[2]['url'],
+                    success: function(thirdproduct){
+                      console.log(thirdproduct)
+                      innerObjArr.push(thirdproduct)
+                      //console.log(innerObjArr)
+                    //  console.log(innerObjArr);
+                      var sortedArr = innerObjArr.sort(function(a,b){
+                        return a.priceCents - b.priceCents})
+                      console.log(sortedArr)
+                      $('#products').append(`<ul><li>` +sortedArr[0]['name']+ `,`+ ` $` + (sortedArr[0]['priceCents']/100)+ `</li></ul>` )
+                      $('#products').append(`<ul><li>` +sortedArr[1]['name']+ `,`+ ` $` + (sortedArr[1]['priceCents']/100)+ `</li></ul>` )
+                      $('#products').append(`<ul><li>` +sortedArr[2]['name']+ `,`+ ` $` + (sortedArr[2]['priceCents']/100)+ `</li></ul>` )
+
+
+                    }
+
+                  })
+                }
+
+              })
+            }
+
+          })
+
+
+        }
+
+      })
+
     </script>
   </body>
 </html>

@@ -1,9 +1,73 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
+    color: #8F8F8F;
 }
 
-.title {
-    color: purple;
+.topsection img{
+  float:left;
+  height: 50px;
 }
 
+.nav{
+  position:relative;
+  top: 20px;
+  left: 100px;
+}
+
+.nav1{
+  margin-right: 15px;
+}
+
+.nav1:hover{
+  color: #42E694;
+}
+
+#signin{
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: 5px 10px;
+}
+
+#signin:hover{
+  color: #747373;
+  font-weight: 500;
+  background-color: #E9E9E9;
+}
+
+.section2{
+  position:relative;
+  width:100%;
+  top: 50px;
+  background: url("../images/sunset.jpg");
+  height: 700px;
+  border-radius: 0.3em;
+
+}
+
+.stickynote{
+  background-color: white;
+  border-radius: 0.3em;
+  color: #353434;
+  border-top: 3px solid;
+  border-top-color: #42E694;
+  position: relative;
+  padding-top: 1px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  width: 300px;
+  top: 60px;
+  left:50px;
+  text-align: left;
+}
+
+h1{
+  text-align: left;
+}
+
+.box1{
+  border: 1px solid;
+  border-radius: 0.3em;
+  background-color:
+  padding: 5px 10px;
+}

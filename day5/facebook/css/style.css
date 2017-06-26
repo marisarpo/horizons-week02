@@ -1,0 +1,153 @@
+.inputbox{
+  display: block;
+}
+
+input{
+  display: block;
+  color: grey;
+  margin: 20px auto;
+  height:700px
+  border: 6px solid #dadada;
+  border-radius: 7px;
+  height: 40px;
+  width: 300px;
+}
+
+#registerButton {
+  display: block;
+  background: #B4E5FF;
+  margin: 20px auto;
+  border-radius: 7px;
+  height: 40px;
+  width: 300px;
+}
+
+#registerButton2 {
+  display: block;
+  background: #B4E5FF;
+  margin: 20px auto;
+  border-radius: 7px;
+  height: 40px;
+  width: 300px;
+}
+
+#loginButton {
+  display: block;
+  background: #B4C4FF;
+  margin: 40px auto;
+  border-radius: 7px;
+  height: 40px;
+  width: 200px;
+}
+
+#loginButton2 {
+  display: block;
+  background: #B4C4FF;
+  margin: 40px auto;
+  border-radius: 7px;
+  height: 40px;
+  width: 200px;
+}
+
+#loginWrapper{
+  display: none;
+}
+
+.originalPost{
+  margin: 0 auto;
+  border: 3px solid #B4E5FF;
+  border-radius: 7px;
+  width: 500px;
+  padding: 10px;
+}
+
+.replies{
+  margin: 0 auto;
+  border-radius: 7px;
+  border:3px solid #B4C4FF;
+  width: 500px;
+  padding: 10px;
+}
+
+.repliesBigWrapper{
+  margin: 0 auto;
+  border-radius: 7px;
+  border-top:3px dashed #B4C4FF;
+  border-bottom:3px dashed #B4C4FF;
+  width: 500px;
+  padding: 10px;
+}
+
+.name{
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.replyName{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.time{
+  font-style: italic;
+  font-size: 12px;
+}
+
+.replyTime{
+  font-style: italic;
+  font-size: 12px;
+}
+
+.content{
+  font-size: 16px;
+}
+
+.comments{
+  font-size: 16px;
+}
+
+.replySummary{
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.comments{
+  font-size: 16px;
+}
+
+#postspageWrapper{
+  display: none;
+}
+
+.originalPost{
+  margin-top: 30px;
+}
+
+#postbox{
+  height: 200px;
+  width: 500px;
+  border: 5px solid #7F8CE5;
+  margin: 5px auto;
+}
+
+#postButton{
+  background-color: #7F8CE5;
+  margin-left: 300px;
+  border-radius: 15px;
+}
+
+#logout{
+  background-color: #7F8CE5;
+  margin-left: 300px;
+  border-radius: 15px;
+}
+
+.commentBoxWrapper{
+  display: none;
+  margin: 0 auto;
+  border-radius: 7px;
+  border:3px solid grey;
+  width: 500px;
+  padding: 10px;
+
+}

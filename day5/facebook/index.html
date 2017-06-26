@@ -5,14 +5,58 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!-- Registration page -->
+    <div id="registrationWrapper">
+      <h1><center>New user registration</center></h1>
+      <div class='inputBox'>
+        <input type='text' id='fname' placeholder='First Name'></input>
+        <input type='text' id='lname' placeholder='Last Name'></input>
+        <input type='text' id='email' placeholder='Email'></input>
+        <input type='text' id='password' placeholder='Password'></input>
+        <button id='registerButton' type='submit' value='Register'>Register</button>
+        <button id='loginButton' type='submit' value='Login'>Login</button>
+      </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id='loginWrapper'>
+      <h1><center>Login Page</center></h1>
+      <div class='inputBox'>
+        <input type='text' id='email2' placeholder='User Name (Email)'></input>
+        <input type='text' id='password2' placeholder='Password'></input>
+        <button id='loginButton2' type='submit' value='Login'>Login</button>
+        <button id='registerButton2' type='submit' value='Register'>Go to Registration</button>
+      </div>
+    </div>
+
+    <!-- Posts Page -->
+    <div id='postspageWrapper'>
+      <button id='logoutButton' value='Logout'>Logout</button>
+      <h2><center>Your Posts</center></h2>
+      <!-- Post Box -->
+      <div id='postboxWrapper'>
+        <input id='postbox' type='text' placeholder='Write something?'></input>
+        <button id='postButton' value='Post'>Post</button>
+      </div>
+      <div id='placeholder'></div>
+    </div>
+
+
+
+    <!-- Comment Box
+    <div class='commentBoxWrapper'>
+      <input class='commentbox' type='text' placeholder='Write some comments?'></input>
+      <button id='commentButton' value='Comment'>Comment</button>
+    </div>-->
+
+
 
     <!-- jQuery -->
     <script

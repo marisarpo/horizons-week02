@@ -22,10 +22,19 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
-
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(output) {
+            var popArray = [];
+            for (var i = 0; i < output.length; i++) {
+                popArray.push([output[i]["City / Urban area"], output[i]["Population"]]);
+            }
+            popArray.sort(function(a, b) {
+                return a[1] - b[1];
+            })
+            var highest = popArray[popArray.length - 1][0]
+            $('#out').text(highest);
+        }
       });
     </script>
   </body>

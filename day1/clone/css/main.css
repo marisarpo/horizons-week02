@@ -1,9 +1,140 @@
 body {
-    background: url("../images/porcupine.jpg");
+    text-align: center;
+    font-family: 'Proxima Nova';
+    margin: auto;
     text-align: center;
 }
 
-.title {
-    color: purple;
+.part {
+    height: 100vh;
+    padding: 100px 0px 0px 0px;
+    box-sizing: border-box;
+    padding-bottom: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+h1 {
+    font-size: 44px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    cursor: pointer;
+    background-color: lightgrey;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0.2em;
+    border: 0px;
+    height: 40px;
+    padding: 0px 20px 0px 20px;
+}
+
+.content {
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.image-content {
+    position: absolute;
+    bottom: 0%;
+    width: 500px;
+}
+
+#white {
+    background-color: #F7F7F7;
+    color: grey;
+}
+
+#search {
+    width: 500px;
+    background-color: white;
+    height: 40px;
+    border: 0.5px solid lightgrey;
+    box-shadow: 1px 1px 1px 1px lightgrey;
+    border-radius: 0.3em;
+}
+
+img.logo {
+    height: 250px;;
+}
+
+.down-img {
+    height: 80px;
+}
+
+.search-box {
+    width: 40px;
+    height: 40px;
+    float: right;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+
+.search-box:hover {
+    background-color: #66ad57;
+}
+
+.search-box img {
+    height: 40px;
+}
+
+.search-box img:hover {
+    fill: white;
+    cursor: pointer
+}
+
+
+#green {
+    background-color: #58B792;
+    color: white;
+}
+
+#green button {
+    background-color: #356E58;
+}
+
+#yellow {
+    background-color: #F5A339;
+    color: white;
+}
+
+#yellow button {
+    background-color: #936222;
+}
+
+#purple {
+    background-color: #5F63BD;
+    color: white;
+}
+
+#purple button {
+    background-color: #393C72;
+}
+
+#blue {
+    background-color: #87CEF5;
+    color: #365374;
+}
+
+#blue button {
+    background-color: #365374;
+}
+
+
+
+@media {
+    img {
+
+    }
+}

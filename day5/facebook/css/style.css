@@ -1,0 +1,151 @@
+body {
+    font-family: Helvetica;
+    margin: auto;
+    background-color: #E9EBEE;
+
+}
+
+#all_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reg_page, #login_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+h1 {
+    font-size: 2em;
+    padding: 10px;
+}
+
+input {
+    border-radius: 3px;
+    border: 1px solid #F5F5F5;
+    padding: 10px;
+    width: 250px;
+}
+
+button {
+    background-color: #fff;
+    border: 0px;
+    border-radius: 30px;
+    padding: 5px 30px 5px 30px;
+    box-shadow: 1px 1px 1px #D6D3CD;
+}
+button:hover {
+    background-color: #D6D3CD;
+}
+
+#nav_bar {
+    background-color: #3B5998;
+    position: fixed;
+    top: 0%;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#nav_bar img{
+    height: 40px;
+    position: relative;
+    border: 3px solid white;
+    border-radius: 2px;
+}
+
+#posts_page {
+    margin-top: 80px;
+    width: 600px;
+}
+
+#new_post {
+    box-sizing: border-box;
+    background-color: white;
+    /*width: 500px;*/
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #D6D3CD;
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.post_all {
+    box-sizing: border-box;
+    background-color: white;
+    /*width: 500px;*/
+    border: 0px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #D6D3CD;
+    margin: 10px;
+    padding-top: 20px;
+    /*padding: 20px;*/
+}
+
+#post_username, #post_timestamp, #post_message {
+    padding: 0px 20px 0px 20px;
+}
+
+#post_username {
+    color: #385A97;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+
+#post_timestamp {
+    color: #98949C;
+    font-size: 0.8em;
+}
+
+#post_buttons {
+    background-color: #F6F7F9;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+#post_message {
+    padding: 20px;
+    padding-top: 10px;
+}
+
+#reply_count {
+    background-color: #F6F7F9;
+    border: 0.5px solid;
+    border-top-color: #E1E2E3;
+    border-bottom-color: #E1E2E3;
+    border-right: 0px;
+    border-left: 0px;
+    padding: 20px;
+
+}
+
+#reply_thread {
+    background-color: #F6F7F9;
+    padding: 20px;
+}
+
+#comment {
+    padding: 5px 0px 5px 0px;
+}
+
+#comment_username {
+    color: #385A97;
+}
+
+#comment_timestamp {
+    color: #98949C;
+    font-size: 0.8em;
+}
+
+textarea {
+    border-color: #E9EBEE;
+    padding: 10px;
+}

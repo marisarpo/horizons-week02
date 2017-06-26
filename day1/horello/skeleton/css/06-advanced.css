@@ -1,1 +1,45 @@
 /* ADD STYLES FOR PART 6 HERE */
+.home-devices {
+    background-color: #e4f0f6;
+    /*height: 300px;*/
+}
+
+.div-home-devices {
+    max-width: 890px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.content-home-devices {
+    max-width: 585px;
+}
+
+.img-home-devices {
+    position: absolute;
+    top: -60px;
+    left: 640px;
+}
+
+section {
+    clear: both;
+}
+
+.buttons-home-devices {
+    display: block;
+}
+
+.badge {
+    height: 54px;
+    margin: 0.4em 1em 0 0;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.see-all {
+    background-color: transparent;
+    margin: 0.4em 0em 0 0;
+    border: 1px solid;
+    border-radius: 0.3em;
+    padding: 0.6em 1.3em;
+    display: inline-block;
+}

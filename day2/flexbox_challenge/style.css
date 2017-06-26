@@ -1,0 +1,59 @@
+body {
+    background-color: grey;
+}
+
+.all {
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+}
+
+.each {
+    border-radius: 0.2em;
+    background-color: white;
+    margin: 2px;
+    padding: 10px;
+}
+
+.nav {
+    flex-grow: 1;
+    background-color: purple;
+}
+
+.article {
+    flex-grow: 2;
+    background-color: olive;
+}
+
+.aside {
+    flex-grow: 1;
+    background-color: purple;
+
+}
+
+.footer {
+    /*flex-grow: 1;*/
+    background-color: yellow;
+}
+
+@media only screen and (min-width: 650px) {
+    .content {
+        flex-direction: column;
+    }
+    .article {
+        order: -1;
+        flex-grow: 1;
+    }
+    .nav {
+        flex-grow: 0;
+    }
+    .aside {
+        flex-grow: 0;
+    }
+}

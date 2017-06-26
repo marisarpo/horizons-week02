@@ -12,10 +12,126 @@
 </head>
 
 <body>
-  <div class="container">
 
+  <div class="container">
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+        <!-- <label class="control-label col-sm-4"> Basic Information</label></br> -->
+        <div class="form-group">
+            <label class="title control-label col-sm-6 " style="font-size: 30px; "> Basic Information</label>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-4">Username</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-user input-group-addon"></span>
+                <input type="text" class="form-control" placeholder = "Username">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Password</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-user input-group-addon"></span>
+                <input type="text" class="form-control" placeholder = "Password">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Date of Birth</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-earphone input-group-addon"></span>
+                <input type="date" class="form-control" placeholder = "mm/dd/yyyy">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Zipcode</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-home input-group-addon"></span>
+                <input type="text" class="form-control" placeholder = "Zipcode">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">State</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-tasks input-group-addon"></span>
+                <select type="text" class="form-control" placeholder = "State">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Payment Type</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" value="visa" checked> Visa
+                    </input> </br>
+                    <input type="radio" name="optionsRadios" value="mastercard"> Mastercard
+                    </input>
+                  </label>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Card #</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-credit-card input-group-addon"></span>
+                <input type="text" class="form-control" placeholder = "0000 0000 0000 0000">
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-4">Expiry</label>
+            <div class="col-sm-2">
+              <!-- <div class="input-group"> -->
+                <input type="text" class="form-control" placeholder = "MM/YYYY">
+              <!-- </div> -->
+            </div>
+            <label class="control-label col-sm-1">CVC</label>
+            <div class="col-sm-2">
+              <!-- <div class="input-group"> -->
+                <input type="text" class="form-control" placeholder = "000">
+              <!-- </div> -->
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-sm-4">Project Description</label>
+            <div class="col-sm-5">
+              <div class="input-group">
+                <span class="glyphicon glyphicon-pencil input-group-addon"></span>
+                <textarea  cols="500" class="form-control" placeholder = "Description"></textarea>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group ">
+            <div class="col-sm-6">
+            <button type="button" class=" btn btn-warning">Send</button>
+            </div>
+        </div>
+
     </form>
   </div>
 </div><!-- /.container -->

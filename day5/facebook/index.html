@@ -5,14 +5,90 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="container">
+      <form class="row well form-horizontal" action=" " method="post"  id="registration">
+        
+        <center><h1 id="title">New User Registration</h1></center>
+        <label></label>
+        <h1></h1>
+        <h1></h1>
+
+        <div class="fields">
+          <div class="form-group">
+            <div class="input-group entry col-xs-offset-4 col-xs-4">
+              <input type="text" class="form-control" id="firstName" placeholder="First Name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group entry col-xs-offset-4 col-xs-4">
+              <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group entry col-xs-offset-4 col-xs-4">
+              <input type="email" class="form-control" id="eMail" placeholder="Email Address">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-group entry col-xs-offset-4 col-xs-4">
+              <input type="password" class="form-control" id="passWord" placeholder="Password">
+            </div>
+          </div>
+
+          <center><div class="form-group">
+            <button type="button" class="btn btn-danger largeBtn first">
+              Register
+            </button>
+          </div></center>
+
+          <label></label>
+
+          <center><div class="form-group">
+            <button type="button" class="btn btn-primary smallBtn second">
+              Login
+            </button>
+          </div></center>
+
+        </div>
+      </form>
+    </div>
+
+    <div class="main-page">
+      <center><h1> Your page: what the people are saying </h1></center>
+      <div class="post-button col-xs-4">
+        <div class="input-group">
+          <input type="email" class="form-control" id="postText" placeholder="Say something!"></input>
+          <button type="button" class="btn btn-primary" id="#postButton">
+            Post
+          </button>
+        </div>
+      </div>
+      <div class="post-list">
+        <!-- <div class="post col-xs-4">
+          <div class="#name"></div>
+          <div class="#date"></div>
+          <div class="#text"></div>
+          <button type="button" class="btn btn-primary">
+              <span class="glyphicon glyphicon-thumbs-up"</span>
+            </button>
+          <button type="button" class="btn btn-primary">
+              Reply
+            </button>
+        </div> -->
+      </div>
+    </div>
+
+
 
     <!-- jQuery -->
     <script

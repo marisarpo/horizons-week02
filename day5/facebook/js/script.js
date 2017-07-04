@@ -1,6 +1,7 @@
 
 
-$('#register').on('click', function() {
+$('#register').on('click', function(event) {
+  event.preventDefault();
   $.ajax({
     url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/register',
     method: 'post',
@@ -18,7 +19,8 @@ $('#register').on('click', function() {
   })
 })
 
-$('#login').on('click', function() {
+$('#login').on('click', function(event) {
+  event.preventDefault();
   $('.firstRegister').addClass('collapse');
   $('.loginPage').removeClass('collapse');
 })
@@ -61,12 +63,12 @@ $('#loginButton').on('click', function() {
           },
           async: false,
           success: function(resp) {
-            console.log('refreshed');
+            $('.post').remove();
             for (var i = 0; i < resp.response.length; i++) {
               var poster = resp.response[i].poster.name.split(' ')[0];
               var content = resp.response[i].content;
               var time = new Date(resp.response[i].createdAt);
-              var timeStr = `${time.getHours()}:${time.getMinutes()} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
+              var timeStr = `${time.getHours()}:${String(100+time.getMinutes()).slice(1)} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
               var comments = resp.response[i].comments;
               var commentsLength = resp.response[i].comments.length;
               var likes = resp.response[i].likes;
@@ -84,7 +86,7 @@ $('#loginButton').on('click', function() {
               </div>`
               for (var j = 0; j < commentsLength; j++) {
                 var time = new Date(comments[j].createdAt);
-                var timeStr = `${time.getHours()}:${time.getMinutes()} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
+                var timeStr = `${time.getHours()}:${String(100+time.getMinutes()).slice(1)} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
                 newPost = newPost + `<div class="card-subReply"><h6 class="card-replyer mb-2 text-muted">${comments[j].poster.name.split(' ')[0]}</h6>
                            <h6 class="card-replyertime mb-2 text-muted">${timeStr}</h6>
                            <p class="cardreplycontent">${comments[j].content}</p></div>`;
@@ -104,11 +106,12 @@ $('#loginButton').on('click', function() {
               </div>`;
               $('.postPage').append($(newPost));
             }
+            console.log('refreshed');;
           }
         })
       }
       refresh();
-      refreshId = setInterval(refresh, 10000);
+      refreshId = setInterval(refresh, 30000);
     },
     data: {
       email: $('#emailLogin').val(),
@@ -117,11 +120,15 @@ $('#loginButton').on('click', function() {
   });
 })
 
-$('body').on('click', '.btn-reply', function() {
-  console.log(true);
+
+$('body').on('click', '.btn-reply', function(event) {
+  event.preventDefault();
   $(this).siblings('.commentBox').toggleClass('collapse');
 })
-$('body').on('click', '.postbutton2', function() {
+
+
+$('body').on('click', '.postbutton2', function(event) {
+  event.preventDefault();
   var comment = $(this).siblings('#textArea').val();
   var postId = $(this).closest('.post').attr('id');
   var self = $(this);
@@ -138,7 +145,7 @@ $('body').on('click', '.postbutton2', function() {
       var time = new Date(comment[comment.length-1].createdAt);
       var content = comment[comment.length-1].content;
       //var oldCount = parseInt($(this).closest('.commentBox').siblings('.card-reply').text().split(' ')[0]);
-      var timeStr = `${time.getHours()}:${time.getMinutes()} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
+      var timeStr = `${time.getHours()}:${String(100+time.getMinutes()).slice(1)} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
       var newComment = `<div class="card-subReply"><h6 class="card-replyer mb-2 text-muted">${name}</h6>
                  <h6 class="card-replyertime mb-2 text-muted">${timeStr}</h6>
                  <p class="cardreplycontent">${content}</p></div>`;
@@ -149,7 +156,8 @@ $('body').on('click', '.postbutton2', function() {
     }
   })
 })
-$('body').on('click', '.sticker', function() {
+$('body').on('click', '.sticker', function(event) {
+  event.preventDefault();
   var postId = $(this).closest('.post').attr('id');
   var self = $(this);
   $.ajax({
@@ -167,7 +175,8 @@ $('body').on('click', '.sticker', function() {
   })
 })
 
-$('body').on('click', '.postButton', function() {
+$('body').on('click', '.postButton', function(event) {
+  event.preventDefault();
   $.ajax({
     url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts',
     method: 'POST',
@@ -178,7 +187,7 @@ $('body').on('click', '.postButton', function() {
     success: function(resp) {
       var name = resp.response.poster.name.split(' ')[0];
       var time = new Date(resp.response.createdAt);
-      var timeStr = `${time.getHours()}:${time.getMinutes()} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
+      var timeStr = `${time.getHours()}:${String(100+time.getMinutes()).slice(1)} ${time.getMonth()+1}/${time.getDate()}/${time.getFullYear()}`
       var content = resp.response.content;
       var id = resp.response._id;
       var newPost = `<div class="post" id=${id}>
@@ -209,7 +218,8 @@ $('body').on('click', '.postButton', function() {
   })
 })
 
-$('.logoutButton').on('click', function() {
+$('.logoutButton').on('click', function(event) {
+  event.preventDefault();
   clearInterval(refreshId);
   console.log(refreshId);
   $.ajax({

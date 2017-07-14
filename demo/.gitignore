@@ -1,0 +1,6 @@
+connect.js
+node_modules
+env.sh
+
+// if you dont want something to be tracked you have to explicity tell git to
+// not track it

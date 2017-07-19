@@ -1,0 +1,76 @@
+.post, .reply {
+  border: 2px solid black;
+  margin: 10px;
+  background-color: white;
+	padding: 10px;
+  width: 75%;
+  border-radius: 15px;
+
+}
+
+.post-name{
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+
+.reply-name {
+	font-weight: 500;
+	font-size: 1em;
+
+}
+
+.post-date, .reply-date {
+  font-style: italic;
+  font-size: .9em;
+
+}
+
+
+.post-input {
+
+	margin: 10px;
+}
+
+#post-status-field {
+	width: 50%;
+	height: 50px;
+	border-radius: 10px;
+}
+
+
+#logo-image{
+	width:25px;
+	height:25px;
+	float:left;
+	margin-top: 10px;
+}
+
+.navbar {
+
+}
+
+
+btn-group {
+	position: center;
+}
+
+
+#prev-page-button {
+	margin: 20px;
+}
+
+#next-page-button {
+	margin: 20px;
+}
+
+body {
+	background-color: grey;
+}
+
+li {
+  position: absolute;
+  display: inline-block;
+}
+
+

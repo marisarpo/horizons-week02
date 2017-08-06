@@ -157,6 +157,10 @@ a {
     cursor: pointer;
 }
 
+.card:hover{
+  background: black;
+}
+
 .card-body {
     display: block;
     padding: .5em .5em 2em;

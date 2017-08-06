@@ -45,7 +45,7 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <div class="board">
+    <div class="board" id="sortable2">
       <div class="list-container">
         <div class="list">
           <div class="list-header">
@@ -84,7 +84,7 @@
             <span class="list-title">List 2</span>
           </div>
 
-          <div class="list-cards">
+          <div class="list-cards" id="sortable">
             <div class="card">
               <span class="card-more">
                 <span class="glyphicon glyphicon-align-left"></span>
@@ -200,5 +200,13 @@
 
     </div>
     <script src="script.js"></script>
+    <script>
+  $( function() {
+    $( "#sortable" ).sortable();
+    $( "#sortable" ).disableSelection();
+    $('#sortable2').sortable();
+    $('#sortable2').disableSelection();
+  } );
+  </script>
   </body>
 </html>

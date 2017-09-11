@@ -1,1 +1,40 @@
 /* ADD STYLES FOR PART 6 HERE */
+section.background-light-blue{
+  background: #e4f0f6;
+
+}
+.left-section{
+    max-width: 840px;
+    box-sizing: border-box;
+    padding: 10px 50px 50px 30px;
+    margin: 0 10%;
+}
+.left-section .left-text{
+  max-width: 585px;
+}
+.left-section p a, .left-section p img{
+  height: 54px;
+  margin-top: 0.4em;
+  margin-right:1em;
+}
+.left-section p a#final-link{
+  color: #5e98ba;
+  padding: 17px;
+  border: 1px solid #5e98ba;
+  border-radius: 3px;
+  height: 54px;
+  box-sizing: border-box;
+  position: relative;
+  bottom: 20px;
+}
+.left-section p a#final-link:hover{
+  color: #265773;
+  border:1px solid #5e98ba;
+  cursor: pointer;
+}
+.home-devices-image{
+  float:right;
+  /*margin-bottom: 60px;*/
+  left: 640px;
+  bottom: 60px;
+}

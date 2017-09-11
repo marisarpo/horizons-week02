@@ -1,1 +1,36 @@
 /* ADD STYLES FOR PART 6 HERE */
+a{
+display: inline-block;
+}
+.img_store:only-child{
+
+}
+.img_store{
+  height:54px;
+  margin-top: .4em;
+  margin-right:1em;
+  margin-bottom: .4em;
+  vertical-align: middle;
+}
+#button_store{
+  border: .8px solid black;
+  border-radius: 0.3em;
+  padding:.66em;
+  vertical-align: middle;
+}
+.right_image{
+  /*margin-bottom: 60px;
+  margin-left: 640px;*/
+  float:right;
+}
+.bottom{
+  background-color: lightblue;
+}
+.bottom_text{
+  margin-left: 60px;
+  max-width: 585px;
+  display:inline-block;
+}
+.align{
+  text-align: center;
+}

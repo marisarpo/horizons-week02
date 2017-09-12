@@ -15,14 +15,23 @@ use media queries so that the three elements are laid out responsively as per th
 
 Check out the [live, working version][live].
 
+
+
 Tips:
 
-- Fill in the empty media queries in the CSS section.
-- You can achieve this entirely using CSS and media queries, you don't
+- Fill in the empty media queries in the CSS section. You don't
   need to modify the HTML.
 - Make changes in Dev Tools first to see what works! You can make your
   browser window wider or smaller to view the page with different screen
   sizes.
+- <details><summary>
+    If you're having trouble resizing the window using DevTools with Device Toolbar, switch device type to Desktop.
+    </summary><p>
+
+    ![How to switch device type animation](https://cl.ly/3j1f1N2U3N3R/Screen%20Recording%202017-09-11%20at%2006.49%20PM.gif)
+
+    </p></details>
+
 
 [live]: http://horizons-school-of-technology.github.io/week02/day2/warmup/solution/index.html
 

@@ -1,9 +1,80 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  /*Makes the containers full width*/
+  margin: 0 auto;
+  width: 100%;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+section,
+footer,
+header {
+  padding: 10px 100px;
+}
+a {
+  color: #25D6C9;
+  text-decoration: none;
+ }
+a:hover{
+  text-decoration: underline;
+}
+nav:first-of-type {
+  padding: 15px 100px 40px 100px;
+  text-align: center;
+}
+nav button {
+  float: right;
+  margin: 0 5px 0 5px;
+}
+nav ul {
+  padding: 0;
+}
+nav li {
+  display: inline-block;
+  margin: 7px;
+}
+button {
+  padding: 5px 12px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+}
+#logo {
+  height: 2.7em;
+  float: left;
+  margin-right: 10px;
+}
+.teal-background {
+  background: linear-gradient(to bottom right, #25D6C9, #30c3ca);
+  color: white;
 }
 
-.title {
-    color: purple;
+.light-beige-background {
+  background: rgb(248, 248, 248);
 }
+.red-button {
+  background: #EC4847;
+  border: 1px solid #DF3A39;
+}
+.red-button:hover{
+  background: #DF3A39;
+}
+.beige-button {
+  background: #f8f8f8;
+  border: 1px solid #ededee;
+  color: #878990;
+}
+.beige-button:hover{
+  background: #ededee
+}
+.dark-teal-button {
+  background: #048783;
+  border: 1px solid #026060;
+}
+.dark-teal-button:hover{
+  background: #026060;
+}
+.horizontal-nav {
 
+}
+#top-nav li {
+  float: left;
+}

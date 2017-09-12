@@ -1,1 +1,47 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+.appstore-button {
+  margin: 0.4em 1em 0 0;
+}
+
+.appstore-button img {
+  height: 54px;
+}
+
+.oneThird p{
+  max-width: 585px;
+  padding-bottom: 20px;
+}
+
+.twoThirds {
+  position: absolute;
+  top: -60px;
+  left: 640px;
+}
+
+.bottomBox {
+  position:relative;
+}
+
+.background-light-blue {
+  background-color: #e4f0f6;
+}
+
+.outlinelink {
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0;
+  display: inline-block;
+  color: #5e98ba;
+  vertical-align: top;
+  margin: auto;
+}
+
+.outlinelink:hover {
+  color: #000;
+}
+
+.bottomLinks {
+  position: relative;
+}

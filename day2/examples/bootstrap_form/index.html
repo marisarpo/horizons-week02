@@ -10,12 +10,176 @@
 
   <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+  h1{
+    text-align: center;
+  }
+
+</style>
 
 <body>
   <div class="container">
-    <button class ="btn btn-danger btn-lg">click me</button>
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <h1>Billing Information</h1>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Username</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+              <i class = "glyphicon glyphicon-user"></i>
+            </span>
+            <input name ="firstname" type ="text" class="form-control" placeholder = "Username">
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Password</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+              <i class = "glyphicon glyphicon-user"></i>
+            </span>
+            <input name ="firstname" type ="text" class="form-control" placeholder = "Password">
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Date of Birth</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+              <i class = "glyphicon glyphicon-earphone"></i>
+            </span>
+            <input name ="firstname" type ="text" class="form-control" placeholder = "yyyy-mm-dd">
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Zip Code</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+              <i class = "glyphicon glyphicon-home"></i>
+            </span>
+            <input name ="firstname" type ="text" class="form-control" placeholder = "Zip Code">
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">State</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+             <i class = "glyphicon glyphicon-list"></i>
+           </span>
+           <select name ="firstname" type ="text" class="form-control" placeholder = "States">
+             <option>Alabama</option>
+             <option>Alaska </option>
+             <option>Arizona</option>
+             <option>Arkansas </option>
+             <option>California </option>
+             <option>Colorado </option>
+             <option>Connecticut </option>
+             <option>Delaware </option>
+             <option>Florida </option>
+             <option>Georgia </option>
+             <option>Hawaii </option>
+             <option>Idaho </option>
+             <option>Illinois </option>
+             <option>Indiana </option>
+             <option>Iowa </option>
+             <option>Kansas </option>
+             <option>Kentucky </option>
+             <option>Louisiana </option>
+             <option>Maine </option>
+             <option>Maryland </option>
+             <option>Massachusetts </option>
+             <option>Michigan </option>
+             <option>Minnesota </option>
+             <option>Mississippi </option>
+             <option>Missouri </option>
+             <option>Montana </option>
+             <option>Nebraska </option>
+             <option>Nevada </option>
+             <option>New Hampshire </option>
+             <option>New Jersey </option>
+             <option>New Mexico </option>
+             <option>New York </option>
+             <option>North Carolina </option>
+             <option>North Dakota </option>
+             <option>Ohio </option>
+             <option>Oklahoma </option>
+             <option>Oregon </option>
+             <option>Pennsylvania </option>
+             <option>Rhode Island </option>
+             <option>South Carolina </option>
+             <option>South Dakota </option>
+             <option>Tennessee </option>
+             <option>Texas </option>
+             <option>Utah </option>
+             <option>Vermont </option>
+             <option>Virginia </option>
+             <option>Washington </option>
+             <option>West Virginia </option>
+             <option>Wisconsin </option>
+             <option>Wyoming</option>
+           </select>
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Payment Type</label>
+        <div class = "col-md-4 inputGroupContainer">
+            <div class="radio">
+              <label><input type="radio" name="cardType">Visa</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="cardType">Mastercard</label>
+            </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Card#</label>
+        <div class = "col-md-4 inputGroupContainer">
+          <div class ="input-group">
+            <span class = "input-group-addon">
+              <i class = "glyphicon glyphicon-credit-card"></i>
+            </span>
+            <input name ="firstname" type ="text" class="form-control" placeholder = "0000 0000 0000 0000">
+          </div>
+        </div>
+      </div>
+
+      <div class = "form-group">
+        <label class="col-md-4 control-label">Expiry</label>
+        <div class = "col-md-2 inputGroupContainer">
+          <div class ="input-group">
+            <input name ="firstname" type ="text" class="form-control" placeholder = "MM/YYYY" size = "15">
+          </div>
+        </div>
+          <label class="col-md-1 control-label">CVC</label>
+          <div class = "col-md-1 inputGroupContainer">
+            <div class ="input-group">
+              <input name ="firstname" type ="text" class="form-control" placeholder = "000" size ="4">
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+      <button class ="btn btn-warning btn-md">Send
+        <span><i class = "glyphicon glyphicon-send"></i></span>
+      </button>
+
+
+
     </form>
   </div>
 </div><!-- /.container -->

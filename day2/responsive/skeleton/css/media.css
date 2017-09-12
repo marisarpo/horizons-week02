@@ -1,4 +1,22 @@
 /* Your CSS goes here! */
+/*@media (min-width: 30em) and (orientation: landscape) { ... }*/
+@media{
+  section{
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
 
-section {
+@media(min-width: 650px)and(max-width:900px){
+  section{
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width:900px){
+  section {
+    padding: 80px 20px;
+  }
 }

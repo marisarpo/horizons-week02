@@ -1,9 +1,109 @@
 body {
-    background: url("../images/porcupine.jpg");
     text-align: center;
+    background-image: url("https://ultimatemotorcycling.com/wp-content/uploads/2017/08/2017-valentino-rossi-enduro-crash-motogp.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: .8;
 }
 
 .title {
     color: purple;
 }
+.text-center {
+  color: red;
+  max-width: none;
+  background-color: white;
+  display: inline-block;
 
+}
+.Ijustwantthistobeover li{
+  display: inline;
+}
+.inlinefirst {
+  color: red;
+  background-color: white;
+  /*align-self: auto;
+  text-align: center;*/
+  border: 3px solid #73AD21;
+  display: inline-block;
+  margin: -650px;
+  padding-top: -100px;
+
+
+}
+.background-dark-blue {
+  background-color: white;
+  display: inline-block;
+  width: 30%;
+  margin: 10px;
+  border: 3px solid #73AD21;
+}
+.background-dark-blue2 {
+  background-color: white;
+  display: inline-block;
+  width: 30%;
+  border: 3px solid #73AD21;
+
+}
+.background-dark-blue3 {
+  background-color: white;
+  display: inline-block;
+  width: 30%;
+  border: 3px solid #73AD21;
+
+}
+
+.class {
+  display: inline-block;
+    text-align: center;
+    position: absolute;
+}
+
+.background-dark-blue4 {
+  background-size: 50%;
+  background-repeat: no-repeat;
+  /*overflow: auto;*/
+  opacity: 1;
+  height: 350px;
+  width: 50%;
+  display: inline-block;
+  position: relative;
+
+  /*max-height: 200px;*/
+ background-image: url("https://ultimatemotorcycling.com/wp-content/uploads/2017/08/2017-silverstone-motogp-preview-marquez-leads-points-fast-facts-3.jpg");
+
+
+}
+.background-dark-blue5 {
+background-image: url("https://2yrh403fk8vd1hz9ro2n46dd-wpengine.netdna-ssl.com/wp-content/uploads/2017/08/2017-brno-motogp-results-recap-1.jpg");
+width: 51%;
+margin-left: 1100px;
+  height: 350px;
+  display: inline-block;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+
+top: -350px;
+  opacity: 2;
+  left: -50px;
+  text-align: center;
+
+}
+
+.new {
+text-align: center;
+position: relative;
+border: black;
+background-color: white;
+vertical-align: top;
+border: 3px solid #73AD21;
+top: -350px;
+
+}
+.asdf {
+  background-color: white;
+    border: 3px solid #73AD21;
+    margin-top: 10px;
+
+}

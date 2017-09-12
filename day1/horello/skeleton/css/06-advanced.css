@@ -1,1 +1,111 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+#key1 {
+  background-color: #e4f0f6;
+  overflow: hidden;
+  clear:both;
+}
+.class1 {
+position: relative;
+max-width: 890px;
+margin: 0 auto;
+display: block;
+}
+#image1 {
+  position: absolute;
+top: -60px;
+left: 640px;
+display: block;
+
+}
+#textbox {
+  max-width: 585px;
+  display: block;
+}
+#image2 {
+display: inline-block;
+vertical-align: top;
+margin: .4em 1em 0 0;
+padding: 0;
+height: 54px;
+
+}
+#image3 {
+display: inline-block;
+vertical-align: top;
+margin: .4em 1em 0 0;
+padding: 0;
+height: 54px;
+}
+#image4 {
+border: 1px solid;
+border-radius: 0.3em;
+padding: .7em 1em;
+margin: .4em 0 0;
+display: inline-block;
+  color: #5e98ba;
+  vertical-align: top;
+}
+#links1 {
+  margin: 1em 0px;
+
+}
+
+/*
+
+#key1 {
+  background-color: #e4f0f6;
+
+}
+#image1 {
+  left: 640px;
+  top: -60px;
+
+  position: absolute;
+
+}
+.class1 {
+  position: relative;
+  margin: 0 auto;
+  max-width: 890px;
+}
+
+#links {
+  display: inline-block;
+    vertical-align: top;
+    margin: .4em 1em 0 0;
+    padding: 0;
+}
+
+#bottom-text {
+max-width: 585px;
+}
+#textbox {
+  display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+#image2 {
+  display: inline-block;
+vertical-align: top;
+margin: .4em 1em 0 0;
+padding: 0;
+
+}
+#image3 {
+  border: 1px solid;
+border-radius: 0.3em;
+padding: .7em 1em;
+margin: .4em 0 0;
+display: inline-block;
+
+}
+#image4 {
+  border: 1px solid;
+border-radius: 0.3em;
+padding: .7em 1em;
+margin: .4em 0 0;
+display: inline-block;
+}*/

@@ -1,9 +1,50 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: white;
     text-align: center;
+    margin:0;
 }
 
-.title {
-    color: purple;
+title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #020621;
+
 }
 
+
+.kick{
+  color:black;
+  font-family: "Times New Roman", Times, serif;
+  display: inline-block;
+  margin-top:3;
+
+
+}
+.starter{
+  color:green;
+  display: inline-block;
+  margin-top:3;
+
+}
+
+.button{
+    padding: 1.6em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+    color: black;
+    float: left;
+
+}
+
+#log-button {
+  float: right;
+}
+
+#signup-button {
+  float: right;
+}
+
+.button:hover{
+  text-decoration: underline;
+  text-decoration-color: green;
+}

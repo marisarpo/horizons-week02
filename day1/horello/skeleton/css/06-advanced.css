@@ -1,1 +1,32 @@
 /* ADD STYLES FOR PART 6 HERE */
+#bottom-pic{
+	float: right;
+	margin: 0 0 10px 10px;
+}
+
+.t-pos{
+	clear both;
+	padding-top: 50px;
+	padding-right: 0px;
+	padding-bottom: 50px;
+	padding-left: 1000px;
+}
+
+.background-light-blue{
+	background-color: #e4f0f6;
+  	height: 10%;
+	width: 100%;
+}
+
+.new-button{
+	border: 1px solid;
+    border-radius: 0.3em;
+    padding: .7em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+	color: skyblue;
+}
+
+.new-button:hover{
+	color: black;
+}

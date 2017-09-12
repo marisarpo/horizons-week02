@@ -1,9 +1,107 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: url("https://d2k1ftgv7pobq7.cloudfront.net/meta/p/res/images/d84b3c6b1f07d701acb1a153002f7e6a/usecases-bg.jpg");
     text-align: center;
+    margin: 0;
+    max-width: 100%;
 }
 
-.title {
-    color: purple;
+.banner {
+  background-color: #0079bf;
+  clear: both;
+  overflow: auto;
+  padding: 15px;
 }
 
+.logo {
+  height: 50px;
+  float: left;
+}
+
+.topright {
+  float: right;
+}
+
+.loginbutt{
+  color: white;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0.4em;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 0.7em 1.3em;
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  margin: 0 0.25em;
+  text-decoration: none;
+  vertical-align: top;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+
+.signupbutt {
+  color: white;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 0.4em;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  font-weight: bold;
+  padding: 0.7em 1.3em;
+  display: inline-block;
+  font-size: 1.1em;
+  line-height: 1.1em;
+  margin: 0 0.25em;
+  text-decoration: none;
+  vertical-align: top;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+
+.background {
+  padding: 4.0em 1.0em;
+}
+
+.content{
+  margin: 0 21.0em;
+}
+
+h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 2.5em;
+  display: block;
+  margin-top: 2.0em;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+
+.content p{
+  color: white;
+  font-size: 1.3em;
+  display: block;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+  margin: 1.0em 0;
+}
+
+.middlebutt {
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  box-shadow: 0 2px 0 #3f6f21);
+  color: white;
+  padding: 0.7em 1.2em;
+  border-radius: 0.3em;
+  display: inline-block;
+  font-size: 1.4em;
+  font-weight: bold;
+  margin: 0.3em 1em 1em 0;
+  text-decoration: none;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+
+.small {
+  color: white;
+  display: block;
+  font-size: 1.0em;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}
+
+.smalllogin {
+  display: inline-block;
+  color: white;
+  font-size: 1.0em;
+  opacity: 0.8;
+  font-family: "jaf-facitweb", "Helvetica Neue", Arial, sans-serif;
+}

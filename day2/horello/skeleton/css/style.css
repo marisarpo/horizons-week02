@@ -3,8 +3,18 @@
 body {
   line-height: 18px;
   height: 100vh;
+  padding: 0 20px;
+}
 
-  /** PART 1 CSS here */
+@media(min-width: 650px) {
+  body {
+    padding: 40px 20px;
+  }
+}
+@media(min-width: 900px) {
+  body {
+    padding: 80px 20px;
+  }
 }
 
 header {

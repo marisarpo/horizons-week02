@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +14,10 @@
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
+
 <body>
   <header>
-    <a class="header-logo"
-    href="#"><span class="header-logo-default"></span></a>
+    <a class="header-logo" href="#"><span class="header-logo-default"></span></a>
   </header>
 
   <!-- PART 5. Modal -->
@@ -32,20 +33,71 @@
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
+            <span style="margin-left: 5px; margin-bottom: 10px;" class="glyphicon glyphicon-align-left" data-toggle="modal" data-target="#card-modal"></span>
+            <div id="card-modal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <div class="modal-header form-group">
+                    <span id="removeModal" class="glyphicon glyphicon-remove"></span>
+                    <input class="form-control" type="text" value="#DominateAllTheHouses">
+                  </div>
+                  <div id="description-header" class="modal-body form-group">
+                    <h5>Description</h5>
+                    <textarea class="form-control" rows="5">Card body goes here</textarea>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button style="text-align: left;" class="add-card" type="button" data-toggle="collapse" data-target="#card-info" aria-expanded="false" aria-controls="card-info">Add a card</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="card-info">
+            <form>
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="Card title" />
+
+              </div>
+              <button class="btn btn-default" type="button">
+                Save
+              </button>
+              <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#card-info">
+                <span class="glyphicon glyphicon-remove"></span>
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
+    <div>
+      <button style="text-align: left;" class="add-list" type="button" data-toggle="collapse" data-target="#list-info" aria-expanded="false" aria-controls="list-info">Add a list...</button>
+      <div class="collapse" id="list-info">
+        <form>
+          <div class="form-group">
+            <input class="form-control" type="text" placeholder="List name" />
 
+          </div>
+          <button class="btn btn-default" type="button">
+          Save
+        </button>
+          <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#list-info">
+          <span class="glyphicon glyphicon-remove"></span>
+        </button>
+        </form>
+      </div>
+    </div>
 
   </div>
 
 </body>
+
 </html>

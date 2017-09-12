@@ -1,9 +1,36 @@
+.PageHeader {
+  background-color: #24292e ;
+  color: #fff;
+  width: 100%;
+  height: 72px;
+  vertical-align: middle;
+  border: 5px solid blue;
+}
+
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+  margin:0;
 }
 
-.title {
-    color: purple;
+.logo {
+  filter: invert(100%);
 }
 
+.gflex{
+  display: inline-block;
+  border: 1px solid white;
+}
+
+.container {
+  margin-left: 214px;
+  margin-right: 214px;
+  padding-left: 16px;
+  padding-right: 16px;
+  display: flex;
+  display: inline-block;
+  height: 42px;
+  border: 2px solid green;
+}
+
+.menuButtons{
+  color: #fff;
+}

@@ -1,5 +1,10 @@
+/* ADD STYLES FOR PART 5 HERE */
+
 .img-float-left {
+  float:left;
+  margin-right: 40px;
 }
 
-section {
+section{
+  clear: both;
 }

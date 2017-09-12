@@ -1,5 +1,12 @@
+/* ADD STYLES FOR PART 4 HERE */
+
 .background-dark-blue {
+  color: #fff;
+  background-color: #0079bf;
 }
 
 .layout-fill-img {
+  padding: 30px 20px;
+  max-width: 100%;
+  box-sizing: border-box;
 }

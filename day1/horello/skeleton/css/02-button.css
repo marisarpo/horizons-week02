@@ -1,8 +1,22 @@
+/* ADD STYLES FOR PART 2 HERE */
+
 .img-title {
+  margin-bottom: 2em;
 }
 
 .button {
+  margin-bottom: .8em;
+  padding: .6em 1.3em;
+  border-radius: .3em;
+  border: 0;
+  background: linear-gradient(to bottom, #61bd4f 0, #5aac44 100%);
+  font-weight: 400;
+  color: #fff;
+  display: inline-block;
+  box-shadow: 0 2px 0 #3f6f21;
 }
 
 .button:hover {
+  background: linear-gradient(to bottom, #5aac44 0, #519839 100%);
+  color:#fff;
 }

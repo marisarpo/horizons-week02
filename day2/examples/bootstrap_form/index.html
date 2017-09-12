@@ -13,9 +13,72 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <div class="form-group">
+        <label for="user">Username</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+          <input type="text" class="form-control" id="user" placeholder="Username"></input>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="pass">Password</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+          <input type="text" class="form-control" id="pass" placeholder="Password"></input>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></div>
+          <input type="date" class="form-control" id="dob" placeholder="yyyy-mm-dd"></input>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="zip">Zip Code</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-home"></span></div>
+          <input type="text" class="form-control" id="zip" placeholder="Zip Code"></input>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
+          <select class="form-control" id="state" placeholder="Please select your state:">
+            <option>Please select your state:</option>
+            <option>Georgia</option>
+            <option>The State of Macedoniatropolispialidocious</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="card">Payment Type</label>
+        <div class="input-group">
+          <label><input type="radio" name="optradio">Option 1</label>
+          <label><input type="radio" name="optradio2">Option 2</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="card">Card #</label>
+        <div class="input-group">
+          <div class="input-group-addon"><span class="glyphicon glyphicon-credit-card"></span></div>
+          <input type="text" class="form-control" id="card" placeholder="0000 0000 0000 0000"></input>
+        </div>
+      </div>
+
+
+
+      <a href="#" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span></a>
+
+
     </form>
   </div>
 </div><!-- /.container -->

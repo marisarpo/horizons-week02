@@ -3,15 +3,34 @@ body {
 font-size: 14px;
 line-height: 1.5;
 color: #24292e;
-background-color: #fff;
+background-color: #24292e;
 text-align: center;
 }
 
-.title {
-    color: purple;
+.title, .text {
+    color: white;
 }
 
 .bg-gray-darkr{
       background-color: #24292e
 
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
 }

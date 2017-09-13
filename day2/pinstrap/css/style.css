@@ -1,0 +1,40 @@
+body{
+  background: url("http://bragthemes.com/demo/pinstrap/wp-content/themes/pinstrap/images/redox_01.png") repeat;
+}
+
+.container-fluid{
+  padding: 0;
+}
+.navbar-header{
+  padding-left: 10px;
+}
+.navbar-brand{
+  font-family: 'Pacifico';
+  color: #ff0000 !important;
+  font-size: 24px;
+}
+
+#search-box{
+  border-radius: 30px;
+  width: 250px;
+  margin-right: 30px;
+}
+
+.img-col{
+  padding: 0;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+#picture-section{
+
+}
+.img-col:first-child{
+
+}
+.img-col img{
+  max-width: 100%;
+  margin-top: 10px;
+  height: auto;
+  border: 2px solid white;
+}

@@ -141,15 +141,21 @@ a {
 }
 
 .card {
-  /** PART 3 CSS here */
+  margin: 0 0 .5em 0;
+  background: white;
+  border-radius: 3px;
 }
 
 .card-body {
-  /** PART 3 CSS here */
+  padding: .5em .5em 2em .5em;
+  font-family: Cabin, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
 }
 
 .card-more {
-  /** PART 3 CSS here */
+  display: block;
+  margin: 0 0 -15px 0;
 }
 
 /** PART 4 CSS here: add card form */

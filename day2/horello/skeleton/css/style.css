@@ -3,15 +3,16 @@
 body {
   line-height: 18px;
   height: 100vh;
-
-  /** PART 1 CSS here */
+  background: rgb(0,121,191);
+  font-family: sans-serif;
 }
 
 header {
   position: relative;
   overflow: hidden;
-
-  /** PART 1 CSS here */
+  padding: 5px;
+  height: 40px;
+  background: rgba(0,0,0,0.15);
 }
 
 .header-logo {
@@ -53,11 +54,19 @@ a {
 }
 
 .add-list {
-  /** PART 1 CSS here */
+  background: rgba(0,0,0,0.15);
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px;
+  width: 280px;
+  padding: 7px;
+  border: 0;
 }
 
 .add-list:hover {
-  /** PART 1 CSS here */
+  background: rgba(96, 96, 96, .15);
+
 }
 
 .add-list-form {
@@ -69,7 +78,8 @@ a {
   overflow-y: hidden;
   height: calc(100% - 40px);
   padding-bottom: 1em;
-
+  display: flex;
+  flex-direction: row;
   /** PART 2 CSS here */
 }
 
@@ -83,8 +93,13 @@ a {
 .list {
   box-sizing: border-box;
   max-height: 100%;
-
-  /** PART 2 CSS here */
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em;
+  margin: 5px 5px;
+  border-radius: 3px;
+  width: 270px;
+  background: #e2e4e6;
 }
 
 .list-header {
@@ -103,11 +118,16 @@ a {
 }
 
 .add-card {
-  /** PART 2 CSS here */
+  height: 40px;
+  border-radius: 4px;
+  text-align: left;
+  background: rgba(16,16,16, .15);
+  color: #333;
+  margin: 3px 0;
 }
 
 .add-card:hover {
-  /** PART 2 CSS here */
+  background: rgba(96,96,96, .15);
 }
 
 

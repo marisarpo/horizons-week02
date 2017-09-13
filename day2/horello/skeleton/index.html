@@ -20,7 +20,23 @@
   </header>
 
   <!-- PART 5. Modal -->
-
+  <div class="modal fade" id="myModal" aria-labelledby="myModalLabel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <input class="form-control" type="text" placeholder="#DominateAllTheHouses">
+        </div>
+        <div class="modal-body">
+          <label for="#modalbody">Description:<textarea id="modalbody" class="form-control" placeholder="Card body goes here"></textarea></label>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   <div class="board">
     <div class="list-container">
       <div class="list">
@@ -36,14 +52,18 @@
           </div>
         </div>
         <div class="list-footer">
-          <button class="add-card">Add a card</button>
-
-          <!-- PART 4. Collapse -->
+          <button class="add-card" type="button" data-toggle="collapse" data-target="#add-well" aria-expanded="false" aria-controls="add-well">Add a card</button>
+          <div class="well collapse" id="add-well">
+            <form>
+              <input class="form-control" type="text" placeholder="Card title">
+              <button class="btn btn-default">Save</button><button class="btn btn-default"><span class="glyphicon glyphicon-remove"></button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
     <div class="add-list-container">
-        <button class="add-list">Add a list...</button>
+        <button type="button" class="add-list" data-toggle="modal" data-target="#myModal">Add a list...</button>
     </div>
   </div>
 </body>

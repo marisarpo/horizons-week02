@@ -46,7 +46,7 @@
     </div><!-- /.modal -->
 
     <div class="board">
-      <div class="list-container">
+      <div class="list-container" id="list-board">
         <div class="list">
           <div class="list-header">
             <span class="list-title">Some List</span>
@@ -63,7 +63,7 @@
             <button class="list-button add-card">Add a card...</button>
             <div class="collapse add-card-form-wrapper">
               <div class="well add-card-form">
-                <input type="text" class="form-control"
+                <input type="text" class="form-control input-card-save"
                                    placeholder="Card title">
                 <button type="button" class="btn btn-default add-card-save">
                   Save
@@ -132,7 +132,7 @@
             <button class="list-button add-card">Add a card...</button>
             <div class="collapse add-card-form-wrapper">
               <div class="well add-card-form">
-                <input type="text" class="form-control"
+                <input type="text" class="form-control input-card-save"
                                    placeholder="Card title">
                 <button type="button" class="btn btn-default add-card-save">
                   Save
@@ -164,7 +164,7 @@
             <button class="add-card">Add a card...</button>
             <div class="collapse add-card-form-wrapper">
               <div class="well add-card-form">
-                <input type="text" class="form-control"
+                <input type="text" class="form-control input-card-save"
                                    placeholder="Card title">
                 <button type="button"
                         class="btn btn-default add-card-save">Save
@@ -179,12 +179,12 @@
         </div>
       </div>
 
-      <div class="list-container">
+      <div class="list-container" id="add-list-board">
         <div class="add-list-container">
           <button class="add-list">Add a list...</button>
           <div class="collapse add-list-form-wrapper">
             <div class="well add-card-form">
-              <input type="text" class="form-control"
+              <input type="text" class="form-control" id='input-list-save'
                                  placeholder="List name">
               <button type="button"
                       class="btn btn-default add-list-save">Save

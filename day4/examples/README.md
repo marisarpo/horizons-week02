@@ -3,6 +3,23 @@
 - **All videos have the password `horizonites`**
 - Ask for help early and often! 🙋
 
+### Tourbleshooting: **`XMLHttpRequest cannot load`**
+
+If you see an error message in your console that says **`XMLHttpRequest cannot load`**, do the following:
+
+1. Open your DevTools console, switch to the Network tab
+1. Click the `Disable Cache` checkbox
+1. Refresh the page
+
+<details><summary>
+Watch this screen recording to see how
+</summary><p>
+
+![How to disable cache animation](https://cl.ly/2K1u0n0i1l2p/Screen%20Recording%202017-06-08%20at%2009.45%20AM.gif)
+
+</p></details>
+
+
 ### [Watch me: JSON](https://vimeo.com/209255707)
 
 ### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)

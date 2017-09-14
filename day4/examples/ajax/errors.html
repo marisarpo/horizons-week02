@@ -21,7 +21,27 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    //find the number of child nodes under #links
+    var listItems = $('#links').children();
+    //loop through each child node, retrieving the innerHTML from each
+    for (var i = 0; i < listItems.length-1; i++){
+      var liNode = listItems.eq(i);
+      var link = liNode.html();
+      //call the ajax request on each one, and if it errors out, hide the item on the list
+      listItems.each(function(){
+        var j = i;
+        $.ajax({
+          url: link,
+          success: function(response){
+            // do nothing
+          }, error: function(err){
+            // hide the list item from the document
+            liNode.hide();
+          }
+      });
+    });
+    // when using jquery .each, $this is the current item
+    }
     </script>
   </body>
 </html>

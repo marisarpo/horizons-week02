@@ -25,21 +25,23 @@
     var listItems = $('#links').children();
     //loop through each child node, retrieving the innerHTML from each
     for (var i = 0; i < listItems.length-1; i++){
-      var liNode = listItems.eq(i);
-      var link = liNode.html();
+
       //call the ajax request on each one, and if it errors out, hide the item on the list
       listItems.each(function(){
         var j = i;
+        var liNode = listItems.eq(j);
+        var link = liNode.html();
         $.ajax({
           url: link,
           success: function(response){
             // do nothing
           }, error: function(err){
             // hide the list item from the document
+            console.log(j)
             liNode.hide();
           }
+        });
       });
-    });
     // when using jquery .each, $this is the current item
     }
     </script>

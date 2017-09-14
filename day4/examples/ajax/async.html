@@ -26,6 +26,50 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'http://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(response){
+          var urlArray = []; //for storing urls
+          //loop through response object in [{obj},{obj},{obj}] format
+          response.forEach(function(object){
+            urlArray.push(object["url"]); //push each url to the url array
+          });
+          var objArray = []; //for storing price objects
+          //loop through list of urls
+          urlArray.forEach(function(link){
+            // and retrieve data for each
+            $.ajax({
+              url: link,
+              success: function(response2){
+                //pushing each object to objArray
+                objArray.push(response2);
+                if (objArray.length === 3){
+                  //sort the objects in objArray by price, lowest to highest
+                  objArray.sort(function(currentObj, nextObj){
+                    return nextObj["priceCents"] > currentObj["priceCents"];
+                  });
+                  //add to page one-by-one
+                  var html = "<ul>";
+                  for (var i = 0; i < objArray.length; i++){
+                    console.log(objArray);
+                    html += ("<li>" + (objArray[i]["name"]).toString() + ", " + objArray[i]["priceCents"] + "</li>");
+                  }
+                  html += "</ul>";
+                  console.log(html);
+                  $("#products").text(html);
+                }
+              }, error: function(e){
+                console.log("Inner failed.");
+                console.log(e.responseText);
+              }
+            });
+          });
+        }, error: function(e){
+          console.log("Outer failed")
+          console.log(e.responseText);
+        }
+
+      });
     </script>
   </body>
 </html>

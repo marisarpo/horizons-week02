@@ -1,11 +1,14 @@
 "use strict";
 /* eslint-env jquery */
-
+// var account ="AC0c2eb1fade921040dc524f66e9c091ba"; // YOUR CODE HERE
+// var token='c3eee8c1915aa3c410da7fff08b8cbf1'; // YOUR CODE HERE
+// var fromNumber =+14142929185 ; // YOUR CODE HERE
+// var toNumber =+14145301736; // YOUR CODE HERE
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC0c2eb1fade921040dc524f66e9c091ba";
+  this.authToken = "c3eee8c1915aa3c410da7fff08b8cbf1";
+  this.fromNumber = "14142929185";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +25,61 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    if($.trim(textStr) === ''){
+      return false;
+    }
+    return true;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    var splitStr = phoneStr.split('');
+
+    splitStr.forEach(function(elem){
+      if(typeof elem !== 'number'){
+        return false;
+      }
+    });
+
+    if(splitStr.length !== 11){
+      return false;
+    }else{
+    return true;
+    }
+
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    var self =this;
+    event.preventDefault();
+    var mift =this.messageInputField.val();
+    var pift =this.phoneInputField.val();
+    if(this.validateMessageField(mift) &&
+    this.validatePhoneField(pift)){
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function(x) {
+          console.log('Message sent', x);
+          self.displayMessage(pift,mift);
+        },
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: pift,
+          Body: mift
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        error: function(){
+          alert("Your request failed.");
+        }
+
+      });
+    }
+
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

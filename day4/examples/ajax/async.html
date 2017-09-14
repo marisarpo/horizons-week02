@@ -9,7 +9,7 @@
 
     <h1>AJAX Async Example</h1>
 
-    <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a href="https://horizons-json-cors.s3.amazonaws.com/products.json">these products</a> in JavaScript on this page. Display their names and prices below as a bulleted list.</p>
+    <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a id ="use" href="https://horizons-json-cors.s3.amazonaws.com/products.json">these products</a> in JavaScript on this page. Display their names and prices below as a bulleted list.</p>
     <p>
       The link above will respond with an array of urls. You need to asynchronously make AJAX requests to these links, and then sort the results in increasing price order (lowest price up top).
     </p>
@@ -23,9 +23,36 @@
       <li>DJI Phantom 3, $416.59</li>
     </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      alert = function(){};
+      $.ajax({
+        url: $('#use').attr('href'),
+        success:function(resp){
+          console.log("SUCCESS");
+          var arr = JSON.parse(JSON.stringify(resp));
+          var big = 0;
+          var arrelem =[];
+          arr.forEach(function(element){
+            $.ajax({
+              url: element['url'],
+              success: function(resp){
+                console.log("success");
+                arrelem.push(resp);
+              arrelem.sort(function(a,b){
+                return a.priceCents-b.priceCents;
+              });
+              if(arrelem.length > 2){
+                arrelem.forEach(function(el){
+                  $('#products').append(`<ul><li>${el.name}, $${el.priceCents/100}</li></ul>`);
+                });
+              }
+
+            }
+          });
+        });
+      }
+    });
     </script>
   </body>
 </html>

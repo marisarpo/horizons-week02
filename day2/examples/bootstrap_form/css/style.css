@@ -2,9 +2,64 @@
 
 html, body {
 	height: 100%;
+	text-align: center;
 }
 
 .container, .well{
 	height: 100%;
 	margin-bottom: 0;
+}
+.form-control {
+	display: inline-block;
+	flex-grow: 9;
+	padding: 1px 10px;
+	height: 100%;
+	border-radius: 0;
+	border-left: 1px solid silver;
+}
+
+label {
+	margin: 10px;
+	text-align: right;
+	margin: 5px 25px;
+}
+
+.glyphicon {
+	margin: 0 12px;
+}
+
+.input {
+	border: 1px solid silver;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	height: 30px;
+	width: 35%;
+	margin: 10px 25px;
+}
+
+#selPay {
+	margin: 10px 25px;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-grow: 1;
+	margin: 0;
+}
+
+#whole-form {
+	display: flex;
+	flex: 1;
+}
+
+.labels {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-end;
+	flex-grow: 1;
 }

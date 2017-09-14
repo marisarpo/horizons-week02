@@ -45,7 +45,33 @@ header {
 a {
     background-color: transparent;
 }
+.white {
+  background-color: white;
+}
 
+.black {
+  background-color: black;
+}
+
+.darkgreen {
+  background-color: rgb(0,100,0);
+}
+
+.purple {
+  background-color: darkorchid;
+}
+
+.lightblue {
+  background-color: rgba(173,216,230,.15);
+}
+
+.defaultHeader {
+  background-color: rgba(0,0,0,.15);
+}
+
+.defaultBody {
+  background-color: rgb(0,121,191)
+}
 
 /* BOARD */
 

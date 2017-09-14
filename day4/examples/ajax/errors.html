@@ -22,6 +22,31 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var links = $('ul#links').children();
+      console.log(links);
+
+      for(var i =0; i < links.length; i++){
+
+        var removeLinks = function(){
+          console.log(links[i])
+          $(links[i]).hide();
+        }
+        $.ajax({
+          url: links[i].innerHTML,
+          success: function(resp){
+            console.log("SUCCESS");
+          },
+          error: function(err){
+            var links = $('ul#links').children();
+            for(var i =0; i < links.length;i++){
+              if(links[i].innerHTML === this.url){
+                links[i].remove();
+              }
+            }
+
+          }
+        })
+      }
     </script>
   </body>
 </html>

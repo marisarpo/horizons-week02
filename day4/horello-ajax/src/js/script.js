@@ -4,14 +4,21 @@
 $(document).ready(function() {
   setEventListeners();
   render();
+  pollServer();
 });
 
+function makeSortable(){
+  $('.list-cards').sortable({
+    connectWith: '.list-cards'
+  }).disableSelection();
+}
+function pollServer(){
+  setInterval(render, 30000)
+}
 function createList(listName) {
   // YOUR CODE HERE
   $.ajax('https://api.Trello.com/1/lists', {
     data: {
-      key: apiKey,
-      token: apiToken,
       idBoard: boardId,
       name: listName
     },
@@ -20,7 +27,7 @@ function createList(listName) {
       render();
     },
     error: function(err){
-      console.log(err);
+      render();
     }
   })
 }
@@ -29,8 +36,6 @@ function createCard(name, listId) {
   // YOUR CODE HERE
   $.ajax('https://api.Trello.com/1/cards', {
     data: {
-      key: apiKey,
-      token: apiToken,
       idList: listId,
       name: name
     },
@@ -39,7 +44,7 @@ function createCard(name, listId) {
       render();
     },
     error: function(err){
-      console.log(err);
+      render();
     }
   })
 }
@@ -48,8 +53,6 @@ function updateCard(title, desc, cardId) {
   // YOUR CODE HERE
   $.ajax('https://api.Trello.com/1/cards/' + cardId, {
     data: {
-      key: apiKey,
-      token: apiToken,
       name: title,
       desc: desc
     },
@@ -58,30 +61,44 @@ function updateCard(title, desc, cardId) {
       render();
     },
     error: function(err){
-      console.log(err);
+      render();
     }
   })
 }
 
 function render() {
   // YOUR CODE HERE
+  makeSortable();
+  $.ajaxSetup({
+    data: {
+      key: apiKey,
+      token: apiToken
+    }
+  });
   $.ajax('https://api.Trello.com/1/boards/' + boardId, {
   data: {
-    key: apiKey,
-    token: apiToken,
     cards: 'all',
     lists: 'all'
   },
-  success: function(data) { renderBoard(data)}
+  success: function(data) { renderBoard(data)},
+  error: function(){
+    render();
+  }
 });
 }
 
 function renderBoard(board) {
   // YOUR CODE HERE
+  $('.list-cards').sortable({
+    connectWith: '.list-cards'
+  }).disableSelection();
   $('#boardAnchor').empty();
   $('#boardAnchor').append(`<div id="$`+ boardId +`" class="board"></div>`);
   board.lists.forEach(function(list){
-    renderList(list);
+    if(!list.closed){
+      renderList(list);
+    }
+
   });
 
   board.cards.forEach(function(card){
@@ -95,6 +112,7 @@ function renderList(list) {
   <div class="list" data-list-id="` + list.id +`" id="`+ list.id + `">
     <div class="list-header">
       <span class="list-title">`+ list.name + `</span>
+        <span class= "delete-list glyphicon glyphicon-remove" style=" margin-top: 5px; position:relative; z-index: 10"></span>
     </div>
     <div class="list-cards"></div>
     <div class="list-footer">
@@ -111,13 +129,38 @@ function renderList(list) {
 </div>`
 $('#boardAnchor .board').append(listHtml);
 }
+function deleteList(listId){
+  console.log(listId);
+  $.ajax('https://api.Trello.com/1/lists/' + listId + '/closed', {
+    method: 'PUT',
+    data: {
+      value: true
+    },
+    success: function(){
+      render();
+    },
+    error: function(err){
+      console.log(err);
+    }
+  })
+}
 
 function renderCard(card) {
   // YOUR CODE HERE
   var cardHtml = `<div id="`+ card.id +`" class="card" data-card-desc="`+ card.desc + `" data-card-name="`+ card.name + `" data-list-id="`+ card.idList + `" data-card-id="`+ card.id +`">
+  <span class= "delete-card glyphicon glyphicon-remove" style="float:right; margin-right: 3px; margin-top: 3px; position:relative; z-index: 10"></span>
   <div class="card-body">
     `+ card.name + `
   </div>
 </div>`
 $(' #' + card.idList).children('.list-cards').append(cardHtml);
+}
+
+function deleteCard(cardId){
+  $.ajax('https://api.Trello.com/1/cards/' + cardId, {
+    method: 'DELETE',
+    success: function(){
+      render();
+    }
+  })
 }

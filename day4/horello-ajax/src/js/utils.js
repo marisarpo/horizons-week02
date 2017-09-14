@@ -2,6 +2,8 @@
 // handlers/event listeners to the .board class
 // in order to make Horello reactive
 function setEventListeners() {
+
+
   $('.board').on('click', '.add-list', function(e) {
     $('#addList').collapse('toggle');
   });
@@ -20,12 +22,19 @@ function setEventListeners() {
     createList(listName);
     $('#addListText').val('');
     $('#addList').collapse('toggle');
+
+    //enable sortable for new lists
+
   });
 
   $('.board').on('click', '#addListCancel', function(e) {
     $('#addList').collapse('hide');
   });
-
+  $('.board').on('click', '.delete-list', function(e){
+    e.stopPropagation();
+    var listId = $(this).closest('.list').attr('id');
+    deleteList(listId);
+  })
   $('#cardEdit').on('show.bs.modal', function (e) {
     console.log("BAMS")
     var button = $(e.relatedTarget);
@@ -79,8 +88,15 @@ function setEventListeners() {
     $(this).closest('.add-card-form-wrapper').addClass('collapse');
   });
 
-  $('.board').on('click', '.card', function (e) {
+  $('.board').on('click', '.card:not(.delete-card)', function (e) {
     e.stopPropagation();
     $('#cardEdit').modal('toggle', $(this));
   });
+  $('.board').on('click', '.delete-card', function(e){
+    e.stopPropagation();
+    var cardId = $(this).parent().attr('id');
+    deleteCard(cardId);
+  });
+
+
 }

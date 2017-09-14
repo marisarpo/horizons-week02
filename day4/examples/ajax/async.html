@@ -23,9 +23,35 @@
       <li>DJI Phantom 3, $416.59</li>
     </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(resp){
+          var arr = JSON.parse(JSON.stringify(resp));
+          // console.log(arr);
+          var big = 0;
+          var arrElem = []
+          arr.forEach(function(element){
+            $.ajax({
+              url: element['url'],
+              success: function(r) {
+                arrElem.push(r);
+                arrElem.sort(function(a, b) {
+                  return a.priceCents-b.priceCents;
+                })
+                // console.log(arrElem);
+                if(arrElem.length === 3){
+                  arrElem.forEach(function(e){
+                    $('#products').append(`<ul><li>${e.name}, $${e.priceCents/100}</li></ul>`);
+                  });
+                }
+              }
+            })
+          })
+        }
+      })
     </script>
   </body>
 </html>

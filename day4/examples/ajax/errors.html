@@ -21,7 +21,20 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var arr =['#products', '#members','#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF','#oUfx3vNy2C6l8dzki84Tp2e3cds3','#poem'];
+      arr.forEach(function(element){
+        $.ajax({
+          url:$(element).text(),
+          success: function(resp){
+            console.log("SUCCESS!");
+          },
+          error: function(resp){
+            console.log("Error");
+            $(element).remove();
+          }
+        });
+      });
+
     </script>
   </body>
 </html>

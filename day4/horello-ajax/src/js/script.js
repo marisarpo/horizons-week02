@@ -7,11 +7,7 @@ $(document).ready(function() {
   pollServer();
 });
 
-function makeSortable(){
-  $('.list-cards').sortable({
-    connectWith: '.list-cards'
-  }).disableSelection();
-}
+
 function pollServer(){
   setInterval(render, 30000)
 }
@@ -68,7 +64,7 @@ function updateCard(title, desc, cardId) {
 
 function render() {
   // YOUR CODE HERE
-  makeSortable();
+
   $.ajaxSetup({
     data: {
       key: apiKey,
@@ -89,9 +85,7 @@ function render() {
 
 function renderBoard(board) {
   // YOUR CODE HERE
-  $('.list-cards').sortable({
-    connectWith: '.list-cards'
-  }).disableSelection();
+
   $('#boardAnchor').empty();
   $('#boardAnchor').append(`<div id="$`+ boardId +`" class="board"></div>`);
   board.lists.forEach(function(list){
@@ -104,6 +98,37 @@ function renderBoard(board) {
   board.cards.forEach(function(card){
     renderCard(card);
   })
+
+  $('.list-cards').sortable({
+    connectWith: '.list-cards',
+    update: function(event, ui){
+
+
+      var childArray = $(this).children();
+
+      var cardId = $(ui.item[0]).attr('id');
+      var listId = $(this).closest('.list').attr('id');
+      var position;
+      childArray.each(function(index){
+        if(childArray.eq(index).is($(ui.item[0]))){
+          position = index;
+        }
+      });
+      // console.log(position);
+      $.ajax('https://api.Trello.com/1/cards/' + cardId, {
+        data:{
+          idList: listId,
+          pos: position
+        },
+        method: "PUT",
+        success: function(){
+          render();
+        }
+      })
+
+    }
+  }).disableSelection();
+
 }
 
 function renderList(list) {

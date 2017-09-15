@@ -1,0 +1,40 @@
+html, body{
+  height: 100%;
+  background-color: #ccc;
+}
+header {
+  height: 75px;
+}
+#login-nav {
+  background-color: grey;
+}
+#login-nav span {
+  font-size: 1.3em;
+  color: white;
+}
+#login-nav img{
+  height: 75px;
+}
+label {
+  color: white;
+}
+main {
+  background-color: #ccc;
+}
+h3 {
+  text-align: center;
+  color: grey;
+}
+.container .row .col-sm-4:first-child {
+  padding: 40px 20px 0 0;
+  color: grey;
+  font-size: 1.8em;
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #login-nav form {
+    margin-top: 20px;
+    float: right;
+  }
+ }

@@ -120,6 +120,7 @@ function setReplyListenter(){
           content: textContent
         },
         success: function(data){
+          console.log("hi");
           self.hide();
           console.log(data);
           var comment = data.response.comments[data.response.comments.length-1];
@@ -268,7 +269,8 @@ function init() {
           $('.loginPage').show();
           $('.newsfeed').hide();
           clearInterval(localStorage.getItem("intervalId"));
-          localStorage.clear();
+          localStorage.removeItem('token');
+          localStorage.removeItem('userId');
         },
         error: function(error) {
           console.log("Logout failed due to", error);

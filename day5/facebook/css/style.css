@@ -1,48 +1,53 @@
-#signin-nav {
+body{
+  height: 100%;
+  background-color: #ccc;
+}
+header {
+  height: 75px;
+}
+#login-nav {
   background-color: grey;
 }
-#signin-nav span {
+#login-nav span {
   font-size: 1.3em;
   color: white;
 }
-#signin-nav img{
-  width: 70px;
-}
-#signin-nav form {
-  float: right;
-  margin-top: 20px;
+#login-nav img{
+  height: 75px;
 }
 label {
   color: white;
 }
-#sign-pass{
-}
 main {
   background-color: #ccc;
+}
+h3 {
+  text-align: center;
+  color: grey;
+}
+.container .col-sm-4:first-child {
+  padding: 40px 20px 0 0;
+  color: grey;
+  font-size: 1.8em;
+}
+.container{
   height: 100%;
-
 }
 
-body {
-  height: 100%;
-  background-color: #ccc;
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #login-nav form {
+    margin-top: 20px;
+    float: right;
+  }
+ }
 
-}
+ .left{
+   width: 100%;
+ }
 
-.container-fluid{
-  font-weight: bold;
-  font-size: 2em;
-}
-
-.left{
-  margin: 100px;
-}
-
-#login-photo{
-  margin-left: auto;
-  margin-right: auto;
-}
-
-html{
-  height: 100%
-}
+ .login-left{
+   text: #ccc;
+   font-weight: bold;
+   font-size: 2em;
+ }

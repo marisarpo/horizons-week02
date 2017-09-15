@@ -1,0 +1,48 @@
+#signin-nav {
+  background-color: grey;
+}
+#signin-nav span {
+  font-size: 1.3em;
+  color: white;
+}
+#signin-nav img{
+  width: 70px;
+}
+#signin-nav form {
+  float: right;
+  margin-top: 20px;
+}
+label {
+  color: white;
+}
+#sign-pass{
+}
+main {
+  background-color: #ccc;
+  height: 100%;
+
+}
+
+body {
+  height: 100%;
+  background-color: #ccc;
+
+}
+
+.container-fluid{
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.left{
+  margin: 100px;
+}
+
+#login-photo{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html{
+  height: 100%
+}

@@ -6,6 +6,7 @@
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://horizons-facebook.herokuapp.com/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="js/moment.js"> </script>
 
     <!-- Your css file -->
@@ -48,6 +49,17 @@
                 <textarea class="form-control postContents" rows="8" cols="80"></textarea>
               </div>
               <a class="btn btn-info post-content"> Post </a>
+            </div>
+          </form>
+        </div>
+        <div class="col-xs-4 col-xs-offset-1 chat">
+          <div class="display-chat"></div>
+          <form class="form-horizontal post-chat">
+            <div class="form-group">
+              <div class="col-sm-10">
+                <textarea class="form-control post-chat-content" rows="5" cols="80"></textarea>
+              </div>
+              <a class="btn btn-info post-chat-btn"> Post </a>
             </div>
           </form>
         </div>

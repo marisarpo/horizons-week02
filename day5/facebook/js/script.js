@@ -1,8 +1,10 @@
 
+
+
 function loadNewsFeed() {
-  console.log("HI");
   $('.loginPage').hide();
   $('.newsfeed').show();
+  initializeChat();
   $.ajaxSetup({
     data: {
       token: localStorage.getItem('token')
@@ -24,7 +26,28 @@ function loadNewsFeed() {
     }
   });
 }
+var initializeChat = (function loadChatOnce() {
+  var hasRun = false;
+  function loadChat(){
+    if(!hasRun) {
+      console.log("WHAT");
+      var token = localStorage.getItem("token");
+      var socket = io.connect('https://horizons-facebook.herokuapp.com/');
+      socket.emit('authentication', {'token': token});
+      $('.post-chat-btn').on('click', function(e){
+        var content = $('.post-chat-content').val();
+        var returnData = socket.emit('message', content);
+        var content = $('.post-chat-content').val("");
+        });
 
+      socket.on('message', function(msg){
+        $('.display-chat').append($('<li>').text(msg.username.split(' ')[0] + ':' + msg.message));
+      })
+    }
+    hasRun = true;
+  }
+  return loadChat;
+})();
 var refreshSet = (function setRefreshOnce(){
   var setRefresh = false;
   return function(){
@@ -105,7 +128,10 @@ function setReplyListenter(){
     var textareaHtml = `
       <textarea id=${postId} class="form-control post-comment" placeholder="Write a comment..."></textarea>
     `;
-    $(this).closest('.reactions').append(textareaHtml);
+    if($(this).closest('.reactions').find('textarea').length===0){
+      $(this).closest('.reactions').append(textareaHtml);
+    }
+
   });
   $('.newsfeed').on('keydown', '.post-comment', function(e){
     var postId = $(this).attr('id');
@@ -123,7 +149,6 @@ function setReplyListenter(){
           self.hide();
           console.log(data);
           var comment = data.response.comments[data.response.comments.length-1];
-
           var name = comment.poster.name.split(' ')[0];
           var commentTime = moment(comment.createdAt);
           var timeString = convertTime(commentTime);
@@ -246,12 +271,12 @@ function init() {
           password: password
         },
         success: function(resp) {
-          console.log(resp);
           localStorage.setItem('token', resp.response.token);
           localStorage.setItem('userId', resp.response.id);
           // console.log(localStorage.getItem('token'));
           // console.log(localStorage.getItem('userId'));
           loadNewsFeed();
+
         },
         error: function(error) {
           console.log("Login failed due to ", error);
@@ -260,7 +285,7 @@ function init() {
     })
 
     // Log out implementation
-    $('.container').on('click', '.logout', function(e) {
+    $('.container').on('click', 'a.logout', function(e) {
       $.ajax({
         url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/logout',
         method: "GET",

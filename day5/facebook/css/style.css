@@ -9,14 +9,16 @@
 .post-form{
   margin-top: 35px;
 }
-
+.post-chat{
+  margin-top: 79px;
+}
 .reactions textarea{
   width: 70%;
   margin-left: 15%;
   margin-top: 10px;
 }
 
-.post-card{
+.post-card {
   border: 2px solid black;
   margin-top: 10px;
   margin-bottom: 10px;

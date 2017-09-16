@@ -41,6 +41,7 @@ var initializeChat = (function loadChatOnce() {
         });
 
       socket.on('message', function(msg){
+
         $('.display-chat').append($('<li>').text(msg.username.split(' ')[0] + ':' + msg.message));
       })
     }
@@ -234,113 +235,113 @@ function init() {
   // User registration implementation
   if(localStorage.getItem('token')){
     loadNewsFeed();
-  } else{
-    $('.container').on('click', '.userRegistration .registerButton', function(e) {
-      var firstName = $(this).siblings('.firstName').val();
-      var lastName = $(this).siblings('.lastName').val();
-      var email = $(this).siblings('.email').val();
-      var password = $(this).siblings('.password').val();
-      $.ajax({
-        url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/register',
-        data: {
-          fname: firstName,
-          lname: lastName,
-          email: email,
-          password: password
-        },
-        method: "POST",
-        success: function(resp) {
-          console.log(resp.success);
-        },
-        error: function(error) {
-          console.log('User creation failed due to ', error);
-        }
-      })
-    });
-
-    // Login implementation
-    $('.container').on('click', '.userRegistration .login', function(e) {
-      var email = $('.email').val();
-      var password = $('.password').val();
-
-      $.ajax({
-        url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/login',
-        method: 'POST',
-        data: {
-          email: email,
-          password: password
-        },
-        success: function(resp) {
-          localStorage.setItem('token', resp.response.token);
-          localStorage.setItem('userId', resp.response.id);
-          // console.log(localStorage.getItem('token'));
-          // console.log(localStorage.getItem('userId'));
-          loadNewsFeed();
-
-        },
-        error: function(error) {
-          console.log("Login failed due to ", error);
-        }
-      })
-    })
-
-    // Log out implementation
-    $('.container').on('click', 'a.logout', function(e) {
-      $.ajax({
-        url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/logout',
-        method: "GET",
-        success: function(resp) {
-          $('.loginPage').show();
-          $('.newsfeed').hide();
-          clearInterval(localStorage.getItem("intervalId"));
-          localStorage.clear();
-        },
-        error: function(error) {
-          console.log("Logout failed due to", error);
-        }
-      });
-    })
-
-    //Swap from register to login screen
-    $('.container').on('click', '.alternateButton > .login', function(e) {
-      var topButton = $('.registerButton');
-      var botButton = $(this);
-
-      //updating top button Register -> Login
-      topButton.addClass('login');
-      topButton.removeClass('registerButton');
-      topButton.html('Login');
-
-      //updating bottom button Login -> Go to registration
-      botButton.addClass('registerButton');
-      botButton.removeClass('login');
-      botButton.html('Go to registration');
-
-      //hide firstName and lastName input fields
-      $('.firstName').hide();
-      $('.lastName').hide();
-    });
-
-    //Swap from login to register screen
-    $('.container').on('click', '.alternateButton > .registerButton', function(e) {
-      var topButton = $('.login');
-      var botButton = $(this);
-
-      //updating top button Register -> Login
-      topButton.addClass('registerButton');
-      topButton.removeClass('login');
-      topButton.html('Register');
-
-      //updating bottom button Login -> Go to registration
-      botButton.addClass('login');
-      botButton.removeClass('registerButton');
-      botButton.html('Login');
-
-      //hide firstName and lastName input fields
-      $('.firstName').show();
-      $('.lastName').show();
-    });
   }
+
+  $('.container').on('click', '.userRegistration .registerButton', function(e) {
+    var firstName = $(this).siblings('.firstName').val();
+    var lastName = $(this).siblings('.lastName').val();
+    var email = $(this).siblings('.email').val();
+    var password = $(this).siblings('.password').val();
+    $.ajax({
+      url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/register',
+      data: {
+        fname: firstName,
+        lname: lastName,
+        email: email,
+        password: password
+      },
+      method: "POST",
+      success: function(resp) {
+        console.log(resp.success);
+      },
+      error: function(error) {
+        console.log('User creation failed due to ', error);
+      }
+    })
+  });
+
+  // Login implementation
+  $('.container').on('click', '.userRegistration .login', function(e) {
+    var email = $('.email').val();
+    var password = $('.password').val();
+
+    $.ajax({
+      url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/login',
+      method: 'POST',
+      data: {
+        email: email,
+        password: password
+      },
+      success: function(resp) {
+        localStorage.setItem('token', resp.response.token);
+        localStorage.setItem('userId', resp.response.id);
+        // console.log(localStorage.getItem('token'));
+        // console.log(localStorage.getItem('userId'));
+        loadNewsFeed();
+
+      },
+      error: function(error) {
+        console.log("Login failed due to ", error);
+      }
+    })
+  })
+
+  // Log out implementation
+  $('.container').on('click', '.logout', function(e) {
+    $.ajax({
+      url: 'https://horizons-facebook.herokuapp.com/api/1.0/users/logout',
+      method: "GET",
+      success: function(resp) {
+        $('.loginPage').show();
+        $('.newsfeed').hide();
+        clearInterval(localStorage.getItem("intervalId"));
+        localStorage.clear();
+      },
+      error: function(error) {
+        console.log("Logout failed due to", error);
+      }
+    });
+  })
+
+  //Swap from register to login screen
+  $('.container').on('click', '.alternateButton > .login', function(e) {
+    var topButton = $('.registerButton');
+    var botButton = $(this);
+
+    //updating top button Register -> Login
+    topButton.addClass('login');
+    topButton.removeClass('registerButton');
+    topButton.html('Login');
+
+    //updating bottom button Login -> Go to registration
+    botButton.addClass('registerButton');
+    botButton.removeClass('login');
+    botButton.html('Go to registration');
+
+    //hide firstName and lastName input fields
+    $('.firstName').hide();
+    $('.lastName').hide();
+  });
+
+  //Swap from login to register screen
+  $('.container').on('click', '.alternateButton > .registerButton', function(e) {
+    var topButton = $('.login');
+    var botButton = $(this);
+
+    //updating top button Register -> Login
+    topButton.addClass('registerButton');
+    topButton.removeClass('login');
+    topButton.html('Register');
+
+    //updating bottom button Login -> Go to registration
+    botButton.addClass('login');
+    botButton.removeClass('registerButton');
+    botButton.html('Login');
+
+    //hide firstName and lastName input fields
+    $('.firstName').show();
+    $('.lastName').show();
+  });
 
 
 }

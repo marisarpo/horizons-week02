@@ -1,17 +1,24 @@
 "use strict";
 
+$(document).ready(function(){
+  if (localStorage.getItem('token')){ //will either be null or undefined
+    console.log("Auto-login successful.");
+    renderToolbar();
+    renderPostBox();
+    renderTimeline(0);
+  }
+});
+
 // Event Handlers
 $('.sign-up-btn').on('click', signup);
 $('#login-button').on("click", login);
 
 var alertMessage;
-var firstName;
-var lastName;
 
 // Functions
 function signup(event) {
-  firstName = $('#signup-fname').val()
-  lastName = $('#signup-lname').val()
+  var firstName = $('#signup-fname').val()
+  var lastName = $('#signup-lname').val()
   var eMail = $('#signup-email').val()
   var password = $('#signup-pass').val()
   event.preventDefault();
@@ -114,12 +121,12 @@ var posts;
 function renderToolbar(){
   // renders the toolbar on top of the screen
   var toolbarHTML = `<div class="btn-group btn-group-sm" role="group" aria-label="..." id="toolbar">
-    <p id="welcomeText">Loading your timeline...</p>
-    <button type="button" class="btn btn-default" id="home-button">Home</button>
+    <p id="welcomeText">Welcome to Face Horizons!</p>
     <button type="button" class="btn btn-default" id="chat-button">Chat</button>
     <button type="button" class="btn btn-default" id="log-out-button">Log Out</button>
   </div>`
   $("header .col-md-9").html(toolbarHTML);
+  $("#log-out-button").on("click", logout);
 }
 
 function renderPostBox(){
@@ -195,7 +202,7 @@ function renderTimeline(pageNum){
                       <div class="panel-footer panel-default">
                         <div class="btn-toolbar" role="toolbar">
                           <div class="btn-group" role="group">
-                            <button type="button" class="btn btn-default"><span>${numLikes} </span><span class="glyphicon glyphicon-thumbs-up"></span></button>
+                            <button type="button" class="btn btn-default" id="like${postId}"><span>${numLikes} </span><span class="glyphicon glyphicon-thumbs-up"></span></button>
                             <button type="button" class="btn btn-default"><span>${numComments} </span><span class="glyphicon glyphicon-comment"></span></button>
                           </div>
                           <div class="btn-group" role="group">
@@ -208,10 +215,8 @@ function renderTimeline(pageNum){
                   `
                 var totalPostHTML = "";
                 totalPostHTML += postTopHTML;
-                console.log("getting to right before comments")
                 if (numComments > 0) {
                   post.comments.forEach(function(comment){
-                    console.log("getting to comments")
                     var commentContent = comment.content;
                     var commentAuthor = comment.poster.name;
                     var commentHTML = `<li class="list-group-item"><span class="label label-default">${commentAuthor}</span> ${commentContent}</li>`
@@ -219,12 +224,11 @@ function renderTimeline(pageNum){
                   });
                 }
                 totalPostHTML += postBottomHTML
-                console.log("getting to the spot after comments are loaded");
-            //    var a = "#collapse" + postId;
-              //  var b = a +">ul";
-              //  console.log(b);
+                var replyButtonSelector = '#replyButton' + postId;
+                var likeButtonSelector = "#like" + postId;
                 $('#postContainer').append(totalPostHTML);
-                console.log(totalPostHTML);
+                $(replyButtonSelector).on("click", reply);
+                $(likeButtonSelector).on("click", like);
           });
         },
         data: {
@@ -279,22 +283,75 @@ function makeNewPost(event){
     event.preventDefault();
 }
 
+function reply(event){
+  var button = $(event.target);
+  var buttonId = button.attr("id");
+  var postId = buttonId.substring(11,buttonId.length); //
+  var inputId = "#replyInput" + postId
+  var comment = $(inputId).val();
+  var postCommentURL = "https://horizons-facebook.herokuapp.com/api/1.0/posts/comments/" + postId;
+  $.ajax(
+    postCommentURL,
+    {
+    method: 'POST',
+    success: function(response){
+      renderTimeline(0);
+    },
+    data: {
+      "token": localStorage.getItem("token"),
+      "content": comment
+    }, error(e){
+      console.log(e.responseJSON.error);
+      console.log("comment not submitted...")
+    }
+  });
+  event.preventDefault();
+}
 
+function like(event){
+  var button = $(event.target);
+  var buttonId = button.attr("id");
+  console.log(buttonId);
+  var postId = buttonId.substring(4,buttonId.length);
+  console.log(postId);
+  var postCommentURL = "https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/" + postId;
+  $.ajax(
+    postCommentURL,
+    {
+    method: 'GET',
+    success: function(response){
+      renderTimeline(0);
+    },
+    data: {
+      "token": localStorage.getItem("token")
+    }, error(e){
+      console.log(e.responseJSON.error);
+      console.log("like not submitted...")
+    }
+  });
+  event.preventDefault();
+}
 
-function logout(){
+function logout(event){
+  console.log("Attempting logout...")
   var logoutURL = "https://horizons-facebook.herokuapp.com/api/1.0/users/logout?token=" + localStorage.getItem("token");
   $.ajax(
     logoutURL,
     {
       method: 'GET',
       success: function(response){
+        console.log("Successfully logged out from server... Attempting local logout.")
         localStorage.removeItem("token");
-        console.log("User has been successfully logged out!");
+        localStorage.removeItem("user_id");
+        console.log("User has been successfully logged out! Refreshing page.");
+        location.reload();
       },
-      date: {
+      data: {
         "token": localStorage.getItem("token")
       }, error: function(error){
         console.log(error.responseText);
+        location.reload();
       }
   });
+  event.preventDefault();
 }

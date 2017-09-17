@@ -15,7 +15,7 @@ header {
 #login-nav img{
   height: 75px;
 }
-label {
+label, #welcomeText {
   color: white;
 }
 main {
@@ -30,11 +30,29 @@ h3 {
   color: grey;
   font-size: 1.8em;
 }
+.alert {
+  margin-top: 5px;
+}
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   #login-nav form {
     margin-top: 20px;
     float: right;
+  }
+  #toolbar {
+    margin-top: 10px;
+    float: right;
+  }
+  /*
+  #writePost>div {
+    border-bottom: dashed 5px #f44242;
+  }
+  */
+  #writePost>div,
+  #postRow>div {
+    background: #eee;
+    color: #777;
+    padding-bottom: 10px;
   }
  }

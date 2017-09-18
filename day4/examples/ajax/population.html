@@ -22,11 +22,26 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
+    $.ajax({
+      url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+      success: function(resp) {
+        // $('body').append($('<pre>').text(resp))
+        var jay = 0
+        var city = ""
+        for (var i = 0; i < resp.length; i++) {
+          if( jay < resp[i]['Population']) {
+            jay = resp[i]['Population']
+            city = resp[i]['City / Urban area']
+          }
+        }
+$('#out').text(city);
+
+      }
+
+    })
       // YOUR CODE HERE
 
-      $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
-      });
+  
     </script>
   </body>
 </html>

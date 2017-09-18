@@ -18,9 +18,7 @@
     <a class="header-logo"
     href="#"><span class="header-logo-default"></span></a>
   </header>
-
   <!-- PART 5. Modal -->
-
   <div class="board">
     <div class="list-container">
       <div class="list">
@@ -28,24 +26,91 @@
           <span class="list-title">House List</span>
         </div>
         <div class="list-cards">
-          <div class="card">
+          <div class="card" data-toggle="modal" data-target="#cardEdit">
+            <span class="card-more">
+              <span class= "glyphicon glyphicon-align-left"></span>
+            </span>
             <div class="card-body">
               Today we will #DominateAllTheHouses
             </div>
           </div>
         </div>
         <div class="list-footer">
-          <!-- PART 2. Add card button -->
+          <button class="list-button add-card"
+          data-toggle="collapse"
+          href="#addCard1">Add a card...
+        </button>
+        <div class="collapse" id="addCard1">
+          <div class="well add-card-form">
+            <input type="text" class="form-control"
+            placeholder="Card title">
+            <button type="button" class="btn btn-default">
+              Save
+            </button>
+            <button type="button"
+            class="btn btn-default"><span
+            class="glyphicon glyphicon-remove"></span>
+          </button>
 
-          <!-- PART 4. Collapse -->
         </div>
+
+        <!-- PART 4. Collapse -->
+
       </div>
     </div>
-
-    <!-- PART 1. Add list button -->
-
-
   </div>
+
+  <!-- PART 1. Add list button -->
+
+
+  <!-- <div class ="add-list-container">
+  <button class ="add-list" name ="list">Add a list...</button>
+</div> -->
+</div>
+
+
+
+<div class ="add-list-container">
+  <button class="list-button add-list"
+  data-toggle="collapse"
+  href="#addlist1">Add a list...
+</button>
+<div class="collapse" id="addlist1">
+  <div class="well add-card-form">
+    <input type="text" class="form-control"
+    placeholder="Card title">
+    <button type="button" class="btn btn-default">
+      Save
+    </button>
+    <button type="button"
+    class="btn btn-default"><span
+    class="glyphicon glyphicon-remove"></span>
+  </button>
+</div>
+</div>
+</div>
+</div>
+
+<div class="modal fade" tabindex="-1" role="dialog" id="cardEdit">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+        <input type="text" class="random" placeholder="####">
+      </div>
+      <div class="modal-body">
+
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 </body>
 </html>

@@ -19,8 +19,44 @@
       <li id="poem">https://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
     </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+    $.ajax({
+      url: 'http://horizons-json-cors.s3.amazonaws.com/products.json',
+      error: function() {
+        $('#products').remove()
+        }
+      })
+
+    $.ajax({  url: 'http://horizons-json-cors.s3.amazonaws.com/members.txt',
+      error: function() {
+        $('#members').remove()
+      }
+      })
+
+$.ajax({
+      url: 'http://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+      error: function () {
+        $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').remove()
+      }
+      })
+$.ajax({
+      url: 'http://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+      error: function() {
+        $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').remove()
+      }
+      })
+$.ajax({
+      url: 'http://horizons-json-cors.s3.amazonaws.com/poem.txt',
+      error: function() {
+        $('#poem').remove()
+      }
+})
+
+
+
+
+
       // YOUR CODE HERE
     </script>
   </body>

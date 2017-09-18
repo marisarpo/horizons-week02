@@ -1,0 +1,90 @@
+.input-group {
+border: solid black 5px;
+display: flex;
+justify-content: center;
+border-radius: 5px;
+  border-radius: 10px;
+}
+.newsfeed-ul{
+  border: solid black 3px;
+  display: flex;
+  justify-content: center;
+  border-radius: 3px;
+  border-radius: 5px;
+}
+h1 {
+  display: flex;
+   justify-content: center;
+padding-bottom: 95px;
+  }
+
+  .button-all {
+    border: solid black 2px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    background-color: pink;
+    width: 100%;
+    color: black;
+  border-radius: 15px;
+
+  }
+  #key1{
+
+    padding-top: 60px;
+
+
+  }
+  #login-bttn {
+    background-color:#8dbde0;
+  }
+.collapsed{
+  display: none;
+}
+.website-container {
+  display: flex;
+  justify-content: center;
+  /*display: none; */
+}
+.container{
+  /*display: none;*/
+}
+.container-post {
+display: flex;
+justify-content: center;
+
+
+}
+.textarea {}
+.post-button{
+
+align-items: flex-end;
+align-content: flex-end;
+}
+.hi {
+  border: solid black 5px;
+  display: flex;
+  justify-content: center;
+  height: 10%;
+
+}
+.box1{
+  border: solid black 2px;
+  display: flex;
+  border-radius: 2px;
+display: block;
+
+
+}
+.class1 {
+
+  display: flex;
+   justify-content: center;
+padding-bottom: 35px;
+}
+#one{
+  display: flex;
+   justify-content: center;
+padding-bottom: 35px;
+
+}

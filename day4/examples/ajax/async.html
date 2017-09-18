@@ -23,8 +23,56 @@
       <li>DJI Phantom 3, $416.59</li>
     </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='http://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+    $('#products').text('')
+    $('#products').append('<ul id="jay"> </ul>')
+    var emptyArray = [];
+    $.ajax ({
+      url: 'http://horizons-json-cors.s3.amazonaws.com/products.json',
+      success: function(a) {
+
+
+        $.ajax ({
+          url: 'https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+          success: function(b) {
+            emptyArray.push(b)
+            if (a.length === emptyArray.length) {
+              emptyArray.sort(function (x, y) {
+                return x.priceCents - y.priceCents;})
+                console.log(emptyArray)
+              }
+
+            }
+          })
+
+          $.ajax ({
+            url: 'http://horizons-json-cors.s3.amazonaws.com/products/OZsrjRU1e4pH9TiJ2vXb8cKMrSM6IMV2.json',
+            success: function(c) {
+              emptyArray.push(c)
+              if (a.length === emptyArray.length) {
+                emptyArray.sort(function (x, y) {
+                  return x.priceCents - y.priceCents;})
+                  console.log(emptyArray)
+
+                }
+              }
+            })
+
+            $.ajax ({
+              url: 'http://horizons-json-cors.s3.amazonaws.com/products/AbGWP7W4jSGHKUjHauO39JTXbUTJr252.json',
+              success: function(d) {
+                emptyArray.push(d)
+                if (a.length === emptyArray.length) {
+                  emptyArray.sort(function (x, y) {
+                    return x.priceCents - y.priceCents;})
+                    console.log(emptyArray)
+                  }
+                }
+              })
+            }
+          })
+
       // YOUR CODE HERE
     </script>
   </body>

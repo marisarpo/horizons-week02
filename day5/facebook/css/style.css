@@ -1,0 +1,57 @@
+.nameOfUser{
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.dateTime{
+  font-size: 11px;
+  font-weight: italic;
+}
+
+.userPost{
+  border-bottom: 3px solid black;
+  font-sze: 12px;
+  background-color: fuchsia;
+}
+
+.replies{
+  font-size: 12px;
+}
+
+likes{
+  font-size: 12px;
+}
+
+.likeButt{
+  border-radius: 3px solid black;
+  background-color: hotpink;
+}
+
+.replyButt{
+  border-radius: 3px solid black;
+  background-color: dodgerblue;
+}
+
+.post{
+  border: 2px solid black;
+  border-radius: 3px;
+  //display: flex;
+  //flex-shrink: 1;
+  width: 500px;
+  margin: 0 0 .5em;
+  postion: absolute;
+}
+
+.nameOfRep{
+ font-size: 12px;
+ font-weight: bold;
+}
+
+.dateOfRep{
+ font-size: 10px;
+ font-style: italic;
+}
+
+.contentOfRep{
+ border-bottom: 3px solid  black;
+}

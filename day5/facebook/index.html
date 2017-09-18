@@ -5,14 +5,13 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
 
     <!-- jQuery -->
     <script
@@ -21,10 +20,39 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>
+
+    <form class = 'regform'>
+      <h1 class = 'userreg' style = 'font-size: 15px, font-weight: bold'> New user registration </h1>
+      <input class = 'fname' type='text' value = 'First name'><br>
+      <input class = 'lname' type='text' value = 'Last name'><br>
+      <input class = 'email' type='text' value = 'Username'><br>
+      <input class = 'password' type='text' value = 'Password'><br>
+      <button class= 'register' type= 'button'> Register </button>
+      <button class= 'login' type= 'button'> Login </button>
+    </form>
+    <form class = 'loginform'>
+      <h1 class = 'userlg' style = 'font-size: 15px, font-weight: bold'> Login </h1>
+      <input class='usern' type = 'text' value = 'Username'><br>
+      <input class = 'passlog' type = 'text' value = 'Password'><br>
+      <button class = 'logbutt' type = 'button'> Login</button><br>
+      <button class = 'goreg' type ='button'> Go to registration</button><br>
+    </form>
+    <form class = 'post'>
+      <div class = 'nameOfUser'>Username</div>
+      <div class = 'dateTime'>date</div>
+      <div class = 'userPost'>this is a facebook comment</div>
+      <footer1 class = 'responses'>
+        <span class = 'numReplies'>0</span>
+        <span class = 'replies'>Replies</span>
+        <span class = 'numLikes'>0</span>
+        <span class = 'likes'>Likes</span>
+        <button class = 'likeButt glyphicon glyphicon-usd' type = 'button'></button>
+        <button class = 'replyButt glyphicon glyphicon-comment' type = 'button'></button>
+      </footer1>
+    </form>
   </body>
 </html>

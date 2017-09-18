@@ -1,0 +1,113 @@
+/*Navbar*/
+.flex-container {
+  justify-content: space-around;
+}
+.topnav {
+  display: flex;
+  background-color: #3b5998;
+  height: 70px;
+  justify-content: space-around;
+}
+.topnav button {
+   background-color: #4267b2;
+   border-color: #29487d;
+   border: 1px solid #ced0d4;
+   color: white;
+   border-radius: 0;
+   align-self: flex-end;
+   margin-bottom: 13.25px;
+}
+.topnav button:hover {
+   background-color: blue;
+}
+.form-inline {
+  align-items: center;
+  display: flex;
+}
+#logo {
+  height: 50px;
+  align-self: center;
+  }
+.logo-align {
+  align-self: center;
+}
+.form-group {
+  color: white;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.form-control {
+  height: 20px;
+}
+#pwd, #email {
+  width: 180px;
+  border-radius: 0;
+}
+/*Form & Picture*/
+#collapse-registration {
+  height: 500px;
+}
+.narrow-box {
+  width: 825px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.master-form-register {
+    margin-right: 100px;
+}
+.form-register {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+.form-register .form-control {
+  height: 25px;
+}
+.master-form-register button {
+  background-color: #65a852;
+  color: white;
+  margin-left: 10px;
+}
+#moose-pic {
+  width: 300px;
+  align-self: center;
+}
+.post-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 15px;
+}
+.post {
+  margin-bottom: 50px;
+  border: 2px solid #4267b2;
+  width: 500px;
+  padding: 25px;
+  border-radius: 10px;
+}
+.author {
+  margin: 0;
+}
+.header {
+  margin-bottom: 10px;
+}
+.content {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #4267b2;
+}
+/*New Posts*/
+#new-post-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0px;
+}
+.new-post-input {
+  width: 450px;
+  height: 34px;
+  margin: 0 10px;
+  border-radius: 10px;
+}

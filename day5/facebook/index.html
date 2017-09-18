@@ -5,15 +5,99 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
-
+  <div class="flex-container">
+    <div class="topnav" id="myTopnav">
+      <a class="logo-align" href="file:///C:/Users/Hassan%20Saab/OneDrive/Coding/Horizons/week02/day5/facebook/index.html">
+        <img id="logo" src="http://1.bp.blogspot.com/-2v-b_-dpebE/VXWe8uhfTJI/AAAAAAAAIMk/0Zr5sXlGG9I/s1600/facebook-logo%20transparent.gif"/> </a>
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="email">Email address:</label><br>
+          <input type="email" class="form-control" id="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label><br>
+          <input type="password" class="form-control" id="pwd">
+        </div>
+        <button type="submit" class="btn btn-default btn-xs" id="log-in-button" data-toggle="collapse" data-target="#collapse-registration, #collapse-post">Log In</button>
+      </form>
+    </div>
+  </div>
+    <div id="collapse-registration">
+      <div class="narrow-box">
+        <a class="moose" href="file:///C:/Users/Hassan%20Saab/OneDrive/Coding/Horizons/week02/day5/facebook/index.html">
+          <img id="moose-pic" src="https://avatars2.githubusercontent.com/u/18538691?v=4&s=460"/> </a>
+          <form class="master-form-register">
+            <h2>Sign Up</h2><br>
+            <div class="form-register">
+              <label for="first-name">First Name:</label>
+              <input type="text" class="form-control" id="first-name">
+            </div><br>
+            <div class="form-register">
+              <label for="last-name">Last Name:</label>
+              <input type="text" class="form-control" id="last-name">
+            </div><br>
+            <div class="form-register">
+              <label for="email">Email address:</label>
+              <input type="email" class="form-control" id="email-sign-up">
+            </div><br>
+            <div class="form-register">
+              <label for="pwd">Password:</label>
+              <input type="password" class="form-control" id="pwd-sign-up">
+            </div><br>
+            <button type="submit" class="btn btn-default btn-md" id="submitbutton">Create Account</button>
+          </form>
+        </div>
+    </div>
+  <div class= "collapse" id = "collapse-post">
+    <div id="new-post-container">
+      <div class="new-post">
+        <label for="new-post-entry">Post:</label>
+        <input type="text" class="new-post-input" id="new-post-entry">
+      </div>
+      <button type="button" class="btn btn-primary btn-sm" id="post-btn" >Posts</button>
+    </div>
+    <div class="post-container">
+  </div>
+    <br>
+    <!-- <div class="post">
+      <div class = "header">
+        <h4 class = "author">author name</h4>
+        <p class = "time">time here</p>
+      </div>
+      <div class = "post-body">
+        <p class = "content">I come with no wrapping or pretty pink bows.
+I am who I am from my head to my toes.
+I tend to get loud when speaking my mind.
+Even a little crazy some of the time.</p>
+      </div>
+      <div class= "footer">
+        <button type="button" class= "btn btn-link">thumbs up</button>
+        <button type ="button" class= "btn btn-link">replies here</button>
+      </div>
+    </div>
+    <div class="post">
+      <div class = "header">
+        <h4 class = "author">author name</h4>
+        <p class = "time">time here</p>
+      </div>
+      <div class = "post-body">
+        <p class = "content">I come with no wrapping or pretty pink bows.
+I am who I am from my head to my toes.
+I tend to get loud when speaking my mind.
+Even a little crazy some of the time.</p>
+      </div>
+      <div class= "footer">
+        <button type="button" class= "btn btn-link">thumbs up</button>
+        <button type ="button" class= "btn btn-link">replies here</button>
+      </div>
+    </div> -->
+  </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -22,7 +106,6 @@
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script type="text/javascript" src="./js/script.js"></script>

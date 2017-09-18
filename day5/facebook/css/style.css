@@ -1,0 +1,142 @@
+#registration-body, #login-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-body h1 {
+  margin: 50px;
+}
+
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  margin-bottom: 60px;
+  margin-top: 20px
+}
+
+.entry-form * {
+  margin: 50px;
+  padding: 8px;
+  margin: 10px;
+  border-radius: 5px
+}
+
+.submit {
+  background-color: #ea9999;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.switch-button {
+  background-color: #a4c2f4;
+  padding: 10px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+button {
+  border: 1px solid black;
+}
+
+#mainpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  width: 650px;
+}
+
+.post {
+  border: 1px solid black;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background: linear-gradient(to bottom, skyblue 0%, midnightblue 100%);
+  background-attachment: fixed;
+  animation-name: spin;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  transition-timing-function: linear;
+}
+
+#newsfeed {
+  width: 100%;
+}
+
+.post {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid lime;
+  border-radius: 5px;
+  margin: 5px;
+  background-color: #c3fff5;
+}
+
+.makepost {
+  margin: 25px;
+}
+
+.content {
+  padding: 5px;
+  border-bottom: 3px solid black;
+  border-radius: 5px;
+  margin: 5px
+}
+
+.author {
+  display: inline;
+  margin: 3px;
+}
+
+.postDateTime {
+  font-style: italic;
+  display: inline;
+}
+
+.message {
+  padding: 0;
+  margin: 3px 0 3px 8px;
+}
+
+.actions {
+  margin: 5px 5px 5px 15px;
+}
+
+.actions button {
+  background-color: #77b3d9;
+  border: 1px solid lime;
+  border-radius: 3px;
+  padding: 5px 10px;
+}
+
+.info {
+  display: inline;
+  padding-left: 8px;
+}
+
+.remessage {
+  padding: 5px;
+  border-radius: 3px;
+  margin: 5px;
+  box-shadow: none;
+}
+
+.replies {
+  margin: 5px 12px;
+}

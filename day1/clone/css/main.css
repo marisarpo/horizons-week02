@@ -1,9 +1,133 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: #fafafa;
     text-align: center;
 }
 
 .title {
-    color: purple;
+    color: black;
+    font-family: cursive;
+
+}
+.newdiv{
+  display: inline-block;
+  margin-left: 140px;
+  padding-bottom: 130px;
+}
+.squa {
+  float: right;
+  height: 350px;
+  width: 300px;
+  background-color: white;
+  margin: 50px 200px 0px 50px;
+  border: 1px;
+  border-style: solid;
+  border-color: lightgray;
+
 }
 
+.box1 {
+  background-color: #fafafa;
+  height: 30px;
+  border: 1px solid lightgray;
+  margin: 5px 30px;
+  display: block;
+  padding: 0px 150px 0px 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.box2 {
+  background-color: #fafafa;
+  height: 30px;
+  border: 1px solid lightgray;
+  margin: 5px 30px;
+  display: block;
+  padding: 0px 150px 0px 1px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.fbButton {
+  padding: 0px 90px 0px 90px;
+  background-color: #3897f0 ;
+  color: #fff;
+  border-radius: 3px;
+  border-color: #3897f0 ;
+  border-style: solid;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 700px;
+  display: block;
+  margin: 20px 30px;
+}
+
+.smallbox {
+  height: 1px;
+  background-color: #c7c7c7;
+  margin: 0px 20px 0px 20px;
+}
+
+.login {
+  padding: 5px 0px 5px 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.forgot {
+  padding: 0px 0px 10px 0px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.signup {
+  float: right;
+  height: 90px;
+  width: 300px;
+  background-color: white;
+  margin: 10px 200px 0px 50px;
+  border: 1px;
+  border-style: solid;
+  border-color: lightgray;
+}
+
+.copytag {
+  color: gray;
+}
+
+.phone {
+  width: 250px;
+  height: 500px;
+  display: inline-block;
+}
+
+section {
+  padding: 80px 20px;
+}
+
+footer {
+  padding: 5px 20px;
+  font-size: 12px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #999;
+  bottom: 0;
+}
+
+footer a {
+  color: black;
+  text-decoration: none;
+}
+
+footer ul {
+  padding: 0;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+footer li {
+  display: inline-block;
+  margin: 7px;
+}
+
+footer p{
+  display: inline-block;
+  margin-left: 50px;
+}

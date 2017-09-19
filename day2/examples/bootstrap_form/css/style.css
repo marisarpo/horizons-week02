@@ -3,6 +3,9 @@
 html, body {
 	height: 100%;
 }
+h1{
+	margin: 20px;
+}
 
 .container, .well{
 	height: 100%;

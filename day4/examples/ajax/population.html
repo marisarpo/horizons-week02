@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Horizons AJAX Inline Exercise</title>
+    <script src="../../../lib/underscore.js"></script>
   </head>
 
   <body>
@@ -25,7 +26,12 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(data){
+          var maxObject = _.max(data,function(object){return object.Population;});
+          var cityName = maxObject["City / Urban area"];
+          $('h1').text(cityName);
+        }
       });
     </script>
   </body>

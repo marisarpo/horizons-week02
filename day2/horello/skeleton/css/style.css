@@ -3,6 +3,8 @@
 body {
   line-height: 18px;
   height: 100vh;
+  background-color: rgb(0,121,191);
+  font: Bootstrap default sans-serif;
 
   /** PART 1 CSS here */
 }
@@ -10,8 +12,26 @@ body {
 header {
   position: relative;
   overflow: hidden;
+  padding:5px;
+  height:40px;
+  background-color: rgba(0,0,0,0.15);
 
   /** PART 1 CSS here */
+
+}
+.addList{
+  background-color: rgba(0,0,0,0.15);
+  color: #fff;
+  min-height: 30px;
+  border-radius: 3px;
+  margin: 5px 5px;
+  width: 280px;
+  padding: 7px;
+  border: 0;
+  text-align: left;
+}
+.addList:hover{
+  background-color: rgba(0,0,0,0.20);
 }
 
 .header-logo {
@@ -52,19 +72,12 @@ a {
   padding: 5px;
 }
 
-.add-list {
-  /** PART 1 CSS here */
-}
-
-.add-list:hover {
-  /** PART 1 CSS here */
-}
-
 .add-list-form {
   /** PART 4 CSS here */
 }
 
 .board {
+  display:flex;
   overflow-x: auto;
   overflow-y: hidden;
   height: calc(100% - 40px);
@@ -85,17 +98,32 @@ a {
   max-height: 100%;
 
   /** PART 2 CSS here */
+  display:flex;
+  flex-direction: column;
+  padding:0.5em;
+  margin:5px 5px;
+  border-radius: 3px;
+  width: 270px;
+  background-color: #e2e4e6;
+
 }
 
 .list-header {
   display: block;
   position: relative;
-
   /** PART 2 CSS here */
+  margin: 0 0 0.5em 0;
+  color: black;
+  font-weight: 700;
+
 }
 
 .list-footer {
   /** PART 2 CSS here */
+  font-weight: 500;
+  display:flex;
+  margin-top: 2px;
+  flex-direction: column;
 }
 
 .list-title {
@@ -104,10 +132,26 @@ a {
 
 .add-card {
   /** PART 2 CSS here */
+  background-color: rgba(16, 16, 16, 0.15);
+  text-align: left;
+  flex:1;
+}
+.well{
+   margin:0;
+   padding:0.3em;
+}
+#cardTitle{
+  margin-bottom: 0.5em;
+}
+
+.wellBottom{
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 .add-card:hover {
   /** PART 2 CSS here */
+  background-color: rgba(96,96,96,0.15);
 }
 
 
@@ -121,14 +165,33 @@ a {
 
 .card {
   /** PART 3 CSS here */
+  margin: 0,0,0.5em,0;
+  background-color: white;
+  border-radius: 3px;
 }
 
 .card-body {
   /** PART 3 CSS here */
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  font: Arial;
+  font-size: 16px;
+  line-height: 1.5em;
+  margin:0.4em;
 }
 
 .card-more {
   /** PART 3 CSS here */
+  margin-top: 1em;
 }
 
 /** PART 4 CSS here: add card form */
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:0;
+}
+.card-body-input{
+  height:10em;
+  margin-bottom: 0;
+}

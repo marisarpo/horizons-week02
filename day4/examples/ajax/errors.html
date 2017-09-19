@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Horizons AJAX ERRORS Examples</title>
+    <script src="../../../lib/underscore.js"></script>
   </head>
 
   <body>
@@ -22,6 +23,26 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var numLi = Array.prototype.slice.call($('ul').children('li'));
+      while(numLi.length>0){
+        var element = numLi.pop();
+        var id =$(element).attr('id');
+        (function checkLink(){
+          var localId = id;
+          $.ajax({
+            url: $(element).text(),
+
+            success: function(response){
+              $(`#${localId}`).css('color','green');
+            },
+
+            error: function(error){
+              $(`#${localId}`).remove();
+            }
+          });
+        })();
+      }
+
     </script>
   </body>
 </html>

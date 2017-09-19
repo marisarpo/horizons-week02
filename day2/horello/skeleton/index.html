@@ -20,30 +20,180 @@
   </header>
 
   <!-- PART 5. Modal -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <div class="form-horizontal">
+              <input id="cardTitle" type="text" class="form-control" name="cardTitle" placeholder="Card title">
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea class="card-body-input" type="text" class="form-control" name="card-body-input" placeholder="Card body goes here"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
   <div class="board">
     <div class="list-container">
       <div class="list">
         <div class="list-header">
-          <span class="list-title">House List</span>
+          <span class="list-title">Some List</span>
         </div>
-        <div class="list-cards">
+        <div class="list-cards" data-toggle="modal" data-target="#myModal">
           <div class="card">
             <div class="card-body">
-              Today we will #DominateAllTheHouses
+              Lots of text...
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
             </div>
           </div>
         </div>
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button class="btn add-card" data-toggle="collapse" data-target="#well1">Add a card</button>
           <!-- PART 4. Collapse -->
+          <div class="well form-horizontal collapse" id="well1">
+                <input id="cardTitle" type="text" class="form-control" name="cardTitle" placeholder="Card title">
+                <div class="bottomButtons">
+                  <button class="btn wellBottom">Save</button>
+                  <button class="btn wellBottom"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards" data-toggle="modal" data-target="#myModal">
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="list-footer">
+          <!-- PART 2. Add card button -->
+          <button class="btn add-card" data-toggle="collapse" data-target="#well2">Add a card</button>
+          <!-- PART 4. Collapse -->
+          <div class="well form-horizontal collapse" id="well2">
+                <input id="cardTitle" type="text" class="form-control" name="cardTitle" placeholder="Card title">
+                <div class="bottomButtons">
+                  <button class="btn wellBottom">Save</button>
+                  <button class="btn wellBottom"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">Some List</span>
+        </div>
+        <div class="list-cards" data-toggle="modal" data-target="#myModal">
+
+          <div class="card">
+            <div class="card-body">
+              #DominateAllTheHouses
+              <div class="card-more">
+                <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="list-footer">
+          <!-- PART 2. Add card button -->
+          <button class="btn add-card" data-toggle="collapse" data-target="#well3">Add a card</button>
+          <!-- PART 4. Collapse -->
+          <div class="well form-horizontal collapse" id="well3">
+                <input id="cardTitle" type="text" class="form-control" name="cardTitle" placeholder="Card title">
+                <div class="bottomButtons">
+                  <button class="btn wellBottom">Save</button>
+                  <button class="btn wellBottom"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- PART 1. Add list button -->
-
+    <div>
+      <button class="btn btn-default addList" data-toggle="collapse" data-target="#well4">Add a list</button>
+      <div class="well form-horizontal collapse" id="well4">
+            <input id="cardTitle" type="text" class="form-control" name="listTitle" placeholder="List title">
+            <div class="bottomButtons">
+              <button class="btn wellBottom">Save</button>
+              <button class="btn wellBottom"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+            </div>
+      </div>
+    </div>
 
   </div>
 

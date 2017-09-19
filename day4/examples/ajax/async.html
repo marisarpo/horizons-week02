@@ -25,7 +25,49 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(result){
+          var links = result;
+          var items = [];
+          var tracker = 0;
+          links.forEach(function(link){
+              $.ajax({
+                url: link["url"],
+                success: function(item){
+                  items.push(item);
+                  tracker++;
+                  console.log("Tracker: " + tracker);
+                },
+                error: function(){
+                  console.log('Amazon sucks.');
+                  tracker[myIndex]=true;
+                  tracker++;
+                  console.log("Tracker: " + tracker);
+                }
+              });
+          });
+          /*while(tracker<links.length){
+
+          }*/
+          console.log('ajax done');
+          var productSort = function(a,b){
+            return a.priceCents > b.priceCents;
+          };
+          items.sort(productSort);
+
+          $('#products').text("");
+          $('#products').append("<ul class='product-list'></ul>");
+          var productList = function(val, index){
+            $('.product-list').append(`<li>${val.name} , ${val.priceCents}</li>`);
+          };
+          items.forEach(productList);
+        },
+        error: function(){
+          console.log('Amazon sucks.');
+        }
+      });
     </script>
   </body>
 </html>

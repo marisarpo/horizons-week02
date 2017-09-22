@@ -264,10 +264,10 @@ function relativeTime(date) {
 
 
 // BENMO JS
-$('.pay-charge').on('click', 'button', function(event) {
+$('.pay-charge-top').on('click', 'button', function(event) {
   event.preventDefault();
   $('.input-pay-charge').removeClass('collapse');
-  $('.pay-charge input').attr('placeholder', 'To: ');
+  $('.pay-charge-top input').attr('placeholder', 'To: ');
 
   if ($(this)[0] === $('.btn-pay-top')[0]) {
     $('.btn-pay-bottom').removeClass('collapse');

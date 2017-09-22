@@ -20,52 +20,39 @@ body {
 }
 
 /* BENMO CSS */
-.container-pay-charge {
-  margin: 50px 0;
+.navbar a, .navbar-default .navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a {
+  color: white;
+  padding: 0 auto;
 }
 
-.pay-charge {
-  display: flex;
-  padding: 0;
-}
-
-.pay-charge button {
-  background-color: lightblue;
-}
-
-#pay-charge-textarea {
-  padding: 0;
-}
-
-.privacy-currency-submit {
-  display: flex;
-}
-
-.select-container button {
-  background-color: lightgreen;
-}
-
-/* NAV */
 .navbar-default {
   background-color: #3C95D2;
   border-radius: 0px;
   height: 10px;
 }
 
-/* Link */
-.navbar a, .navbar-default .navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a {
-    color: white;
-    padding: 0 auto;
+.pay-charge-top button {
+  background-color: lightblue;
 }
 
-.pay-charge-buttons button {
+.pay-charge-bottom {
+  display: flex;
+}
+
+.pay-charge-bottom button {
+  display: flex;
+  margin-left: 100px;
+}
+
+/*.pay-charge-bottom-right button {
+  background-color: lightgreen;
+}*/
+
+.select-container button {
   background-color: lightgreen;
 }
 
 .display-three-right {
-  margin-top: 30px;
-  margin-right: 300px;
-  float: right;
   display: flex;
   flex-direction: column;
 }

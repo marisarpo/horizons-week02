@@ -1,3 +1,8 @@
+- you will find that many of the skills you learned in building Horello will apply here: creating data models and rendering HTML bits in jQuery for each component are good ideas to tackle this exercise.
+- Stay organized. Outlining the flow of your Facebook implementation or taking each component below one-by-one is a good idea. Well-structured code is easier to debug, easier to write, and easier for other people to understand.
+
+
+
 # Facebook Exercise
 
 <img src="./facebook/images/logo.png" width="200">

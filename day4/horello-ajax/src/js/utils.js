@@ -27,7 +27,7 @@ function setEventListeners() {
   });
 
   $('#cardEdit').on('show.bs.modal', function (e) {
-    console.log("BAMS")
+    // console.log("BAMS")
     var button = $(e.relatedTarget);
     var cardId = button.data('card-id');
     var listId = button.data('list-id');

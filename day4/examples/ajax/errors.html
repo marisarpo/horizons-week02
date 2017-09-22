@@ -22,6 +22,18 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+
+      var liList = ($('ul').children('li'));
+      for (var i = 0; i < liList.length; i++) {
+        $.ajax({
+          url: $( liList[i] ).text(),
+          success: function() {console.log('success')},
+          error: function() {
+            console.log($(liList[i]));
+          }
+        })
+      }
+
     </script>
   </body>
 </html>

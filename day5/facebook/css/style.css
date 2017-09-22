@@ -1,0 +1,118 @@
+body {
+  background-color: #eef0f4;
+}
+
+.post {
+  background-color: white;
+  margin: 0 auto;
+}
+
+.logout-container {
+  float: right;
+}
+
+.input-group {
+  width: 100%;
+}
+
+.newsfeed {
+  margin-top: 30px;
+}
+
+/* BENMO CSS */
+.container-pay-charge {
+  margin: 50px 0;
+}
+
+.pay-charge {
+  display: flex;
+  padding: 0;
+}
+
+.pay-charge button {
+  background-color: lightblue;
+}
+
+#pay-charge-textarea {
+  padding: 0;
+}
+
+.privacy-currency-submit {
+  display: flex;
+}
+
+.select-container button {
+  background-color: lightgreen;
+}
+
+/* NAV */
+.navbar-default {
+  background-color: #3C95D2;
+  border-radius: 0px;
+  height: 10px;
+}
+
+/* Link */
+.navbar a, .navbar-default .navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a {
+    color: white;
+    padding: 0 auto;
+}
+
+.pay-charge-buttons button {
+  background-color: lightgreen;
+}
+
+.display-three-right {
+  margin-top: 30px;
+  margin-right: 300px;
+  float: right;
+  display: flex;
+  flex-direction: column;
+}
+
+.float-right {
+  background-color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  border-bottom: 0.5px solid lightgray;
+}
+
+.profile, .friends, .integrations {
+  border-top: 1px solid gray;
+  padding: 10px;
+}
+
+.edit-profile {
+  width: 60px;
+  margin-left: 10px;
+}
+.edit-profile {
+  width: auto;
+}
+
+.account-balance {
+  clear: both;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.friends, .integrations {
+  margin-top: 30px;
+}
+
+.friends-thumb-container img {
+  width: 42px;
+  height: 42px;
+  background-color: #eef0f4;
+  margin: 10px auto;
+  margin-right: 5px;
+}
+
+.integrations img {
+  max-width: 42px;
+  max-height: 42px;
+  margin: 5px 10px 0 0;
+}

@@ -27,25 +27,128 @@
         <div class="list-header">
           <span class="list-title">House List</span>
         </div>
+
         <div class="list-cards">
           <div class="card">
             <div class="card-body">
               Today we will #DominateAllTheHouses
+              <div class="card-more">
+                <i class="glyphicon glyphicon-align-left"></i>
+              </div>
             </div>
           </div>
         </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              Today we will #DominateAllTheHouses
+              <div class="card-more">
+                <i class="glyphicon glyphicon-align-left"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Open modal for @mdo</button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="recipient-name" placeholder="Card title goes here">
+          </div>
+        </form>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">Description</label>
+            <textarea class="form-control" id="message-text" placeholder="Card body goes here"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="list-footer">
           <!-- PART 2. Add card button -->
-
+          <button type="button" class="add-card" data-toggle="collapse" data-target="#add-card" aria-expanded="true" aria-controls="add-card">Add a card...</button>
           <!-- PART 4. Collapse -->
+          <div class="collapse" id="add-card">
+            <div class="well well-sm">
+              <form>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="CardTitle1" placeholder="Card Title">
+                  <button type="save" class="btn btn-default save">Save</button>
+                  <button class="x"><i class="glyphicon glyphicon-remove"></i></button>
+                  </div>
+              </form>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
+    <div class="list-container">
+      <div class="list">
+        <div class="list-header">
+          <span class="list-title">House Party</span>
+        </div>
+        <div class="list-cards">
+          <div class="card">
+            <div class="card-body">
+              #Dominate
+              <div class="card-more">
+                <i class="glyphicon glyphicon-align-left"></i>
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
+    </div>
+
+    <div class="add-list-container">
+      <button type="button" class="add-list" data-toggle="collapse" data-target="#add-list" aria-expanded="true" aria-controls="add-list">Add a list...</button>
+      <!-- PART 4. Collapse -->
+      <div class="collapse" id="add-list">
+        <div class="well well-sm">
+          <form>
+            <div class="form-group">
+              <input type="text" class="form-control" id="add-list" placeholder="Add List">
+              <button type="save" class="btn btn-default save">Save</button>
+              <button class="x"><i class="glyphicon glyphicon-remove"></i></button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- PART 1. Add list button -->
+
+    <!-- <button type="button" class="add-list" data-toggle="collapse" data-target="#add-list" aria-expanded="true">Add a list...</button>
+    <div class="collapse" id="add-list">
+      <div class="well well-sm">
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="CardTitle1" placeholder="Card Title">
+            <button type="save" class="btn btn-default save">Save</button>
+            <button class="x"><i class="glyphicon glyphicon-remove"></i></button>
+            </div>
+        </form>
+      </div>
+    </div> -->
 
 
   </div>
+
 
 </body>
 </html>

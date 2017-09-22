@@ -1,6 +1,23 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Cabin:500,600,700);
 
+.delete-card-button {
+  margin-left: 210px;
+  border: none;
+}
+
+.delete-list-button {
+  margin-left: 150px;
+}
+
+
+.btn-card-x {
+  padding: 0;
+}
+/*.btn-list-x {
+  background-color: none;
+}*/
+
 body {
     background-color: rgb(0,121,191);
     line-height: 18px;

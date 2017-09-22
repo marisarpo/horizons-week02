@@ -1,77 +1,68 @@
 body {
   background-color: #eef0f4;
 }
-
 .post {
   background-color: white;
   margin: 0 auto;
 }
-
 .logout-container {
   float: right;
 }
-
 .input-group {
   width: 100%;
 }
-
 .newsfeed {
   margin-top: 30px;
 }
-
 /* BENMO CSS */
 .navbar a, .navbar-default .navbar-header .navbar-brand, .navbar-default .navbar-nav > li > a {
   color: white;
   padding: 0 auto;
 }
-
 .navbar-default {
   background-color: #3C95D2;
   border-radius: 0px;
   height: 10px;
 }
-
+.pay-charge-top {
+  position: relative;
+}
 .pay-charge-top button {
   background-color: lightblue;
 }
-
+.pay-charge-top button:nth-child(3) {
+  background-color: #eef0f4;
+  position: absolute;
+  right: 0;
+  border: 0;
+}
 .pay-charge-bottom {
   display: flex;
+  position: relative;
 }
 
 .pay-charge-bottom button {
-  display: flex;
-  margin-left: 100px;
-}
-
-/*.pay-charge-bottom-right button {
   background-color: lightgreen;
-}*/
-
-.select-container button {
-  background-color: lightgreen;
+  position: absolute;
+  right: 0;
 }
-
 .display-three-right {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
-
 .float-right {
   background-color: white;
 }
-
 .profile {
   display: flex;
   align-items: center;
   border-bottom: 0.5px solid lightgray;
 }
-
 .profile, .friends, .integrations {
   border-top: 1px solid gray;
   padding: 10px;
 }
-
 .edit-profile {
   width: 60px;
   margin-left: 10px;
@@ -79,17 +70,14 @@ body {
 .edit-profile {
   width: auto;
 }
-
 .account-balance {
   clear: both;
   text-align: center;
   margin: 10px auto;
 }
-
 .friends, .integrations {
   margin-top: 30px;
 }
-
 .friends-thumb-container img {
   width: 42px;
   height: 42px;
@@ -97,7 +85,6 @@ body {
   margin: 10px auto;
   margin-right: 5px;
 }
-
 .integrations img {
   max-width: 42px;
   max-height: 42px;

@@ -1,45 +1,43 @@
 <div class="container-pay-charge">
 
-  <div class="pay-charge-top col-sm-6 col-sm-offset-2">
+  <div class="pay-charge-top col-md-4 col-md-offset-4">
     <button class="btn btn-default btn-pay-top">Pay</button>
     <button class="btn btn-default btn-charge-top">Charge</button>
-    <input type="text" class="form-control" placeholder="Pay or charge someone with Bitcoin"> <!-- how do i put this in-line with buttons?-->
+    <button class="btn btn-default glyphicon glyphicon-remove collapse"></button>
+    <input type="text" class="form-control" placeholder="Pay or charge someone with Crypto!">
   </div>
 
-  <!-- <form class="col-sm-6 col-sm-offset-2"> -->
-    <div class="input-pay-charge form-group collapse col-sm-6 col-sm-offset-2">
-      <div class="inputGroupContainer">
+  <div class="input-pay-charge form-group collapse col-md-4 col-md-offset-4">
+    <div class="inputGroupContainer">
+      <div class="form-group">
+        <textarea class="form-control" rows="2" placeholder="$5.75 in Bitcoin / Ethereum / Dogecoin for ice cream!"></textarea>
+      </div>
+
+      <div class="pay-charge-bottom">
         <div class="form-group">
-          <textarea class="form-control" rows="2" placeholder="$5.75 in Bitcoin / Ethereum / Dogecoin for ice cream!"></textarea>
+          <select class="form-control">
+            <option>Privacy</option>
+            <option>Private</option>
+            <option>Friends</option>
+            <option>Public</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control">
+            <option>Cryptocurrency</option>
+            <option>Bitcoin</option>
+            <option>Ethereum</option>
+            <option>Dogecoin</option>
+            <option>Litecoin</option>
+            <option>Peercoin</option>
+          </select>
         </div>
 
-        <div class="pay-charge-bottom">
-          <div class="form-group">
-            <select class="form-control">
-              <option>Privacy</option>
-              <option>Private</option>
-              <option>Friends</option>
-              <option>Public</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <select class="form-control">
-              <option>Cryptocurrency</option>
-              <option>Bitcoin</option>
-              <option>Ethereum</option>
-              <option>Dogecoin</option>
-              <option>Litecoin</option>
-              <option>Peercoin</option>
-            </select>
-          </div>
+        <button class="btn btn-default">Pay</button>
+        <button class="btn btn-default">Charge</button>
 
-          <!-- <div class="pay-charge-bottom-right"> -->
-            <button class="btn-pay-bottom btn btn-default">Pay</button>
-            <button class="btn-charge-bottom btn btn-default">Charge</button>
-          <!-- </div> -->
-
-        </div>
       </div>
     </div>
+  </div>
   <!-- </form> -->
 </div> <!-- container-pay-charge -->

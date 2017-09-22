@@ -266,15 +266,27 @@ function relativeTime(date) {
 // BENMO JS
 $('.pay-charge-top').on('click', 'button', function(event) {
   event.preventDefault();
-  $('.input-pay-charge').removeClass('collapse');
-  $('.pay-charge-top input').attr('placeholder', 'To: ');
 
   if ($(this)[0] === $('.btn-pay-top')[0]) {
-    $('.btn-pay-bottom').removeClass('collapse');
-    $('.btn-charge-bottom').addClass('collapse');
+    $('.input-pay-charge').removeClass('collapse');
+    $('.pay-charge-top input').attr('placeholder', 'Pay: ');
+
+    $('.pay-charge-bottom button').eq(0).show();
+    $('.pay-charge-bottom button').eq(1).hide();
+    $('.glyphicon-remove').removeClass('collapse');
+  } else if ($(this)[0] === $('.btn-charge-top')[0]) {
+    $('.input-pay-charge').removeClass('collapse');
+    $('.pay-charge-top input').attr('placeholder', 'Charge: ');
+
+    $('.pay-charge-bottom button').eq(0).hide();
+    $('.pay-charge-bottom button').eq(1).show();
+    $('.glyphicon-remove').removeClass('collapse');
   } else {
-    $('.btn-charge-bottom').removeClass('collapse');
-    $('.btn-pay-bottom').addClass('collapse');
+    $('.input-pay-charge').addClass('collapse');
+    $('.pay-charge-top input').attr('placeholder', 'Pay or charge someone with Crypto!');
+
+    $('.pay-charge-bottom button').eq(2).hide();
+    $('.glyphicon-remove').addClass('collapse');
   }
 
   // TODO: how to get "Type a friend's name, email address, or phone number" upon clicking within input??

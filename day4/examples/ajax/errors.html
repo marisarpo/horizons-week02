@@ -1,27 +1,108 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Horizons AJAX ERRORS Examples</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Horizons AJAX ERRORS Examples</title>
+</head>
 
-  <body>
+<body>
 
-    <h1>AJAX Error Handling</h1>
+  <h1>AJAX Error Handling</h1>
 
-    <p>Given the following list of urls you need to use AJAX to remove the ones that are broken.</p>
+  <p>Given the following list of urls you need to use AJAX to remove the ones that are broken.</p>
 
-    <ul id="links">
-      <li id="products">https://horizons-json-cors.s3.amazonaws.com/products.json</li>
-      <li id="members">https://horizons-json-cors.s3.amazonaws.com/members.txt</li>
-      <li id="JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF">https://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json</li>
-      <li id="oUfx3vNy2C6l8dzki84Tp2e3cds3">https://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json</li>
-      <li id="poem">https://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
-    </ul>
+  <ul id="links">
+    <li id="products">http://horizons-json-cors.s3.amazonaws.com/products.json</li>
+    <li id="members">http://horizons-json-cors.s3.amazonaws.com/members.txt</li>
+    <li id="JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF">http://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json</li>
+    <li id="oUfx3vNy2C6l8dzki84Tp2e3cds3">http://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json</li>
+    <li id="poem">http://horizons-json-cors.s3.amazonaws.com/poem.txt</li>
+  </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-    <script>
-      // YOUR CODE HERE
-    </script>
-  </body>
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script>
+
+  var kids = $('#links').children().toArray();
+  console.log(kids);
+  kids.forEach(function(item, index) {
+    $.ajax({
+      url: kids[index].innerHTML,
+      success: function(resp) {
+        console.log("success");
+      },
+      error: function(err) {
+        console.log('error');
+        var id = "#" + kids[index].id;
+        $(id).remove();
+      }
+    })
+  })
+
+
+  // var kids = $('#links').children().toArray();
+  // console.log(kids);
+  // for (var i = 0; i < kids.length; i++) {
+  //   $.ajax({
+  //     url: kids[i].innerHTML,
+  //     success: function(resp) {
+  //       console.log("success");
+  //     },
+  //     error: function(err) {
+  //       console.log('error');
+  //       var id = "#" + kids[i].id;
+  //       $(id).remove();
+  //     }
+  //   })
+  // }
+
+
+  // $.ajax({
+  //   url: 'http://horizons-json-cors.s3.amazonaws.com/products.json',
+  //   success: function(resp) {
+  //     console.log("success");
+  //   },
+  //   error: function(err) {
+  //     $("#products").remove();
+  //   }
+  // })
+  // $.ajax({
+  //   url: 'http://horizons-json-cors.s3.amazonaws.com/members.txt',
+  //   success: function(resp) {
+  //     console.log("success");
+  //   },
+  //   error: function(err) {
+  //     $("#members").remove();
+  //   }
+  // })
+  // $.ajax({
+  //   url: 'http://horizons-json-cors.s3.amazonaws.com/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json',
+  //   success: function(resp) {
+  //     console.log("success");
+  //   },
+  //   error: function(err) {
+  //     $("#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF").remove();
+  //   }
+  // })
+  // $.ajax({
+  //   url: 'http://horizons-json-cors.s3.amazonaws.com/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+  //   success: function(resp) {
+  //     console.log("success");
+  //   },
+  //   error: function(err) {
+  //     $("#oUfx3vNy2C6l8dzki84Tp2e3cds3").remove();
+  //   }
+  // })
+  // $.ajax({
+  //   url: 'httpk://horizons-json-cors.s3.amazonaws.com/poem.txt',
+  //   success: function(resp) {
+  //     console.log("success");
+  //   },
+  //   error: function(err) {
+  //     $("#poem").remove();
+  //   }
+  // })
+
+
+  </script>
+</body>
 </html>

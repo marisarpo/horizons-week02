@@ -87,7 +87,7 @@ $('.card-edit-save').click(function() {
   cardBeingEdited = null;
 });
 
-$('.card-edit-cance').click(function() {
+$('.card-edit-cancel').click(function() {
   $('#card-edit-body').val('');
   cardBeingEdited = null;
 });

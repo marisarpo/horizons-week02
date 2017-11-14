@@ -1,0 +1,50 @@
+body {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.times {
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.block {
+  position: absolute;
+  display: flex;
+  width: 580px;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 5;
+  position: relative;
+}
+
+.event {
+  width: 100%;
+  position: absolute;
+  background-color: powderblue;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 2 0;
+}
+
+.cal {
+  width: 600px;
+  height: 720px;
+  padding: 0 10px;
+  background-color: lightgrey;
+  position: relative;
+}

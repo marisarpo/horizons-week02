@@ -38,6 +38,8 @@ The devil is also in the details:
 
 ![Detailed Twitter](img/twitter_detail.gif)
 
+Fun Fact: This was from a real company, Luvocracy (now bought by Walmart Labs)! 
+
 ### Problem #3: Infinite Scroll
 
 ![Infinite Scroll](img/infinite.gif)

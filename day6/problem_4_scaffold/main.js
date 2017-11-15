@@ -1,7 +1,8 @@
 function layOutDay(events) {
 	// clear the current container to allow for full rerender
 	$('.cal').empty();
-
+	// sort
+	events = events.sort(function(a,b){ a.start - b.start });
 	// first make collision blocks
 	events = toTimeBlocks(events);
 	// divide blocks into non-colliding columns
@@ -13,7 +14,7 @@ function layOutDay(events) {
 				${block.map(column => (`
 					<div class="column">
 						${column.map(event => (`
-							<span class="event" style="height:${event.end-event.start-4};top:${event.start-column[0].start}">
+							<span class="event" style="height:${event.end-event.start-4};top:${event.start-block[0][0].start}">
 								Sample Text
 							</span>
 						`)).join('')}
@@ -59,8 +60,7 @@ function toColumns(block) {
 	return result;
 }
 
+//initial array of times
 let times = [ {start: 0, end: 500}, {start: 0, end: 200}, {start: 300, end: 500}, {start: 600, end: 700} ];
-
-times = times.sort(function(a,b){ a.start - b.start });
 
 layOutDay(times);

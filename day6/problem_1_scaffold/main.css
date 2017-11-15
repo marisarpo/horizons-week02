@@ -1,0 +1,14 @@
+/*this file contains the styling for the html elements*/
+
+/*sets style for all elements that show on page*/
+body {
+  text-align: center;
+  width: 33vw;
+  margin: 0 auto;
+}
+/*sets style for each individual div. in this case, each name.*/
+li {
+  margin: 10px;
+  background-color: yellow;
+
+}

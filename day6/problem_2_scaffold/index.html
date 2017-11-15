@@ -1,23 +1,103 @@
+<!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="utf-8">
 	<title>Template Page W2D6</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--underscore-->
+	<script src="lib/js/underscore.js"></script>
+	<!--JQuery-->
 	<script src="lib/js/jquery.js"></script>
+	<!--Bootstrap-->
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
 	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
-	<script src="lib/js/underscore.js"></script>
 </head>
 
-
 <body>
+	<!--NavBar / header-->
+	<nav class="navbar navbar-default head-bar">
+  	<div class="container-fluid">
+    	<div class="navbar-header">
+				<a href="#" class="navbar-left title-icon"><img src="./img/twittertiny.png"></a>
+	      <a class="navbar-brand twitter-title" href="#">Twitter 2.0</a>
+    	</div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="#">Home</a></li>
+	      <li><a href="#">Discover</a></li>
+				<li><a href="#">Mentions</a></li>
+	      <li><a href="#">Profile</a></li>
+	    </ul>
+			<form class="navbar-form navbar-right">
+      	<div class="form-group">
+        	<input type="text" class="form-control" placeholder="Search">
+      	</div>
+      	<button type="submit" class="submit">Submit</button>
+    	</form>
+  	</div>
+	</nav>
 
 
+	<!-- app -->
+	<div class="container-fluid">
+		<div class="row">
+				<div class="col-xl-4 content-container tweet-container">
+							<textarea class="input-tweet" name="tweet" placeholder="tweet?"></textarea>
+							<div class="user-stats-container">
+								<a class="stat"> <strong class="num">0</strong> TWEETS </a>
+            		<a class="stat"> <strong class="num">91</strong> FOLLOWING </a>
+            		<a class="stat"> <strong class="num">10,230</strong> FOLLOWERS </a>
+								<button type="button" class="btn btn-danger">TWEET</button>
+            		<!-- <p class="char-limit">Char limit 140</p> -->
+							</div>
+				</div>
+		</div>
+		<div class="posts"></div>
+	</div>
+
+
+<!--post template-->
+<!-- <script type="text/template" class="post"> -->
+	<div class="row">
+		<div class="content-container post-container">
+			<a href="#" class="profile">
+				<img class="profile-picture" src="./img/profilePic.png">
+				<div class="name-header-container">
+					<div class="name-header">
+						<strong> Alex Glaze </strong>
+						<span class="username"> @alexglaze132 </span>
+            <span class="date"> 14 Nov </span>
+					</div>
+				</div>
+			</a>
+			<p class="tweet-text">
+				From the depths of the sea, back to the block
+				Snoop Doggy Dogg, funky as the, the, The D.O.C
+				Went solo on that ass, but it's still the same
+			</p>
+			<ul class="action-list">
+				<li><a href="#" class="action expand">Expand</a></li>
+				<li><a href="#" class="action focus">Reply</a></li>
+				<li><a href="#" class="action focus">Retweet</a></li>
+				<li><a href="#" class="action focus">Favorite</a></li>
+			</ul>
+			<div class="stat-container post-statistics">
+            <a class="stat"> <strong class="num">23</strong> RETWEETS </a>
+            <a class="stat"> <strong class="num">11</strong> FAVORITES </a>
+							<a class="stat pic" href="#"> <img class="post-pic" src="./img/Nurse-icon.png"> </a>
+	            <a class="stat pic" href="#"> <img class="post-pic" src="./img/Thief-icon.png"> </a>
+	            <a class="stat pic" href="#"> <img class="post-pic" src="img/Professor-icon.png"> </a>
+	            <a class="stat pic" href="#"> <img class="post-pic" src="img/Spy-icon.png"> </a>
+	            <a class="stat pic" href="#"> <img class="post-pic" src="img/teacher-icon.png"> </a>
+      </div>
+		</div>
+	</div>
+<!-- </script> -->
 </body>
 
 
-<script src="main.js"></script>	
+<script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
+
 
 </html>

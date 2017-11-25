@@ -1,5 +1,6 @@
 "use strict";
 
+
 $('.post').click(function() {
   $('.comments').append(promptForComment());
 });
@@ -44,5 +45,5 @@ $('.comments').on('click', '.show-replies', function() {
   var $this = $(this);
   $this.closest('.comment').children('.replies').show();
   $this.hide();
-  $this.closest('.controls').find('.hide-replies').show();
+  $this.closest('.controls').find('.hide-replies').hide();
 });

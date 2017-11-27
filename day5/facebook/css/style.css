@@ -1,0 +1,39 @@
+.registration-form {
+  /*display: block;*/
+
+}
+
+.registration-title, .login-title{
+  margin-bottom: 20%;
+}
+
+.comment-box .row {
+  border: 2px solid red;
+}
+
+.comment-box, p {
+  display: inline;
+}
+
+.interaction-buttons p {
+  float: left;
+
+}
+
+.interaction-buttons .time-date {
+  float: right;
+
+}
+
+.comment-info p {
+  float: left;
+}
+
+.number-of-likes {
+  margin-left: 16px;
+}
+
+
+/*.loginForm {
+  display: none;
+}*/

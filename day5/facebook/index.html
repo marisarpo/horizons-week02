@@ -5,21 +5,24 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Your css file -->
+    <!-- css files (bootstrap, personal, font awesome) and moment.js -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="js/moment.js"> </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
+   <!-- Registration -->
     <div class="fluid-container text-center">
       <div class="row registrationForm">
         <div class="col-xs-4 col-xs-offset-4">
-          <h1 class='registration-title'> New User Registration </h1>
+          <h2 class='registration-title'> Facebook User Registration </h2>
 
           <form action="" method="">
 
             <div class="form-group">
+
               <label for"firstName">First Name</label>
               <input type="text" class="form-control" name="firstname" id="firstName" />
               <div class="invalid-feedback">
@@ -44,16 +47,15 @@
                 Please provide a valid password.
               </div>
 
-              <input type="submit" id="regPageRegisterButton" value="Register" class="btn btn-danger" />
+              <input type="submit" id="regPageRegisterButton" value="Register" class="btn btn-danger buttons" />
+              <input type="submit" id="regPageLoginButton" value="Login" class="btn btn-success buttons" />
 
-              <input type="submit" id="regPageLoginButton" value="Login" class="btn btn-success" />
             </div>
-
           </form>
         </div>
       </div>
 
-      <!--login-->
+      <!-- Login -->
       <div class="row loginForm">
         <div class="col-xs-4 col-xs-offset-4">
           <h1 class='login-title'>Login</h1>
@@ -65,37 +67,54 @@
             <label for"password">Password</label>
             <input type="password" class="form-control" name="password" id="password"/>
 
-            <input type="submit" id="loginPageLoginButton" value="Login" class="btn btn-success" />
+            <input type="submit" id="loginPageLoginButton" value="Login" class="btn btn-success buttons" />
 
-            <input type="submit" id="loginPageRegisterButton" value="Register" class="btn btn-danger" />
+            <input type="submit" id="loginPageRegisterButton" value="Register" class="btn btn-danger buttons" />
           </div>
         </div>
       </div>
 
-    <div class="row newsfeed">
-      <div class="col-xs-4 col-xs-offset-4">
-        <h1>Newsfeed</h1>
+      <!-- newsfeed -->
+      <div class="row newsfeedPage">
+        <div class="col-xs-4 col-xs-offset-4 newsfeed-head">
+          <h1 class='newsfeed-head'>Newsfeed</h1> <a class='chat'>Chat</a><a class='logout'>Logout</a>
+        </div>
 
-        <div class='fluid-container comment-box'>
-              <div class='row comment-info'>
-                <p class='user'>Alex Glaze</p>
-                <p class='comment'>Coding is so fun! I'm learning a bunch and
-                finally understanding it! I can really see myself succeeding! Just
-                an fyi! Happy Sunday!</p>
-              </div>
-              <div class='row interaction-buttons'>
-                <p>Like</p>
-                <p> * </p>
-                <p>Reply</p>
-                <p class='number-of-likes'>5 <span class="glyphicon glyphicon-thumbs-up"></span></p>
-                <p class='time-date'>12:01 AM 9/17/2017<p>
-              </div>
+        <div class="col-xs-4 col-xs-offset-2">
+          <div class='navigators'>
+            <button class='btn btn-default navigator nav-back'><</button>
+            <button class='btn btn-default navigator nav-forward'>></button>
+          </div>
+          <div class='fluid-container newsfeedBox'>
 
+            <div class='comment-box'></div>
+            <br>
+            <div class='input-box'>
+              <input class='comment-input' id='comment'/>
+              <button class='btn btn-default' id='postCommentButton'>Post</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- replyfeed -->
+    <div class='row commentRepliesPage'>
+      <div class="col-xs-4 col-xs-offset-4 newsfeed-head">
+        <h1>Replies</h1> <a class='chat'>Chat</a><a class='logout logout-special'>Logout</a>
+        <a class='back' id='back'><< Back</a>
+      </div>
+
+      <div class="col-xs-4 col-xs-offset-2">
+        <div class='fluid-container newsfeedBox'>
+          <div class='replies-box'></div>
+          <br>
+          <div class='input-box'>
+            <input class='reply-input' id='reply'/>
+            <button class='btn btn-danger' id='postReplyButton'>Reply</button>
+          </div>
         </div>
       </div>
     </div>
-
-    <!--login form-->
 
     <!-- jQuery -->
     <script
@@ -104,7 +123,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

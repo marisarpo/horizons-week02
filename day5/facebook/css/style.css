@@ -1,6 +1,5 @@
-.registration-form {
-  /*display: block;*/
-
+body, html {
+  height: 100%;
 }
 
 .registration-title, .login-title{
@@ -8,10 +7,11 @@
 }
 
 .comment-box .row {
-  border: 2px solid red;
+  border: 2px solid #3B5998;
 }
 
 .comment-box, p {
+  white-space: nowrap;
   display: inline;
 }
 
@@ -32,6 +32,153 @@
 .number-of-likes {
   margin-left: 16px;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.newsfeedPage {
+  background-color: #d8dfea;
+  height: 2000px;
+}
+
+.newsfeedBox {
+  background-color: #ffffff;
+  height: 75vh;
+  width: 66vw;
+  min-width: 700px;
+  /* display: flex; */
+}
+
+.replies-box {
+  max-height: 66vh;
+  overflow: scroll;
+}
+
+.singleComment, .singleReply {
+  /* height: 8vh; */
+  background-color: #ffffff;
+  border: 2px solid #3B5998;
+  text-align: left;
+  padding: 15px;
+  overflow: scroll;
+}
+
+.commenter-name, .replier-name {
+  /* display: block; */
+  align-self: baseline;
+  font-weight: bold;
+}
+
+.comment-content, .reply-content {
+  margin-left: 15px;
+}
+
+.comment-time, .reply-time {
+  display: block;
+}
+
+.comment-like-count {
+  display: inline-block;
+  float: right;
+}
+
+.comment-reply-count {
+  display: inline-block;
+  margin-right: 10px;
+  float: right;
+}
+
+.comment-like-button {
+  height: 50;
+  clear: both;
+  float: left;
+  display: inline;
+  color: #3B5998;
+
+}
+
+.blue-like-button {
+  background-color: #3B5998;
+}
+
+.comment-reply-button {
+  clear: left;
+  float: right;
+  display: inline;
+  margin-right: 10px;
+}
+
+.comment-input {
+  width: 33vw;
+}
+
+.navigators {
+  display: inline-block;
+}
+
+.navigator {
+  float: left;
+  position: relative;
+  right: 186px;
+}
+
+.input-box {
+  float: left;
+  position: relative;
+}
+.chat {
+  margin-left: 400px;
+}
+
+.logout {
+  margin-left: 10px;
+}
+
+.logout-special {
+  margin-left: 443px;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.back {
+  margin-top: 20px;
+  margin-right: 20px;
+  color: pink;
+  display: inline-table;
+}
+
+.newsfeed-head {
+  display: flex;
+}
+
+.comment-reply-input {
+  float: right;
+  margin-right: 15px;
+}
+
+.comment-reply-input-nodisplay {
+  display: none;
+}
+
+.commentRepliesPage {
+  background-color: red;
+  height: 2000px;
+  margin-top: -20px;
+}
+
+.newsfeed-head {
+  color: #3B5998;
+}
+
+#postCommentButton {
+  background-color: #3B5998;
+  color: white;
+}
+
 
 
 /*.loginForm {

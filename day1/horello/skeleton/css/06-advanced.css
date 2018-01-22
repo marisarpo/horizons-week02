@@ -1,1 +1,45 @@
-/* ADD STYLES FOR PART 6 HERE */
+.last{
+    background-color: #e4f0f6;
+    overflow: hidden;
+}
+
+.layout-frame-grid{
+    position: relative;
+    max-width: 890px;
+    margin: 0 auto;    
+}
+
+.layout-twothird{
+    max-width: 585px;
+}
+
+.right-image{
+    position: absolute;
+    top: -60px;
+    left: 640px;
+    max-width: initial;
+}
+
+#app{
+    border: 1px solid;
+    border-radius: 0.3em;
+    padding: .7em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+    color: #5e98ba;
+}
+
+#app:hover{
+    color: #265773;
+}
+
+.apps{
+    display: inline-block;
+    vertical-align: top;
+    margin: .4em 1em 0 0;
+    padding: 0;
+}
+
+.apps img{
+    height: 54px;
+}

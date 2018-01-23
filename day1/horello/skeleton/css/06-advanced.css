@@ -1,1 +1,28 @@
-/* ADD STYLES FOR PART 6 HERE */
+.img-float-right{
+  float:right;
+}
+
+.background-light-blue{
+  background-color: #e4f0f6;
+}
+
+.appstorelink{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0.4em 1em 0.4em 1em
+}
+
+.appstorelink img{
+  height: 54px;
+}
+
+.see-all-apps{
+  height: 54px;
+  padding: 0.7em 1em 0.7 1em;
+  margin-top: .4em;
+  border: solid 1px;
+  border-color: #5e98ba;
+  border-radius: 0.3em;
+  color: #5e98ba;
+  font-size: medium;
+}

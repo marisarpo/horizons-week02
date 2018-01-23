@@ -8,5 +8,80 @@ body {
 }
 
 .img-title {
-    width: 400px;
+    width: 200px;
+    float: left;
+    margin-left: 170px;
 }
+
+.img-small {
+    width: 20px;
+    margin-bottom: -4px;
+}
+
+.navleft {
+    padding: 0px 0px;
+    font-size: 16px;
+    color: #999;
+    text-align: left;
+    float: left;
+}
+
+section {
+    padding: 0px;
+}
+
+.nav a:link {
+  text-decoration:  none;
+  font-weight:      bold;
+  color:            black;
+} 
+
+.nav a:visited {
+  text-decoration:  none;
+  font-weight:      bold;
+  color:            black;
+} 
+
+.nav a:hover {
+    color: #265773;
+}
+
+.nav li {
+    display: inline-block;
+    margin: 7px;
+}
+
+.navcenter {
+    float: left;
+}
+
+.navright {
+    width:220px;
+    margin-left:30px;
+    float:right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li {
+    float: left;
+    
+}
+
+li ba {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    outline-color: #111;
+    border: 1px solid gray;
+
+}
+

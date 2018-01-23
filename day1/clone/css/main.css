@@ -11,106 +11,68 @@ body {
     font-family: "DDG_ProximaNova","DDG_ProximaNova_UI_0","DDG_ProximaNova_UI_1","DDG_ProximaNova_UI_2","DDG_ProximaNova_UI_3","DDG_ProximaNova_UI_4","DDG_ProximaNova_UI_5","DDG_ProximaNova_UI_6","Proxima Nova","Helvetica Neue","Helvetica","Segoe UI","Nimbus Sans L","Liberation Sans","Open Sans",FreeSans,Arial,sans-serif;
 }
 
-h1{
-  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-.logo_homepage{
-  background-size: 250px 200px;
-  width: 250px;
-  height: 200px;
-
+h1 {
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 48px;
 }
 
-/*
-.svg .logo_homepage{
-  background-image:url(https://duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png);
+p {
+  font-size: 20px;
+  line-height: 28px;
+  padding: .25em 0;
 }
-*/
 
+.button {
+    margin-top: 25px;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 100%;
+    color: #fff;
+    background: rgba(0,0,0,0.4) !important;
+    border: none;
+    font-size: 18px;
+    display: inline-block;
+    border-radius: 3px;
+    z-index: 10;
+    -moz-transition: background-color .15s ease-out;
+    -o-transition: background-color .15s ease-out;
+    -webkit-transition: background-color .15s ease-out;
+    transition: background-color .15s ease-out;
+}
 
-.green-section {
+.button:hover {
+  background: rgba(0,0,0,0.5) !important;
+}
+
+.green_section {
+  color: #fff;
   background: #58b792;
-}
-
-.orange-section {
-  background: #f5a339;
-}
-
-.purple-section{
-  background: #5f63bd;
-}
-
-.blue-section {
-  background: #87cef5;
-}
-
-
-.green-section, .orange-section, .purple-section, .blue-section {
   text-align: center;
   position: relative;
-  height: 25%;
-  padding-top: 100px;
+  margin: 0;
 }
 
 
-
-.onboarding-ed__content, .onboarding-ed__slide {
-  width: 80%;
-  max-width: 700px;
-  margin: 0 auto;
+.orange_section {
   color: #fff;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.1);
-  display:inline-block;
-  vertical-align: middle;
+  background: #f5a339;
+  text-align: center;
   position: relative;
-
+  margin: 0;
 }
 
-.onboarding-ed__title {
-  margin-top: 16px;
-  font-size: 24px;
-  line-height: 27px;
-  font-weight: bold;
-}
-
-.onboarding-ed__subtitle, .onboarding-ed__slide {
-  font-size: 17px;
-  line-height: 20px
-}
-
-.onboarding-ed__button-small{
-  margin-top: 25px;
-  padding: 12px 16px;
-  text-decoration: none;
-  font-weight: 600;
-  line-height: 100%
+.dark_blue_section {
   color: #fff;
-  background: rgba(0,0,0,0.4);
-  border: none;
-  font-size: 18px;
-  display: inline-block;
-  border-radius: 3px;
-  transition: background-color .15s ease-out;
+  background: #5f63bd;
+  text-align: center;
+  position: relative;
 }
 
-.onboarding-ed__button-small:hover{
-  background: rgba(0,0,0,0.55);
-}
-
-.onboarding-ed__image-container {
-  position: absolute;
-  bottom: 0;
-  left:0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-
-  max-width: 75%;
-  max-height: 75%;
-
-}
-
-p{
-  display: block;
-  padding: .25em 0;
+.light_blue_section {
+  color:rgb(54, 83, 116);
+  background: #87cef5;
+  text-align: center;
+  position: relative;
 }

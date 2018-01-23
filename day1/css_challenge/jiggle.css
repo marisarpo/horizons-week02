@@ -1,0 +1,41 @@
+.button {
+    background-color: pink;
+    padding: 0.6em 1.3em;
+    border: 0;
+    border-radius: 0.7em;
+    color: #fff;
+    display:inline-block;
+    background: linear-gradient(to bottom, #e65757 0, #ffa31c 100%);
+    font-weight: bold;
+    box-shadow: 0 2px 0 #f36e1a;
+
+    position: relative;
+
+
+}
+
+.button {
+    transition: width 1s;
+    transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+        animation: mymove 1.5s infinite;
+
+}
+
+@keyframes mymove {
+     25%, 60% {
+    transform: scale(1.0, 1.0)
+  }
+  50% {
+    transform: scale(1.1, 0.9)
+  }
+  70% {
+    transform: scale(1.1, 0.9) translate(5, 0px)
+  }
+  75% {
+    transform: scale(1.1, 0.9)
+  }
+  80% {
+    transform: scale(1.1, 0.9) translate(5, 0px)
+  }
+
+}

@@ -1,5 +1,5 @@
 body {
-    background: url("../images/porcupine.jpg");
+    background: #f7f7f7
     text-align: center;
 }
 
@@ -7,3 +7,6 @@ body {
     color: purple;
 }
 
+.img-title {
+    width: 400px;
+}

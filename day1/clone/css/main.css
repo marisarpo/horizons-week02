@@ -54,20 +54,18 @@ body {
 .welcome-photo img {
     max-width: 100%;
     display: inline;
+
 }
 
-.black-overlay {
-    max-width: 100%;
-    display: inline;
-    opacity: .3;
-}
 
 .welcome-photo {
     background-color: black;
+    z-index: -1;
 }
 
 .content-centered {
     position: absolute;
+    z-index: 2;
     color: white;
     top: 45%;
     -webkit-transform: translateY(-50%);
@@ -88,6 +86,7 @@ body {
 
 .copy-centered {
     position: absolute;
+    z-index: 3;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -98,10 +97,12 @@ body {
     font-family: "PT Serif","Big Caslon","Bodoni MT",Georgia,serif;
     font-size: 20px;
     color: white;
+
 }
 
 .button-centered a {
     position: absolute;
+    z-index: 4;
     top: 60%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);

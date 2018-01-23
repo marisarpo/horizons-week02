@@ -6,17 +6,225 @@
   <script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
 
   <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+  <!-- <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'> -->
 
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li ><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+            </ul>
+            <ul class = 'nav navbar-nav'>
+              <li><a href="#">Horizons</a>  </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="../navbar-static-top/">Enroll</a></li>
+              <li><a href="../navbar-fixed-top/">Alumni</a></li>
+              <li><a href="../navbar-fixed-top/">Contact</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Enroll</a></li>
+                  <li><a href="#">Alumni</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
   <div class="container">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+        <div class = 'form-group row'>
+          <h4 class = 'text-center'>Billing Information</h4>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Username</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-user"></div>
+            <input type="Username" class="form-control" id="inputPassword" placeholder="Username">
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Password</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-user"></div>
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Date of Birth</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-earphone"></div>
+            <input type="Date" class="form-control" id="inputDate" placeholder="yyyy-mm-dd">
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Zip Code</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-home"></div>
+            <input type="Zipcode" class="form-control" id="inputeZipcode" placeholder="Zip Code">
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">State</label>
+          <div class = 'col-xs-4 input-group'>
+            <div class="input-group-addon glyphicon glyphicon-list"></div>
+            <select class="form-control" title= 'State'>
+              <option selected>State</option>
+              <option value="AK">Alaska</option>
+        			<option value="AL">Alabama</option>
+        			<option value="AR">Arkansas</option>
+        			<option value="AZ">Arizona</option>
+        			<option value="CA">California</option>
+        			<option value="CO">Colorado</option>
+        			<option value="CT">Connecticut</option>
+        			<option value="DC">District of Columbia</option>
+        			<option value="DE">Delaware</option>
+        			<option value="FL">Florida</option>
+        			<option value="GA">Georgia</option>
+        			<option value="HI">Hawaii</option>
+        			<option value="IA">Iowa</option>
+        			<option value="ID">Idaho</option>
+        			<option value="IL">Illinois</option>
+        			<option value="IN">Indiana</option>
+        			<option value="KS">Kansas</option>
+        			<option value="KY">Kentucky</option>
+        			<option value="LA">Louisiana</option>
+        			<option value="MA">Massachusetts</option>
+        			<option value="MD">Maryland</option>
+        			<option value="ME">Maine</option>
+        			<option value="MI">Michigan</option>
+        			<option value="MN">Minnesota</option>
+        			<option value="MO">Missouri</option>
+        			<option value="MS">Mississippi</option>
+        			<option value="MT">Montana</option>
+        			<option value="NC">North Carolina</option>
+        			<option value="ND">North Dakota</option>
+        			<option value="NE">Nebraska</option>
+        			<option value="NH">New Hampshire</option>
+        			<option value="NJ">New Jersey</option>
+        			<option value="NM">New Mexico</option>
+        			<option value="NV">Nevada</option>
+        			<option value="NY">New York</option>
+        			<option value="OH">Ohio</option>
+        			<option value="OK">Oklahoma</option>
+        			<option value="OR">Oregon</option>
+        			<option value="PA">Pennsylvania</option>
+        			<option value="PR">Puerto Rico</option>
+        			<option value="RI">Rhode Island</option>
+        			<option value="SC">South Carolina</option>
+        			<option value="SD">South Dakota</option>
+        			<option value="TN">Tennessee</option>
+        			<option value="TX">Texas</option>
+        			<option value="UT">Utah</option>
+        			<option value="VA">Virginia</option>
+        			<option value="VT">Vermont</option>
+        			<option value="WA">Washington</option>
+        			<option value="WI">Wisconsin</option>
+        			<option value="WV">West Virginia</option>
+        			<option value="WY">Wyoming</option>
+            </select>
+        </div><!-- YOUR CODE HERE -->
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label"></label>
+          <div class = 'col-xs-4 input-group'>
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Payment Type</label>
+          <div class = 'col-xs-4 input-group'>
+            <div class="form-check">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2">
+                  Visa
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option2">
+                  Master Card
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Card #</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-credit-card"></div>
+            <input type="Zipcode" class="form-control" id="inputeZipcode" placeholder="0000 0000 0000 0000">
+          </div>
+        </div>
+        <div class = 'form-group row col-xs-7'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-5 control-label">Expiry</label>
+          <div class="col-xs-1 input-group">
+            <input type="Date" class="form-control" id="inputeZipcode" placeholder="MM/YYYY">
+          </div>
+        </div>
+        <div class = 'form-group row col-xs-5'>
+          <label for="staticEmail" class="col-xs-1 control-label">CVC</label>
+          <div class="col-xs-2 col-xs-offset-2 input-group">
+            <input type="" class="form-control" id="inputeZipcode" placeholder="000">
+          </div>
+        </div>
+        <div class = 'form-group row'>
+          <label for="staticEmail" class="col-xs-2 col-xs-offset-2 control-label">Project Description</label>
+          <div class="col-xs-4 input-group">
+            <div class="input-group-addon glyphicon glyphicon-pencil"></div>
+            <textarea name = 'Project Description' class="form-control" placeholder = 'Project Description' rows="3"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="col-xs-offset-4 btn btn-warning">send <i class="glyphicon glyphicon-send"></i></button>
     </form>
+  </div>
+  <!-- Trigger the modal with a button -->
+  <div class = 'text-center'>
+    <h1>Login to Horizons</h1>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Login</button>
+
+<!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-md">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <div class="container">
+              <form class="form-horizontal" action=" " method="post"  id="contact_form">
+                  <div class = 'form-group row'>
+                    <h4 class = 'text-center'>Login</h4>
+                    <label for="staticEmail" class="col-xs-1 control-label">Username</label>
+                    <div class="col-xs-4 input-group">
+                      <div class="input-group-addon glyphicon glyphicon-user"></div>
+                      <input type="Username" class="form-control" id="inputPassword" placeholder="Username">
+                    </div>
+                  </div>
+                  <div class = 'form-group row'>
+                    <label for="staticEmail" class="col-xs-1 control-label">Password</label>
+                    <div class="col-xs-4 input-group">
+                      <div class="input-group-addon glyphicon glyphicon-user"></div>
+                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div><!-- /.container -->
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
@@ -24,4 +232,5 @@
 
 
 </body>
-</html>
+<head>
+</head>

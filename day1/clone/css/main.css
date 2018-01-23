@@ -52,6 +52,10 @@ color: white;
   color: #b784a7;
 }
 
+.welcome-picture {
+  position: relative;
+}
+
 .welcome-picture img {
   max-width: 100%;
 }
@@ -126,7 +130,11 @@ color: white;
   text-decoration: none;
 }
 
-.image-overlay{
-  opacity: .9;
-
+.awesome {
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

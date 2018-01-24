@@ -53,20 +53,22 @@ a {
 
 .add-list {
   background: rgba(0, 0, 0, 0.15);
+padding: 7px;
   color: #fff;
   min-height: 30px;
   border: none;
-  margin: 5px, 5px;
+  margin: 5px;
   width: 280px;
-  padding: 7px;
+
 }
 
 .add-list:hover {
   background: rgba(0, 0, 0, .20);
 }
 
-.add-list-form {
-  /** PART 4 CSS here */
+.add-list-form, .add-card-form {
+    padding: 5px;
+    margin-bottom: 0;
 }
 
 .board {
@@ -115,6 +117,7 @@ a {
 .add-card {
   height: 40px;
   border-radius: 4px;
+  border-color: transparent;
   width: 100%;
   text-align: left;
   background: rgba(0, 0, 0, 0.15);

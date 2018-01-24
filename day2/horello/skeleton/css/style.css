@@ -162,14 +162,15 @@ a {
 }
 
 .card-body {
-	padding: .5em .5em 2em;
+	padding: .25em .25em 1em;
 	font-family: Cabin, Arial, default sans-serif;
 	font-size: 16px;
 	line-height: 1.5em;
 }
 
 .card-more {
-	/** PART 3 CSS here */
+	position: relative;
+	top: 10px;
 }
 
 /** PART 4 CSS here: add card form */

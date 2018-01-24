@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Horello</title>
 
-    <!-- PART 2. Add Bootstrap CSS, Bootstrap JS, and jQuery here -->
+<link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
 
     <!-- Our Styles -->
     <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -14,7 +16,35 @@
 </head>
 <body>
 
-<!-- PART 4. Add responsive nav bar here -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        <a class="navbar-brand" href="#">Horello</a>
+      </div>
+      <div class = "collapse navbar-collapse" id = "navbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">somestuff</a></li>
+            <li><a href="#">someotherstuff</a></li>
+            <li><a href="#">look at all this stuff</a></li>
+          </ul>
+      </ul>
+    </div>
+  </div>
+  </nav>
 
 <section class="text-center">
     <div class="section-wrapper">
@@ -73,25 +103,32 @@
                 Kindle Fire.
             </p>
 
-            <!-- PART 3. Add responsive code here -->
-
-            <div>
+          <div class="container-fluid">
+            <div class="row text-center">
+              <div class="col-sm-4">
                 <a class="app-store-link" href="#">
                     <img
                         src="../img/apple.png"
                         srcset="../img/apple.png 1x, ../img/apple@2x.png 2x"
                     />
                 </a>
+              </div>
+                <div class="col-sm-4">
                 <a class="app-store-link" href="#">
                     <img
                         src="../img/google.png"
                         srcset="../img/google.png 1x, ../img/google@2x.png 2x"
                     />
                 </a>
+              </div>
+              <div class="col-sm-4">
                 <a class="outline-link">See All Apps</a>
+              </div>
+
             </div>
         </div>
     </div>
+  </div>
 </section>
 <footer class="text-center">
     <ul>
@@ -126,5 +163,8 @@
     <p>&copy; Copyright 2017, Horizons School of Education, LLC. All rights
         reserved.</p>
 </footer>
+```<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>```
 </body>
 </html>

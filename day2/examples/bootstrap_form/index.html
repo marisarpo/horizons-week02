@@ -14,8 +14,106 @@
 <body>
   <div class="container">
 
+
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+        <label class="col-sm-offset-6"> Billing Information </label>
+
+      <!-- email input box -->
+      <div class="form-group">
+      <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-10 input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input class="form-control" id="inputEmail" placeholder="Email">
+        </div>
+      </div>
+
+      <!-- password input box -->
+      <div class="form-group">
+      <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-10 input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input class="form-control" id="inputPassword" placeholder="Password">
+        </div>
+      </div>
+
+      <!-- BOD input box -->
+      <div class="form-group">
+      <label for="inputDOB" class="col-sm-2 control-label">Date of Birth</label>
+        <div class="col-sm-10 input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+          <input type="date" class="form-control" id="inputDOB" placeholder="yyyy-mm-dd">
+        </div>
+      </div>
+
+
+      <!-- state input box -->
+      <div class="form-group">
+      <label for="inputDOB" class="col-sm-2 control-label">State</label>
+        <div class="col-sm-10 input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-option-vertical"></i></span>
+          <select class="form-control" placeholder="Please select your state">
+            <option>Please select your state</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- payment input -->
+      <div class='form-group'>
+      <label for="optionsRadios1 optionsRadios2" class="col-sm-2 control-label"> Payment Type </label>
+      <div>
+      <div class="radio col-sm-4">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+            Master Card
+        </label>
+      </div>
+      <div class="radio col-sm-4">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+           Visa
+        </label>
+      </div>
+      </div>
+    </div>
+
+
+
+    <!-- card number input -->
+    <div class="form-group">
+    <label for="inputCardNumber" class="col-sm-2 control-label">Card #</label>
+      <div class="col-sm-10">
+        <input class="form-control" id="inputPassword" placeholder="0000 0000 0000 0000">
+      </div>
+    </div>
+
+    <!-- ccv + expiry -->
+    <div class="form-group">
+    <label for="inputCardNumber" class="col-sm-2 control-label">Expiry</label>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputExpiry" placeholder="MM/YYYY">
+      </div>
+    <label for="inputCardNumber" class="col-sm-2 control-label">CVC</label>
+      <div class="col-sm-3">
+        <input class="form-control" id="inputCVC" placeholder="000">
+      </div>
+    </div>
+
+    <!-- project description input -->
+    <div class="form-group">
+    <label for="inputCardNumber" class="col-sm-2 control-label">Project Description</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" id="inputPD" placeholder="Project Description" rows = "3"></textarea>
+      </div>
+    </div>
+
+    <!-- SEND button -->
+    <div>
+      <input class="btn btn-default col-sm-4 col-sm-offset-2" type="Send" value="Send">
+    </div>
     </form>
   </div>
 </div><!-- /.container -->

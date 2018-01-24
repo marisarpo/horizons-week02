@@ -79,6 +79,13 @@ $(document).ready(function (){
         $(document).find("#card-edit").modal("hide");
     });
 
+    $('.list-cards').sortable({
+
+    });
+
+    $('.board').sortable({
+    });
+
 
 
 

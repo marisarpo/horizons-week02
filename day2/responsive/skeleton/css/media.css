@@ -1,4 +1,11 @@
-/* Your CSS goes here! */
+@media(max-width: 650px) {/* Your CSS goes here! */
+  section {
+    padding: 0px 20px;
+  }
+}
 
-section {
+@media(min-width: 650px) and (max-width: 900px){/* Your CSS goes here! */
+  section {
+    padding: 40px 20px;
+  }
 }

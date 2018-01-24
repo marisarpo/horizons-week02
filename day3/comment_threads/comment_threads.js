@@ -40,4 +40,19 @@ $(document).ready(function() {
         var repliesDiv = commentDiv.children('.replies');
           repliesDiv.append(newContent);
     });
+
+    $('.comments').on('click', '.hide-replies', function(e) {
+        var $this = $(this);
+        var commentDiv = $this.closest('.comment');
+        var repliesDiv = commentDiv.children('.replies');
+        $(repliesDiv).hide();
+    });
+
+    $('.comments').on('click', '.show-replies', function(e) {
+        var $this = $(this);
+        var commentDiv = $this.closest('.comment');
+        var repliesDiv = commentDiv.children('.replies');
+        $(repliesDiv).show();
+    });
+
 });

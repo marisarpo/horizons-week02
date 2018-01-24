@@ -21,6 +21,8 @@ section {
     margin: 0 auto;
 }
 
+}
+
 .center-paragraph {
     margin: 1em auto;
 }
@@ -162,3 +164,19 @@ h2 {
 .button {
     margin-bottom: 20px;
 }
+
+
+@media (min-width: 0px) and (max-width: 650px){
+  section {
+    padding: 0px 20px;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 900px){
+  section {
+    padding: 40px 20px;
+    clear: both;
+    overflow: hidden;
+  }

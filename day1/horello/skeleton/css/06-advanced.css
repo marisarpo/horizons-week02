@@ -1,1 +1,18 @@
 /* ADD STYLES FOR PART 6 HERE */
+.part6 {
+
+}
+
+.badge {
+  height: 54px;
+  margin-top: 0.4em;
+  margin-right: 1em
+}
+
+.devices {
+  float:right
+}
+
+.others {
+
+}

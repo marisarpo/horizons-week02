@@ -13,9 +13,128 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <h2 class = 'text-center'>Billing Information</h1>
+
+
+    <div class="col-xs-7 col-xs-offset-2 d:inline-block">
+      <label class = "control-label col-xs-3">Username</label>
+      <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-user"></div>
+        <input type="text" class="form-control" id="Username" placeholder="Username">
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="col-xs-7 col-xs-offset-2">
+      <label class = "control-label col-xs-3">Password</label>
+      <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-user"></div>
+        <input type="text" class="form-control" id="Password" placeholder="Password">
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="col-xs-7 col-xs-offset-2">
+      <label class = "control-label col-xs-3">Date of Birth</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        <input name="phone" class="form-control" type="date">
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="col-xs-7 col-xs-offset-2">
+      <label class = "control-label col-xs-3">Zip Code</label>
+      <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-home"></div>
+        <input type="text" class="form-control" id="Zip Code" placeholder="Zip Code">
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="col-xs-7 col-xs-offset-2">
+      <label class = "control-label col-xs-3">State</label>
+      <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-th-list"></div>
+        <select class = "form-control" placeholder = "Please select your state">
+          <option> Please select your state</option>
+          <option> Alabama</option>
+          <option> Boston</option>
+          <option> California</option>
+        </select>
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label">Payment Type</label>
+      <div class="col-md-4">
+        <div class="radio">
+          <label>
+            <input type="radio" name="hosting" value="yes" /> Visa
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="hosting" value="no" /> Mastercard
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-7 col-xs-offset-2">
+      <label class = "control-label col-xs-3">Card #</label>
+      <div class="input-group">
+        <div class="input-group-addon glyphicon glyphicon-credit-card"></div>
+        <input type="text" class="form-control" id="Card #" placeholder="0000 0000 0000 0000">
+      </div>
+    </div>
+
+    <br></br>
+
+    <div class="col-xs-7 col-xs-offset-3">
+      <label class = "control-label col-xs-1">Expiry</label>
+      <div class = "inputGroupContainer col-xs-4">
+      <div class="input-group">
+        <input type="text" class="form-control" id="Expiry">
+      </div>
+    </div>
+
+
+      <label class = "control-label col-xs-2">CVC</label>
+      <div class = "inputGroupContainer">
+      <div class="input-group">
+        <input type="text" class="form-control" id="CVC">
+      </div>
+    </div>
+      </div>
+
+      <br></br>
+
+      <div class="col-xs-7 col-xs-offset-2 d:inline-block">
+        <label class = "control-label col-xs-3">Project Description</label>
+        <div class="input-group">
+          <div class="input-group-addon glyphicon glyphicon-pencil"></div>
+          <textarea class="form-control" name="Project Description" placeholder="Project Description"></textarea>
+        </div>
+      </div>
+
+      <br></br>
+      <br></br>
+
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+        </div>
+      </div>
+
     </form>
   </div>
 </div><!-- /.container -->

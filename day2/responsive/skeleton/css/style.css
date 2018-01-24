@@ -16,6 +16,10 @@ section {
     overflow: hidden;
 }
 
+
+
+
+
 .section-wrapper {
     max-width: 540px;
     margin: 0 auto;
@@ -52,6 +56,18 @@ section {
 section, footer {
     padding: 80px 20px;
 }
+
+@media (min-width: 0px) and (max-width: 650px){
+  section {
+    padding: 0px 20px;
+    }
+  }
+
+@media (min-width: 650px) and (max-width:900px){
+  section {
+    padding: 40px 20px;
+    }
+  }
 
 footer {
     color: #999;

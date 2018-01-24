@@ -34,6 +34,18 @@ $(document).ready(function() {
     var repliesDiv = commentDiv.children('.replies');
     repliesDiv.append(newContent);
   });
+  $('.comments').on('click','.hide-replies',function(e) {
+    var $this = $(this);
+    var commentDiv = $this.closest('.comment');
+    var repliesDiv = commentDiv.children('.replies');
+    $(repliesDiv).hide();
+  })
+  $('.comments').on('click','.show-replies',function(e) {
+    var $this = $(this);
+    var commentDiv = $this.closest('.comment');
+    var repliesDiv = commentDiv.children('.replies');
+    $(repliesDiv).show();
+  })
 })
 // This file contains JavaScript that will run on your page.
 // YOUR CODE HERE

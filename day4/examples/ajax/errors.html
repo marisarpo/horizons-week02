@@ -21,7 +21,19 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    var li = $('li');
+    $('ul').empty();
+    li.each(function(index) {
+        var urlToUse = $(this).text();
+        $.ajax({
+            url: urlToUse,
+            success: function(response) {
+                $('ul').append('<li>'+ urlToUse + '</li>');
+            },
+            error: function(err) {
+            }
+        });
+    });
     </script>
   </body>
 </html>

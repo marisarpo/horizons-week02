@@ -34,11 +34,7 @@ TwilioApp.prototype = {
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-      if(phoneStr.match(/^[0-9]+$/) != null) {
-          return true;
-      } else {
-          return false;
-      }
+      return phoneStr.match(/^\d+$/) !== null && phoneStr.length === 11;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
@@ -51,9 +47,11 @@ TwilioApp.prototype = {
           $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
             success: function(x) {
                 self.displayMessage(phoneNumber, message);
+                self.messageInputField.val("");
+                self.phoneInputField.val("");
             },
             error: function(err) {
-                alert("Something went wrong!");
+                alert(err);
             },
             method: 'POST',
             data: {

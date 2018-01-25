@@ -1,15 +1,15 @@
 "use strict";
 var cardBeingEdited = null;
 $(document).ready(function() {
-  $('.add-list-container').on('click','.add-list', function() {
+  $('.board').on('click','.add-list', function() {
     $('.add-list-form-wrapper').toggleClass('collapse');
   });
-  $('.add-list-container').on('click','.add-list-cancel', function() {
+  $('.board').on('click','.add-list-cancel', function() {
     $('.add-list-form-wrapper').toggleClass('collapse');
   });
-  $('.add-list-container').on('click','.add-list-save', function() {
+  $('.board').on('click','.add-list-save', function() {
     var title = $('#list-input').val();
-    $('.add-list-form-wrapper').before(`<div class="list-container">
+    $(this).parent().parent().parent().parent().before(`<div class="list-container">
         <div class="list">
           <div class="list-header">
             <span class="list-title">`+ title + `</span>
@@ -31,24 +31,27 @@ $(document).ready(function() {
           </div>
         </div>
       </div>`);
+      $('.add-list-form-wrapper').toggleClass('collapse');
+      $('#list-input').val('');
   });
-  $('.add-card').on('click', function() {
+  $('.board').on('click','.add-card', function() {
     $(this).siblings('.add-card-form-wrapper').toggleClass('collapse');
   });
-  $('.add-card-cancel').on('click',function() {
+  $('.board').on('click','.add-card-cancel',function() {
     $(this).closest('.add-card-form-wrapper').addClass('collapse');
   });
-  $('.add-card-save').on('click', function() {
-    var title = $(this).closest('.add-card-form').find("input[type='text']").val();
+  $('.board').on('click','.add-card-save', function() {
+    var title = $(this).parent().find("input[type='text']").val();
     var content = `<div class="card">
         <span class="card-more">
           <span class="glyphicon glyphicon-align-left"></span>
         </span>
-        <div class="card-body">`+title +`</div>
+        <div class="card-body">`+ title +`</div>
       </div>`
-      $(this).closest('.list-footer').before(content);
-    var title = $(this).closest('.add-card-form').find("input[type='text']").val('');
+      $(this).closest('.list-footer').parent().find('.list-cards').append(content);
     $(this).closest('.add-card-form-wrapper').addClass('collapse');
+    var title = $(this).parent().find("input[type='text']").val('');
+    // var title = $(this).closest('.add-card-form').find("input[type='text']").val('');
   })
   $('.board').on('click','.card',function(){
     cardBeingEdited = $(this);
@@ -61,6 +64,12 @@ $(document).ready(function() {
     var newText = $(document).find('#card-edit-body').val();
     cardBeingEdited.find('div.card-body').text(newText);
     $(document).find('#card-edit').modal('hide');
+  })
+  $('.board').sortable({
+  // Configuration parameters here
+  });
+  $('.list-cards').sortable({
+
   })
 })
 // YOUR JAVASCRIPT CODE GOES HERE

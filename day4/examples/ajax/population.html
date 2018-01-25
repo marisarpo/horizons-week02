@@ -23,9 +23,23 @@
 
     <script>
       // YOUR CODE HERE
-
+      var count = function(resp) {
+        var max = resp[0].Population;
+        var name = resp[0]["City / Urban area"]
+        resp.forEach(function(item) {
+          if(item["Population"]> max) {
+            max = item["Population"];
+            name = item["City / Urban area"];
+          }
+        })
+        return name;
+      }
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          console.log(resp);
+          $('#out').text(count(resp))
+        }
       });
     </script>
   </body>

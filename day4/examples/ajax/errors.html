@@ -21,6 +21,28 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
+      var x = $('#links').children()
+      // console.dir(x);
+      // for (var i = 0; i < x.length; i++) {
+      //     // var count = i;
+      //     $.ajax({
+      //       url: $(x[i]).text(),
+      //       error: function() {
+      //         $(x[this]).remove();
+      //         // console.log(i);
+      //       }.bind(i)
+      //     })
+      // }
+      x.each(function(i, item) {
+        // console.log($(item))
+        $.ajax( {
+          url:$(item).text(),
+          error: function() {
+            $(item).remove();
+          }
+        })
+      });
+
       // YOUR CODE HERE
     </script>
   </body>

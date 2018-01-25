@@ -15,14 +15,15 @@ $(document).ready(function (){
 
     $('.add-list-save').on('click', function() {
         var listTitle = $('#add-list').val();
-        var newContent = $(`<div class="list-container">
+        var newContent = $(`
+        <div class="list-container">
           <div class="list">
             <div class="list-header">
               <span class="list-title">` + listTitle + `</span>
             </div>
             <div class="list-cards"></div>
             <div class="list-footer">
-              <button class="add-card">Add a card...</button>
+              <button class="list-button add-card">Add a card...</button>
               <div class="collapse add-card-form-wrapper">
                 <div class="well add-card-form">
                   <input type="text" class="form-control" placeholder="Card title" id="add-card">
@@ -37,21 +38,22 @@ $(document).ready(function (){
             </div>
           </div>
         </div>`);
-        $('.add-list-form-wrapper').before(newContent);
+        $(this).parent().parent().parent().parent().before(newContent);
+        $('.add-list-form-wrapper').toggleClass('collapse');
         $('#add-list').val('');
     });
 
-    $('.list').on('click', '.add-card', function() {
-        $(this).siblings('.add-card-form-wrapper').removeClass('collapse');
+    $('.board').on('click', '.add-card', function() {
+        $(this).siblings('.add-card-form-wrapper').toggleClass('collapse');
         $('#add-card').val('');
     });
 
-    $('.list').on('click', '.add-card-cancel', function() {
+    $('.board').on('click', '.add-card-cancel', function() {
         $('.add-card-form-wrapper').addClass('collapse');
         $('#add-card').val('');
     });
 
-    $('.list').on('click', '.add-card-save', function() {
+    $('.board').on('click', '.add-card-save', function() {
         var cardTitle = $(this).siblings().eq(0).val();
         var newContent = $(`<div class="card">
           <span class="card-more">

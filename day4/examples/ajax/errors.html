@@ -21,7 +21,23 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var links = ($('#links').children())
+      links.each(function(brokenlink, i){
+        $.ajax({
+            url: $(i).text(),
+            error: function(err){
+              $(i).remove();
+            }
+
+        })
+      })
+
+    //     url: 'file:///Users/reemaukani/horizons/week02/day4/examples/ajax/errors.html',
+    //
+    //     error: function(err){
+    //       $('#links').children().remove();
+    //     }
+    // })
     </script>
   </body>
 </html>

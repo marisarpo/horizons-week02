@@ -25,7 +25,31 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+    var arrayOfProducts = [];
+      $.ajax({
+          url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+          success: function(response) {
+              for(var i=0; i < response.length; i++){
+                  $.ajax({
+                      url: response[i]["url"],
+                      success: function(response) {
+                          var num = response.priceCents;
+                          var dollars = num /100;
+                          arrayOfProducts.push({"name": response.name, "price": dollars});
+                          arrayOfProducts.sort(function(a, b) {
+                              return a.price - b.price;
+                          });
+                      },
+                      error: function(error) {
+                      }
+                  });
+              }
+          },
+          error: function(err) {
+              console.log(err);
+          }
+
+      });
     </script>
   </body>
 </html>

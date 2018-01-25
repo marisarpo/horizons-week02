@@ -30,6 +30,10 @@ section.lower-section {
   vertical-align: middle;
 }
 
+#smallButton:hover {
+  color: 
+}
+
 .lower-paragraph {
   float: right;
   width: 560px;

@@ -6,30 +6,143 @@ $(document).ready(function() {
   render();
 });
 
+
 function createList(listName) {
-  // YOUR CODE HERE
+
+  $.ajax(`https://api.trello.com/1/lists?name=` + listName +`&idBoard=5a6a62f80773405870ddfb3b`, {
+    success: function(x) {
+      console.log("SUCCESS");
+         render();
+    },
+    error: function(err) {
+      console.log(err);
+    },
+    method: 'POST',
+    data: {
+      key: "ecc234a07e67aca778f1b483f14295e0",
+      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6"
+    },
+    headers: {
+      "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+    }
+  });
+
 }
 
 function createCard(name, listId) {
-  // YOUR CODE HERE
+
+  $.ajax('https://api.trello.com/1/cards?idList=' + listId, {
+    success: function(x) {
+      console.log("SUCCESS");
+         render();
+    },
+    error: function(err) {
+      console.log(err);
+    },
+    method: 'POST',
+    data: {
+      key: "ecc234a07e67aca778f1b483f14295e0",
+      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      name: name
+    },
+    headers: {
+      "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+    }
+  });
 }
 
 function updateCard(title, desc, cardId) {
-  // YOUR CODE HERE
+
+  $.ajax('https://api.trello.com/1/cards/' + cardId, {
+    success: function(x) {
+      console.log("SUCCESS");
+         render();
+    },
+    error: function(err) {
+      console.log(err);
+    },
+    method: 'PUT',
+    data: {
+      key: "ecc234a07e67aca778f1b483f14295e0",
+      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      name: title,
+      desc: desc
+    },
+    headers: {
+      "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+    }
+  });
+
 }
 
 function render() {
-  // YOUR CODE HERE
+  var boardObj;
+  $.ajax('https://api.Trello.com/1/boards/5a6a62f80773405870ddfb3b', {
+    data: {
+      key: "ecc234a07e67aca778f1b483f14295e0",
+      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      cards: 'all',
+      lists: 'all'
+    },
+    success: function(data) {
+      renderBoard(data);
+    },
+    error: function(error) {
+      console.log(error);
+    }
+  });
+
 }
 
 function renderBoard(board) {
-  // YOUR CODE HERE
+  var boardId = board.id;
+  $('div#boardAnchor').append('<div id="' + boardId + '" class="board"></div>');
+  board.lists.forEach(function(value, key) {
+    renderList(value);
+  });
+  board.cards.forEach(function(value, key) {
+    renderCard(value);
+  });
 }
 
 function renderList(list) {
-  // YOUR CODE HERE
+  var LISTIDHERE = list.id;
+  var title = list.name;
+
+  var newContent = `<div class="list-container">
+      <div class="list" data-list-id="` + LISTIDHERE + `" id="` + LISTIDHERE + `">
+        <div class="list-header">
+          <span class="list-title">` + title + `</span>
+        </div>
+        <div class="list-cards"></div>
+        <div class="list-footer">
+          <button class="add-card" addcardid="` + LISTIDHERE + `">Add a card...</button>
+          <div class="collapse add-card-form-wrapper" id="addCardForm` + LISTIDHERE + `">
+            <div class="well add-card-form">
+              <input type="text" class="form-control" placeholder="Card title" id="addCardTitle` + LISTIDHERE + `" />
+              <button type="button" class="btn btn-default add-card-save" id="addCardBtn` + LISTIDHERE + `">Save</button>
+              <button type="button" class="btn btn-default add-card-cancel"><span class="glyphicon glyphicon-remove" id="addCardCancelBtn` + LISTIDHERE + `"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+
+  $('#boardAnchor').before(newContent);
 }
 
 function renderCard(card) {
-  // YOUR CODE HERE
+  var cardID = card.id;
+  var cardName = card.name;
+  var cardDescription = card.desc;
+  var boardID = card.idBoard;
+  var listID = card.idList;
+
+  var newContent = `<div id="` + cardID + `" class="card" data-card-desc="` + cardDescription + `" data-card-name="` + cardName + `" data-list-id="` + listID + `" data-card-id="` + cardID + `">
+      <div class="card-body">
+        ` + cardName + `
+      </div>
+    </div>`;
+
+  $(`.list#` + listID).children().eq(1).append(newContent);
 }

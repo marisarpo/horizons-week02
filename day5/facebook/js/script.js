@@ -1,11 +1,9 @@
 $(document).ready(function() {
-  var posts = [];
   $('#login').hide();
   $('div#newsfeed').hide();
 
-  // setInterval(fetchPosts, 30000);
+  setInterval(fetchPosts, 30000);
 
-  // Remove Search if user Resets Form or hits Escape!
   $('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
     if (event.which == 27 && $('.navbar-collapse form[role="search"]').hasClass('active') ||
       $(event.currentTarget).attr('type') == 'reset') {
@@ -25,6 +23,8 @@ $(document).ready(function() {
         success: function(data) {
          localStorage.setItem('token', '');
          $('#newsfeed').hide();
+         $('#registration').hide();
+         $('#signup').hide();
          $('#login').show();
         },
         error: function(err) {
@@ -35,10 +35,8 @@ $(document).ready(function() {
           token: localStorage.getItem('token')
         }
       });
-
   });
 
-  // Show Search if form is not active // event.preventDefault() is important, this prevents the form from submitting
   $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
     event.preventDefault();
     var $form = $(this).closest('form'),
@@ -47,8 +45,7 @@ $(document).ready(function() {
     $input.focus();
 
   });
-  // ONLY FOR DEMO // Please use $('form').submit(function(event)) to track from submission
-  // if your form is ajax remember to call `closeSearch()` to close the search container
+
   $(document).on('click', '.navbar-collapse form[role="search"].active button[type="submit"]', function(event) {
     event.preventDefault();
     var $form = $(this).closest('form'),
@@ -182,6 +179,7 @@ $(document).ready(function() {
   }
 
   function fetchPosts() {
+      $('ul#recent_posts').empty();
     $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/1`, {
       success: function(data) {
         parsePosts(data.response);
@@ -197,7 +195,7 @@ $(document).ready(function() {
   }
 
   function parsePosts(data) {
-    var newPost;
+    var posts = [];
     for (var i = 0; i < data.length; i++) {
       posts.push({
         id: data[i]._id,
@@ -252,9 +250,7 @@ $(document).ready(function() {
 
   function appendComments(data, id) {
       var comments = [];
-      console.log(data);
     for (var i = 0; i < data.length; i++) {
-
       var newContent =
         `<div class="row">
                   <div class="col-sm-1">
@@ -271,14 +267,6 @@ $(document).ready(function() {
                       </div>
                       <div class="panel-body">
                         ` + data[i].content + `
-                      </div>
-                      <div class="panel-body col-sm-12">
-                          <div id="like">
-                              <button class="btn btn-primary" style="width: auto; float: right;"><i class="glyphicons glyphicons-thumbs-up"></i>Like</button>
-                          </div>
-                          <div id="reply">
-                              <button class="btn btn-primary" style="width: auto; float: right;"><i class="glyphicons glyphicons-comments"></i>Reply</button>
-                          </div>
                       </div>
                       <!-- /panel-body -->
                     </div>

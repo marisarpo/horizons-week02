@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function createList(listName) {
 
-  $.ajax(`https://api.trello.com/1/lists?name=` + listName +`&idBoard=5a6a62f80773405870ddfb3b`, {
+  $.ajax(`https://api.trello.com/1/lists?name=` + listName +`&idBoard=`+boardId, {
     success: function(x) {
       console.log("SUCCESS");
          render();
@@ -19,8 +19,8 @@ function createList(listName) {
     },
     method: 'POST',
     data: {
-      key: "ecc234a07e67aca778f1b483f14295e0",
-      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6"
+      key: apiKey,
+      token: apiToken
     },
     headers: {
       "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
@@ -41,8 +41,8 @@ function createCard(name, listId) {
     },
     method: 'POST',
     data: {
-      key: "ecc234a07e67aca778f1b483f14295e0",
-      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      key: apiKey,
+      token: apiToken,
       name: name
     },
     headers: {
@@ -63,8 +63,8 @@ function updateCard(title, desc, cardId) {
     },
     method: 'PUT',
     data: {
-      key: "ecc234a07e67aca778f1b483f14295e0",
-      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      key: apiKey,
+      token: apiToken,
       name: title,
       desc: desc
     },
@@ -79,8 +79,8 @@ function render() {
   var boardObj;
   $.ajax('https://api.Trello.com/1/boards/5a6a62f80773405870ddfb3b', {
     data: {
-      key: "ecc234a07e67aca778f1b483f14295e0",
-      token: "36eb5d7ca6c284e2567c56a175c5224f5036f21096ca2d969b5cc82027e0c6d6",
+      key: apiKey,
+      token:apiToken,
       cards: 'all',
       lists: 'all'
     },
@@ -95,14 +95,15 @@ function render() {
 }
 
 function renderBoard(board) {
-  var boardId = board.id;
-  $('div#boardAnchor').append('<div id="' + boardId + '" class="board"></div>');
-  board.lists.forEach(function(value, key) {
+    $('.list-container').empty();
+    var boardId = board.id;
+    $('div#boardAnchor').append('<div id="' + boardId + '" class="board"></div>');
+    board.lists.forEach(function(value, key) {
     renderList(value);
-  });
-  board.cards.forEach(function(value, key) {
+    });
+    board.cards.forEach(function(value, key) {
     renderCard(value);
-  });
+    });
 }
 
 function renderList(list) {

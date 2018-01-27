@@ -18,23 +18,23 @@ $(document).ready(function() {
   }
 
   $('a#logout').on('click', function(event) {
-      event.preventDefault();
-      $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/users/logout`, {
-        success: function(data) {
-         localStorage.setItem('token', '');
-         $('#newsfeed').hide();
-         $('#registration').hide();
-         $('#signup').hide();
-         $('#login').show();
-        },
-        error: function(err) {
-          console.log(err);
-        },
-        method: 'GET',
-        data: {
-          token: localStorage.getItem('token')
-        }
-      });
+    event.preventDefault();
+    $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/users/logout`, {
+      success: function(data) {
+        localStorage.setItem('token', '');
+        $('#newsfeed').hide();
+        $('#registration').hide();
+        $('#signup').hide();
+        $('#login').show();
+      },
+      error: function(err) {
+        console.log(err);
+      },
+      method: 'GET',
+      data: {
+        token: localStorage.getItem('token')
+      }
+    });
   });
 
   $(document).on('click', '.navbar-collapse form[role="search"]:not(.active) button[type="submit"]', function(event) {
@@ -84,10 +84,10 @@ $(document).ready(function() {
   });
 
   $('ul').on('click', 'button.btn.btn-primary.replyComment', function(event) {
-      event.preventDefault();
-      var comment = $(this).parent().children().eq(0).val();
-      var id = $(this).parent().parent().parent()[0].id;
-      addAComment(comment, id);
+    event.preventDefault();
+    var comment = $(this).parent().children().eq(0).val();
+    var id = $(this).parent().parent().parent()[0].id;
+    addAComment(comment, id);
   });
 
   $('#makePost').on('click', function(event) {
@@ -116,32 +116,30 @@ $(document).ready(function() {
   }
 
   function addALike(id) {
-      $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/` + id, {
-        success: function(data) {
-        },
-        error: function(err) {
-          console.log(err);
-        },
-        method: 'GET',
-        data: {
-          token: localStorage.getItem('token')
-        }
-      });
+    $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/` + id, {
+      success: function(data) {},
+      error: function(err) {
+        console.log(err);
+      },
+      method: 'GET',
+      data: {
+        token: localStorage.getItem('token')
+      }
+    });
   }
 
   function addAComment(comment, id) {
-      $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/comments/` + id, {
-        success: function(response) {
-        },
-        error: function(err) {
-          console.log(err);
-        },
-        method: 'POST',
-        data: {
-          token: localStorage.getItem('token'),
-          content: comment
-        }
-      });
+    $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/comments/` + id, {
+      success: function(response) {},
+      error: function(err) {
+        console.log(err);
+      },
+      method: 'POST',
+      data: {
+        token: localStorage.getItem('token'),
+        content: comment
+      }
+    });
   }
 
   function sendLogin(email, pw) {
@@ -179,7 +177,7 @@ $(document).ready(function() {
   }
 
   function fetchPosts() {
-      $('ul#recent_posts').empty();
+    $('ul#recent_posts').empty();
     $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/1`, {
       success: function(data) {
         parsePosts(data.response);
@@ -227,7 +225,7 @@ $(document).ready(function() {
                             <h5 class="animated bounceInRight"><a href="#">` + data[i].content + `</a></h5>
                         </div>
                         <div class="sidebar-meta">
-                            <span class="time" ><i class="glyphicon glyphicon-clock"></i> `  + (new Date(data[i].createdAt).getMonth()+1) + '/' + new Date(data[i].createdAt).getDate() + '/' +  new Date(data[i].createdAt).getFullYear() + ` @ ` +  new Date(data[i].createdAt).getHours() + `:` + new Date(data[i].createdAt).getMinutes() + `</span>
+                            <span class="time" ><i class="glyphicon glyphicon-clock"></i> ` + (new Date(data[i].createdAt).getMonth() + 1) + '/' + new Date(data[i].createdAt).getDate() + '/' + new Date(data[i].createdAt).getFullYear() + ` @ ` + new Date(data[i].createdAt).getHours() + `:` + new Date(data[i].createdAt).getMinutes() + `</span>
                             <span class="comment"><i class="glyphicon glyphicon-comment"></i> ` + data[i].comments.length + ` comments,  <i class="glyphicon glyphicon-thumbs-up"></i> ` + data[i].likes.length + ` likes` + `</span>
                         </div>
                         <div class="sidebar-meta col-sm-12">
@@ -249,7 +247,7 @@ $(document).ready(function() {
   }
 
   function appendComments(data, id) {
-      var comments = [];
+    var comments = [];
     for (var i = 0; i < data.length; i++) {
       var newContent =
         `<div class="row">
@@ -274,7 +272,7 @@ $(document).ready(function() {
                   </div>
                   <!-- /col-sm-5 -->
                 </div>`;
-                $(`li#` + id).after(newContent);
+      $(`li#` + id).after(newContent);
     }
 
   }

@@ -3,7 +3,7 @@ $(document).ready(function() {
   $('#login').hide();
   $('div#newsfeed').hide();
 
-  setInterval(fetchPosts, 30000);
+  // setInterval(fetchPosts, 30000);
 
   // Remove Search if user Resets Form or hits Escape!
   $('body, .navbar-collapse form[role="search"] button[type="reset"]').on('click keyup', function(event) {
@@ -90,8 +90,6 @@ $(document).ready(function() {
       event.preventDefault();
       var comment = $(this).parent().children().eq(0).val();
       var id = $(this).parent().parent().parent()[0].id;
-      console.log(comment);
-      console.log(id);
       addAComment(comment, id);
   });
 
@@ -123,7 +121,6 @@ $(document).ready(function() {
   function addALike(id) {
       $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/likes/` + id, {
         success: function(data) {
-         console.log("SUCCESSFUL LIKE");
         },
         error: function(err) {
           console.log(err);
@@ -138,7 +135,6 @@ $(document).ready(function() {
   function addAComment(comment, id) {
       $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/comments/` + id, {
         success: function(response) {
-         console.log("SUCCESSFUL COMMENT");
         },
         error: function(err) {
           console.log(err);
@@ -172,7 +168,7 @@ $(document).ready(function() {
   function sendAPost(data) {
     $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts`, {
       success: function(data) {
-        console.log(data);
+        fetchPosts();
       },
       error: function(err) {
         console.log(err);
@@ -186,7 +182,6 @@ $(document).ready(function() {
   }
 
   function fetchPosts() {
-      $('ul#recent_posts').empty();
     $.ajax(`https://horizons-facebook.herokuapp.com/api/1.0/posts/1`, {
       success: function(data) {
         parsePosts(data.response);
@@ -203,7 +198,7 @@ $(document).ready(function() {
 
   function parsePosts(data) {
     var newPost;
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < data.length; i++) {
       posts.push({
         id: data[i]._id,
         poster: {
@@ -220,7 +215,7 @@ $(document).ready(function() {
   }
 
   function appendPosts(data) {
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < data.length; i++) {
 
       var newContent =
         `<li id="` + data[i].id + `">
@@ -256,6 +251,8 @@ $(document).ready(function() {
   }
 
   function appendComments(data, id) {
+      var comments = [];
+      console.log(data);
     for (var i = 0; i < data.length; i++) {
 
       var newContent =
@@ -289,8 +286,9 @@ $(document).ready(function() {
                   </div>
                   <!-- /col-sm-5 -->
                 </div>`;
+                $(`li#` + id).after(newContent);
     }
-    $(`li#` + id).after(newContent);
+
   }
 
 });

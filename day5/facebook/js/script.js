@@ -227,19 +227,19 @@ $(document).ready(function() {
                             <h5 class="animated bounceInRight"><a href="#">` + data[i].content + `</a></h5>
                         </div>
                         <div class="sidebar-meta">
-                            <span class="time" ><i class="fa fa-clock-o"></i> ` + new Date(data[i].createdAt).toDateString() + `</span>
-                            <span class="comment"><i class="fa fa-comment"></i>` + data[i].comments.length + ` comments, ` + data[i].likes.length + ` likes` + `</span>
+                            <span class="time" ><i class="glyphicon glyphicon-clock"></i> `  + (new Date(data[i].createdAt).getMonth()+1) + '/' + new Date(data[i].createdAt).getDate() + '/' +  new Date(data[i].createdAt).getFullYear() + ` @ ` +  new Date(data[i].createdAt).getHours() + `:` + new Date(data[i].createdAt).getMinutes() + `</span>
+                            <span class="comment"><i class="glyphicon glyphicon-comment"></i> ` + data[i].comments.length + ` comments,  <i class="glyphicon glyphicon-thumbs-up"></i> ` + data[i].likes.length + ` likes` + `</span>
                         </div>
                         <div class="sidebar-meta col-sm-12">
                             <div id="like">
-                                <button class="btn btn-primary likeIt" style="width: auto; float: right;" ><i class="glyphicons glyphicons-thumbs-up"></i>Like</button>
+                                <button class="btn btn-primary likeIt" style="width: auto; float: right;" ><i class="glyphicon glyphicon-thumbs-up"></i></i> Like</button>
                             </div>
                             <div id="reply">
-                                <button class="btn btn-primary replyToIt" style="width: auto; float: right;" data-toggle="collapse" href="#collapseReply"><i class="glyphicons glyphicons-comments"></i>Reply</button>
+                                <button class="btn btn-primary replyToIt" style="width: auto; float: right; margin:0 5px;" data-toggle="collapse" href="#collapseReply"><i class="glyphicon glyphicon-comment"></i> Reply</button>
                             </div>
                         </div>
                         <div id="collapseReply" class="panel-collapse collapse">
-                            <div class="panel-body"><input class="form-control replyComment" type="text" placeholder="Write a comment"></input><br/><button class="btn btn-primary replyComment">Reply</button></div>
+                            <div class="panel-body"><input class="form-control replyComment" type="text" placeholder="Write a comment"></input><br/><button class="btn btn-primary replyComment"> Reply</button></div>
                         </div>
                     </li>`;
       $('ul#recent_posts').append(newContent);

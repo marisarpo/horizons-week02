@@ -1,0 +1,77 @@
+body {
+  margin: 50px 0 0 0;
+}
+.hide {
+  display: none;
+}
+
+.posts {
+  width: 400px;
+  margin-left:40%;
+  margin-bottom: 10px;
+  border: 1px solid rgba(0,0,0,.225);
+}
+
+.like {
+  display: flex;
+  align-items: flex-end;
+  margin: 3px 12px  3px 12px;
+}
+
+.comment {
+  display: flex;
+  align-items: flex-end;
+  margin: 3px 12px  3px 12px;
+}
+
+.entry {
+  display: flex;
+  align-items: flex-end;
+  margin: 3px 12px  3px 12px;
+  width: 94%;
+}
+
+.date {
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
+
+.replier {
+  margin-bottom: 0px;
+}
+
+.poster {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+.reply {
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  margin-bottom: 3px;
+  margin-top:5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.likesANDreplies {
+  padding: .75rem 1.25rem;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,.03);
+  border-bottom: 1px solid rgba(0,0,0,.125);
+}
+
+#fbPost {
+  border: 0px;
+  margin-top:5px;
+}
+
+#makePost {
+  display: flex;
+  align-items: flex-end;
+  margin: 3px 12px  3px 12px;
+  width: 94%;
+}

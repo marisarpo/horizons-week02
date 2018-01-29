@@ -1,0 +1,99 @@
+.hide {
+  display: none;
+}
+
+body {
+  background-color: rgb(96,105,208);
+}
+
+.container-mypost {
+  display: inline;
+}
+
+#mypost {
+  background-color: rgba(255,224,139);
+  color: navy;
+  min-width: 400px;
+  min-height: 50px;
+}
+
+#homepage {
+  background-color: rgb(81,158,199);
+  clear: both;
+  padding: 30px 0 0 30px;
+  max-width: 75%;
+
+}
+#button-form-alternate {
+  background-color: rgb(255,165,58);
+}
+.post {
+  border: 8px ridge rgb(255,165,58);
+  min-height: 50px;
+  min-width: 400px;
+  max-width: 75%;
+  font-size: 20px;
+  background-color: rgb(255,213,96);
+  display: block;
+  padding: 5px 5px 20px 5px;
+  margin: 10px 0px 20px 0px;
+}
+
+.post-header {
+  color: rgb(19,28,141);
+  position: relative;
+  top: 5px;
+  left: 5px;
+  padding-bottom: 5px;
+  font-size: 24px;
+}
+
+.post-body{
+  padding: 15px 15px;
+}
+.post-footer {
+  margin-bottom: 20px;
+}
+
+.post-footer, .post-reply-footer > * {
+  color: rgb(32,43,184);
+  display: inline;
+  font-size: 15px;
+  padding: 0px 10px;
+  margin: 0 10px;
+}
+
+.timestamp {
+  font-style: italic;
+}
+.button-post-reply, .button-reply-send {
+  background-color: rgb(125,187,220);
+  float: right;
+
+}
+
+.button-post-like {
+  float: right;
+}
+.comment-link {
+  float: left;
+}
+.comment-link:hover{
+  color: rgb(96,104,208);
+}
+
+.form-reply {
+  color: rgb(255,202,139);
+  border: 4px solid rgb(65,74,194);
+}
+
+.post-reply {
+  border: 4px inset rgb(255,202,139);
+  padding: 5px;
+  margin: 5px;
+  display: block;
+}
+
+#logout {
+  float: right;
+}

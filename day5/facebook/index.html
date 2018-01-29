@@ -12,8 +12,72 @@
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="container" id="sign-in">
+    <!-- <h2 id="form-title" value="registration"> New User Registration </h2> -->
 
+      <form class="well form-horizontal" id="form-register">
+        <h2 value="registration"> New User Registration </h2>
+        <input type="text" id="register-firstname" placeholder="First name">
+        <br>
+        <input type="text" id="register-lastname" placeholder="Last name">
+        <br>
+        <input type="email" id="register-email" placeholder="Email">
+        <br>
+        <input type="text" id="register-password" placeholder="Password">
+        <br>
+        <button type="submit" value="register" id="button-form-register">Register</button>
+      </form>
+      <form class="well form-horizontal hide" id="form-login">
+        <h2 value="login"> Login </h2>
+        <input type="email" id="login-email" placeholder="Email">
+        <br>
+        <input type="text" id="login-password" placeholder="Password">
+        <br>
+        <button type="button" value="login-go" id="form-login-button">Login</button>
+      </form>
+      <button type="submit" value="login" id="button-form-alternate">Login</button>
+    </div>
+
+    <div class="hide" id="homepage">
+      <div class="header">
+        <h4>Newsfeed</h4>
+        <div>
+          <button type="button" id="logout">Logout</button>
+        </div>
+      </div>
+
+      <div class="container-mypost">
+        <form id="form-mypost form-inline">
+          <textarea id="mypost" form="form-mypost" rows="3" placeholder="Do not dream too loudly, You may awaken your conscience"></textarea>
+          <button type="button" id="button-mypost">Post</button>
+        </form>
+      </div>
+
+      <div id="newsfeed"></div>
+
+      <!--div class="post" id="${comment._id}">
+        <div class="post-header">
+          ${comment.poster.name}
+          <span style="font-size: 20px"> on
+          <span class="timestamp"> ${date.toString()} </span>
+          </span>
+        </div>
+        <div class="post-body">
+          ${comment.content}
+        </div>
+        <div class="post-footer">
+          <span class='comment-link'> ${comment.comments.length} comments </span>
+          <button class="post-reply" type="button">
+
+            Reply
+          </button>
+          <button class="post-like" type="button">
+            Like (${comment.likes.length})
+          </button>
+
+        </div>
+      </div-->
+    </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"

@@ -10,74 +10,109 @@
     <!-- Your css file -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="./images/logo.png">
 </head>
 
 <body>
   <!-- Registration -->
-  <div class="container-fluid">
-  <div class="col-sm-4">
-    <form class="registration">
-      <div class="form-group">
-        <label for="first">First Name</label>
-        <input type="text" class="form-control" id="fname">
-      </div>
-      <div class="form-group">
-        <label for="last">Last Name</label>
-        <input type="text" class="form-control" id="lname">
-      </div>
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="email">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="password">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="register">Register</button>
-      </div>
-      <div>
-        <button type="submit" class="btn btn-primary" id="registered">Already registered?</button>
-      </div>
-    </form>
-
-    <!-- LOGIN -->
-    <form class="loginFb hide">
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" class="form-control" id="emailLogin">
-      </div>
-      <div class="form-group">
-        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="passwordLogin">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary" id="login">Login</button>
-      </div>
-    </form>
-
-    <!-- Newsfeed -->
-    <div class="newsfeed hide">
-      <div class="posts">
-        <div class="card-block">
-          <input type="text" class="form-control" id="fbPost" placeholder="What's on your mind?">
-          <button class="btn btn-primary" id="makePost">Post</button>
+  <div class="nav">
+    <div class="container">
+      <div class="row loginFb">
+        <div class="col-md-4">
+          <div class="logo1"></div>
+        </div>
+        <div class="col-md-6 offset-md-2">
+          <table id="login">
+            <tr>
+              <th><label for="email">Email</label></th>
+              <th><label for="pass">Password</label></th>
+            </tr>
+            <tr>
+              <td><input type="email" class="inputtext" name="email" id="emailLogin"></td>
+              <td><input type="password" class="inputtext" name="pass" id="passwordLogin"></td>
+              <td>
+                <label class="uiButton" id="loginbutton" for="u_0_2">
+                  <input value="Log In" type="submit" id="u_0_2">
+                </label></td>
+            </tr>
+          </table>
         </div>
       </div>
-      <div class='feed'>
+      <div class="hide row feedBar">
+        <div class="col-md-2">
+          <div class="logo2"></div>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <div class="container pageBody">
+    <form class="registration col-md-6 offset-md-6">
+      <div class="form-group">
+        <input type="text" class="form-control" id="fname" placeholder="First name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" id="lname" placeholder="Last name">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" id="email" placeholder="Email address">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+      </div>
+      <div class="form-group col-md-3 offset-md-9">
+        <button type="submit" class="btn btn-primary" id="register">Register</button>
+      </div>
+    </form>
+
+
+    <!-- Newsfeed -->
+    <div class="container">
+      <div class="newsfeed row hide">
+        <div class="options">
+        </div>
+        <div class="offset-md-2 col-md-7">
+          <div class="post">
+            <div class="postHeader">
+              <span class="">Make Post</span>
+            </div>
+            <div class="row">
+              <div class="col-md-2">
+                <img src="./images/me.jpg" class='icon' width="50" height="50">
+              </div>
+              <div class="col-md-10">
+                <!-- <input type="text" id="fbPost" placeholder="What's on your mind?"> -->
+                <textarea type="text" id="fbPost" placeholder="What's on your mind?"></textarea>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                <label class="uiPost" id="makePost" for="u_0_2">
+                  <input value="Post" type="submit" id="u_0_2">
+                </label>
+                </div>
+                <!-- <button class="btn btn-primary" id="makePost">Post</button> -->
+              </div>
+            </div>
+          </div>
+        <div class='feed'>
+        </div>
+        </div>
+        <div class="news offset-md-5"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <!-- JavaScript files for Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
 </body>
 
 </html>

@@ -36,17 +36,15 @@ $("#register").on("click", function(event) {
       password: password
     },
     success: function(data) {
-      $('.registration').addClass('hide');
-      $('.loginFb').removeClass('hide');
     }
   })
 });
 
 //login to FB
-$("#login").on("click", function(event) {
+$("#loginbutton").on("click", function(event) {
   event.preventDefault();
-  var email = $('#emailLogin').val();
-  var password = $('#passwordLogin').val();
+  var email = "aa@hi.com"//$('#emailLogin').val();
+  var password = "123"//$('#passwordLogin').val();
 
   $.ajax("https://horizons-facebook.herokuapp.com/api/1.0/users/login", {
     method: "POST",
@@ -58,6 +56,8 @@ $("#login").on("click", function(event) {
       localStorage.setItem('token', data.response.token);
       console.log(localStorage);
       $('.loginFb').addClass('hide');
+      $('.registration').addClass('hide');
+      $('.feedBar').removeClass('hide');
       $('.newsfeed').removeClass('hide');
       renderFeed();
     }
@@ -80,7 +80,7 @@ function renderFeed() {
 
 function makePosts(arr) {
   arr.forEach(function(item) {
-    var postHead = `<div class="card posts" id="${item._id}">
+    var postHead = `<div class="card" id="${item._id}">
                       <div class="poster">
                         <h6>${item.poster.name}</h6>
                       </div>

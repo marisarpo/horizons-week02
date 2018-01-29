@@ -1,6 +1,19 @@
+
 body {
-  margin: 50px 0 0 0;
+  font-family: -apple-system, SanFrancisco, sans-serif;
+  background-color: #e9ebee;
+  }
+
+.nav {
+  background-color: #3d5a9a;
+  padding: 5px 0 5px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 10;
 }
+
 .hide {
   display: none;
 }
@@ -67,11 +80,168 @@ body {
 #fbPost {
   border: 0px;
   margin-top:5px;
+  width: 100%;
+  font-size: 12px;
+  height: 50px;
+  box-sizing: border-box;
+  resize: none;
+  padding: 5px 5px 5px 0px;
 }
 
 #makePost {
   display: flex;
   align-items: flex-end;
-  margin: 3px 12px  3px 12px;
-  width: 94%;
+  padding: 5px 2px 6px 3px;
+  width: 100;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0,0,0,.125)
+}
+
+
+.logo1 {
+  background-image: url('../images/tlogo.png');
+  width: 170px;
+  height: 50px;
+  background-position: 0px;
+  /* Make the background image cover the area of the <div>, and clip the excess */
+  background-size: cover;
+}
+
+.logo2 {
+  background-image: url('../images/logo.png');
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  border: 1.5px solid #fff;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.nav div.col-md-4, div.col-md-5{
+  padding: 0;
+}
+
+
+#login th {
+  padding: 0px;
+  font-size: 9px;
+  font-style: normal;
+  text-align: left;
+  color: white;
+  padding-left: 14px;
+  height: 10px;
+}
+
+#login td, th {
+  padding: 0 0 0 14px;
+  width: 142px;
+}
+
+.inputtext {
+  border-color: #1d2a5b;
+  margin: 0;
+  width: 142px;
+  border: 1px solid #1d2a5b;
+  padding: 2px;
+  font-size: 10px;
+}
+
+#login label {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  display: inline;
+}
+
+.uiPost input {
+  display: inline-block;
+  border-radius: 60px;
+  background: #f6f7f9;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0;
+  color: #4b4f55;
+  padding: 1px 6px 0px 6px;
+  text-align: center;
+  width: 80px;
+  border: 0px;
+}
+
+#makePost input:hover {
+  background: #4b4f551a;
+}
+
+.uiButton input {
+  display: inline-block;
+  border-radius: 2px;
+  background: #4267b2;
+  border: 1px solid #29487d;
+  cursor: pointer;
+  font-size: 8px;
+  font-weight: bold;
+  line-height: 18px;
+  margin: 0;
+  color: #fff;
+  padding: 1px 6px 0px 6px;
+  text-align: center;
+}
+
+#loginbutton input:hover {
+  background: #385692;
+}
+
+.loginFb {
+  padding-top: 15px;
+}
+
+.pageBody {
+  margin-top: 43px;
+  padding: 0px;
+}
+
+.options {
+  width: 135px;
+  height: 100%;
+  border: 1px solid #6c757d94;
+  position: fixed;
+}
+
+.news {
+  width: 180px;
+  height: 100%;
+  border: 1px solid #6c757d94;
+  position: fixed;
+}
+
+.post {
+  border: 1px solid rgba(0,0,0,.125);
+  margin-bottom: 10px;
+  border-radius: 3px;
+  background: #ffff;
+}
+
+.postHeader {
+  padding: 5px 5px 3px 10px;
+  font-size: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  background-color: #f6f7f9;
+  margin: 0.5px;
+}
+
+.registration {
+  margin-top: 85px;
+}
+
+*:focus {
+    outline: none;
+}
+
+.icon {
+  border-radius: 100%;
+  margin: 7px 0 0 15px;
 }

@@ -1,16 +1,28 @@
 body {
-    /** Your CSS goes here! **/
+    background-color: #fff;
+    color: #4d4d4d;
+    font-family: Helvetica Neue, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 h2 {
-    /** and here (you get the point) **/
+    font-size: 36px;
 }
 
 section {
+    /*- Section padding: vertical 80px, horizontal 20px*/
+    padding: 80px 20px 80px 20px;
+    /*top right bottom left*/
+    /*should ask if "vertical" padding is 40-40 or 80-80, etc*/
 }
 
 .center-paragraph {
+    /*- Centered paragraph text margin: vertical 1em, horizontal 1/6 each side
+        - **TIP**: 1/6 margin on each side refers to 16% of the entire webpage as margin on each side.*/
+    margin: 1em 16% 1em 16%;        
 }
-
+    
 .text-center {
+    text-align: center;
 }

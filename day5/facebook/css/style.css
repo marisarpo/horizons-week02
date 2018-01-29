@@ -1,0 +1,33 @@
+#logo{
+    max-height: 100%;
+}
+
+
+#feed
+{
+    width: 100%;
+    padding: 0px 100px 100px 100px;
+}
+
+.post
+{
+    background-color:gainsboro;
+    width: 80%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+#post-to-feed
+{
+    width: 80%;
+    padding: 20px;
+    margin: 10px;
+}
+
+.comment-collapse
+{
+    background-color: rgb(199, 199, 199);
+    border-radius: 20px;
+    padding: 10px;
+}

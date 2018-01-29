@@ -1,9 +1,84 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background: url("https://akatuki.ujj.co.jp/themes/images/substr/mainvis_substr.jpg");
+    padding: 0px;
+    margin: 0px;
 }
 
 .title {
-    color: purple;
 }
 
+.navbar {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    margin: 0px;
+}
+.navbar img
+{
+    margin-left: 20%;
+}
+
+
+.navbar2 div
+{
+    width: 100%;
+    height: 230px;
+    background-image: url("https://akatuki.ujj.co.jp/themes/images/common/ui_gnav.png");
+    background-position-x: center;
+    background-position-y: top;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+.navbar2
+{
+    width: 100%;
+    /*background-color: darkred;*/
+    height: 50px;
+}
+
+.content
+{
+    margin-top: 180px;
+    text-align: center;
+    width: 1000px;
+    /*background-color: orangered;*/
+    margin-left: 20%;
+    margin-right: 20%;
+    display: block;
+}
+
+.mainbox
+{
+    /*display: inline-block;*/
+    height: 1000px;    
+    background: url("https://akatuki.ujj.co.jp/themes/images/substr/mainbox_bg_substr.gif") top right no-repeat;
+    width: 682px;
+    padding: 30px 31px 30px 39px;
+    float:right;
+    position: relative;
+    /*bottom: 1000px;*/
+    /*background-color: red;*/
+}
+
+.sidebar
+{
+    width: 200px;
+    height: 1000px;
+    /*background-color: turquoise;*/
+    /*display: inline-block;*/
+    float: left;
+}
+
+#gamestart
+{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 280px;
+    width: 285px;   
+}

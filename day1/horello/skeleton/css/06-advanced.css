@@ -1,1 +1,58 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+
+/*Our goal is to place the image to the right of and slightly above
+the text, with the app store buttons, and an additional text button, 
+perfectly aligned below the text. The text should occupy two-thirds of the width.*/
+
+section:last-of-type
+{
+    background-color: #e4f0f6;
+}
+
+section:last-child
+{
+    width: 66%;    
+}
+
+section:last-of-type div div:first-child
+{
+    float: right;
+    position: relative;
+    bottom: 60px;
+    width: 33%;
+}
+
+section:last-of-type p
+{
+    margin: 1em 16% 1em 16%
+}
+
+section:last-of-type p:nth-child(2)
+{
+    text-align: center;
+    /*vertical-align: middle;*/
+}
+
+/*each of the buttons / app urls */
+section:last-of-type p:nth-child(2) a > *
+{
+    /*position: relative;*/
+    height: 50px;
+    display: inline-block;
+    margin-top: 0.4em;
+    margin-right: 1em;
+    
+}
+
+section:last-of-type p:nth-child(2) a:last-child
+{
+    padding: 0.6em 1.3em 0.6em 1.3em;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 0.3em;
+    border-color: #0079bf;
+
+    position: relative;
+    bottom: 17px;
+}

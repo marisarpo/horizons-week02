@@ -21,7 +21,22 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      var links = $("#links li").toArray();
+      $.each(links, function(key, value){
+        let url = $(value).html();
+
+        $.ajax({
+          url: url,
+          success: function(resp){},
+          error: function(err){
+            $(value).remove();
+          }
+        });  
+      });
+
+
+      
     </script>
   </body>
 </html>

@@ -2,29 +2,133 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <title>H-Book</title>
+    <!-- bootstrap & jquery -->
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img id="logo" src="images/logo.png" /></a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Feed</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Chat</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="signup-button" href="#"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+          <li><a id="login-button" href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+          <li><a id="logged-in-button" href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a id="logout-button" href="#"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>          
+        </ul>
+      </div>
+    </nav>
+
+    <!-- wazy emote -->
+    <!-- <img src="https://cdn.discordapp.com/emojis/393754745392594944.png?v=1" width="50px" /> -->
+
+    <!-- <div id="left-sidebar"></div> -->
+    <div id="post-to-feed">
+        <input type="text" class="form-control" id="post-input" placeholder="Enter A New Post Here!">
+        <button type="button" class="btn btn-primary" id="post-submit">Post</button>
+    </div>
+    <div id="feed"></div>        
+    <!-- <div id="right-chatbar"></div> -->
+
+
+    <div class="modal fade" id="login-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Login</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">            
+            <form>
+              <div class="form-group">
+                <input type="email" class="form-control" id="login-email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="login-password" placeholder="Password">
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="login-remember">
+                <label class="form-check-label" for="login-remember">Remember Me</label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="login-submit" class="btn btn-primary">Log In</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="signup-modal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Sign Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input type="text" class="form-control" id="signup-firstname" placeholder="First Name">
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="signup-lastname" placeholder="Last Name">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control" id="signup-email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                <input type="password" class="form-control" id="signup-password" placeholder="Password">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="signup-submit" class="btn btn-primary">Register</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
 
     <!-- jQuery -->
-    <script
+    <!-- <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"></script> -->
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
     <!-- underscoreJS Library -->
+    <script src="https://horizons-facebook.herokuapp.com/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script type="text/javascript" src="./js/moment.js"></script>    
     <script type="text/javascript" src="./js/script.js"></script>
   </body>
 </html>

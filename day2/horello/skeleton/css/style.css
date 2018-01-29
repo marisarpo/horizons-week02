@@ -5,12 +5,19 @@ body {
   height: 100vh;
 
   /** PART 1 CSS here */
+  background-color: rgb(0,121,191);
+  /* TODO: */
+  font-family: sans-serif;
+  
+  /*font: Bootstrap default sans-serif;*/
 }
 
 header {
   position: relative;
   overflow: hidden;
-
+  padding: 5px;
+  height: 40px;
+  background-color:rgba(0,0,0,0.15);
   /** PART 1 CSS here */
 }
 

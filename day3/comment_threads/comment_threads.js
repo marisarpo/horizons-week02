@@ -6,11 +6,11 @@ var makeComment = function(){
   return `<div class="comment">
     <div class="author">"${prompt("Please enter your name")}" says:</div>
     <div class="message">${prompt("Please enter your comment")}</div>
-      <div class="controls">
+    <div class="controls">
         <button class="hide-replies btn btn-default">Hide Replies</button>
         <button class="show-replies btn btn-default">Show Replies</button>
         <button class="reply btn btn-default">Reply</button>
-      </div>
+    </div>
     <div class="replies"></div></div>`;
 }
 

@@ -12,7 +12,7 @@ $(document).ready(function() {
   })
 
   $('.add-list-save').click(function(event) {
-    var newList = `<div class="list-container">
+    var newList = $(`<div class="list-container">
   <div class="list">
     <div class="list-header">
       <span class="list-title">${$(this).siblings('input').val()}</span>
@@ -31,9 +31,12 @@ $(document).ready(function() {
           </button>
         </div>
       </div>
-    </div></div></div>`
+    </div></div></div>`);
     $(this).closest('.list-container').before(newList);
     $(this).closest('.add-list-form-wrapper').addClass('collapse');
+    newList.find(".list-cards").sortable({
+      connectWith: '.list-cards'
+    });
 
   })
 
@@ -46,26 +49,30 @@ $(document).ready(function() {
   })
 
   $('.board').on('click', '.add-card-save', function(event) {
-    var newCard = `<div class="card">
+    var newCard = $(`<div class="card">
       <span class="card-more">
         <span class="glyphicon glyphicon-align-left"></span>
         </span>
         <div class="card-body">${$(this).siblings('input').val()}</div>
-        </div>`
-
+        </div>`);
     $(this).closest('.list').children('.list-cards').append(newCard);
     $(this).siblings('input').val('');
     $(this).closest('.add-card-form-wrapper').addClass('collapse');
+    /*
+    newList.find(".card").sortable({
+      connectWith: '.list-cards'
+    }).disableSelection();
+    */
   })
 
-  /*$('.board').on('click','.card', function(event){
+  $('.board').on('click','.card', function(event){
     cardBeingEdited = this;
     var modal = $(cardBeingEdited).parents().find('#card-edit');
     var cardBody = $(cardBeingEdited).find('.card-body');
     modal.find('#card-edit-body').val(cardBody.text());
     modal.modal();
 
-  })*/
+  })
 
   $('.card-edit-save').on('click', function(event){
     var modal = $(this).parents().find('#card-edit');
@@ -78,6 +85,15 @@ $(document).ready(function() {
   $('.list-cards').sortable({
     connectWith: '.list-cards'
   })
+
+  // $(document).keydown(function(event){
+  //   debugger;
+  //   if(String.fromCharCode(event.keyCode)===67){
+  //
+  //   }
+
+  })
+
 
 
 })

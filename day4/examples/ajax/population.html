@@ -24,8 +24,22 @@
     <script>
       // YOUR CODE HERE
 
+
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+
+          var maxpopulation = resp.reduce(function(acc, cityInfo) {
+            var population = cityInfo["Population"];
+            if(population > acc[1]){
+              return [cityInfo["City / Urban area"],population];
+            }else{
+              return acc;
+            }
+          }, [null,-Infinity]);
+
+          $('#out').text(`Largest city/ urban area: ${maxpopulation[0]} with a population of ${maxpopulation[1]} `);
+        }
       });
     </script>
   </body>

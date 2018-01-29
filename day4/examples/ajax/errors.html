@@ -21,7 +21,22 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var checkURl = function(liURL,liID){
+        $.ajax({
+          url: liURL,
+          error: function(err){
+            $('li').remove(liID);
+          }
+        })
+      }
+      var objLI = $('li');
+      for(let i =0; i<objLI.length; i++){
+        checkURl(objLI[i].textContent, '#'+objLI[i].id)
+      }
+
+
+
+
     </script>
   </body>
 </html>

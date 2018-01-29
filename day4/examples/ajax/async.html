@@ -24,8 +24,48 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      $.ajax({
+        // url: $('a')[1].href,
+        url: $('a')[1].href,
+        success: function(resp){
+          var results = [];
+
+          // from an array map that results from returning ajax on link
+          // when that array is done, run a function that
+          // a) takes in all arguments which is an array of things,
+          //    - the three things are
+          //      i. JSON Object
+          //      ii. a string stating whether ajax is success or error
+          //      iii. jQuery/ajax stuff
+          // b) use groupBy to get priceCents as a key, which automatically sorts
+          // c) use mapObject to change values from array of things to a string
+          //    containing name and priceCents surrounded by <li> tags
+          // d) use Object.values() to get values formed from mapObject into Array
+          //    and join these values with '' to form a big string
+          // e) surround this big string of <li>s with <ul> tags
+          // f) clear the text associated with the div having id = 'products'
+          // g) append to div having id = 'products' this big <ul> string
+          
+          $.when.apply($, resp.map(function(link) {
+            return $.ajax({url: link.url});
+          })).done(function() {
+            var args = Array.apply(null, arguments);
+            var string = '<ul>'+Object.values(_.mapObject(_.groupBy(args,
+              function(obj){
+                return obj[0].priceCents;
+              }),
+              function(arr,price){
+                return `<li>${arr[0][0].name}, $${price/100}</li>`;
+              })).join('')+'</ul>';
+            $('#products').text("");
+            $('#products').append($(string));
+          })
+        }
+      })
+
     </script>
   </body>
 </html>

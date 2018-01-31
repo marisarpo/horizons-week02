@@ -25,7 +25,62 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      $.ajax({
+      url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+      success: function(resp){
+
+        $.when.apply(null, resp.map(function(item) {
+          return $.ajax({
+            url: item.url
+          })
+        })).then(function() {
+          var resps = Array.apply(null, arguments);
+          var priceArray =[];
+          for (var i = 0; i < resps.length; i++) {
+              var tempObj ={};
+              tempObj[resps[i][0].name] = resps[i][0].priceCents;
+              priceArray.push(tempObj);
+
+          }
+          priceArray.sort(function(a,b){
+            debugger;
+            return a.values() < b.values();
+          })
+          console.log(priceArray);
+
+          // var id = `#product`+[i]+``;
+          // $('#products').append('<div id="'+id+'"> </div>');
+          // $(id).text(resps[i][0].name, resps[i][0].price);
+
+
+        })
+        // $.ajax({
+        // url: resp[0].url,
+        // success: function(product1){
+        //   $.ajax({
+        //   url: resp[1].url,
+        //   success: function(product2){
+        //     $.ajax({
+        //
+        //     url: resp[2].url,
+        //     success: function(product3){
+        //       debugger;
+        //     $('#products').append('<div id="product3"> </div>');
+        //     $('#product3').text(product3.name);
+        //     $('#products').append('<div id="product1"> </div>');
+        //     $('#product1').text(product1.name);
+        //     $('#products').append('<div id="product2"> </div>');
+        //     $('#product2').text(product2.name);
+        //     }
+        //   });
+        //   }
+        //
+        // })
+      //   }
+      //
+      // })
+      }
+      })
     </script>
   </body>
 </html>

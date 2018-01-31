@@ -20,12 +20,23 @@
       <li>Display the name of the city in the h1 tag at the top, it has the id <code>"out"</code>.</li>
     </ol>
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <script>
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: "http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json",
+        success: function(data){
+          var cityPops = _.groupBy(data, function(item){
+            return item["City / Urban area"];
+          })
+          console.log(cityPops)
+          var largestPop = _.reduce(cityPops, function(memo, value, key){
+            return memo[0].Population < value[0].Population?value:memo;
+          })
+          console.log(largestPop[0]["City / Urban area"]);
+          $('#out').text(largestPop[0]["City / Urban area"])
+        }
       });
     </script>
   </body>

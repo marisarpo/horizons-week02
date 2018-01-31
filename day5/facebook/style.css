@@ -114,7 +114,7 @@ input{
   padding: 15px;
 }
 .post .post-footer .input-group-addon a {
-  color: #454545;
+  color: #ddd;
 }
 .post .post-footer .comments-list {
   padding: 0;
@@ -153,3 +153,4 @@ input{
 .post .post-footer .comments-list .comment > .comments-list {
   margin-left: 50px;
 }
+

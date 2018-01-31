@@ -1,0 +1,176 @@
+<link rel="stylesheet" type="text/css" href="file:///Users/haithamelmengad/horizons/week02/day5/facebook/style.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<div class="container bootstrap snippet">
+    <div class="col-sm-8">
+        <div class="panel panel-white post panel-shadow">
+            <div class="post-heading">
+                <div class="pull-left image">
+                    <img src="https://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                </div>
+                <div class="pull-left meta">
+                    <div class="title h5">
+                        <a href="#"><b>Ryan Haywood</b></a>
+                        made a post.
+                    </div>
+                    <h6 class="text-muted time">1 minute ago</h6>
+                </div>
+            </div> 
+            <div class="post-description"> 
+                <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
+                <div class="stats">
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-thumbs-up icon"></i>2
+                    </a>
+                    <a href="#" class="btn btn-default stat-item">
+                        <i class="fa fa-share icon"></i>12
+                    </a>
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" placeholder="Add a comment" type="text">
+                    <span class="input-group-addon">
+                        <a href="#"><i class="fa fa-edit"></i></a>  
+                    </span>
+                </div>
+                <ul class="comments-list">
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="https://bootdey.com/img/Content/user_1.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="user">Gavino Free</h4>
+                                <h5 class="time">5 minutes ago</h5>
+                            </div>
+                            <p>Sure, oooooooooooooooohhhhhhhhhhhhhhhh</p>
+                        </div>
+                        <ul class="comments-list">
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="https://bootdey.com/img/Content/user_3.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Ryan Haywood</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Relax my friend</p>
+                                </div>
+                            </li> 
+                            <li class="comment">
+                                <a class="pull-left" href="#">
+                                    <img class="avatar" src="https://bootdey.com/img/Content/user_2.jpg" alt="avatar">
+                                </a>
+                                <div class="comment-body">
+                                    <div class="comment-heading">
+                                        <h4 class="user">Gavino Free</h4>
+                                        <h5 class="time">3 minutes ago</h5>
+                                    </div>
+                                    <p>Ok, cool.</p>
+                                </div>
+                            </li> 
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js " integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa
+    " crossorigin="anonymous "></script>
+</div>
+
+
+
+<div class="panel panel-white post panel-shadow">
+        <div class="post-heading">
+            <div class="pull-left image">
+                <img src="./images/joebloggs.jpg" class="img-circle avatar" alt="user profile image">
+            </div>
+            <div class="pull-left meta">
+                <div class="title h5">
+                    <a href="#"><b>`+ responseFormatted.name +`</b></a>
+                    made a post.
+                </div>
+                <h6 class="text-muted time">` +responseFormatted.createdAt+ `</h6>
+            </div>
+        </div> 
+        <div class="post-description"> 
+            <p>` + responseFormatted.content +`</p>
+            <div class="stats">
+                <a href="#" class="btn btn-default stat-item">
+                    <i class="fa fa-thumbs-up icon"></i>2
+                </a>
+                <a href="#" class="btn btn-default stat-item">
+                    <i class="fa fa-share icon"></i>12
+                </a>
+            </div>
+        </div>
+        <div class="post-footer">
+                <div class="input-group"> 
+                    <input class="form-control" placeholder="Add a comment" type="text">
+                    <span class="input-group-addon">
+                        <a href="#"><i class="fa fa-edit"></i></a>  
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        $('#zenewsfeed').on('click', '#post-button', function(event){
+            event.preventDefault();
+            $.ajax({
+            url: `https://horizons-facebook.herokuapp.com/api/1.0/posts`,
+            method: 'POST',
+            data:{
+            token: localStorage.getItem('token'),
+            content: localStorage.getItem('userID')
+            },
+        
+            success: function(response){
+                var postID = 'post'+math.random()*1000;
+                localStorage.setItem('postID', postID)
+                $(`<fieldset class="h-text-area-post">`+ $('#h-text-area-input')+`
+                <textarea id="` postID +`"></textarea>
+              </fieldset>`).before('#h-text-area-input');
+        
+                $("#register-password").val('');
+                window.location = './newsfeed.html'
+            }
+        })
+        }
+        )
+
+
+
+        post.comments.forEach(function(comment){
+            $(`.comments-list`).append($(`<li class="comment">
+            <div class="comment-body">
+                <div class="comment-heading">
+                    <h4 class="user">`+ comment.poster.name +`</h4>
+                    <h5 class="time">`+ new Date(comment.createdAt)+`</h5>
+                </div>
+                <p>`+ comment.content +`</p>
+            </div>`))
+        })
+
+
+
+
+
+        $('#the-post-button').on('click',$('#post-button') function(event) {
+            event.preventDefault();
+            $.ajax({
+                url: `https://horizons-facebook.herokuapp.com/api/1.0/posts`,
+                method: 'POST',
+                data: {
+                  token: localStorage.getItem('token'),
+                  content: $('#comment-area').val()
+                },
+              success: function (data) {
+                return true;
+              }, 
+          })
+        })

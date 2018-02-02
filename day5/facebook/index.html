@@ -5,14 +5,102 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id="registration-page">
+
+      <h1 id="register-header" class="text-center">New User Registration</h1>
+      
+      <div id='registration-form'>
+        <div style="padding-bottom: 20px">
+          <div class="form-group">
+            <input type="text" id="fname" class="form-control" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <input type="text" id='lname' class="form-control" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <input type="email" id='email' class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" id='password' class="form-control" placeholder="Password">
+          </div>
+        </div>
+        <div >
+          <button id="register-btn" class='btn btn-warning btn-lg'>Register</button>
+        </div>
+      </div>
+
+      <div style="margin: 0 auto; width: 150px;">
+        <p class="text-center" style="padding-bottom: 10px">Already registered?</p>
+        <button id="login-switch" class="btn btn-primary btn-lg">Login</button>
+      </div>
+
+    </div>
+
+    <div id="login-page">
+
+      <h1 id="login-header" class="text-center">Login</h1>
+      
+      <div id='login-form'>
+        <div style="padding-bottom: 20px">
+          <div class="form-group">
+            <input type="email" id='email-login' class="form-control" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" id='password-login' class="form-control" placeholder="Password">
+          </div>
+        </div>
+        <div >
+          <button id="login-btn" class='btn btn-primary btn-lg' style="width: 300px">Login</button>
+        </div>
+      </div>
+
+      <div style="margin: 0 auto; width: 150px;">
+        <p class="text-center" style="padding-bottom: 10px">New user?</p>
+        <button id="register-switch" class="btn btn-warning btn-lg">Register</button>
+      </div>
+
+    </div>
+
+    <div id="newsfeed">
+
+      <div id="page-top">
+        <h1 id="newsfeed-heading" class="text-center">MY NEWSFEED</h1>
+
+        <div class="logout-btn-container">
+          <button id="logout-btn" class="btn btn-danger">LOG OUT</button>
+        </div>
+      </div>
+
+      <div class="page-divider">
+        <img src="http://clipart-library.com/images/yckA6Broi.png" height="30px" width="100%">
+      </div>
+
+      <div id="list-posts">
+
+      </div>
+
+      <div class="page-divider">
+        <img src="http://clipart-library.com/images/yckA6Broi.png" height="30px" width="100%">
+      </div>
+
+      <div id="page-end">
+
+        <div id="new-post">
+          <textarea id="newpost-content" type="text" rows="4" class="form-control" placeholder="How are you feeling today?"></textarea>
+          <div class="newpost-btn-container">
+            <button id="newpost-btn" class="btn btn-success">POST</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
 
     <!-- jQuery -->
     <script
@@ -21,7 +109,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

@@ -55,7 +55,7 @@ function setEventListeners() {
   $('.board').on('click', '.add-card', function(e) {
     e.stopPropagation();
 
-    $(this).siblings('.add-card-form-wrapper').removeClass('collapse');
+    $(this).siblings('.add-card-form-wrapper').toggleClass('collapse');
   });
 
   $('.board').on('click', '.add-card-save', function(e) {
@@ -63,7 +63,7 @@ function setEventListeners() {
 
     var cardBody = $(this).siblings('input').val();
     var id = $(this).closest('.list').data('listId');
-
+    $(this).siblings('input').val('');
     if (!cardBody) {
       alert('Please enter a card title');
       return;
@@ -84,3 +84,4 @@ function setEventListeners() {
     $('#cardEdit').modal('toggle', $(this));
   });
 }
+

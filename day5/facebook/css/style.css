@@ -1,0 +1,59 @@
+#welMes {
+  width: 100%;
+  text-align:center;
+  font-size: 20pt;
+}
+
+#commentBox{
+  display: flex;
+  flex:1;
+}
+
+#commentContainer{
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#commentName{
+  flex:1;
+  background-color:grey;
+  padding: 5px;
+}
+
+#commentBody{
+  flex:1;
+  background-color:grey;
+  padding: 5px;
+}
+
+#commentFooter{
+  flex:1;
+  background-color:grey;
+  padding: 5px;
+}
+
+#replyContainer{
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  padding: 10px;
+  border-radius: 10px;
+  justify-content: space-around;
+}
+
+#replyName{
+  flex:1;
+  background-color:grey;
+  padding: 5px;
+}
+
+#replyBody{
+  flex:1;
+  background-color:grey;
+  padding: 5px;
+}

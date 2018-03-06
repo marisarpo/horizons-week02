@@ -1,0 +1,10 @@
+body{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin: 20px;
+}
+
+span{
+  padding-left: 30px;
+}

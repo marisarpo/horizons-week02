@@ -5,19 +5,95 @@
 	<title>Template Page W2D6</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="lib/js/jquery.js"></script>
-	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
-	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<script src="lib/bootstrap/js/bootstrap.min.js"></script>
 	<script src="lib/js/underscore.js"></script>
 </head>
 
 
 <body>
-
+	<div class="container">
+		<div class="inputBox">
+			<form id="tweetForm">
+				<div class="row">
+					<div class="col">
+						<textarea
+							id="tweetBox"
+							rows="1"
+							placeholder="Enter Tweet..."
+							class="form-control"
+							maxlength="140"
+						></textarea>
+					</div>
+				</div>
+				<div class="row fontControl hideMenu" id="menuBar">
+					<div class="col-auto mr-auto" id="tweetCount">
+						<b>0</b> Tweets
+					</div>
+					<div class="col-auto mr-auto">
+						<b>91</b> Following
+					</div>
+					<div class="col-auto mr-auto">
+						<b>10,230</b> Followers
+					</div>
+					<div class="col-auto" id='charCounter'>140</div>
+					<div class="col-auto">
+			      <button id="submitTweet" type="submit" class="btn btn-primary">submit</button>
+			    </div>
+				</div>
+			</form>
+		</div>
+		<div id="feed">
+			<div class="inputBox">
+        <div class="inner">
+          <div class="row">
+            <div class="col-auto image">
+              <img src="https://media-exp2.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAAysAAAAJDc2YzljNzA0LWFhNDctNDY2MS04MzM2LWViOWFmMDY2ODcxZg.jpg" height="50" width="50">
+            </div>
+            <div class="col postBody">
+              <div class="row" style="color: #7d8580">
+                <div class="col-auto mr-auto">
+                  <strong style="color: black">Trevor Manz</strong> <trev class='lightFont'>@trevdaddy</trev>
+                </div>
+                <div class="col-auto">
+                  Date
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  Some tweet about the meaning of life or something. It doesn't really matter what this is im just testing.
+                </div>
+              </div>
+              <div class="row" style="margin-top: 5; font-size: 14px">
+                <div class="col-auto expand">
+                  <a style="color: #7d8580" href="#">Expand</a>
+                </div>
+                <div class="col-6 offset-1">
+                  <ul class="tweetOptions hide">
+                    <li><a style="color: #7d8580" href="#">Reply</a></li>
+                    <li><a style="color: #7d8580" href="#">Retweet</a></li>
+                    <li><a style="color: #7d8580" href="#">Favorite</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row hideMenu" style="margin-top: 5">
+                <div class="col-auto">
+                  <b>91</b> Following
+                </div>
+                <div class="col-auto offset-1">
+                  <b>91</b> Following
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+		</div>
+	</div>
 
 </body>
 
 
-<script src="main.js"></script>	
+<script src="main.js"></script>
 <link rel="stylesheet" type="text/css" href="main.css">
 
 </html>

@@ -1,0 +1,88 @@
+body {
+  margin-top: 20px;
+  background: #7d8580;
+  font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+}
+
+.inputBox {
+  width: 600px;
+  padding: 15;
+  margin-right: auto;
+  margin-left: auto;
+  background: #ffffffba;
+  border-radius: 10px;
+  margin-top: 5px;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.hideMenu {
+  display: none;
+}
+
+.fontControl {
+  padding: 10 3 0 3;
+  font-size: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  padding: 2 10 2 10;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background-color: #7d8580;
+  border-color: #7d8580;
+}
+
+.btn-primary:hover {
+  background-color: #313332;
+  border-color: #313332;
+}
+
+
+form {
+  margin-bottom: 0;
+}
+
+textarea {
+  resize: none;
+}
+
+.image {
+  padding-right: 0px;
+}
+
+.postBody {
+  padding-left: 10px;
+}
+
+#charCounter {
+  width: 20px;
+}
+
+.feed {
+  margin-top: 10px;
+}
+
+img {
+  border-radius: 100px;
+}
+
+.inner {
+  margin: 0 7;
+}
+
+.tweetOptions {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+ul.tweetOptions li { display: inline; }

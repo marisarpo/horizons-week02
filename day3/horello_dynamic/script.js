@@ -1,8 +1,8 @@
 "use strict";
 var cardBeingEdited = null;
 // YOUR JAVASCRIPT CODE GOES HERE
-$(document).ready(function() {
 
+  console.log('loaded');
   $('.add-list').click(function(event) {
     $(this).siblings('.add-list-form-wrapper').removeClass('collapse');
   })
@@ -85,15 +85,3 @@ $(document).ready(function() {
   $('.list-cards').sortable({
     connectWith: '.list-cards'
   })
-
-  // $(document).keydown(function(event){
-  //   debugger;
-  //   if(String.fromCharCode(event.keyCode)===67){
-  //
-  //   }
-
-  })
-
-
-
-})

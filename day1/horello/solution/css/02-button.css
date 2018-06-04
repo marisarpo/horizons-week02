@@ -5,6 +5,7 @@
 .button {
     padding: .6em 1.3em;
     border-radius: .3em;
+    margin-bottom: .8em;
     border: 0;
     font-weight: bold;
     color: #fff;

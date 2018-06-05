@@ -1,1 +1,46 @@
 /* ADD STYLES FOR PART 6 HERE */
+.image-float-right {
+  float: right;
+}
+
+.get-down {
+  padding-top: 50px;
+}
+
+.inner-background {
+  margin-right: 50px;
+}
+
+.see-all-apps {
+  padding-left: 0.3em;
+  padding-right: 0.3em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+}
+
+.new-see-all-apps {
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  padding-top: 0.6em;
+  padding-bottom: 0.6em;
+  margin-left: 1em;
+  color: #b0b0ff;
+  border: solid 1px #b0b0ff;
+  font-size: 16px;
+  border-radius: 0.3em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.lower-background {
+  background-color: #e4f0f6;
+  padding-left: 4em;
+  padding-right: 4em;
+}
+
+.sentence {
+  font-size: 16px;
+}
+img {
+  clear: both;
+}

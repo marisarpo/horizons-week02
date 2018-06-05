@@ -1,1 +1,36 @@
 /* ADD STYLES FOR PART 6 HERE */
+.img-float-right {
+  float: right;
+  position: relative;
+  top: -45px;
+  margin-left: 50px;
+}
+
+.apps {
+  width: 66%;
+  margin: 0 auto;
+  position: relative;
+  top: -70px;
+  background: #e4f0f6;
+  padding: 100px 400px;
+}
+
+#see-all {
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #82b1ff;
+  padding: 0.6em 1.3em;
+  border-radius: .3em;
+  margin-bottom: .8em;
+  position: relative;
+  top: -18px;
+  color: #82b1ff;
+}
+
+.bottom-button {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.bottom-button img {
+  height: 50px;
+}

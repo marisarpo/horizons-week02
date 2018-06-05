@@ -1,9 +1,114 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background: ;
+    font-family: Arial;
+    width: 100%;
+    margin: 0 auto 0;
 }
 
 .title {
     color: purple;
 }
 
+.button {
+  border: 1px solid black;
+  width: 35%;
+  padding: .6em 1em;
+}
+
+.main-content {
+  margin-top: 50px;
+  clear: both;
+  height: 600px;
+}
+
+.main-content img {
+  height: 100%;
+  width: 1100px;
+  float: left;
+  margin-left: 50px;
+}
+
+.right-text {
+  float: left;
+  margin-left: 50px;
+  width: 30%;
+  position: relative;
+  top: 33%;
+}
+
+#headerbar {
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+  height: 60px;
+  text-align: center;
+}
+
+#headerbar p {
+  display: inline;
+  margin: 1%;
+}
+
+#left-head {
+  display: inline-block;
+  font-size: 14px;
+  text-align: left;
+  padding-left: 1%;
+  width: 40%;
+}
+
+#logo img {
+  width: 20%;
+  position: relative;
+}
+
+#right-head {
+  display: inline-block;
+  font-size: 14px;
+  text-align: right;
+  padding-right: 1%;
+  width: 40%;
+}
+
+.lower-bar {
+  margin-top: 45px;
+  margin-bottom: 45px;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid black;
+  float: left;
+}
+
+.bar-element {
+  display: inline-block;
+  padding: 10px 40px;
+  border-right: 1px solid black;
+  margin: 0 auto;
+  width: 300px;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.footer {
+  text-align: center;
+  position: relative;
+  float: left;
+  right: 15%;
+  font-size: 18px;
+  font-family: Helvetica;
+  color: rgba(0,0,0,.4);
+}
+
+.gray {
+  color: gray;
+  font-weight: normal;
+}
+
+.black {
+  color: black;
+}
+
+.footer span {
+  margin-right: 10px;
+}

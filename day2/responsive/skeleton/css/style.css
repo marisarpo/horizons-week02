@@ -10,6 +10,18 @@ body {
     color: #4d4d4d;
 }
 
+@media (min-width: 650px){
+  section{
+    padding:40px, 20px;
+
+  }
+}
+
+@media(max-width: 900px){
+  section{
+    padding: 80px, 20px;
+  }
+}
 section {
     padding: 80px 20px;
     clear: both;

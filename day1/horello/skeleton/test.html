@@ -5,14 +5,35 @@
 </head>
   <div>
     <h1> Hello </h1>
+    <p> In practice, a writer can get too caught up in all the things they have to say and fail to organize it all into bits an ordinary human being would be able to digest. The end result is a huge run-on paragraph that makes it difficult to recall the original point of it, if there was one in the first place. The reader's eyes glaze over and all they see is a wall of text.
+      This afflicts all written media, but it is particularly infamous for its effect on Comic Books. One of the first things learned in comics is how to use dialogue bubbles effectively; a writer not allocating space carefully will end up covering their panel with a bunch of text and white space. Eventually the reader will realize that they're just looking at plain text rather than the vivid form of storytelling by imagery that comic books are famed for. TL;DR indeed.</p>
+    <h1> Heading 1 </h1>
     <style>
+      div{
+        border: solid 5px red;
+        padding: 100px;
+        margin: 100px;
+        /* absolute position removes itself from the flow,
+            relative position does not */
+        position: relative;
+        display: inline-block;
+      }
+
       @media (max-width: 800px){
         h1{
           color:red;
         }
       }
-    </style>
 
+      @media (min-width: 600px) and (orientation: portrait){
+        h1{
+          text-align: center;
+        }
+      }
+
+    </style>
+    <p> </p>
+    <p> </p>
   </div>
 
 <body>

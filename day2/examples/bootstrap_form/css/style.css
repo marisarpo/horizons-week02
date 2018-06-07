@@ -8,3 +8,20 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.form-control {
+	width: 25%;
+}
+
+h1 {
+	text-align: center;
+}
+
+.row {
+	display: flex;
+	justify-content: center;
+}
+
+label {
+	text-align: right;
+}

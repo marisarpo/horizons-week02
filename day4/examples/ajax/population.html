@@ -25,7 +25,17 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp) {
+          console.log('hi');
+          console.log(_.map(JSON.parse(resp), function(city) {
+            var place = city['City / Urban area'];
+            return { 'City / Urban area' : city[population] };
+          }))
+          return _.findKey(stocks.gainAndLoss(data), function(stock) {
+            return stock === _.min(stocks.gainAndLoss(data));
+          });
+        }
       });
     </script>
   </body>

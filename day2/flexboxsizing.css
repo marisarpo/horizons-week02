@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  
+
+  background-color: pink;
+}
+
+.item {
+  flex: 1;
+  text-align: center;
+  background-color: red;
+  color: white;
+  margin: 10px;
+  height: 100px;
+}
+
+.item1 {
+  flex: 5;
+}

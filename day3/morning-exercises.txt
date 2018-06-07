@@ -1,0 +1,28 @@
+$('button').on('click', function() {
+  $('.alert').hide();
+  alert('Bruh wtf!!');
+})
+
+$('.todo').on('click', function(event){
+  $(this).toggleClass('completed');
+});
+
+$('#thumbs img').on('click', function(){
+  $('.main-image').attr('src', $(this).attr('src'));
+});
+
+$('a').on('click', function(event){
+  alert($(this)).attr('href');
+  event.preventDefault();
+  return false;
+})
+
+$('.add').on('click', function(event) {
+  var todo = $('.newTodo').val();
+  var newElem = $('<li>').text(todo);
+  $('.todos').append(newElem);
+})
+
+$('body').on('click', '.delete', function(event) {
+  $(this).parent().remove();
+})

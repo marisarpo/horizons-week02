@@ -1,0 +1,23 @@
+body {
+  text-align: center;
+}
+
+.elem {
+  padding: 15px 50px;
+  margin: 10px;
+  border: 2px solid black;
+  text-align: center;
+  background-color: #ff6666;
+}
+
+@media (min-width: 650px) {
+  .elem:not(:last-child){
+    display: inline-block;
+  }
+}
+
+@media (min-width: 900px) {
+  .elem{
+    display: inline-block;
+  }
+}

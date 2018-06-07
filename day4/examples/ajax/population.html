@@ -22,11 +22,26 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
-
+      var cityArray = [];
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(resp){
+          console.log(resp);
+          cityArray = resp;
+          var largest = 0;
+          var largestIndex = -1;
+          cityArray.forEach( function(city, index){
+            if (city.Population > largest){
+              largest = city.Population;
+              largestIndex = index;
+            }
+          });
+          console.log(largest);
+          var largestCity = cityArray[largestIndex]["City / Urban area"];
+          $('h1').text(largestCity);
+        }
       });
+
     </script>
   </body>
 </html>

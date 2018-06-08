@@ -22,6 +22,36 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: $('#products').text(),
+        error: function(err) {
+          $('#products').remove()
+        }
+      })
+      $.ajax({
+        url: $('#members').text(),
+        error: function(err) {
+          $('#members').remove()
+        }
+      })
+      $.ajax({
+        url: $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').text(),
+        error: function(err) {
+          $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').remove()
+        }
+      })
+      $.ajax({
+        url: $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').text(),
+        error: function(err) {
+          $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').remove()
+        }
+      })
+      $.ajax({
+        url: $('#poem').text(),
+        error: function(err) {
+          $('#poem').remove()
+        }
+      })
     </script>
   </body>
 </html>

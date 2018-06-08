@@ -25,7 +25,54 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var products = [];
+      var called = null;
+      function done () {
+        // Sort products
+        var prices = [];
+        for (var i = 0; i < products.length; i++) {
+          prices.push(products[i].priceCents);
+        }
+        function sortNumber(a,b) {
+          return a - b;
+        }
+        var sorted = prices.sort(sortNumber);
+        console.log(sorted);
+        $('#products').html('<ul></ul>');
+        for (var i = 0; i < sorted.length; i++) {
+          for (var j = 0; j < products.length; j++) {
+            if (sorted[i] === products[j].priceCents) {
+              var string = '';
+              string += (products[j].name + ', $' + products[j].priceCents);
+              $('#products ul').append('<li>' + string + '</li>');
+            };
+          };
+        };
+      };
+      $.ajax({
+        url: "https://horizons-json-cors.s3.amazonaws.com/products.json",
+        success: function(resp) {
+          called = resp.length;
+          for (var i = 0; i < resp.length; i++) {
+            $.ajax({
+              url: resp[i].url,
+              success: function(resp) {
+                products.push(resp);
+                called --;
+                if (called === 0) {
+                  done();
+                }
+              },
+              error: function(err) {
+                called --;
+                if (called === 0) {
+                  done();
+                }
+              },
+            });
+          };
+        },
+      });
     </script>
   </body>
 </html>

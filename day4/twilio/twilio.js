@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC791b8688cc044d6c790719f7d8f6e59d";
+  this.authToken = "cb2bb953b984b719b0c8a4c09ad9aa7d";
+  this.fromNumber = "+16465767926";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,48 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on('click', this.handleMessageSend.bind(this));
+  },
+  clearField: function(field) {
+    field.val("");
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return ($.trim(textStr).length !== 0);
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    var tStr = $.trim(phoneStr);
+		var nums = '0123456789';
+		for (var i = 0; i < tStr.length; i++) {
+			if (nums.indexOf(tStr[i]) === -1) return false;
+		}
+    return (tStr.length !== 0);
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    var message = this.messageInputField.val();
+    var phone = this.phoneInputField.val();
+    if (this.validateMessageField(message) && this.validatePhoneField(phone)) {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+        success: function() {
+          this.displayMessage(phone, message);
+          this.messageInputField.val('');
+        }.bind(this),
+      method: 'POST',
+      data: {
+        From: this.fromNumber,
+        To: phone,
+        Body: message
+      },
+      headers: {
+        "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+      }
+    });
+    } else {
+      alert('Your phone number must be exactly 11 digits, and you cannot send an empty message');
+    }
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

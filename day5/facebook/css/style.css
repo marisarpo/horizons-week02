@@ -1,0 +1,66 @@
+form, .whole-window {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.whole-window button {
+  margin-bottom: 10px;
+  background: lightblue;
+}
+
+#main-page h2 {
+  margin-bottom: 15px;
+}
+
+#main-page img {
+  position: relative;
+  height: 5%;
+  width: 5%;
+}
+
+
+
+.post {
+border: 1px solid grey;
+border-radius: 2px;
+width: 50%;
+margin-bottom: 25px;
+margin-left: 50px;
+
+}
+
+.responses {
+  margin-bottom: 10px;
+
+}
+
+.post .content {
+  margin-left: 15px;
+}
+
+.poster {
+display: flexbox;
+font-size: 20px;
+background: rgba(150,150,150,.5);
+text-align: center;
+
+}
+
+.time {
+font-size: 12px;
+margin-left: 10px;
+padding-top: 10px;
+}
+
+.comment {
+
+background-color: rgb(240,240,240);
+padding: 5px;
+}
+ .responses {
+padding-left: 10px;
+font-size: 14px;
+}

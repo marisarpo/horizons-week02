@@ -5,16 +5,114 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!-- REGISTER FORM -->
+    <form class="well form-horizontal" action=" " method="post"  id="register-form">
+      <fieldset>
+        <!-- Form Name -->
+        <legend style="text-align: center;">New User? Sign Up here</legend>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">First Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="firstName" placeholder="First Name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Last Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="lastName" placeholder="Last Name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+        <!-- Text input-->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Email</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input name="email" placeholder = "Email" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+              <input name="password" placeholder="Password" class="form-control"  type="password">
+            </div>
+          </div>
+        </div>
+      <div class = "whole-window">
+        <button  type = "button" class = "btn btn primary" id = "register"> Register </button>
+        <button type = "button" class = "btn btn primary" id = "login-redirect"> Login </button>
+      </div>
+    </fieldset>
+    </form>
 
-    <!-- jQuery -->
+      <!-- LOGIN FORM -->
+    <form class="well form-horizontal" action=" " method="post"  id="login-form">
+      <fieldset>
+        <!-- Form Name -->
+        <legend style="text-align: center;"> Log in to Your Personal Feed </legend>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Email</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input name="email" placeholder = "Email" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
+              <input name="password" placeholder="Password" class="form-control"  type="password">
+            </div>
+          </div>
+        </div>
+
+      <div class = "whole-window">
+        <button  type = "button" class = "btn btn primary" id = "login"> Login </button>
+        <button type = "button" class = "btn btn primary" id = "registration-redirect"> Go to Registration </button>
+      </div>
+    </fieldset>
+    </form>
+
+    <div id = "main-page">
+      <form class="well form-horizontal" action=" " method="post"  id="post-form">
+        <fieldset>
+          <!-- Form Name -->
+          <legend style="text-align: center;"> <img src = "images/logo.png"> Welcome to Horizons | Facebook </legend>
+          <div class="form-group">
+            <label class="col-md-4 control-label"> Write something here... </label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                <input name="user-post" placeholder = "...." class="form-control" type="text">
+              </div>
+            </div>
+          <button type = "button" class = "btn btn primary" id = "post-button"> Post </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+      <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="

@@ -1,0 +1,54 @@
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  text-align:center;
+}
+
+.btn-1 {
+  background-color: #e88888;
+  color: black;
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.btn-2 {
+  background-color: lightblue;
+  color: black;
+  margin-top: 50px;
+}
+
+.btn-3 {
+  background-color: #e88888;
+  color: black;
+  padding-left: 72px;
+  padding-right: 72px;
+}
+
+.btn-4 {
+  background-color: lightblue;
+  color: black;
+  margin-top: 50px;
+}
+
+.outside {
+  padding-top: 80px;
+}
+
+.login {
+  padding-top: 80px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.space-before-comment {
+  margin-top: 15px;
+}

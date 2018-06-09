@@ -5,14 +5,79 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
-  <body>
+  <body class="container-fluid">
     <!-- YOUR CODE HERE -->
-    Hello, World!
+      <h1 class="outside">New user registration</h1>
+      <div class="outside">
+      <form>
+        <div class="form-group">
+          <div class="row">
+            <input class="form-control" id="Firstname" placeholder="First name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <input class="form-control" id="Lastname" placeholder="last name">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <input class="form-control" id="Email" placeholder="Email">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <input class="form-control" id="Password" placeholder="Password">
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-1">Register</button>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-2">Login</button>
+        </div>
+      </form>
+    </div>
+
+
+    <h1 class="login collapse">Login</h1>
+    <div class="login collapse">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <input class="form-control" id="Email-login" placeholder="Email">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <input class="form-control" id="Password-login" placeholder="Password">
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary btn-3">Login</button>
+      </div>
+      <div>
+        <button class="btn btn-primary btn-4">Go to registration</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="posts collapse">
+  </div>
+
+  <div class="post-posts collapse">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control post-text" placeholder="Content..." aria-label="Recipient's username" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary btn-post" type="button">Post</button>
+      </div>
+    </div>
+  </div>
 
     <!-- jQuery -->
     <script

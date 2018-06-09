@@ -1,32 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Your css file -->
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    You are logged in if you can see this page.
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <!-- CSS files for Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <!-- Navbar at the top -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+        </button>
+        <a class="navbar-brand" href="#">Horizons Facebook</a>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              User
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" id="logout_button">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row" style="margin: 0 0 10px -15px">
+        <button class="btn btn-primary" id="new-post-button">New Post</button>
+    </div>
+    <div class="row new-post collapse" style="margin: 0 0 10px -15px">
+      <div class="input-group col-md-6">
+        <input type="text" class="form-control" placeholder="Write your post here..." id="new-post-input">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" id="new-post-send">Send</button>
+        </span>
+      </div>
+    </div>
+    <div class="row">
+    <div class="all-posts">
+      <div class="text-center">Loading...</div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="text-right">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li>
+              <a href="#" class="prev-page">&laquo; Prev</a>
+            </li>
+            <li>
+              <a href="#" class="next-page">&raquo; Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 
 
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
 
+  <!-- JavaScript files for Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+  <!-- underscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="./js/config.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
 
-    <!-- JavaScript files for Bootstrap -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/config.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
 </html>

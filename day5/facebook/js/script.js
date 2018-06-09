@@ -28,7 +28,7 @@ function getLikeText(likes) {
             likedNames.unshift("You");
             continue;
         }
-        if (likedNames.length < 2) {
+        if (likedNames.length < 3) {
             likedNames.push(name);
         }
     }
@@ -60,7 +60,7 @@ function renderPost(post, $target) {
       </p>
       <span class="post-content lead">${post.content}</span>
       <div class="text-right" style="margin: 10px">
-        <b class="liked-users">You, Bill Cao, Demi Johnson, and 18 others liked this.</b>
+        <b class="liked-users"></b>
         <button type="btn" class="like-button">
           <span class="glyphicon glyphicon-thumbs-up"></span> Like (<span class="post-like">${post.likes.length}</span>)</button>
         <button type="btn" class="reply-button">
@@ -97,7 +97,7 @@ function renderPost(post, $target) {
         $postReplies.append(newComment);
     }
 
-    // Check if the user liked this post already and render likes
+    // Check if the user liked this post already
     var likes = post.likes;
     var liked = false;
     for (var i = 0; i < likes.length; ++i) {
@@ -107,13 +107,13 @@ function renderPost(post, $target) {
         }
     }
 
-    var likedText = getLikeText(likes);
-    newPost.find('.liked-users').text(likedText);
-
     if (liked) {
         newPost.removeClass('panel-primary');
         newPost.addClass('panel-success');
     }
+
+    var likedText = getLikeText(likes);
+    newPost.find('.liked-users').text(likedText);
 
     // Put this post inside
     $target.append(newPost);

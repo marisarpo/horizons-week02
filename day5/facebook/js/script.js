@@ -19,6 +19,34 @@ function getPageNumber() {
     return pageNum;
 }
 
+function getLikeText(likes) {
+    var likedNames = [];
+    var likedText = "";
+    for (var i = 0; i < likes.length; ++i) {
+        var name = likes[i].name;
+        if (likes[i].id === window.localStorage.getItem('userId')) {
+            likedNames.unshift("You");
+            continue;
+        }
+        if (likedNames.length < 2) {
+            likedNames.push(name);
+        }
+    }
+    if (likedNames.length === 0) {
+        likedText = "";
+    } else if (likedNames.length === 1) {
+        likedText = likedNames[0] + " liked this.";
+    } else if (likedNames.length === 2) {
+        likedText = likedNames[0] + " and " + likedNames[1] + " liked this.";
+    } else if (likedNames.length === 3) {
+        likedText = likedNames[0] + ", " + likedNames[1] + ", and " + likedNames[2] + " liked this.";
+    } else {
+        likedText = likedNames[0] + ", " + likedNames[1] + ", " + likedNames[2] + ", and ";
+        likedText += (likedNames.length - 3) + " others liked this.";
+    }
+    return likedText;
+}
+
 function renderPost(post, $target) {
     var postTime = new Date(post.createdAt);
     var newPost = $(`
@@ -32,6 +60,7 @@ function renderPost(post, $target) {
       </p>
       <span class="post-content lead">${post.content}</span>
       <div class="text-right" style="margin: 10px">
+        <b class="liked-users">You, Bill Cao, Demi Johnson, and 18 others liked this.</b>
         <button type="btn" class="like-button">
           <span class="glyphicon glyphicon-thumbs-up"></span> Like (<span class="post-like">${post.likes.length}</span>)</button>
         <button type="btn" class="reply-button">
@@ -68,7 +97,7 @@ function renderPost(post, $target) {
         $postReplies.append(newComment);
     }
 
-    // Check if the user liked this post already
+    // Check if the user liked this post already and render likes
     var likes = post.likes;
     var liked = false;
     for (var i = 0; i < likes.length; ++i) {
@@ -77,6 +106,10 @@ function renderPost(post, $target) {
             break;
         }
     }
+
+    var likedText = getLikeText(likes);
+    newPost.find('.liked-users').text(likedText);
+
     if (liked) {
         newPost.removeClass('panel-primary');
         newPost.addClass('panel-success');
@@ -219,7 +252,7 @@ $('.all-posts').on('click', '.like-button', function(e) {
         data: {
             token: window.localStorage.getItem('token')
         },
-        success: function() {
+        success: function(resp) {
             if (liked) {
                 $likeCount.text(parseInt($likeCount.text()) - 1);
                 $thisPost.removeClass('panel-success');
@@ -229,6 +262,8 @@ $('.all-posts').on('click', '.like-button', function(e) {
                 $thisPost.removeClass('panel-primary');
                 $thisPost.addClass('panel-success');
             }
+            var likedText = getLikeText(resp.response.likes);
+            $thisPost.find('.liked-users').text(likedText);
         },
         error: function(err) {
             alert(err.responseJSON.error + " You may ask a TA for help.");

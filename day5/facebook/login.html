@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <!-- CSS files for Bootstrap -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <br />
+    <div class="jumbotron">
+      <h1 class="display-4">Horizons Facebook</h1>
+      <p class="lead">Created as a demo for Summer 2018 Cohort 1 / Week02 Day5 project</p>
+      <hr class="my-4">
+      <p>You can login to your account or sign up right now!</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button" id="login_button">Login</a>
+      <a class="btn btn-primary btn-lg" href="#" role="button" id="signup_button">Sign Up</a>
+    </div>
+    <div id="login_card">
+      <div class="col-md-4"></div>
+      <div class="card col-md-4">
+        <h2 style="text-align: center;">Login</h2>
+        <br />
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="login_email" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="login_password" placeholder="Password">
+            </div>
+          </form>
+          <button class="btn btn-primary" id="login_submit">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div id="signup_card" class="collapse">
+      <div class="col-md-4"></div>
+      <div class="card col-md-4">
+        <h2 style="text-align: center;">New User Registration</h2>
+        <br />
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+              <small class="form-text text-muted collapse firstname-empty" style="color:red;">First name cannot be empty.</small>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+              <small class="form-text text-muted collapse lastname-empty" style="color:red;">Last name cannot be empty.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="signup_email" aria-describedby="emailHelp" placeholder="Enter email">
+              <small class="form-text text-muted collapse email-invalid" style="color:red;">Email is invalid.</small>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="signup_password" placeholder="Password">
+              <small class="form-text text-muted collapse password-tooshort" style="color:red;">Password should be at least 6 characters.</small>
+            </div>
+          </form>
+          <button class="btn btn-primary" id="signup_submit">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+
+  <!-- JavaScript files for Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+
+  <!-- underscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="./js/config.js"></script>
+  <script type="text/javascript" src="./js/login.js"></script>
+</body>
+
+</html>

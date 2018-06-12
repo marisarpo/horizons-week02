@@ -56,7 +56,7 @@ When you're done, your app should look like this:
     `.add-list-form-wrapper` using
     [jQuery `.val()`](https://api.jquery.com/val/).
     1. Create a list element with the *title* containing no cards and insert it
-    before the `.add-list-form-wrapper` elements using
+    before the `.list-container` elements using
     [jQuery `.before()`](https://api.jquery.com/before/).
 
         List HTML should be like:
@@ -188,7 +188,7 @@ When you're done, your app should look like this:
         the current `.card`. You will need `$(this).find()`
         and `.text()`.
 
-1. Make the save button in the modal change the text on the `cardBeingEdited` and dismiss the modal.
+1. Make the save button in the modal change the text on the `cardBeingEdited` and dismiss the modal using `.modal('toggle')`.
 
 
 ## Part 4: Reorder cards using drag and drop
@@ -236,12 +236,11 @@ and hit the <kbd>c</kbd> key on your keyboard to delete it.
 
 You will need to:
 
-1. Listen to keyboard events with `keydown`.
-1. Convert numeric keyboard codes to letters with  
-  `String.fromCharCode()`
+1. Listen to keyboard events with `keydown` on `$(document)` which represents the whole page.
+1. Inside the event handler, put `event` as the parameter, and use `event.key` to determine which key has been pressed.
 1. Find the currently hovered card with the `:hover`
   pseudoselector.
-1. Remove the `.card` from the page with `.remove()`
+1. Remove the `.card` element from the page with `.remove()`
 
 ## Part 6: Double Bonus: Theme Selector
 

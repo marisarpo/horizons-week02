@@ -1,0 +1,52 @@
+div {
+  text-align: center;
+  border: 1px solid gray;
+  display: flex;
+}
+
+.c1 {
+  width: 700px;
+  height: 300px;
+  display: flex;
+}
+
+.c2 {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+}
+
+.c3 {
+  display: flex;
+  flex: 2;
+}
+
+.c4 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.d {
+  justify-content: center;
+  align-items: center;
+}
+
+.d1 {
+  flex: 1;
+  background-color: red;
+}
+
+.d2 {
+  background-color: green;
+  flex: 1;
+}
+
+.d3 {
+  background-color: yellow;
+  flex:1;
+}
+
+.d4 {
+  background-color:blue;
+  flex: 1;

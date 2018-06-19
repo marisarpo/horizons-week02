@@ -5,14 +5,111 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="new-user-registration">
+      <header class="new-user-registration-header">
+        <p>User registration</p>
+      </header>
+
+      <div class="new-user-registration-form">
+        <div class="first-name">
+          <input type="text" id="new-user-first-name" placeholder="First name">
+        </div>
+        <div class="last-name">
+          <input type="text" id="new-user-last-name" placeholder="Last name">
+        </div>
+        <div class="email">
+          <input type="text" id="new-user-email" placeholder="Email">
+        </div>
+        <div class="password">
+          <input type="text" id="new-user-password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-default register" >Register</button>
+        <button type="button" class="btn btn-default login-button">Log In</button>
+      </div>
+    </div>
+
+    <div class="login">
+      <header class="login-header">
+        <p>Login</p>
+      </header>
+
+      <div class="login-form">
+        <div class="email">
+          <input type="text" id="login-email" class="email" placeholder="Email">
+        </div>
+        <div class="password">
+          <input type="text" id="login-password" class="password" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-default login">Login</button>
+        <button type="button" class="btn btn-default register-button">Go to registration</button>
+      </div>
+    </div>
+
+    <div class="newsfeed">
+      <header class="newsfeed-header">
+        <p>Newsfeed</p>
+        <button type="button" class="btn btn-default logout">Logout</button>
+      </header>
+
+      <div class="post-posts">
+        <span>
+          <input type="text" id="post-box" placeholder="What's on your mind?">
+          <button type="button" class="btn btn-default" id="post-button">Post</button>
+        </span>
+      </div>
+
+      <!-- my first post -->
+      <div class="posts-list">
+        <div class="post" id="insert postId here">
+          <div class="post-header">
+            <div class="post-user-name" id="insert userId here">Robert Luo</div>
+            <div class="post-date">3:04PM June 8, 2018</div>
+          </div>
+          <div class="post-body">This is my first post!</div>
+          <div class="post-footer">
+            <span class="reply-count">0 replies</span>
+            <span class="like-count">1 like</span>
+            <div class="replies-list">
+              <div class="reply">
+                <div class="reply-header">
+                  <span class="reply-user-name" id="insert replierId">Bill</span>
+                  <span class="reply-date">3:05PM June 8, 2018</span>
+                </div>
+                <div class="reply-body">Reply Here!!!</div>
+              </div>
+            </div>
+                        <!-- new comment functionality -->
+            <div class="reply-form-wrapper collapse" >
+              <div class="well reply-form">
+                <input type="text" class="form-control" placeholder="Write your comment">
+                <button type="button" class="btn btn-default reply-send">Send</button>
+                <button type="button" class="btn btn-default reply-cancel"><span class="glyphicon glyphicon-remove"></span></button>
+              </div>
+            </div>
+            <button type="button" class="btn btn-default like-button" >
+              <span class="glyphicon glyphicon-thumbs-up"></span>
+            </button>
+            <button type="button" class="btn btn-default reply-button">Reply</button>
+
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
 
     <!-- jQuery -->
     <script

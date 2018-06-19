@@ -21,7 +21,41 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      // var linkArr = $('#links').children();
+      //
+      // for(link of linkArr){
+      //   var linkUrl = $(link).text();
+      //   console.log('makingn call ',linkUrl);
+      //
+      //   (function(linkUrl, link){
+      //     $.ajax({
+      //       url: linkUrl,
+      //       success: function(resp) {
+      //         console.log('success!');
+      //       },
+      //       error: function(err) {
+      //         console.log('failure', err);
+      //         var id = $(link).attr('id');
+      //         console.log('id is',id);
+      //         console.log($(link));
+      //         $(link).remove();
+      //       },
+      //     });
+      //   } (linkUrl,link))
+      // }
+
+      /* alternative (better) solution*/
+      $('li').each(function(){
+        var $item = $(this);
+        $.ajax({
+          url: $item.text(),
+          error: function(){
+            $item.remove()
+          }
+        });
+      });
+
     </script>
   </body>
 </html>

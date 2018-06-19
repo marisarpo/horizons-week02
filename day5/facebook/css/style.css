@@ -1,0 +1,44 @@
+.new-user-registration, .login {
+  text-align: center;
+}
+
+header {
+  margin: 20px 10px;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+div.new-user-registration-form > * {
+  margin: 10px 10px;
+}
+
+div.login-form > * {
+  margin: 10px 10px;
+}
+
+.newsfeed {
+  text-align: left;
+}
+
+.post > * {
+  margin: 10px 10px;
+}
+.post {
+  margin: 20px 10px;
+  border-style: solid;
+  border-width: thin;
+}
+
+.post-user-name {
+  font-size: 1.5em;
+}
+
+#post-box, #post-button {
+  display: inline-block;
+  margin: 20px 10px;
+  height: 80px;
+}
+
+.replies-list, .reply{
+  margin: 10px 10px;
+}

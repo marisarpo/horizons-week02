@@ -25,7 +25,24 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json',
+        success: function(response){
+          console.log(response);
+          var bigCity = null;
+          var bigPop = -1;
+
+          for(city of response) {
+            debugger;
+            if(city['Population'] > bigPop){
+              bigCity = city['City / Urban area'];
+              bigPop = city['Population']
+              console.log('new big city: ',bigCity,' with pop of: ',bigPop);
+            }
+          }
+          debugger;
+          $('body').append($('<pre>').text(JSON.stringify(response)));
+          $('#out').text(bigCity);
+        }
       });
     </script>
   </body>

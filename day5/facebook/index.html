@@ -3,17 +3,61 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class = 'registration'>
+      <h1 class ='rlheader'>New user registration</h1>
+          <input class = 'form-control' id='fname' type ='text' placeholder="First name">
 
+          <input class ='form-control' id='lname' type ='text' placeholder="Last name">
+
+          <input class ='form-control' id='user' type ='text' placeholder="Username">
+
+          <input class ='form-control' id ='password' type ='text' placeholder="Password">
+          <button class ='btn btn-success' id ='register'>Register</button>
+          <button class = 'btn btn-info' id ='login'>Login</button>
+          <button class = 'btn btn-succes' id = 'gtr'>Go to registration</button>
+      </div>
+      <div class = "newsfeed">
+        <button class = 'logOut'>Log out</button>
+        <h1 class = 'pageheader'>Welcome to Pink Facebook!</h1>
+          <div class ='posts col-xs-8'>
+            <textarea id = 'postText' placeholder="What's on your mind?" class='col-xs-6'></textarea>
+            <button class='postbutton'id ='postButton'>Post</button>
+            <div class = 'post'>
+              <p class='time'></p>
+              <h1 class = 'post-id'>Debi</h1>
+              <h2 class ='post-content'>What's on your mind?</h2>
+              <div class = 'postFooter'>
+                <div class = 'likes'></div>
+                <div class= 'replies'>
+
+                </div>
+                <button class = 'postbutton'id = 'like'>Like</button>
+                <button class ='postbutton'id ='reply'>Reply</button>
+
+                <div class="collapse reply-wrapper">
+                    <div class="reply-form">
+                      <input type="text" class="form-control"
+                                       placeholder="What's on your mind?">
+                      <button type="button" class="btn btn-default reply-save">
+                      Save
+                      </button>
+                      <button type="button"
+                            class="btn btn-default reply-cancel"><span
+                            class="glyphicon glyphicon-remove"></span>
+                      </button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -21,7 +65,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

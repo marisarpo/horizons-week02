@@ -1,0 +1,57 @@
+div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#fname, #lname, #user, #password, #register, #gtr{
+  width: 200px;
+  margin: 20px;
+}
+.post{
+  flex-direction: column;
+  border-radius: 4px;
+  border-style: double;
+  border-color: #fff;
+  margin:25px;
+}
+.postFooter{
+  flex-direction: row;
+}
+.logOut{
+  flex-direction: row;
+  margin-left: 98%;
+}
+.post-content{
+  padding: 30px;
+}
+.pageheader{
+  color: lightpink;
+  border-radius: 5px;
+  font-family: Perpetua,serif;
+}
+.postbutton{
+  border-radius: 5px;
+  font-family: Perpetua,serif;
+  color: white;
+  height: 40px;
+  width: 60px
+  padding: 10px;
+}
+#like{
+  background-color: lightpink;
+}
+#reply{
+  background-color: lightblue;
+}
+.posts{
+  background-color: lightpink;
+  align-items: center;
+}
+#postText{
+  margin: 10px;
+}
+.post-id{
+  color: gray;
+
+}

@@ -1,1 +1,49 @@
-/* ADD STYLES FOR PART 6 HERE */
+.app-store {
+  background: #e4f0f6;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+}
+
+#devices {
+  position: relative;
+  margin-right: 10%;
+  float: right;
+  display: inline-block;
+}
+
+.app-store p {
+  display: inline;
+  clear: both;
+  max-width: 585px;
+  margin-left: 4em;
+}
+
+.clear {
+  clear: both;
+}
+
+#description {
+  display: inline-block;
+}
+
+#badge-wrapper {
+  display: inline-block;
+}
+
+.badges {
+  height: 54px;
+  display: inline;
+  margin-top: 0.4em;
+  margin-right: 1em;
+  vertical-align: top;
+}
+
+#app-button {
+  display: inline-block;
+  text-align: center;
+  margin: 0.4em 0 0;
+  padding: 0.7em 1em;
+  border-radius: 0.3em;
+  border: 1px solid;
+}

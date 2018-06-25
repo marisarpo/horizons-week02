@@ -1,16 +1,37 @@
-body {
+body
+{
     /** Your CSS goes here! **/
+  background-color: #fff;
+  color: #4d4d4d;/*check this*/
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  
 }
 
-h2 {
+h2
+{
     /** and here (you get the point) **/
+  font-size: 36px;
 }
 
-section {
+section
+{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
-.center-paragraph {
+.center-paragraph
+{
+  margin-top: .5em;
+  margin-bottom: .5em;
+  margin-right: 16%;
+  margin-left: 16%;
 }
 
-.text-center {
+.text-center
+{
+  text-align: center;
 }

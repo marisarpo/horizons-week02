@@ -1,1 +1,28 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+
+.bg{
+  background: #e4f0f6;
+  position: relative;
+  padding-left: 200px
+}
+.devices
+{
+  position:absolute;
+  top: 60px;
+  left: 840px;
+}
+.text
+{
+  max-width: 585px;
+}
+
+.thing
+{
+  border: 1px solid;
+  border-radius: .3em;
+  padding: .7em 1em;
+  display: inline-block;
+  vertical-align: top;
+  color: #5e98ba
+}

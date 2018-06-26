@@ -1,5 +1,5 @@
 body {
-    background: url("../images/porcupine.jpg");
+    /* background: url("../images/porcupine.jpg"); */
     text-align: center;
 }
 
@@ -7,3 +7,49 @@ body {
     color: purple;
 }
 
+.column {
+  display: inline-block;
+  width: 45px;
+  vertical-align: top;
+
+}
+
+.col-header, .col-separator, .col-empty, .col-full {
+  display: block
+}
+
+.col-header {
+  height: 30px;
+  font-size: 110%;
+  margin: 0;
+  background-color: skyblue;
+
+}
+
+.col-separator {
+  height: 4px;
+  margin: 0;
+  margin-bottom: 2px;
+}
+
+.col-empty {
+  background-color: grey;
+}
+
+.col-full {
+  background-color: forestgreen;
+}
+
+.col-full, .col-empty {
+  height: 30px;
+  margin: 0;
+  margin-bottom: 2px;
+  color: white;
+  vertical-align: middle;
+  line-height: 30px;
+}
+
+.col-full p, .col-empty p {
+  padding: 0;
+  margin: 0;
+}

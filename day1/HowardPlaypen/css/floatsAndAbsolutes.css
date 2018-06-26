@@ -1,0 +1,58 @@
+body {
+  font-size: 16px;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both;
+}
+
+.left-nav {
+  border: red solid 1px;
+  height: 50%;
+  /* vertical-align: bottom; */
+  display: inline-block;
+  float: left;
+}
+
+p {
+  padding: 0;
+  margin:0;
+  min-height: 40px;
+}
+
+.nav1 {
+  border: yellow solid 1px;
+  width: 90px;
+  //height:100px;
+  font-size: 90%;
+  display: block;
+  vertical-align: bottom;
+  text-align: center;
+  background-color: fuchsia;
+}
+.nav2{
+  border: lightblue solid 4px;
+  font-size: 140%;
+  width: 90px;
+  display: block;
+  vertical-align: bottom;
+  text-align: center;
+  padding: 0;
+  background-color: fuchsia;
+}
+.nav3 {
+  border: purple solid 7px;
+  width: 90px;
+  display: block;
+  vertical-align: bottom;
+  text-align: center;
+  background-color: fuchsia;
+}
+
+.content {
+  border: green solid 6px
+}

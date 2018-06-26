@@ -15,7 +15,171 @@
   <div class="container">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <div class="form-group">
+        <div class="form-group">
+          <div class="col-xs-12 text-center">
+            <h2>Billing information</h2>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="username" class="">Username</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="text" class="form-control" placeholder="Username" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input type="password" class="form-control" placeholder="Password" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="date-of-birth">Date of birth</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+            <input type="date" class="form-control" placeholder="yyyy-mm-dd" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="zip-code">Zip Code</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+            <input type="text" class="form-control" placeholder="Zip Code" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="state" class="col-xs-4 control-label">State</label>
+          	<div class="col-xs-4 input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-th-list"></i></span>
+          		<select class="form-control" id="state" name="state">
+          			<option value="">Please select your state</option>
+          			<option value="AK">Alaska</option>
+          			<option value="AL">Alabama</option>
+          			<option value="AR">Arkansas</option>
+          			<option value="AZ">Arizona</option>
+          			<option value="CA">California</option>
+          			<option value="CO">Colorado</option>
+          			<option value="CT">Connecticut</option>
+          			<option value="DC">District of Columbia</option>
+          			<option value="DE">Delaware</option>
+          			<option value="FL">Florida</option>
+          			<option value="GA">Georgia</option>
+          			<option value="HI">Hawaii</option>
+          			<option value="IA">Iowa</option>
+          			<option value="ID">Idaho</option>
+          			<option value="IL">Illinois</option>
+          			<option value="IN">Indiana</option>
+          			<option value="KS">Kansas</option>
+          			<option value="KY">Kentucky</option>
+          			<option value="LA">Louisiana</option>
+          			<option value="MA">Massachusetts</option>
+          			<option value="MD">Maryland</option>
+          			<option value="ME">Maine</option>
+          			<option value="MI">Michigan</option>
+          			<option value="MN">Minnesota</option>
+          			<option value="MO">Missouri</option>
+          			<option value="MS">Mississippi</option>
+          			<option value="MT">Montana</option>
+          			<option value="NC">North Carolina</option>
+          			<option value="ND">North Dakota</option>
+          			<option value="NE">Nebraska</option>
+          			<option value="NH">New Hampshire</option>
+          			<option value="NJ">New Jersey</option>
+          			<option value="NM">New Mexico</option>
+          			<option value="NV">Nevada</option>
+          			<option value="NY">New York</option>
+          			<option value="OH">Ohio</option>
+          			<option value="OK">Oklahoma</option>
+          			<option value="OR">Oregon</option>
+          			<option value="PA">Pennsylvania</option>
+          			<option value="PR">Puerto Rico</option>
+          			<option value="RI">Rhode Island</option>
+          			<option value="SC">South Carolina</option>
+          			<option value="SD">South Dakota</option>
+          			<option value="TN">Tennessee</option>
+          			<option value="TX">Texas</option>
+          			<option value="UT">Utah</option>
+          			<option value="VA">Virginia</option>
+          			<option value="VT">Vermont</option>
+          			<option value="WA">Washington</option>
+          			<option value="WI">Wisconsin</option>
+          			<option value="WV">West Virginia</option>
+          			<option value="WY">Wyoming</option>
+          		</select>
+          	</div>
+        </div>
+
+        <div class="form-group">
+          <label for="payment-type" class="col-xs-4 control-label">Payment type</label>
+          <div class="col-xs-4">
+            <div class="radio">
+              <label>
+                <input type="radio" name="hosting" id="Radio1" value="visa"> Visa
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="hosting" id="Radio2" value="mastercard"> Mastercard
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="card-#">Card #</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+            <input type="text" class="form-control" placeholder="0000 0000 0000 0000" />
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-4 control-label">
+            <label for="expiry">Expiry</label>
+          </div>
+          <div class="inputGroupContainer col-xs-2">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="MM/YYYY" />
+            </div>
+          </div>
+          <div class="col-xs-1 control-label">
+            <label for="cvc">CVC</label>
+          </div>
+          <div class="inputGroupContainer col-xs-1">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="000" />
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-xs-4 control-label">
+            <label for="project-description">Project description</label>
+          </div>
+          <div class="col-xs-4 input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <input type="text" class="form-control" placeholder="Project description" />
+          </div>
+        </div>
+
+      </div>
     </form>
   </div>
 </div><!-- /.container -->

@@ -8,3 +8,12 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.button {
+	display: inline-block;
+	margin: auto;
+}
+
+.login-center {
+	text-align: center;
+}

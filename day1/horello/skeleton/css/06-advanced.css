@@ -1,1 +1,44 @@
 /* ADD STYLES FOR PART 6 HERE */
+
+.appBlock {
+  background-color: #e4f0f6;
+  xposition: relative;
+  height: 200px;
+}
+
+.AppImg {
+  display: inline-block;
+  top: 60px;
+  left: 640px;
+  float: right;
+  width: 40%;
+  padding-right: 20px;
+  align-content: center;
+
+}
+
+.appText{
+  width: 585px;
+}
+
+.innerAppBlock {
+  float: right;
+  width: 50%;
+  display: inline-block;
+}
+
+.seeAllApps{
+  position:relative;
+  xtop: 60px;
+  xleft: 640px;
+  color: #5e98ba;
+  border-radius: 0.3em;
+  border: solid 1px grey;
+  border-color: #5e98ba;
+  padding: 10px;
+  position: relative;
+  bottom: 15px;
+  text-decoration: none;
+  height: 54px;
+  xmargin: 0.4em 1em;
+}

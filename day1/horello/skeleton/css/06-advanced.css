@@ -1,1 +1,58 @@
 /* ADD STYLES FOR PART 6 HERE */
+.background-light-blue {
+	background-color: #e4f0f6;
+}
+
+.layout-grid-frame {
+	max-width: 890px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.layout-image-right {
+	position: absolute;
+	top: -60px;
+	left: 640px;
+}
+
+.layout-twothirds-left {
+	max-width: 585px;
+}
+
+p {
+	margin-left: 1em 0;
+}
+
+a {
+	color: #5e98ba;
+}
+
+.app-store-link {
+	display: inline-block;
+    vertical-align: top;
+    margin: .4em 1em 0 0;
+    padding: 0;
+}
+
+.app-store-link img {
+    height: 54px;
+}
+
+body {
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #4d4d4d;
+}
+
+.online-link {
+	border: 1px solid;
+    border-radius: 0.3em;
+    padding: .7em 1em;
+    margin: .4em 0 0;
+    display: inline-block;
+}
+
+.online-link:hover {
+	color: darkblue;
+}

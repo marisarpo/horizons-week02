@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Jiggle Button</title>
+    <meta name="description" content="My favorite landing page">
+    <meta name="author" content="horizons">
+  </head>
+
+  <style>
+    .button {
+      background-color: orange;
+      color: white;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .anim {
+      animation: jiggle 2s ease-in infinite;
+    }
+
+    @keyframes jiggle {
+      48%, 62% {
+        transform: scale(1.0, 1.0)
+      }
+      50% {
+        transform: scale(1.1, 0.9)
+      }
+      56% {
+        transform: scale(0.9, 1.1) translate(0, -5px)
+      }
+      59% {
+        transform: scale(1.0, 1.0) translate(0, -3px)
+      }
+    }
+  </style>
+
+  <body>
+    <a href="#" class="button anim">Jiggle</a>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

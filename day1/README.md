@@ -7,3 +7,5 @@
 1. [Horello](horello/README.md)
 1. [Clone Any Landing Page](clone/README.md)
 1. [Bonus: CSS Challenge](css_challenge/README.md)
+
+text-shadow: 0 1px 4px rgba(0,0,0,0.25);

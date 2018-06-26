@@ -1,9 +1,161 @@
 body {
-    background: url("../images/porcupine.jpg");
-    text-align: center;
+    background-color: #f7f7f7;
+    font-family: Helvetica;
 }
 
-.title {
-    color: purple;
+a {
+	text-decoration: none;
+	color: #5a95cf;
+}
+
+.ib {
+	display: inline;
+	clear: none;
+}
+
+.tac {
+	text-align: center;
+}
+
+.hcenter {
+	display: block;
+	margin: auto;
+}
+
+.text-small-gray {
+	font-size: 0.8em;
+	color: gray;
+}
+
+.no-borders {
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	padding: 11px 8px;
+	height: 40px;
+	vertical-align: middle;
+}
+
+#header-nav-1 {
+	float: right;
+	color: #a5a5a5;
+	margin-top: 2px;
+}
+
+#header-nav-num {
+	margin-right: 20px;
+	margin-top: 4px;
+	float: right;
+	color: #c2b7b0;
+	vertical-align: middle;
+}
+
+#header-nav-2-down {
+	vertical-align: top;
+	margin-top: 5px;
+	margin-left: -10px;
+}
+
+#header #header-nav-num:nth-child(3) div {
+	margin-top: 5px; 
+}
+
+#header-nav-3-down {
+	vertical-align: top;
+}
+
+#top-right-img {
+	float: right;
+	height: 100%;
+}
+
+#div-search-separator {
+	padding-top: 140px;
+}
+
+#div-search-area {
+	height: 85vh;
+	position: relative;
+}
+
+#p-notrack {
+	margin-top: 20px;
+	color: gray;
+}
+
+#div-search-area * {
+	display: block;
+	margin: auto;
+}
+
+#ddg-logo {
+	height: 200px;
+}
+
+#div-search {
+	margin-top: 20px;
+	height: 40px;
+	width: 35%;
+	margin-left: auto;
+	margin-right: auto; 
+	margin-bottom: 30px;
+	position: relative;
+}
+
+#div-black-circle {
+	background-color: black;
+	border-radius: 50%;
+	height: 16px;
+	width: 16px;
+	padding: 9px;
+	position: relative;
+	margin-top: -10px;
+}
+
+#down-arrow {
+	height: 100%;
+}
+
+#div-first-down {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#img-search-clear {
+	height: 40px;
+	width: 40px;
+	background-size: 100%;
+	background-image: url("../xnotclick.png");
+}
+
+#img-search-clear:hover {
+	height: 40px;
+	width: 40px;
+	background-size: 100%;
+	background-image: url("../x.png");
+}
+
+#pos-right {
+	position: absolute;
+	right: -10px;
+}
+
+#input-search {
+	height: 40px;
+	width: 100%;
+	background-color: white;
+	border: none;
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	display: inline-block;
+	padding-left: 10px;
+	box-shadow: 0 0 2px 2px lightgray;
+	font-size: 1.1em;
 }
 

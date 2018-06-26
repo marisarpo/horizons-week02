@@ -13,9 +13,58 @@
 
 <body>
   <div class="container">
-
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <h1>Billing Information</h1>
+      <label>Username</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" name="email" placeholder="Username">
+      </div>
+      <label>Password</label>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" name="email" placeholder="Password">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        <input type="date" class="form-control" name="email">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+        <input type="text" class="form-control" name="email" placeholder="Zip Code">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+        <select class="form-control">
+          <option selected>Please select your state</option>
+        </select>
+      </div>
+      <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+      <label class="form-check-label" for="exampleRadios1">
+        Visa
+      </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+        <label class="form-check-label" for="exampleRadios2">
+          Mastercard
+        </label>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+        <input type="text" class="form-control" name="email" placeholder="0000 0000 0000 0000">
+      </div>
+      <div class="input-group row">
+        <input type="text" class="form-control col-xs-2" name="email" placeholder="MM/YYYY">
+        <input type="text" class="form-control col-xs-2" name="email" placeholder="000">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="	glyphicon glyphicon-pencil"></i></span>
+        <textarea class="form-control" rows="2" id="comment" placeholder="Project Description"></textarea>
+      </div>
+      <button type="button" class="btn btn-warning">Send <i class="glyphicon glyphicon-send"></i></button>
+
     </form>
   </div>
 </div><!-- /.container -->

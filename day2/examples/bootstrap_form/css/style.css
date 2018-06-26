@@ -8,3 +8,49 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+h3{
+	text-align: center;
+}
+
+h5{
+	text-align: right;
+	margin: 0;
+	padding-top: 19.5px;
+	padding-bottom: 19.5px;
+}
+
+.input-group{
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.expiry{
+	display: flex;
+}
+
+.expiry-left{
+	flex: 3;
+}
+.expiry-right{
+	flex: 2;
+	justify-content:flex-end;
+	align-items: center;
+	display: flex;
+}
+
+.expiry-right h5{
+	flex: 3;
+}
+
+.expiry-right .form-control{
+	display: inline-block;
+	width: 60px;
+}
+
+.expiry-right label{
+	padding: 10px;
+	margin-bottom: 0px;
+	display: inline;
+}

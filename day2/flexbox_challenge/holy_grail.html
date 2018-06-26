@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Holy Grail</title>
+</head>
+<body>
+
+  <style>
+    body {
+      font-size: 2em;
+    }
+    .flexer {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .fcol {
+        flex-direction: column;
+    }
+
+    #container {
+      height: 98vh;
+    }
+
+    #header {
+      flex: 1;
+      background-color: pink;
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+
+    #footer {
+      flex: 1;
+      background-color: #ffd9b3;
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+
+    #fbodyleft {
+      width: 200px;
+      background-color: lavender;
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+
+    #fbodycontent {
+      flex: 4;
+      background-color: lightyellow;
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+
+    #fbodyright {
+      flex: 1;
+      background-color: lavender;
+      border-radius: 15px;
+      border: 1px solid black;
+    }
+
+    #fbody {
+      flex: 4;
+    }
+
+    @media only screen and (max-width: 768px) {
+      #fbody {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #fbodycontent {
+        flex: 4;
+        background-color: lightyellow;
+        border-radius: 15px;
+        order: 0;
+      }
+
+      #fbodyright {
+        flex: 1;
+        background-color: lavender;
+        border-radius: 15px;
+        order: 2;
+      }
+
+      #fbodyleft {
+        flex: 1;
+        width: 100%;
+        background-color: lavender;
+        border-radius: 15px;
+        order: 1;
+      }
+    }
+  </style>
+
+  
+  <div id="container" class="flexer fcol">
+
+    <div id="header">
+      header
+    </div>
+
+    <div id="fbody" class="flexer">
+
+      <div id="fbodyleft">
+        nav
+      </div>
+      <div id="fbodycontent">
+        article
+      </div>
+      <div id="fbodyright">
+        aside
+      </div>
+
+    </div>
+
+    <div id="footer">
+      footer
+    </div>
+
+  </div>
+
+</body>
+</html>

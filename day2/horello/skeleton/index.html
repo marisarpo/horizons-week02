@@ -6,9 +6,14 @@
   <title>Horello</title>
 
   <!-- Bootstrap stuff -->
-  <link rel="stylesheet" href="../../../lib/bootstrap/css/bootstrap.min.css">
-  <script src="../../../lib/jquery.js"></script>
-  <script src="../../../lib/bootstrap/js/bootstrap.min.js"></script>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+  <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css'>
+  <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
   <!-- Our Styles -->
   <link rel="stylesheet" href="css/style.css" type="text/css">
@@ -20,31 +25,108 @@
   </header>
 
   <!-- PART 5. Modal -->
+  <div class="board flexer">
+      <div class="list-container">
+        <div class="list">
+          <div class="list-header">
+            <span class="list-title">House List</span>
+          </div>
+          <div class="list-cards">
+            <div data-toggle="modal" data-target="#login-modal" class="card">
+              <div class="card-body">
+                <p class="blocka">
+                Today we will #DominateAllTheHouses
+                </p>
+                <span class="glyphicon glyphicon-align-left"></span>
+              </div>
+            </div>
+            <div data-toggle="modal" data-target="#login-modal" class="card">
+              <div class="card-body">
+                <p class="blocka">
+                Today we will #DominateAllTheHouses
+                </p>
+                <span class="glyphicon glyphicon-align-left"></span>
+              </div>
+            </div>
+            <div data-toggle="modal" data-target="#login-modal" class="card">
+              <div class="card-body">
+                <p class="blocka">
+                Today we will #DominateAllTheHouses
+                </p>
+                <span class="glyphicon glyphicon-align-left"></span>
+              </div>
+            </div>
+            <div data-toggle="modal" data-target="#login-modal" class="card">
+              <div class="card-body">
+                <p class="blocka">
+                Today we will #DominateAllTheHouses
+                </p>
+                <span class="glyphicon glyphicon-align-left"></span>
+              </div>
+            </div>
+            <div data-toggle="modal" data-target="#login-modal" class="card">
+              <div class="card-body">
+                <p class="blocka">
+                Today we will #DominateAllTheHouses
+                </p>
+                <span class="glyphicon glyphicon-align-left"></span>
+              </div>
+            </div>
+          </div>
+          <div class="list-footer">
+            
+            <button class="btn text-left add-card" type="button" data-toggle="collapse" data-target="#add-card-div" aria-expanded="false" aria-controls="add-card-div">
+              Add a card
+            </button>
 
-  <div class="board">
-    <div class="list-container">
-      <div class="list">
-        <div class="list-header">
-          <span class="list-title">House List</span>
-        </div>
-        <div class="list-cards">
-          <div class="card">
-            <div class="card-body">
-              Today we will #DominateAllTheHouses
+            <div class="collapse" id="add-card-div">
+              <div class="well">
+                  <input type="text" class="form-control" placeholder="Card title">
+                  <button class="btn btn-default s-button">
+                      Save
+                  </button>
+                  <button class="btn btn-default s-button"><span class="glyphicon glyphicon-remove"></span>
+                  </button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="list-footer">
-          <!-- PART 2. Add card button -->
+        
+      </div>
 
-          <!-- PART 4. Collapse -->
+
+      <div class="flex-on-the-haters">
+        <button id="add-list-button" class="text-left btn add-list" type="button" data-toggle="collapse" data-target="#add-list-div" aria-expanded="false" aria-controls="add-list-div">Add a list...</button>
+
+        <div class="collapse" id="add-list-div">
+          <div class="well">
+              <input type="text" class="form-control" placeholder="Card title">
+              <button class="btn btn-default s-button">
+                  Save
+              </button>
+              <button class="btn btn-default s-button"><span class="glyphicon glyphicon-remove"></span>
+              </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- PART 1. Add list button -->
-
-
+      <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <input type="text" class="form-control" value="TITLE">
+            </div>
+            <div class="modal-body">
+              <h4>Description</h4>
+              <textarea rows="5" type="text" class="form-control" value="#DominateAllTheHouses">DESCRIPTION</textarea>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>
 
 </body>

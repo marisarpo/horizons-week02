@@ -15,8 +15,36 @@
 </head>
 
 <body>
-  <div class="container">
-  </div><!-- /.container -->
+  <div class="container" style="display: flex; flex-direction: column; align-items: center">
+    <h2 class="col-md-12" style="text-align: center">Login to Horizons</h2>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal">Login</button>
+  </div>
+
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" style="text-align: center">Login</h2>
+        </div>
+        <div class="modal-body">
+          <form class="form-horizontal" style="margin: 0 10%" id="contact_form">
+            <div class="form-group block">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+              </div>
+            </div>
+            <div class="form-group col-sm-offset-2">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js'></script>
   <script src='http://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js'></script>

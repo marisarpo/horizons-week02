@@ -3,6 +3,16 @@ html, body {
 }
 
 .container, .well{
-	height: 100%;
+/*	height: 100%;*/
 	margin-bottom: 0;
+}
+
+.container > h1
+{
+  text-align: center;
+}
+
+.container
+{
+  text-align: center;
 }

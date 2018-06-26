@@ -1,1 +1,51 @@
 /* ADD STYLES FOR PART 6 HERE */
+ .home-devices{
+   background-color: #e4f0f6;
+   height: 200px;
+ }
+
+.left-container{
+  float: right;
+  width: 40%;
+  display: inline-block;
+}
+
+.right-container{
+  float: right;
+  width: 40%;
+  display: inline-block;
+}
+
+.right-container img{
+  width: 70%;
+}
+
+.downloads{
+  position: relative;
+}
+
+.downloads img{
+  display: inline-block;
+  height: 45px;
+  margin: 10px;
+  vertical-align: middle;
+}
+
+#see-all-apps{
+  margin-left: 20px;
+  border: solid 2px;
+  border-radius: 7px 7px 7px 7px;
+  padding: 10px;
+  border-color: #5e98ba;
+  color: #5e98ba;
+}
+
+#see-all-apps:hover{
+  background-color:#5e98ba;
+  margin-left: 20px;
+  border: solid 2px;
+  border-radius: 7px 7px 7px 7px;
+  padding: 10px;
+  border-color: #5e98ba;
+  color: white;
+}

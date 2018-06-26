@@ -1,0 +1,115 @@
+body{
+
+}
+
+hr{
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.jumbotron{
+  background-image: url('../img/jumbotron.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+  width: 100%;
+  height: 600px;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+.jumbotron .search-box{
+  background-color: white;
+  width: 45%;
+  margin-top: 60px;
+  height: 450px;
+  border-radius: 6px 6px 6px 6px;
+  padding: 25px;
+}
+
+.search-box h1{
+  font-size:38px;
+  margin-top: 0px;
+  color: #414040;
+}
+
+.search-box #search-subtitle{
+  color: #414040;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.search-box p{
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
+.search-box input{
+  width: 100%;
+  height: 45px;
+  padding-left: 14px;
+  font-size: 18px;
+  font-weight: 100px;
+  border-style: none;
+  border: solid 1px #cdcdcd;
+}
+
+.field-holder{
+  width: 100%;
+  margin: 0;
+}
+
+.submit-button{
+  width: 100%;
+  margin-top: 18px;
+}
+
+.submit-button button{
+  width: 100%;
+  background-color: #FF2F51;
+  border:none;
+  text-decoration: none;
+  border-radius: 6px 6px 6px 6px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  height: 45px;
+  font-family: Arial;
+}
+
+.main{
+  margin-top:45px;
+}
+
+.subcheck{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 44%;
+  margin-right: 22px;
+}
+
+.subcheck input{
+  width: 100%;
+  height: 45px;
+  padding-right: 0px;
+}
+
+.city-img{
+  height: 250px;
+  width: 350px;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.footer{
+  height: 60px;
+}
+
+.footer p{
+  color: grey;
+  font-size: 15px;
+  font-family: 'Helvetica Neue';
+  font-weight: 400;
+}

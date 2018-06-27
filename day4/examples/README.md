@@ -24,7 +24,10 @@ Watch this screen recording to see how
 
 ### [Watch me: Intro. to AJAX](https://vimeo.com/210894693)
 
-1. __Poetry Slam:__ In this example you will `GET` a poem from [https://horizons-json-cors.s3.amazonaws.com/poem.txt](https://horizons-json-cors.s3.amazonaws.com/poem.txt). Then you are to calculate the number of words it contains, and add that number to the element where `id="count"`.
+1. __Poetry Slam:__ In this example you will `GET` a poem from
+   [https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt](https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt).
+   Then you are to calculate the number of words it contains, and add that
+   number to the element where `id="count"`.
 
     - Files to work on:
 	    - `/week02/day4/examples/ajax/poetry_slam/index.html`: Open this in your favourite web browser to read the instructions and test your solution.

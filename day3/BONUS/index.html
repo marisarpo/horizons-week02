@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>PARRALAXIN</title>
+    <script src="../../lib/underscore.js"></script>
+    <script src="../../lib/jquery.js"></script>
+    <script src="../../lib/jquery-ui.js"></script>
+
+    <!-- Bootstrap stuff -->
+    <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+    <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+
+    <style>
+      body {
+        background-color: silver;
+        font-size: 5em;
+      }
+
+      div {
+        display: flex;
+        align-content: center;
+        height: 150px;
+        margin:  10%;
+      }
+
+      .dleft {
+        justify-content: flex-start;
+      }
+
+      .dright {
+        justify-content: flex-end;
+      }
+
+      img {
+        position: absolute;
+        margin-left: auto;
+        top: 0;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+      }
+    </style>
+
+    <script>
+
+      var linkArr = ['https://images.vexels.com/media/users/3/134038/isolated/preview/528066b6791849056774d277bf0fb852-shooting-star-hand-drawn-cartoon-icon-33-by-vexels.png', 'http://www.stickpng.com/assets/images/588798d8bc2fc2ef3a186016.png', 'http://www.stickpng.com/assets/images/58879fadbc2fc2ef3a186024.png', 'http://www.stickpng.com/assets/images/588799f7bc2fc2ef3a186018.png', 'http://www.stickpng.com/assets/images/58879fadbc2fc2ef3a186024.png', 'http://www.stickpng.com/assets/images/588798d8bc2fc2ef3a186016.png'];
+
+      $(window).scroll(function(event){
+        var st = $(window).scrollTop();
+
+        if (st < 4000) {
+          $('img').css('top', st+300);
+          for (var i = 0; i < linkArr.length; i++) {
+            if (st < (i+1)*500) {
+              $('img').attr('src', linkArr[i]);
+              break;
+            }
+          }
+          if (st > 1500) {
+            var scaler = (st-1500)*0.25;
+            $('img').css('top', `${st+300-scaler/3}px`);
+            $('img').css('height', `${200+scaler}px`);
+            $('img').css('width', `${200+scaler}px`);
+          }
+        }
+      });
+    </script>
+      
+    <div class="dleft">Story of a shooting star.</div>
+    <div class="dright">It flew.</div>
+    <div class="dleft">It flew more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">It flew some more.</div>
+    <div class="dright">It flew some more.</div>
+    <div class="dleft">THE END.</div>
+    <img />
+
+  </body>
+</html>

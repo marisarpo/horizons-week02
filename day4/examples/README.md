@@ -3,7 +3,7 @@
 - **All videos have the password `horizonites`**
 - Ask for help early and often! 🙋
 
-### Tourbleshooting: **`XMLHttpRequest cannot load`**
+### Troubleshooting: **`XMLHttpRequest cannot load`**
 
 If you see an error message in your console that says **`XMLHttpRequest cannot load`**, do the following:
 

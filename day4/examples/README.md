@@ -50,15 +50,43 @@ Watch this screen recording to see how
 
 ### [Watch me: AJAX is Asynchronous](https://vimeo.com/210971431)
 
-1. __AJAX Async:__ Your job is to GET data from
-   [https://horizons-school-of-technology.github.io/week02/day4/examples/products.json](https://horizons-school-of-technology.github.io/week02/day4/examples/products.json)
-   which will be an array of objects, each having a 'url' key pointing to the
-   URL of a JSON file with data about that product. You are to subsequently
-   make AJAX requests to those URLs and retrieve product information. Lastly,
-   the sorted list of products must be put in the `div` with `id="products"`.
+1. __AJAX Async:__ in this exercise, we'll use the JSON returned to us from one ajax request to make more ajax requests to new URLs.
 
-    - File to work on:
-        - `/week02/day4/examples/async.html`: Open this in your favourite web browser & text editor. Write your code in the `<script>` tag at the bottom of the `HTML` file.
+   - File to work on:
+       - `/week02/day4/examples/async.html`: Open this in your favourite web browser & text editor. Write your code in the `<script>` tag at the bottom of the `HTML` file.
+
+   1. GET data from
+   [https://horizons-school-of-technology.github.io/week02/day4/examples/products.json](https://horizons-school-of-technology.github.io/week02/day4/examples/products.json)
+
+      * This data should be an array of objects, each having a 'url' property
+
+   1. For each of the URLs from the previous step, make a GET request to load
+      that product's data.
+
+      * Each product url should return json of the form:
+
+        ```json
+        {
+          "id": "Ke8jdu4JKJ964Htr6J90Hf3mW9JkjJ33",
+          "name": "Large Bubble Tea Drink",
+          "priceCents": 500
+        }
+        ```
+
+   1. Once you have all of the product data, sort the products in order of
+      their price, from lowest to highest.
+
+   1. Replace the contents of the div with id "products" with a list of the
+      products and their prices (sorted from lowest price to highest price)
+
+      <blockquote><details><summary>
+      Hint
+      </summary>
+
+      You'll want to put them in a list, so you'll need a `ul` or `ol` element,
+      and some `li` list items inside.
+
+      </details></blockquote>
 
 ### [Watch me: AJAX APIs and Trello](https://vimeo.com/212287922)
 

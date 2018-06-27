@@ -63,3 +63,33 @@ $('button.add-list-save').on('click', function(event){
 
 
 });
+
+
+$('.board').on('click', '.add-card', function() {
+  $(this).siblings('.add-card-form-wrapper').removeClass('collapse');
+});
+
+
+$('.board').on('click', '.add-card-cancel', function(event) {
+  $(this).closest('.add-card-form-wrapper').addClass('collapse');
+});
+
+$('.board').on('click', '.add-card-save', function(event) {
+  var cardTitle = $(this).prev().val();
+  var card = `
+    <div class="card">
+      <span class="card-more">
+        <span class="glyphicon glyphicon-align-left"></span>
+      </span>
+      <div class="card-body">${cardTitle}</div>
+    </div>`;
+  var listCards = $(this).closest('.list-footer').siblings('.list-cards');
+  listCards.append(card);
+  $(this).closest('.add-card-form-wrapper').addClass('collapse');
+  $(this).prev().val('');
+
+
+
+
+
+});

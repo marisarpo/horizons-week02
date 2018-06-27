@@ -50,3 +50,17 @@ $(".comments").on('click','button.reply' ,function() {
   }
 
 });
+
+//hide replies
+$(".comments").on('click','button.hide-replies' ,function(event) {
+  var $this = $(this);
+  var commentDiv = $this.closest('.comment');
+  commentDiv.children('div.replies').hide();
+});
+
+//show replies
+$(".comments").on('click','button.show-replies' ,function(event) {
+  var $this = $(this);
+  var commentDiv = $this.closest('.comment');
+  commentDiv.children('div.replies').show();
+});

@@ -11,7 +11,7 @@ body {
 }
 
 section {
-    padding: 80px 20px;
+    padding: 0 20px;
     clear: both;
     overflow: hidden;
 }
@@ -49,13 +49,10 @@ section {
     color: #fff;
 }
 
-section, footer {
-    padding: 80px 20px;
-}
-
 footer {
     color: #999;
     font-size: 16px;
+    padding: 80px 20px;
 }
 
 footer a {
@@ -161,4 +158,16 @@ h2 {
 
 .button {
     margin-bottom: 20px;
+}
+
+@media (min-width: 650px) {
+  section {
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 900px) {
+  section {
+    padding: 80px 20px;
+  }
 }

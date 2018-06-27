@@ -56,7 +56,7 @@
           <div class='input-group-addon'>
             <span class= 'glyphicon glyphicon-home' id='zipCode-glyphicon'></span>
           </div>
-          <input type="number" class="form-control" id="inputZipCode" placeholder="Zip Code">
+          <input type="text" class="form-control" id="inputZipCode" placeholder="Zip Code">
         </div>
       </div>
 
@@ -127,13 +127,59 @@
         <label for="paymentType" class='col-xs-2 control-label col-xs-offset-2'>Payment Type</label>
         <div class='input-group radio col-xs-5'>
           <label>
-            <input type="radio" name="optionsRadios1" id="optionsRadios1" value="option1">
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
             Visa
           </label>
           <label class='col-xs-12'>
-            <input type="radio" name="optionsRadios2" id="optionsRadios2" value="option2">
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
             Master Card
           </label>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="card" class='col-xs-2 control-label col-xs-offset-2'>Card #</label>
+        <div class='input-group col-xs-5'>
+          <div class='input-group-addon'>
+            <span class= 'glyphicon glyphicon-credit-card' id='card-glyphicon'></span>
+          </div>
+          <input type="text" class="form-control" id="inputCard" placeholder="0000-0000-0000-0000">
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="expiry" class='col-xs-2 control-label col-xs-offset-2'>Expiry</label>
+        <div class='col-xs-2' >
+          <div class='input-group'>
+            <input type="text" class="form-control" id="inputExpiry" placeholder="MM/YYYY">
+          </div>
+        </div>
+        <label for="cvc" class='col-xs-1 control-label col-xs-offset-1'>CVC</label>
+        <div class='col-xs-1'>
+          <div class='input-group'>
+            <input type="text" class="form-control" id="inputExpiry" placeholder="000">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="projectDescription" class='col-xs-2 control-label col-xs-offset-2'>Project Description</label>
+        <div class='input-group col-xs-5'>
+          <div class='input-group-addon'>
+            <span class= 'glyphicon glyphicon-pencil' id='projectDescription-glyphicon'></span>
+          </div>
+          <textarea class="form-control" rows="3" placeholder="Project Description"></textarea>
+        </div>
+      </div>
+
+      <!-- <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+
+
+      <div class='row'>
+        <div class= 'col-xs-offset-4'>
+          <button type="submit" class="btn btn-warning">Send
+            <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span>
+          </button>
         </div>
       </div>
 

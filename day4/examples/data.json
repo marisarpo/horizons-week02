@@ -1,0 +1,72 @@
+[
+  {
+    "City / Urban area": "Mexico City",
+    "Country": "Mexico",
+    "Population": 17400000,
+    "Land area(in sqKm)": 2072,
+    "Density(people per sqKm)": 8400
+  },
+  {
+    "City / Urban area": "Osaka/Kobe/Kyoto",
+    "Country": "Japan",
+    "Population": 16425000,
+    "Land area(in sqKm)": 2564,
+    "Density(people per sqKm)": 6400
+  },
+  {
+    "City / Urban area": "Manila",
+    "Country": "Philippines",
+    "Population": 14750000,
+    "Land area(in sqKm)": 1399,
+    "Density(people per sqKm)": 10550
+  },
+  {
+    "City / Urban area": "Mumbai",
+    "Country": "India",
+    "Population": 14350000,
+    "Land area(in sqKm)": 484,
+    "Density(people per sqKm)": 29650
+  },
+  {
+    "City / Urban area": "New York Metro",
+    "Country": "USA",
+    "Population": 17800000,
+    "Land area(in sqKm)": 8683,
+    "Density(people per sqKm)": 2050
+  },
+  {
+    "City / Urban area": "Sao Paulo",
+    "Country": "Brazil",
+    "Population": 17700000,
+    "Land area(in sqKm)": 1968,
+    "Density(people per sqKm)": 9000
+  },
+  {
+    "City / Urban area": "Seoul/Incheon",
+    "Country": "South Korea",
+    "Population": 17500000,
+    "Land area(in sqKm)": 1049,
+    "Density(people per sqKm)": 16700
+  },
+  {
+    "City / Urban area": "Tokyo/Yokohama",
+    "Country": "Japan",
+    "Population": 33200000,
+    "Land area(in sqKm)": 6993,
+    "Density(people per sqKm)": 4750
+  },
+  {
+    "City / Urban area": "Delhi",
+    "Country": "India",
+    "Population": 14300000,
+    "Land area(in sqKm)": 1295,
+    "Density(people per sqKm)": 11050
+  },
+  {
+    "City / Urban area": "Jakarta",
+    "Country": "Indonesia",
+    "Population": 14250000,
+    "Land area(in sqKm)": 1360,
+    "Density(people per sqKm)": 10500
+  }
+]

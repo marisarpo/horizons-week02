@@ -25,8 +25,19 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(resp)
+        {
+          $("body").append($("<pre>").text(resp));
+          console.log(resp);
+          var popArr = resp.map(a => a.Population);
+          console.log(popArr);
+          var maxPop = Math.max(...popArr);
+          console.log(maxPop);
+          $("h1").text(maxPop);
+        }
       });
+
     </script>
   </body>
 </html>

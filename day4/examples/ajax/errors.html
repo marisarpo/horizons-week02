@@ -22,6 +22,104 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+//jquery for loop, get text get children
+      var urlArr = $("#links").children("li");
+      console.log(urlArr);
+      for (var i = 0; i < urlArr.length; i++)
+      {
+        (function(x) 
+        {
+        $.ajax
+       ({
+          url: $(urlArr[x]).text(),
+          error: function (resp)
+          {
+            $(urlArr[x]).remove();
+          }
+       }); })(i);
+      }
+ /*     $.ajax
+     ({
+        for (var i = 0; i < urlArr.length; i++)
+        {
+          url: urlArr[i],
+          success: function(resp)
+          {
+            console.log("SUCCESS");
+          }
+          error: function(resp)
+          {
+            console.log("FAILURE");
+            $("#products").remove();
+          }
+        }
+      });*/
+
+/*
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products.json",
+        success: function(resp)
+        {
+          console.log("SUCCESS");
+        },
+        error: function(resp)
+        {
+          console.log("FAILURE");
+          $("#products").remove();
+        }
+      })
+      $.ajax
+     ({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/members.txt",
+        success: function(resp)
+        {
+          console.log("SUCCESS");
+        },
+        error: function(resp)
+        {
+          console.log("FAILURE");
+          $("#members").remove();
+        }
+      })
+      $.ajax
+
+     ({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json",
+        success: function(resp)
+        {
+          console.log("SUCCESS");
+        },
+        error: function(resp)
+        {
+          console.log("FAILURE");
+          $("#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF").remove();
+        }
+      })
+      $.ajax
+     ({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json",
+        success: function(resp)
+        {
+          console.log("SUCCESS");
+        },
+        error: function(resp)
+        {
+          console.log("FAILURE");
+          $("#oUfx3vNy2C6l8dzki84Tp2e3cds3").remove();
+        }
+      })
+      $.ajax
+     ({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt",
+        success: function(resp)
+        {
+          console.log("SUCCESS");
+        },
+        error: function(resp)
+        {
+          console.log("FAILURE");
+          $("#poem").remove();
+        }
+      })*/
     </script>
   </body>
 </html>

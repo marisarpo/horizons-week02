@@ -28,4 +28,7 @@ for(var i = 0; i < times.length-1; i++){
 		nextTime = times[i + (++j)]
 	}
 	lastEnd = times[i].end;
+	debugger;
 }
+
+console.log(buckets);

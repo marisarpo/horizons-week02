@@ -4,7 +4,46 @@ html, body {
 	height: 100%;
 }
 
-.container, .well{
+.container
+{
 	height: 100%;
 	margin-bottom: 0;
+}
+
+.well
+{
+	height: 100%;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.paymenttype
+{
+	display:flex;
+	flex:1;
+	flex-direction: column;
+}
+.ptype
+{
+	flex:1;
+
+}
+.move1
+{
+	flex:1;
+	flex-direction: row;
+}
+.move2
+{
+	flex:1;
+	flex-direction: row;
+}
+
+.f{
+	display:flex;
+	flex:1;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
 }

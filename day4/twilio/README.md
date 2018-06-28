@@ -55,7 +55,7 @@ if the given string passes these conditions:
 Hint
 </summary><p>
 
-[`$.trim()`](https://api.jquery.com/jQuery.trim/) might be useful here.
+[`string.trim()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim) might be useful here.
 
 </p></details>
 

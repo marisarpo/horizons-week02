@@ -24,8 +24,44 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js'></script>
+
     <script>
-      // YOUR CODE HERE
+      var responses = [];
+
+      $.ajax({
+        url : 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
+        success : function(response){
+          $.each(response, function(i, val){
+            $.ajax({
+              url: val.url,
+              success: function(response2){
+                responses.push(response2);
+                if(responses.length==response.length){
+                  sorted = _.sortBy(responses, function(prod){
+                    return prod.priceCents;
+                  });
+                  // print to screen
+                  var ul_elem = $('<ul></ul>')
+                  $.each(sorted, function(i, val){
+                    var price = val.priceCents / 100;
+                    console.log(price);
+                    ul_elem.append(
+                      `<li>${val.name} $${price}</li>
+                      `
+                    );
+                  });
+                  $('#products').replaceWith(ul_elem);
+                }
+              }
+            });
+          });
+        }
+      });
+
+
+
+
     </script>
   </body>
 </html>

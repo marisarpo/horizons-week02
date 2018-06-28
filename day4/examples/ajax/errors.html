@@ -21,7 +21,20 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      var urls = $('li');
+      for(var i=0; i<urls.length; i++){
+        (function(){
+          var x = i;
+          var text = $(urls[i]).text();
+          $.ajax({
+            url: text,
+            error: function(err){
+              console.log(x);
+              $(urls[x]).remove();
+            }
+          });
+        })();
+      }
     </script>
   </body>
 </html>

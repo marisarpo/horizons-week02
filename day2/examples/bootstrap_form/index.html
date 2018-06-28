@@ -12,10 +12,225 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <a class="navbar-brand" href="#">Horizons</a>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse">
+
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Enroll</a></li>
+          <li><a href="#">Alumni</a></li>
+          <li><a href="#">Contact</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">More <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Login</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Signup</a></li>
+            </ul>
+          </li>
+
+        </ul>
+
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+<!
+
   <div class="container">
 
     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
-      <!-- YOUR CODE HERE -->
+      <fieldset>
+        <legend style="text-align: center;">Billing Information</legend>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Username</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input  name="first_name" placeholder="Username" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Password</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+                <input type="password" placeholder="Password" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Date of Birth</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-earphone"></span>
+                <input type="date" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Zip Code</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-home"></span>
+                <input name="address" placeholder="Zip Code" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">State</label>
+            <div class="col-md-4 selectContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-list"></span>
+                <select class="form-control selectpicker">
+                  <option value=" " >Please select your state</option>
+                  <option>Alabama</option>
+                  <option>Alaska</option>
+                  <option >Arizona</option>
+                  <option >Arkansas</option>
+                  <option >California</option>
+                  <option >Colorado</option>
+                  <option >Connecticut</option>
+                  <option >Delaware</option>
+                  <option >District of Columbia</option>
+                  <option> Florida</option>
+                  <option >Georgia</option>
+                  <option >Hawaii</option>
+                  <option >daho</option>
+                  <option >Illinois</option>
+                  <option >Indiana</option>
+                  <option >Iowa</option>
+                  <option> Kansas</option>
+                  <option >Kentucky</option>
+                  <option >Louisiana</option>
+                  <option>Maine</option>
+                  <option >Maryland</option>
+                  <option> Mass</option>
+                  <option >Michigan</option>
+                  <option >Minnesota</option>
+                  <option>Mississippi</option>
+                  <option>Missouri</option>
+                  <option>Montana</option>
+                  <option>Nebraska</option>
+                  <option>Nevada</option>
+                  <option>New Hampshire</option>
+                  <option>New Jersey</option>
+                  <option>New Mexico</option>
+                  <option>New York</option>
+                  <option>North Carolina</option>
+                  <option>North Dakota</option>
+                  <option>Ohio</option>
+                  <option>Oklahoma</option>
+                  <option>Oregon</option>
+                  <option>Pennsylvania</option>
+                  <option>Rhode Island</option>
+                  <option>South Carolina</option>
+                  <option>South Dakota</option>
+                  <option>Tennessee</option>
+                  <option>Texas</option>
+                  <option> Uttah</option>
+                  <option>Vermont</option>
+                  <option>Virginia</option>
+                  <option >Washington</option>
+                  <option >West Virginia</option>
+                  <option>Wisconsin</option>
+                  <option >Wyoming</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Payment Type</label>
+            <div class="col-md-4">
+              <div class="radio">
+                <label>
+                  <input type="radio" name="paymentType" value="visa" checked>
+                    Visa
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="paymentType" value="mastercard">
+                    Mastercard
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Card #</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-credit-card"></span>
+                <input  name="creditcard" placeholder="0000 0000 0000 0000" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Expiry</label>
+            <div class="col-md-2 inputGroupContainer">
+              <div class="input-group">
+                <input  name="monthAndYear" placeholder="MM/YYYY" class="form-control"  type="text">
+              </div>
+            </div>
+
+            <label class="col-md-1 control-label">CVC</label>
+            <div class="col-md-1 inputGroupContainer">
+              <div class="input-group">
+                <input  name="cvc" placeholder="000" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Project Description</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon glyphicon glyphicon-pencil"></span>
+                <textarea  name="description" placeholder="Project Desciption" class="form-control"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-success" role="alert" id="success_message">Success<i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <button type="submit" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
+            </div>
+          </div>
+
+          </div>
+      </fieldset>
     </form>
   </div>
 </div><!-- /.container -->

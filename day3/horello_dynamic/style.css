@@ -12,7 +12,6 @@ header {
     padding: 5px;
     height: 40px;
     position: relative;
-    overflow: hidden;
 }
 
 .header-logo {

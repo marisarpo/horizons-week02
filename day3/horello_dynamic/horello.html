@@ -12,13 +12,29 @@
     <script src="../../lib/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Our Styles -->
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link id="theme" rel="stylesheet" href="style.css" type="text/css">
   </head>
   <body>
     <header>
       <a class="header-logo" href="#">
         <span class="header-logo-default"></span>
       </a>
+
+      <div class="dropdown">
+        <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Theme</button>
+        <ul class="dropdown-menu">
+          <li>
+            <a id="blue" href="#">Blue</a>
+          </li>
+          <li>
+            <a id="green" href="#">Green</a>
+          </li>
+          <li>
+            <a id="purple" href="#">Purple</a>
+          </li>
+        </ul>
+      </div>
+
     </header>
 
     <div class="modal fade" id="card-edit">
@@ -199,6 +215,8 @@
       </div>
 
     </div>
+
     <script src="script.js"></script>
+
   </body>
 </html>

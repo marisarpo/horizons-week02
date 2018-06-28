@@ -3,6 +3,19 @@
 - **All videos have the password `horizonites`**
 - Ask for help early and often! 🙋
 
+## Before you start: `git pull`
+
+We've updated some of the files in this exercise. For these exercises to work,
+you'll need to first update to the latest version, using `git`:
+
+```sh
+git commit -am 'day1-3 work' # this saves all your current work (if you have not yet)
+git pull # this downloads the changes we made
+git merge origin/master # this updates your current branch to have the changes we made
+```
+
+If you have any trouble, please talk to a TA and we can help you!
+
 ### Troubleshooting: **`XMLHttpRequest cannot load`**
 
 If you see an error message in your console that says **`XMLHttpRequest cannot load`**, do the following:

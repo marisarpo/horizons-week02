@@ -26,6 +26,22 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+
+      var data;
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products.json",
+        success: function(resp){
+          data = resp;
+          data.forEach(function(item) {
+            $.ajax({
+              url: item.url,
+              success: function(r) {
+                $("#products").append(`<li>${r.name}, ${r.priceCents}</li>`)
+              }
+            });
+          });
+        }
+      });
     </script>
   </body>
 </html>

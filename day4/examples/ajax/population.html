@@ -23,10 +23,24 @@
 
     <script>
       // YOUR CODE HERE
+      var data;
 
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(resp) {
+          data = resp;
+          var max = 0;
+          var maxCity;
+          data.forEach(function(item) {
+            if (item["Population"] > max) {
+              max = item["Population"];
+              maxCity = item["City / Urban area"];
+            }
+          });
+          $("h1").text(maxCity);
+        }
       });
+
     </script>
   </body>
 </html>

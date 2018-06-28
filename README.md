@@ -6,6 +6,7 @@
     1. Horello
     1. Clone Any Landing Page
     1. Bonus: CSS Challenge
+    1. [Videos](day1/Videos.md)
 1. [Day 2](day2/README.md)
     1. Flexbox Froggy
     1. Responsive design and Bootstrap
@@ -16,6 +17,7 @@
     1. Collapsible comment threads
     1. Making Horello dynamic
     1. Bonus: jQuery challenges
+    1. [Videos](day3/Videos.md)
 1. [Day 4](day4/README.md)
     1. Twilio Setup
     1. Twilio Messenger

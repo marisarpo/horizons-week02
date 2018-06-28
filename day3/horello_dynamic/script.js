@@ -1,6 +1,9 @@
 "use strict";
 
 // YOUR JAVASCRIPT CODE GOES HERE
+var cardBeingEdited = null;
+
+
 $('.add-list').on('click', function(event){
     $('.add-list-form-wrapper').removeClass('collapse');
 });
@@ -88,8 +91,26 @@ $('.board').on('click', '.add-card-save', function(event) {
   $(this).closest('.add-card-form-wrapper').addClass('collapse');
   $(this).prev().val('');
 
+});
 
+$('.board').on('click', '.card', function(event){
+  cardBeingEdited = $(this);
+  $('#card-edit').modal();
 
-
+  $('#card-edit-body').val(cardBeingEdited.find('div.card-body').text());
 
 });
+
+
+$('#card-edit .card-edit-save').on('click', function(event){
+  cardBeingEdited.find('div.card-body').text($('#card-edit-body').val());
+  $('#card-edit').modal('toggle');
+});
+
+$('.list-cards').sortable({
+  revert: false,
+  items: '.card',
+  connectWith: '.list-cards'
+}
+
+  );

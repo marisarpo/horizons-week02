@@ -1,1 +1,41 @@
 /* ADD STYLES FOR PART 6 HERE */
+.img-float-right{
+  float:right;
+  position:relative;
+  right:10%;
+  bottom:60px;
+}
+
+.section-skyblue{
+  background-color:#e4f0f6;
+  padding-left:20%
+}
+
+.left-text{
+  max-width: 47%;
+
+}
+
+.img-badge{
+  height:54px;
+  vertical-align:top;
+}
+
+.app-bottom{
+  border: 1px solid #0079bf;
+  xmargin-top: 0.4em;
+  xmargin-right: 1em;
+  color:#0079bf;
+  height:54px;
+  display: inline-block;
+  border-radius:0.3em;
+  width: 154px;
+  text-align: center;
+  padding
+
+}
+
+.img-app{
+  border: 2px solid black;
+  margin-left:20%;
+}

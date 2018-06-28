@@ -124,6 +124,7 @@ element selector (in this case `.reply`) like so:
 ```javascript
 $('PARENT ELEMENT SELECTOR').on('EVENT TYPE', 'CHILD ELEMENT SELECTOR',
   function() { ... });
+
 ```
 
 Your event handler should work the same as before.

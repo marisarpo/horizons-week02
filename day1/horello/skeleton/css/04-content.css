@@ -1,5 +1,20 @@
+
 .background-dark-blue {
+  color: #e4f0f6;
+  background-color: #0079bf;
+  padding-left: 60px;
+  padding-right: 80px;
+
 }
 
 .layout-fill-img {
+  padding: 40px 60px;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.center-paragraph{
+  font: white;
+  font-size: 16px;
+  display: inline-block;
 }

@@ -1,1 +1,42 @@
 /* ADD STYLES FOR PART 6 HERE */
+.layout-to-the-left{
+margin: 10px 10px;
+display: inline-block;
+}
+
+.image-to-the-left{
+  float: left;
+}
+
+
+.background-light-blue {
+  background-color: #e4f0f6;
+  overflow: hidden;
+}
+
+.layout-grid-frame{
+  display: inline-block;
+}
+
+.layout-to-the-right{
+  float: right;
+}
+
+
+.button1 {
+  border: 1px solid;
+  border-radius: 0.3em;
+  padding: .7em 1em;
+  margin: .4em 0 0;
+  display: inline-block;
+}
+
+
+
+a {
+    color: #5e98ba;
+}
+
+a:hover {
+    color: #265773;
+}

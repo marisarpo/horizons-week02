@@ -11,7 +11,7 @@ you'll need to first update to the latest version, using `git`:
 ```sh
 git commit -am 'day1-3 work' # this saves all your current work (if you have not yet)
 git pull # this downloads the changes we made
-git merge origin/master # this updates your current branch to have the changes we made
+git merge origin/master -m merge # this updates your current branch to have the changes we made
 ```
 
 If you have any trouble, please talk to a TA and we can help you!

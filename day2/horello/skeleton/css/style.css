@@ -3,15 +3,15 @@
 body {
   line-height: 18px;
   height: 100vh;
-
-  /** PART 1 CSS here */
+  background-color: rgb(0,121,191);
 }
 
 header {
   position: relative;
   overflow: hidden;
-
-  /** PART 1 CSS here */
+  padding: 5px;
+  height: 40px;
+  background color: rgba(0, 0, 0, 0.15);
 }
 
 .header-logo {
@@ -53,11 +53,19 @@ a {
 }
 
 .add-list {
-  /** PART 1 CSS here */
+  background: rgba(0,0,0,.12);
+  color: #fff;
+  min-height: 30px;
+  border: 0px;
+  height: auto;
+  border-radius: 3px;
+  margin-bottom: 5px ;
+  width: 280px;
+  padding: 7px;
 }
 
 .add-list:hover {
-  /** PART 1 CSS here */
+  background: rgba(0,0,0,.20);
 }
 
 .add-list-form {

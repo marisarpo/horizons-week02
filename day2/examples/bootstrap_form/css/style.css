@@ -8,3 +8,23 @@ html, body {
 	height: 100%;
 	margin-bottom: 0;
 }
+
+.row
+{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+p
+{
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+button
+{
+  height: 33px;
+  top: 5px;
+}

@@ -37,7 +37,7 @@ TwilioApp.prototype = {
     var whiteList = "12345567890";
     for (var i = 0; i < modStr.length; i++)
     {
-      if (whitelist.indexOf(modStr[i]) === -1)
+      if (whiteList.indexOf(modStr[i]) === -1)
       {
         return false;
       }
@@ -48,16 +48,16 @@ TwilioApp.prototype = {
   handleMessageSend: function(event) {
     // YOUR CODE HERE
     event.preventDefault();
-    var toPhone = this.phoneInputField();
-    var thisMessage = this. messageInputField.val();
-    if (this.validatePhoneField(toPhone) && this.validateMessageField(thisMessage))
+    var toPhone = this.validatePhoneField(this.phoneInputField.val());
+    var thisMessage = this.validateMessageField(this.messageInputField.val());
+    if (toPhone && thisMessage)
     {
-      this.sendMessage(toPhone, thisMessage);
-      this.clearField(this.messageInputField);
+      this.displayMessage(this.phoneInputField.val(), this.messageInputField.val());
+ //     this.clearField(this.messageInputField);
     }
     else
     {
-      throw "Invalid fields";
+      alert();
     }
   },
   displayMessage: function(sender, message) {
@@ -67,6 +67,20 @@ TwilioApp.prototype = {
     listElem.append(senderElem);
     listElem.append(bodyElem);
     this.messageList.append(listElem);
+    $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',
+    {
+      method: "POST",
+      data:
+      {
+        From: this.fromNumber,
+        To: sender,
+        Body: message
+      },
+      headers:
+      {
+        "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+      }
+    });
   }
 };
 

@@ -21,7 +21,20 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+      lis = $('#links').children();
+      for(var i = 0; i < lis.length; i++) {
+        (function(){
+          var link = lis.eq(i).text();
+          var jqobj = lis.eq(i);
+          //console.log(lis.eq(i));
+          $.ajax({
+            url: link,
+            error: function(err) {
+              jqobj.remove();
+            }
+          });
+        }());
+      }
     </script>
   </body>
 </html>

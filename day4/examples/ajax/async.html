@@ -1,105 +1,127 @@
 <!DOCTYPE html>
 <html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Horizons AJAX Async Example</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Horizons AJAX Async Example</title>
+</head>
 
-  <body>
+<body>
 
-    <h1>AJAX Async Example</h1>
+  <h1>AJAX Async Example</h1>
 
-    <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a href="https://horizons-school-of-technology.github.io/week02/day4/examples/products.json">these products</a> in JavaScript on this page. Display their names and prices below as a bulleted list.</p>
-    <p>
-      The link above will respond with an array of urls. You need to asynchronously make AJAX requests to these links, and then sort the results in increasing price order (lowest price up top).
-    </p>
+  <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a href="https://horizons-school-of-technology.github.io/week02/day4/examples/products.json">these products</a> in JavaScript on this page. Display their names and prices below as a bulleted list.</p>
+  <p>
+    The link above will respond with an array of urls. You need to asynchronously make AJAX requests to these links, and then sort the results in increasing price order (lowest price up top).
+  </p>
 
-    <div id="products">REPLACE me with the sorted list of products! My <code>id is "products"</code>.</div>
+  <div id="products">REPLACE me with the sorted list of products! My <code>id is "products"</code>.</div>
 
-    <h2>Example output</h2>
-    <ul>
-      <li>Raspberry Pi, $33.53</li>
-      <li>Amazon Echo, $179.99</li>
-      <li>DJI Phantom 3, $416.59</li>
-    </ul>
+  <h2>Example output</h2>
+  <ul>
+    <li>Raspberry Pi, $33.53</li>
+    <li>Amazon Echo, $179.99</li>
+    <li>DJI Phantom 3, $416.59</li>
+  </ul>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-    <script>
-      // YOUR CODE HERE
-      var j = null;
-      var orderedByPrice = [];
-      (function f(){$.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
-        success: function(obj) {
-          console.log(obj);
-          obj.forEach(function(innerObj) {
-            console.log(innerObj['url']);
-            $.ajax({
-              url: innerObj['url'],
-              success: function (product) {
-                var firstItemRan = false;
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script>
+  // YOUR CODE HERE
+  var j = null;
+  var orderedByPrice = [];
+  $.ajax({
+    url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
+    success: function(obj) {
+      console.log(obj);
+      obj.forEach(function(innerObj) {
+        console.log(innerObj['url']);
+        $.ajax({
+          url: innerObj['url'],
+          success: function (product) {
+            // var name = product['name'];
+            // var price = product['priceCents'];
+            // var tempObject = {}
+            // tempObject[name] = price;
+            // console.log(tempObject);
+            orderedByPrice.push(product);
 
-                // console.log(product);
-                // console.log(product['name']);
-                if (orderedByPrice.length === 0) {
-                  console.log("IT THINKS ORDEREDBYLENGTH IS EMPTY");
-                  var name = product['name'];
-                  var price = product['priceCents'];
-                  var tempObject = {}
-                  tempObject[name] = price;
-                  // console.log(tempObject);
-                  orderedByPrice.push(tempObject);
-                  // console.log(orderedByPrice);
-                  firstItemRan = true;
-                  j = 1;
-                  debugger;
-                }
+            if (orderedByPrice.length === obj.length) {
+              orderedByPrice.sort(function(a,b) {
+                return a.priceCents - b.priceCents;
+              })
+              console.log(orderedByPrice);
+              // $('ul').empty()
+              // $('body').append(  $('<pre>').text(poem)  )
+              $('#products').replaceWith('<ul id="new-list"> </ul>')
+              orderedByPrice.forEach(function(thing) {
+                var dollars = thing.priceCents / 100
+                var listable = $('<li>').text(`${thing.name} costs $${dollars}`);
+                $('#new-list').append(listable);
+              })
+              // var list = $('<li>').text(orderedByPrice.toString());
+              // $('ul').append(list);
+            }
 
-                if (orderedByPrice.length > 0 && firstItemRan === false) {
-                  console.log("orderedByPrice.length > 0; product =" + product['name']);
-                  debugger;
-
-                  orderedByPrice.forEach(function (productAlreadyListed) {
-                    debugger;
-                    var thisKey;
-                    for (var t = 0; t < orderedByPrice.length; t++) {
-                      
-                    }
-                    if (product.priceCents > productAlreadyListed.priceCents) {
-                      console.log("product.priceCents > productAlreadyListed.priceCents; product = " + product.name);
-                      var name = product['name'];
-                      // console.log(name);
-                      var price = product['priceCents'];
-                      var tempObject = {}
-                      tempObject[name] = price;
-                      // console.log(tempObject);
-                      debugger;
-                      orderedByPrice.splice(orderedByPrice.indexOf(productAlreadyListed), 0, tempObject);
-                      j++;
-                      debugger;
-
-                    }
-                    if (j === orderedByPrice.length) {
-                      // debugger;
-                      var name = product['name'];
-                      // console.log(name);
-                      var price = product['priceCents'];
-                      var tempObject = {}
-                      tempObject[name] = price;
-                      debugger;
-                      orderedByPrice.push(tempObject)};
-                      debugger;
-                  })
-                }
-              }
-            })
-          })
-        }
+            //         var firstItemRan = false;
+            //
+            //         // console.log(product);
+            //         // console.log(product['name']);
+            //         if (orderedByPrice.length === 0) {
+            //           console.log("IT THINKS ORDEREDBYLENGTH IS EMPTY");
+            //           // console.log(orderedByPrice);
+            //           firstItemRan = true;
+            //           j = 1;
+            //           debugger;
+            //         }
+            //
+            //         if (orderedByPrice.length > 0 && firstItemRan === false) {
+            //           console.log("orderedByPrice.length > 0; product =" + product['name']);
+            //           debugger;
+            //
+            //           orderedByPrice.forEach(function (productAlreadyListed) {
+            //             debugger;
+            //             var thisKey;
+            //             for (var t = 0; t < orderedByPrice.length; t++) {
+            //
+            //             }
+            //             if (product.priceCents > productAlreadyListed.priceCents) {
+            //               console.log("product.priceCents > productAlreadyListed.priceCents; product = " + product.name);
+            //               var name = product['name'];
+            //               // console.log(name);
+            //               var price = product['priceCents'];
+            //               var tempObject = {}
+            //               tempObject[name] = price;
+            //               // console.log(tempObject);
+            //               debugger;
+            //               orderedByPrice.splice(orderedByPrice.indexOf(productAlreadyListed), 0, tempObject);
+            //               j++;
+            //               debugger;
+            //
+            //             }
+            //             if (j === orderedByPrice.length) {
+            //               // debugger;
+            //               var name = product['name'];
+            //               // console.log(name);
+            //               var price = product['priceCents'];
+            //               var tempObject = {}
+            //               tempObject[name] = price;
+            //               debugger;
+            //               orderedByPrice.push(tempObject)};
+            //               debugger;
+            //           })
+            //         }
+            //       }
+            //     })
+            //   })
+            // }
+          }
+        })
       })
-      console.log(orderedByPrice);
-      })();
-      console.log(orderedByPrice);
+    }
+  });
+  // console.log(orderedByPrice);
 
-    </script>
-  </body>
+  // console.log(orderedByPrice);
+
+  </script>
+</body>
 </html>

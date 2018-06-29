@@ -2,11 +2,72 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-family: Helvetica;
+	font-size: 1em;
+}
+
+#time-container {
+	align-self: flex-start;
+	width: 100px;
+	height: 100%;
 }
 
 #container {
 	width: 600px;
 	height: 720px;
 	padding: 0 10px;
+	display: flex;
+}
+
+#calendar {
+	width: 100%;
+	height: 100%;
+	margin: 0 5px;
+	padding: 0 10px;
+	position: relative;
+	border: 2px solid #E8E8E8;
+	border-radius: 10px;
 	background-color: #E8E8E8;
+}
+
+.bold-big-text {
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+.time-text {
+	height: 19px;
+	text-align: right;
+}
+
+.calendar-item {
+	border-left: 3px solid #0000b3;
+	background-color: white;
+	top: 0;
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+}
+
+.calendar-item p:nth-child(1) {
+	margin: 5px;
+	margin-bottom: 0;
+}
+
+.calendar-item p:nth-child(2) {
+	margin: 5px;
+	margin-top: 0;
+}
+
+.blue-title {
+	color: #0000b3;
+	font-size: 1.4em;
+	font-weight: bold;
+	padding: 0;
+	margin: 0;
+}
+
+.gray-text {
+	color: gray;
+	font-size: 1em;
 }

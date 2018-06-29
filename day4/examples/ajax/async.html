@@ -25,7 +25,42 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      var productArr = [];
+
+      function compare(a,b) {
+        return a.priceCents - b.priceCents;
+      }
+
+      function callback() {
+        productArr.sort(compare);
+        $('#products').append('<ul id="products-ul"></ul>');
+
+        productArr.forEach(function(item) {
+          $('#products-ul').append(`<li id=${item.id}>${item.name}, $${Math.floor(item.priceCents/100)}.${item.priceCents%100}</li>`);
+        });
+      }
+
+      $.ajax({
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
+        success: function(resp) {
+          console.log("yo");
+          var thisResp = resp;
+          resp.forEach(function(item, index) {
+            $.ajax({
+              url: item.url,
+              success: function(resp) {
+                console.log();
+                productArr.push(resp);
+                if (index === thisResp.length-1) {
+                  callback();
+                }
+              }
+            });
+
+          });
+        }
+      });
     </script>
   </body>
 </html>

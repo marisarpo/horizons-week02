@@ -22,6 +22,60 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(resp) {
+          console.log('ERROR!');
+          $('#products').remove()
+        }
+      });
+
+      $.ajax({
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(resp) {
+          console.log('ERROR!');
+          $('#members').remove()
+        }
+      });
+
+      $.ajax({
+         url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json',
+         success: function(resp) {
+           console.log('SUCCESS!');
+         },
+         error: function(resp) {
+           console.log('ERROR!');
+           $('#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF').remove()
+         }
+       });
+
+      $.ajax({
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt',
+        success: function(resp) {
+          console.log('SUCCESS!');
+        },
+        error: function(resp) {
+          console.log('ERROR!');
+          $('#oUfx3vNy2C6l8dzki84Tp2e3cds3').remove()
+        }
+      });
+
+       $.ajax({
+         url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt',
+         success: function(resp) {
+           console.log('SUCCESS!');
+         },
+         error: function(resp) {
+           console.log('ERROR!');
+           $('#poem').remove()
+         }
+       });
     </script>
   </body>
 </html>

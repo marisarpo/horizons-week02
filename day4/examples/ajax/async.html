@@ -26,6 +26,31 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      $.ajax({
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/products.json',
+        success: function(data) {
+          var priceArray = [];
+          for (var i=0; i<data.length; i++) {
+            $.ajax({
+              url: data[i].url,
+              success: function(resp) {
+                //console.log('SUCCESS!',resp);
+                  priceArray.push(resp);
+                  //console.log(priceArray);
+                  if (priceArray.length === data.length) {
+                    priceArray.sort(function(a, b){return a.priceCents - b.priceCents});
+                    $('#products').html(`<h2>List</h2>
+                    <ul>
+                      <li>${priceArray[0].name}, \$${priceArray[0].priceCents}</li>
+                      <li>${priceArray[1].name}, \$${priceArray[1].priceCents}</li>
+                      <li>${priceArray[2].name}, \$${priceArray[2].priceCents}</li>
+                    </ul>`)
+                  }
+              }
+            })
+          }
+      }
+    })
     </script>
   </body>
 </html>

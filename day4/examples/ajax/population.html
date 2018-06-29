@@ -25,7 +25,18 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(data) {
+          var popArray = [];
+          var cityArray = []
+          for (var i=0; i<data.length; i++) {
+            popArray.push(data[i].Population);
+            cityArray.push(data[i]['City / Urban area']);
+          }
+          var position = popArray.indexOf(Math.max(...popArray));
+          var city = cityArray[position];
+          $('#out').text(city);
+        }
       });
     </script>
   </body>

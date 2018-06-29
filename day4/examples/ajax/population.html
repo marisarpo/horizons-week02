@@ -25,7 +25,23 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(resp) {
+
+        var maxPop;
+        var highestPopulation = -Infinity;
+          for (var i = 0; i < resp.length; i++)
+          {
+            if (highestPopulation < resp[i]["Population"])
+            {
+              highestPopulation = resp[i]["Population"];
+              maxPop = resp[i]["City / Urban area"];
+            }
+          }
+          console.log(maxPop)
+          $("#out").text(maxPop)
+        }
+
       });
     </script>
   </body>

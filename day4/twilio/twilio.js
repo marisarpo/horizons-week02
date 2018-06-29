@@ -23,6 +23,10 @@ TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
     // YOUR CODE HERE
+    this.messageSendButton.on('click', function(event){
+      event.preventDefault();
+      this.massegeSendButton(event);
+    })
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {

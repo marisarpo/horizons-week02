@@ -1,0 +1,24 @@
+
+h1 {
+  display: flex;
+  color: blue;
+  background-color: red;
+  margin: 60px;
+  text-align: center;
+
+
+
+}
+
+body{
+  text-align: center;
+  display: flex;
+
+
+
+}
+
+.label {
+  display: flex;
+  color: blue;
+}

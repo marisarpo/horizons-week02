@@ -5,20 +5,137 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <center><div id = "registerpage" class = "container-fluid center-block">
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+      <fieldset>
 
+        <!-- Form Name -->
+        <legend style="text-align: center;">New user registration</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="first-name" placeholder="First name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="last-name" placeholder="Last name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="email-reg" placeholder="Email" class="form-control"  type="email">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="password-reg" placeholder="Password" class="form-control"  type="password">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-warning" id = "register"> Register </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-primary" id = "gotoLogin"> Login </button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div></center>
+
+  <center><div id = "loginpage" class = "">
+  <form class="well form-horizontal" action=" " method="post"  id="login_form">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend style="text-align: center;">Login</legend>
+
+      <!-- Text input-->
+      <div class="form-group">
+          <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  id="email-login" placeholder="Email" class="form-control"  type="email">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+          <div class="col-md-4 col-md-offset-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  id="password-login" placeholder="Password" class="form-control"  type="password">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-primary" id = "login"> Login </button>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning" id = "gotoRegister"> Register </button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div></center>
+
+  <center><div id = "newsfeed" class = "container-fluid center-block">
+
+    <div class = "posts col-xs-4">
+      
+    </div>
+
+  </div></center>
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous">
+    </script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->

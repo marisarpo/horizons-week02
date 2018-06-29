@@ -22,10 +22,24 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
+    let city = "";
+    let highest = 0;
 
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(resp)
+        {
+          for(let i = 0; i < resp.length; i++)
+          {
+
+            if(resp[i]["Population"] > highest)
+            {
+              highest = resp[i]["Population"]
+              city = resp[i]["City / Urban area"]
+            }
+          }
+          $("#out").replaceWith(`<h1>${city}</h1>`)
+        }
       });
     </script>
   </body>

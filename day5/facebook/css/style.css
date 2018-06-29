@@ -1,0 +1,9 @@
+.post {
+  border: solid black 2px;
+}
+hr.post-divider {
+    border: 0;
+    height: 2px;
+    background: #333;
+}
+}

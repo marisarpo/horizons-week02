@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "ACb48a3f9684f7c7e97ba8ce84aa5fdd0e";
+  this.authToken = "7ba723638f1718d558b9214be554f31d";
+  this.fromNumber = "+17372049284";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,22 +22,53 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    var thata = this;
+    $(".message-input-button").on('click', function(event){
+      event.preventDefault();
+      thata.handleMessageSend();
+    })
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+
+  return true;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+
+  return true;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+
+    var phoneNumber = this.phoneInputField.val();
+    var message = this.messageInputField.val();
+    var account = this.accountId;
+    var froaNumber = this.fromNumber;
+    var token = this.authToken;
+    var that = this;
+
+    if(this.validatePhoneField(phoneNumber) && this.validateMessageField(message))
+    {
+      $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + account + '/SMS/Messages', {
+    success: function(x) {
+      that.displayMessage(froaNumber, message);
+    },
+    method: 'POST',
+    data: {
+      From: froaNumber,
+      To: phoneNumber,
+      Body: message,
+    },
+    headers: {
+      "Authorization": "Basic " + btoa(account + ":" + token)
+    }
+  });
+    }
+
   },
+
+
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
     var senderElem = $('<span></span>').addClass('sender').text(sender);

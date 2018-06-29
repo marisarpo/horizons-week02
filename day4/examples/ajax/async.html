@@ -25,7 +25,66 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+    /*
+      function getProducts( productLinks, index, products, max ){
+        if ( index < max ){
+          $.ajax({
+            url: productLinks[index]["url"],
+            success: function(response){
+              products[index] = response;
+              return getProducts(productLinks, index++ , products );
+            },
+            error: function(error){
+
+            },
+          });
+        }else{
+          return products;
+        }
+      }
+*/
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products.json",
+        success: function(response){
+          //var products = [];
+          //console.log(response);
+
+          for (var i = 0; i < response.length; i++){
+            console.log(response[i]['url']);
+            var products = [];
+            $.ajax({
+              url: response[i]['url'],
+              success: function(res){
+                //console.log(res);
+
+                products.push(res);
+                //console.log("prodcts");
+                if ( products.length === response.length ){
+                  console.log("products");
+                  products.sort(function(a,b){ return a.priceCents - b.priceCents })
+                  $("#products").html(`
+                    <li>${products[0].name} ${products[0].priceCents}</li>
+                    <li>${products[1].name} ${products[1].priceCents}</li>
+                    <li>${products[2].name} ${products[2].priceCents}</li>`);
+                  console.log(products);
+                }
+              },
+              error: function(error){
+                console.log("ERROR!", i);
+              }
+            });
+          }
+
+          //console.log(products)
+
+          //return products;
+
+        },
+        error: function(error){
+
+        },
+      });
     </script>
   </body>
 </html>

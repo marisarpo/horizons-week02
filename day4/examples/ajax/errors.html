@@ -22,6 +22,80 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var linkList = [];
+      var linkObjList = ($("#links > li")).get();
+      var linkLog = {};
+
+      // console.log(linkObjList);
+      linkObjList.forEach(function(linkObj) {
+        // console.log(linkObj);
+        // console.log($(linkObj).text());
+        linkList.push($(linkObj));
+        var id = $(linkObj).attr('id');
+        // console.log(id);
+        linkLog[id] = $(linkObj).text()
+      })
+      console.log(linkLog);
+      console.log(linkList);
+      for (var i = 0; i<linkList.length; i++) {
+        (function f(){
+        var x = i;
+        $.ajax({
+          // x: i,
+          url: $(linkList[x]).text(),
+          success: function (resp) {
+            // console.log("Success!");
+            // console.log(x);
+          },
+          error: function(err) {
+            $(linkList[x]).remove();
+            // console.log(this);
+            // console.log(x);
+          }
+        })
+      })();
+      }
+
+   //    function myFunc() {
+   //       console.log( this.prop );
+   //    }
+   //
+   //    var obj1 = {
+   //       prop: 1,
+   //       myFunc: myFunc
+   //    };
+   //
+   //    var obj2 = {
+   //       prop: 2,
+   //       myFunc: myFunc,
+   //       obj1: obj1
+   //    };
+   //
+   //    obj2.obj1.myFunc(); // -> ???
+   //    var linkItems = ($('#links > li')).get()
+   //
+   //
+   //         for(var i = 0; i < linkItems.length; i++){
+   //           console.log($(linkItems[i]));
+   //           //(function(){
+   //           //  var x = i
+   //           $.ajax({
+   //             j: i,
+   //             url: function ($(linkItems[this['j']]).text()),
+   //             success: function(){
+   //               console.log('success')
+   //               console.log('this: ',this);
+   //             },
+   //             error: function(){
+   //               console.log('error')
+   //               console.log('this: ',this);
+   //               console.log('outerthis: ', this.url);
+   //               $(linkItems[this['j']]).remove();
+   //             }
+   //         //})})()
+   //       }).url();
+   //
+   // }
     </script>
   </body>
 </html>

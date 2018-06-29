@@ -22,10 +22,23 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 
     <script>
-      // YOUR CODE HERE
 
+      var population = 0;
+      var bigCity = null;
       $.ajax({
-        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(resp) {
+          resp.forEach(function(city) {
+            if (city.Population > population) {
+              population = city.Population;
+              bigCity = city["City / Urban area"];
+            }
+          })
+          console.log(`Biggest City = ${bigCity}`);
+          console.log(population);
+          $("#out").text(bigCity);
+
+        }
       });
     </script>
   </body>

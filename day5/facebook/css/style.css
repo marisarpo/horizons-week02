@@ -1,12 +1,86 @@
 .vertical-center {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: .2em;
   margin: 0;
 }
 
+a {
+  margin: .2em;
+}
+
+h1 {
+  margin: .4em 0em !important;
+  text-align: center;
+}
+
+#postlabel {
+  margin-top: 1em;
+}
+
+#postInput {
+  min-width: 30em;
+}
+
+#login-container {
+  min-width: 50vh;
+}
+
+.btn {
+  margin: .2em;
+  min-width: 10em;
+}
+
+#registration-container {
+  min-width: 50vh;
+}
+
 .card {
-  width: 60rem;
+  border: 1px solid gray;
+  border-radius: 1em;
+  margin: 1em 0;
+  padding: 1em;
+}
+
+.like-btn, .reply-form-save, .reply-form-cancel {
+  min-width: 5em;
+}
+
+.reply-form-text {
+  min-width: 24em;
+}
+
+.likereplybtns {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.time, .replies-display, .likes-display, .replies-link {
+  font-size: .8em !important;
+  font-style: italic;
+  margin: 0;
+}
+
+.card-title {
+  border-bottom: 1px solid gray;
+  padding-bottom: .2em;
+}
+
+.postyform {
+  margin-top: 1em;
+}
+
+#logout {
+  vertical-align: bottom;
+  float: right;
+  padding: 15px;
+}
+
+.navbar {
+  margin: 0;
+}
+
+.navbar-brand {
+  font-size: 2em;
 }

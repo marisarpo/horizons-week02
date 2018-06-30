@@ -9,9 +9,14 @@
 </head>
 
 <body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <span class="navbar-brand">LydiaBook</span>
+    <a class="nav-link" id="logout">Logout</a>
+  </nav>
+
   <div class="jumbotron vertical-center" id='registration'>
-    <div class="container-fluid">
-      <h1>Register</h1>
+    <div class="container-fluid" id='registration-container'>
+      <h1 class='vertical-center'>Register</h1>
       <form>
         <div class="form-group">
           <label for="firstName">First Name</label>
@@ -29,14 +34,18 @@
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="passwordInput" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
       </form>
-      <button type="submit" class="btn btn-primary" id="go-to-login">Login</button>
+      <div class="vertical-center row">
+        <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
+      </div>
+      <div class="vertical-center row">
+        <a id="go-to-login">Already have an account? Login here</a>
+      </div>
     </div>
   </div>
 
   <div class="jumbotron vertical-center" id='login'>
-    <div class="container-fluid">
+    <div class="container-fluid" id='login-container'>
       <h1>Login</h1>
       <form>
         <div class="form-group">
@@ -47,23 +56,23 @@
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="passwordInputLogin" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
       </form>
-      <button type="submit" class="btn btn-primary" id="go-to-register">Go to registration</button>
+      <div class="vertical-center row">
+        <button type="submit" class="btn btn-primary" id="login-btn">Login</button>
+      </div>
+      <div class="vertical-center row">
+        <a id="go-to-register">Don't have an account? Register here</a>
+      </div>
     </div>
   </div>
 
   <div class="jumbotron vertical-center" id='newsfeed-container'>
-
     <div class='container-fluid' id='newsfeed'>
-      <form>
-        <div class="form-group">
-          <label for="postInput">Make a new post</label>
-          <input type="email" class="form-control" id="postInput" placeholder="What are you thinking?">
-        </div>
-        <button type="submit" class="btn btn-primary" id='post-btn'>Post</button>
+      <label for="postInput" id="postlabel">Make a new post</label>
+      <form class="form-inline">
+          <input type="email" class="form-control mb-2 mr-sm-2" id="postInput" placeholder="What are you thinking?">
+          <button type="submit" class="btn btn-primary" id='post-btn'>Post</button>
       </form>
-
     </div>
   </div>
 

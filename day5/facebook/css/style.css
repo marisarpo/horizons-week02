@@ -37,10 +37,12 @@ h1 {
 }
 
 .card {
-  border: 1px solid gray;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
   border-radius: 1em;
   margin: 1em 0;
   padding: 1em;
+  background-color: white
 }
 
 .like-btn, .reply-form-save, .reply-form-cancel {

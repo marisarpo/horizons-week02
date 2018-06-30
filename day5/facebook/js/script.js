@@ -99,6 +99,7 @@ function setupNewsfeed() {
       var posts = data.response;
       for (var i = 0; i < posts.length; i++) {
         var post = posts[i];
+        var date = new Date(post.createdAt);
         //console.log('post', post, 'comments', post.comments);
 
         //console.log(post.comments);
@@ -108,7 +109,7 @@ function setupNewsfeed() {
         var cardhtml = `<div class="card" id='${post._id}''>
                           <div class="card-body">
                             <h2 class="card-title">${post.poster.name}</h2>
-                            <p class='time'>posted at ${post.createdAt}</p>
+                            <p class='time'>posted at ${date.toDateString()}</p>
                             <p class="card-text">${post.content}</p>
                             <span class='replies-display'>${post.comments.length} replies,</span>
                             <span class='likes-display'>${post.likes.length} likes</span>
@@ -184,9 +185,10 @@ $('body').on('click', '.replies-link', function(event) {
       var comments = resp.response;
       for(var j = 0; j < comments.length; j++) {
         var comment = comments[j];
+        var date = new Date(comment.createdAt);
         var commenthtml = `<div class='comment'>
-                              <p>${comment.poster.name}: ${comment.createdAt}</p>
-                              <p>${comment.content}</p>
+                              <h4>${comment.poster.name}: ${date.toDateString()}</h4>
+                              <h5>${comment.content}</h5>
                             </div>
                            `
         console.log($(card).find('.comments-container'));

@@ -3,7 +3,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	font-family: Helvetica;
-	font-size: 1em;
+	font-size: 1em; 
 }
 
 #time-container {
@@ -28,6 +28,7 @@ body {
 	border: 2px solid #E8E8E8;
 	border-radius: 10px;
 	background-color: #E8E8E8;
+	border-radius: 
 }
 
 .bold-big-text {
@@ -71,3 +72,6 @@ body {
 	color: gray;
 	font-size: 1em;
 }
+
+
+

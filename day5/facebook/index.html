@@ -5,14 +5,99 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div id="login-container" class="container fb-container">
+
+        <h3 id="registration-title" style="text-align: center">User Registration</h3>
+      <form class="well form-horizontal" style="padding-left: 25%" action=" " method="post"  id="registration-form">
+        <div class="form-group block col-sm-8 col-sm-offset-2">
+          <label for="inputUsername" class="col-sm-3 control-label">First Name</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-user"></span>
+            <input type="text" class="form-control" id="input-first-name" placeholder="First Name">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <label for="inputLastName" class="col-sm-3 control-label">Last Name</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-user"></span>
+            <input type="text" class="form-control" id="input-last-name" placeholder="Last Name">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <label for="inputdob" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+            <input type="email" id="input-email" class="form-control" placeholder="example@example.com">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <label for="inputzc" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-asterisk"></span>
+            <input type="password" id="input-password" class="form-control" id="inputzc" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <div class="col-sm-8" style="margin-left: 22%">
+            <button id="registration-submit-btn" type="submit" class="btn btn-warning">Submit<span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <div id="signin-container" class="container fb-container">
+
+        <h3 style="text-align: center">User Login</h3>
+      <form class="well form-horizontal" style="padding-left: 25%" action=" " method="post"  id="registration-form">
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <label for="inputdob" class="col-sm-3 control-label">Email</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-envelope"></span>
+            <input type="email" id="input-login-email" class="form-control" placeholder="example@example.com">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <label for="inputzc" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-8 input-group">
+            <span class="input-group-addon glyphicon glyphicon-asterisk"></span>
+            <input type="password" id="input-login-password" class="form-control" id="inputzc" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group col-sm-8 col-sm-offset-2">
+          <div class="col-sm-8" style="margin-left: 23%">
+            <button id="login-submit-btn" type="submit" class="btn btn-warning">Login</button>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+    <div id="btns-holder">
+      <button id="login-open-btn" type="submit" class="btn btn-default">Sign Up</button>
+      <button id="signin-open-btn" type="submit" class="btn btn-default">Login</button>
+    </div>
+
+    <div class="post-holder">
+      <div class="submit-post">
+          <div class="submit-post-div">
+              <h4 class="post-name">
+                Upload post
+              </h4>
+
+              <textarea style="margin-bottom: 10px" type="text" rows="4" class="form-control" id="post-textarea" placeholder="What's on your mind..."></textarea>
+
+              <button id="post-submit-btn" type="submit" class="btn btn-warning">Post</button>
+          </div>
+        </div>
+      </div>
 
     <!-- jQuery -->
     <script
@@ -21,7 +106,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

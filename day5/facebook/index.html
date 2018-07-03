@@ -5,14 +5,161 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
+
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="container" id="heading">
+      <form style="background-color:rgb(59,89,152); height:150px" class="well form-horizontal" action=" " method="post" id='headingForm'>
+        <center>
+
+
+          <div style="color:white" class="heading">
+            <h1>zonBook</h1>
+            <div class='logo_glyphicon'>
+              <span class= 'glyphicon glyphicon-user' id='heading-glyphicon'></span>
+              <!-- <span style="width:1px" class= 'glyphicon glyphicon-option-horizontal col-xs-1' id='heading-glyphicon'></span> -->
+              <span class= 'glyphicon glyphicon-option-horizontal' id='heading-glyphicon'></span>
+              <span class= 'glyphicon glyphicon-user' id='heading-glyphicon'></span>
+              <!-- <span style="width:9px" class= 'glyphicon glyphicon-user' id='heading-glyphicon'></span> -->
+              <span class= 'glyphicon glyphicon-option-horizontal' id='heading-glyphicon'></span>
+              <span class= 'glyphicon glyphicon-user' id='heading-glyphicon'></span>
+              <!-- <span style="width:1px" class= 'glyphicon glyphicon-option-horizontal col-xs-1' id='heading-glyphicon'></span>
+              <span style="width:1px" class= 'glyphicon glyphicon-option-horizontal col-xs-1' id='heading-glyphicon'></span>
+              <span style="width:10px" class= 'glyphicon glyphicon-user col-xs-2' id='heading-glyphicon'></span> -->
+            </div>
+          </div>
+
+        </center>
+      </form>
+    </div>
+
+    <div class="container" id="login">
+      <form class="well form-horizontal" action=" " method="post" id='formLogin'>
+        <center>
+
+          <div class="form_name">
+            <h2>Login</h2>
+          </div>
+
+
+          <div class="form-group email">
+            <div class="input-group">
+              <input type="email" style="border-radius:5px" class="form-control" id="emailLogin" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group password">
+            <div class="input-group">
+              <input type="password" style="border-radius:5px" class="form-control" id="passwordLogin" placeholder="Password">
+            </div>
+          </div>
+
+          <div class='form-group login'>
+            <button style="width:200px" type="submit" class="btn btn-primary" id="loginLogin">Login
+            </button>
+          </div>
+
+          <div class="form_name">
+            <h3>Don't have an account?</h3>
+          </div>
+
+          <div class='form-group login'>
+            <button style="width:100px" type="submit" class="btn btn" id="signUpLogin">Sign Up
+                <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
+            </button>
+          </div>
+
+        </center>
+      </form>
+
+
+    </div>
+
+    <div hidden class="container" id="signUp">
+      <form class="well form-horizontal" action=" " method="post" id='formSignUp'>
+        <center>
+
+          <div class="form_name">
+            <h2>Create an account</h2>
+          </div>
+
+          <div class="form-group firstname">
+            <!-- <div class='input-group-addon'>
+              <span class= 'glyphicon glyphicon-user' id='firstname-glyphicon'></span>
+            </div> -->
+            <div class="input-group">
+              <input type="text" style="border-radius:5px" class="form-control" id="firstNameSignUp" placeholder="First name">
+            </div>
+          </div>
+
+          <div class="form-group lastname">
+            <div class="input-group">
+              <input type="text" style="border-radius:5px" class="form-control" id="lastNameSignUp" placeholder="Last name">
+            </div>
+          </div>
+
+          <div class="form-group email">
+            <div class="input-group">
+              <input type="email" style="border-radius:5px" class="form-control" id="emailSignUp" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="form-group password">
+            <div class="input-group">
+              <input type="password" style="border-radius:5px" class="form-control" id="passwordSignUp" placeholder="Password">
+            </div>
+          </div>
+
+          <div class='form-group register'>
+            <button style="width:200px" type="submit" class="btn btn-primary" id="signUpSignUp">Sign Up
+                <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
+            </button>
+          </div>
+
+          <div class="form_name">
+            <h3>Already have an account?</h3>
+          </div>
+
+          <div class="form-group login">
+            <button style="width:100px" type="submit" class="btn btn" id="loginSignUp">Login
+                <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
+            </button>
+          </div>
+
+        </center>
+      </form>
+    </div>
+
+    <div class='container' id='commentThread'>
+      <form  class="well form-horizontal" action=" " method="post" id='formLogin'>
+        <center>
+
+        <div class="form_name">
+          <h2 style="color:rgb(59,89,152)"> Newsfeed </h2>
+          <!-- <p id="insert">
+            <h3> Welcome!  </h3>
+          </p> -->
+          <div class='posts'>
+            <div class='form-group writePost'>
+              <div class="input-group col-xs-6">
+                <textarea style="border-radius:5px" class="form-control" rows="3" placeholder="What's on your mind?"></textarea>
+              </div>
+            <div class="form-group postButton">
+              <button style="width:100px" type="submit" class="btn btn-primary" id="postButton">POST
+                  <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </center>
+      </form>
+    </div>
 
     <!-- jQuery -->
     <script
@@ -21,7 +168,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

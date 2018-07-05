@@ -12,16 +12,45 @@
   float:right;
 }
 
+:root {
+  --scale-size: 1.3;
+}
+
+#sidenavbar {
+  width:25%; /*25% of width only*/
+}
+
+#mainContentView {
+  position:relative;
+  z-index: 998;
+  display: none;
+}
+
+.modal {
+  position:fixed;
+  z-index:999;
+}
+
 .fullHeight {
   height: 100vh;
-  top: 0px;
 }
+
+#secondaryBar {
+  width:25%
+}
+
+#content {
+  margin-left:25%;
+  position:sticky;
+}
+
 
 /* Scale everything up 1.3x normally */
 body {
-    zoom: 1.3;
-    -moz-transform: scale(1.3);
+    zoom: var(--scale-size);
+    -moz-transform: scale(var(--scale-size));
     -moz-transform-origin: 0 0;
+    transition: zoom 5s ease 5s;
 }
 
 #navbar {
@@ -32,69 +61,4 @@ body {
 
 .shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-/*
- * Author: http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
- */
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 480px) {
-/* Styles */
-}
-
-/* Smartphones (landscape) ----------- */
-@media only screen
-and (min-width : 321px) {
-/* Styles */
-}
-
-/* Smartphones (portrait) ----------- */
-@media only screen
-and (max-width : 320px) {
-/* Styles */
-}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px) {
-/* Styles */
-}
-
-/* iPads (landscape) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : landscape) {
-/* Styles */
-}
-
-/* iPads (portrait) ----------- */
-@media only screen
-and (min-device-width : 768px)
-and (max-device-width : 1024px)
-and (orientation : portrait) {
-/* Styles */
-}
-
-/* Desktops and laptops ----------- */
-@media only screen
-and (min-width : 1224px) {
-/* Styles */
-}
-
-/* Large screens ----------- */
-@media only screen
-and (min-width : 1824px) {
-/* Styles */
-}
-
-/* iPhone 4 ----------- */
-@media
-only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
-/* Styles */
 }

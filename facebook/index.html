@@ -44,9 +44,9 @@ underscore.js
       <form>
         <div id="emailPassword">
           <label>Email</label>
-          <input class="w3-input" type="email" id="email"></input>
+          <input class="w3-input" type="email" id="email" autocomplete="on"></input>
           <label>Password</label>
-          <input class="w3-input" type="password" id="password"></input>
+          <input class="w3-input" type="password" id="password" autocomplete="on"></input>
        </div>
        <div style="display:none;" class="w3-animate-left" id="firstLastName">
           <label>First Name</label>
@@ -54,32 +54,43 @@ underscore.js
           <label>Last Name</label>
           <input class="w3-input" type="text" id="lastName"></input>
       </div>
-        <button class="w3-button w3-red buttonSpacing" id="submitButton">Logon</button>
+        <button class="w3-button w3-red buttonSpacing" id="submitButton">Login</button>
         <button class="w3-button w3-blue buttonSpacingRight" id="moreOptions">...</button>
       </form>
 
-      <p class="w3-center" id="status">Welcome.</p>
+      <p class="w3-center" id="status">Welcome.<br>Notice: Horizok is not fit for small screens.</p>
     </div>
 
 <!-- end login form -->
 
 <!-- main view -->
 <div id="mainContentView">
-  <div class="w3-row" id="secondaryNavBar">
-    <div class="w3-col w3-container w3-blue m4 l3 fullHeight">
-      <p>12 columns on a small screen, 4 on a medium screen, and 3 on a large screen.</p>
+  <div class="w3-sidebar w3-blue w3-bar-block w3-animate-top" id="secondaryBar">
+    <h3 class="w3-bar-item w3-center"><b>Horizok</b>Nav</h3>
+    <div class="w3-display-middle">
+      <h2 class="w3-bar-item w3-button" id="wallBtn"><a href="#"></a><i class="fa fa-envelope"></i> Wall</h2>
+      <h2 class="w3-bar-item w3-button" id="dmBtn"><a href="#"></a><i class="fa fa-comments"></i> DM</h2>
+      <h2 class="w3-bar-item w3-button" id="helpBtn"><a href="#"></a><i class="fa fa-question"></i> Help</h2>
+      <h2 class="w3-bar-item w3-button" id="exitBtn"><a href="#"></a><i class="fa fa-sign-out"></i> Exit</h2>
     </div>
-    <div class="w3-col w3-container w3-red m8 l9 fullHeight" id="content">
-      <p>12 columns on a small screen, 8 on a medium screen, and 9 on a large screen.</p>
+  </div>
+  <div id="content">
+    <div class="w3-container w3-blue">
+      <h2 class="w3-center w3-animate-left">messages</h2>
     </div>
+    <div class="w3-display-container w3-container w3-light-grey w3-animate-opacity">
+      <p>
+        <b>You</b>
+        <br>
+        <i>Now</i>
+      </p>
+        <input class="w3-input w3-border-0" placeholder="Enter text."></input>
+   </div>
+
+
   </div>
 </div>
 <!--end-->
-
-
-
-
-  <div class="">
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"

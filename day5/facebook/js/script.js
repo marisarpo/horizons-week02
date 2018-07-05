@@ -60,16 +60,19 @@ $('#login-send').on('click', function(){
         data: {
           email: eMail,
           password: pass
+        },
+        error: function(err){
+            console.log(err);
         }
       });
 });
 
 
 //post message
-$('#post-message').on('click', function(event){
+$('#new-post-btn').on('click', function(event){
     event.preventDefault();
     var tok = localStorage.getItem('token');
-    var message = $('#post-content').val();
+    var message = $('#new-post-msg').val();
     console.log(message);
     console.log(tok)
 
@@ -90,3 +93,92 @@ $('#post-message').on('click', function(event){
         }
     })
 });
+
+//load posts
+function parsePosts(data){
+    var posts = [];
+    var post;
+    for(var i = 0; i < data.length; i++){
+        post = data[i];
+        posts[i] = createPost(post.comments, post.content, post.createdAt, post.likes, post.poster, post._id);
+    }
+
+    console.log(posts);
+    return posts.join(' ');
+    
+}
+
+function createCommentsHtml(comments){
+    var commentsHtml = [];
+    if (comments.length){
+        for(var i = 0; i < comments.length; i++){
+            commentsHtml.push( `
+                    <p>${comments[i].poster.name}<i>${comments[i].createdAt}</i></p>
+                <p>${comments[i].content}</p>`) 
+        }
+        return commentsHtml.join('');
+    }else{
+        return "";
+    }
+    
+    return html;
+}
+
+function createPost(comments, content, createdAt, likes, poster, _id){
+
+    var commentsHtml = "";
+    var numComments = 0;
+    var numLikes = 0;
+    if (likes !== null && likes.length > 0){
+        numLikes = likes.length;
+    }
+
+    if (numComments !== null && comments.length > 0){
+        numComments = comments.length;
+        commentsHtml = createCommentsHtml(comments);
+    }
+    var html = `
+    <div id=${_id} class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+        <div class="card  mb-3" style="max-width: 18rem;">
+            <div id=${poster.id} class="card-header bg-transparent border-success">
+                <p><h4>${poster.name}</h4></p>
+                <p><i>${createdAt}</i></p>
+            </div>
+            <div class="card-body text-success">          
+                <p class="card-text">${content}</p>
+            </div>
+
+            <div class="card-footer bg-transparent border-success">
+                <p>${numComments} Replies,${numLikes} likes</p>
+                ${commentsHtml}
+                <span style="font-size: 15px" class="glyphicon glyphicon-thumbs-up" ></span>
+                <button class="btn btn-default" >Likes</button>
+                <button class="btn btn-primary" >Reply</button>               
+            </div>
+        </div>
+    </div>`;
+    return html;
+}
+
+$(window).on('load', function(event){
+    //console.log(localStorage.getItem('token') );
+
+    
+    $.ajax({
+        url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/1' ,
+        method: 'GET',
+        data: {
+            token: localStorage.getItem('token')
+        },
+        success: function(response){
+            //console.log(response.response);
+            
+            $("#posts").append(parsePosts(response.response)) ;
+        },
+        error: function(err){
+            console.log(err);
+        }
+    });
+    
+});
+

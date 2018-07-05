@@ -1,0 +1,178 @@
+#success_message{ display: none;}
+
+html, body {
+  color: black;
+  background-color: #B2EBF2;
+  color: black;
+}
+
+.container, .well{
+	margin-bottom: 0;
+}
+h1, h2{
+  color: #0a3d62;
+}
+
+h3{
+	text-align: center;
+}
+
+h5{
+	text-align: right;
+	margin: 0;
+	padding-top: 19.5px;
+	padding-bottom: 19.5px;
+}
+
+.input-group{
+	margin: 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.register-form{
+  color: black;
+}
+
+.register-btn{
+  margin-top: 50px;
+  margin-bottom: 15px;
+  width: 80%;
+}
+
+.login-form{
+  color: black;
+}
+
+.login-btn{
+  width: 80%;
+}
+
+.reply-count{
+  clear: both;
+}
+
+.comment {
+  border-left: 8px solid #00BCD4;
+  border-top: 2px solid #BDBDBD;
+  border-radius: 0 0 0 20px;
+  margin-top: 5px;
+  padding: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  text-transform: capitalize;
+}
+
+.reply .author{
+  font-size: 15px;
+}
+
+.reply .message{
+  padding: 0px;
+}
+.reply{
+  margin-left: 25px;
+}
+
+.reply hr{
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid #B2EBF2;
+}
+
+.message{
+  margin-top: 10px;
+  margin-bottom: 25px;
+  margin-left: 5px;
+}
+
+.controls{
+  margin-bottom: 10px;
+  clear: both;
+}
+
+.replies{
+  clear: both;
+  width: 94%;
+}
+
+.btn{
+  background-color: #757575;
+  color: white;
+  border: none;
+}
+
+.input-group-addon{
+  background-color: #212121;
+  border: none;
+  color: white;
+}
+
+.post-btn{
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+  background-color: #0097A7;
+  color: white;
+  border: none;
+}
+
+textarea{
+  border: none;
+  resize: none;
+}
+
+.form-control {
+  font-size: 16px;
+}
+
+.like-btn {
+  color: black;
+  float: right;
+}
+
+button{
+  outline: none !important;
+}
+
+.like-btn-child-pressed{
+  color: white !important;
+  background-color: #0a3d62 !important;
+  outline: none;
+}
+
+.like-btn button{
+  background-color: #0097A7;
+}
+
+.feed-header li{
+  display: inline-block;
+  margin: 0px;
+}
+
+.navbar{
+  text-align: right;
+  background-color: #00BCD4;
+  -webkit-box-shadow: 4px 6px 17px -10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 6px 17px -10px rgba(0,0,0,0.75);
+  box-shadow: 4px 6px 17px -10px rgba(0,0,0,0.75);
+  border: none;
+}
+
+.navbar a{
+  color: white !important;
+}
+
+.navbar-nav li.active > a {
+	background-color: #212121 !important;
+	color: #fff;
+}
+
+.dropdown-menu li > a{
+  color: black !important;
+}

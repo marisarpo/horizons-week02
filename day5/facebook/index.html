@@ -2,17 +2,132 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Horizons Facebook</title>
+    <title>friendster</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">friendster</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Feed<span class="sr-only">(current)</span></a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#" id="logout-btn">Logout</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+      </nav>
+    <div class="container">
+      <!-- _________________________________ REGISTER FORM _________________________________  -->
+      <div class="well form-horizontal register-form" action=" " method="post"  id="contact_form">
+        <h3>Friendster Register</h3>
+        <div class="row">
+          <div class="col-xs-4">
+            <h5>First name</h5>
+            <h5>Last name</h5>
+            <h5>Email</h5>
+            <h5>Password</h5>
+          </div>
+          <div class="col-xs-4">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="first-name" type="text" class="form-control" name="first-name" placeholder="First name">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input id="last-name" type="text" class="form-control" name="last-name" placeholder="Last name">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn btn-primary center-block register-btn">Register <i class="glyphicon glyphicon-send"></i></buton>
+            <button type="submit" class="btn btn-success center-block login-btn">Login <i class="glyphicon glyphicon-user"></i></buton>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- _________________________________ LOGIN FORM _________________________________  -->
+      <div class="well form-horizontal login-form hidden" action=" " method="post"  id="contact_form">
+        <h3>Horizons Facebook Login</h3>
+        <div class="row">
+          <div class="col-xs-4">
+            <h5>Email</h5>
+            <h5>Password</h5>
+          </div>
+          <div class="col-xs-4">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+
+            <button type="submit" class="btn btn-danger center-block register-btn">Register <i class="glyphicon glyphicon-send"></i></buton>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- _________________________________ FEED  _________________________________  -->
+      <div class="feed hidden">
+        <h2>Feed</h2>
+
+        <div class="col-md-8">
+          <div class="input-group post-comment">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+            <textarea id="card" type="text" class="form-control post-area" name="description" placeholder="Project Description"></textarea>
+            <button class="input-group-addon post-btn">Post</button>
+          </div>
+
+          <div class="comments">
+            <!-- COMMENTS WILL GO HERE -->
+          </div>
+
+        </div>
+      </div>
+
+    </div>  <!-- END CONTAINER -->
+
 
     <!-- jQuery -->
     <script
@@ -20,8 +135,7 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

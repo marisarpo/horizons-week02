@@ -1,0 +1,155 @@
+/* Other Assets */
+@font-face{
+  font-family: Klavika;
+  src: url("/Users/keevan/Desktop/horizons/week02/day5/facebook/assets/KlavikaRegular-TF.otf") format("otf");
+} /* Possibly Remove */
+
+/* Main CSS */
+
+/*
+body{
+  background-color: #3B5998;
+}
+original plain color background */
+
+#background {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+/* CSS for Registration and Login Page */
+.registrationContainer, .loginContainer{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.logo{
+  width: 80px;
+  height: auto;
+  border: white solid 4px;
+}
+
+.registrationForm, .loginForm{
+  color: white;
+  background-color: rgba(59, 89, 152, 0.8) !important;
+  border-width: 10px;
+}
+
+.registrationFormTitle, .loginFormTitle{
+  font-family: Verdana;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  border-width: 5px;
+}
+
+.registerButton, .registerLoginButton, .loginButton, .loginRegisterButton{
+    display: inline-block;
+    width: 100%;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+}
+
+.registerLoginButton, .loginRegisterButton{
+  width: 80% !important;
+  margin-top: 5%;
+}
+
+/* CSS for Wall */
+.postsContainer{
+  background-color: rgba(59, 89, 152, 0.8);
+  border: 5px solid #e3e3e3;
+  border-radius: 4px;
+  color: white;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 50%;
+  padding-bottom: 30px;
+}
+
+.wallTitle{
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Verdana;
+  margin-top: 30px;
+}
+
+.post{
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  border: 5px solid #e3e3e3;
+  border-radius: 4px;
+  height: auto;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.postAuthor{
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.repliesAndLikes{
+  font-weight: bold;
+  font-size: 18px;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.likeButton{
+  margin-left: 10px;
+}
+
+.postMetaData, .postReplyAuthor{
+  font-family: Verdana;
+  font-style: italic;
+  font-size: 12px;
+}
+
+.postMessage{
+  font-family: Verdana;
+  font-size: 16px;
+  border-bottom: 4px solid #3b5998;
+  overflow-wrap: break-word;
+}
+
+.postReplyMessage{
+  font-family: Verdana;
+  font-size: 14px;
+  border-bottom: 2px solid grey;
+}
+
+.postMakeReply{
+  margin-top: 15px;
+  width: 80%;
+  display: inline-block;
+}
+
+.replyButton{
+  width: 15%;
+}
+
+.makePost{
+  display:inline-block;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.makePost textarea{
+  resize: none;
+}

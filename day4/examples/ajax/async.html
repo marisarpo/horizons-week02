@@ -1,31 +1,61 @@
 <!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Horizons AJAX Async Example</title>
-  </head>
+<html>
 
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <title>Horizons AJAX Async Example</title>
+</head>
 
-    <h1>AJAX Async Example</h1>
+<body>
 
-    <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a href="https://horizons-json-cors.s3.amazonaws.com/products.json">these products</a> in JavaScript on this page. Display their names and prices below as a bulleted list.</p>
-    <p>
-      The link above will respond with an array of urls. You need to asynchronously make AJAX requests to these links, and then sort the results in increasing price order (lowest price up top).
-    </p>
+  <h1>AJAX Async Example</h1>
 
-    <div id="products">REPLACE me with the sorted list of products! My <code>id is "products"</code>.</div>
+  <p>Use <a href="http://api.jquery.com/jquery.ajax/">$.ajax()</a> to fetch <a href="https://horizons-school-of-technology.github.io/week02/day4/examples/products.json">these products</a> in JavaScript on this page. Display their names and prices below as
+    a bulleted list.</p>
+  <p>
+    The link above will respond with an array of urls. You need to asynchronously make AJAX requests to these links, and then sort the results in increasing price order (lowest price up top).
+  </p>
 
-    <h2>Example output</h2>
-    <ul>
-      <li>Raspberry Pi, $33.53</li>
-      <li>Amazon Echo, $179.99</li>
-      <li>DJI Phantom 3, $416.59</li>
-    </ul>
+  <div id="products">REPLACE me with the sorted list of products! My <code>id is "products"</code>.</div>
 
-    <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-    <script>
-      // YOUR CODE HERE
-    </script>
-  </body>
+  <h2>Example output</h2>
+  <ul>
+    <li>Raspberry Pi, $33.53</li>
+    <li>Amazon Echo, $179.99</li>
+    <li>DJI Phantom 3, $416.59</li>
+  </ul>
+
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+  <script>
+    $.ajax(
+    {
+      url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products.json",
+      success: function(resp)
+      {
+        var productArr = [];
+        $("#products").append("<ul id=sortedList></ul>");
+        resp.forEach((item) => $.ajax(
+        {
+          url: item.url,
+          success: function(response)
+          {
+            productArr.push(response);
+            if (productArr.length === resp.length)
+            {
+              productArr.sort(function(a, b)
+              {
+                return a.priceCents - b.priceCents;
+              });
+              productArr.forEach(function(item)
+              {
+                $("#sortedList").append($("<li>").text(`${item.name}, $${item.priceCents/100}`));
+              });
+            }
+          }
+        }));
+      }
+    });
+  </script>
+</body>
+
 </html>

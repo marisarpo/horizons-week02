@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "AC1fd1ff78c9c49387b241a2c29fbe9fcf";
+  this.authToken = "1f60fe707af98cc822100b497ecff459";
+  this.fromNumber = "+14243060616";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,41 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return textStr.trim().length !== 0;
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    return Number.isInteger(parseInt(phoneStr)) && String(parseInt(phoneStr)).length === 11;
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+    if( this.validateMessageField(this.messageInputField.val()) && this.validatePhoneField(this.phoneInputField.val()) )
+    {
+      $.ajax({
+        url: 'https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages',
+        success: function(x) {
+          this.displayMessage(this.phoneInputField.val(), this.messageInputField.val());
+          this.messageInputField.val("");
+        }.bind(this),
+        method: 'POST',
+        data: {
+          From: this.fromNumber,
+          To: "+"+this.phoneInputField.val(),
+          Body: this.messageInputField.val()
+        },
+        headers: {
+          "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+        },
+        error: function(err){
+          alert("Failed: " + err.statusText);
+        }
+      });
+    }
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');

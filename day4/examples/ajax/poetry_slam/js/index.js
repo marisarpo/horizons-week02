@@ -1,2 +1,9 @@
 // YOUR CODE HERE
-// URL to GET: http://horizons-json-cors.s3.amazonaws.com/poem.txt
+// See poetry_slam/index.html for instructions
+
+$.ajax({
+  url: "https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt",
+  success: function(response){
+    $("#count").text( response.split(" ").filter(function(n) { return n != '' }).length );
+  }
+})

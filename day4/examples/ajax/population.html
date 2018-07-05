@@ -14,7 +14,7 @@
 
     <ol>
       <li>Write you solution in the <code>script</code> tags at the bottom of this file (<code>/week02/day4/examples/ajax/population.html</code>).</li>
-      <li>Open <a href="http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json">http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json</a> to check out what our data looks like.</li>
+      <li>Open <a href="https://horizons-school-of-technology.github.io/week02/day4/examples/data.json">https://horizons-school-of-technology.github.io/week02/day4/examples/data.json</a> to check out what our data looks like.</li>
       <li>Load this data on this page using <code>$.ajax()</code>.</li>
       <li>Find out which city is the largest by population.</li>
       <li>Display the name of the city in the h1 tag at the top, it has the id <code>"out"</code>.</li>
@@ -25,8 +25,14 @@
       // YOUR CODE HERE
 
       $.ajax({
-        url: 'http://horizons-json-cors.s3-website-us-east-1.amazonaws.com/data.json'
+        url: 'https://horizons-school-of-technology.github.io/week02/day4/examples/data.json',
+        success: function(response)
+        {
+            $("h1").text(response.sort( (a, b) => a["Population"] - b["Population"] )[response.length-1]["City / Urban area"]);
+        }
       });
+
+
     </script>
   </body>
 </html>

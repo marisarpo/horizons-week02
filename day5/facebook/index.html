@@ -3,16 +3,172 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
+    <link rel="icon" href="/Users/keevan/Desktop/horizons/week02/day5/facebook/images/homelogo.png">
     <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+
+    <video autoplay loop muted id="background">
+      <source src="assets/Clouds.mp4" type="video/mp4">
+    </video>
+
+    <!-- REGISTRATION FORM -->
+    <div class="container registrationContainer">
+
+      <form class="well form-horizontal registrationForm" action=" " method="post"  id="contact_form">
+        <fieldset>
+
+          <legend class="registrationFormTitle">
+            <div>
+              <img class="logo" src="/Users/keevan/Desktop/horizons/week02/day5/facebook/images/homelogo.png"></img>
+            </div>
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              New Horizons Facebook User Registration
+            </div>
+          </legend>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">First Name</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="registerFirstName" placeholder="First Name" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Last Name</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                  <input name="registerLastName" placeholder="Last Name" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Email</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input name="registerEmail" placeholder="Email" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Password</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input name="registerPassword" type="password" placeholder="Password" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <button type="submit" class="registerButton btn btn-danger btn-lg" >Register<span class="glyphicon glyphicon-chevron-right"></span></button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <button type="submit" class="registerLoginButton btn btn-success btn-lg" >Login<span class="glyphicon glyphicon-chevron-right"></span></button>
+              </div>
+            </div>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <div class="container loginContainer">
+
+      <form class="well form-horizontal loginForm" action=" " method="post"  id="login_form">
+        <fieldset>
+
+          <legend class="loginFormTitle">
+            <div>
+              <img class="logo" src="/Users/keevan/Desktop/horizons/week02/day5/facebook/images/logo.png"></img>
+            </div>
+            <div style="margin-top: 10px; margin-bottom: 10px">
+              Login to Horizons Facebook
+            </div>
+          </legend>
+
+            <div class="form-group successfulRegistration">
+              <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-success text-center">
+                        <strong><span class="glyphicon glyphicon-ok"></span> Facebook Account Successfully Created!</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group loginFail">
+              <div class="col-md-4 col-md-offset-4">
+                <div class="alert alert-danger text-center">
+                        <strong><span class="glyphicon glyphicon-remove"></span> Invalid Email or Password.</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Email</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                  <input name="loginEmail" placeholder="Email" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label">Password</label>
+              <div class="col-md-4 inputGroupContainer">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                  <input name="loginPassword" type="password" placeholder="Password" class="form-control"  type="text">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <button type="submit" class="loginButton btn btn-success btn-lg" >Login<span class="glyphicon glyphicon-chevron-right"></span></button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-md-4 col-md-offset-4 text-center">
+                <button type="submit" class="loginRegisterButton btn btn-danger btn-lg" >Register<span class="glyphicon glyphicon-chevron-right"></span></button>
+              </div>
+            </div>
+
+        </fieldset>
+      </form>
+    </div>
+
+    <!-- WALL -->
+    <div class="container-fluid postsContainer">
+      <div class="col-md-12 text-center">
+        <div class="wallTitle">
+          <img style="width: 60px; border: white solid 4px;" src="/Users/keevan/Desktop/horizons/week02/day5/facebook/images/logo.png"></img>
+          Horizons Facebook Wall
+        </div>
+      </div>
+      <div class="makePost col-md-10 col-md-offset-1 text-center">
+        <textarea class="form-control" placeholder="Enter text here." rows="3"></textarea>
+      </div>
+      <div class="col-md-10 col-md-offset-1 text-center">
+        <button type="button" class="btn btn-default newPostButton">Make New Post</button>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script
@@ -20,8 +176,7 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

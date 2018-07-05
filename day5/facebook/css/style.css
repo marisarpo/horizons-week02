@@ -1,0 +1,27 @@
+.nf_item * {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.nf_item h3 {
+    margin: 10px;
+    display: inline-block;
+}
+
+.nf_item {
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid;
+    width: 400px;
+}
+
+.nf_item .post_reply {
+    display: inline-block;
+}
+
+.nf_item .btn_group {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+}

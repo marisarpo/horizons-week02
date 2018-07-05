@@ -1,30 +1,76 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <head>
+        <meta charset="utf-8">
+        <title>Horizons Facebook</title>
+        <!-- CSS files for Bootstrap -->
+        <!-- UNCOMMENT IF NEEDED -->
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
 
-    <!-- Your css file -->
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+        <!-- Your css file -->
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div style="text-align: center">
+            <div id="register_form">
+                <h1>New user registration</h1>
+                <div>
+                    <input type="text" class="fn_in" placeholder="First name"></input>
+                </div>
+                <div>
+                    <input type="text" class="ln_in" placeholder="Last name"></input>
+                </div>
+                <div>
+                    <input type="text" class="em_in" placeholder="Email"></input>
+                </div>
+                <div>
+                    <input type="password" class="pw_in" placeholder="Password"></input>
+                </div>
+                <div>
+                    <input type="button" class="register_btn" value="Register" onclick="register()" />
+                </div>
+                <div>
+                    <input type="button" class="toggle_btn" id="show_login_btn"
+                           value="Login" onclick="toggleActiveForm()" />
+                </div>
+            </div>
+            <div id="login_form">
+                <h1>Login</h1>
+                <div>
+                    <input type="text" class="em_in" placeholder="Email"></input>
+                </div>
+                <div>
+                    <input type="password" class="pw_in" placeholder="Password"></input>
+                </div>
+                <div>
+                    <input type="button" class="login_btn" value="Login" onclick="login()" />
+                </div>
+                <div>
+                    <input type="button" class="toggle_btn" id="show_register_btn"
+                           value="Go to registration" onclick="toggleActiveForm()" />
+                </div>
+            </div>
+        </div>
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+        <div id="logged_in_div">
+            <div id="news_feed">
+            </div>
+            <a href="#" onclick="logout()">Logout</a>
+        </div>
 
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+        <!-- JavaScript files for Bootstrap -->
+        <!-- UNCOMMENT IF NEEDED -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+        <!-- underscoreJS Library -->
+        <!--
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        -->
+        <script type="text/javascript" src="./js/script.js"></script>
+    </body>
 </html>

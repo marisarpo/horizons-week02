@@ -5,21 +5,22 @@ $(document).ready(function(){
 
     $('#button-form-register').on('click',function(event){
       event.preventDefault();
+      $('#email-warning').empty();
       $.ajax(`${apiURL}/users/register`,{
         type: 'POST',
-        data: {
-          fname: $(this).siblings('#register-firstname').val(),
-          lname: $(this).siblings('#register-lastname').val(),
-          email: $(this).siblings('#register-email').val(),
-          password: $(this).siblings('#register-password').val()
-        },
+        // data: {
+        //   fname: $(this).siblings('#register-firstname').val(),
+        //   lname: $(this).siblings('#register-lastname').val(),
+        //   email: $(this).siblings('#register-email').val(),
+        //   password: $(this).siblings('#register-password').val()
+        // },
         success: function(resp){
-          $(document).find("#form-login").toggleClass('hide');
-          $(document).find("#form-register").toggleClass('hide');
+          $(document).find("#form-login").show();
+          $(document).find("#form-register").hide();
           console.log(resp);
         },
         error: function(err){
-          // debugger;
+          $('#email-warning').text('either those names and things are already taken, or you didn\'t provide them');
           console.log(err);
         }
       });
@@ -28,18 +29,24 @@ $(document).ready(function(){
     });
 
     $('#button-form-alternate').on('click', function(event){
+      $('#email-warning').empty();
       if($(this).val()==="login"){
         $(this).val('registration');
         $(this).text('Go to registration');
+        $("#form-login").show();
+        $("#form-register").hide();
       }else{
         $(this).val('login');
         $(this).text('Login');
+        $("#form-login").hide();
+        $("#form-register").show();
       }
-      $(document).find("#form-login").toggleClass('hide');
-      $(document).find("#form-register").toggleClass('hide');
+
+
     });
 
     $('#form-login-button').on('click',function(event){
+      $('#email-warning').empty();
       $.ajax(`${apiURL}/users/login`,{
         type: 'POST',
         data: {
@@ -49,11 +56,12 @@ $(document).ready(function(){
         success: function(data){
           localStorage.setItem('id',data.response.id);
           localStorage.setItem('token',data.response.token);
-          $(document).find("#sign-in").toggleClass('hide');
-          $(document).find('#homepage').toggleClass('hide');
+          $(document).find("#sign-in").hide();
+          $(document).find('#homepage').show();
           renderNewsFeed()
         },
         error: function(err){
+          $('#email-warning').text('invalid email or password');
           console.log(err);
         }
       });
@@ -80,6 +88,7 @@ $(document).ready(function(){
           clear('#mypost');
         },
         error: function(err) {
+
           console.log(err);
         }
       })
@@ -124,8 +133,8 @@ $(document).ready(function(){
               me at ${start.toString()}
               </div>
             </div>`;
-            $('#newsfeed').find(`#${postID}`).find('.replies').append(reply);
-            $('#newsfeed').find(`#${postID}`).find('.replies').toggleClass('hide');
+            $(`#${postID}`).find('.replies').append(reply);
+            $(`#${postID}`).find('.replies').show();
           },
           error: function(err){
             console.log(err);

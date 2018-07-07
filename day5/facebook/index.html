@@ -135,26 +135,30 @@
       </form>
     </div>
 
-    <div class='container' id='commentThread'>
-      <form  class="well form-horizontal" action=" " method="post" id='formLogin'>
+    <div hidden class='container' id="newsfeed">
+      <form  class="well form-horizontal" action=" " method="post">
         <center>
-
         <div class="form_name">
           <h2 style="color:rgb(59,89,152)"> Newsfeed </h2>
-          <!-- <p id="insert">
-            <h3> Welcome!  </h3>
-          </p> -->
-          <div class='posts'>
-            <div class='form-group writePost'>
-              <div class="input-group col-xs-6">
-                <textarea style="border-radius:5px" class="form-control" rows="3" placeholder="What's on your mind?"></textarea>
-              </div>
-            <div class="form-group postButton">
-              <button style="width:100px" type="submit" class="btn btn-primary" id="postButton">POST
-                  <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
-              </button>
+
+          <div class='form-group writePost'>
+            <div class="input-group col-xs-6">
+              <textarea id=postContent style="border-radius:5px" class="form-control" rows="3" placeholder="What's on your mind?"></textarea>
             </div>
+          <div class="form-group postButton">
+            <button style="width:100px" type="submit" class="btn btn-primary" id="postButton">POST</button>
           </div>
+
+          </div>
+          <div class="form-group listPosts">
+            <!-- get posts will be appended here -->
+          </div>
+        </div>
+
+        <div class="form-group logout">
+          <button style="width:100px" type="submit" class="btn btn-primary" id="logout">LogOut
+              <!-- <span class= 'glyphicon glyphicon-send' id='button-glyphicon'></span> -->
+          </button>
         </div>
 
       </center>

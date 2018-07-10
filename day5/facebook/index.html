@@ -5,14 +5,169 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+                                        <!-- NEW USER REGISTRATION PAGE-->
+  <div class="newUserRegistrationpage">
+    <div id = "header"> facebook </div>
+
+    <form class="well form-horizontal" action=" " method="post"  id="contact_form">
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend style="text-align: center;" id="form-title">Create a New Account</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">First Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="first_name" placeholder="First Name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Last Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="last_name" placeholder="Last Name" class="form-control"  type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Email</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input id="email" placeholder="Email" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Password</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input  id="password" placeholder="Password" class="form-control"  type="password">
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Success message
+        <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-warning greenButton" id='rp_register' > Sign Up </button>
+          </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-warning greenButton" id='rp_login' > Log In </button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+  </div><!-- /.newUserRegistrationpage -->
+
+                                                  <!-- LOG IN PAGE -->
+<div class="loginpage">
+  <div id = "header"> facebook </div>
+  <form class="well form-horizontal" action=" " method="post"  id="contact_form2">
+    <fieldset>
+
+      <!-- Form Name -->
+      <legend style="text-align: center;" id="form-title">Log in</legend>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Email</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  id="email2" placeholder="Email" class="form-control"  type="text">
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input-->
+
+      <div class="form-group">
+        <label class="col-md-4 control-label">Password</label>
+        <div class="col-md-4 inputGroupContainer">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input  id="password2" placeholder="Password" class="form-control"  type="password">
+          </div>
+        </div>
+      </div>
+
+      <!-- Success message
+      <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Thanks for contacting us, we will get back to you shortly.</div> -->
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning greenButton" id='lip_login' > Log in  </button>
+        </div>
+      </div>
+
+      <!-- Button -->
+      <div class="form-group">
+        <label class="col-md-4 control-label"></label>
+        <div class="col-md-4">
+          <button type="submit" class="btn btn-warning greenButton" id='lip_gtRegister' > Go to register </button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</div><!-- /.loginpage -->
+
+                                                      <!-- NEWS FEED-->
+<div class="newsFeed">
+  <button class="btn btn-default " id='logOut' > Log Out </button>
+  <div class="feedHeader"></div>
+  <div class="temp-empty">``</button>
+  <div class="container">
+    <div class="col-xs-8 postArea">
+      <div class = 'postPosts'>
+        <div>Make Post</div>
+        <textarea id = 'newPostInput' rows= '4' cols='100' placeholder="What's on your mind?"></textarea>
+        <button id = 'submit' class = 'btn btn-default'>Submit</button>
+      <div>
+      <div class="posts">
+      </div>
+    </div>
+  </div>
+</div>
+
 
     <!-- jQuery -->
     <script

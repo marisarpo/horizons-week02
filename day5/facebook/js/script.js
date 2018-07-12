@@ -151,9 +151,9 @@ function createPost(post){
         commentsHtml = createCommentsHtml(post.comments);
     }
     var html = `
-    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+    <div id="post-${post._id}" class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <div class="card  mb-3" style="max-width: 18rem;">
-            <div id=${post.poster.id} class="card-header bg-transparent border-success">
+            <div id="card-${post._id}" class="card-header bg-transparent border-success">
                 <p><h4>${post.poster.name}</h4></p>
                 <p><i>${post.createdAt}</i></p>
             </div>
@@ -180,11 +180,12 @@ function createPost(post){
     return html;
 }
 
-$(window).on('load', function(event){
+function loadPage(pageNum){
+    
     //console.log(localStorage.getItem('token') );
-   
+    
     $.ajax({
-        url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/1' ,
+        url: 'https://horizons-facebook.herokuapp.com/api/1.0/posts/'.concat(pageNum) ,
         method: 'GET',
         data: {
             token: localStorage.getItem('token')
@@ -192,12 +193,19 @@ $(window).on('load', function(event){
         success: function(response){
             //console.log(response.response);
             
-            $("#posts").append(parsePosts(response.response)) ;
+            $("#posts").html(parsePosts(response.response)) ;
         },
         error: function(err){
             console.log(err);
         }
     });
+        
+   
+}
+$(window).on('load', function(event){
+    //console.log(localStorage.getItem('token') );
+    event.preventDefault();
+    loadPage(1);
     
 });
 
@@ -214,7 +222,7 @@ $('#posts').on('click', '.submit-Comment', function(event){
     console.log('submit comment button clicked');
 
     console.log($(this).prev().prev().val());
-    url = 
+    //url = 
     postId = $(this).parent().attr('id');
     
     $.ajax({
@@ -226,6 +234,8 @@ $('#posts').on('click', '.submit-Comment', function(event){
         },
         success: function(response){
             console.log(response);
+            var postId = "post-".concat(response.response._id);
+            $(`#${postId}`).replaceWith(createPost(response.response));
             console.log("successful submit of commment");
         },
         error: function(err){
@@ -234,3 +244,5 @@ $('#posts').on('click', '.submit-Comment', function(event){
         }
     });
 });
+
+setInterval(function(){ loadPage(1); }, 3000);

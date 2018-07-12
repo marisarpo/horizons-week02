@@ -5,14 +5,142 @@
     <title>Horizons Facebook</title>
     <!-- CSS files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
     <!-- YOUR CODE HERE -->
-    Hello, World!
+    <div class="container reg">
+
+      <form class="well form-horizontal" action="#" method="post" id="contact_form">
+        <legend style="text-align: center;">New User Registration Information</legend>
+
+        <fieldset>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">First Name</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  id="f_first_name" placeholder="First Name" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Last Name</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input  id="f_last_name" placeholder="Last Name" class="form-control"  type="text">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Email</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input  id="f_email" placeholder="hello@world.com" class="form-control"  type="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Password</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input  id="f_password" placeholder="Password" class="form-control"  type="password">
+              </div>
+            </div>
+          </div>
+
+
+          </fieldset>
+        </form>
+
+        <div class="form-group text-center">
+          <button class="btn btn-danger" id="r_register">Register <span class="glyphicon glyphicon-send"></span></button>
+        </div>
+
+        <div class="text-center">
+          <button id = "r_login" class="btn btn-info btn-lg">Login<span class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>
+
+      <!-- form ending -->
+    </div> <!-- reg container ending -->
+
+
+    <div class="container log">
+
+      <form class="well form-horizontal" action="#" method="post" id="contact_form">
+        <legend style="text-align: center;">Login</legend>
+
+        <fieldset>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Email</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input  id="l_email" placeholder="hello@world.com" class="form-control"  type="email">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label">Password</label>
+            <div class="col-md-4 inputGroupContainer">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input  id="l_password" placeholder="Password" class="form-control"  type="password">
+              </div>
+            </div>
+          </div>
+
+          </fieldset>
+        </form>
+
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-danger" id="l_register">Return to Register</button>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" id="l_login" class="btn btn-info btn-lg">Login<span class="glyphicon glyphicon-chevron-right"></span></button>
+        </div>
+
+    </div>
+
+    <div class="container newsfeed text-center">
+      <h1>News Feed</h1>
+
+      <div class="share">
+        <div class="form-group">
+          <label for="comment">Share a Post:</label>
+          <textarea class="form-control" rows="5" id="post-content"></textarea>
+        </div>
+        <button type="button" class="btn btn-info share-post btn-default btn-sm">
+          Share
+        </button>
+      </div>
+
+
+      <div class="card-list">
+
+      </div>
+
+    </div>
+
+    <div class="logout">
+      <button type="button" class="btn btn-danger btn-default btn-sm" id="logout">
+        Logout
+      </button>
+    </div>
+
 
     <!-- jQuery -->
     <script
@@ -21,7 +149,7 @@
       crossorigin="anonymous"></script>
     <!-- JavaScript files for Bootstrap -->
     <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

@@ -3,9 +3,9 @@
 
 function TwilioApp() {
   // Part 0. Get Twilio credentials
-  this.accountId = "YOUR ACCOUNT ID HERE";
-  this.authToken = "YOUR AUTH TOKEN HERE";
-  this.fromNumber = "YOUR TWILIO NUMBER HERE";
+  this.accountId = "ACa95cabab629fd2563be26847cae0ecaf";
+  this.authToken = "9da25ff1581798268b04765e9c8ddb1a";
+  this.fromNumber = "+16502625965";
 
   // Reference JQuery objects
   this.messageList = $(".message-list");
@@ -22,21 +22,47 @@ function TwilioApp() {
 TwilioApp.prototype = {
   // Part 1. `initialize()` method
   initialize: function() {
-    // YOUR CODE HERE
+    this.messageSendButton.on("click", this.handleMessageSend.bind(this));
   },
   // Part 2. `validateMessageField(textStr<String>)` method
   validateMessageField: function(textStr) {
-    // YOUR CODE HERE
+    return textStr.trim() !== "";
   },
   // Part 3. `validatePhoneField(phoneStr<String>)` method
   validatePhoneField: function(phoneStr) {
-    // YOUR CODE HERE
+    return (phoneStr.length === 11 && Number(phoneStr));
   },
   // Part 4. `handleMessageSend(evt<Event>)` method
   handleMessageSend: function(event) {
-    // YOUR CODE HERE
-    // REMOVE THE NEXT LINE, IT'S FOR TEST
-    this.displayMessage('9999999999', 'Testing testing!');
+    event.preventDefault();
+
+    var phone = this.phoneInputField.val();
+    var msg = this.messageInputField.val();
+    if (!(this.validatePhoneField(phone) && this.validateMessageField(msg))) {
+      throw "Invalid fields entered...";
+    }
+
+    $.ajax('https://api.twilio.com/2010-04-01/Accounts/' + this.accountId + '/SMS/Messages', {
+      success: function(x) {
+        console.log('Message sent', x);
+      },
+      method: 'POST',
+      data: {
+        From: "+" + this.fromNumber,
+        To: "+" + phone,
+        Body: msg
+      },
+      headers: {
+        "Authorization": "Basic " + btoa(this.accountId + ":" + this.authToken)
+      },
+      error: function(reason) {
+        console.log("error", reason);
+      }
+    });
+
+    this.displayMessage(phone, msg);
+
+    //this.displayMessage('9999999999', 'Testing testing!');
   },
   displayMessage: function(sender, message) {
     var listElem = $('<li></li>').addClass('message');
@@ -46,6 +72,7 @@ TwilioApp.prototype = {
     listElem.append(bodyElem);
     this.messageList.append(listElem);
   }
+
 };
 
 window.twilio = new TwilioApp();

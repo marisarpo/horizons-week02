@@ -21,7 +21,52 @@
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
-      // YOUR CODE HERE
+
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products.json",
+        error: function(err) {
+          if (err) {
+            $("#products").hide();
+          }
+        }
+      });
+
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/members.txt",
+        error: function(err) {
+          if (err) {
+            $("#members").hide();
+          }
+        }
+      });
+
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products/JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF.json",
+        error: function(err) {
+          if (err) {
+            $("#JhoUfx3vNy2C6l8dzki84Tp2e3cds3WF").hide();
+          }
+        }
+      });
+
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/products/oUfx3vNy2C6l8dzki84Tp2e3cds3.json",
+        error: function(err) {
+          if (err) {
+            $("#oUfx3vNy2C6l8dzki84Tp2e3cds3").hide();
+          }
+        }
+      });
+
+      $.ajax({
+        url: "https://horizons-school-of-technology.github.io/week02/day4/examples/poem.txt",
+        error: function(err) {
+          if (err) {
+            $("#poem").hide();
+          }
+        }
+      });
+
     </script>
   </body>
 </html>

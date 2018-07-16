@@ -114,7 +114,7 @@ function renderList(list) {
   </div>\
   </div>\
   '));
-
+//?
   $('#' + list.idBoard).append(wrapper.html())
 }
 

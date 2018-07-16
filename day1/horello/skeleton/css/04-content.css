@@ -1,5 +1,89 @@
 .background-dark-blue {
+  font-family: "Helvetica", sans-serif;
+  color:#fff;
+  background-color: #0079bf;
 }
 
 .layout-fill-img {
+  padding: 40px 60px;
+  max-width: 100%; /*will have white space if 100vw */
+  box-sizing: border-box;
+}
+
+.header--aside {
+  display: block;
+  margin: 22px auto auto 16px;
+  height: 44px;
+  right: 7px;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  z-index: 199;
+}
+
+.content-wrap--home {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  top: 24%;
+  left: 0;
+  right: 0;
+  z-index: 12;
+}
+
+.cw--c {
+    margin-left: auto;
+}
+
+.cw, .cw--c {
+  position: relative;
+  padding: 0 7px;
+  max-width: 1200px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.logo-wrap--home {
+    position: relative;
+    display: block;
+    max-width: 300px;
+    margin: auto;
+    margin-bottom: .8em;
+    margin-top: -1.25em;
+}
+
+a {
+    font-family: inherit;
+    text-decoration: none;
+    color: #4495d4;
+}
+
+a: hover {
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  color: #084999;
+}
+
+.logo_homepage {
+    background-image: url("../images/porcupine.jpg");
+    background-size: 250px 200px;
+    width: 250px;
+    height: 200px;
+}
+
+:visited {
+  color: #6d59a3;
+}
+.logo_homepage, .header__logo, .logo--dax {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    margin: auto;
+    display: block;
+    position: relative;
+    text-align: center;
+    color: transparent;
+    text-indent: -9999px;
+    font-size: 0px;
 }

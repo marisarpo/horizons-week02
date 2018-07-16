@@ -1,1 +1,55 @@
-/* ADD STYLES FOR PART 6 HERE */
+.background-light-blue{
+  background-color: #e4f0f6;
+  overflow: hidden;
+}
+
+.total-frame {
+  position: relative;
+  max-width: 890px;
+  margin: 0 auto; /*works in block elements to put any element at the center position*/
+}
+
+.right-frame{
+  position: absolute;
+  top: -60px; /* shift top 60px up*/
+  left: 640px; /* from left*/
+}
+
+.right-frame img {
+  max-width: initial;
+}
+
+
+.left-frame {
+  max-width: 585px;
+}
+
+a {
+  color: #5e98ba;
+}
+
+.appStore {
+  display: inline-block;
+  padding: 0;
+  margin: 0.4em 1em 0 0; /*top right */
+  vertical-align: top;
+}
+
+.appStore img {
+  height: 54px;
+}
+
+.part6link {
+  font-weight: normal;
+  border: 1px solid #5e98ba;
+  border-radius: 0.3em;
+  display: inline-block;
+  padding: 0.7em 1em;
+  margin: 0.4em 0 0;
+  text-decoration: none;
+}
+.part6link:hover{
+  text-decoration: none;
+  color: #265773;
+  border: 1px solid #265773;
+}

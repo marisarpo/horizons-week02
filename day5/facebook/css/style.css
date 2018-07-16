@@ -1,0 +1,28 @@
+.login{
+  display: none;
+}
+
+.newsfeed {
+  display: none;
+}
+
+/* for newsfeed */
+body {
+  padding: 10px;
+}
+
+.comment {
+  border-left: 5px solid #555;
+  border-radius: 0 0 0 10px;
+  margin-left: 20px;
+  margin-top: 5px;
+  padding: 10px;
+}
+
+.time {
+  font-style: italic;
+}
+
+.comments {
+  margin-bottom: 10px;
+}

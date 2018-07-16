@@ -3,25 +3,186 @@
   <head>
     <meta charset="utf-8">
     <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Your css file -->
     <link rel="stylesheet" href="./css/style.css">
   </head>
   <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+    <!-- registration-->
+    <div class="container register">
+
+      <form class="well form-horizontal" action=" " method="post"  id="registerForm">
+        <!-- fieldset to group related elements in a form -->
+        <fieldset>
+          <!-- legend to caption a fieldset -->
+          <legend style="text-align: center;">New User Registration</legend>
+
+            <!-- first name -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">First Name</label>
+              <!-- add icon -->
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                </span>
+                <input placeholder="First Name" class="form-control firstname"  type="text">
+              </div>
+            </div>
+            <!-- last name -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">Last Name</label>
+              <!-- add icon -->
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-user"></span>
+                </span>
+                <input placeholder="Last Name" class="form-control lastname"  type="text">
+              </div>
+            </div>
+            <!-- email -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">Email</label>
+              <!-- add icon -->
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-home"></span>
+                </span>
+                <input placeholder="Email" class="form-control email" type="text">
+              </div>
+            </div>
+            <!-- password -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">Password</label>
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span>
+                <input placeholder="Password" class="form-control password"  type="password">
+              </div>
+            </div>
+</form>
+            <!-- register -->
+            <div class="form-group">
+              <label class="col-xs-4"></label>
+              <div class="col-xs-5">
+                <div class="row">
+                  <button class="btn btn-warning" id="register">Register&nbsp<span class="glyphicon glyphicon-send"></span></button>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!-- go to login -->
+            <div class="form-group">
+              <label class="col-xs-5"></label>
+              <div class="col-xs-5">
+                <div class="row">
+                  <button class="btn btn-primary" id="toLogin">Login</button>
+                </div>
+              </div>
+            </div>
+
+        </fieldset>
+
+
+    </div><!-- /.register container -->
+
+    <!-- login-->
+    <div class="container login">
+
+      <form class="well form-horizontal" action=" " method="post"  id="loginForm">
+        <!-- fieldset to group related elements in a form -->
+        <fieldset>
+          <!-- legend to caption a fieldset -->
+          <legend style="text-align: center;">Login</legend>
+            <!-- email -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">Email</label>
+              <!-- add icon -->
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-home"></span>
+                </span>
+                <input placeholder="Email" class="form-control email" type="text">
+              </div>
+            </div>
+            <!-- password -->
+            <div class="form-group">
+              <label class="control-label col-xs-4">Password</label>
+              <div class="input-group col-xs-5">
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-pencil"></span>
+                </span>
+                <input placeholder="Password" class="form-control password"  type="password">
+              </div>
+            </div>
+</form>
+
+            <!-- login -->
+            <div class="form-group">
+              <label class="col-xs-5"></label>
+              <div class="col-xs-5">
+                <div class="row">
+                  <button class="btn btn-primary" id="login">Login&nbsp<span class="glyphicon glyphicon-send"></span></button>
+                </div>
+              </div>
+            </div>
+
+            <hr>
+
+            <!-- to register -->
+            <div class="form-group">
+              <label class="col-xs-4"></label>
+              <div class="col-xs-5">
+                <div class="row">
+                  <button class="btn btn-warning" id="toRegister">Go to Registration</button>
+                </div>
+              </div>
+            </div>
+
+
+        </fieldset>
+
+
+    </div>
+  </div><!-- /.login container -->
+
+
+  <!-- Newsfeed -->
+  <div class="container newsfeed">
+    <h1> Newsfeed <h1>
+    <button id="logout" class="btn btn-default">Log out</button>
+    <hr>
+
+      <div class="col-xs-10">
+        <div class="post">
+          <div class="form-group">
+            <label class="control-label">Make a Post</label>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                <textarea class="form-control" placeholder="Make a Post"></textarea>
+              </div>
+          </div>
+          <button id="post" class="btn btn-default">Post</button>
+        </div>
+        <div class="comments">
+
+
+          <hr><hr>
+
+        </div>
+
+
+
+
+  </div> <!-- newsfeed container -->
 
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <!-- underscoreJS Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>

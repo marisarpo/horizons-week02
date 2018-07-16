@@ -26,6 +26,34 @@
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
     <script>
       // YOUR CODE HERE
+      var finalArr = [];
+      $('#products').text('');
+
+      $.ajax({
+        url: 'https://horizons-json-cors.s3.amazonaws.com/products.json',
+        success: function(array) {
+          array.forEach(function(item, index) {
+            $.ajax({
+              url: item["url"],
+              success: function(obj) {
+                finalArr.push(obj);
+
+                // start appending items only when the array is length 3, which means requests have finished
+                if (finalArr.length === 3) {
+                  finalArr.sort(function(a, b) {
+                    return a["priceCents"] - b["priceCents"];
+                  })
+                  finalArr.forEach(function(item) {
+                    var name = item["name"];
+                    var price = item["priceCents"];
+                    $('#products').append($('<li>').text(name + ', ' + price));
+                  })
+                }
+              }
+            })
+          })
+        }
+      })
     </script>
   </body>
 </html>

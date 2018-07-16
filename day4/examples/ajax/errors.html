@@ -20,8 +20,17 @@
     </ul>
 
     <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+    <!-- code here -->
     <script>
-      // YOUR CODE HERE
+      $('li').each(function(index, element) {
+        console.log($(element).text());
+        $.ajax({
+          url: $(element).text(),
+          error: function() {
+            $(element).remove();
+          }
+        })
+      })
     </script>
   </body>
 </html>

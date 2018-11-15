@@ -1,30 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Horizons Facebook</title>
-    <!-- CSS files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+<head>
+  <meta charset="utf-8">
+  <title>Horizons Facebook</title>
+  <!-- CSS files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Your css file -->
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
-    <!-- YOUR CODE HERE -->
-    Hello, World!
+  <!-- Your css file -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- YOUR CODE HERE -->
 
-    <!-- jQuery -->
-    <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <!-- JavaScript files for Bootstrap -->
-    <!-- UNCOMMENT IF NEEDED -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <div class="modal" id="reply-modal">
+    <div class="input-border">
+      <textarea name="reply-modal-input" type="text" class="reply-text-box" placeholder="Comment..." rows="3" cols="80"></textarea>
+      <button class="post-reply-btn">Reply</button>
+      <button class="exit-out-btn btn">Cancel</button>
+    </div>
+  </div>
 
-    <!-- underscoreJS Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script type="text/javascript" src="./js/script.js"></script>
-  </body>
+  <div id="whole-canvas">
+    <header id="banner">
+      <h1>Facebook 2</h1>
+    </header>
+
+
+    <div id="register-login-page">
+      <div id="register-box">
+        <form>
+          <h4 id="registration-title"> New User Registration </h4>
+          <div class="register first-name col-md-12">
+            <input name="fname" id="first-name-input" placeholder="First Name" type="text">
+          </div>
+          <div class="register last-name col-md-12">
+            <input name="lname" id="last-name-input" placeholder="Last Name" type="text">
+          </div>
+          <div class="register email col-md-12">
+            <input name="email"id="email-input" placeholder="Email" type="text">
+          </div>
+          <div class="register password col-md-12">
+            <input name="password" id="password-input" placeholder="Password" type="password">
+          </div>
+          <div class="register col-md-12" id="register-btn">
+            <button type="submit" class="btn primary register-btn">Register</button>
+          </div>
+          <p> </p>
+          <div class="register col-md-12" id="login-btn">
+            <button type="login" class="btn secondary login-btn">Login</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="login-box">
+        <form>
+          <h3> Login </h3>
+          <div class="login col-md-12">
+            <input name="login-email" id="login-email" type="text" placeholder="Email">
+          </div>
+          <div class="login col-md-12">
+            <input name="login-password" id="login-password" type="password" placeholder="Password">
+          </div>
+          <div class="login col-md-12">
+            <button type="login" class="btn primary login-btn">Login</button>
+          </div>
+          <div class="login col-md-12">
+            <button type="button" class="btn secondary return-to-register-btn">Return to Register</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="container" id="newsfeed">
+      <h1>Newsfeed:</h1>
+      <div class="container to-post">
+        <textarea class="to-post" id="new-post-textarea" placeholder="Write Post Here" rows="3" cols="80"></textarea>
+        <button class="comment-btn btn btn-default">Post!</button>
+      </div>
+      <div class="container">
+        <div class="comments">
+          <div class="comment">
+            <div class="hidden-id">post.id</div>
+            <div class="author">Khalid</div>
+            <div class="timestamp">posted whenever</div>
+            <div class="message">This is my first message!</div>
+            <div class="controls">
+              <span class="comment-info">0 Comments, 0 Likes</span>
+              <button class="like btn btn-default"><span class="glyphicon glyphicon-thumbs-up"></span></button><button name="replybtn" class="reply reply-btn btn btn-default">Reply</button>
+            </div>
+            <div class="replies">
+              <div class="reply">
+                <div class="author">Khalid</div>
+                <div class="timestamp">posted whenever</div>
+                <div class="message">This is my first comment!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <!-- JavaScript files for Bootstrap -->
+  <!-- UNCOMMENT IF NEEDED -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  <!-- underscoreJS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script type="text/javascript" src="./js/script.js"></script>
+</body>
 </html>

@@ -1,0 +1,120 @@
+header {
+  background-color: #3A1C26;
+  margin: 0 0;
+}
+html, body {
+  height: auto;
+}
+#whole-canvas {
+  background-color: #133050;
+  height: 100vh;
+}
+
+h1 {
+  color: grey;
+}
+
+h4 {
+  color: grey;
+}
+
+#register-box {
+  display: inline-block;
+  xflex-direction: column;
+  xjustify-content: center;
+  xalign-items: center;
+  border: solid 1px grey;
+  border-radius: 10%;
+  width: 200px;
+}
+
+#register-login-page {
+  display: flex;
+  justify-content: center;
+}
+
+#login-box {
+  display:none;
+  border: solid 1px grey;
+  border-radius: 10%;
+  width: 200px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondary {
+  background-color: lightblue;
+}
+
+.primary {
+  background-color: #F08080;
+  margin-top: 10px;
+}
+
+#newsfeed {
+  display: none;
+}
+
+.to-post {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.timestamp {
+  font-size: small;
+  font-style: italic;
+}
+
+.comment+div, .comment:first-child {
+  color:white;
+}
+
+.comment {
+  border: solid 1px grey;
+  border-radius: 15px;
+  display: block;
+  padding: 10px;
+}
+
+.comment-btn {
+  display: inline-block;
+  xmargin-bottom: 55px;
+  height:67px;
+}
+
+.comment-info {
+  margin-right: 30px;
+  font-size: 17px;
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.replies {
+  border-top: solid 1px grey;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+#reply-modal {
+  display: none;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-border {
+  height: 250px;
+  width:400px;
+}
+
+.hidden-id {
+  display: none;
+}
